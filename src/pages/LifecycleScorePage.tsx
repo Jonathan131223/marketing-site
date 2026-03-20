@@ -1,0 +1,413 @@
+import { useState, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { appUrl } from "@/config/appUrl";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Progress } from "@/components/ui/progress";
+import { ChevronDown, RotateCcw, ArrowRight, Calendar } from "lucide-react";
+
+// Quiz questions data
+const questions = [
+  {
+    id: 1,
+    question: "Do you send a welcome email within 5 minutes of a new user signing up?",
+    helper: "Fast welcome emails improve activation and trust.",
+    gapText: "No fast welcome email for new signups",
+  },
+  {
+    id: 2,
+    question: "Do you automatically email users who don't complete key setup within 24–48 hours?",
+    helper: "Activation nudges bring back users who stalled during onboarding.",
+    gapText: "No activation nudge when users stall",
+  },
+  {
+    id: 3,
+    question: "Do you have at least one email that highlights your main 'aha' moment or core value action?",
+    helper: "This is usually the action that predicts long-term retention.",
+    gapText: "No email focusing on your core value moment",
+  },
+  {
+    id: 4,
+    question: "Do you run a 3–5 email onboarding sequence for new free users?",
+    helper: "A sequence beats a single welcome email.",
+    gapText: "No structured onboarding sequence",
+  },
+  {
+    id: 5,
+    question: "Do you send emails when users hit usage or seat limits to encourage upgrades?",
+    helper: "Usage-based prompts are one of the easiest ways to drive expansion revenue.",
+    gapText: "No usage-/limit-based upgrade prompts",
+  },
+  {
+    id: 6,
+    question: "Do you email users when their product usage drops significantly for 7–14 days?",
+    helper: "Low usage is an early churn signal you can act on.",
+    gapText: "No pre-churn save sequence",
+  },
+  {
+    id: 7,
+    question: "Do you have a win-back email sequence for churned or cancelled customers?",
+    helper: "Many churned users will come back with the right offer or reminder.",
+    gapText: "No win-back sequence for churned users",
+  },
+  {
+    id: 8,
+    question: "Do you celebrate key milestones or ask happy users for reviews/referrals by email?",
+    helper: "Milestone and advocacy emails turn customers into promoters.",
+    gapText: "No milestone or advocacy emails",
+  },
+];
+
+// Score tier configuration
+const getTierInfo = (score: number) => {
+  if (score <= 2) {
+    return {
+      label: "At Risk",
+      description: "Your lifecycle emails are leaving a lot of revenue on the table. You're likely missing key onboarding, retention, and expansion moments.",
+      mood: "worried",
+      color: "text-red-500",
+    };
+  } else if (score <= 5) {
+    return {
+      label: "Room to Grow",
+      description: "You've covered some basics, but there are still big gaps in activation, retention, and expansion that could unlock more MRR.",
+      mood: "neutral",
+      color: "text-yellow-500",
+    };
+  } else {
+    return {
+      label: "Lifecycle Pro",
+      description: "Nice work — you're ahead of most teams. With a few targeted improvements, you can squeeze even more revenue from your lifecycle.",
+      mood: "excited",
+      color: "text-green-500",
+    };
+  }
+};
+
+// Stormi character component
+const StormiCharacter = ({ mood }: { mood: "curious" | "worried" | "neutral" | "excited" }) => {
+  const expressions = {
+    curious: (
+      <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="40" cy="40" r="35" fill="hsl(var(--primary))" opacity="0.1" />
+        <circle cx="40" cy="40" r="28" fill="hsl(var(--primary))" opacity="0.2" />
+        <circle cx="40" cy="40" r="20" fill="hsl(var(--primary))" />
+        <circle cx="34" cy="36" r="4" fill="white" />
+        <circle cx="46" cy="36" r="4" fill="white" />
+        <circle cx="35" cy="35" r="2" fill="hsl(var(--primary-foreground))" />
+        <circle cx="47" cy="35" r="2" fill="hsl(var(--primary-foreground))" />
+        <path d="M35 48 Q40 52 45 48" stroke="white" strokeWidth="2" strokeLinecap="round" fill="none" />
+      </svg>
+    ),
+    worried: (
+      <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="40" cy="40" r="35" fill="hsl(var(--destructive))" opacity="0.1" />
+        <circle cx="40" cy="40" r="28" fill="hsl(var(--destructive))" opacity="0.2" />
+        <circle cx="40" cy="40" r="20" fill="hsl(var(--destructive))" />
+        <circle cx="34" cy="36" r="4" fill="white" />
+        <circle cx="46" cy="36" r="4" fill="white" />
+        <circle cx="35" cy="37" r="2" fill="hsl(var(--destructive-foreground))" />
+        <circle cx="47" cy="37" r="2" fill="hsl(var(--destructive-foreground))" />
+        <path d="M35 50 Q40 46 45 50" stroke="white" strokeWidth="2" strokeLinecap="round" fill="none" />
+      </svg>
+    ),
+    neutral: (
+      <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="40" cy="40" r="35" fill="hsl(45 93% 47%)" opacity="0.1" />
+        <circle cx="40" cy="40" r="28" fill="hsl(45 93% 47%)" opacity="0.2" />
+        <circle cx="40" cy="40" r="20" fill="hsl(45 93% 47%)" />
+        <circle cx="34" cy="36" r="4" fill="white" />
+        <circle cx="46" cy="36" r="4" fill="white" />
+        <circle cx="35" cy="36" r="2" fill="hsl(var(--foreground))" />
+        <circle cx="47" cy="36" r="2" fill="hsl(var(--foreground))" />
+        <path d="M35 48 Q40 50 45 48" stroke="white" strokeWidth="2" strokeLinecap="round" fill="none" />
+      </svg>
+    ),
+    excited: (
+      <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="40" cy="40" r="35" fill="hsl(142 76% 36%)" opacity="0.1" />
+        <circle cx="40" cy="40" r="28" fill="hsl(142 76% 36%)" opacity="0.2" />
+        <circle cx="40" cy="40" r="20" fill="hsl(142 76% 36%)" />
+        <circle cx="34" cy="36" r="4" fill="white" />
+        <circle cx="46" cy="36" r="4" fill="white" />
+        <circle cx="35" cy="35" r="2" fill="hsl(var(--foreground))" />
+        <circle cx="47" cy="35" r="2" fill="hsl(var(--foreground))" />
+        <path d="M33 46 Q40 54 47 46" stroke="white" strokeWidth="2" strokeLinecap="round" fill="none" />
+        <line x1="28" y1="28" x2="24" y2="22" stroke="hsl(142 76% 36%)" strokeWidth="2" strokeLinecap="round" />
+        <line x1="52" y1="28" x2="56" y2="22" stroke="hsl(142 76% 36%)" strokeWidth="2" strokeLinecap="round" />
+        <line x1="40" y1="16" x2="40" y2="10" stroke="hsl(142 76% 36%)" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
+  };
+  
+  return (
+    <motion.div
+      initial={{ scale: 0.8, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 0.3 }}
+    >
+      {expressions[mood]}
+    </motion.div>
+  );
+};
+
+// Analytics event stubs
+const trackEvent = (eventName: string, data?: Record<string, unknown>) => {
+  console.log(`[Analytics] ${eventName}`, data);
+};
+
+export default function LifecycleScorePage() {
+  const [quizStarted, setQuizStarted] = useState(false);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [answers, setAnswers] = useState<boolean[]>([]);
+  const [showResults, setShowResults] = useState(false);
+
+  const scrollToQuiz = () => {
+    const quizSection = document.getElementById("quiz-section");
+    if (quizSection) {
+      quizSection.scrollIntoView({ behavior: "smooth" });
+    }
+    if (!quizStarted) {
+      setQuizStarted(true);
+      trackEvent("quiz_start");
+    }
+  };
+
+  const handleAnswer = useCallback((answer: boolean) => {
+    const newAnswers = [...answers, answer];
+    setAnswers(newAnswers);
+
+    if (currentQuestion < questions.length - 1) {
+      setCurrentQuestion((prev) => prev + 1);
+    } else {
+      // Quiz complete
+      const score = newAnswers.filter(Boolean).length;
+      const tier = getTierInfo(score).label;
+      trackEvent("quiz_complete", { score, tier });
+      setShowResults(true);
+    }
+  }, [answers, currentQuestion]);
+
+  const handleRetake = () => {
+    setCurrentQuestion(0);
+    setAnswers([]);
+    setShowResults(false);
+    setQuizStarted(true);
+    trackEvent("quiz_start");
+  };
+
+  const handleCtaClick = (ctaType: "generate_email" | "book_call") => {
+    trackEvent("quiz_cta_click", { cta_type: ctaType });
+  };
+
+  const score = answers.filter(Boolean).length;
+  const tierInfo = getTierInfo(score);
+  const gaps = answers
+    .map((answer, index) => (!answer ? questions[index].gapText : null))
+    .filter(Boolean);
+
+  const progress = ((currentQuestion + 1) / questions.length) * 100;
+
+  return (
+    <div className="min-h-screen flex flex-col bg-background">
+      <Navbar />
+
+      <main className="flex-1">
+        {/* Hero Section */}
+        <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <div className="flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
+              <div className="flex-1">
+                <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+                  Check your SaaS Lifecycle Score in 60 seconds.
+                </h1>
+                <p className="text-lg text-muted-foreground mb-8">
+                  Answer a few questions to see how well your lifecycle emails support activation, retention, and expansion — and where DigiStorms can help you grow revenue.
+                </p>
+                <Button
+                  size="lg"
+                  onClick={scrollToQuiz}
+                  className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg"
+                >
+                  Start the quiz
+                  <ChevronDown className="ml-2 h-5 w-5" />
+                </Button>
+              </div>
+              <div className="flex-shrink-0">
+                <StormiCharacter mood="curious" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Quiz Section */}
+        <section id="quiz-section" className="py-16 md:py-24">
+          <div className="container mx-auto px-4 max-w-2xl">
+            <Card className="shadow-lg border-border">
+              <CardHeader className="text-center pb-4">
+                <div className="flex justify-center mb-4">
+                  <StormiCharacter mood={showResults ? tierInfo.mood as "worried" | "neutral" | "excited" : "curious"} />
+                </div>
+                <CardTitle className="text-2xl font-bold">
+                  {showResults ? "Your Lifecycle Score" : "Your Lifecycle Quiz"}
+                </CardTitle>
+                {!showResults && (
+                  <p className="text-muted-foreground mt-2">
+                    Answer 8 quick yes/no questions about your lifecycle emails.
+                  </p>
+                )}
+              </CardHeader>
+
+              <CardContent>
+                <AnimatePresence mode="wait">
+                  {!showResults ? (
+                    <motion.div
+                      key={`question-${currentQuestion}`}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -20 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {/* Progress bar */}
+                      <div className="mb-6">
+                        <Progress value={progress} className="h-2" />
+                        <p className="text-sm text-muted-foreground mt-2 text-center">
+                          Question {currentQuestion + 1} of {questions.length}
+                        </p>
+                      </div>
+
+                      {/* Question */}
+                      <div className="mb-8">
+                        <h3 className="text-lg font-medium text-foreground mb-3">
+                          {questions[currentQuestion].question}
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          {questions[currentQuestion].helper}
+                        </p>
+                      </div>
+
+                      {/* Answer buttons */}
+                      <div className="flex flex-col sm:flex-row gap-4">
+                        <Button
+                          variant="outline"
+                          size="lg"
+                          className="flex-1 py-6 text-lg border-2 hover:bg-green-50 hover:border-green-500 hover:text-green-700 dark:hover:bg-green-950 dark:hover:border-green-400 dark:hover:text-green-300"
+                          onClick={() => handleAnswer(true)}
+                        >
+                          Yes
+                        </Button>
+                        <Button
+                          variant="outline"
+                          size="lg"
+                          className="flex-1 py-6 text-lg border-2 hover:bg-red-50 hover:border-red-500 hover:text-red-700 dark:hover:bg-red-950 dark:hover:border-red-400 dark:hover:text-red-300"
+                          onClick={() => handleAnswer(false)}
+                        >
+                          No
+                        </Button>
+                      </div>
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="results"
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.4 }}
+                    >
+                      {/* Score display */}
+                      <div className="text-center mb-8">
+                        <div className={`text-6xl font-bold ${tierInfo.color} mb-2`}>
+                          {score} / 8
+                        </div>
+                        <div className={`text-2xl font-semibold ${tierInfo.color}`}>
+                          {tierInfo.label}
+                        </div>
+                        <p className="text-muted-foreground mt-4 max-w-md mx-auto">
+                          {tierInfo.description}
+                        </p>
+                      </div>
+
+                      {/* Gaps detected */}
+                      {gaps.length > 0 && (
+                        <div className="mb-8">
+                          <h4 className="font-semibold text-foreground mb-3">
+                            Gaps detected:
+                          </h4>
+                          <ul className="space-y-2">
+                            {gaps.map((gap, index) => (
+                              <li
+                                key={index}
+                                className="flex items-start gap-2 text-muted-foreground"
+                              >
+                                <span className="text-destructive">•</span>
+                                {gap}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {/* Summary */}
+                      <p className="text-muted-foreground mb-8 p-4 bg-muted/50 rounded-lg">
+                        These are all flows DigiStorms can generate for you in minutes — using emails inspired by the best SaaS companies in the world.
+                      </p>
+
+                      {/* CTAs */}
+                      <div className="space-y-4">
+                        <a
+                          href={appUrl("/email-sequence-generator")}
+                          onClick={() => handleCtaClick("generate_email")}
+                        >
+                          <Button
+                            size="lg"
+                            className="w-full bg-purple-600 hover:bg-purple-700 text-white py-6 text-lg"
+                          >
+                            Generate my first email
+                            <ArrowRight className="ml-2 h-5 w-5" />
+                          </Button>
+                        </a>
+
+                        <a
+                          href="https://calendly.com/jonathan-digistorms/30-min-call"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => handleCtaClick("book_call")}
+                          className="block"
+                        >
+                          <Button
+                            variant="ghost"
+                            size="lg"
+                            className="w-full text-muted-foreground hover:text-foreground"
+                          >
+                            <Calendar className="mr-2 h-4 w-4" />
+                            Prefer talking to an expert? Book a strategy call
+                          </Button>
+                        </a>
+
+                        <div className="pt-4 border-t border-border">
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={handleRetake}
+                            className="text-muted-foreground hover:text-foreground"
+                          >
+                            <RotateCcw className="mr-2 h-4 w-4" />
+                            Retake quiz
+                          </Button>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+  );
+}
