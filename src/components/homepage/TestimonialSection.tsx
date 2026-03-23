@@ -4,42 +4,71 @@ import grammarlyLogo from "@/assets/logos/grammarly-logo.png";
 
 export const TestimonialSection: React.FC = () => {
   return (
-    <section className="relative py-16 md:py-24 bg-purple-50 overflow-hidden">
-      <div className="absolute top-20 left-10 w-96 h-96 bg-purple-100/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-100/20 rounded-full blur-3xl" />
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-10 md:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900">
-            Endorsed by top SaaS growth leaders
+    <section className="py-16 md:py-20 lg:py-24 bg-[#F8FAFC]">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
+            Trusted by SaaS growth leaders
           </h2>
+          <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>
+            Founders and growth teams use DigiStorms to turn onboarding into a real revenue driver.
+          </p>
         </div>
-        <div className="max-w-4xl mx-auto relative">
-          <div className="relative bg-white/80 backdrop-blur-sm border-2 border-purple-200/60 rounded-3xl p-6 sm:p-8 md:p-12 shadow-lg hover:border-purple-400 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-300">
-            <div className="flex flex-col md:flex-row gap-8">
-              <div className="flex-1">
-                <div className="text-base sm:text-lg text-gray-700 leading-relaxed space-y-4">
-                  <p>
-                    "I've been mentoring Jonathan for the past year, and from the start, his product instincts stood out. What he's built with DigiStorms has evolved from an audacious idea into{" "}
-                    <span className="font-semibold">one of the most impressive tools I've seen</span> for SaaS founders and marketers. It lets you{" "}
-                    <span className="font-semibold">create complete lifecycle email flows in minutes</span> — not weeks — without sacrificing quality or consistency.
-                  </p>
-                  <p>
-                    I'm extremely proud of how far the product has come, and I genuinely believe{" "}
-                    <span className="font-semibold">it's a game-changer for startups and growth-stage teams that want to build their 0-to-1 lifecycle motion fast</span>. I recommend everyone I know give DigiStorms a spin and see for themselves."
-                  </p>
-                </div>
-                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 mt-6 sm:mt-8">
-                  <div className="flex-shrink-0">
-                    <img src={drewPriceImage} alt="Drew Price" className="w-20 h-20 sm:w-32 sm:h-32 rounded-full ring-4 ring-purple-100 object-cover" />
-                  </div>
-                  <div className="text-center sm:text-left">
-                    <p className="text-lg sm:text-xl font-semibold text-gray-900 mb-1 sm:mb-2">— Drew Price</p>
-                    <p className="text-sm sm:text-base text-gray-600">
-                      Lifecycle marketing leader | Former CRM Director at Grammarly | Creator of the "Scaling CRM" newsletter
-                    </p>
-                    <img src={grammarlyLogo} alt="Grammarly" className="h-8 w-auto mt-3 opacity-60 mx-auto sm:mx-0" />
-                  </div>
-                </div>
+        <div className="bg-white rounded-xl shadow-sm border border-gray-100/80 px-10 py-16 sm:px-14 sm:py-20 md:px-20 md:py-24">
+          <blockquote className="text-2xl sm:text-3xl md:text-4xl font-medium text-gray-900 leading-snug mb-12 md:mb-16">
+            "DigiStorms is a game-changer for startups and growth-stage teams
+            that want to build their onboarding email sequence fast. I recommend
+            everyone I know give it a spin and see for themselves."
+          </blockquote>
+
+          <div className="flex items-center justify-between gap-6 flex-wrap pt-2">
+            <div className="flex items-center gap-4">
+              <img
+                src={drewPriceImage}
+                alt="Drew Price"
+                className="w-11 h-11 rounded-full object-cover flex-shrink-0"
+              />
+              <div>
+                <p className="text-sm font-semibold text-gray-900">
+                  Drew Price
+                </p>
+                <p className="text-sm text-gray-500">
+                  SVP Growth Marketing & Automation
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-col items-end gap-2">
+              <svg
+                width="290"
+                height="48"
+                viewBox="0 0 290 48"
+                style={{ overflow: 'visible' }}
+                className="flex-shrink-0"
+              >
+                <defs>
+                  <path id="drewCurve" d="M 0,44 Q 145,24 290,10" />
+                </defs>
+                <text
+                  style={{
+                    fontFamily: "'Kalam', cursive",
+                    fontSize: '17px',
+                    fill: '#9ca3af',
+                    fontWeight: 300,
+                  }}
+                >
+                  <textPath href="#drewCurve">
+                    Built the email marketing program at
+                  </textPath>
+                </text>
+              </svg>
+              <div className="overflow-hidden flex items-center justify-end flex-shrink-0" style={{ height: '2.4rem' }}>
+                <img
+                  src={grammarlyLogo}
+                  alt="Grammarly"
+                  className="w-auto opacity-80"
+                  style={{ height: '6.3rem' }}
+                />
               </div>
             </div>
           </div>

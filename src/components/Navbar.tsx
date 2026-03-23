@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { appUrl } from "@/config/appUrl";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 export const Navbar: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const signUpUrl = appUrl("/portal");
   const loginUrl = appUrl("/portal");
+  const signUpUrl = appUrl("/portal");
 
   return (
     <nav className="sticky top-0 z-50 w-full bg-white border-b border-gray-200">
@@ -21,22 +21,19 @@ export const Navbar: React.FC = () => {
               className="h-8"
             />
           </Link>
+
           <div className="hidden md:flex items-center space-x-6">
             <a
               href="https://library.digistorms.ai/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-gray-700 hover:text-gray-900 font-medium transition-colors flex items-center gap-1"
+              className="text-sm text-gray-700 hover:text-gray-900 font-medium transition-colors"
             >
-              Library <Sparkles className="w-3 h-3 text-purple-400 opacity-70" />
+              Library
             </a>
             <a
               href="https://library.digistorms.ai/blog"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-gray-700 hover:text-gray-900 font-medium transition-colors flex items-center gap-1"
+              className="text-sm text-gray-700 hover:text-gray-900 font-medium transition-colors"
             >
-              Blog <Sparkles className="w-3 h-3 text-purple-400 opacity-70" />
+              Blog
             </a>
             <Link
               to="/pricing"
@@ -48,8 +45,16 @@ export const Navbar: React.FC = () => {
         </div>
 
         <div className="hidden md:flex items-center space-x-4">
-          <Button variant="ghost" className="text-sm text-gray-700 hover:text-gray-900" asChild>
-            <a href="https://calendly.com/jonathan-digistorms/30-min-call" target="_blank" rel="noopener noreferrer">
+          <Button
+            variant="ghost"
+            className="text-sm text-gray-700 hover:text-gray-900"
+            asChild
+          >
+            <a
+              href="https://calendly.com/jonathan-digistorms/30-min-call"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Book a demo
             </a>
           </Button>
@@ -60,13 +65,19 @@ export const Navbar: React.FC = () => {
           >
             <a href={loginUrl}>Login</a>
           </Button>
-          <Button className="text-sm bg-purple-600 hover:bg-purple-700 text-white px-6" asChild>
+          <Button
+            className="text-sm bg-primary hover:bg-primary/90 text-white px-6"
+            asChild
+          >
             <a href={signUpUrl}>Sign up free</a>
           </Button>
         </div>
 
         <div className="flex md:hidden items-center gap-2">
-          <Button className="text-sm bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 h-9" asChild>
+          <Button
+            className="text-sm bg-primary hover:bg-primary/90 text-white px-4 py-2 h-9"
+            asChild
+          >
             <a href={signUpUrl}>Sign up free</a>
           </Button>
           <button
@@ -83,25 +94,21 @@ export const Navbar: React.FC = () => {
         <div className="md:hidden border-t border-gray-100 bg-white px-4 py-4 space-y-1">
           <a
             href="https://library.digistorms.ai/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg flex items-center gap-1"
+            className="block px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
             onClick={() => setMobileOpen(false)}
           >
-            Library <Sparkles className="w-3 h-3 text-purple-400 opacity-70" />
+            Library
           </a>
           <a
             href="https://library.digistorms.ai/blog"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg flex items-center gap-1"
+            className="block px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
             onClick={() => setMobileOpen(false)}
           >
-            Blog <Sparkles className="w-3 h-3 text-purple-400 opacity-70" />
+            Blog
           </a>
           <Link
             to="/pricing"
-            className="block px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg"
+            className="block px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
             onClick={() => setMobileOpen(false)}
           >
             Pricing
@@ -110,14 +117,14 @@ export const Navbar: React.FC = () => {
             href="https://calendly.com/jonathan-digistorms/30-min-call"
             target="_blank"
             rel="noopener noreferrer"
-            className="block px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg"
+            className="block px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
             onClick={() => setMobileOpen(false)}
           >
             Book a demo
           </a>
           <a
             href={loginUrl}
-            className="block px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg"
+            className="block px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
             onClick={() => setMobileOpen(false)}
           >
             Login
