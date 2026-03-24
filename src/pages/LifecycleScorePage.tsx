@@ -1,4 +1,5 @@
 import { useState, useCallback } from "react";
+import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
@@ -154,9 +155,9 @@ const StormiCharacter = ({ mood }: { mood: "curious" | "worried" | "neutral" | "
   );
 };
 
-// Analytics event stubs
-const trackEvent = (eventName: string, data?: Record<string, unknown>) => {
-  console.log(`[Analytics] ${eventName}`, data);
+// Analytics event stubs — wire to posthog/gtag/etc. when ready
+const trackEvent = (_eventName: string, _data?: Record<string, unknown>) => {
+  // no-op until analytics is configured
 };
 
 export default function LifecycleScorePage() {
@@ -213,6 +214,15 @@ export default function LifecycleScorePage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <Helmet>
+        <title>SaaS Lifecycle Email Score | DigiStorms</title>
+        <meta name="description" content="Get a free lifecycle email score for your SaaS. Discover gaps in your onboarding, activation, and retention email sequences in minutes." />
+        <link rel="canonical" href="https://digistorms.ai/lifecycle-score" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="SaaS Lifecycle Email Score | DigiStorms" />
+        <meta property="og:description" content="Get a free lifecycle email score for your SaaS. Discover gaps in your email sequences in minutes." />
+        <meta property="og:url" content="https://digistorms.ai/lifecycle-score" />
+      </Helmet>
       <Navbar />
 
       <main className="flex-1">

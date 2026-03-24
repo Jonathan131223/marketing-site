@@ -35,6 +35,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               onChange={(e) => onWebsiteUrlChange(e.target.value)}
               onKeyDown={handleKeyDown}
               placeholder="website.com"
+              aria-label="Your website URL"
               className="w-full px-5 py-4 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 focus:outline-none text-lg shadow-sm bg-white"
             />
             <button

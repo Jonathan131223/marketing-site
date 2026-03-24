@@ -13,9 +13,9 @@ export const FounderStorySection: React.FC = () => {
               alt="Jonathan, creator of DigiStorms"
               className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl object-cover flex-shrink-0 mx-auto sm:mx-0"
             />
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 text-center sm:text-left">
+            <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 text-center sm:text-left">
               👋 Hey – I'm Jonathan, the creator of DigiStorms.
-            </h3>
+            </p>
           </div>
 
           <div className="space-y-4 text-gray-700">
@@ -44,26 +44,6 @@ export const FounderStorySection: React.FC = () => {
         </div>
       </div>
 
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-        @keyframes marquee-scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .marquee-track {
-          display: flex;
-          align-items: flex-start;
-          gap: 1.5rem;
-          width: fit-content;
-          animation: marquee-scroll 14s linear infinite;
-        }
-        .marquee-track:hover {
-          animation-play-state: paused;
-        }
-      `,
-        }}
-      />
       <div className="mt-12 overflow-hidden w-full" style={{ paddingBottom: "2rem" }}>
         <div className="marquee-track" style={{ paddingLeft: "2rem" }}>
           <TestimonialMarqueeCard company="Bubbleye" industry="Marketing Automation" quote="Jonathan's professionalism, speed, and competence in writing and strategic planning are remarkable. I highly recommend him." author="Stefano Roncari" color="bg-blue-500" logoUrl="/images-testimonials/bubbleye_logo.jpeg" avatarUrl="/images-testimonials/stefano.jpeg" />

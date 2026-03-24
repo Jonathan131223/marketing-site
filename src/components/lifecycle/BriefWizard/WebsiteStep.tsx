@@ -42,7 +42,7 @@ export const WebsiteStep: React.FC<WebsiteStepProps> = ({
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label className="block text-sm font-semibold text-slate-700 mb-3">
+            <label htmlFor="website-url-input" className="block text-sm font-semibold text-slate-700 mb-3">
               Company Website
             </label>
             <div className="relative">
@@ -50,6 +50,7 @@ export const WebsiteStep: React.FC<WebsiteStepProps> = ({
                 <Globe className="w-5 h-5 text-slate-400" />
               </div>
               <input
+                id="website-url-input"
                 type="text"
                 value={websiteUrl}
                 onChange={(e) => onWebsiteUrlChange(e.target.value)}

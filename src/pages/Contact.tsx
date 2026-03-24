@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from "react-helmet-async";
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -24,7 +25,7 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('https://api-test.digistorms.net/send-contact-email', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -64,6 +65,15 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Contact Us | DigiStorms</title>
+        <meta name="description" content="Get in touch with the DigiStorms team. We help SaaS companies build lifecycle email sequences that drive activation, retention, and revenue." />
+        <link rel="canonical" href="https://digistorms.ai/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Contact Us | DigiStorms" />
+        <meta property="og:description" content="Get in touch with the DigiStorms team." />
+        <meta property="og:url" content="https://digistorms.ai/contact" />
+      </Helmet>
       <Navbar />
       
       <div className="container mx-auto px-4 py-16">

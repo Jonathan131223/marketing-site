@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Check, Gift, Star, Zap, Sparkles } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -86,7 +87,7 @@ const plans = [
       "30 days money-back guarantee",
     ],
     buttonText: "Book a Call →",
-    buttonStyle: "bg-white text-primary hover:bg-primary/6",
+    buttonStyle: "bg-white text-primary hover:bg-primary/10",
     cardStyle: "bg-gradient-to-br from-primary to-primary/90 text-white shadow-xl",
     highlight: false,
     isPremium: true,
@@ -97,6 +98,15 @@ const plans = [
 const Pricing: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <Helmet>
+        <title>Pricing - DigiStorms AI Email Generator for SaaS</title>
+        <meta name="description" content="Simple, transparent pricing for DigiStorms. Generate personalized lifecycle email sequences for your SaaS product." />
+        <link rel="canonical" href="https://digistorms.ai/pricing" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Pricing - DigiStorms AI Email Generator for SaaS" />
+        <meta property="og:description" content="Simple, transparent pricing for DigiStorms. Generate personalized lifecycle email sequences for your SaaS product." />
+        <meta property="og:url" content="https://digistorms.ai/pricing" />
+      </Helmet>
       <Navbar />
       <main>
         <div className="mx-auto max-w-5xl px-6 pt-16 pb-12 text-center">
@@ -181,7 +191,7 @@ const Pricing: React.FC = () => {
             ))}
           </div>
           <p className="text-center text-xs text-gray-400 mt-4">
-            Users = unique user.signed_up events per month.
+            Users = unique user_signed_up events per month.
           </p>
         </div>
       </main>

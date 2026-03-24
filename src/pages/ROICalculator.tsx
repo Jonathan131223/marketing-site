@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -296,6 +297,15 @@ export default function ROICalculator() {
 
   return (
     <>
+      <Helmet>
+        <title>SaaS Email ROI Calculator | DigiStorms</title>
+        <meta name="description" content="Calculate the ROI of lifecycle email marketing for your SaaS. See how onboarding and retention emails impact MRR, churn, and LTV." />
+        <link rel="canonical" href="https://digistorms.ai/roi-calculator" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="SaaS Email ROI Calculator | DigiStorms" />
+        <meta property="og:description" content="Calculate the ROI of lifecycle email marketing for your SaaS." />
+        <meta property="og:url" content="https://digistorms.ai/roi-calculator" />
+      </Helmet>
       <Navbar />
       <div className="min-h-screen bg-background">
       {/* Hero Section */}

@@ -9,6 +9,8 @@ import Contact from "./pages/Contact";
 import Manifesto from "./pages/Manifesto";
 import LifecycleScorePage from "./pages/LifecycleScorePage";
 import ROICalculator from "./pages/ROICalculator";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 
 const ScrollToTop = () => {
@@ -33,6 +35,8 @@ const App = () => (
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfService />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

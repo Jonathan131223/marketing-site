@@ -16,7 +16,7 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center space-x-8">
           <Link to="/" className="flex items-center">
             <img
-              src="/lovable-uploads/b264ff90-d48c-4ee1-8397-adaeb0142ce4.png"
+              src="/images/b264ff90-d48c-4ee1-8397-adaeb0142ce4.png"
               alt="DigiStorms"
               className="h-8"
             />
@@ -29,12 +29,12 @@ export const Navbar: React.FC = () => {
             >
               Library
             </a>
-            <a
-              href="https://library.digistorms.ai/blog"
+            <Link
+              to="/blog"
               className="text-sm text-gray-700 hover:text-gray-900 font-medium transition-colors"
             >
               Blog
-            </a>
+            </Link>
             <Link
               to="/pricing"
               className="text-sm text-gray-700 hover:text-gray-900 font-medium transition-colors"
@@ -99,13 +99,13 @@ export const Navbar: React.FC = () => {
           >
             Library
           </a>
-          <a
-            href="https://library.digistorms.ai/blog"
+          <Link
+            to="/blog"
             className="block px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
             onClick={() => setMobileOpen(false)}
           >
             Blog
-          </a>
+          </Link>
           <Link
             to="/pricing"
             className="block px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"

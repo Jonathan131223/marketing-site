@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Sparkles } from "lucide-react";
 
 export const Footer: React.FC = () => {
   return (
@@ -11,7 +10,7 @@ export const Footer: React.FC = () => {
             <div className="mb-4">
               <a href="https://digistorms.ai">
                 <img
-                  src="/lovable-uploads/b264ff90-d48c-4ee1-8397-adaeb0142ce4.png"
+                  src="/images/b264ff90-d48c-4ee1-8397-adaeb0142ce4.png"
                   alt="DigiStorms"
                   className="h-8 mb-4"
                 />
@@ -86,13 +85,12 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="https://library.digistorms.ai/"
-                  className="text-gray-600 hover:text-gray-900 transition-colors flex items-center gap-1"
+                <Link
+                  to="/blog"
+                  className="text-gray-600 hover:text-gray-900 transition-colors"
                 >
-                  Library{" "}
-                  <Sparkles className="w-3 h-3 text-purple-400 opacity-70" />
-                </a>
+                  Blog
+                </Link>
               </li>
               <li>
                 <Link
@@ -109,14 +107,6 @@ export const Footer: React.FC = () => {
                 >
                   ROI Calculator
                 </Link>
-              </li>
-              <li>
-                <a
-                  href="https://library.digistorms.ai/blog"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
-                >
-                  Blog
-                </a>
               </li>
             </ul>
           </div>

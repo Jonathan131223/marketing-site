@@ -1,6 +1,14 @@
 import { createRoot } from "react-dom/client";
+import { HelmetProvider } from "react-helmet-async";
 import App from "./App";
 import "./index.css";
+import "@fontsource/instrument-sans/400.css";
+import "@fontsource/instrument-sans/500.css";
+import "@fontsource/instrument-sans/600.css";
+import "@fontsource/instrument-sans/700.css";
+import "@fontsource/kalam/300.css";
+import "@fontsource/kalam/400.css";
+import "@fontsource/kalam/700.css";
 
 const TRACKING_QUERY_KEYS = new Set([
   "_gl",
@@ -30,4 +38,8 @@ function cleanTrackingQueryParams(): void {
 
 cleanTrackingQueryParams();
 
-createRoot(document.getElementById("root")!).render(<App />);
+createRoot(document.getElementById("root")!).render(
+  <HelmetProvider>
+    <App />
+  </HelmetProvider>
+);

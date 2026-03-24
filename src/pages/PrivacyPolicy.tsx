@@ -1,9 +1,16 @@
+import { Helmet } from "react-helmet-async";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
 const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Privacy Policy | DigiStorms</title>
+        <meta name="description" content="Read the DigiStorms privacy policy. Learn how we collect, use, and protect your data." />
+        <link rel="canonical" href="https://digistorms.ai/privacy" />
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
       <Navbar />
       <div className="container mx-auto px-4 py-16 max-w-4xl">
         <div className="prose prose-lg mx-auto">

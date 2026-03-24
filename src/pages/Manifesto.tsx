@@ -1,112 +1,216 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { appUrl } from "@/config/appUrl";
-import manifestoImage from "@/assets/manifesto_image.png";
+import mascotHome from "@/assets/mascots/home.png";
 
-const ArrowBullet: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+interface ArrowBulletProps {
+  title: string;
+  description?: string;
+}
+
+const ArrowBullet: React.FC<ArrowBulletProps> = ({ title, description }) => (
   <div className="flex items-start gap-3">
     <svg className="mt-1 w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M5 12h14M13 5l7 7-7 7" stroke="#754bdd" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
-    <div className="text-lg text-gray-700">{children}</div>
+    <div>
+      <p className="text-lg text-gray-800 font-semibold">{title}</p>
+      {description && <p className="text-base text-gray-600 mt-1">{description}</p>}
+    </div>
   </div>
+);
+
+const ManifestoSection: React.FC<{ title: string; items: ArrowBulletProps[] }> = ({ title, items }) => (
+  <section className="mb-20">
+    <h2 className="text-2xl lg:text-3xl font-semibold text-gray-900 mb-8">{title}</h2>
+    <div className="space-y-6">
+      {items.map((item, i) => (
+        <ArrowBullet key={i} title={item.title} description={item.description} />
+      ))}
+    </div>
+  </section>
 );
 
 const Manifesto: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50">
+      <Helmet>
+        <title>The DigiStorms Manifesto — Turn Onboarding Into Revenue</title>
+        <meta name="description" content="The DigiStorms manifesto. We believe onboarding is your growth engine. Discover how we map, build, and run lifecycle email systems that move users from signup to upgrade." />
+        <link rel="canonical" href="https://digistorms.ai/manifesto" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="The DigiStorms Manifesto — Turn Onboarding Into Revenue" />
+        <meta property="og:description" content="We believe onboarding is your growth engine. Discover how we map, build, and run lifecycle email systems that move users from signup to upgrade." />
+        <meta property="og:url" content="https://digistorms.ai/manifesto" />
+      </Helmet>
       <Navbar />
       <main className="relative overflow-hidden">
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-1/4 w-72 h-72 bg-purple-100/30 rounded-full blur-3xl" />
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-100/20 rounded-full blur-3xl" />
         </div>
 
         <div className="max-w-4xl mx-auto px-6 py-16 relative z-10">
+
+          {/* Header */}
           <div className="text-center mb-20">
             <h1 className="text-3xl lg:text-5xl font-semibold text-black mb-6 leading-tight">
-              The <span className="text-black">DigiStorms</span> Manifesto
+              The DigiStorms Manifesto
             </h1>
-            <h2 className="text-xl lg:text-2xl font-medium text-gray-700 mb-8">
-              High-performing emails, made effortless.
-            </h2>
+            <p className="text-xl lg:text-2xl font-medium text-gray-600">
+              Turn onboarding into revenue. Automatically.
+            </p>
           </div>
 
-          <section className="mb-20">
-            <h2 className="text-3xl font-semibold text-gray-900 mb-8">What we refuse to accept</h2>
-            <div className="space-y-4">
-              <ArrowBullet><strong>Weeks to ship:</strong> Great onboarding shouldn't take a sprint and a stand-up to send.</ArrowBullet>
-              <ArrowBullet><strong>Tool soup:</strong> One place for copy, another for design, a third for sends—context lost, momentum gone.</ArrowBullet>
-              <ArrowBullet><strong>Pretty-but-broken:</strong> Emails that look perfect in Figma and fall apart in inboxes.</ArrowBullet>
-              <ArrowBullet><strong>Brand drift:</strong> Inconsistent colors, tone, and structure that dilute trust.</ArrowBullet>
-              <ArrowBullet><strong>Guesswork:</strong> "Let's try this layout" instead of using patterns that actually convert.</ArrowBullet>
-            </div>
-          </section>
+          {/* What we refuse to accept */}
+          <ManifestoSection
+            title="What we refuse to accept"
+            items={[
+              {
+                title: "Users signing up… and disappearing.",
+                description: "Half of your users never come back — not because your product is bad, but because no one guides them.",
+              },
+              {
+                title: "Onboarding built on guesswork.",
+                description: "Random sequences, generic emails, no clear path to value.",
+              },
+              {
+                title: "One-size-fits-all messaging.",
+                description: "Every user gets the same emails, regardless of what they do.",
+              },
+              {
+                title: "Manual lifecycle work.",
+                description: "Teams stitching flows together with tools, docs, and assumptions.",
+              },
+              {
+                title: "Missed moments.",
+                description: "Users stall, reach milestones, or churn — and nothing happens.",
+              },
+            ]}
+          />
 
-          <section className="mb-20">
-            <h2 className="text-3xl font-semibold text-gray-900 mb-8">What we believe</h2>
-            <div className="space-y-4">
-              <ArrowBullet><strong>Speed is strategy.</strong> Momentum beats meetings. Minutes to draft, not weeks to debate.</ArrowBullet>
-              <ArrowBullet><strong>Patterns win.</strong> Proven, conversion-backed layouts &gt; reinventing the wheel each send.</ArrowBullet>
-              <ArrowBullet><strong>Precision matters.</strong> Rendering right across clients is table stakes, not a nice-to-have.</ArrowBullet>
-              <ArrowBullet><strong>Brand first.</strong> Every touchpoint should feel unmistakably "you."</ArrowBullet>
-              <ArrowBullet><strong>AI is a partner.</strong> It accelerates the work; you own the judgment and voice.</ArrowBullet>
-              <ArrowBullet><strong>Start simple, scale smart.</strong> Clarity beats complexity—especially in onboarding.</ArrowBullet>
-              <ArrowBullet><strong>Learning compounding.</strong> Every send should teach the next one something.</ArrowBullet>
-            </div>
-          </section>
+          {/* What we believe */}
+          <ManifestoSection
+            title="What we believe"
+            items={[
+              {
+                title: "Onboarding is your growth engine.",
+                description: "Activation drives everything: retention, expansion, revenue.",
+              },
+              {
+                title: "Timing beats volume.",
+                description: "The right message at the right moment matters more than more emails.",
+              },
+              {
+                title: "Behavior is the signal.",
+                description: "What users do should dictate what happens next.",
+              },
+              {
+                title: "Systems beat sequences.",
+                description: "Onboarding isn't a list of emails — it's a journey.",
+              },
+              {
+                title: "AI should remove the work, not the thinking.",
+                description: "It handles the heavy lifting. You stay in control.",
+              },
+              {
+                title: "Clarity wins.",
+                description: "Users don't need more features — they need direction.",
+              },
+            ]}
+          />
 
-          <section className="mb-20">
-            <h2 className="text-3xl font-semibold text-gray-900 mb-8">Our promise to teams</h2>
-            <div className="space-y-4">
-              <ArrowBullet><strong>From idea to email in minutes.</strong> Answer a few practical prompts → get nine on-brand, conversion-ready drafts.</ArrowBullet>
-              <ArrowBullet><strong>Designs that deliver.</strong> Code that's built for real inboxes, not just Dribbble shots.</ArrowBullet>
-              <ArrowBullet><strong>Copy that carries weight.</strong> Inspired by 1,000+ B2B SaaS emails from companies who've done the work.</ArrowBullet>
-              <ArrowBullet><strong>Your brand, everywhere.</strong> Colors, logos, tone—stitched into every variant, automatically.</ArrowBullet>
-              <ArrowBullet><strong>Own your stack.</strong> Export clean HTML, take it to any ESP, keep full control.</ArrowBullet>
-            </div>
-          </section>
+          {/* Our promise to teams */}
+          <ManifestoSection
+            title="Our promise to teams"
+            items={[
+              {
+                title: "From signup to upgrade, handled.",
+                description: "DigiStorms maps your onboarding journey and builds the system that moves users forward.",
+              },
+              {
+                title: "Emails that follow behavior.",
+                description: "Messages trigger based on what users actually do — not arbitrary schedules.",
+              },
+              {
+                title: "No more guessing.",
+                description: "Your lifecycle is generated from your product, not assumptions.",
+              },
+              {
+                title: "Launch in minutes.",
+                description: "Enter your website → get a complete onboarding flow → go live.",
+              },
+              {
+                title: "Control everything.",
+                description: "Edit, adjust, and shape the experience — the system adapts with you.",
+              },
+            ]}
+          />
 
-          <section className="mb-20">
-            <h2 className="text-3xl font-semibold text-gray-900 mb-8">How we build (so you can move faster)</h2>
-            <div className="space-y-4">
-              <ArrowBullet><strong>Research over vibes.</strong> We study what top SaaS teams actually send—and why it works.</ArrowBullet>
-              <ArrowBullet><strong>Guardrails, not cages.</strong> You choose the use case; we shape options that win.</ArrowBullet>
-              <ArrowBullet><strong>Delivery obsessed.</strong> Rendering, accessibility, image weight, dark mode—we sweat the invisible details.</ArrowBullet>
-              <ArrowBullet><strong>Transparent roadmap.</strong> We build in public and ship relentlessly.</ArrowBullet>
-            </div>
-          </section>
+          {/* How we build */}
+          <ManifestoSection
+            title="How we build (so you don't have to)"
+            items={[
+              {
+                title: "Product-first thinking.",
+                description: "We start from how users reach value — not from templates.",
+              },
+              {
+                title: "Behavior-driven by default.",
+                description: "Every flow is tied to real user actions.",
+              },
+              {
+                title: "Simple on the surface.",
+                description: "Powerful underneath — no complexity exposed.",
+              },
+              {
+                title: "Ship fast. Improve continuously.",
+                description: "Your onboarding evolves as your product grows.",
+              },
+            ]}
+          />
 
+          {/* Who we're for */}
           <section className="mb-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-semibold text-gray-900 mb-8">Who we're for</h2>
-                <div className="space-y-4 text-lg text-gray-700">
-                  <p>Founders and marketers who'd rather <strong>ship</strong> than storyboard.</p>
-                  <p>Teams who want <strong>onboarding emails that convert now</strong>, not after a rebrand.</p>
-                  <p>Anyone who believes lifecycle emails are a growth lever—not busywork.</p>
+                <h2 className="text-2xl lg:text-3xl font-semibold text-gray-900 mb-8">Who we're for</h2>
+                <div className="space-y-5">
+                  <ArrowBullet title="Founders who want activation, not just signups." />
+                  <ArrowBullet title="Teams tired of building onboarding flows manually." />
+                  <ArrowBullet title="SaaS companies that know lifecycle = revenue." />
                 </div>
               </div>
               <div className="flex justify-center lg:justify-end">
-                <img src={manifestoImage} alt="Stormy Character" className="w-90 h-auto max-h-[350px]" />
+                <img
+                  src={mascotHome}
+                  alt="DigiStorms mascot"
+                  className="w-full max-w-xs h-auto"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             </div>
           </section>
+
         </div>
 
-        <section className="pb-12 rounded-3xl">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-4xl font-semibold text-gray-900 mb-4">No strategy? No problem.</h2>
-            <p className="text-xl text-gray-600 mb-8">We've done the hard part — just pick a use case and go.</p>
-            <a
-              href={appUrl("/email-sequence-generator")}
-              className="inline-block bg-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-purple-700 transition-all"
+        {/* CTA */}
+        <section className="pb-20 px-6">
+          <div className="max-w-2xl mx-auto text-center bg-white rounded-3xl shadow-sm border border-gray-100 px-8 py-14">
+            <h2 className="text-3xl font-semibold text-gray-900 mb-3">No onboarding system? No problem.</h2>
+            <p className="text-lg text-gray-600 mb-8">We map it, build it, and run it for you.</p>
+            <Link
+              to="/"
+              className="inline-block bg-[#754bdd] text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-[#6340c4] transition-colors"
             >
-              Start in the app →
-            </a>
+              Generate my onboarding emails →
+            </Link>
           </div>
         </section>
+
       </main>
       <Footer />
     </div>
