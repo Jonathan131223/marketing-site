@@ -199,7 +199,7 @@ const Manifesto: React.FC = () => {
 
         {/* CTA */}
         <section className="pb-20 px-6">
-          <div className="max-w-2xl mx-auto text-center bg-white rounded-3xl shadow-sm border border-gray-100 px-8 py-14">
+          <div className="max-w-2xl mx-auto text-center bg-white rounded-3xl border border-gray-100 px-8 py-14">
             <h2 className="text-3xl font-semibold text-gray-900 mb-3">No onboarding system? No problem.</h2>
             <p className="text-lg text-gray-600 mb-8">We map it, build it, and run it for you.</p>
             <Link
