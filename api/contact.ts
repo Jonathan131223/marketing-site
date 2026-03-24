@@ -16,9 +16,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   try {
     await resend.emails.send({
-      from: "DigiStorms Contact <noreply@digistorms.ai>",
+      from: "DigiStorms Contact <noreply@digistorms.com>",
       to: "jonathan@digistorms.ai",
-      reply_to: sender_email,
+      replyTo: sender_email,
       subject: `New contact from ${sender_name}${sender_company ? ` (${sender_company})` : ""}`,
       text: [
         `Name: ${sender_name}`,
