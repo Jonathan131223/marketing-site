@@ -416,7 +416,7 @@ const BlogPost: React.FC = () => {
 
               {/* CTA */}
               <div className="mt-10 pt-10 border-t border-gray-100">
-                <div className="bg-gradient-to-br from-violet-50 to-indigo-50 rounded-2xl p-8 text-center">
+                <div className="bg-violet-50 rounded-2xl p-8 text-center">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
                     Ready to automate your onboarding emails?
                   </h3>

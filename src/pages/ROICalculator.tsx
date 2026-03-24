@@ -570,7 +570,7 @@ export default function ROICalculator() {
                   </div>
 
                   {activationResults && parseFloat(activationResults.roi) >= 0 && (
-                    <div className="mt-8 p-6 bg-gradient-to-br from-primary/5 to-primary/10 rounded-lg border border-primary/20 text-center">
+                    <div className="mt-8 p-6 bg-primary/5 rounded-lg border border-primary/20 text-center">
                       <h3 className="text-xl font-semibold text-foreground mb-3">
                         Want help actually getting this lift?
                       </h3>
@@ -835,7 +835,7 @@ export default function ROICalculator() {
                   </div>
 
                   {retentionResults && parseFloat(retentionResults.roi) >= 0 && (
-                    <div className="mt-8 p-6 bg-gradient-to-br from-primary/5 to-primary/10 rounded-lg border border-primary/20 text-center">
+                    <div className="mt-8 p-6 bg-primary/5 rounded-lg border border-primary/20 text-center">
                       <h3 className="text-xl font-semibold text-foreground mb-3">
                         Want help actually getting this lift?
                       </h3>
@@ -1086,7 +1086,7 @@ export default function ROICalculator() {
                   </div>
 
                   {expansionResults && parseFloat(expansionResults.roi) >= 0 && (
-                    <div className="mt-8 p-6 bg-gradient-to-br from-primary/5 to-primary/10 rounded-lg border border-primary/20 text-center">
+                    <div className="mt-8 p-6 bg-primary/5 rounded-lg border border-primary/20 text-center">
                       <h3 className="text-xl font-semibold text-foreground mb-3">
                         Want help actually getting this lift?
                       </h3>

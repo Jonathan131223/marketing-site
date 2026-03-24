@@ -35,7 +35,7 @@ const ManifestoSection: React.FC<{ title: string; items: ArrowBulletProps[] }> =
 
 const Manifesto: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50">
+    <div className="min-h-screen bg-white">
       <Helmet>
         <title>The DigiStorms Manifesto — Turn Onboarding Into Revenue</title>
         <meta name="description" content="The DigiStorms manifesto. We believe onboarding is your growth engine. Discover how we map, build, and run lifecycle email systems that move users from signup to upgrade." />

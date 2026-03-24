@@ -27,10 +27,10 @@ export const HowItWorksSection: React.FC = () => {
   };
 
   return (
-    <section className="py-16 md:py-32 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative overflow-hidden">
+    <section className="py-16 md:py-32 bg-slate-50 relative overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-1/4 w-72 h-72 bg-gradient-to-r from-purple-100/20 to-blue-100/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-1/4 w-80 h-80 bg-gradient-to-r from-blue-100/20 to-cyan-100/20 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-1/4 w-72 h-72 bg-purple-100/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-1/4 w-80 h-80 bg-blue-100/20 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
@@ -48,7 +48,7 @@ export const HowItWorksSection: React.FC = () => {
               className="bg-white/90 backdrop-blur-sm rounded-2xl border border-gray-200/60 shadow-sm hover:shadow-lg hover:border-indigo-200 transition-all duration-300 p-6 md:p-8 group"
             >
               <div className="relative mb-6 inline-flex">
-                <div className="w-11 h-11 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg shadow-indigo-500/25">
+                <div className="w-11 h-11 bg-[#754bdd] text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg shadow-indigo-500/25">
                   {step.number}
                 </div>
               </div>

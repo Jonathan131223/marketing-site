@@ -88,7 +88,7 @@ const plans = [
     ],
     buttonText: "Book a Call →",
     buttonStyle: "bg-white text-primary hover:bg-primary/10",
-    cardStyle: "bg-gradient-to-br from-primary to-primary/90 text-white shadow-xl",
+    cardStyle: "bg-primary text-white shadow-xl",
     highlight: false,
     isPremium: true,
     link: () => CALENDLY_CONCIERGE_URL,
@@ -97,7 +97,7 @@ const plans = [
 
 const Pricing: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-gray-50">
       <Helmet>
         <title>Pricing - DigiStorms AI Email Generator for SaaS</title>
         <meta name="description" content="Simple, transparent pricing for DigiStorms. Generate personalized lifecycle email sequences for your SaaS product." />

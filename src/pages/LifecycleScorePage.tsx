@@ -227,7 +227,7 @@ export default function LifecycleScorePage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
+        <section className="py-16 md:py-24 bg-primary/5">
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
               <div className="flex-1">

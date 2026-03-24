@@ -74,7 +74,7 @@ export const WebsiteStep: React.FC<WebsiteStepProps> = ({
             )}
           </div>
 
-          <div className="bg-gradient-to-r from-purple-50/50 to-blue-50/50 rounded-2xl p-6 border border-purple-100/50">
+          <div className="bg-purple-50/50 rounded-2xl p-6 border border-purple-100/50">
             <h3 className="font-semibold text-slate-800 mb-4">What we'll do:</h3>
             <ul className="space-y-3">
               <li className="flex items-center gap-3">
