@@ -24,12 +24,12 @@ const Blog: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>Blog - Email Marketing for SaaS | DigiStorms</title>
-        <meta name="description" content="Best practices, examples, and guides for SaaS lifecycle email marketing. Welcome emails, onboarding sequences, newsletters, and more." />
+        <title>Blog - Onboarding Emails & Lifecycle Marketing | DigiStorms</title>
+        <meta name="description" content="Guides, examples, and best practices for SaaS onboarding emails. Learn how to activate users, reduce churn, and turn signups into paying customers." />
         <link rel="canonical" href="https://digistorms.ai/blog" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Blog - Email Marketing for SaaS | DigiStorms" />
-        <meta property="og:description" content="Best practices, examples, and guides for SaaS lifecycle email marketing." />
+        <meta property="og:title" content="Blog - Onboarding Emails & Lifecycle Marketing | DigiStorms" />
+        <meta property="og:description" content="Guides, examples, and best practices for SaaS onboarding emails. Learn how to activate users, reduce churn, and turn signups into paying customers." />
         <meta property="og:url" content="https://digistorms.ai/blog" />
         <meta property="og:image" content="https://digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png" />
         <meta name="twitter:card" content="summary_large_image" />

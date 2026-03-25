@@ -50,17 +50,17 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>DigiStorms.ai - AI Lifecycle Email Generator for SaaS Companies</title>
-        <meta name="description" content="Generate high-converting lifecycle emails with AI. DigiStorms creates personalized onboarding and retention email sequences for SaaS companies." />
+        <title>DigiStorms.ai - AI Agent for Onboarding Emails</title>
+        <meta name="description" content="DigiStorms is your AI agent for onboarding emails. It analyzes your product, maps the user journey, and builds a full lifecycle email system — automatically." />
         <link rel="canonical" href="https://digistorms.ai/" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="DigiStorms.ai - AI Lifecycle Email Generator for SaaS Companies" />
-        <meta property="og:description" content="Generate high-converting lifecycle emails with AI. DigiStorms creates personalized onboarding and retention email sequences for SaaS companies." />
+        <meta property="og:title" content="DigiStorms.ai - AI Agent for Onboarding Emails" />
+        <meta property="og:description" content="DigiStorms is your AI agent for onboarding emails. It analyzes your product, maps the user journey, and builds a full lifecycle email system — automatically." />
         <meta property="og:url" content="https://digistorms.ai/" />
         <meta property="og:image" content="https://digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="DigiStorms.ai - AI Lifecycle Email Generator for SaaS Companies" />
-        <meta name="twitter:description" content="Generate high-converting lifecycle emails with AI for SaaS." />
+        <meta name="twitter:title" content="DigiStorms.ai - AI Agent for Onboarding Emails" />
+        <meta name="twitter:description" content="DigiStorms is your AI agent for onboarding emails. Analyzes your product and builds a full lifecycle email system automatically." />
         <meta name="twitter:image" content="https://digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",

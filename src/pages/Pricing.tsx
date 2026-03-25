@@ -99,12 +99,12 @@ const Pricing: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Helmet>
-        <title>Pricing - DigiStorms AI Email Generator for SaaS</title>
-        <meta name="description" content="Simple, transparent pricing for DigiStorms. Generate personalized lifecycle email sequences for your SaaS product." />
+        <title>Pricing - DigiStorms AI Agent for Onboarding Emails</title>
+        <meta name="description" content="Simple, transparent pricing for DigiStorms. Get your full onboarding email system built and running — from signup to upgrade." />
         <link rel="canonical" href="https://digistorms.ai/pricing" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Pricing - DigiStorms AI Email Generator for SaaS" />
-        <meta property="og:description" content="Simple, transparent pricing for DigiStorms. Generate personalized lifecycle email sequences for your SaaS product." />
+        <meta property="og:title" content="Pricing - DigiStorms AI Agent for Onboarding Emails" />
+        <meta property="og:description" content="Simple, transparent pricing for DigiStorms. Get your full onboarding email system built and running — from signup to upgrade." />
         <meta property="og:url" content="https://digistorms.ai/pricing" />
       </Helmet>
       <Navbar />
