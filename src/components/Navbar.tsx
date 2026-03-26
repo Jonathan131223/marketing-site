@@ -16,7 +16,7 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center space-x-8">
           <Link to="/" className="flex items-center">
             <img
-              src="/images/logo.webp"
+              src="/images/b264ff90-d48c-4ee1-8397-adaeb0142ce4.png"
               alt="DigiStorms"
               className="h-8"
               width="400"
