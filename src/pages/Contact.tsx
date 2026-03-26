@@ -76,7 +76,7 @@ const Contact = () => {
       </Helmet>
       <Navbar />
       
-      <div className="container mx-auto px-4 py-16">
+      <main className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
@@ -172,7 +172,7 @@ const Contact = () => {
             </Card>
           </div>
         </div>
-      </div>
+      </main>
 
       <Footer />
     </div>

@@ -13,7 +13,7 @@ const TermsOfService = () => {
         <meta name="robots" content="noindex, follow" />
       </Helmet>
       <Navbar />
-      <div className="container mx-auto px-4 py-16 max-w-4xl">
+      <main className="container mx-auto px-4 py-16 max-w-4xl">
         <div className="prose prose-lg mx-auto">
           <h1 className="text-4xl font-bold text-foreground mb-8">
             DigiStorms — Terms of Service (ToS)
@@ -106,7 +106,7 @@ const TermsOfService = () => {
             </section>
           </div>
         </div>
-      </div>
+      </main>
       <Footer />
     </div>
   );

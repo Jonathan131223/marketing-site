@@ -260,7 +260,7 @@ export const ROISectionHomepage: React.FC = () => {
                   }
                 }}
               >
-                <SelectTrigger className="w-full">
+                <SelectTrigger className="w-full" aria-label="Expected conversion rate lift">
                   <SelectValue placeholder="Select your situation" />
                 </SelectTrigger>
                 <SelectContent>
@@ -288,7 +288,7 @@ export const ROISectionHomepage: React.FC = () => {
                 value={inputs.serviceCost}
                 onValueChange={(v) => set("serviceCost", v)}
               >
-                <SelectTrigger className="w-full">
+                <SelectTrigger className="w-full" aria-label="DigiStorms plan">
                   <SelectValue placeholder="Select a plan" />
                 </SelectTrigger>
                 <SelectContent>
@@ -314,7 +314,7 @@ export const ROISectionHomepage: React.FC = () => {
             </button>
           </div>
 
-          <p className="text-xs text-gray-400 text-center mt-4">
+          <p className="text-xs text-gray-600 text-center mt-4">
             These are estimates for illustration only based on the numbers you provide.
           </p>
         </div>

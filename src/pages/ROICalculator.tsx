@@ -307,7 +307,7 @@ export default function ROICalculator() {
         <meta property="og:url" content="https://digistorms.ai/roi-calculator" />
       </Helmet>
       <Navbar />
-      <div className="min-h-screen bg-background">
+      <main className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="py-12 px-4">
         <div className="container mx-auto max-w-4xl text-center">
@@ -414,7 +414,7 @@ export default function ROICalculator() {
                             }
                           }}
                         >
-                          <SelectTrigger className="w-full">
+                          <SelectTrigger id="estimatedLift" className="w-full">
                             <SelectValue placeholder="Select your current situation" />
                           </SelectTrigger>
                           <SelectContent>
@@ -679,7 +679,7 @@ export default function ROICalculator() {
                             }
                           }}
                         >
-                          <SelectTrigger className="w-full">
+                          <SelectTrigger id="expectedChurnReduction" className="w-full">
                             <SelectValue placeholder="Select your current situation" />
                           </SelectTrigger>
                           <SelectContent>
@@ -944,7 +944,7 @@ export default function ROICalculator() {
                             }
                           }}
                         >
-                          <SelectTrigger className="w-full">
+                          <SelectTrigger id="expansionLift" className="w-full">
                             <SelectValue placeholder="Select your current situation" />
                           </SelectTrigger>
                           <SelectContent>
@@ -1109,7 +1109,7 @@ export default function ROICalculator() {
           </Tabs>
         </div>
       </section>
-      </div>
+      </main>
       <Footer />
     </>
   );
