@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { appUrl } from "@/config/appUrl";
 import { Menu, X } from "lucide-react";
 
@@ -16,19 +16,23 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center space-x-8">
           <Link to="/" className="flex items-center">
             <img
-              src="/images/b264ff90-d48c-4ee1-8397-adaeb0142ce4.png"
+              src="/images/logo.webp"
               alt="DigiStorms"
               className="h-8"
+              width="283"
+              height="64"
             />
           </Link>
 
           <div className="hidden md:flex items-center space-x-6">
-            <a
-              href="https://library.digistorms.ai/"
-              className="text-sm text-gray-700 hover:text-gray-900 font-medium transition-colors"
+            <NavLink
+              to="/library"
+              className={({ isActive }) =>
+                `text-sm font-medium transition-colors ${isActive ? "text-[#754BDD]" : "text-gray-700 hover:text-gray-900"}`
+              }
             >
               Library
-            </a>
+            </NavLink>
             <Link
               to="/blog"
               className="text-sm text-gray-700 hover:text-gray-900 font-medium transition-colors"
@@ -92,13 +96,15 @@ export const Navbar: React.FC = () => {
 
       {mobileOpen && (
         <div className="md:hidden border-t border-gray-100 bg-white px-4 py-4 space-y-1">
-          <a
-            href="https://library.digistorms.ai/"
-            className="block px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
+          <NavLink
+            to="/library"
+            className={({ isActive }) =>
+              `block px-3 py-2.5 text-sm font-medium rounded-lg transition-colors hover:bg-gray-50 ${isActive ? "text-[#754BDD]" : "text-gray-700 hover:text-gray-900"}`
+            }
             onClick={() => setMobileOpen(false)}
           >
             Library
-          </a>
+          </NavLink>
           <Link
             to="/blog"
             className="block px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"

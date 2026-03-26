@@ -8,21 +8,21 @@ const VisualArea: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 
 const columns = [
   {
-    image: "/onboarding-pain/card-1-left.png",
+    image: "/onboarding-pain/card-1-left.webp",
     imageAlt: "Five users receiving the same welcome message",
     title: "Generic emails don't convert",
     description:
       "One-size-fits-all onboarding rarely helps users reach the milestones that drive activation.",
   },
   {
-    image: "/onboarding-pain/card-3-right.png",
+    image: "/onboarding-pain/card-3-right.webp",
     imageAlt: "User journey funnel showing Signup, Setup, First value, Upgrade with most users abandoning between Setup and First value",
     title: "Users never reach value",
     description:
       "New signups lose momentum fast when there's no clear path to their first successful outcome.",
   },
   {
-    image: "/onboarding-pain/card-2-middle.png",
+    image: "/onboarding-pain/card-2-middle.webp",
     imageAlt: "User completed setup but no email was sent - missed opportunity",
     title: "Missed moments kill revenue",
     description:
@@ -56,6 +56,9 @@ export const OnboardingPainSection: React.FC = () => {
                   src={col.image}
                   alt={col.imageAlt}
                   className="w-full h-auto max-h-[302px] object-contain block mx-auto"
+                  width="800"
+                  height="800"
+                  loading="lazy"
                 />
               </VisualArea>
 

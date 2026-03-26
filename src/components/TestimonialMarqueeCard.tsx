@@ -23,7 +23,7 @@ export function TestimonialMarqueeCard({
     <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm hover:shadow-md transition-shadow w-56 flex-shrink-0">
       <div className="flex items-center gap-2 mb-3 min-h-[2.8rem]">
         {logoUrl ? (
-          <img src={logoUrl} alt={company} className={`${logoSizeClass} rounded-lg object-contain`} />
+          <img src={logoUrl} alt={company} className={`${logoSizeClass} rounded-lg object-contain`} width="64" height="64" />
         ) : (
           <div className={`h-7 w-7 rounded-lg ${color} flex items-center justify-center text-white font-bold text-xs`}>
             {company.charAt(0)}
@@ -38,7 +38,7 @@ export function TestimonialMarqueeCard({
         <p className="text-gray-600 text-sm leading-relaxed mb-4">&quot;{quote}&quot;</p>
         <div className="flex items-center gap-2">
           {avatarUrl ? (
-            <img src={avatarUrl} alt={author} className="h-10 w-10 rounded-full object-cover" />
+            <img src={avatarUrl} alt={author} className="h-10 w-10 rounded-full object-cover" width="40" height="40" loading="lazy" />
           ) : (
             <div className="h-10 w-10 rounded-full bg-gray-200 flex items-center justify-center">
               <span className="text-xs font-medium text-gray-600">

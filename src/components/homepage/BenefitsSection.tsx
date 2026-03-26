@@ -13,21 +13,21 @@ const benefits: Benefit[] = [
     title: "Turn signups into paying customers",
     description:
       "DigiStorms detects your product's activation milestones and sends the right onboarding emails at the right moment to move users toward upgrade.",
-    visual: <img src="/benefits/benefit-2-new.png" alt="Journey from signup to upgrade" className="w-full h-auto object-contain" />,
+    visual: <img src="/benefits/benefit-2-new.webp" alt="Journey from signup to upgrade" className="w-full h-auto object-contain" width="900" height="450" loading="lazy" />,
     visualLeft: false,
   },
   {
     title: "Launch onboarding in minutes",
     description:
       "Just enter your website. DigiStorms analyzes your product, generates your onboarding sequence, and lets you edit everything before going live.",
-    visual: <img src="/benefits/benefit-1-new.png" alt="Analyzing website to detect upgrade path" className="w-full h-auto object-contain" />,
+    visual: <img src="/benefits/benefit-1-new.webp" alt="Analyzing website to detect upgrade path" className="w-full h-auto object-contain" width="900" height="450" loading="lazy" />,
     visualLeft: true,
   },
   {
     title: "Runs automatically based on user behavior",
     description:
       "Emails trigger when users sign up, reach milestones, or stall in onboarding, so every user gets the right message at the right time.",
-    visual: <img src="/benefits/benefit-3-new.png" alt="Event triggers firing in real time" className="w-full h-auto object-contain" />,
+    visual: <img src="/benefits/benefit-3-new.webp" alt="Event triggers firing in real time" className="w-full h-auto object-contain" width="900" height="450" loading="lazy" />,
     visualLeft: false,
   },
 ];

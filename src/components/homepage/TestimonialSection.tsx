@@ -1,6 +1,6 @@
 import React from "react";
-import drewPriceImage from "@/assets/testimonials/drew-price.png";
-import grammarlyLogo from "@/assets/logos/grammarly-logo.png";
+import drewPriceImage from "@/assets/testimonials/drew-price.webp";
+import grammarlyLogo from "@/assets/logos/grammarly-logo.webp";
 
 export const TestimonialSection: React.FC = () => {
   return (
@@ -27,6 +27,8 @@ export const TestimonialSection: React.FC = () => {
                 src={drewPriceImage}
                 alt="Drew Price"
                 className="w-11 h-11 rounded-full object-cover flex-shrink-0"
+                width="44"
+                height="44"
               />
               <div>
                 <p className="text-sm font-semibold text-gray-900">
@@ -67,6 +69,8 @@ export const TestimonialSection: React.FC = () => {
                   src={grammarlyLogo}
                   alt="Grammarly"
                   className="w-auto opacity-80"
+                  width="400"
+                  height="134"
                   style={{ height: '6.3rem' }}
                 />
               </div>
