@@ -13,8 +13,8 @@ export const Footer: React.FC = () => {
                   src="/images/logo.webp"
                   alt="DigiStorms"
                   className="h-8 mb-4"
-                  width="283"
-                  height="64"
+                  width="400"
+                  height="113"
                 />
               </a>
             </div>
