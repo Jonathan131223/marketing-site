@@ -12,10 +12,17 @@ export const Navbar: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // On the Library homepage, hide the navbar search bar until the user
-  // has scrolled past the hero section (which already has its own search bar).
+  // Show the search bar only on library pages.
+  // On the library homepage specifically, hide it until the user has scrolled
+  // past the hero section (which already has its own search bar).
   useEffect(() => {
+    const isLibraryPage = location.pathname.startsWith("/library");
     const isLibraryHome = location.pathname === "/library";
+
+    if (!isLibraryPage) {
+      setShowSearch(false);
+      return;
+    }
 
     if (!isLibraryHome) {
       setShowSearch(true);
@@ -73,18 +80,20 @@ export const Navbar: React.FC = () => {
             </div>
           </div>
 
-          {/* Center: search bar — hidden on Library hero, shown after scroll */}
-          <div className="hidden md:flex flex-1 justify-center">
-            <button
-              onClick={() => setSearchOpen(true)}
-              className={`flex items-center gap-2 w-full max-w-xs px-4 py-2 rounded-xl border border-gray-200 bg-gray-50 text-sm text-gray-400 hover:border-[#754BDD] hover:bg-white transition-all text-left ${
-                showSearch ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-              }`}
-            >
-              <Search className="h-4 w-4 flex-shrink-0" />
-              <span>Search brands or keywords…</span>
-            </button>
-          </div>
+          {/* Center: search bar — library pages only */}
+          {location.pathname.startsWith("/library") && (
+            <div className="hidden md:flex flex-1 justify-center">
+              <button
+                onClick={() => setSearchOpen(true)}
+                className={`flex items-center gap-2 w-full max-w-xs px-4 py-2 rounded-xl border border-gray-200 bg-gray-50 text-sm text-gray-400 hover:border-[#754BDD] hover:bg-white transition-all text-left ${
+                  showSearch ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+                }`}
+              >
+                <Search className="h-4 w-4 flex-shrink-0" />
+                <span>Search brands or keywords…</span>
+              </button>
+            </div>
+          )}
 
           {/* Right: CTAs */}
           <div className="hidden md:flex items-center gap-3 flex-shrink-0">
