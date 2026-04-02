@@ -80,9 +80,9 @@ export const Navbar: React.FC = () => {
             </div>
           </div>
 
-          {/* Center: search bar — library pages only */}
-          {location.pathname.startsWith("/library") && (
-            <div className="hidden md:flex flex-1 justify-center">
+          {/* Center: search bar (library pages only) — spacer always present to push CTAs right */}
+          <div className="hidden md:flex flex-1 justify-center">
+            {location.pathname.startsWith("/library") && (
               <button
                 onClick={() => setSearchOpen(true)}
                 className={`flex items-center gap-2 w-full max-w-xs px-4 py-2 rounded-xl border border-gray-200 bg-gray-50 text-sm text-gray-400 hover:border-[#754BDD] hover:bg-white transition-all text-left ${
@@ -92,8 +92,8 @@ export const Navbar: React.FC = () => {
                 <Search className="h-4 w-4 flex-shrink-0" />
                 <span>Search brands or keywords…</span>
               </button>
-            </div>
-          )}
+            )}
+          </div>
 
           {/* Right: CTAs */}
           <div className="hidden md:flex items-center gap-3 flex-shrink-0">
