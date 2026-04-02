@@ -5,16 +5,14 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-white text-gray-900 border-t border-gray-200">
       <div className="container mx-auto px-4 py-16 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           <div className="col-span-1 md:col-span-1">
             <div className="mb-4">
               <a href="https://digistorms.ai">
                 <img
                   src="/images/b264ff90-d48c-4ee1-8397-adaeb0142ce4.png"
                   alt="DigiStorms"
-                  className="h-8 mb-4"
-                  width="400"
-                  height="113"
+                  className="h-8 w-auto mb-4"
                 />
               </a>
             </div>
@@ -59,6 +57,46 @@ export const Footer: React.FC = () => {
                 </svg>
               </a>
             </div>
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-lg mb-4 text-gray-900">
+              Library
+            </h3>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  to="/library"
+                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                >
+                  Email Library
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/library/brands"
+                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                >
+                  Browse by Brand
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/library/usecases"
+                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                >
+                  Browse by Use Case
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/library/tags"
+                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                >
+                  Browse by Tag
+                </Link>
+              </li>
+            </ul>
           </div>
 
           <div>

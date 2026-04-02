@@ -150,6 +150,9 @@ const BlogPost: React.FC = () => {
   const description = frontmatter.description || postMeta?.description || "";
   const date = frontmatter.date || postMeta?.date || "";
   const heroImage = postMeta?.heroImage;
+  const ogImage = heroImage
+    ? `https://digistorms.ai${heroImage}`
+    : "https://digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png";
 
   const formattedDate = date
     ? new Date(date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })
@@ -164,18 +167,18 @@ const BlogPost: React.FC = () => {
         <meta property="og:type" content="article" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        {heroImage && <meta property="og:image" content={`https://digistorms.ai${heroImage}`} />}
+        <meta property="og:image" content={ogImage} />
         <meta property="og:url" content={`https://digistorms.ai/blog/${slug}`} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        {heroImage && <meta name="twitter:image" content={`https://digistorms.ai${heroImage}`} />}
+        <meta name="twitter:image" content={ogImage} />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "BlogPosting",
           "headline": title,
           "description": description,
-          "image": heroImage ? `https://digistorms.ai${heroImage}` : undefined,
+          "image": ogImage,
           "url": `https://digistorms.ai/blog/${slug}`,
           "datePublished": date,
           "author": {

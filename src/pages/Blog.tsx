@@ -36,6 +36,18 @@ const Blog: React.FC = () => {
         <meta name="twitter:title" content="Blog - Email Marketing for SaaS | DigiStorms" />
         <meta name="twitter:description" content="Best practices, examples, and guides for SaaS lifecycle email marketing." />
         <meta name="twitter:image" content="https://digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          "name": "DigiStorms Blog",
+          "url": "https://digistorms.ai/blog",
+          "description": "Guides, examples, and best practices for SaaS lifecycle emails.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "DigiStorms",
+            "url": "https://digistorms.ai"
+          }
+        })}</script>
       </Helmet>
       <Navbar />
       <main className="pt-28 pb-24">

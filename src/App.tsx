@@ -17,6 +17,9 @@ const LibraryEmail = lazy(() => import("./pages/LibraryEmail"));
 const LibraryBrand = lazy(() => import("./pages/LibraryBrand"));
 const LibraryTag = lazy(() => import("./pages/LibraryTag"));
 const LibraryUseCase = lazy(() => import("./pages/LibraryUseCase"));
+const LibraryBrands = lazy(() => import("./pages/LibraryBrands"));
+const LibraryUseCases = lazy(() => import("./pages/LibraryUseCases"));
+const LibraryTags = lazy(() => import("./pages/LibraryTags"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const ScrollToTop = () => {
@@ -49,6 +52,9 @@ const App = () => (
           <Route path="/library/brand/:slug" element={<LibraryBrand />} />
           <Route path="/library/tag/:slug" element={<LibraryTag />} />
           <Route path="/library/usecase/:slug" element={<LibraryUseCase />} />
+          <Route path="/library/brands" element={<LibraryBrands />} />
+          <Route path="/library/usecases" element={<LibraryUseCases />} />
+          <Route path="/library/tags" element={<LibraryTags />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>

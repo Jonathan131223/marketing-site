@@ -106,6 +106,11 @@ const Pricing: React.FC = () => {
         <meta property="og:title" content="Pricing - DigiStorms AI Agent for Onboarding Emails" />
         <meta property="og:description" content="Simple, transparent pricing for DigiStorms. Get your full onboarding email system built and running — from signup to upgrade." />
         <meta property="og:url" content="https://digistorms.ai/pricing" />
+        <meta property="og:image" content="https://digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Pricing — DigiStorms AI Lifecycle Email Agent" />
+        <meta name="twitter:description" content="Simple, transparent pricing for DigiStorms. Get your full onboarding email system built and running — from signup to upgrade." />
+        <meta name="twitter:image" content="https://digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png" />
       </Helmet>
       <Navbar />
       <main>
