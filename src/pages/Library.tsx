@@ -599,15 +599,12 @@ const Library: React.FC = () => {
                   {card.label}
                 </span>
                 {/* Email card */}
-                <div
-                  className="rounded-xl overflow-hidden border border-gray-100/80 shadow-sm bg-white group-hover:shadow-md transition-shadow"
-                  style={{ aspectRatio: "3/4" }}
-                >
+                <div className="rounded-xl overflow-hidden border border-gray-100/80 shadow-sm bg-white group-hover:shadow-md transition-shadow">
                   <img
                     src={card.img}
                     alt={card.label}
                     loading="lazy"
-                    className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-300"
+                    className="w-full h-auto block"
                   />
                 </div>
               </Link>

@@ -25,7 +25,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </h1>
 
           <p className="text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto" style={{ fontSize: "18px" }}>
-            DigiStorms is your AI onboarding agent. It analyzes your product, builds your activation emails, and runs them based on real user behavior.
+            DigiStorms is an AI onboarding agent. It tracks user behavior, sends the right emails at the right time, and automatically moves users from signup to paid.
           </p>
 
           <div className="max-w-md mx-auto space-y-3">

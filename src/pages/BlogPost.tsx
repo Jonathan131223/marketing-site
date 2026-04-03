@@ -9,6 +9,21 @@ import { blogPosts } from "@/content/blog";
 import { ArrowLeft, Calendar, UserRound } from "lucide-react";
 import jonProfile from "@/assets/founder/jonathan-profile.png";
 
+interface LibraryEmail {
+  id: string;
+  slug: string;
+  subject: string;
+  thumb: string;
+  tags: string[];
+  brand: string;
+}
+
+interface LibraryBrand {
+  slug: string;
+  name: string;
+  logo: string;
+}
+
 const articleModules = import.meta.glob("../content/blog/*.md", { query: "?raw", import: "default" });
 
 function parseFrontmatter(raw: string): { data: Record<string, string>; content: string } {
@@ -67,6 +82,19 @@ const BlogPost: React.FC = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   const postMeta = blogPosts.find((p) => p.slug === slug);
+
+  const [libraryEmails, setLibraryEmails] = useState<LibraryEmail[]>([]);
+  const [libraryBrands, setLibraryBrands] = useState<LibraryBrand[]>([]);
+
+  useEffect(() => {
+    Promise.all([
+      fetch("/data/library/emails.json").then((r) => r.json()),
+      fetch("/data/library/brands.json").then((r) => r.json()),
+    ]).then(([emails, brands]) => {
+      setLibraryEmails(emails);
+      setLibraryBrands(brands);
+    }).catch(() => {/* silently ignore — section stays hidden */});
+  }, []);
 
   useEffect(() => {
     const loadArticle = async () => {
@@ -392,9 +420,9 @@ const BlogPost: React.FC = () => {
                     height={64}
                   />
                   <p className="text-gray-700 text-sm leading-relaxed">
-                    Thanks for reading all the way! I'm Jonathan, founder and CEO of DigiStorms,
-                    specializing in helping SaaS founders grow with lifecycle email marketing.
-                    Feel free to connect with me on{" "}
+                    Thanks for reading all the way! I'm Jonathan, founder of DigiStorms,
+                    specializing in helping SaaS companies activate, retain, and expand their users
+                    with emails. Feel free to connect with me on{" "}
                     <a
                       href="https://www.linkedin.com/in/jonathan-digistorms/"
                       target="_blank"
@@ -402,38 +430,92 @@ const BlogPost: React.FC = () => {
                       className="text-violet-600 hover:underline"
                     >
                       LinkedIn
-                    </a>{" "}
-                    or{" "}
-                    <a
-                      href="https://x.com/jonathanbrnd"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-violet-600 hover:underline"
-                    >
-                      X
                     </a>
                     . See you 👋
                   </p>
                 </div>
               </div>
 
-              {/* CTA */}
-              <div className="mt-10 pt-10 border-t border-gray-100">
-                <div className="bg-violet-50 rounded-2xl p-8 text-center">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    Ready to automate your onboarding emails?
-                  </h3>
-                  <p className="text-gray-500 mb-6">
-                    DigiStorms analyzes your product and generates a full onboarding sequence — in minutes.
-                  </p>
-                  <a
-                    href="https://app.digistorms.ai"
-                    className="inline-flex items-center gap-2 bg-violet-600 hover:bg-violet-700 text-white font-medium px-6 py-3 rounded-xl transition-colors"
-                  >
-                    Try DigiStorms free
-                  </a>
-                </div>
-              </div>
+              {/* Library email examples */}
+              {(() => {
+                const tags = postMeta?.libraryTags ?? [];
+                if (!tags.length || !libraryEmails.length) return null;
+
+                const matched = libraryEmails
+                  .filter((e) => e.tags.some((t) => tags.includes(t)))
+                  .slice(0, 3);
+
+                if (matched.length < 1) return null;
+
+                const primaryTag = tags[0];
+
+                return (
+                  <div className="mt-10 pt-10 border-t border-gray-100">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                      See it in the wild
+                    </h3>
+                    <p className="text-sm text-gray-500 mb-5">
+                      Real examples from our library — see how top SaaS brands do it.
+                    </p>
+                    <div className="grid grid-cols-3 gap-3">
+                      {matched.map((email) => {
+                        const brand = libraryBrands.find((b) => b.slug === email.brand);
+                        const matchingTag = email.tags.find((t) => tags.includes(t)) ?? email.tags[0];
+                        return (
+                          <Link
+                            key={email.slug}
+                            to={`/library/email/${email.slug}`}
+                            className="group flex flex-col rounded-xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow bg-white"
+                          >
+                            {/* Thumbnail */}
+                            <div className="aspect-[4/3] overflow-hidden bg-[#F3EEFF]">
+                              {email.thumb ? (
+                                <img
+                                  src={email.thumb}
+                                  alt={email.subject}
+                                  loading="lazy"
+                                  className="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-300"
+                                />
+                              ) : (
+                                <div className="w-full h-full flex items-center justify-center">
+                                  <span className="text-3xl opacity-20">✉️</span>
+                                </div>
+                              )}
+                            </div>
+                            {/* Card body */}
+                            <div className="p-3 flex flex-col gap-1.5">
+                              {brand && (
+                                <div className="flex items-center gap-1.5">
+                                  {brand.logo && (
+                                    <img src={brand.logo} alt={brand.name} className="w-3.5 h-3.5 object-contain flex-shrink-0" />
+                                  )}
+                                  <span className="text-[11px] text-gray-400 font-medium truncate">{brand.name}</span>
+                                </div>
+                              )}
+                              <p className="text-xs font-semibold text-gray-900 leading-snug line-clamp-2">
+                                {email.subject}
+                              </p>
+                              {matchingTag && (
+                                <span className="self-start text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#F3EEFF] text-[#754BDD]">
+                                  {matchingTag.replace(/-/g, " ")}
+                                </span>
+                              )}
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                    <div className="mt-4 text-right">
+                      <Link
+                        to={`/library/tag/${primaryTag}`}
+                        className="text-sm font-medium text-violet-600 hover:underline"
+                      >
+                        Browse all examples →
+                      </Link>
+                    </div>
+                  </div>
+                );
+              })()}
             </div>
 
           </div>
@@ -491,6 +573,24 @@ const BlogPost: React.FC = () => {
             </div>
           );
         })()}
+
+        {/* CTA */}
+        <div className="container mx-auto px-4 max-w-6xl mt-16 mb-4">
+          <div className="bg-violet-50 rounded-2xl p-8 text-center">
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              Ready to automate your onboarding emails?
+            </h3>
+            <p className="text-gray-500 mb-6">
+              DigiStorms analyzes your product and generates a full onboarding sequence — in minutes.
+            </p>
+            <a
+              href="https://app.digistorms.ai"
+              className="inline-flex items-center gap-2 bg-violet-600 hover:bg-violet-700 text-white font-medium px-6 py-3 rounded-xl transition-colors"
+            >
+              Try DigiStorms free
+            </a>
+          </div>
+        </div>
       </main>
       <Footer />
     </div>

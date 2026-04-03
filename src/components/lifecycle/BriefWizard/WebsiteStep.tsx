@@ -56,7 +56,7 @@ export const WebsiteStep: React.FC<WebsiteStepProps> = ({
                 onChange={(e) => onWebsiteUrlChange(e.target.value)}
                 onBlur={() => setTouched(true)}
                 placeholder="https://yourcompany.com"
-                className={`w-full pl-12 pr-5 py-4 border rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 focus:outline-none transition-all duration-200 bg-white/50 backdrop-blur-sm text-slate-900 placeholder-slate-400 shadow-sm hover:shadow-md ${
+                className={`w-full pl-12 pr-5 py-4 border rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 focus:outline-none transition-all duration-200 bg-white text-slate-900 placeholder-slate-400 shadow-sm hover:shadow-md ${
                   showError ? "border-red-300" : "border-slate-200"
                 }`}
                 disabled={isAnalyzing}

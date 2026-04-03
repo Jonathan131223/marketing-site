@@ -226,7 +226,7 @@ const LibraryEmail: React.FC = () => {
       <main className="pt-20 pb-24">
 
         {/* ── Breadcrumb ── */}
-        <div className="container mx-auto px-4 max-w-6xl mb-8">
+        <div className="container mx-auto px-4 max-w-7xl mb-8">
           <nav aria-label="Breadcrumb">
             <ol className="flex items-center gap-2 text-sm text-gray-400">
               <li>
@@ -256,23 +256,23 @@ const LibraryEmail: React.FC = () => {
         </div>
 
         {/* ── Main layout ── */}
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-10 items-start">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-8 items-start">
 
             {/* ── Left: email screenshot ── */}
-            <div className="space-y-4">
+            <div>
               <div className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm bg-gray-50">
                 <img
                   src={email.thumb}
                   alt={`${email.subject} — email screenshot from ${brandName}`}
-                  className="w-full object-cover object-top"
+                  className="w-full block"
                   loading="eager"
                 />
               </div>
             </div>
 
             {/* ── Right: metadata sidebar ── */}
-            <div className="lg:sticky lg:top-24 space-y-6">
+            <div className="lg:sticky lg:top-20 space-y-5">
 
               {/* Brand */}
               {brand && (
@@ -402,7 +402,7 @@ const LibraryEmail: React.FC = () => {
         </div>
 
         {/* ── Related sections ── */}
-        <div className="container mx-auto px-4 max-w-6xl mt-16 space-y-12">
+        <div className="container mx-auto px-4 max-w-7xl mt-16 space-y-12">
 
           {relatedEmails.length > 0 && (
             <div className="border-t border-gray-100 pt-12">

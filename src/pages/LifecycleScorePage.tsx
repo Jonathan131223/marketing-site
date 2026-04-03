@@ -14,74 +14,62 @@ import { ChevronDown, RotateCcw, ArrowRight, Calendar } from "lucide-react";
 const questions = [
   {
     id: 1,
-    question: "Do you send a welcome email within 5 minutes of a new user signing up?",
-    helper: "Fast welcome emails improve activation and trust.",
-    gapText: "No fast welcome email for new signups",
+    question: "Do you send a welcome email within minutes of someone signing up?",
+    helper: "The first email sets the tone. Fast, warm welcomes improve activation and reduce early drop-off.",
+    gapText: "No immediate welcome email for new signups",
   },
   {
     id: 2,
-    question: "Do you automatically email users who don't complete key setup within 24–48 hours?",
-    helper: "Activation nudges bring back users who stalled during onboarding.",
-    gapText: "No activation nudge when users stall",
-  },
-  {
-    id: 3,
-    question: "Do you have at least one email that highlights your main 'aha' moment or core value action?",
-    helper: "This is usually the action that predicts long-term retention.",
-    gapText: "No email focusing on your core value moment",
-  },
-  {
-    id: 4,
-    question: "Do you run a 3–5 email onboarding sequence for new free users?",
-    helper: "A sequence beats a single welcome email.",
+    question: "Do you send a structured onboarding sequence (3+ emails) guiding new users to their first win?",
+    helper: "A single welcome email isn't enough. A sequence walks users step by step toward the moment they get real value.",
     gapText: "No structured onboarding sequence",
   },
   {
+    id: 3,
+    question: "Do you automatically nudge users who sign up but never complete a key action (e.g. creating a project, connecting an integration, inviting a teammate)?",
+    helper: "Most signups stall before they reach value. A well-timed nudge can double your activation rate.",
+    gapText: "No behavior-triggered nudge for incomplete setup",
+  },
+  {
+    id: 4,
+    question: "Do you send a follow-up email if a user ignores your first nudge and still hasn't re-engaged?",
+    helper: "One nudge isn't enough. A short 2–3 email follow-up sequence recovers users who would otherwise ghost.",
+    gapText: "No follow-up sequence after the first nudge",
+  },
+  {
     id: 5,
-    question: "Do you send emails when users hit usage or seat limits to encourage upgrades?",
-    helper: "Usage-based prompts are one of the easiest ways to drive expansion revenue.",
-    gapText: "No usage-/limit-based upgrade prompts",
+    question: "Do you email users when they hit a meaningful milestone — like their first project, their 10th action, or reaching a usage threshold?",
+    helper: "Milestone emails reinforce momentum, build emotional connection, and create natural moments to ask for referrals or upgrades.",
+    gapText: "No milestone celebration emails",
   },
   {
     id: 6,
-    question: "Do you email users when their product usage drops significantly for 7–14 days?",
-    helper: "Low usage is an early churn signal you can act on.",
-    gapText: "No pre-churn save sequence",
-  },
-  {
-    id: 7,
-    question: "Do you have a win-back email sequence for churned or cancelled customers?",
-    helper: "Many churned users will come back with the right offer or reminder.",
-    gapText: "No win-back sequence for churned users",
-  },
-  {
-    id: 8,
-    question: "Do you celebrate key milestones or ask happy users for reviews/referrals by email?",
-    helper: "Milestone and advocacy emails turn customers into promoters.",
-    gapText: "No milestone or advocacy emails",
+    question: "Do you send upgrade emails triggered by usage signals — like hitting limits, completing onboarding, or becoming a power user?",
+    helper: "Upgrade emails sent at the right moment — when a user just got value — convert far better than blanket campaigns.",
+    gapText: "No behavior-triggered upgrade emails",
   },
 ];
 
 // Score tier configuration
 const getTierInfo = (score: number) => {
-  if (score <= 2) {
+  if (score <= 1) {
     return {
-      label: "At Risk",
-      description: "Your lifecycle emails are leaving a lot of revenue on the table. You're likely missing key onboarding, retention, and expansion moments.",
+      label: "Leaking Users",
+      description: "Your onboarding is leaving a lot on the table. Most signups are probably not reaching value — and many are churning silently without you ever knowing.",
       mood: "worried",
       color: "text-red-500",
     };
-  } else if (score <= 5) {
+  } else if (score <= 4) {
     return {
-      label: "Room to Grow",
-      description: "You've covered some basics, but there are still big gaps in activation, retention, and expansion that could unlock more MRR.",
+      label: "Getting There",
+      description: "You've got some onboarding in place, but there are still meaningful gaps. A few targeted flows could meaningfully improve how many free users convert to paid.",
       mood: "neutral",
       color: "text-yellow-500",
     };
   } else {
     return {
-      label: "Lifecycle Pro",
-      description: "Nice work — you're ahead of most teams. With a few targeted improvements, you can squeeze even more revenue from your lifecycle.",
+      label: "Onboarding Pro",
+      description: "Strong work — your onboarding is more complete than most teams. A few final upgrades and you'll have a fully automated system moving users from signup to paid.",
       mood: "excited",
       color: "text-green-500",
     };
@@ -215,12 +203,12 @@ export default function LifecycleScorePage() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Helmet>
-        <title>SaaS Lifecycle Email Score | DigiStorms</title>
-        <meta name="description" content="Get a free lifecycle email score for your SaaS. Discover gaps in your onboarding, activation, and retention email sequences in minutes." />
+        <title>Check Your Onboarding Score | DigiStorms</title>
+        <meta name="description" content="See how well you onboard new users in 60 seconds. Discover gaps in your welcome, activation, milestone, and upgrade emails — and fix them automatically." />
         <link rel="canonical" href="https://digistorms.ai/lifecycle-score" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="SaaS Lifecycle Email Score | DigiStorms" />
-        <meta property="og:description" content="Get a free lifecycle email score for your SaaS. Discover gaps in your email sequences in minutes." />
+        <meta property="og:title" content="Check Your Onboarding Score | DigiStorms" />
+        <meta property="og:description" content="See how well you onboard new users in 60 seconds. Discover gaps in your welcome, activation, milestone, and upgrade emails." />
         <meta property="og:url" content="https://digistorms.ai/lifecycle-score" />
       </Helmet>
       <Navbar />
@@ -232,17 +220,17 @@ export default function LifecycleScorePage() {
             <div className="flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
               <div className="flex-1">
                 <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                  Check your SaaS Lifecycle Score in 60 seconds.
+                  Check your onboarding score in 60 seconds.
                 </h1>
                 <p className="text-lg text-muted-foreground mb-8">
-                  Answer a few questions to see how well your lifecycle emails support activation, retention, and expansion — and where DigiStorms can help you grow revenue.
+                  Answer 6 quick questions to see how well you welcome new users, celebrate milestones, nudge the ones who stall, follow up when they go quiet, and upgrade them at the right time.
                 </p>
                 <Button
                   size="lg"
                   onClick={scrollToQuiz}
                   className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg"
                 >
-                  Start the quiz
+                  Check my score
                   <ChevronDown className="ml-2 h-5 w-5" />
                 </Button>
               </div>
@@ -262,11 +250,11 @@ export default function LifecycleScorePage() {
                   <StormiCharacter mood={showResults ? tierInfo.mood as "worried" | "neutral" | "excited" : "curious"} />
                 </div>
                 <CardTitle className="text-2xl font-bold">
-                  {showResults ? "Your Lifecycle Score" : "Your Lifecycle Quiz"}
+                  {showResults ? "Your Onboarding Score" : "Your Onboarding Score"}
                 </CardTitle>
                 {!showResults && (
                   <p className="text-muted-foreground mt-2">
-                    Answer 8 quick yes/no questions about your lifecycle emails.
+                    Answer 6 quick yes/no questions about how you onboard new users.
                   </p>
                 )}
               </CardHeader>
@@ -329,7 +317,7 @@ export default function LifecycleScorePage() {
                       {/* Score display */}
                       <div className="text-center mb-8">
                         <div className={`text-6xl font-bold ${tierInfo.color} mb-2`}>
-                          {score} / 8
+                          {score} / 6
                         </div>
                         <div className={`text-2xl font-semibold ${tierInfo.color}`}>
                           {tierInfo.label}
@@ -361,7 +349,7 @@ export default function LifecycleScorePage() {
 
                       {/* Summary */}
                       <p className="text-muted-foreground mb-8 p-4 bg-muted/50 rounded-lg">
-                        These are all flows DigiStorms can generate for you in minutes — using emails inspired by the best SaaS companies in the world.
+                        DigiStorms can build every one of these flows for you automatically — welcome emails, nudges, milestone triggers, reactivation sequences, and upgrade emails — all based on real user behavior.
                       </p>
 
                       {/* CTAs */}
@@ -374,7 +362,7 @@ export default function LifecycleScorePage() {
                             size="lg"
                             className="w-full bg-purple-600 hover:bg-purple-700 text-white py-6 text-lg"
                           >
-                            Generate my first email
+                            Build my onboarding emails
                             <ArrowRight className="ml-2 h-5 w-5" />
                           </Button>
                         </a>

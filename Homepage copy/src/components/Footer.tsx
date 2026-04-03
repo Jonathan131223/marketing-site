@@ -19,11 +19,7 @@ export const Footer: React.FC = () => {
               </a>
             </div>
             <p className="text-gray-600 mb-4">
-              AI-generated lifecycle emails
-              <br />
-              for SaaS, built on what top
-              <br />
-              brands actually send.
+              The AI agent that moves your users from signup to paid.
             </p>
             <div className="flex space-x-4">
               <a

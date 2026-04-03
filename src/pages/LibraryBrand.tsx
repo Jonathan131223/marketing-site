@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useMemo, useCallback } from "react";
+import React, { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { X, Calendar, Tag } from "lucide-react";
+import { X, Calendar, Tag, ChevronLeft, ChevronRight } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import {
@@ -76,8 +76,12 @@ const LibraryBrand: React.FC = () => {
   const [brands, setBrands]       = useState<Brand[]>([]);
   const [tags, setTags]           = useState<TagType[]>([]);
   const [usecases, setUsecases]   = useState<UseCase[]>([]);
-  const [loading, setLoading]     = useState(true);
+  const [loading, setLoading]         = useState(true);
   const [journeyOpen, setJourneyOpen] = useState(false);
+  const [canScrollLeft, setCanScrollLeft]   = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     Promise.all([
@@ -133,16 +137,41 @@ const LibraryBrand: React.FC = () => {
       .filter(Boolean) as TagType[];
   }, [filteredEmails, tags]);
 
+  const scrollJourney = useCallback((dir: "left" | "right") => {
+    scrollRef.current?.scrollBy({ left: dir === "right" ? 300 : -300, behavior: "smooth" });
+  }, []);
+
+  const handleJourneyScroll = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 8);
+    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 8);
+  }, []);
+
   useEffect(() => {
     if (!journeyOpen) return;
-    const handler = (e: KeyboardEvent) => { if (e.key === "Escape") setJourneyOpen(false); };
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setJourneyOpen(false);
+      if (e.key === "ArrowRight") scrollJourney("right");
+      if (e.key === "ArrowLeft") scrollJourney("left");
+    };
     document.addEventListener("keydown", handler);
     return () => document.removeEventListener("keydown", handler);
-  }, [journeyOpen]);
+  }, [journeyOpen, scrollJourney]);
 
   useEffect(() => {
     document.body.style.overflow = journeyOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
+  }, [journeyOpen]);
+
+  // Initialise scroll-arrow visibility whenever the modal opens
+  useEffect(() => {
+    if (!journeyOpen) return;
+    const el = scrollRef.current;
+    if (!el) return;
+    el.scrollLeft = 0;
+    setCanScrollLeft(false);
+    setCanScrollRight(el.scrollWidth > el.clientWidth + 8);
   }, [journeyOpen]);
 
   useEffect(() => { window.scrollTo(0, 0); }, [slug]);
@@ -414,13 +443,13 @@ const LibraryBrand: React.FC = () => {
       {/* ── Journey modal ── */}
       {journeyOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4"
-          style={{ background: "rgba(0,0,0,0.4)", backdropFilter: "blur(6px)" }}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
+          style={{ background: "rgba(0,0,0,0.5)", backdropFilter: "blur(6px)" }}
           onClick={handleJourneyClose}
         >
           <div
             className="bg-white rounded-2xl shadow-2xl w-full flex flex-col"
-            style={{ maxWidth: 680, maxHeight: "85vh" }}
+            style={{ maxWidth: "min(90vw, 1100px)", maxHeight: "75vh" }}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal header */}
@@ -431,73 +460,133 @@ const LibraryBrand: React.FC = () => {
                 )}
                 <div>
                   <p className="text-xs text-gray-400 font-medium uppercase tracking-wide">Email Journey</p>
-                  <p className="font-semibold text-gray-900">{brand.name}</p>
+                  <p className="font-semibold text-gray-900">
+                    {brand.name}
+                    <span className="ml-2 text-xs font-normal text-gray-400">
+                      {journeyEmails.length} email{journeyEmails.length !== 1 ? "s" : ""}
+                    </span>
+                  </p>
                 </div>
               </div>
-              <button
-                onClick={handleJourneyClose}
-                className="p-2 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition-colors"
-                aria-label="Close journey modal"
-              >
-                <X className="h-5 w-5" />
-              </button>
+              <div className="flex items-center gap-2">
+                <p className="hidden sm:block text-xs text-gray-400 mr-1">Use ← → to navigate</p>
+                <button
+                  onClick={handleJourneyClose}
+                  className="p-2 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition-colors"
+                  aria-label="Close journey modal"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
             </div>
 
-            {/* Modal body */}
-            <div className="flex-1 overflow-y-auto px-6 py-4 space-y-2">
-              {journeyEmails.map((email, idx) => {
-                const uc = usecases.find((u) => u.slug === email.useCase);
-                const firstTagName = tags.find((t) => t.slug === email.tags[0])?.name;
-                return (
-                  <Link
-                    key={email.id}
-                    to={`/library/email/${email.slug}`}
-                    onClick={handleJourneyClose}
-                    className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors group"
-                  >
-                    <span className="text-xs font-semibold text-gray-300 w-5 text-right flex-shrink-0">
-                      {idx + 1}
-                    </span>
-                    <div className="w-12 flex-shrink-0 rounded-lg overflow-hidden border border-gray-100 bg-gray-50"
-                      style={{ height: 64 }}>
-                      {email.thumb ? (
-                        <img
-                          src={email.thumb}
-                          alt={`${email.subject} — email screenshot from ${brand.name}`}
-                          className="w-full h-full object-cover object-top"
-                          loading="lazy"
+            {/* Modal body: relative wrapper holds arrows + horizontal scroll */}
+            <div className="relative flex-1 overflow-hidden">
+
+              {/* Left arrow */}
+              {canScrollLeft && (
+                <button
+                  onClick={() => scrollJourney("left")}
+                  className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center text-gray-500 hover:text-[#754BDD] hover:border-[#754BDD] transition-colors"
+                  aria-label="Scroll left"
+                >
+                  <ChevronLeft className="h-5 w-5" />
+                </button>
+              )}
+
+              {/* Right arrow */}
+              {canScrollRight && (
+                <button
+                  onClick={() => scrollJourney("right")}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center text-gray-500 hover:text-[#754BDD] hover:border-[#754BDD] transition-colors"
+                  aria-label="Scroll right"
+                >
+                  <ChevronRight className="h-5 w-5" />
+                </button>
+              )}
+
+              {/* Horizontal scroll strip */}
+              <div
+                ref={scrollRef}
+                onScroll={handleJourneyScroll}
+                className="h-full overflow-x-auto flex flex-row gap-4 px-6 py-5"
+                style={{ scrollSnapType: "x mandatory", scrollbarWidth: "none" }}
+              >
+                {journeyEmails.map((email, idx) => {
+                  const uc = usecases.find((u) => u.slug === email.useCase);
+                  const firstTag = tags.find((t) => t.slug === email.tags[0]);
+                  return (
+                    <Link
+                      key={email.id}
+                      to={`/library/email/${email.slug}`}
+                      onClick={handleJourneyClose}
+                      className="flex-shrink-0 flex flex-col rounded-2xl border border-gray-100 bg-white overflow-hidden shadow-sm hover:shadow-md transition-shadow group"
+                      style={{ width: 240, scrollSnapAlign: "start" }}
+                    >
+                      {/* Metadata */}
+                      <div className="p-4 flex flex-col gap-2 border-b border-gray-50">
+                        <div className="flex items-center justify-between gap-2">
+                          <span
+                            className="text-[11px] font-bold px-2 py-0.5 rounded-full text-white flex-shrink-0"
+                            style={{ backgroundColor: PURPLE }}
+                          >
+                            #{idx + 1}
+                          </span>
+                          {email.setDate && (
+                            <span className="flex items-center gap-1 text-[11px] text-gray-400 truncate">
+                              <Calendar className="h-3 w-3 flex-shrink-0" />
+                              {formatDate(email.setDate)}
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-sm font-semibold text-gray-900 group-hover:text-[#754BDD] transition-colors line-clamp-2 leading-snug">
+                          {email.subject || email.templateTitle}
+                        </p>
+                        <div className="flex flex-wrap items-center gap-1.5 min-h-[20px]">
+                          {uc && (
+                            <span className="text-[11px] px-2 py-0.5 rounded-full bg-[#F3EEFF] text-[#754BDD] font-medium whitespace-nowrap">
+                              {uc.name}
+                            </span>
+                          )}
+                          {firstTag && (
+                            <span className="flex items-center gap-1 text-[11px] text-gray-400 truncate">
+                              <Tag className="h-3 w-3 flex-shrink-0" />
+                              {firstTag.name}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Timeline connector */}
+                      <div className="relative flex items-center px-4 py-2 flex-shrink-0">
+                        <div className="flex-1 h-px bg-gray-100" />
+                        <div
+                          className="w-2.5 h-2.5 rounded-full border-2 bg-white flex-shrink-0 mx-1"
+                          style={{ borderColor: PURPLE }}
                         />
-                      ) : (
-                        <div className="w-full h-full bg-[#F3EEFF]" />
-                      )}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-sm font-semibold text-gray-900 group-hover:text-[#754BDD] transition-colors line-clamp-1 leading-snug mb-1">
-                        {email.subject || email.templateTitle}
-                      </p>
-                      <div className="flex flex-wrap items-center gap-1.5">
-                        {email.setDate && (
-                          <span className="flex items-center gap-1 text-xs text-gray-400">
-                            <Calendar className="h-3 w-3" />
-                            {formatDate(email.setDate)}
-                          </span>
-                        )}
-                        {uc && (
-                          <span className="text-xs px-2 py-0.5 rounded-full bg-[#F3EEFF] text-[#754BDD] font-medium">
-                            {uc.name}
-                          </span>
-                        )}
-                        {firstTagName && (
-                          <span className="flex items-center gap-1 text-xs text-gray-400">
-                            <Tag className="h-3 w-3" />
-                            {firstTagName}
-                          </span>
+                        <div className="flex-1 h-px bg-gray-100" />
+                      </div>
+
+                      {/* Email thumbnail */}
+                      <div className="flex-1 overflow-hidden bg-[#F3EEFF]" style={{ minHeight: 180 }}>
+                        {email.thumb ? (
+                          <img
+                            src={email.thumb}
+                            alt={`${email.subject} — email screenshot from ${brand.name}`}
+                            className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-300"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center">
+                            <span className="text-4xl opacity-20">✉️</span>
+                          </div>
                         )}
                       </div>
-                    </div>
-                  </Link>
-                );
-              })}
+                    </Link>
+                  );
+                })}
+              </div>
+
             </div>
           </div>
         </div>

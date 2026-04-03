@@ -19,7 +19,14 @@ const PLANS = [
   { label: "Business: 5,000 users/month ($59/mo)", value: "59", users: 5000 },
 ];
 
-export const ROISectionHomepage: React.FC = () => {
+interface ROISectionHomepageProps {
+  /** When set, called instead of assigning window.location (e.g. to show a notice modal). */
+  onBeforeNavigateToApp?: (href: string) => void;
+}
+
+export const ROISectionHomepage: React.FC<ROISectionHomepageProps> = ({
+  onBeforeNavigateToApp,
+}) => {
   const [inputs, setInputs] = useState({
     currentConversionRate: "",
     freeUsersPerMonth: "",
@@ -95,11 +102,15 @@ export const ROISectionHomepage: React.FC = () => {
   const handleUrlSubmit = () => {
     const trimmed = urlInput.trim();
     if (!trimmed) return;
+    const go = (href: string) => {
+      if (onBeforeNavigateToApp) onBeforeNavigateToApp(href);
+      else window.location.href = href;
+    };
     try {
       const normalized = normalizeWebsiteUrl(trimmed);
-      window.location.href = appUrl(`/email-sequence-generator?analyze=1&url=${encodeURIComponent(normalized)}`);
+      go(appUrl(`/email-sequence-generator?analyze=1&url=${encodeURIComponent(normalized)}`));
     } catch {
-      window.location.href = appUrl("/email-sequence-generator");
+      go(appUrl("/email-sequence-generator"));
     }
   };
 

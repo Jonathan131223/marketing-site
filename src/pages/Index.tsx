@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/homepage/HeroSection";
@@ -9,6 +9,7 @@ import { FAQSection } from "@/components/homepage/FAQSection";
 import { FounderStorySection } from "@/components/homepage/FounderStorySection";
 import { OnboardingPainSection } from "@/components/homepage/OnboardingPainSection";
 import { Footer } from "@/components/Footer";
+import { RebuildNoticeModal } from "@/components/RebuildNoticeModal";
 import { TestimonialSection } from "@/components/homepage/TestimonialSection";
 import { WebsiteStep } from "@/components/lifecycle/BriefWizard/WebsiteStep";
 import { appUrl } from "@/config/appUrl";
@@ -17,17 +18,35 @@ import { normalizeWebsiteUrl } from "@/lib/normalizeWebsiteUrl";
 const Index = () => {
   const [heroWebsiteUrl, setHeroWebsiteUrl] = useState("");
   const [sequenceWebsiteUrl, setSequenceWebsiteUrl] = useState("");
-  const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [analysisError, setAnalysisError] = useState<string | null>(null);
+  const [rebuildModalOpen, setRebuildModalOpen] = useState(false);
+  const pendingHrefRef = useRef<string | null>(null);
+
+  const queueAppRedirect = (href: string) => {
+    pendingHrefRef.current = href;
+    setRebuildModalOpen(true);
+  };
+
+  const closeRebuildModal = () => {
+    setRebuildModalOpen(false);
+    pendingHrefRef.current = null;
+  };
+
+  const continueToApp = () => {
+    const h = pendingHrefRef.current;
+    if (h) window.location.href = h;
+  };
 
   const redirectToAnalyze = (url: string) => {
     const trimmed = url.trim();
     if (!trimmed) return;
     try {
       const normalized = normalizeWebsiteUrl(trimmed);
-      window.location.href = appUrl(`/email-sequence-generator?analyze=1&url=${encodeURIComponent(normalized)}`);
+      queueAppRedirect(
+        appUrl(`/email-sequence-generator?analyze=1&url=${encodeURIComponent(normalized)}`)
+      );
     } catch {
-      window.location.href = appUrl("/email-sequence-generator");
+      queueAppRedirect(appUrl("/email-sequence-generator"));
     }
   };
 
@@ -36,14 +55,14 @@ const Index = () => {
   const handleSequenceWebsiteAnalyze = () => {
     const trimmed = sequenceWebsiteUrl.trim();
     if (!trimmed) return;
-    setIsAnalyzing(true);
     setAnalysisError(null);
     try {
       const normalized = normalizeWebsiteUrl(trimmed);
-      window.location.href = appUrl(`/email-sequence-generator?analyze=1&url=${encodeURIComponent(normalized)}`);
+      queueAppRedirect(
+        appUrl(`/email-sequence-generator?analyze=1&url=${encodeURIComponent(normalized)}`)
+      );
     } catch {
       setAnalysisError("Failed to open. Please try again.");
-      setIsAnalyzing(false);
     }
   };
 
@@ -169,7 +188,7 @@ const Index = () => {
         <BenefitsSection />
         <TestimonialSection />
         <BrandInspirationSection />
-        <ROISectionHomepage />
+        <ROISectionHomepage onBeforeNavigateToApp={queueAppRedirect} />
         <FounderStorySection />
         <FAQSection />
 
@@ -223,7 +242,7 @@ const Index = () => {
                 websiteUrl={sequenceWebsiteUrl}
                 onWebsiteUrlChange={setSequenceWebsiteUrl}
                 onAnalyze={handleSequenceWebsiteAnalyze}
-                isAnalyzing={isAnalyzing}
+                isAnalyzing={false}
                 error={analysisError}
               />
             </div>
@@ -232,6 +251,12 @@ const Index = () => {
       </main>
 
       <Footer />
+
+      <RebuildNoticeModal
+        open={rebuildModalOpen}
+        onClose={closeRebuildModal}
+        onContinue={continueToApp}
+      />
     </div>
   );
 };

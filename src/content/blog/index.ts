@@ -7,6 +7,8 @@ export interface BlogPost {
   readTime: string;
   thumbnail?: string;
   heroImage?: string;
+  /** Library tag slugs used to surface related email examples at the bottom of the article */
+  libraryTags?: string[];
 }
 
 export const blogPosts: BlogPost[] = [
@@ -19,6 +21,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "12 min read",
     thumbnail: "/blog/saas-welcome-email/banner.webp",
     heroImage: "/blog/saas-welcome-email/banner.webp",
+    libraryTags: ["welcome-free-users", "welcome-paid-users"],
   },
   {
     slug: "product-launch-email",
@@ -29,6 +32,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "10 min read",
     thumbnail: "/blog/product-launch-email/banner.webp",
     heroImage: "/blog/product-launch-email/banner.webp",
+    libraryTags: ["product-update", "feature-update", "new-feature-nudge"],
   },
   {
     slug: "saas-newsletter",
@@ -39,6 +43,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "9 min read",
     thumbnail: "/blog/saas-newsletter/banner.webp",
     heroImage: "/blog/saas-newsletter/banner.webp",
+    libraryTags: ["newsletter"],
   },
   {
     slug: "webinar-email-sequence",
@@ -49,6 +54,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "11 min read",
     thumbnail: "/blog/webinar-email-sequence/banner.webp",
     heroImage: "/blog/webinar-email-sequence/banner.webp",
+    libraryTags: ["webinar-invitation", "webinar-confirmation"],
   },
   {
     slug: "webinar-follow-up-email",
@@ -59,6 +65,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "8 min read",
     thumbnail: "/blog/webinar-follow-up-email/banner.webp",
     heroImage: "/blog/webinar-follow-up-email/banner.webp",
+    libraryTags: ["webinar-recording", "follow-up"],
   },
   {
     slug: "webinar-emails",
@@ -69,6 +76,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "9 min read",
     thumbnail: "/blog/webinar-emails/banner.webp",
     heroImage: "/blog/webinar-emails/banner.webp",
+    libraryTags: ["webinar-invitation", "webinar-confirmation", "webinar-recording"],
   },
   {
     slug: "milestone-emails",
@@ -79,6 +87,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "8 min read",
     thumbnail: "/blog/milestone-emails/banner.webp",
     heroImage: "/blog/milestone-emails/banner.webp",
+    libraryTags: ["milestone-reached", "usage-summary", "year-in-review"],
   },
   {
     slug: "upgrade-emails",
@@ -89,6 +98,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "9 min read",
     thumbnail: "/blog/upgrade-emails/banner.webp",
     heroImage: "/blog/upgrade-emails/banner.webp",
+    libraryTags: ["upgrade-cta", "trial-expired-upgrade", "trial-expiration-warning"],
   },
   {
     slug: "dunning-emails",
@@ -99,5 +109,6 @@ export const blogPosts: BlogPost[] = [
     readTime: "7 min read",
     thumbnail: "/blog/dunning-emails/banner.webp",
     heroImage: "/blog/dunning-emails/banner.webp",
+    libraryTags: ["payment-declined", "payment-reminder", "billing-reminder"],
   },
 ];
