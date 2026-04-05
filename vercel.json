@@ -1,11 +1,10 @@
 {
-  "cleanUrls": true,
   "outputDirectory": "dist",
   "rewrites": [
     { "handle": "filesystem" },
     {
       "source": "/((?!api/).*)",
-      "destination": "/index"
+      "destination": "/index.html"
     }
   ]
 }
