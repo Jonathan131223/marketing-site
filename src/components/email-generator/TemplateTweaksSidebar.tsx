@@ -187,7 +187,7 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
     ];
 
     return (
-      <div className="flex p-1 bg-gray-100 rounded-lg w-full gap-1">
+      <div className="flex p-1 bg-slate-100 rounded-lg w-full gap-1">
         {alignments.map((align) => {
           const Icon = align.icon;
           const isSelected = value === align.value || (!value && align.value === "center");
@@ -197,7 +197,7 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
               onClick={() => onChange(align.value)}
               className={`flex-1 flex items-center justify-center py-1.5 px-2 rounded-md text-sm transition-all duration-200 ${isSelected
                 ? "bg-white shadow-sm text-blue-600 font-medium"
-                : "text-gray-500 hover:text-gray-700 hover:bg-gray-200/50"
+                : "text-slate-500 hover:text-slate-700 hover:bg-slate-200/50"
                 }`}
               title={align.label}
             >
@@ -223,7 +223,7 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
   }) => {
     return (
       <div
-        className={`grid gap-1.5 p-1 bg-gray-100 rounded-lg`}
+        className={`grid gap-1.5 p-1 bg-slate-100 rounded-lg`}
         style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}
       >
         {options.map((option) => {
@@ -234,7 +234,7 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
               onClick={() => onChange(option.value)}
               className={`py-1.5 px-2 rounded-md text-xs font-medium transition-all duration-200 ${isSelected
                 ? "bg-white shadow-sm text-blue-600 border border-blue-200"
-                : "text-gray-600 hover:text-gray-800 hover:bg-gray-200/50"
+                : "text-slate-600 hover:text-slate-800 hover:bg-slate-200/50"
                 }`}
             >
               {option.label}
@@ -255,7 +255,7 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
     <div className={compact ? "relative" : "relative mt-[110px]"}>
       <div className={compact ? "h-fit" : "bg-white rounded-lg shadow-lg p-4 h-fit"}>
         {!compact && (
-          <h3 className="text-base font-semibold text-gray-900 mb-4">
+          <h3 className="text-base font-semibold text-slate-900 mb-4">
             Templates Editor
           </h3>
         )}
@@ -265,21 +265,21 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
           {showApplyToAllCheckbox && onApplyToAllChange && (
             <>
               <div className="space-y-2">
-                <Label className="text-sm font-medium text-gray-500">
+                <Label className="text-sm font-medium text-slate-500">
                   Apply tweaks to
                 </Label>
-                <div className="flex rounded-lg border border-gray-200 overflow-hidden">
+                <div className="flex rounded-lg border border-slate-200 overflow-hidden">
                   <button
                     type="button"
                     onClick={() => onApplyToAllChange(true)}
-                    className={`flex-1 py-2 px-3 text-sm font-medium transition-colors ${applyToAllEmails ? "bg-blue-100 text-blue-700 border-blue-300" : "bg-white text-gray-600 hover:bg-gray-50"}`}
+                    className={`flex-1 py-2 px-3 text-sm font-medium transition-colors ${applyToAllEmails ? "bg-blue-100 text-blue-700 border-blue-300" : "bg-white text-slate-600 hover:bg-slate-50"}`}
                   >
                     All emails
                   </button>
                   <button
                     type="button"
                     onClick={() => onApplyToAllChange(false)}
-                    className={`flex-1 py-2 px-3 text-sm font-medium transition-colors border-l border-gray-200 ${!applyToAllEmails ? "bg-blue-100 text-blue-700 border-blue-300" : "bg-white text-gray-600 hover:bg-gray-50"}`}
+                    className={`flex-1 py-2 px-3 text-sm font-medium transition-colors border-l border-slate-200 ${!applyToAllEmails ? "bg-blue-100 text-blue-700 border-blue-300" : "bg-white text-slate-600 hover:bg-slate-50"}`}
                   >
                     Current email
                   </button>
@@ -290,14 +290,14 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
                     : "Changes apply only to the currently selected email."}
                 </p>
               </div>
-              <div className="border-t border-gray-100" />
+              <div className="border-t border-slate-100" />
             </>
           )}
 
           {/* Logo Alignment */}
           <div className="space-y-2">
             <div className="flex justify-between items-center">
-              <Label className="text-sm font-medium text-gray-500">
+              <Label className="text-sm font-medium text-slate-500">
                 LOGO
               </Label>
               {tweaks.logoAlignment && (
@@ -330,7 +330,7 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
                 className="h-4 w-4 accent-blue-600 mt-0.5 shrink-0"
               />
               <div>
-                <span className="text-sm text-gray-700">Blend-in logo</span>
+                <span className="text-sm text-slate-700">Blend-in logo</span>
                 <p className="text-xs text-slate-400 mt-0.5">
                   Moves the logo above the content card. Works best with a non-white background.
                 </p>
@@ -338,12 +338,12 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
             </label>
           </div>
 
-          <div className="border-t border-gray-100" />
+          <div className="border-t border-slate-100" />
 
           {/* CTA Button Alignment */}
           <div className="space-y-2">
             <div className="flex justify-between items-center">
-              <Label className="text-sm font-medium text-gray-500">
+              <Label className="text-sm font-medium text-slate-500">
                 CTA
               </Label>
               {tweaks.ctaButtonAlignment && (
@@ -363,12 +363,12 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
             />
           </div>
 
-          <div className="border-t border-gray-100" />
+          <div className="border-t border-slate-100" />
 
           {/* CTA Button Color */}
           <div className="space-y-2">
             <div className="flex justify-between items-center">
-              <Label className="text-sm font-medium text-gray-500">
+              <Label className="text-sm font-medium text-slate-500">
                 CTA Color
               </Label>
               {tweaks.ctaButtonColor && (
@@ -391,7 +391,7 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
                 type="color"
                 value={/^#[0-9A-Fa-f]{6}$/i.test(pendingColor) ? pendingColor : defaultColor}
                 onChange={(e) => setPendingColor(e.target.value)}
-                className="w-8 h-8 border border-gray-300 rounded-md cursor-pointer flex-shrink-0"
+                className="w-8 h-8 border border-slate-300 rounded-md cursor-pointer flex-shrink-0"
                 style={{ minWidth: "32px", maxWidth: "32px" }}
               />
               <input
@@ -403,7 +403,7 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
                   setPendingColor("#" + hex);
                 }}
                 placeholder={defaultColor}
-                className="flex-1 px-1.5 py-1.5 border border-gray-300 rounded-md text-xs font-mono focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="flex-1 px-1.5 py-1.5 border border-slate-300 rounded-md text-xs font-mono focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
             <Button
@@ -411,18 +411,18 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
               variant="outline"
               disabled={pendingColor === (tweaks.ctaButtonColor || defaultColor)}
               onClick={() => applyTweak("ctaButtonColor", pendingColor)}
-              className="w-full h-7 text-xs bg-gray-100 hover:bg-gray-200 border-gray-300 text-gray-700 disabled:opacity-40"
+              className="w-full h-7 text-xs bg-slate-100 hover:bg-slate-200 border-slate-300 text-slate-700 disabled:opacity-40"
             >
               Apply
             </Button>
           </div>
 
-          <div className="border-t border-gray-100" />
+          <div className="border-t border-slate-100" />
 
           {/* CTA Button Radius */}
           <div className="space-y-2">
             <div className="flex justify-between items-center">
-              <Label className="text-sm font-medium text-gray-500">
+              <Label className="text-sm font-medium text-slate-500">
                 CTA Border Radius
               </Label>
               {tweaks.ctaButtonBorderRadius && (
@@ -463,20 +463,20 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
                   const value = (e.target as HTMLInputElement).value + "px";
                   applyTweak("ctaButtonBorderRadius", value);
                 }}
-                className="flex-1 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+                className="flex-1 h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
               />
-              <span className="text-xs font-mono bg-gray-100 px-1.5 py-0.5 rounded text-gray-600 w-12 text-center shrink-0">
+              <span className="text-xs font-mono bg-slate-100 px-1.5 py-0.5 rounded text-slate-600 w-12 text-center shrink-0">
                 {pendingRadius}
               </span>
             </div>
           </div>
 
-          <div className="border-t border-gray-100" />
+          <div className="border-t border-slate-100" />
 
           {/* Social Icons Style - Pill Buttons */}
           <div className="space-y-2">
             <div className="flex justify-between items-center">
-              <Label className="text-sm font-medium text-gray-500">
+              <Label className="text-sm font-medium text-slate-500">
                 Social Icons
               </Label>
               {tweaks.socialIconsFamily &&
@@ -509,7 +509,7 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
               <button
                 type="button"
                 onClick={() => setSocialDropdownOpen((prev) => !prev)}
-                className="w-full flex items-center justify-between px-2.5 py-2 border border-gray-200 rounded-lg text-xs text-gray-600 hover:border-gray-300 hover:bg-gray-50 transition-colors"
+                className="w-full flex items-center justify-between px-2.5 py-2 border border-slate-200 rounded-lg text-xs text-slate-600 hover:border-slate-300 hover:bg-slate-50 transition-colors"
               >
                 <span className="font-medium">
                   {enabledIcons.length === availableSocialIcons.length
@@ -518,12 +518,12 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
                 </span>
                 <ChevronDown
                   size={14}
-                  className={`text-gray-400 transition-transform duration-200 ${socialDropdownOpen ? "rotate-180" : ""}`}
+                  className={`text-slate-400 transition-transform duration-200 ${socialDropdownOpen ? "rotate-180" : ""}`}
                 />
               </button>
 
               {socialDropdownOpen && (
-                <div className="absolute z-30 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-lg py-1">
+                <div className="absolute z-30 mt-1 w-full bg-white border border-slate-200 rounded-lg shadow-lg py-1">
                   {availableSocialIcons.map((platform) => {
                     const isEnabled = enabledIcons.includes(platform);
                     return (
@@ -531,18 +531,18 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
                         key={platform}
                         type="button"
                         onClick={() => handleToggleSocialIcon(platform)}
-                        className="w-full flex items-center gap-2 px-3 py-1.5 text-xs hover:bg-gray-50 transition-colors"
+                        className="w-full flex items-center gap-2 px-3 py-1.5 text-xs hover:bg-slate-50 transition-colors"
                       >
                         <div
                           className={`w-4 h-4 rounded border flex items-center justify-center flex-shrink-0 transition-colors ${
                             isEnabled
                               ? "bg-blue-600 border-blue-600"
-                              : "border-gray-300 bg-white"
+                              : "border-slate-300 bg-white"
                           }`}
                         >
                           {isEnabled && <Check size={10} className="text-white" />}
                         </div>
-                        <span className={isEnabled ? "text-gray-900 font-medium" : "text-gray-500"}>
+                        <span className={isEnabled ? "text-slate-900 font-medium" : "text-slate-500"}>
                           {SOCIAL_LABELS[platform] || platform}
                         </span>
                       </button>
@@ -565,20 +565,20 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
             )}
           </div>
 
-          <div className="border-t border-gray-100" />
+          <div className="border-t border-slate-100" />
 
           {/* Footer Type - active in generic flow; "Coming Soon" in sequence mode */}
           <div className="relative">
             {footerComingSoon && (
               <div className="absolute inset-0 bg-white/60 backdrop-blur-[2px] z-10 rounded-lg flex items-center justify-center">
-                <span className="text-xs font-medium text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                <span className="text-xs font-medium text-slate-500 bg-slate-100 px-3 py-1 rounded-full">
                   Coming Soon
                 </span>
               </div>
             )}
             <div className={`space-y-2 ${footerComingSoon ? "opacity-50 pointer-events-none" : ""}`}>
               <div className="flex justify-between items-center">
-                <Label className="text-sm font-medium text-gray-500">
+                <Label className="text-sm font-medium text-slate-500">
                   Footer
                 </Label>
                 {!footerComingSoon && tweaks.footerType &&
@@ -621,7 +621,7 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
                   className="h-4 w-4 accent-blue-600 mt-0.5 shrink-0"
                 />
                 <div>
-                  <span className="text-sm text-gray-700">Blend-in footer</span>
+                  <span className="text-sm text-slate-700">Blend-in footer</span>
                   <p className="text-xs text-slate-400 mt-0.5">
                     Moves the footer below the content card. Works best with a non-white background.
                   </p>
@@ -630,12 +630,12 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
             </div>
           </div>
 
-          <div className="border-t border-gray-100" />
+          <div className="border-t border-slate-100" />
 
           {/* Background Style - Pill Buttons */}
           <div className="space-y-2">
             <div className="flex justify-between items-center">
-              <Label className="text-sm font-medium text-gray-500">
+              <Label className="text-sm font-medium text-slate-500">
                 Background Type
               </Label>
               {tweaks.backgroundStyle && tweaks.backgroundStyle !== "default" && (

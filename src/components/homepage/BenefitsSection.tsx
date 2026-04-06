@@ -37,10 +37,10 @@ export const BenefitsSection: React.FC = () => {
     <section className="py-16 md:py-20 lg:py-24 bg-white">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900 mb-4">
             From signup to upgrade on autopilot
           </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>
+          <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>
             DigiStorms detects activation milestones and sends the right onboarding emails at exactly the right moment.
           </p>
         </div>
@@ -58,10 +58,10 @@ export const BenefitsSection: React.FC = () => {
                     : "order-1 md:order-1"
                 }
               >
-                <h3 className="text-[24px] font-semibold text-gray-900 mb-3 leading-snug">
+                <h3 className="text-[24px] font-semibold text-slate-900 mb-3 leading-snug">
                   {benefit.title}
                 </h3>
-                <p className="text-[20px] text-gray-500 leading-relaxed">
+                <p className="text-[20px] text-slate-500 leading-relaxed">
                   {benefit.description}
                 </p>
               </div>

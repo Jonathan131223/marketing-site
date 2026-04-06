@@ -390,7 +390,7 @@ export const InlineFormattingPopover: React.FC<
                         {commonColors.map((color) => (
                           <button
                             key={`link-edit-${color}`}
-                            className={`h-6 w-6 rounded border cursor-pointer transition-transform hover:scale-110 ${linkColor === color ? "border-blue-500 ring-1 ring-blue-500" : "border-gray-200"
+                            className={`h-6 w-6 rounded border cursor-pointer transition-transform hover:scale-110 ${linkColor === color ? "border-blue-500 ring-1 ring-blue-500" : "border-slate-200"
                               }`}
                             style={{ backgroundColor: color }}
                             onMouseDown={stopEvent}
@@ -1092,7 +1092,7 @@ export const InlineFormattingPopover: React.FC<
                                 key={`link-${color}`}
                                 className={`h-6 w-6 rounded border cursor-pointer transition-transform hover:scale-110 ${linkColor === color
                                     ? "border-blue-500 ring-1 ring-blue-500"
-                                    : "border-gray-200"
+                                    : "border-slate-200"
                                   }`}
                                 style={{ backgroundColor: color }}
                         onMouseDown={stopEvent}

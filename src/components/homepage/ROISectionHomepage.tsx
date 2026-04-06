@@ -118,23 +118,23 @@ export const ROISectionHomepage: React.FC<ROISectionHomepageProps> = ({
     <section className="py-16 md:py-20 lg:py-24 bg-[#F8FAFC]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900 mb-4">
             What better onboarding could be worth
           </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>
+          <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>
             Estimate how much additional revenue stronger onboarding emails could generate for your product.
           </p>
         </div>
 
         <div className="max-w-xl mx-auto">
           {results && (
-            <div className="mb-6 bg-white rounded-2xl shadow-sm border border-gray-100/80 p-8 space-y-6">
+            <div className="mb-6 bg-white rounded-2xl shadow-sm border border-slate-100/80 p-8 space-y-6">
               <div className="text-center">
                 {results.roi === null || parseFloat(results.roi as string) < 0 ? (
-                  <p className="text-gray-500 text-sm">No gain with these inputs. Try adjusting your numbers.</p>
+                  <p className="text-slate-500 text-sm">No gain with these inputs. Try adjusting your numbers.</p>
                 ) : (
                   <>
-                    <p className="text-sm text-gray-500 mb-1">Estimated ROI</p>
+                    <p className="text-sm text-slate-500 mb-1">Estimated ROI</p>
                     <p className="text-5xl font-bold text-primary">
                       {formatNumber(Math.abs(parseFloat(results.roi as string)))}%
                     </p>
@@ -144,44 +144,44 @@ export const ROISectionHomepage: React.FC<ROISectionHomepageProps> = ({
 
               {results.roi !== null && parseFloat(results.roi as string) >= 0 && (
                 <>
-                  <div className="divide-y divide-gray-100 text-sm">
+                  <div className="divide-y divide-slate-100 text-sm">
                     <div className="flex justify-between py-3">
-                      <span className="text-gray-500">Conversion rate</span>
-                      <span className="font-semibold text-gray-900">
+                      <span className="text-slate-500">Conversion rate</span>
+                      <span className="font-semibold text-slate-900">
                         {results.convRate as number}% → {results.newConvRate as string}%
                       </span>
                     </div>
                     <div className="flex justify-between py-3">
-                      <span className="text-gray-500">Paid users/month</span>
-                      <span className="font-semibold text-gray-900">
+                      <span className="text-slate-500">Paid users/month</span>
+                      <span className="font-semibold text-slate-900">
                         {formatNumber(results.baselinePaid as number)} → {formatNumber(results.newPaid as number)}
                       </span>
                     </div>
                     <div className="flex justify-between py-3">
-                      <span className="text-gray-500">Baseline revenue</span>
-                      <span className="font-semibold text-gray-900">${formatNumber(results.baselineRevenue as number)}</span>
+                      <span className="text-slate-500">Baseline revenue</span>
+                      <span className="font-semibold text-slate-900">${formatNumber(results.baselineRevenue as number)}</span>
                     </div>
                     <div className="flex justify-between py-3">
-                      <span className="text-gray-500">New revenue</span>
-                      <span className="font-semibold text-gray-900">${formatNumber(results.newRevenue as number)}</span>
+                      <span className="text-slate-500">New revenue</span>
+                      <span className="font-semibold text-slate-900">${formatNumber(results.newRevenue as number)}</span>
                     </div>
                     <div className="flex justify-between py-3">
-                      <span className="text-gray-500">Additional revenue</span>
+                      <span className="text-slate-500">Additional revenue</span>
                       <span className="font-semibold text-primary">+${formatNumber(results.gain as number)}</span>
                     </div>
                     <div className="flex justify-between py-3">
-                      <span className="text-gray-500">Plan cost</span>
-                      <span className="font-semibold text-gray-900">${formatNumber(results.cost as number)}/mo</span>
+                      <span className="text-slate-500">Plan cost</span>
+                      <span className="font-semibold text-slate-900">${formatNumber(results.cost as number)}/mo</span>
                     </div>
                   </div>
 
-                  <p className="text-sm text-gray-500 text-center">
+                  <p className="text-sm text-slate-500 text-center">
                     Improving conversion from {results.convRate as number}% to {results.newConvRate as string}% could add{" "}
-                    <strong className="text-gray-900">${formatNumber(results.gain as number)}</strong> in revenue monthly,
-                    an estimated <strong className="text-gray-900">{formatNumber(parseFloat(results.roi as string))}% ROI</strong> on a ${results.cost as number}/mo plan.
+                    <strong className="text-slate-900">${formatNumber(results.gain as number)}</strong> in revenue monthly,
+                    an estimated <strong className="text-slate-900">{formatNumber(parseFloat(results.roi as string))}% ROI</strong> on a ${results.cost as number}/mo plan.
                   </p>
 
-                  <div className="pt-4 border-t border-gray-100 text-center">
+                  <div className="pt-4 border-t border-slate-100 text-center">
                     <div className="space-y-3">
                       <input
                         type="text"
@@ -189,7 +189,7 @@ export const ROISectionHomepage: React.FC<ROISectionHomepageProps> = ({
                         onChange={(e) => setUrlInput(e.target.value)}
                         onKeyDown={(e) => e.key === "Enter" && handleUrlSubmit()}
                         placeholder="website.com"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+                        className="w-full px-4 py-3 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
                       />
                       <button
                         type="button"
@@ -205,7 +205,7 @@ export const ROISectionHomepage: React.FC<ROISectionHomepageProps> = ({
                       >
                         Generate my onboarding emails
                       </button>
-                      <p className="text-sm text-gray-500">100 onboarded users free. No card required.</p>
+                      <p className="text-sm text-slate-500">100 onboarded users free. No card required.</p>
                     </div>
                   </div>
                 </>
@@ -213,7 +213,7 @@ export const ROISectionHomepage: React.FC<ROISectionHomepageProps> = ({
             </div>
           )}
 
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100/80 p-8 space-y-5">
+          <div className="bg-white rounded-xl shadow-sm border border-slate-100/80 p-8 space-y-5">
 
             <div className="space-y-1.5">
               <Label htmlFor="roi-conv">Current free-to-paid conversion rate (%)</Label>
@@ -325,7 +325,7 @@ export const ROISectionHomepage: React.FC<ROISectionHomepageProps> = ({
             </button>
           </div>
 
-          <p className="text-xs text-gray-600 text-center mt-4">
+          <p className="text-xs text-slate-600 text-center mt-4">
             These are estimates for illustration only based on the numbers you provide.
           </p>
         </div>

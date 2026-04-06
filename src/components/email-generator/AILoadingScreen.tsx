@@ -316,7 +316,7 @@ const AILoadingScreen: React.FC<AILoadingScreenProps> = ({
                 </div>
               </div>
 
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">
                 Email Generation Failed
               </h2>
 
@@ -335,7 +335,7 @@ const AILoadingScreen: React.FC<AILoadingScreenProps> = ({
 
                 <button
                   onClick={onStartOver || (() => window.location.reload())}
-                  className="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
+                  className="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
                 >
                   Back to Brief
                 </button>
@@ -355,12 +355,12 @@ const AILoadingScreen: React.FC<AILoadingScreenProps> = ({
                 </div>
               </div>
 
-              <h2 className="text-3xl font-bold text-gray-900 mb-4 animate-fade-in">
+              <h2 className="text-3xl font-bold text-slate-900 mb-4 animate-fade-in">
                 Stormi is creating your emails
               </h2>
 
               <p
-                className="text-gray-600 mb-8 text-lg animate-fade-in"
+                className="text-slate-600 mb-8 text-lg animate-fade-in"
                 style={{ animationDelay: "0.3s" }}
               >
                 {statusText}
@@ -370,7 +370,7 @@ const AILoadingScreen: React.FC<AILoadingScreenProps> = ({
 
           {!error && (
             <>
-              <div className="w-full bg-gray-100 rounded-full h-3 mb-6 overflow-hidden border border-gray-200 shadow-inner">
+              <div className="w-full bg-slate-100 rounded-full h-3 mb-6 overflow-hidden border border-slate-200 shadow-inner">
                 <div
                   className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 h-3 rounded-full transition-all duration-700 ease-out relative"
                   style={{ width: `${progress}%` }}
@@ -379,7 +379,7 @@ const AILoadingScreen: React.FC<AILoadingScreenProps> = ({
                 </div>
               </div>
 
-              <div className="text-gray-700 font-medium text-lg">
+              <div className="text-slate-700 font-medium text-lg">
                 {Math.round(progress)}% Complete
               </div>
             </>

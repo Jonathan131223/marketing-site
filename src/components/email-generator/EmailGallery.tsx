@@ -1250,10 +1250,10 @@ export const EmailGallery: React.FC<EmailGalleryProps> = ({
   return (
     <div className="max-w-7xl mx-auto">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">
+        <h2 className="text-3xl font-bold text-slate-900 mb-4">
           Your Generated Email Options
         </h2>
-        <p className="text-gray-600 text-lg">
+        <p className="text-slate-600 text-lg">
           Choose the email that best fits your brand voice and objectives
         </p>
       </div>
@@ -1291,7 +1291,7 @@ export const EmailGallery: React.FC<EmailGalleryProps> = ({
                   />
                 </div>
               ) : (
-                <div className="flex-1 p-6 text-sm text-gray-700 overflow-auto">
+                <div className="flex-1 p-6 text-sm text-slate-700 overflow-auto">
                   {email.content.split("\n").map((line, index) => (
                     <div key={index} className="mb-2">
                       {line}

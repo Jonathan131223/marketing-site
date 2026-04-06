@@ -43,7 +43,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
-      <nav className="sticky top-0 z-40 w-full bg-white border-b border-gray-200">
+      <nav className="sticky top-0 z-40 w-full bg-white border-b border-slate-200">
         <div className="container mx-auto px-4 py-3 flex items-center gap-4">
 
           {/* Left: logo + nav links */}
@@ -56,11 +56,11 @@ export const Navbar: React.FC = () => {
               />
             </Link>
 
-            <div className="hidden md:flex items-center gap-5">
+            <div className="hidden md:flex items-center gap-1">
               <NavLink
                 to="/library"
                 className={({ isActive }) =>
-                  `text-sm font-medium transition-colors ${isActive ? "text-[#1D4ED8]" : "text-gray-700 hover:text-gray-900"}`
+                  `text-sm font-medium transition-colors min-h-[44px] px-3 flex items-center rounded-lg hover:bg-slate-50 ${isActive ? "text-[#1D4ED8]" : "text-slate-700 hover:text-slate-900"}`
                 }
               >
                 Library
@@ -68,7 +68,7 @@ export const Navbar: React.FC = () => {
               <NavLink
                 to="/blog"
                 className={({ isActive }) =>
-                  `text-sm font-medium transition-colors ${isActive ? "text-[#1D4ED8]" : "text-gray-700 hover:text-gray-900"}`
+                  `text-sm font-medium transition-colors min-h-[44px] px-3 flex items-center rounded-lg hover:bg-slate-50 ${isActive ? "text-[#1D4ED8]" : "text-slate-700 hover:text-slate-900"}`
                 }
               >
                 Blog
@@ -76,7 +76,7 @@ export const Navbar: React.FC = () => {
               <NavLink
                 to="/pricing"
                 className={({ isActive }) =>
-                  `text-sm font-medium transition-colors ${isActive ? "text-[#1D4ED8]" : "text-gray-700 hover:text-gray-900"}`
+                  `text-sm font-medium transition-colors min-h-[44px] px-3 flex items-center rounded-lg hover:bg-slate-50 ${isActive ? "text-[#1D4ED8]" : "text-slate-700 hover:text-slate-900"}`
                 }
               >
                 Pricing
@@ -89,7 +89,7 @@ export const Navbar: React.FC = () => {
             {location.pathname.startsWith("/library") && (
               <button
                 onClick={() => setSearchOpen(true)}
-                className={`flex items-center gap-2 w-full max-w-xs px-4 py-2 rounded-xl border border-gray-200 bg-gray-50 text-sm text-gray-400 hover:border-[#1D4ED8] hover:bg-white transition-all text-left ${
+                className={`flex items-center gap-2 w-full max-w-xs px-4 py-2 rounded-xl border border-slate-200 bg-slate-50 text-sm text-slate-400 hover:border-[#1D4ED8] hover:bg-white transition-all text-left ${
                   showSearch ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
                 }`}
               >
@@ -103,7 +103,7 @@ export const Navbar: React.FC = () => {
           <div className="hidden md:flex items-center gap-3 flex-shrink-0">
             <Button
               variant="ghost"
-              className="text-sm text-gray-700 hover:text-gray-900"
+              className="text-sm text-slate-700 hover:text-slate-900"
               asChild
             >
               <a
@@ -116,7 +116,7 @@ export const Navbar: React.FC = () => {
             </Button>
             <Button
               variant="outline"
-              className="text-sm text-gray-700 hover:text-gray-900 border-gray-300 bg-white"
+              className="text-sm text-slate-700 hover:text-slate-900 border-slate-300 bg-white"
               asChild
             >
               <a href={loginUrl}>Login</a>
@@ -134,7 +134,7 @@ export const Navbar: React.FC = () => {
             {showSearch && (
               <button
                 onClick={() => setSearchOpen(true)}
-                className="p-2 rounded-md text-gray-600 hover:text-[#1D4ED8] hover:bg-gray-100 transition-colors"
+                className="p-2 rounded-md text-slate-600 hover:text-[#1D4ED8] hover:bg-slate-100 transition-colors"
                 aria-label="Search"
               >
                 <Search className="h-5 w-5" />
@@ -148,7 +148,7 @@ export const Navbar: React.FC = () => {
             </Button>
             <button
               onClick={() => setMobileOpen((o) => !o)}
-              className="p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors"
+              className="p-2 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors"
               aria-label="Toggle menu"
             >
               {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -157,11 +157,11 @@ export const Navbar: React.FC = () => {
         </div>
 
         {mobileOpen && (
-          <div className="md:hidden border-t border-gray-100 bg-white px-4 py-4 space-y-1">
+          <div className="md:hidden border-t border-slate-100 bg-white px-4 py-4 space-y-1">
             <NavLink
               to="/library"
               className={({ isActive }) =>
-                `block px-3 py-2.5 text-sm font-medium rounded-lg transition-colors hover:bg-gray-50 ${isActive ? "text-[#1D4ED8]" : "text-gray-700 hover:text-gray-900"}`
+                `block px-3 py-2.5 text-sm font-medium rounded-lg transition-colors hover:bg-slate-50 ${isActive ? "text-[#1D4ED8]" : "text-slate-700 hover:text-slate-900"}`
               }
               onClick={() => setMobileOpen(false)}
             >
@@ -170,7 +170,7 @@ export const Navbar: React.FC = () => {
             <NavLink
               to="/blog"
               className={({ isActive }) =>
-                `block px-3 py-2.5 text-sm font-medium rounded-lg transition-colors hover:bg-gray-50 ${isActive ? "text-[#1D4ED8]" : "text-gray-700 hover:text-gray-900"}`
+                `block px-3 py-2.5 text-sm font-medium rounded-lg transition-colors hover:bg-slate-50 ${isActive ? "text-[#1D4ED8]" : "text-slate-700 hover:text-slate-900"}`
               }
               onClick={() => setMobileOpen(false)}
             >
@@ -179,7 +179,7 @@ export const Navbar: React.FC = () => {
             <NavLink
               to="/pricing"
               className={({ isActive }) =>
-                `block px-3 py-2.5 text-sm font-medium rounded-lg transition-colors hover:bg-gray-50 ${isActive ? "text-[#1D4ED8]" : "text-gray-700 hover:text-gray-900"}`
+                `block px-3 py-2.5 text-sm font-medium rounded-lg transition-colors hover:bg-slate-50 ${isActive ? "text-[#1D4ED8]" : "text-slate-700 hover:text-slate-900"}`
               }
               onClick={() => setMobileOpen(false)}
             >
@@ -189,14 +189,14 @@ export const Navbar: React.FC = () => {
               href="https://calendly.com/jonathan-digistorms/30-min-call"
               target="_blank"
               rel="noopener noreferrer"
-              className="block px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
+              className="block px-3 py-2.5 text-sm font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors"
               onClick={() => setMobileOpen(false)}
             >
               Book a demo
             </a>
             <a
               href={loginUrl}
-              className="block px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
+              className="block px-3 py-2.5 text-sm font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors"
               onClick={() => setMobileOpen(false)}
             >
               Login

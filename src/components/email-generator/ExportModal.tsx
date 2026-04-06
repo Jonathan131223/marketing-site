@@ -96,10 +96,10 @@ export const ExportModal: React.FC<ExportModalProps> = ({ email, onClose }) => {
       <div className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
         <div className="p-6 border-b">
           <div className="flex justify-between items-center">
-            <h2 className="text-2xl font-bold text-gray-900">Export Your Email</h2>
+            <h2 className="text-2xl font-bold text-slate-900">Export Your Email</h2>
             <button
               onClick={onClose}
-              className="text-gray-500 hover:text-gray-700 text-2xl"
+              className="text-slate-500 hover:text-slate-700 text-2xl"
             >
               ×
             </button>
@@ -111,7 +111,7 @@ export const ExportModal: React.FC<ExportModalProps> = ({ email, onClose }) => {
             {/* Export Options */}
             <div className="space-y-6">
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Export Format</h3>
+                <h3 className="text-lg font-semibold text-slate-900 mb-4">Export Format</h3>
                 <div className="space-y-3">
                   <label className="flex items-center">
                     <input
@@ -124,7 +124,7 @@ export const ExportModal: React.FC<ExportModalProps> = ({ email, onClose }) => {
                     />
                     <div>
                       <div className="font-medium">Plain Text</div>
-                      <div className="text-sm text-gray-500">Clean text format for any email platform</div>
+                      <div className="text-sm text-slate-500">Clean text format for any email platform</div>
                     </div>
                   </label>
                   
@@ -139,7 +139,7 @@ export const ExportModal: React.FC<ExportModalProps> = ({ email, onClose }) => {
                     />
                     <div>
                       <div className="font-medium">HTML</div>
-                      <div className="text-sm text-gray-500">Styled HTML with professional formatting</div>
+                      <div className="text-sm text-slate-500">Styled HTML with professional formatting</div>
                     </div>
                   </label>
                 </div>
@@ -185,9 +185,9 @@ export const ExportModal: React.FC<ExportModalProps> = ({ email, onClose }) => {
 
             {/* Preview */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">Preview</h3>
-              <div className="bg-gray-50 rounded-lg p-4 max-h-96 overflow-y-auto">
-                <div className="text-sm font-mono text-gray-700 whitespace-pre-wrap">
+              <h3 className="text-lg font-semibold text-slate-900">Preview</h3>
+              <div className="bg-slate-50 rounded-lg p-4 max-h-96 overflow-y-auto">
+                <div className="text-sm font-mono text-slate-700 whitespace-pre-wrap">
                   {getExportContent()}
                 </div>
               </div>

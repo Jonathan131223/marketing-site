@@ -1202,7 +1202,7 @@ export const AIGeneratorPanel: React.FC<AIGeneratorPanelProps> = ({
             <DialogTrigger asChild>
               <Button
                 variant="outline"
-                className={`w-full ${!sequenceMode ? "" : ""}bg-gray-100 hover:bg-gray-200 text-gray-700 border-gray-300`}
+                className={`w-full ${!sequenceMode ? "" : ""}bg-slate-100 hover:bg-slate-200 text-slate-700 border-slate-300`}
               >
                 Email Preview
                 <Eye className="w-4 h-4 mr-2" />
@@ -1452,8 +1452,8 @@ export const AIGeneratorPanel: React.FC<AIGeneratorPanelProps> = ({
       )}
 
       {/* Unsubscribe note */}
-      <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-        <p className="text-gray-600 text-sm leading-relaxed">
+      <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
+        <p className="text-slate-600 text-sm leading-relaxed">
           💡 <strong>Note:</strong> Unsubscribe links in this template are
           placeholders — replace them with your email tool's unsubscribe tag
           before sending.
@@ -1461,8 +1461,8 @@ export const AIGeneratorPanel: React.FC<AIGeneratorPanelProps> = ({
       </div>
 
       {/* Quality guarantee note */}
-      <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-        <p className="text-gray-600 text-sm leading-relaxed">
+      <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
+        <p className="text-slate-600 text-sm leading-relaxed">
           💡 <strong>Quality Guarantee:</strong> Every Digistorms template is
           tested to render flawlessly across Gmail, Outlook, Apple Mail, and
           100+ devices — so your emails always look exactly as you designed

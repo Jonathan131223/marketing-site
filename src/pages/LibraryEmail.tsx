@@ -82,7 +82,7 @@ const RelatedGrid: React.FC<RelatedGridProps> = ({ emails: items, getBrandName }
   <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
     {items.map((rel) => (
       <Link key={rel.id} to={`/library/email/${rel.slug}`} className="group block">
-        <div className="rounded-xl overflow-hidden border border-gray-100 bg-gray-50 aspect-[3/4] mb-2 group-hover:shadow-md group-hover:border-[#1D4ED8]/30 transition-all">
+        <div className="rounded-xl overflow-hidden border border-slate-100 bg-slate-50 aspect-[3/4] mb-2 group-hover:shadow-md group-hover:border-[#1D4ED8]/30 transition-all">
           {rel.thumb ? (
             <img
               src={rel.thumb}
@@ -94,7 +94,7 @@ const RelatedGrid: React.FC<RelatedGridProps> = ({ emails: items, getBrandName }
             <div className="w-full h-full bg-[#DBEAFE]" />
           )}
         </div>
-        <p className="text-xs font-medium text-gray-700 group-hover:text-[#1D4ED8] transition-colors line-clamp-2 leading-snug">
+        <p className="text-xs font-medium text-slate-700 group-hover:text-[#1D4ED8] transition-colors line-clamp-2 leading-snug">
           {rel.subject}
         </p>
       </Link>
@@ -228,7 +228,7 @@ const LibraryEmail: React.FC = () => {
         {/* ── Breadcrumb ── */}
         <div className="container mx-auto px-4 max-w-7xl mb-8">
           <nav aria-label="Breadcrumb">
-            <ol className="flex items-center gap-2 text-sm text-gray-400">
+            <ol className="flex items-center gap-2 text-sm text-slate-400">
               <li>
                 <Link to="/library" className="hover:text-[#1D4ED8] transition-colors font-medium">
                   Library
@@ -249,7 +249,7 @@ const LibraryEmail: React.FC = () => {
                 </>
               )}
               <li aria-current="page">
-                <span className="text-gray-600 font-medium truncate max-w-xs block">{email.subject}</span>
+                <span className="text-slate-600 font-medium truncate max-w-xs block">{email.subject}</span>
               </li>
             </ol>
           </nav>
@@ -261,7 +261,7 @@ const LibraryEmail: React.FC = () => {
 
             {/* ── Left: email screenshot ── */}
             <div>
-              <div className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm bg-gray-50">
+              <div className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm bg-slate-50">
                 <img
                   src={email.thumb}
                   alt={`${email.subject} — email screenshot from ${brandName}`}
@@ -281,7 +281,7 @@ const LibraryEmail: React.FC = () => {
                   className="flex items-center gap-3 group"
                 >
                   {brand.logo && (
-                    <div className="w-10 h-10 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center overflow-hidden flex-shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center overflow-hidden flex-shrink-0">
                       <img
                         src={brand.logo}
                         alt={`${brand.name} logo`}
@@ -290,8 +290,8 @@ const LibraryEmail: React.FC = () => {
                     </div>
                   )}
                   <div>
-                    <p className="text-xs text-gray-400 font-medium uppercase tracking-wide">Brand</p>
-                    <p className="font-semibold text-gray-900 group-hover:text-[#1D4ED8] transition-colors">
+                    <p className="text-xs text-slate-400 font-medium uppercase tracking-wide">Brand</p>
+                    <p className="font-semibold text-slate-900 group-hover:text-[#1D4ED8] transition-colors">
                       {brand.name}
                     </p>
                   </div>
@@ -300,21 +300,21 @@ const LibraryEmail: React.FC = () => {
 
               {/* Subject */}
               <div>
-                <p className="text-xs text-gray-400 font-medium uppercase tracking-wide mb-1">Subject line</p>
-                <h1 className="text-xl font-bold text-gray-900 leading-snug">{email.subject}</h1>
+                <p className="text-xs text-slate-400 font-medium uppercase tracking-wide mb-1">Subject line</p>
+                <h1 className="text-xl font-bold text-slate-900 leading-snug">{email.subject}</h1>
               </div>
 
               {/* Sender + Date row */}
               <div className="flex flex-wrap gap-4">
                 {email.sender && (
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <User className="h-4 w-4 text-gray-400 flex-shrink-0" />
+                  <div className="flex items-center gap-2 text-sm text-slate-600">
+                    <User className="h-4 w-4 text-slate-400 flex-shrink-0" />
                     <span>{email.sender}</span>
                   </div>
                 )}
                 {email.setDate && (
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <Calendar className="h-4 w-4 text-gray-400 flex-shrink-0" />
+                  <div className="flex items-center gap-2 text-sm text-slate-600">
+                    <Calendar className="h-4 w-4 text-slate-400 flex-shrink-0" />
                     <span>{formatDate(email.setDate)}</span>
                   </div>
                 )}
@@ -323,7 +323,7 @@ const LibraryEmail: React.FC = () => {
               {/* Use case */}
               {useCase && (
                 <div>
-                  <p className="text-xs text-gray-400 font-medium uppercase tracking-wide mb-2">Use case</p>
+                  <p className="text-xs text-slate-400 font-medium uppercase tracking-wide mb-2">Use case</p>
                   <Link
                     to={`/library/usecase/${useCase.slug}`}
                     className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-semibold transition-all hover:opacity-80"
@@ -337,7 +337,7 @@ const LibraryEmail: React.FC = () => {
               {/* Tags */}
               {emailTags.length > 0 && (
                 <div>
-                  <p className="text-xs text-gray-400 font-medium uppercase tracking-wide mb-2 flex items-center gap-1.5">
+                  <p className="text-xs text-slate-400 font-medium uppercase tracking-wide mb-2 flex items-center gap-1.5">
                     <Tag className="h-3.5 w-3.5" /> Tags
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -345,7 +345,7 @@ const LibraryEmail: React.FC = () => {
                       <Link
                         key={tag.slug}
                         to={`/library/tag/${tag.slug}`}
-                        className="inline-block px-3 py-1 rounded-full text-xs font-medium border border-gray-200 bg-white text-gray-600 hover:border-[#1D4ED8] hover:text-[#1D4ED8] hover:bg-[#DBEAFE] transition-all"
+                        className="inline-block px-3 py-1 rounded-full text-xs font-medium border border-slate-200 bg-white text-slate-600 hover:border-[#1D4ED8] hover:text-[#1D4ED8] hover:bg-[#DBEAFE] transition-all"
                       >
                         {tag.name}
                       </Link>
@@ -357,33 +357,33 @@ const LibraryEmail: React.FC = () => {
               {/* Summary / Description */}
               {email.summary && (
                 <div>
-                  <p className="text-xs text-gray-400 font-medium uppercase tracking-wide mb-2">About this email</p>
-                  <p className="text-sm text-gray-600 leading-relaxed">{email.summary}</p>
+                  <p className="text-xs text-slate-400 font-medium uppercase tracking-wide mb-2">About this email</p>
+                  <p className="text-sm text-slate-600 leading-relaxed">{email.summary}</p>
                 </div>
               )}
 
               {/* Brand stats */}
               {brand && (brand.duration || brand.emailCount) && (
-                <div className="rounded-xl border border-gray-100 bg-[#FAFAFA] p-4 space-y-2">
-                  <p className="text-xs text-gray-400 font-medium uppercase tracking-wide mb-3">
+                <div className="rounded-xl border border-slate-100 bg-[#FAFAFA] p-4 space-y-2">
+                  <p className="text-xs text-slate-400 font-medium uppercase tracking-wide mb-3">
                     {brand.name} journey
                   </p>
                   {brand.emailCount > 0 && (
                     <div className="flex items-center justify-between">
-                      <span className="text-xs text-gray-500">Emails in library</span>
-                      <span className="text-xs font-semibold text-gray-900">{brand.emailCount}</span>
+                      <span className="text-xs text-slate-500">Emails in library</span>
+                      <span className="text-xs font-semibold text-slate-900">{brand.emailCount}</span>
                     </div>
                   )}
                   {brand.duration && (
                     <div className="flex items-center justify-between">
-                      <span className="text-xs text-gray-500">Journey span</span>
-                      <span className="text-xs font-semibold text-gray-900">{brand.duration}</span>
+                      <span className="text-xs text-slate-500">Journey span</span>
+                      <span className="text-xs font-semibold text-slate-900">{brand.duration}</span>
                     </div>
                   )}
                   {brand.avgDelay && (
                     <div className="flex items-center justify-between">
-                      <span className="text-xs text-gray-500">Avg. send gap</span>
-                      <span className="text-xs font-semibold text-gray-900">{brand.avgDelay}</span>
+                      <span className="text-xs text-slate-500">Avg. send gap</span>
+                      <span className="text-xs font-semibold text-slate-900">{brand.avgDelay}</span>
                     </div>
                   )}
                   <Link
@@ -405,8 +405,8 @@ const LibraryEmail: React.FC = () => {
         <div className="container mx-auto px-4 max-w-7xl mt-16 space-y-12">
 
           {relatedEmails.length > 0 && (
-            <div className="border-t border-gray-100 pt-12">
-              <h2 className="text-xl font-bold text-gray-900 mb-6">
+            <div className="border-t border-slate-100 pt-12">
+              <h2 className="text-xl font-bold text-slate-900 mb-6">
                 More from {brandName}
               </h2>
               <RelatedGrid emails={relatedEmails} getBrandName={getBrandName} />
@@ -414,11 +414,11 @@ const LibraryEmail: React.FC = () => {
           )}
 
           {relatedByUseCase.length > 0 && useCase && (
-            <div className="border-t border-gray-100 pt-12">
-              <h2 className="text-xl font-bold text-gray-900 mb-2">
+            <div className="border-t border-slate-100 pt-12">
+              <h2 className="text-xl font-bold text-slate-900 mb-2">
                 More {useCase.name} emails
               </h2>
-              <p className="text-sm text-gray-400 mb-6">
+              <p className="text-sm text-slate-400 mb-6">
                 <Link to={`/library/usecase/${useCase.slug}`}
                   className="hover:text-[#1D4ED8] transition-colors">
                   Browse all {useCase.name} emails →
@@ -429,11 +429,11 @@ const LibraryEmail: React.FC = () => {
           )}
 
           {relatedByTag.length > 0 && firstTag && (
-            <div className="border-t border-gray-100 pt-12">
-              <h2 className="text-xl font-bold text-gray-900 mb-2">
+            <div className="border-t border-slate-100 pt-12">
+              <h2 className="text-xl font-bold text-slate-900 mb-2">
                 More {firstTag.name} emails
               </h2>
-              <p className="text-sm text-gray-400 mb-6">
+              <p className="text-sm text-slate-400 mb-6">
                 <Link to={`/library/tag/${firstTag.slug}`}
                   className="hover:text-[#1D4ED8] transition-colors">
                   Browse all {firstTag.name} emails →

@@ -36,7 +36,7 @@ export const HowItWorksSection: React.FC = () => {
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <div className="text-center mb-10 md:mb-20">
           <p className="text-xs font-semibold tracking-widest text-indigo-500 uppercase mb-4">How it works</p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900 mb-4">
             Drive more paid users in 3 steps
           </h2>
         </div>
@@ -45,15 +45,15 @@ export const HowItWorksSection: React.FC = () => {
           {steps.map((step) => (
             <div
               key={step.number}
-              className="bg-white/90 backdrop-blur-sm rounded-2xl border border-gray-200/60 shadow-sm hover:shadow-lg hover:border-indigo-200 transition-all duration-300 p-6 md:p-8 group"
+              className="bg-white/90 backdrop-blur-sm rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-lg hover:border-indigo-200 transition-all duration-300 p-6 md:p-8 group"
             >
               <div className="relative mb-6 inline-flex">
                 <div className="w-11 h-11 bg-[#1D4ED8] text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg shadow-indigo-500/25">
                   {step.number}
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">{step.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{step.description}</p>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">{step.title}</h3>
+              <p className="text-slate-600 leading-relaxed">{step.description}</p>
             </div>
           ))}
         </div>
@@ -65,7 +65,7 @@ export const HowItWorksSection: React.FC = () => {
               value={url}
               onChange={(e) => setUrl(e.target.value)}
               placeholder="website.com"
-              className="w-full px-5 py-4 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-lg shadow-sm bg-white"
+              className="w-full px-5 py-4 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-lg shadow-sm bg-white"
             />
             <button
               type="submit"
@@ -82,7 +82,7 @@ export const HowItWorksSection: React.FC = () => {
               )}
             </button>
           </form>
-          <p className="mt-3 text-sm text-gray-400">100 onboarded users free. No card required.</p>
+          <p className="mt-3 text-sm text-slate-400">100 onboarded users free. No card required.</p>
         </div>
       </div>
     </section>

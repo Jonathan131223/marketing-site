@@ -80,10 +80,10 @@ const LibraryUseCases: React.FC = () => {
       <Navbar />
 
       <main className="pt-16">
-        <div className="bg-white border-b border-gray-100 pb-8 pt-10">
+        <div className="bg-white border-b border-slate-100 pb-8 pt-10">
           <div className="container mx-auto px-4 max-w-6xl">
             <nav aria-label="Breadcrumb" className="mb-6">
-              <ol className="flex items-center gap-2 text-sm text-gray-400">
+              <ol className="flex items-center gap-2 text-sm text-slate-400">
                 <li>
                   <Link to="/library" className="hover:text-[#1D4ED8] transition-colors">
                     Library
@@ -91,12 +91,12 @@ const LibraryUseCases: React.FC = () => {
                 </li>
                 <li aria-hidden="true"><span>/</span></li>
                 <li aria-current="page">
-                  <span className="text-gray-700 font-medium">Use Cases</span>
+                  <span className="text-slate-700 font-medium">Use Cases</span>
                 </li>
               </ol>
             </nav>
-            <h1 className="text-3xl font-bold text-gray-900 mb-1">All Use Cases</h1>
-            <p className="text-gray-400 text-sm">
+            <h1 className="text-3xl font-bold text-slate-900 mb-1">All Use Cases</h1>
+            <p className="text-slate-400 text-sm">
               {usecases.length} use case{usecases.length !== 1 ? "s" : ""} in library
             </p>
           </div>
@@ -118,19 +118,19 @@ const LibraryUseCases: React.FC = () => {
                   <Link
                     key={uc.slug}
                     to={`/library/usecase/${uc.slug}`}
-                    className="group flex items-start gap-4 p-5 rounded-2xl border border-gray-100 bg-white hover:shadow-md hover:border-[#1D4ED8]/30 transition-all"
+                    className="group flex items-start gap-4 p-5 rounded-2xl border border-slate-100 bg-white hover:shadow-md hover:border-[#1D4ED8]/30 transition-all"
                   >
                     <span className="text-3xl flex-shrink-0">{emoji}</span>
                     <div className="min-w-0">
-                      <p className="text-sm font-semibold text-gray-800 group-hover:text-[#1D4ED8] transition-colors mb-1">
+                      <p className="text-sm font-semibold text-slate-800 group-hover:text-[#1D4ED8] transition-colors mb-1">
                         {uc.name}
                       </p>
                       {uc.description && (
-                        <p className="text-xs text-gray-400 leading-relaxed line-clamp-2">
+                        <p className="text-xs text-slate-400 leading-relaxed line-clamp-2">
                           {uc.description}
                         </p>
                       )}
-                      <p className="text-xs text-gray-400 mt-2">
+                      <p className="text-xs text-slate-400 mt-2">
                         {uc.emailCount} email{uc.emailCount !== 1 ? "s" : ""}
                       </p>
                     </div>

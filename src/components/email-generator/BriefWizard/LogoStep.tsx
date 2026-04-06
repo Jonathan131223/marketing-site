@@ -201,15 +201,25 @@ export const LogoStep: React.FC<LogoStepProps> = ({
               <ArrowLeft className="w-5 h-5 mr-2" />
               Back
             </button>
-            <button
-              type="button"
-              onClick={onNext}
-              disabled={!currentLogoUrl}
-              className="flex-1 group inline-flex items-center justify-center bg-gradient-to-r from-blue-600 via-blue-700 to-blue-600 text-white px-6 py-4 rounded-xl font-semibold hover:from-blue-700 hover:via-blue-800 hover:to-blue-700 transition-all duration-300 shadow-xl shadow-blue-500/25 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              Continue
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </button>
+            {currentLogoUrl ? (
+              <button
+                type="button"
+                onClick={onNext}
+                className="flex-1 group inline-flex items-center justify-center bg-gradient-to-r from-blue-600 via-blue-700 to-blue-600 text-white px-6 py-4 rounded-xl font-semibold hover:from-blue-700 hover:via-blue-800 hover:to-blue-700 transition-all duration-300 shadow-xl shadow-blue-500/25"
+              >
+                Continue
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={onNext}
+                className="flex-1 group inline-flex items-center justify-center px-6 py-4 rounded-xl font-semibold text-slate-600 bg-white border border-slate-200 hover:bg-slate-50 hover:text-slate-900 transition-all duration-200"
+              >
+                Skip for now
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </button>
+            )}
           </div>
         </div>
       </div>

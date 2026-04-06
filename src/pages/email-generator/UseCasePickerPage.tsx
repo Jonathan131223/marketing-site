@@ -140,6 +140,7 @@ export default function UseCasePickerPage() {
         {/* Category Cards Grid */}
         <section className="pb-24">
           <div className="container mx-auto px-6 max-w-5xl">
+            <h2 className="text-2xl font-bold text-slate-900 text-center mb-8">Choose your use case</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {categoryOrder.map((categoryKey) => {
                 const meta = categoryMeta[categoryKey];

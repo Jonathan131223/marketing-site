@@ -339,7 +339,7 @@ export const useCaseConfig: Record<UseCase, UseCaseConfig> = {
   "nps-survey": {
     title: "Send NPS survey",
     icon: "📊",
-    color: "from-blue-400 via-slate-500 to-gray-600",
+    color: "from-blue-400 via-slate-500 to-slate-600",
     questions: [
       {
         key: "companyName",
@@ -607,7 +607,7 @@ export const useCaseConfig: Record<UseCase, UseCaseConfig> = {
   "woo-passives": {
     title: "Woo passives (from NPS survey)",
     icon: "😐",
-    color: "from-gray-400 via-slate-500 to-gray-600",
+    color: "from-slate-400 via-slate-500 to-slate-600",
     questions: [
       {
         key: "companyName",
@@ -733,7 +733,7 @@ export const useCaseConfig: Record<UseCase, UseCaseConfig> = {
   "acknowledge-downgrade": {
     title: "Acknowledge downgrade",
     icon: "📉",
-    color: "from-gray-400 via-slate-500 to-blue-600",
+    color: "from-slate-400 via-slate-500 to-blue-600",
     questions: [
       {
         key: "companyName",
@@ -1098,7 +1098,7 @@ export const useCaseConfig: Record<UseCase, UseCaseConfig> = {
   "case-study-spotlight": {
     title: "Case study spotlight",
     icon: "💼",
-    color: "from-gray-400 via-slate-500 to-blue-600",
+    color: "from-slate-400 via-slate-500 to-blue-600",
     questions: [
       {
         key: "companyName",

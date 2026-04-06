@@ -57,7 +57,7 @@ const Blog: React.FC = () => {
             <h1 className="font-bold" style={{ color: '#1D4ED8', fontSize: '42px', margin: '10px 0px' }}>
               DigiStorms Blog
             </h1>
-            <p className="text-gray-500 text-lg">
+            <p className="text-slate-500 text-lg">
               Guides, examples, and ideas for better SaaS lifecycle emails.
             </p>
           </div>

@@ -163,18 +163,18 @@ export const SearchOverlay: React.FC<Props> = ({ onClose, onSearch, onNavigate }
         onClick={(e) => e.stopPropagation()}
       >
         {/* Search bar row */}
-        <form onSubmit={handleSubmit} className="flex items-center gap-3 px-5 py-4 border-b border-gray-100">
-          <Search className="h-5 w-5 text-gray-400 flex-shrink-0" />
+        <form onSubmit={handleSubmit} className="flex items-center gap-3 px-5 py-4 border-b border-slate-100">
+          <Search className="h-5 w-5 text-slate-400 flex-shrink-0" />
           <input
             ref={inputRef}
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search keywords"
-            className="flex-1 text-base text-gray-900 placeholder-gray-400 focus:outline-none bg-transparent"
+            className="flex-1 text-base text-slate-900 placeholder-slate-400 focus:outline-none bg-transparent"
           />
           {query && (
-            <button type="button" onClick={() => setQuery("")} className="text-gray-400 hover:text-gray-600 flex-shrink-0">
+            <button type="button" onClick={() => setQuery("")} className="text-slate-400 hover:text-slate-600 flex-shrink-0">
               <X className="h-4 w-4" />
             </button>
           )}
@@ -191,13 +191,13 @@ export const SearchOverlay: React.FC<Props> = ({ onClose, onSearch, onNavigate }
         {/* Body: sidebar + content */}
         <div className="flex flex-1 overflow-hidden">
           {/* Left sidebar */}
-          <nav className="flex-shrink-0 flex flex-col gap-1 p-4 border-r border-gray-100" style={{ width: 140 }}>
+          <nav className="flex-shrink-0 flex flex-col gap-1 p-4 border-r border-slate-100" style={{ width: 140 }}>
             {TABS.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                  activeTab === tab.id ? "text-white" : "text-gray-600 hover:bg-gray-50"
+                  activeTab === tab.id ? "text-white" : "text-slate-600 hover:bg-slate-50"
                 }`}
                 style={activeTab === tab.id ? { backgroundColor: "#1D4ED8" } : {}}
               >
@@ -213,13 +213,13 @@ export const SearchOverlay: React.FC<Props> = ({ onClose, onSearch, onNavigate }
             {activeTab === "trending" && (
               <div className="space-y-6">
                 <div>
-                  <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Tags</p>
+                  <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-3">Tags</p>
                   <div className="flex flex-wrap gap-2">
                     {trendingTags.map((tag) => (
                       <button
                         key={tag.slug}
                         onClick={() => handleItemClick(`/library/tag/${tag.slug}`)}
-                        className="px-3 py-1.5 rounded-full border border-gray-200 text-sm text-gray-600 font-medium hover:border-[#1D4ED8] hover:text-[#1D4ED8] transition-colors bg-white"
+                        className="px-3 py-1.5 rounded-full border border-slate-200 text-sm text-slate-600 font-medium hover:border-[#1D4ED8] hover:text-[#1D4ED8] transition-colors bg-white"
                       >
                         {tag.name}
                       </button>
@@ -227,15 +227,15 @@ export const SearchOverlay: React.FC<Props> = ({ onClose, onSearch, onNavigate }
                   </div>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Brands</p>
+                  <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-3">Brands</p>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                     {trendingBrands.map((brand) => (
                       <button
                         key={brand.slug}
                         onClick={() => handleItemClick(`/library/brand/${brand.slug}`)}
-                        className="group text-left rounded-xl border border-gray-100 bg-gray-50 hover:border-[#1D4ED8] hover:bg-[#DBEAFE]/30 transition-all overflow-hidden"
+                        className="group text-left rounded-xl border border-slate-100 bg-slate-50 hover:border-[#1D4ED8] hover:bg-[#DBEAFE]/30 transition-all overflow-hidden"
                       >
-                        <div className="h-24 bg-white overflow-hidden flex items-center justify-center border-b border-gray-100">
+                        <div className="h-24 bg-white overflow-hidden flex items-center justify-center border-b border-slate-100">
                           {latestThumbByBrand[brand.slug] ? (
                             <img
                               src={latestThumbByBrand[brand.slug]}
@@ -251,7 +251,7 @@ export const SearchOverlay: React.FC<Props> = ({ onClose, onSearch, onNavigate }
                           {brand.logo && (
                             <img src={brand.logo} alt={brand.name} className="w-5 h-5 object-contain flex-shrink-0" />
                           )}
-                          <span className="text-xs font-semibold text-gray-800 truncate group-hover:text-[#1D4ED8] transition-colors">
+                          <span className="text-xs font-semibold text-slate-800 truncate group-hover:text-[#1D4ED8] transition-colors">
                             {brand.name}
                           </span>
                         </div>
@@ -269,23 +269,23 @@ export const SearchOverlay: React.FC<Props> = ({ onClose, onSearch, onNavigate }
                   <button
                     key={brand.slug}
                     onClick={() => handleItemClick(`/library/brand/${brand.slug}`)}
-                    className="group flex flex-col items-center gap-2 p-3 rounded-xl border border-gray-100 bg-white hover:border-[#1D4ED8] hover:shadow-sm transition-all"
+                    className="group flex flex-col items-center gap-2 p-3 rounded-xl border border-slate-100 bg-white hover:border-[#1D4ED8] hover:shadow-sm transition-all"
                     title={brand.name}
                   >
-                    <div className="w-12 h-12 rounded-xl border border-gray-100 bg-gray-50 flex items-center justify-center overflow-hidden">
+                    <div className="w-12 h-12 rounded-xl border border-slate-100 bg-slate-50 flex items-center justify-center overflow-hidden">
                       {brand.logo ? (
                         <img src={brand.logo} alt={brand.name} className="w-10 h-10 object-contain" loading="lazy" />
                       ) : (
-                        <span className="text-lg font-bold text-gray-300">{brand.name[0]}</span>
+                        <span className="text-lg font-bold text-slate-300">{brand.name[0]}</span>
                       )}
                     </div>
-                    <span className="text-xs text-gray-500 font-medium group-hover:text-[#1D4ED8] transition-colors text-center w-full truncate">
+                    <span className="text-xs text-slate-500 font-medium group-hover:text-[#1D4ED8] transition-colors text-center w-full truncate">
                       {brand.name}
                     </span>
                   </button>
                 ))}
                 {filteredBrands.length === 0 && (
-                  <p className="col-span-full text-sm text-gray-400 text-center py-8">No brands found.</p>
+                  <p className="col-span-full text-sm text-slate-400 text-center py-8">No brands found.</p>
                 )}
               </div>
             )}
@@ -297,14 +297,14 @@ export const SearchOverlay: React.FC<Props> = ({ onClose, onSearch, onNavigate }
                   <li key={uc.slug}>
                     <button
                       onClick={() => handleItemClick(`/library/usecase/${uc.slug}`)}
-                      className="w-full text-left px-3 py-2.5 rounded-lg text-sm text-gray-700 font-medium hover:bg-gray-50 hover:text-[#1D4ED8] transition-colors"
+                      className="w-full text-left px-3 py-2.5 rounded-lg text-sm text-slate-700 font-medium hover:bg-slate-50 hover:text-[#1D4ED8] transition-colors"
                     >
                       {uc.name}
                     </button>
                   </li>
                 ))}
                 {filteredUsecases.length === 0 && (
-                  <p className="text-sm text-gray-400 text-center py-8">No use cases found.</p>
+                  <p className="text-sm text-slate-400 text-center py-8">No use cases found.</p>
                 )}
               </ul>
             )}
@@ -316,14 +316,14 @@ export const SearchOverlay: React.FC<Props> = ({ onClose, onSearch, onNavigate }
                   <li key={tag.slug}>
                     <button
                       onClick={() => handleItemClick(`/library/tag/${tag.slug}`)}
-                      className="w-full text-left px-3 py-2.5 rounded-lg text-sm text-gray-700 font-medium hover:bg-gray-50 hover:text-[#1D4ED8] transition-colors"
+                      className="w-full text-left px-3 py-2.5 rounded-lg text-sm text-slate-700 font-medium hover:bg-slate-50 hover:text-[#1D4ED8] transition-colors"
                     >
                       {tag.name}
                     </button>
                   </li>
                 ))}
                 {filteredTags.length === 0 && (
-                  <p className="text-sm text-gray-400 text-center py-8">No tags found.</p>
+                  <p className="text-sm text-slate-400 text-center py-8">No tags found.</p>
                 )}
               </ul>
             )}
