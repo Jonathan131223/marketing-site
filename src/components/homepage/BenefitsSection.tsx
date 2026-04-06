@@ -37,7 +37,7 @@ export const BenefitsSection: React.FC = () => {
     <section className="py-16 md:py-20 lg:py-24 bg-white">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-serif font-serif font-semibold text-slate-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-slate-900 mb-4">
             From signup to upgrade on autopilot
           </h2>
           <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed">

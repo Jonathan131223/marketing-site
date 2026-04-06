@@ -523,7 +523,7 @@ const Library: React.FC = () => {
       <section className="py-16 md:py-20 lg:py-24 bg-slate-50">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-serif font-serif font-semibold text-slate-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-slate-900 mb-4">
               Flows mapped to business goals.
             </h2>
             <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>
@@ -560,7 +560,7 @@ const Library: React.FC = () => {
       <section className="py-16 md:py-20 lg:py-24 bg-white overflow-hidden">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-serif font-serif font-semibold text-slate-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-slate-900 mb-4">
               Find the perfect email in seconds.
             </h2>
             <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>
@@ -618,7 +618,7 @@ const Library: React.FC = () => {
       ══════════════════════════════════════════════════════════════════════ */}
       <section className="py-16 md:py-20 lg:py-24 bg-slate-50 overflow-hidden">
         <div className="container mx-auto px-4 max-w-6xl mb-10 text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-serif font-serif font-semibold text-slate-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-slate-900 mb-4">
             Learn how top SaaS brands grow.
           </h2>
           <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>
@@ -676,7 +676,7 @@ const Library: React.FC = () => {
       <section className="py-16 md:py-20 lg:py-24 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-serif font-serif font-semibold text-slate-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-slate-900 mb-4">
               See every email, in real order.
             </h2>
             <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>
@@ -751,7 +751,7 @@ const Library: React.FC = () => {
           {/* Browser header */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-serif font-serif font-semibold text-slate-900">
+              <h2 className="text-2xl sm:text-3xl font-serif font-semibold text-slate-900">
                 {activeFilterLabel ? `Emails — ${activeFilterLabel}` : "Browse all emails"}
               </h2>
               {!loading && (
@@ -881,7 +881,7 @@ const Library: React.FC = () => {
       <section className="py-16 md:py-20 lg:py-24 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto mb-8">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-serif font-serif font-semibold text-slate-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-slate-900 mb-4">
               Start exploring.
             </h2>
             <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>

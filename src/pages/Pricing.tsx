@@ -186,7 +186,7 @@ const Pricing: React.FC = () => {
             {/* ── Right: Concierge ── */}
             <div
               className="rounded-2xl shadow-sm flex flex-col overflow-hidden"
-              style={{ background: "linear-gradient(145deg, #1D4ED8 0%, #5a35b5 100%)" }}
+              style={{ background: "linear-gradient(145deg, #1D4ED8 0%, #1E3A8A 100%)" }}
             >
               <div className="px-8 pt-8 pb-6 border-b border-white/10">
                 <p className="text-xs font-semibold text-white/50 uppercase tracking-widest mb-1">Done for you</p>

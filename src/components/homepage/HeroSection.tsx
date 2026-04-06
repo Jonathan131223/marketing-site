@@ -20,7 +20,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="container mx-auto px-4">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-slate-900 mb-6 leading-tight">
-            Turn more free users into paying customers{" "}
+            Turn free users into paying customers{" "}
             <span className="italic" style={{ color: "#1D4ED8" }}>automatically</span>
           </h1>
 
