@@ -302,7 +302,7 @@ const CustomizePage = () => {
           {/* Header with title */}
           <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
             <div>
-              <h1 className="text-3xl font-bold text-foreground mb-2">
+              <h1 className="text-3xl font-serif font-bold text-foreground mb-2">
                 Make It Yours
               </h1>
               <p className="text-muted-foreground">

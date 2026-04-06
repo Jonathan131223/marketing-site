@@ -84,7 +84,7 @@ export default function UseCasePickerPage() {
         {/* Hero Section */}
         <section className="pt-20 pb-12">
           <div className="container mx-auto px-6 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+            <h1 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">
               Lifecycle Email Generator
             </h1>
             <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-8">
@@ -140,7 +140,7 @@ export default function UseCasePickerPage() {
         {/* Category Cards Grid */}
         <section className="pb-24">
           <div className="container mx-auto px-6 max-w-5xl">
-            <h2 className="text-2xl font-bold text-slate-900 text-center mb-8">Choose your use case</h2>
+            <h2 className="text-2xl font-serif font-bold text-slate-900 text-center mb-8">Choose your use case</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {categoryOrder.map((categoryKey) => {
                 const meta = categoryMeta[categoryKey];

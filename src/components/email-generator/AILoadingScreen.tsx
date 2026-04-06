@@ -316,7 +316,7 @@ const AILoadingScreen: React.FC<AILoadingScreenProps> = ({
                 </div>
               </div>
 
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">
+              <h2 className="text-2xl font-serif font-bold text-slate-900 mb-4">
                 Email Generation Failed
               </h2>
 
@@ -355,7 +355,7 @@ const AILoadingScreen: React.FC<AILoadingScreenProps> = ({
                 </div>
               </div>
 
-              <h2 className="text-3xl font-bold text-slate-900 mb-4 animate-fade-in">
+              <h2 className="text-3xl font-serif font-bold text-slate-900 mb-4 animate-fade-in">
                 Stormi is creating your emails
               </h2>
 

@@ -14,7 +14,7 @@ const PrivacyPolicy = () => {
       <Navbar />
       <main className="container mx-auto px-4 py-16 max-w-4xl">
         <div className="prose prose-lg mx-auto">
-          <h1 className="text-4xl font-bold text-foreground mb-8">
+          <h1 className="text-4xl font-serif font-bold text-foreground mb-8">
             DigiStorms — Privacy Policy
           </h1>
 
@@ -29,7 +29,7 @@ const PrivacyPolicy = () => {
             </p>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">1. Who We Are</h2>
+              <h2 className="text-2xl font-serif font-semibold mb-4">1. Who We Are</h2>
               <p>
                 Digi Storms LTD is the data controller. Registered in the UK.
                 Contact: jonathan@digistorms.com
@@ -37,7 +37,7 @@ const PrivacyPolicy = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">
+              <h2 className="text-2xl font-serif font-semibold mb-4">
                 2. Data We Collect
               </h2>
               <ul className="list-disc pl-6 space-y-2">
@@ -61,7 +61,7 @@ const PrivacyPolicy = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">
+              <h2 className="text-2xl font-serif font-semibold mb-4">
                 3. Why We Collect It
               </h2>
               <ul className="list-disc pl-6 space-y-2">
@@ -73,7 +73,7 @@ const PrivacyPolicy = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">4. Cookies</h2>
+              <h2 className="text-2xl font-serif font-semibold mb-4">4. Cookies</h2>
               <p className="mb-2">We use cookies for:</p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Authentication and session management</li>
@@ -87,7 +87,7 @@ const PrivacyPolicy = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">5. Sharing Data</h2>
+              <h2 className="text-2xl font-serif font-semibold mb-4">5. Sharing Data</h2>
               <p className="mb-4">
                 We never sell your data. We share it only with trusted vendors:
               </p>
@@ -100,7 +100,7 @@ const PrivacyPolicy = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">
+              <h2 className="text-2xl font-serif font-semibold mb-4">
                 6. Your Rights (GDPR)
               </h2>
               <p className="mb-2">
@@ -117,7 +117,7 @@ const PrivacyPolicy = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">7. Data Retention</h2>
+              <h2 className="text-2xl font-serif font-semibold mb-4">7. Data Retention</h2>
               <p>
                 We keep data as long as needed to provide the service or comply
                 with laws. You may request deletion at any time.
@@ -125,7 +125,7 @@ const PrivacyPolicy = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">8. Updates</h2>
+              <h2 className="text-2xl font-serif font-semibold mb-4">8. Updates</h2>
               <p>
                 We may update this policy from time to time. We'll notify users
                 when we do.
@@ -133,7 +133,7 @@ const PrivacyPolicy = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">9. Contact</h2>
+              <h2 className="text-2xl font-serif font-semibold mb-4">9. Contact</h2>
               <p>For questions, contact: jonathan@digistorms.com</p>
             </section>
           </div>

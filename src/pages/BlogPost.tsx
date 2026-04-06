@@ -530,7 +530,7 @@ const BlogPost: React.FC = () => {
           return (
             <div className="mt-20 border-t border-slate-100 pt-16 pb-4">
               <div className="container mx-auto px-4 max-w-6xl">
-                <h2 className="text-2xl font-semibold text-slate-900 mb-10">
+                <h2 className="text-2xl font-serif font-semibold text-slate-900 mb-10">
                   You might also be interested in...
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">

@@ -219,7 +219,7 @@ export default function LifecycleScorePage() {
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
               <div className="flex-1">
-                <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+                <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">
                   Check your onboarding score in 60 seconds.
                 </h1>
                 <p className="text-lg text-muted-foreground mb-8">

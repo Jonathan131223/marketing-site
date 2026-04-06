@@ -68,7 +68,7 @@ const Pricing: React.FC = () => {
       <main>
         {/* Header */}
         <div className="mx-auto max-w-4xl px-6 pt-16 pb-10 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+          <h1 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">
             Onboarding that <span className="text-primary">runs itself</span>
           </h1>
           <p className="text-xl text-slate-600 max-w-lg mx-auto mb-10">
@@ -104,7 +104,7 @@ const Pricing: React.FC = () => {
             <div className="bg-white rounded-2xl border border-slate-200 shadow-sm flex flex-col">
               <div className="px-8 pt-8 pb-6 border-b border-slate-100">
                 <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-1">Self-serve</p>
-                <h2 className="text-2xl font-bold text-slate-900 mb-5">Start free, scale as you grow</h2>
+                <h2 className="text-2xl font-serif font-bold text-slate-900 mb-5">Start free, scale as you grow</h2>
 
                 {/* User tier stepper */}
                 <div className="flex items-center justify-between bg-slate-50 border border-slate-200 rounded-xl px-4 py-3">
@@ -190,7 +190,7 @@ const Pricing: React.FC = () => {
             >
               <div className="px-8 pt-8 pb-6 border-b border-white/10">
                 <p className="text-xs font-semibold text-white/50 uppercase tracking-widest mb-1">Done for you</p>
-                <h2 className="text-2xl font-bold text-white mb-1">Concierge</h2>
+                <h2 className="text-2xl font-serif font-bold text-white mb-1">Concierge</h2>
                 <p className="text-white/60 text-sm">We create and run your emails for you</p>
               </div>
 

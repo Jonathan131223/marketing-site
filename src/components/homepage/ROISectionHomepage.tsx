@@ -115,13 +115,13 @@ export const ROISectionHomepage: React.FC<ROISectionHomepageProps> = ({
   };
 
   return (
-    <section className="py-16 md:py-20 lg:py-24 bg-[#F8FAFC]">
+    <section className="py-16 md:py-20 lg:py-24 bg-slate-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-serif font-serif font-semibold text-slate-900 mb-4">
             What better onboarding could be worth
           </h2>
-          <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>
+          <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed">
             Estimate how much additional revenue stronger onboarding emails could generate for your product.
           </p>
         </div>
@@ -146,31 +146,31 @@ export const ROISectionHomepage: React.FC<ROISectionHomepageProps> = ({
                 <>
                   <div className="divide-y divide-slate-100 text-sm">
                     <div className="flex justify-between py-3">
-                      <span className="text-slate-500">Conversion rate</span>
+                      <span className="text-[22px] text-slate-500">Conversion rate</span>
                       <span className="font-semibold text-slate-900">
                         {results.convRate as number}% → {results.newConvRate as string}%
                       </span>
                     </div>
                     <div className="flex justify-between py-3">
-                      <span className="text-slate-500">Paid users/month</span>
+                      <span className="text-[22px] text-slate-500">Paid users/month</span>
                       <span className="font-semibold text-slate-900">
                         {formatNumber(results.baselinePaid as number)} → {formatNumber(results.newPaid as number)}
                       </span>
                     </div>
                     <div className="flex justify-between py-3">
-                      <span className="text-slate-500">Baseline revenue</span>
+                      <span className="text-[22px] text-slate-500">Baseline revenue</span>
                       <span className="font-semibold text-slate-900">${formatNumber(results.baselineRevenue as number)}</span>
                     </div>
                     <div className="flex justify-between py-3">
-                      <span className="text-slate-500">New revenue</span>
+                      <span className="text-[22px] text-slate-500">New revenue</span>
                       <span className="font-semibold text-slate-900">${formatNumber(results.newRevenue as number)}</span>
                     </div>
                     <div className="flex justify-between py-3">
-                      <span className="text-slate-500">Additional revenue</span>
+                      <span className="text-[22px] text-slate-500">Additional revenue</span>
                       <span className="font-semibold text-primary">+${formatNumber(results.gain as number)}</span>
                     </div>
                     <div className="flex justify-between py-3">
-                      <span className="text-slate-500">Plan cost</span>
+                      <span className="text-[22px] text-slate-500">Plan cost</span>
                       <span className="font-semibold text-slate-900">${formatNumber(results.cost as number)}/mo</span>
                     </div>
                   </div>
@@ -319,7 +319,7 @@ export const ROISectionHomepage: React.FC<ROISectionHomepageProps> = ({
               type="button"
               onClick={calculate}
               disabled={isCalculating}
-              className="flat-purple-btn w-full bg-[#1D4ED8] text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-none border-0 focus:outline-none focus:ring-0 active:bg-[#1D4ED8] disabled:cursor-not-allowed"
+              className="flat-btn w-full bg-[#1D4ED8] text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-none border-0 focus:outline-none focus:ring-0 active:bg-[#1D4ED8] disabled:cursor-not-allowed"
             >
               {isCalculating ? "Calculating…" : "Calculate ROI"}
             </button>

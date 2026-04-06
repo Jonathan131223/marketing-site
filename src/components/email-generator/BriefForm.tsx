@@ -74,7 +74,7 @@ export const BriefForm: React.FC<BriefFormProps> = ({
       {!hideHeader && (
         <div className="text-center mb-12">
           <div className="text-4xl mb-2">{config.icon}</div>
-          <h2 className="text-4xl font-bold text-slate-900 mb-6 tracking-tight">
+          <h2 className="text-4xl font-serif font-bold text-slate-900 mb-6 tracking-tight">
             {config.title} brief
           </h2>
           <p className="text-slate-600 text-xl leading-relaxed max-w-3xl mx-auto">

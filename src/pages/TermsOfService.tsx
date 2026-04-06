@@ -15,7 +15,7 @@ const TermsOfService = () => {
       <Navbar />
       <main className="container mx-auto px-4 py-16 max-w-4xl">
         <div className="prose prose-lg mx-auto">
-          <h1 className="text-4xl font-bold text-foreground mb-8">
+          <h1 className="text-4xl font-serif font-bold text-foreground mb-8">
             DigiStorms — Terms of Service (ToS)
           </h1>
           
@@ -29,14 +29,14 @@ const TermsOfService = () => {
             </p>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">1. Who We Are</h2>
+              <h2 className="text-2xl font-serif font-semibold mb-4">1. Who We Are</h2>
               <p>
                 DigiStorms is operated by Digi Storms LTD, a private limited company incorporated in the United Kingdom. Registered address: 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, UNITED KINGDOM. Contact: jonathan@digistorms.com
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">2. Use of Service</h2>
+              <h2 className="text-2xl font-serif font-semibold mb-4">2. Use of Service</h2>
               <ul className="list-disc pl-6 space-y-2">
                 <li>You may use DigiStorms only for lawful purposes and in accordance with these Terms. You must be 18 years or older to use the Service.</li>
                 <li>You are responsible for maintaining the confidentiality of your account.</li>
@@ -46,7 +46,7 @@ const TermsOfService = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">3. Plans and Billing</h2>
+              <h2 className="text-2xl font-serif font-semibold mb-4">3. Plans and Billing</h2>
               <ul className="list-disc pl-6 space-y-2">
                 <li>DigiStorms offers a free plan with usage limits and paid plans with additional credits and features.</li>
                 <li>Pricing, credit limits, and plan details are described on our website and may change with notice.</li>
@@ -55,7 +55,7 @@ const TermsOfService = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">4. AI-Generated Content and Liability</h2>
+              <h2 className="text-2xl font-serif font-semibold mb-4">4. AI-Generated Content and Liability</h2>
               <p className="mb-4">
                 Our platform generates email content using AI. We do not guarantee the accuracy, legality, or performance of generated emails. You are responsible for reviewing and validating content before use.
               </p>
@@ -67,14 +67,14 @@ const TermsOfService = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">5. Intellectual Property</h2>
+              <h2 className="text-2xl font-serif font-semibold mb-4">5. Intellectual Property</h2>
               <p>
                 All content, code, and designs are the property of DigiStorms or its licensors. You may not copy, modify, or distribute our IP without permission.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">6. Email Library Content</h2>
+              <h2 className="text-2xl font-serif font-semibold mb-4">6. Email Library Content</h2>
               <p className="mb-4">
                 The DigiStorms Email Library curates publicly available marketing emails from B2B SaaS brands strictly for educational and analytical purposes. We do not claim ownership of these emails. All logos, trademarks, and branding remain the property of their respective owners.
               </p>
@@ -84,14 +84,14 @@ const TermsOfService = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">7. Termination</h2>
+              <h2 className="text-2xl font-serif font-semibold mb-4">7. Termination</h2>
               <p>
                 We may suspend or terminate your account at any time for any reason, including violation of these Terms. You may stop using DigiStorms at any time.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">8. Governing Law</h2>
+              <h2 className="text-2xl font-serif font-semibold mb-4">8. Governing Law</h2>
               <ul className="list-disc pl-6 space-y-2">
                 <li>These Terms are governed by the laws of England and Wales.</li>
                 <li>Any dispute shall be resolved exclusively in the courts of London, UK.</li>
@@ -99,7 +99,7 @@ const TermsOfService = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">9. Contact</h2>
+              <h2 className="text-2xl font-serif font-semibold mb-4">9. Contact</h2>
               <p>
                 If you have questions about these Terms, email us at: jonathan@digistorms.com
               </p>

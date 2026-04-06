@@ -32,12 +32,12 @@ const columns = [
 
 export const OnboardingPainSection: React.FC = () => {
   return (
-    <section className="py-16 md:py-20 lg:py-24 bg-[#F8FAFC]">
+    <section className="py-16 md:py-20 lg:py-24 bg-slate-50">
       <div className="container mx-auto px-4 max-w-3xl text-center mb-12">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900 mb-4 leading-tight">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-serif font-serif font-semibold text-slate-900 mb-4 leading-tight">
           50% of users who sign up never come back
         </h2>
-        <p className="text-slate-500 leading-relaxed" style={{ fontSize: "22px" }}>
+        <p className="text-slate-500 leading-relaxed">
           Most SaaS products lose users before they ever reach value. Weak
           onboarding doesn't just hurt activation, it leaves revenue on the
           table.
@@ -63,10 +63,10 @@ export const OnboardingPainSection: React.FC = () => {
               </VisualArea>
 
               <div className="p-5 flex flex-col">
-                <h3 className="font-semibold text-slate-900 leading-snug mb-2" style={{ fontSize: "22px" }}>
+                <h3 className="font-semibold text-slate-900 leading-snug mb-2">
                   {col.title}
                 </h3>
-                <p className="text-slate-500 leading-relaxed" style={{ fontSize: "18px" }}>
+                <p className="text-slate-500 leading-relaxed">
                   {col.description}
                 </p>
               </div>

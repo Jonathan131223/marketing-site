@@ -126,7 +126,7 @@ export default function ROICalculator() {
         {/* Hero */}
         <section className="py-12 px-4">
           <div className="container mx-auto max-w-4xl text-center">
-            <h1 className="text-5xl font-bold text-foreground mb-6">
+            <h1 className="text-5xl font-serif font-bold text-foreground mb-6">
               See how much revenue better onboarding emails could unlock.
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
@@ -144,7 +144,7 @@ export default function ROICalculator() {
 
                   {/* ── Inputs ── */}
                   <div className="space-y-6">
-                    <h2 className="text-2xl font-semibold text-foreground">Your Numbers</h2>
+                    <h2 className="text-2xl font-serif font-semibold text-foreground">Your Numbers</h2>
 
                     <div className="space-y-2">
                       <Label htmlFor="currentConversionRate">
@@ -275,7 +275,7 @@ export default function ROICalculator() {
 
                   {/* ── Results ── */}
                   <div className="space-y-6">
-                    <h2 className="text-2xl font-semibold text-foreground">Your Results</h2>
+                    <h2 className="text-2xl font-serif font-semibold text-foreground">Your Results</h2>
 
                     {!results ? (
                       <div className="flex items-center justify-center h-full min-h-[300px] text-center">

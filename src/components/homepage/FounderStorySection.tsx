@@ -15,8 +15,8 @@ export const FounderStorySection: React.FC = () => {
               width="128"
               height="128"
             />
-            <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900 text-center sm:text-left">
-              👋 Hey – I'm Jonathan, the creator of DigiStorms.
+            <p className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-slate-900 text-center sm:text-left">
+              Hey, I'm Jonathan, the creator of DigiStorms.
             </p>
           </div>
 
