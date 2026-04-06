@@ -96,7 +96,7 @@ export const ExportModal: React.FC<ExportModalProps> = ({ email, onClose }) => {
       <div className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
         <div className="p-6 border-b">
           <div className="flex justify-between items-center">
-            <h2 className="text-2xl font-bold text-slate-900">Export Your Email</h2>
+            <h2 className="text-2xl font-serif font-bold text-slate-900">Export Your Email</h2>
             <button
               onClick={onClose}
               className="text-slate-500 hover:text-slate-700 text-2xl"

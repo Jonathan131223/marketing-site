@@ -24,7 +24,7 @@ const ArrowBullet: React.FC<ArrowBulletProps> = ({ title, description }) => (
 
 const ManifestoSection: React.FC<{ title: string; items: ArrowBulletProps[] }> = ({ title, items }) => (
   <section className="mb-20">
-    <h2 className="text-2xl lg:text-3xl font-semibold text-slate-900 mb-8">{title}</h2>
+    <h2 className="text-2xl lg:text-3xl font-serif font-serif font-semibold text-slate-900 mb-8">{title}</h2>
     <div className="space-y-6">
       {items.map((item, i) => (
         <ArrowBullet key={i} title={item.title} description={item.description} />
@@ -56,7 +56,7 @@ const Manifesto: React.FC = () => {
 
           {/* Header */}
           <div className="text-center mb-20">
-            <h1 className="text-3xl lg:text-5xl font-semibold text-black mb-6 leading-tight">
+            <h1 className="text-3xl lg:text-5xl font-serif font-semibold text-black mb-6 leading-tight">
               The DigiStorms Manifesto
             </h1>
             <p className="text-xl lg:text-2xl font-medium text-slate-600">
@@ -176,7 +176,7 @@ const Manifesto: React.FC = () => {
           <section className="mb-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-2xl lg:text-3xl font-semibold text-slate-900 mb-8">Who we're for</h2>
+                <h2 className="text-2xl lg:text-3xl font-serif font-serif font-semibold text-slate-900 mb-8">Who we're for</h2>
                 <div className="space-y-5">
                   <ArrowBullet title="Founders who want activation, not just signups." />
                   <ArrowBullet title="Teams tired of building onboarding flows manually." />
@@ -200,7 +200,7 @@ const Manifesto: React.FC = () => {
         {/* CTA */}
         <section className="pb-20 px-6">
           <div className="max-w-2xl mx-auto text-center bg-white rounded-3xl border border-slate-100 px-8 py-14">
-            <h2 className="text-3xl font-semibold text-slate-900 mb-3">No onboarding system? No problem.</h2>
+            <h2 className="text-3xl font-serif font-semibold text-slate-900 mb-3">No onboarding system? No problem.</h2>
             <p className="text-lg text-slate-600 mb-8">We map it, build it, and run it for you.</p>
             <Link
               to="/"

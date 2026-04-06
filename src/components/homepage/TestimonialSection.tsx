@@ -4,13 +4,13 @@ import grammarlyLogo from "@/assets/logos/grammarly-logo.webp";
 
 export const TestimonialSection: React.FC = () => {
   return (
-    <section className="py-16 md:py-20 lg:py-24 bg-[#F8FAFC]">
+    <section className="py-16 md:py-20 lg:py-24 bg-slate-50">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-serif font-serif font-semibold text-slate-900 mb-4">
             Trusted by SaaS growth leaders
           </h2>
-          <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>
+          <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed">
             Founders and growth teams use DigiStorms to turn onboarding into a real revenue driver.
           </p>
         </div>

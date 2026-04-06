@@ -31,10 +31,10 @@ export const BrandInspirationSection: React.FC = () => {
     <section className="py-16 md:py-20 lg:py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-serif font-serif font-semibold text-slate-900 mb-4">
             Inspired by the best SaaS onboarding programs
           </h2>
-          <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>
+          <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed">
             DigiStorms is trained on 1,000+ real SaaS lifecycle emails from companies that obsess over activation and retention.
           </p>
         </div>

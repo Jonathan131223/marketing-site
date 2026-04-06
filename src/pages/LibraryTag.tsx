@@ -182,7 +182,7 @@ const LibraryTag: React.FC = () => {
             >
               {tag.name}
             </div>
-            <h1 className="text-3xl font-bold text-slate-900 mb-1">{tag.name} emails</h1>
+            <h1 className="text-3xl font-serif font-bold text-slate-900 mb-1">{tag.name} emails</h1>
             <p className="text-slate-400 text-sm">
               {filteredEmails.length} email{filteredEmails.length !== 1 ? "s" : ""} in library
             </p>

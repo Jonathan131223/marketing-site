@@ -264,7 +264,7 @@ const LibraryBrand: React.FC = () => {
                   </div>
                 )}
                 <div className="min-w-0">
-                  <h1 className="text-3xl font-bold text-slate-900 mb-2">{brand.name}</h1>
+                  <h1 className="text-3xl font-serif font-bold text-slate-900 mb-2">{brand.name}</h1>
                   {brand.summary && (
                     <div
                       className="text-slate-500 text-sm leading-relaxed max-w-2xl [&_p]:mb-2 [&_p:last-child]:mb-0"

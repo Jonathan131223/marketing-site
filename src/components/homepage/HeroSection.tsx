@@ -19,12 +19,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     <section className="pt-20 pb-16 md:pb-40 bg-[#FFFFFF] min-h-screen flex items-center">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-slate-900 mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-slate-900 mb-6 leading-tight">
             Turn more free users into paying customers{" "}
             <span className="italic" style={{ color: "#1D4ED8" }}>automatically</span>
           </h1>
 
-          <p className="text-slate-600 mb-8 leading-relaxed max-w-2xl mx-auto" style={{ fontSize: "18px" }}>
+          <p className="text-lg text-slate-600 mb-8 leading-relaxed max-w-2xl mx-auto">
             DigiStorms is an AI onboarding agent. It tracks user behavior, sends the right emails at the right time, and automatically moves users from signup to paid.
           </p>
 

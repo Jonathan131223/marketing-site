@@ -301,7 +301,7 @@ const LibraryEmail: React.FC = () => {
               {/* Subject */}
               <div>
                 <p className="text-xs text-slate-400 font-medium uppercase tracking-wide mb-1">Subject line</p>
-                <h1 className="text-xl font-bold text-slate-900 leading-snug">{email.subject}</h1>
+                <h1 className="text-xl font-serif font-bold text-slate-900 leading-snug">{email.subject}</h1>
               </div>
 
               {/* Sender + Date row */}

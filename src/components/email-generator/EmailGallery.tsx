@@ -1250,7 +1250,7 @@ export const EmailGallery: React.FC<EmailGalleryProps> = ({
   return (
     <div className="max-w-7xl mx-auto">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-slate-900 mb-4">
+        <h2 className="text-3xl font-serif font-bold text-slate-900 mb-4">
           Your Generated Email Options
         </h2>
         <p className="text-slate-600 text-lg">

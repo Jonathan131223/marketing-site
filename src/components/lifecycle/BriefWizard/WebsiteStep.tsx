@@ -32,7 +32,7 @@ export const WebsiteStep: React.FC<WebsiteStepProps> = ({
     <div className="max-w-2xl mx-auto">
       <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl shadow-slate-900/10 p-10 border border-slate-200/50">
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-slate-900 mb-2">
+          <h2 className="text-2xl font-serif font-bold text-slate-900 mb-2">
             Enter Your Website
           </h2>
           <p className="text-slate-600">

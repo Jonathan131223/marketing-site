@@ -54,7 +54,7 @@ const Blog: React.FC = () => {
         <div className="container mx-auto px-4 max-w-6xl">
 
           <div className="text-center mb-12 pb-10 border-b-2" style={{ borderColor: '#1D4ED8' }}>
-            <h1 className="font-bold" style={{ color: '#1D4ED8', fontSize: '42px', margin: '10px 0px' }}>
+            <h1 className="font-serif font-bold" style={{ color: '#1D4ED8', fontSize: '42px', margin: '10px 0px' }}>
               DigiStorms Blog
             </h1>
             <p className="text-slate-500 text-lg">

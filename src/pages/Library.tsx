@@ -471,7 +471,7 @@ const Library: React.FC = () => {
       <section className="pt-20 pb-16 md:pb-40 bg-white min-h-screen flex items-center">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-slate-900 mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-slate-900 mb-6 leading-tight">
               The largest search engine for B2B SaaS{" "}
               <span className="italic" style={{ color: "#1D4ED8" }}>lifecycle emails.</span>
             </h1>
@@ -520,10 +520,10 @@ const Library: React.FC = () => {
       {/* ══════════════════════════════════════════════════════════════════════
           USE CASES — "Flows mapped to business goals"
       ══════════════════════════════════════════════════════════════════════ */}
-      <section className="py-16 md:py-20 lg:py-24 bg-[#F8FAFC]">
+      <section className="py-16 md:py-20 lg:py-24 bg-slate-50">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-serif font-serif font-semibold text-slate-900 mb-4">
               Flows mapped to business goals.
             </h2>
             <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>
@@ -560,7 +560,7 @@ const Library: React.FC = () => {
       <section className="py-16 md:py-20 lg:py-24 bg-white overflow-hidden">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-serif font-serif font-semibold text-slate-900 mb-4">
               Find the perfect email in seconds.
             </h2>
             <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>
@@ -616,9 +616,9 @@ const Library: React.FC = () => {
       {/* ══════════════════════════════════════════════════════════════════════
           BRANDS TICKER — "Learn how top SaaS brands grow"
       ══════════════════════════════════════════════════════════════════════ */}
-      <section className="py-16 md:py-20 lg:py-24 bg-[#F8FAFC] overflow-hidden">
+      <section className="py-16 md:py-20 lg:py-24 bg-slate-50 overflow-hidden">
         <div className="container mx-auto px-4 max-w-6xl mb-10 text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-serif font-serif font-semibold text-slate-900 mb-4">
             Learn how top SaaS brands grow.
           </h2>
           <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>
@@ -676,7 +676,7 @@ const Library: React.FC = () => {
       <section className="py-16 md:py-20 lg:py-24 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-serif font-serif font-semibold text-slate-900 mb-4">
               See every email, in real order.
             </h2>
             <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>
@@ -744,14 +744,14 @@ const Library: React.FC = () => {
       <section
         ref={browserRef}
         id="browse"
-        className="py-16 md:py-20 lg:py-24 bg-[#F8FAFC]"
+        className="py-16 md:py-20 lg:py-24 bg-slate-50"
       >
         <div className="container mx-auto px-4 max-w-7xl">
 
           {/* Browser header */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900">
+              <h2 className="text-2xl sm:text-3xl font-serif font-serif font-semibold text-slate-900">
                 {activeFilterLabel ? `Emails — ${activeFilterLabel}` : "Browse all emails"}
               </h2>
               {!loading && (
@@ -823,7 +823,7 @@ const Library: React.FC = () => {
                 ))}
               </div>
               {/* Fade-out overlay */}
-              <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#F8FAFC] to-transparent pointer-events-none" />
+              <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-slate-50 to-transparent pointer-events-none" />
               <div className="flex justify-center pt-4 pb-2">
                 <button
                   onClick={handleBrowseAll}
@@ -878,10 +878,10 @@ const Library: React.FC = () => {
       {/* ══════════════════════════════════════════════════════════════════════
           CTA — "Start exploring"
       ══════════════════════════════════════════════════════════════════════ */}
-      <section className="py-16 md:py-20 lg:py-24 bg-[#F8FAFC]">
+      <section className="py-16 md:py-20 lg:py-24 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto mb-8">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-serif font-serif font-semibold text-slate-900 mb-4">
               Start exploring.
             </h2>
             <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>
