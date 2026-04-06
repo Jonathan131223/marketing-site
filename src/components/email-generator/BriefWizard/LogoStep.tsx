@@ -204,9 +204,10 @@ export const LogoStep: React.FC<LogoStepProps> = ({
             <button
               type="button"
               onClick={onNext}
-              className="flex-1 group inline-flex items-center justify-center bg-gradient-to-r from-purple-600 via-purple-700 to-blue-600 text-white px-6 py-4 rounded-xl font-semibold hover:from-purple-700 hover:via-purple-800 hover:to-blue-700 transition-all duration-300 shadow-xl shadow-purple-500/25"
+              disabled={!currentLogoUrl}
+              className="flex-1 group inline-flex items-center justify-center bg-gradient-to-r from-purple-600 via-purple-700 to-blue-600 text-white px-6 py-4 rounded-xl font-semibold hover:from-purple-700 hover:via-purple-800 hover:to-blue-700 transition-all duration-300 shadow-xl shadow-purple-500/25 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {currentLogoUrl ? "Continue" : "Skip for now"}
+              Continue
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>

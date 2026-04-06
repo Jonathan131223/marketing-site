@@ -1099,6 +1099,39 @@ export const AIGeneratorPanel: React.FC<AIGeneratorPanelProps> = ({
     }
   };
 
+  const handleCopyText = async () => {
+    try {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(email.content, "text/html");
+      const body = doc.body;
+      if (!body) return;
+
+      const clone = body.cloneNode(true) as HTMLElement;
+      const toRemove = clone.querySelectorAll(
+        "script, style, .gemini-left-controls, .gemini-right-controls, .gemini-control-button, .gemini-insert-popover, .gemini-button-control-popover, .gemini-image-control-popover, .gemini-social-control-popover, .gemini-social-block-control-popover, .gemini-padding-control-popover, .gemini-padding-icon, .gemini-image-wrapper"
+      );
+      toRemove.forEach((el) => el.remove());
+
+      let plainText = (clone.innerText || clone.textContent || "").trim();
+      plainText = plainText
+        .replace(/[\u200B-\u200D\uFEFF\u2060\u2061\u2062\u2063\u2064\u206A-\u206F]/g, "")
+        .replace(/[ \t]+/g, " ")
+        .replace(/\n\s*\n\s*\n/g, "\n\n")
+        .split("\n")
+        .map((line) => line.trim())
+        .filter((line) => line.length > 0)
+        .join("\n\n")
+        .trim();
+
+      await navigator.clipboard.writeText(plainText);
+      toast.success("Text copied to clipboard!");
+      setShowSuggestions(true);
+    } catch (err) {
+      console.error("Error copying text:", err);
+      toast.error("Failed to copy text");
+    }
+  };
+
   // Preload images to prevent layout shifts
   const preloadImages = (htmlContent: string) => {
     const parser = new DOMParser();
@@ -1307,6 +1340,135 @@ export const AIGeneratorPanel: React.FC<AIGeneratorPanelProps> = ({
           )}
         </div>
       )}
+
+      {/* Email Suggestions - shown after export actions */}
+      {/* Export Actions */}
+      <div className="bg-white rounded-lg border border-border p-6">
+        <h3 className="text-lg font-semibold text-foreground mb-4">
+          Export Your Email
+        </h3>
+        <div className="grid grid-cols-2 gap-2">
+          <Button
+            variant="outline"
+            onClick={handleCopyText}
+            className="flex-1 gap-2"
+          >
+            <Copy className="w-4 h-4" />
+            Copy Text
+          </Button>
+
+          <Button
+            variant="outline"
+            onClick={handleCopyHTML}
+            className="flex-1 gap-2"
+          >
+            <Code2 className="w-4 h-4" />
+            Copy HTML
+          </Button>
+
+          <Button
+            variant="outline"
+            onClick={onExport}
+            className="col-span-2 gap-2"
+          >
+            <Download className="w-4 h-4" />
+            Export HTML File
+          </Button>
+        </div>
+      </div>
+
+      {/* Lifecycle Blueprint */}
+      {!sequenceMode && (
+        <div className="bg-muted/30 rounded-lg border border-border p-6">
+          <Collapsible open={isBlueprintOpen} onOpenChange={setIsBlueprintOpen}>
+            <CollapsibleTrigger asChild>
+              <div className="flex items-center justify-between cursor-pointer">
+                <h3 className="text-lg font-semibold text-foreground flex items-center">
+                  Lifecycle Blueprint
+                </h3>
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform ${isBlueprintOpen ? "rotate-180" : ""}`}
+                />
+              </div>
+            </CollapsibleTrigger>
+
+            <CollapsibleContent className="mt-4">
+              {(() => {
+                const blueprint = getBlueprintData(selectedUseCase);
+                if (!blueprint) {
+                  return (
+                    <div className="text-sm text-muted-foreground">
+                      No blueprint data available for this use case.
+                    </div>
+                  );
+                }
+                return (
+                  <div className="space-y-4 text-sm text-muted-foreground">
+                    <div className="flex items-start gap-3">
+                      <Calendar className="w-4 h-4 mt-0.5 text-primary" />
+                      <div>
+                        <strong className="text-foreground">When to Use:</strong>{" "}
+                        {blueprint.whenToUse}
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <Users className="w-4 h-4 mt-0.5 text-primary" />
+                      <div>
+                        <strong className="text-foreground">Who to Target:</strong>{" "}
+                        {blueprint.whoToTarget}
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <Zap className="w-4 h-4 mt-0.5 text-primary" />
+                      <div>
+                        <strong className="text-foreground">Trigger Type:</strong>{" "}
+                        {blueprint.triggerType}
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <Clock className="w-4 h-4 mt-0.5 text-primary" />
+                      <div>
+                        <strong className="text-foreground">Timing & Cadence:</strong>{" "}
+                        {blueprint.timingCadence}
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <Lightbulb className="w-4 h-4 mt-0.5 text-primary" />
+                      <div>
+                        <strong className="text-foreground">Best Practice Tip:</strong>{" "}
+                        {blueprint.bestPracticeTip}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })()}
+            </CollapsibleContent>
+          </Collapsible>
+        </div>
+      )}
+
+      {/* Unsubscribe note */}
+      <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+        <p className="text-gray-600 text-sm leading-relaxed">
+          💡 <strong>Note:</strong> Unsubscribe links in this template are
+          placeholders — replace them with your email tool's unsubscribe tag
+          before sending.
+        </p>
+      </div>
+
+      {/* Quality guarantee note */}
+      <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+        <p className="text-gray-600 text-sm leading-relaxed">
+          💡 <strong>Quality Guarantee:</strong> Every Digistorms template is
+          tested to render flawlessly across Gmail, Outlook, Apple Mail, and
+          100+ devices — so your emails always look exactly as you designed
+          them.
+        </p>
+      </div>
 
       {/* Email Suggestions - shown after export actions */}
       {showSuggestions && onSelectNewUseCase && (
