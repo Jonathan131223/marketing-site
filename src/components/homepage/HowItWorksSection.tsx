@@ -36,7 +36,7 @@ export const HowItWorksSection: React.FC = () => {
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <div className="text-center mb-10 md:mb-20">
           <p className="text-xs font-semibold tracking-widest text-indigo-500 uppercase mb-4">How it works</p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-serif font-serif font-semibold text-slate-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-slate-900 mb-4">
             Drive more paid users in 3 steps
           </h2>
         </div>

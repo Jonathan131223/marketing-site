@@ -24,7 +24,7 @@ const ArrowBullet: React.FC<ArrowBulletProps> = ({ title, description }) => (
 
 const ManifestoSection: React.FC<{ title: string; items: ArrowBulletProps[] }> = ({ title, items }) => (
   <section className="mb-20">
-    <h2 className="text-2xl lg:text-3xl font-serif font-serif font-semibold text-slate-900 mb-8">{title}</h2>
+    <h2 className="text-2xl lg:text-3xl font-serif font-semibold text-slate-900 mb-8">{title}</h2>
     <div className="space-y-6">
       {items.map((item, i) => (
         <ArrowBullet key={i} title={item.title} description={item.description} />
@@ -176,7 +176,7 @@ const Manifesto: React.FC = () => {
           <section className="mb-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-2xl lg:text-3xl font-serif font-serif font-semibold text-slate-900 mb-8">Who we're for</h2>
+                <h2 className="text-2xl lg:text-3xl font-serif font-semibold text-slate-900 mb-8">Who we're for</h2>
                 <div className="space-y-5">
                   <ArrowBullet title="Founders who want activation, not just signups." />
                   <ArrowBullet title="Teams tired of building onboarding flows manually." />

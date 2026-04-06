@@ -118,7 +118,7 @@ export const ROISectionHomepage: React.FC<ROISectionHomepageProps> = ({
     <section className="py-16 md:py-20 lg:py-24 bg-slate-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-serif font-serif font-semibold text-slate-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-slate-900 mb-4">
             What better onboarding could be worth
           </h2>
           <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed">
