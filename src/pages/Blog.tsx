@@ -24,24 +24,24 @@ const Blog: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>Blog - Onboarding Emails & Lifecycle Marketing | DigiStorms</title>
-        <meta name="description" content="Guides, examples, and best practices for SaaS onboarding emails. Learn how to activate users, reduce churn, and turn signups into paying customers." />
+        <title>Blog - SaaS Email Examples, Retention &amp; Growth | DigiStorms</title>
+        <meta name="description" content="Guides and real email examples for SaaS lifecycle marketing—plus retention, PLG, and onboarding strategy. Activate users, reduce churn, and grow revenue." />
         <link rel="canonical" href="https://digistorms.ai/blog" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Blog - Onboarding Emails & Lifecycle Marketing | DigiStorms" />
-        <meta property="og:description" content="Guides, examples, and best practices for SaaS onboarding emails. Learn how to activate users, reduce churn, and turn signups into paying customers." />
+        <meta property="og:title" content="Blog - SaaS Email Examples, Retention &amp; Growth | DigiStorms" />
+        <meta property="og:description" content="Guides and real email examples for SaaS lifecycle marketing—plus retention, PLG, and onboarding strategy. Activate users, reduce churn, and grow revenue." />
         <meta property="og:url" content="https://digistorms.ai/blog" />
         <meta property="og:image" content="https://digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Blog - Email Marketing for SaaS | DigiStorms" />
-        <meta name="twitter:description" content="Best practices, examples, and guides for SaaS lifecycle email marketing." />
+        <meta name="twitter:title" content="Blog - SaaS Emails, Retention &amp; Growth | DigiStorms" />
+        <meta name="twitter:description" content="Email examples, lifecycle guides, and retention and PLG strategy for SaaS teams." />
         <meta name="twitter:image" content="https://digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Blog",
           "name": "DigiStorms Blog",
           "url": "https://digistorms.ai/blog",
-          "description": "Guides, examples, and best practices for SaaS lifecycle emails.",
+          "description": "Guides, real email examples, and best practices for SaaS lifecycle marketing, retention, and product-led growth.",
           "publisher": {
             "@type": "Organization",
             "name": "DigiStorms",
@@ -57,13 +57,15 @@ const Blog: React.FC = () => {
             <h1 className="font-serif font-bold" style={{ color: '#1D4ED8', fontSize: '42px', margin: '10px 0px' }}>
               DigiStorms Blog
             </h1>
-            <p className="text-slate-500 text-lg">
-              Guides, examples, and ideas for better SaaS lifecycle emails.
+            <p className="text-slate-500 text-lg max-w-2xl mx-auto">
+              Real email examples, lifecycle marketing guides, and ideas for retention, onboarding, and growth.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
+            {[...blogPosts]
+              .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+              .map((post) => (
               <Link
                 key={post.slug}
                 to={`/blog/${post.slug}`}

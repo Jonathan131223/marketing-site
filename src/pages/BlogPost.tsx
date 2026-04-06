@@ -5,8 +5,8 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { blogPosts } from "@/content/blog";
-import { ArrowLeft, Calendar, UserRound } from "lucide-react";
+import { blogPosts, type BlogPost as BlogPostMeta } from "@/content/blog";
+import { ArrowLeft, Calendar, Clock, UserRound } from "lucide-react";
 import jonProfile from "@/assets/founder/jonathan-profile.png";
 
 interface LibraryEmail {
@@ -55,6 +55,33 @@ function slugify(text: string): string {
     .replace(/^-+|-+$/g, "");
 }
 
+/** Meta description / OG text — ~155 chars, word boundary (matches inject-meta.js intent). */
+function truncateMetaDescription(text: string, limit = 155): string {
+  const t = (text || "").trim();
+  if (t.length <= limit) return t;
+  const cut = t.slice(0, limit);
+  const lastSpace = cut.lastIndexOf(" ");
+  return (lastSpace > 40 ? cut.slice(0, lastSpace) : cut) + "…";
+}
+
+function isEmailExamplePost(meta: BlogPostMeta | undefined): boolean {
+  return (meta?.libraryTags?.length ?? 0) > 0;
+}
+
+/** Related posts: stay in the same "series" (email examples vs guides) when possible. */
+function relatedPostsFor(currentSlug: string | undefined, meta: BlogPostMeta | undefined): BlogPostMeta[] {
+  if (!currentSlug) return [];
+  const others = blogPosts.filter((p) => p.slug !== currentSlug);
+  const emailPool = others.filter((p) => isEmailExamplePost(p));
+  const guidePool = others.filter((p) => !isEmailExamplePost(p));
+  if (isEmailExamplePost(meta)) {
+    const pool = emailPool.length >= 3 ? emailPool : [...emailPool, ...guidePool];
+    return pool.slice(0, 3);
+  }
+  const pool = guidePool.length >= 3 ? guidePool : [...guidePool, ...emailPool];
+  return pool.slice(0, 3);
+}
+
 const HeroPlaceholder = () => (
   <svg viewBox="0 0 800 420" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
     <rect width="800" height="420" fill="#EDE9FE" />
@@ -82,6 +109,11 @@ const BlogPost: React.FC = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   const postMeta = blogPosts.find((p) => p.slug === slug);
+
+  const relatedArticles = useMemo(
+    () => relatedPostsFor(slug, postMeta),
+    [slug, postMeta],
+  );
 
   const [libraryEmails, setLibraryEmails] = useState<LibraryEmail[]>([]);
   const [libraryBrands, setLibraryBrands] = useState<LibraryBrand[]>([]);
@@ -177,6 +209,8 @@ const BlogPost: React.FC = () => {
   const title = frontmatter.title || postMeta?.title || "";
   const description = frontmatter.description || postMeta?.description || "";
   const date = frontmatter.date || postMeta?.date || "";
+  const readTime = frontmatter.readTime || postMeta?.readTime || "";
+  const metaDescription = truncateMetaDescription(description || "Generate high-converting lifecycle emails with AI.");
   const heroImage = postMeta?.heroImage;
   const ogImage = heroImage
     ? `https://digistorms.ai${heroImage}`
@@ -186,44 +220,58 @@ const BlogPost: React.FC = () => {
     ? new Date(date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })
     : "";
 
+  const emailSeries = isEmailExamplePost(postMeta);
+  const articleSection = emailSeries ? "SaaS email examples" : "SaaS growth and retention";
+
+  const readTimeIso = (() => {
+    const m = readTime.match(/(\d+)\s*min/i);
+    return m ? `PT${m[1]}M` : undefined;
+  })();
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description: metaDescription,
+    image: ogImage,
+    url: `https://digistorms.ai/blog/${slug}`,
+    datePublished: date,
+    articleSection,
+    ...(readTimeIso ? { timeRequired: readTimeIso } : {}),
+    author: {
+      "@type": "Person",
+      name: "Jonathan Bernard",
+      url: "https://www.linkedin.com/in/jonathan-digistorms/",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "DigiStorms",
+      url: "https://digistorms.ai",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png",
+      },
+    },
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
         <title>{title ? `${title} | DigiStorms` : "DigiStorms - AI Lifecycle Email Generator"}</title>
-        <meta name="description" content={description || "Generate high-converting lifecycle emails with AI."} />
+        <meta name="description" content={metaDescription} />
         <link rel="canonical" href={`https://digistorms.ai/blog/${slug}`} />
         <meta property="og:type" content="article" />
         <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
+        <meta property="og:description" content={metaDescription} />
         <meta property="og:image" content={ogImage} />
         <meta property="og:url" content={`https://digistorms.ai/blog/${slug}`} />
+        {date ? <meta property="article:published_time" content={`${date}T12:00:00.000Z`} /> : null}
+        <meta property="article:section" content={articleSection} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
+        <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content={ogImage} />
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BlogPosting",
-          "headline": title,
-          "description": description,
-          "image": ogImage,
-          "url": `https://digistorms.ai/blog/${slug}`,
-          "datePublished": date,
-          "author": {
-            "@type": "Person",
-            "name": "Jonathan Bernard",
-            "url": "https://www.linkedin.com/in/jonathan-digistorms/"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "DigiStorms",
-            "url": "https://digistorms.ai",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png"
-            }
-          }
-        })}</script>
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <Navbar />
       {/* Scroll progress bar */}
@@ -259,7 +307,7 @@ const BlogPost: React.FC = () => {
                 {description}
               </p>
             )}
-            <div className="flex items-center justify-center gap-3 text-sm text-slate-500">
+            <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm text-slate-500">
               <img
                 src={jonProfile}
                 alt="Jonathan Bernard"
@@ -272,8 +320,24 @@ const BlogPost: React.FC = () => {
               <span className="text-slate-700">Jonathan Bernard</span>
               {formattedDate && (
                 <>
-                  <Calendar className="w-4 h-4 text-slate-400" />
-                  <span>{formattedDate}</span>
+                  <span className="text-slate-300 hidden sm:inline" aria-hidden>
+                    ·
+                  </span>
+                  <span className="inline-flex items-center gap-1.5">
+                    <Calendar className="w-4 h-4 text-slate-400 shrink-0" />
+                    <span>{formattedDate}</span>
+                  </span>
+                </>
+              )}
+              {readTime && (
+                <>
+                  <span className="text-slate-300 hidden sm:inline" aria-hidden>
+                    ·
+                  </span>
+                  <span className="inline-flex items-center gap-1.5">
+                    <Clock className="w-4 h-4 text-slate-400 shrink-0" />
+                    <span>{readTime}</span>
+                  </span>
                 </>
               )}
             </div>
@@ -366,11 +430,11 @@ const BlogPost: React.FC = () => {
                     ),
                     img: ({ src, alt }) =>
                       src ? (
-                        <div className="aspect-auto max-w-sm mx-auto mt-6 mb-1">
+                        <div className="w-full mt-6 mb-1">
                           <img
                             src={src}
                             alt={alt || ""}
-                            className="w-full rounded-xl border border-slate-100 shadow-sm"
+                            className="w-full h-auto rounded-xl border border-slate-100 shadow-sm"
                             loading="lazy"
                             decoding="async"
                           />
@@ -387,12 +451,16 @@ const BlogPost: React.FC = () => {
                       </a>
                     ),
                     ul: ({ children }) => (
-                      <ul className="list-disc list-inside space-y-2 mb-5 text-slate-600 text-base sm:text-lg">
+                      <ul
+                        className="list-disc list-outside space-y-2 mb-5 ml-5 pl-1 text-slate-600 leading-relaxed text-base sm:text-lg"
+                      >
                         {children}
                       </ul>
                     ),
                     ol: ({ children }) => (
-                      <ol className="list-decimal list-inside space-y-2 mb-5 text-slate-600 text-base sm:text-lg">
+                      <ol
+                        className="list-decimal list-outside space-y-2 mb-5 ml-5 pl-1 text-slate-600 leading-relaxed text-base sm:text-lg"
+                      >
                         {children}
                       </ol>
                     ),
@@ -420,18 +488,37 @@ const BlogPost: React.FC = () => {
                     height={64}
                   />
                   <p className="text-slate-700 text-sm leading-relaxed">
-                    Thanks for reading all the way! I'm Jonathan, founder of DigiStorms,
-                    specializing in helping SaaS companies activate, retain, and expand their users
-                    with emails. Feel free to connect with me on{" "}
-                    <a
-                      href="https://www.linkedin.com/in/jonathan-digistorms/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-violet-600 hover:underline"
-                    >
-                      LinkedIn
-                    </a>
-                    . See you 👋
+                    {emailSeries ? (
+                      <>
+                        Thanks for reading all the way! I'm Jonathan, founder of DigiStorms,
+                        specializing in helping SaaS companies activate, retain, and expand their users
+                        with lifecycle emails. Connect with me on{" "}
+                        <a
+                          href="https://www.linkedin.com/in/jonathan-digistorms/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-violet-600 hover:underline"
+                        >
+                          LinkedIn
+                        </a>
+                        . See you 👋
+                      </>
+                    ) : (
+                      <>
+                        Thanks for reading! I'm Jonathan, founder of DigiStorms. We help SaaS teams
+                        improve retention, onboarding, and expansion—with strategy, lifecycle email,
+                        and product-led motion in mind. Say hello on{" "}
+                        <a
+                          href="https://www.linkedin.com/in/jonathan-digistorms/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-violet-600 hover:underline"
+                        >
+                          LinkedIn
+                        </a>
+                        . See you 👋
+                      </>
+                    )}
                   </p>
                 </div>
               </div>
@@ -523,10 +610,7 @@ const BlogPost: React.FC = () => {
 
         {/* Related articles */}
         {(() => {
-          const related = blogPosts
-            .filter((p) => p.slug !== slug)
-            .slice(0, 3);
-          if (related.length === 0) return null;
+          if (relatedArticles.length === 0) return null;
           return (
             <div className="mt-20 border-t border-slate-100 pt-16 pb-4">
               <div className="container mx-auto px-4 max-w-6xl">
@@ -534,15 +618,15 @@ const BlogPost: React.FC = () => {
                   You might also be interested in...
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-                  {related.map((post) => (
+                  {relatedArticles.map((post) => (
                     <Link
                       key={post.slug}
                       to={`/blog/${post.slug}`}
                       className="group flex flex-col rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
                     >
-                      <div className="aspect-[16/9] overflow-hidden bg-violet-50">
+                      <div className="aspect-[4/3] overflow-hidden bg-[#EDE9FE]">
                         <img
-                          src={post.heroImage || post.thumbnail}
+                          src={post.heroImage || post.thumbnail || ""}
                           alt={post.title}
                           className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300"
                         />
@@ -577,12 +661,25 @@ const BlogPost: React.FC = () => {
         {/* CTA */}
         <div className="container mx-auto px-4 max-w-6xl mt-16 mb-4">
           <div className="bg-violet-50 rounded-2xl p-8 text-center">
-            <h3 className="text-xl font-semibold text-slate-900 mb-2">
-              Ready to automate your onboarding emails?
-            </h3>
-            <p className="text-slate-500 mb-6">
-              DigiStorms analyzes your product and generates a full onboarding sequence — in minutes.
-            </p>
+            {emailSeries ? (
+              <>
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                  Ready to automate your onboarding emails?
+                </h3>
+                <p className="text-slate-500 mb-6">
+                  DigiStorms analyzes your product and generates a full onboarding sequence — in minutes.
+                </p>
+              </>
+            ) : (
+              <>
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                  Turn retention insights into lifecycle emails
+                </h3>
+                <p className="text-slate-500 mb-6">
+                  Pair your growth strategy with onboarding and lifecycle sequences tailored to your product—generated in minutes.
+                </p>
+              </>
+            )}
             <a
               href="https://app.digistorms.ai"
               className="inline-flex items-center gap-2 bg-violet-600 hover:bg-violet-700 text-white font-medium px-6 py-3 rounded-xl transition-colors"
