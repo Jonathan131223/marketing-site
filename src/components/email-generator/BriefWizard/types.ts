@@ -24,12 +24,14 @@ export interface WebsiteAnalysisResponse {
 }
 
 export interface WizardState {
-  currentStep: "website" | "sender" | "brief";
+  currentStep: "website" | "logo" | "sender" | "brief";
   websiteUrl: string;
   isAnalyzing: boolean;
   analysisError: string | null;
   analysisData: WebsiteAnalysisResponse | null;
   senderName: string;
+  logoUrl: string | null;
+  logoFile: File | null;
   formData: Partial<BriefData>;
 }
 
@@ -39,4 +41,4 @@ export interface BriefWizardProps {
   hideHeader?: boolean;
 }
 
-export type WizardStep = "website" | "sender" | "brief";
+export type WizardStep = "website" | "logo" | "sender" | "brief";

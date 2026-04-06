@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { UseCase, BriefData } from "@/types/emailGenerator";
 import { WebsiteStep } from "./WebsiteStep";
+import { LogoStep } from "./LogoStep";
 import { FounderStep } from "./FounderStep";
 import { BriefStep } from "./BriefStep";
 import { WizardState, WebsiteAnalysisResponse, BriefWizardProps } from "./types";
@@ -114,6 +115,8 @@ export const BriefWizard: React.FC<BriefWizardProps> = ({
     analysisError: null,
     analysisData: null,
     senderName: "",
+    logoUrl: null,
+    logoFile: null,
     formData: { useCase },
   }));
 
@@ -136,7 +139,8 @@ export const BriefWizard: React.FC<BriefWizardProps> = ({
         isAnalyzing: false,
         analysisData: result,
         analysisError: result.fallback ? result.error || null : null,
-        currentStep: "sender",
+        logoUrl: result.logo?.url || null,
+        currentStep: "logo",
       }));
     } catch (error) {
       setState((prev) => ({
@@ -146,7 +150,7 @@ export const BriefWizard: React.FC<BriefWizardProps> = ({
           error instanceof Error
             ? error.message
             : "Failed to analyze website",
-        currentStep: "sender",
+        currentStep: "logo",
       }));
     }
   };
@@ -156,7 +160,8 @@ export const BriefWizard: React.FC<BriefWizardProps> = ({
       ...data,
       companyName: state.websiteUrl,
       senderName: state.senderName.trim() || data.senderName,
-      image_logo_url: state.analysisData?.logo?.url || undefined,
+      companyLogo: state.logoFile || undefined,
+      image_logo_url: state.logoUrl || undefined,
     };
     onComplete(completeData);
   };
@@ -167,20 +172,19 @@ export const BriefWizard: React.FC<BriefWizardProps> = ({
 
   const steps = [
     { label: "Website", completed: state.currentStep !== "website" },
-    {
-      label: "Sender",
-      completed: state.currentStep === "brief",
-    },
+    { label: "Logo", completed: ["sender", "brief"].includes(state.currentStep) },
+    { label: "Sender", completed: state.currentStep === "brief" },
     { label: "Brief", completed: false },
     { label: "Generate", completed: false },
   ];
 
-  const currentStepIndex =
-    state.currentStep === "website"
-      ? 0
-      : state.currentStep === "sender"
-        ? 1
-        : 2;
+  const stepIndexMap: Record<string, number> = {
+    website: 0,
+    logo: 1,
+    sender: 2,
+    brief: 3,
+  };
+  const currentStepIndex = stepIndexMap[state.currentStep] ?? 0;
 
   return (
     <div className="max-w-5xl mx-auto relative">
@@ -213,6 +217,22 @@ export const BriefWizard: React.FC<BriefWizardProps> = ({
         />
       )}
 
+      {state.currentStep === "logo" && (
+        <LogoStep
+          currentLogoUrl={state.logoUrl}
+          onLogoChange={(file, url) =>
+            setState((prev) => ({
+              ...prev,
+              logoFile: file,
+              logoUrl: url || prev.logoUrl,
+            }))
+          }
+          onNext={() => goToStep("sender")}
+          onBack={() => goToStep("website")}
+          isUploading={false}
+        />
+      )}
+
       {state.currentStep === "sender" && (
         <FounderStep
           founderName={state.senderName}
@@ -220,7 +240,7 @@ export const BriefWizard: React.FC<BriefWizardProps> = ({
             setState((prev) => ({ ...prev, senderName: name }))
           }
           onNext={() => goToStep("brief")}
-          onBack={() => goToStep("website")}
+          onBack={() => goToStep("logo")}
         />
       )}
 
