@@ -2,6 +2,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect, lazy, Suspense } from "react";
 import Index from "./pages/Index";
+import { StoreProvider } from "@/store/context";
 
 const Pricing = lazy(() => import("./pages/Pricing"));
 const TermsOfService = lazy(() => import("./pages/TermsOfService"));
@@ -21,6 +22,13 @@ const LibraryBrands = lazy(() => import("./pages/LibraryBrands"));
 const LibraryUseCases = lazy(() => import("./pages/LibraryUseCases"));
 const LibraryTags = lazy(() => import("./pages/LibraryTags"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+
+// Email Generator pages
+const EmailGeneratorPicker = lazy(() => import("./pages/email-generator/UseCasePickerPage"));
+const EmailGeneratorBrief = lazy(() => import("./pages/email-generator/BriefPage"));
+const EmailGeneratorGenerate = lazy(() => import("./pages/email-generator/GeneratePage"));
+const EmailGeneratorTemplates = lazy(() => import("./pages/email-generator/TemplatesPage"));
+const EmailGeneratorCustomize = lazy(() => import("./pages/email-generator/CustomizePage"));
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -55,6 +63,11 @@ const App = () => (
           <Route path="/library/brands" element={<LibraryBrands />} />
           <Route path="/library/usecases" element={<LibraryUseCases />} />
           <Route path="/library/tags" element={<LibraryTags />} />
+          <Route path="/email-generator" element={<StoreProvider><EmailGeneratorPicker /></StoreProvider>} />
+          <Route path="/email-generator/brief" element={<StoreProvider><EmailGeneratorBrief /></StoreProvider>} />
+          <Route path="/email-generator/generate" element={<StoreProvider><EmailGeneratorGenerate /></StoreProvider>} />
+          <Route path="/email-generator/templates" element={<StoreProvider><EmailGeneratorTemplates /></StoreProvider>} />
+          <Route path="/email-generator/customize" element={<StoreProvider><EmailGeneratorCustomize /></StoreProvider>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>

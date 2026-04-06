@@ -148,6 +148,14 @@ export const Footer: React.FC = () => {
                   ROI Calculator
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/email-generator"
+                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                >
+                  Lifecycle Email Generator
+                </Link>
+              </li>
             </ul>
           </div>
 
