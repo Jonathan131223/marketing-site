@@ -14,7 +14,7 @@ const steps = [
   },
   {
     id: 2,
-    title: "Brief",
+    title: "Details",
     description: "Tell us about your product",
   },
   {

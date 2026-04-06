@@ -94,7 +94,7 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
   const socialDropdownRef = useRef<HTMLDivElement>(null);
 
   // Use template color as default, fall back to purple
-  const defaultColor = templateCtaColor || "#7444DD";
+  const defaultColor = templateCtaColor || "#754BDD";
 
   // Local state for CTA Color and Radius (require Apply button)
   const [pendingColor, setPendingColor] = useState(tweaks.ctaButtonColor || defaultColor);
@@ -102,7 +102,7 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
 
   // Sync local state when tweaks prop changes or templateCtaColor changes
   useEffect(() => {
-    setPendingColor(tweaks.ctaButtonColor || templateCtaColor || "#7444DD");
+    setPendingColor(tweaks.ctaButtonColor || templateCtaColor || "#754BDD");
     setPendingRadius(tweaks.ctaButtonBorderRadius || "50px");
   }, [tweaks.ctaButtonColor, tweaks.ctaButtonBorderRadius, templateCtaColor]);
 

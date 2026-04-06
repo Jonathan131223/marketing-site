@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Navbar } from "@/components/Navbar";
@@ -6,39 +6,40 @@ import { Footer } from "@/components/Footer";
 import { useAppStore } from "@/hooks/useAppStore";
 import { UseCase } from "@/types/emailGenerator";
 import { useCasesByCategory } from "@/utils/useCaseMapping";
+import { Zap, Lightbulb, TrendingUp, Shield, Users, Megaphone } from "lucide-react";
 
 const categoryMeta: Record<
   string,
-  { label: string; icon: string; description: string }
+  { label: string; icon: ReactNode; description: string }
 > = {
   activation: {
     label: "Activation",
-    icon: "🚀",
+    icon: <Zap className="w-6 h-6 text-[#754BDD]" />,
     description: "Welcome, onboard, and activate new users fast.",
   },
   engagement: {
     label: "Engagement",
-    icon: "💡",
+    icon: <Lightbulb className="w-6 h-6 text-[#754BDD]" />,
     description: "Keep users engaged with tips, surveys, and feature drops.",
   },
   expansion: {
     label: "Expansion",
-    icon: "📈",
+    icon: <TrendingUp className="w-6 h-6 text-[#754BDD]" />,
     description: "Upsell, cross-sell, and grow revenue per user.",
   },
   churn: {
     label: "Churn Prevention",
-    icon: "🔒",
+    icon: <Shield className="w-6 h-6 text-[#754BDD]" />,
     description: "Detect risk signals and retain at-risk customers.",
   },
   community: {
     label: "Community",
-    icon: "👥",
+    icon: <Users className="w-6 h-6 text-[#754BDD]" />,
     description: "Referrals, feedback, beta invites, and community growth.",
   },
   content: {
     label: "Content & PR",
-    icon: "📣",
+    icon: <Megaphone className="w-6 h-6 text-[#754BDD]" />,
     description: "Promote webinars, articles, case studies, and press mentions.",
   },
 };
@@ -81,13 +82,8 @@ export default function UseCasePickerPage() {
         <Navbar />
 
         {/* Hero Section */}
-        <section className="pt-20 pb-12 relative overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-20 left-1/3 w-80 h-80 bg-gradient-to-r from-purple-100/30 to-blue-100/20 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-10 right-1/4 w-64 h-64 bg-gradient-to-r from-blue-100/20 to-cyan-100/30 rounded-full blur-3xl"></div>
-          </div>
-
-          <div className="container mx-auto px-6 relative z-10 text-center">
+        <section className="pt-20 pb-12">
+          <div className="container mx-auto px-6 text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
               Lifecycle Email Generator
             </h1>
@@ -100,7 +96,7 @@ export default function UseCasePickerPage() {
         </section>
 
         {/* Category Cards Grid */}
-        <section className="pb-24 relative z-10">
+        <section className="pb-24">
           <div className="container mx-auto px-6 max-w-5xl">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {categoryOrder.map((categoryKey) => {
@@ -122,7 +118,7 @@ export default function UseCasePickerPage() {
                       onClick={() => handleCategoryClick(categoryKey)}
                       className="w-full text-left p-6 flex items-start gap-4"
                     >
-                      <span className="text-3xl">{meta.icon}</span>
+                      <div className="w-10 h-10 rounded-lg bg-[#754BDD]/10 flex items-center justify-center flex-shrink-0">{meta.icon}</div>
                       <div className="flex-1 min-w-0">
                         <h3 className="text-lg font-semibold text-slate-900 mb-1">
                           {meta.label}

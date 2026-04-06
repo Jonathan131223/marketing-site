@@ -171,7 +171,7 @@ export const InlineFormattingPopover: React.FC<
       "#3730a3",
       "#4f46e5",
       "#6366f1",
-      "#7444DD",
+      "#754BDD",
       "#a78bfa",
       "#c4b5fd",
       "#581c87",

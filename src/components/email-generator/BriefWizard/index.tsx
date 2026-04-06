@@ -171,7 +171,7 @@ export const BriefWizard: React.FC<BriefWizardProps> = ({
   const steps = [
     { label: "Website", completed: state.currentStep !== "website" },
     { label: "Logo", completed: state.currentStep === "brief" },
-    { label: "Brief", completed: false },
+    { label: "Details", completed: false },
     { label: "Generate", completed: false },
   ];
 

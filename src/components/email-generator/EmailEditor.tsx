@@ -673,12 +673,12 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
       }
 
       tr.email-block:hover:not(.gemini-block-highlight) {
-        outline: 1px solid #7444DD;
+        outline: 1px solid #754BDD;
         outline-offset: -1px;
       }
 
       tr.email-block.gemini-block-highlight {
-        outline: 2px solid #7444DD !important;
+        outline: 2px solid #754BDD !important;
         outline-offset: -2px;
       }
 
@@ -689,7 +689,7 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
       }
 
       tr.email-block.gemini-block-highlight:hover {
-        outline-color: #7444DD !important;
+        outline-color: #754BDD !important;
       }
       
       /* Badge row should not be interactive */
@@ -729,7 +729,7 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
       .gemini-control-button {
         width: 23px;
         height: 23px;
-        background: #7444DD;
+        background: #754BDD;
         color: white;
         border-radius: 6px;
         display: flex;
@@ -743,7 +743,7 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
       }
 
       .gemini-control-button:hover {
-        background: #7444DD;
+        background: #754BDD;
         transform: translateY(-1px);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
       }
@@ -826,7 +826,7 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
       }
 
       .gemini-empty-state:hover {
-        border-color: #7444DD !important;
+        border-color: #754BDD !important;
         background-color: #fafafa !important;
       }
 
@@ -873,7 +873,7 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
       }
       
       .stormy-input:focus {
-        border-color: #7444DD;
+        border-color: #754BDD;
         box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
       }
       
@@ -897,15 +897,15 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
       }
       
       .stormy-suggestion:hover {
-        background: #7444DD;
+        background: #754BDD;
         color: white;
-        border-color: #7444DD;
+        border-color: #754BDD;
         transform: translateY(-1px);
       }
       
       .stormy-submit {
         width: 100%;
-        background: #7444DD;
+        background: #754BDD;
         color: white;
         border: none;
         border-radius: 6px;
@@ -921,7 +921,7 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
       }
       
       .stormy-submit:hover {
-        background: #7444DD;
+        background: #754BDD;
       }
       
       .stormy-submit:disabled {
@@ -951,7 +951,7 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
         width: 20px;
         height: 20px;
         border: 2px solid #e5e7eb;
-        border-top: 2px solid #7444DD;
+        border-top: 2px solid #754BDD;
         border-radius: 50%;
         animation: spin 1s linear infinite;
       }
@@ -1144,7 +1144,7 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
                   <span class="width-value" style="font-size: 14px; color: #374151; font-variant-numeric: tabular-nums;">\${initialVal}px</span>
                 </div>
                 <div style="width: 100%;">
-                  <input type="range" min="20" max="200" value="\${initialVal}" class="width-slider" style="width: 100%; accent-color: #7444DD; height: 6px; border-radius: 3px; cursor: pointer; box-sizing: border-box;">
+                  <input type="range" min="20" max="200" value="\${initialVal}" class="width-slider" style="width: 100%; accent-color: #754BDD; height: 6px; border-radius: 3px; cursor: pointer; box-sizing: border-box;">
                 </div>
               \`;
             } else {
@@ -1155,7 +1155,7 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
                 <span class="width-value" style="font-size: 14px; color: #374151; font-variant-numeric: tabular-nums;">\${initialVal}%</span>
               </div>
               <div style="width: 100%;">
-                <input type="range" min="10" max="100" value="\${initialVal}" class="width-slider" style="width: 100%; accent-color: #7444DD; height: 6px; border-radius: 3px; cursor: pointer; box-sizing: border-box;">
+                <input type="range" min="10" max="100" value="\${initialVal}" class="width-slider" style="width: 100%; accent-color: #754BDD; height: 6px; border-radius: 3px; cursor: pointer; box-sizing: border-box;">
               </div>
             \`;
             }
