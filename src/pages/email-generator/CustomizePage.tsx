@@ -265,8 +265,8 @@ const CustomizePage = () => {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="w-8 h-8 border-4 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading...</p>
+          <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-slate-600">Loading...</p>
         </div>
       </div>
     );
@@ -276,7 +276,7 @@ const CustomizePage = () => {
     <section className="py-16 bg-gradient-to-br from-slate-50 via-white to-slate-50 min-h-screen relative overflow-hidden">
       {/* Premium background elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/3 w-96 h-96 bg-gradient-to-r from-purple-100/20 to-blue-100/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 left-1/3 w-96 h-96 bg-gradient-to-r from-blue-100/20 to-blue-100/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-1/3 w-80 h-80 bg-gradient-to-r from-blue-100/20 to-cyan-100/20 rounded-full blur-3xl"></div>
       </div>
 
@@ -284,7 +284,7 @@ const CustomizePage = () => {
         <div className="mb-8">
           <button
             onClick={handleBack}
-            className="group inline-flex items-center text-slate-600 hover:text-purple-600 font-medium transition-all duration-200"
+            className="group inline-flex items-center text-slate-600 hover:text-blue-600 font-medium transition-all duration-200"
           >
             <span className="mr-2 transform group-hover:-translate-x-1 transition-transform">
               ←

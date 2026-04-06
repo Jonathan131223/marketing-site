@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import { useAppStore } from "@/hooks/useAppStore";
 import { UseCase } from "@/types/emailGenerator";
 import { useCasesByCategory } from "@/utils/useCaseMapping";
-import { Zap, Lightbulb, TrendingUp, Shield, Users, Megaphone } from "lucide-react";
+import { Zap, Lightbulb, TrendingUp, Shield, Users, Megaphone, ArrowRight, ChevronDown } from "lucide-react";
 
 const categoryMeta: Record<
   string,
@@ -14,32 +14,32 @@ const categoryMeta: Record<
 > = {
   activation: {
     label: "Activation",
-    icon: <Zap className="w-6 h-6 text-[#754BDD]" />,
+    icon: <Zap className="w-6 h-6 text-[#1D4ED8]" />,
     description: "Welcome, onboard, and activate new users fast.",
   },
   engagement: {
     label: "Engagement",
-    icon: <Lightbulb className="w-6 h-6 text-[#754BDD]" />,
+    icon: <Lightbulb className="w-6 h-6 text-[#1D4ED8]" />,
     description: "Keep users engaged with tips, surveys, and feature drops.",
   },
   expansion: {
     label: "Expansion",
-    icon: <TrendingUp className="w-6 h-6 text-[#754BDD]" />,
+    icon: <TrendingUp className="w-6 h-6 text-[#1D4ED8]" />,
     description: "Upsell, cross-sell, and grow revenue per user.",
   },
   churn: {
     label: "Churn Prevention",
-    icon: <Shield className="w-6 h-6 text-[#754BDD]" />,
+    icon: <Shield className="w-6 h-6 text-[#1D4ED8]" />,
     description: "Detect risk signals and retain at-risk customers.",
   },
   community: {
     label: "Community",
-    icon: <Users className="w-6 h-6 text-[#754BDD]" />,
+    icon: <Users className="w-6 h-6 text-[#1D4ED8]" />,
     description: "Referrals, feedback, beta invites, and community growth.",
   },
   content: {
     label: "Content & PR",
-    icon: <Megaphone className="w-6 h-6 text-[#754BDD]" />,
+    icon: <Megaphone className="w-6 h-6 text-[#1D4ED8]" />,
     description: "Promote webinars, articles, case studies, and press mentions.",
   },
 };
@@ -87,17 +87,60 @@ export default function UseCasePickerPage() {
             <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
               Lifecycle Email Generator
             </h1>
-            <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-8">
               Generate professional, conversion-ready lifecycle emails for free.
               Pick a use case, answer a few questions, and get production-ready
               HTML in minutes.
             </p>
+            <div className="flex items-center justify-center gap-6 text-sm text-slate-400">
+              <span className="flex items-center gap-1.5">
+                <svg className="w-4 h-4 text-[#1D4ED8]" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
+                38 use cases
+              </span>
+              <span className="flex items-center gap-1.5">
+                <svg className="w-4 h-4 text-[#1D4ED8]" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
+                100% free
+              </span>
+              <span className="flex items-center gap-1.5">
+                <svg className="w-4 h-4 text-[#1D4ED8]" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
+                Production-ready HTML
+              </span>
+            </div>
+          </div>
+        </section>
+
+        {/* Sample Email Preview */}
+        <section className="pb-16">
+          <div className="container mx-auto px-6 max-w-4xl">
+            <p className="text-sm font-medium text-slate-400 text-center mb-6 uppercase tracking-wider">
+              See what you'll get
+            </p>
+            <div className="grid grid-cols-3 gap-4 md:gap-6">
+              {[
+                { src: "/email-screenshots/welcome-email.png", label: "Welcome" },
+                { src: "/email-screenshots/trial-expiring.png", label: "Trial Expiring" },
+                { src: "/email-screenshots/upgrade.png", label: "Upgrade" },
+              ].map((email) => (
+                <div key={email.label} className="group">
+                  <div className="rounded-xl overflow-hidden border border-slate-200 shadow-sm group-hover:shadow-md transition-shadow bg-white">
+                    <img
+                      src={email.src}
+                      alt={`${email.label} email example`}
+                      className="w-full h-auto"
+                      loading="lazy"
+                    />
+                  </div>
+                  <p className="text-xs text-slate-400 text-center mt-2 font-medium">{email.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* Category Cards Grid */}
         <section className="pb-24">
           <div className="container mx-auto px-6 max-w-5xl">
+            <h2 className="text-2xl font-bold text-slate-900 text-center mb-8">Choose your use case</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {categoryOrder.map((categoryKey) => {
                 const meta = categoryMeta[categoryKey];
@@ -109,48 +152,33 @@ export default function UseCasePickerPage() {
                     key={categoryKey}
                     className={`rounded-2xl border transition-all duration-300 ${
                       isExpanded
-                        ? "border-[#754BDD]/40 bg-white shadow-lg col-span-1 md:col-span-2 lg:col-span-3"
-                        : "border-slate-200 bg-white/80 hover:border-[#754BDD]/30 hover:shadow-md cursor-pointer"
+                        ? "border-[#1D4ED8]/40 bg-white shadow-lg col-span-1 md:col-span-2 lg:col-span-3"
+                        : "border-slate-200 bg-white hover:border-[#1D4ED8]/30 hover:shadow-lg hover:-translate-y-0.5 cursor-pointer"
                     }`}
                   >
                     {/* Category Header */}
                     <button
                       onClick={() => handleCategoryClick(categoryKey)}
-                      className="w-full text-left p-6 flex items-start gap-4"
+                      className="w-full text-left p-6 flex items-start gap-4 group"
                     >
-                      <div className="w-10 h-10 rounded-lg bg-[#754BDD]/10 flex items-center justify-center flex-shrink-0">{meta.icon}</div>
+                      <div className="w-10 h-10 rounded-lg bg-[#1D4ED8]/10 flex items-center justify-center flex-shrink-0">{meta.icon}</div>
                       <div className="flex-1 min-w-0">
                         <h3 className="text-lg font-semibold text-slate-900 mb-1">
                           {meta.label}
                         </h3>
-                        <p className="text-sm text-slate-500">
+                        <p className="text-sm text-slate-500 mb-3">
                           {meta.description}
                         </p>
-                        <p className="text-xs text-[#754BDD] font-medium mt-2">
-                          {useCases.length} use case
-                          {useCases.length !== 1 ? "s" : ""}
-                        </p>
+                        <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1D4ED8] group-hover:gap-2.5 transition-all">
+                          Explore {useCases.length} use case{useCases.length !== 1 ? "s" : ""}
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </span>
                       </div>
-                      <span
-                        className={`text-slate-400 transition-transform duration-200 mt-1 ${
+                      <ChevronDown
+                        className={`w-5 h-5 text-slate-400 transition-transform duration-200 mt-1 flex-shrink-0 ${
                           isExpanded ? "rotate-180" : ""
                         }`}
-                      >
-                        <svg
-                          width="20"
-                          height="20"
-                          viewBox="0 0 20 20"
-                          fill="none"
-                        >
-                          <path
-                            d="M5 7.5L10 12.5L15 7.5"
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </span>
+                      />
                     </button>
 
                     {/* Expanded Use Cases */}
@@ -164,14 +192,14 @@ export default function UseCasePickerPage() {
                                 onClick={() =>
                                   handleUseCaseSelect(uc.id as UseCase)
                                 }
-                                className="group text-left p-4 rounded-xl border border-slate-100 hover:border-[#754BDD]/30 hover:bg-purple-50/50 transition-all duration-200"
+                                className="group text-left p-4 rounded-xl border border-slate-100 hover:border-[#1D4ED8]/30 hover:bg-blue-50/50 transition-all duration-200"
                               >
                                 <div className="flex items-start gap-3">
                                   <span className="text-xl flex-shrink-0">
                                     {uc.icon}
                                   </span>
                                   <div className="min-w-0">
-                                    <h4 className="text-sm font-semibold text-slate-800 group-hover:text-[#754BDD] transition-colors">
+                                    <h4 className="text-sm font-semibold text-slate-800 group-hover:text-[#1D4ED8] transition-colors">
                                       {uc.title}
                                     </h4>
                                     <p className="text-xs text-slate-500 mt-1 line-clamp-2">

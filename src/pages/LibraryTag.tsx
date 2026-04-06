@@ -49,7 +49,7 @@ interface UseCase {
 
 // ── Constants ──────────────────────────────────────────────────────────────────
 
-const PURPLE = "#754BDD";
+const PURPLE = "#1D4ED8";
 const PAGE_SIZE = 24;
 
 // ── Component ──────────────────────────────────────────────────────────────────
@@ -156,22 +156,22 @@ const LibraryTag: React.FC = () => {
       <main className="pt-16">
 
         {/* ── Page header ── */}
-        <div className="bg-white border-b border-gray-100 pb-8 pt-10">
+        <div className="bg-white border-b border-slate-100 pb-8 pt-10">
           <div className="container mx-auto px-4 max-w-6xl">
 
             {/* Breadcrumb */}
             <nav aria-label="Breadcrumb" className="mb-6">
-              <ol className="flex items-center gap-2 text-sm text-gray-400">
+              <ol className="flex items-center gap-2 text-sm text-slate-400">
                 <li>
-                  <Link to="/library" className="hover:text-[#754BDD] transition-colors">Library</Link>
+                  <Link to="/library" className="hover:text-[#1D4ED8] transition-colors">Library</Link>
                 </li>
                 <li aria-hidden="true"><span>/</span></li>
                 <li>
-                  <Link to="/library/tags" className="hover:text-[#754BDD] transition-colors">Tags</Link>
+                  <Link to="/library/tags" className="hover:text-[#1D4ED8] transition-colors">Tags</Link>
                 </li>
                 <li aria-hidden="true"><span>/</span></li>
                 <li aria-current="page">
-                  <span className="text-gray-700 font-medium">{tag.name}</span>
+                  <span className="text-slate-700 font-medium">{tag.name}</span>
                 </li>
               </ol>
             </nav>
@@ -182,13 +182,13 @@ const LibraryTag: React.FC = () => {
             >
               {tag.name}
             </div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-1">{tag.name} emails</h1>
-            <p className="text-gray-400 text-sm">
+            <h1 className="text-3xl font-bold text-slate-900 mb-1">{tag.name} emails</h1>
+            <p className="text-slate-400 text-sm">
               {filteredEmails.length} email{filteredEmails.length !== 1 ? "s" : ""} in library
             </p>
             {tag.summary && (
               <div
-                className="text-gray-500 text-sm mt-2 max-w-2xl leading-relaxed [&_p]:mb-2 [&_p:last-child]:mb-0"
+                className="text-slate-500 text-sm mt-2 max-w-2xl leading-relaxed [&_p]:mb-2 [&_p:last-child]:mb-0"
                 dangerouslySetInnerHTML={{ __html: tag.summary }}
               />
             )}
@@ -196,13 +196,13 @@ const LibraryTag: React.FC = () => {
             {/* Related use cases */}
             {relatedUseCases.length > 0 && (
               <div className="mt-5">
-                <p className="text-xs text-gray-400 font-medium uppercase tracking-wide mb-2">Related use cases</p>
+                <p className="text-xs text-slate-400 font-medium uppercase tracking-wide mb-2">Related use cases</p>
                 <div className="flex flex-wrap gap-2">
                   {relatedUseCases.map((uc) => (
                     <Link
                       key={uc.slug}
                       to={`/library/usecase/${uc.slug}`}
-                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border border-gray-200 bg-white text-gray-600 hover:border-[#754BDD] hover:text-[#754BDD] hover:bg-[#F3EEFF] transition-all"
+                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border border-slate-200 bg-white text-slate-600 hover:border-[#1D4ED8] hover:text-[#1D4ED8] hover:bg-[#DBEAFE] transition-all"
                     >
                       {uc.name}
                     </Link>
@@ -214,7 +214,7 @@ const LibraryTag: React.FC = () => {
         </div>
 
         {/* ── Tag tab navigation ── */}
-        <div className="border-b border-gray-100 bg-white sticky top-16 z-10 shadow-sm">
+        <div className="border-b border-slate-100 bg-white sticky top-16 z-10 shadow-sm">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="overflow-x-auto scrollbar-hide py-2">
               <div
@@ -228,7 +228,7 @@ const LibraryTag: React.FC = () => {
                     className={`flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium transition-all whitespace-nowrap ${
                       t.slug === slug
                         ? "text-white"
-                        : "text-gray-600 border border-gray-200 hover:border-[#754BDD] hover:text-[#754BDD] hover:bg-[#F3EEFF]"
+                        : "text-slate-600 border border-slate-200 hover:border-[#1D4ED8] hover:text-[#1D4ED8] hover:bg-[#DBEAFE]"
                     }`}
                     style={t.slug === slug ? { background: PURPLE } : {}}
                   >
@@ -244,7 +244,7 @@ const LibraryTag: React.FC = () => {
         <section className="bg-[#FAFAFA] py-12 min-h-[400px]" aria-label={`${tag.name} emails`}>
           <div className="container mx-auto px-4 max-w-7xl">
             {filteredEmails.length === 0 ? (
-              <div className="text-center py-20 text-gray-400">
+              <div className="text-center py-20 text-slate-400">
                 <p className="text-lg font-medium">No emails found for "{tag.name}".</p>
               </div>
             ) : (
@@ -256,9 +256,9 @@ const LibraryTag: React.FC = () => {
                       <Link
                         key={email.id}
                         to={`/library/email/${email.slug}`}
-                        className="group rounded-2xl border border-gray-100 bg-white overflow-hidden hover:shadow-md transition-shadow block"
+                        className="group rounded-2xl border border-slate-100 bg-white overflow-hidden hover:shadow-md transition-shadow block"
                       >
-                        <div className="relative overflow-hidden bg-gray-50 aspect-[4/3]">
+                        <div className="relative overflow-hidden bg-slate-50 aspect-[4/3]">
                           {email.thumb ? (
                             <img
                               src={email.thumb}
@@ -267,7 +267,7 @@ const LibraryTag: React.FC = () => {
                               loading="lazy"
                             />
                           ) : (
-                            <div className="w-full h-full bg-[#F3EEFF] flex items-center justify-center">
+                            <div className="w-full h-full bg-[#DBEAFE] flex items-center justify-center">
                               <span className="text-4xl opacity-30">✉️</span>
                             </div>
                           )}
@@ -285,11 +285,11 @@ const LibraryTag: React.FC = () => {
                                 className="h-4 w-4 object-contain"
                               />
                             )}
-                            <span className="text-xs text-gray-400 font-medium group-hover/brand:text-[#754BDD] transition-colors">
+                            <span className="text-xs text-slate-400 font-medium group-hover/brand:text-[#1D4ED8] transition-colors">
                               {brand?.name ?? email.brand}
                             </span>
                           </Link>
-                          <p className="text-sm font-semibold text-gray-900 leading-snug line-clamp-2 mb-3">
+                          <p className="text-sm font-semibold text-slate-900 leading-snug line-clamp-2 mb-3">
                             {email.subject || email.templateTitle}
                           </p>
                           {email.tags.length > 0 && (
@@ -301,8 +301,8 @@ const LibraryTag: React.FC = () => {
                                   onClick={(e) => e.stopPropagation()}
                                   className={`text-xs px-2 py-0.5 rounded-full transition-colors ${
                                     tagSlug === slug
-                                      ? "bg-[#754BDD] text-white"
-                                      : "bg-[#F3EEFF] text-[#754BDD] hover:bg-[#754BDD] hover:text-white"
+                                      ? "bg-[#1D4ED8] text-white"
+                                      : "bg-[#DBEAFE] text-[#1D4ED8] hover:bg-[#1D4ED8] hover:text-white"
                                   }`}
                                 >
                                   {tags.find((t) => t.slug === tagSlug)?.name ?? tagSlug}
@@ -320,12 +320,12 @@ const LibraryTag: React.FC = () => {
                   <div className="flex flex-col items-center mt-10 gap-2">
                     <button
                       onClick={() => setPage((p) => p + 1)}
-                      className="flex items-center gap-2 px-6 py-3 rounded-full border-2 font-semibold text-sm hover:text-white hover:bg-[#754BDD] hover:border-[#754BDD] transition-all"
+                      className="flex items-center gap-2 px-6 py-3 rounded-full border-2 font-semibold text-sm hover:text-white hover:bg-[#1D4ED8] hover:border-[#1D4ED8] transition-all"
                       style={{ borderColor: PURPLE, color: PURPLE }}
                     >
                       Load more <ChevronDown className="h-4 w-4" />
                     </button>
-                    <p className="text-xs text-gray-400">
+                    <p className="text-xs text-slate-400">
                       Showing {pagedEmails.length} of {filteredEmails.length}
                     </p>
                   </div>

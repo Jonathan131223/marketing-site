@@ -7,15 +7,15 @@ export const TestimonialSection: React.FC = () => {
     <section className="py-16 md:py-20 lg:py-24 bg-[#F8FAFC]">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900 mb-4">
             Trusted by SaaS growth leaders
           </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>
+          <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>
             Founders and growth teams use DigiStorms to turn onboarding into a real revenue driver.
           </p>
         </div>
-        <div className="bg-white rounded-xl shadow-sm border border-gray-100/80 px-10 py-16 sm:px-14 sm:py-20 md:px-20 md:py-24">
-          <blockquote className="text-2xl sm:text-3xl md:text-4xl font-medium text-gray-900 leading-snug mb-12 md:mb-16">
+        <div className="bg-white rounded-xl shadow-sm border border-slate-100/80 px-10 py-16 sm:px-14 sm:py-20 md:px-20 md:py-24">
+          <blockquote className="text-2xl sm:text-3xl md:text-4xl font-medium text-slate-900 leading-snug mb-12 md:mb-16">
             "DigiStorms is a game-changer for startups and growth-stage teams
             that want to build their onboarding email sequence fast. I recommend
             everyone I know give it a spin and see for themselves."
@@ -31,10 +31,10 @@ export const TestimonialSection: React.FC = () => {
                 height="44"
               />
               <div>
-                <p className="text-sm font-semibold text-gray-900">
+                <p className="text-sm font-semibold text-slate-900">
                   Drew Price
                 </p>
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-slate-500">
                   SVP Growth Marketing & Automation
                 </p>
               </div>

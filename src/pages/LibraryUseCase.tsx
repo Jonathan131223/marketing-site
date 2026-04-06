@@ -47,7 +47,7 @@ interface UseCase {
 
 // ── Constants ──────────────────────────────────────────────────────────────────
 
-const PURPLE = "#754BDD";
+const PURPLE = "#1D4ED8";
 
 const USE_CASE_DISPLAY: Record<string, { emoji: string }> = {
   "onboard-free-user":     { emoji: "👋" },
@@ -181,45 +181,45 @@ const LibraryUseCase: React.FC = () => {
       <main className="pt-16">
 
         {/* ── Page header ── */}
-        <div className="bg-white border-b border-gray-100 pb-8 pt-10">
+        <div className="bg-white border-b border-slate-100 pb-8 pt-10">
           <div className="container mx-auto px-4 max-w-6xl">
 
             {/* Breadcrumb */}
             <nav aria-label="Breadcrumb" className="mb-6">
-              <ol className="flex items-center gap-2 text-sm text-gray-400">
+              <ol className="flex items-center gap-2 text-sm text-slate-400">
                 <li>
-                  <Link to="/library" className="hover:text-[#754BDD] transition-colors">Library</Link>
+                  <Link to="/library" className="hover:text-[#1D4ED8] transition-colors">Library</Link>
                 </li>
                 <li aria-hidden="true"><span>/</span></li>
                 <li>
-                  <Link to="/library/usecases" className="hover:text-[#754BDD] transition-colors">Use Cases</Link>
+                  <Link to="/library/usecases" className="hover:text-[#1D4ED8] transition-colors">Use Cases</Link>
                 </li>
                 <li aria-hidden="true"><span>/</span></li>
                 <li aria-current="page">
-                  <span className="text-gray-700 font-medium">{useCase.name}</span>
+                  <span className="text-slate-700 font-medium">{useCase.name}</span>
                 </li>
               </ol>
             </nav>
 
             {config && <span className="text-4xl mb-4 block">{config.emoji}</span>}
-            <h1 className="text-3xl font-bold text-gray-900 mb-1">{useCase.name}</h1>
-            <p className="text-gray-400 text-sm mb-2">
+            <h1 className="text-3xl font-bold text-slate-900 mb-1">{useCase.name}</h1>
+            <p className="text-slate-400 text-sm mb-2">
               {filteredEmails.length} email{filteredEmails.length !== 1 ? "s" : ""} in library
             </p>
             {desc && (
-              <p className="text-gray-500 text-sm max-w-2xl leading-relaxed">{desc}</p>
+              <p className="text-slate-500 text-sm max-w-2xl leading-relaxed">{desc}</p>
             )}
 
             {/* Related tags */}
             {relatedTags.length > 0 && (
               <div className="mt-5">
-                <p className="text-xs text-gray-400 font-medium uppercase tracking-wide mb-2">Related email types</p>
+                <p className="text-xs text-slate-400 font-medium uppercase tracking-wide mb-2">Related email types</p>
                 <div className="flex flex-wrap gap-2">
                   {relatedTags.map((tag) => (
                     <Link
                       key={tag.slug}
                       to={`/library/tag/${tag.slug}`}
-                      className="inline-block px-3 py-1 rounded-full text-xs font-medium border border-gray-200 bg-white text-gray-600 hover:border-[#754BDD] hover:text-[#754BDD] hover:bg-[#F3EEFF] transition-all"
+                      className="inline-block px-3 py-1 rounded-full text-xs font-medium border border-slate-200 bg-white text-slate-600 hover:border-[#1D4ED8] hover:text-[#1D4ED8] hover:bg-[#DBEAFE] transition-all"
                     >
                       {tag.name}
                     </Link>
@@ -231,7 +231,7 @@ const LibraryUseCase: React.FC = () => {
         </div>
 
         {/* ── Use case tab navigation ── */}
-        <div className="border-b border-gray-100 bg-white sticky top-16 z-10 shadow-sm">
+        <div className="border-b border-slate-100 bg-white sticky top-16 z-10 shadow-sm">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="flex gap-1 overflow-x-auto scrollbar-hide py-2">
               {sortedUseCases.map((uc) => {
@@ -243,7 +243,7 @@ const LibraryUseCase: React.FC = () => {
                     className={`flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-all whitespace-nowrap ${
                       uc.slug === slug
                         ? "text-white"
-                        : "text-gray-600 hover:text-[#754BDD] hover:bg-[#F3EEFF]"
+                        : "text-slate-600 hover:text-[#1D4ED8] hover:bg-[#DBEAFE]"
                     }`}
                     style={uc.slug === slug ? { background: PURPLE } : {}}
                   >
@@ -260,7 +260,7 @@ const LibraryUseCase: React.FC = () => {
         <section className="bg-[#FAFAFA] py-12 min-h-[400px]" aria-label={`${useCase.name} emails by brand`}>
           <div className="container mx-auto px-4 max-w-7xl">
             {filteredEmails.length === 0 ? (
-              <div className="text-center py-20 text-gray-400">
+              <div className="text-center py-20 text-slate-400">
                 <p className="text-lg font-medium">No emails found for "{useCase.name}".</p>
               </div>
             ) : (
@@ -271,22 +271,22 @@ const LibraryUseCase: React.FC = () => {
                     <div key={brandSlug}>
                       {/* Brand header */}
                       <div className="flex items-center gap-3 mb-5">
-                        <h2 className="text-base font-semibold text-gray-900">
+                        <h2 className="text-base font-semibold text-slate-900">
                           <Link
                             to={`/library/brand/${brandSlug}`}
-                            className="flex items-center gap-3 group hover:text-[#754BDD] transition-colors"
+                            className="flex items-center gap-3 group hover:text-[#1D4ED8] transition-colors"
                           >
                             {brand?.logo && (
                               <img
                                 src={brand.logo}
                                 alt={`${brand.name} logo`}
-                                className="h-8 w-8 object-contain rounded-lg border border-gray-100 bg-white p-0.5"
+                                className="h-8 w-8 object-contain rounded-lg border border-slate-100 bg-white p-0.5"
                               />
                             )}
                             {brand?.name ?? brandSlug}
                           </Link>
                         </h2>
-                        <span className="text-xs text-gray-400 font-medium px-2 py-0.5 rounded-full bg-gray-100">
+                        <span className="text-xs text-slate-400 font-medium px-2 py-0.5 rounded-full bg-slate-100">
                           {brandEmails.length} email{brandEmails.length !== 1 ? "s" : ""}
                         </span>
                       </div>
@@ -297,9 +297,9 @@ const LibraryUseCase: React.FC = () => {
                           <Link
                             key={email.id}
                             to={`/library/email/${email.slug}`}
-                            className="group rounded-2xl border border-gray-100 bg-white overflow-hidden hover:shadow-md transition-shadow block"
+                            className="group rounded-2xl border border-slate-100 bg-white overflow-hidden hover:shadow-md transition-shadow block"
                           >
-                            <div className="relative overflow-hidden bg-gray-50 aspect-[4/3]">
+                            <div className="relative overflow-hidden bg-slate-50 aspect-[4/3]">
                               {email.thumb ? (
                                 <img
                                   src={email.thumb}
@@ -308,13 +308,13 @@ const LibraryUseCase: React.FC = () => {
                                   loading="lazy"
                                 />
                               ) : (
-                                <div className="w-full h-full bg-[#F3EEFF] flex items-center justify-center">
+                                <div className="w-full h-full bg-[#DBEAFE] flex items-center justify-center">
                                   <span className="text-4xl opacity-30">✉️</span>
                                 </div>
                               )}
                             </div>
                             <div className="p-4">
-                              <p className="text-sm font-semibold text-gray-900 leading-snug line-clamp-2 mb-3">
+                              <p className="text-sm font-semibold text-slate-900 leading-snug line-clamp-2 mb-3">
                                 {email.subject || email.templateTitle}
                               </p>
                               {email.tags.length > 0 && (
@@ -324,7 +324,7 @@ const LibraryUseCase: React.FC = () => {
                                       key={tagSlug}
                                       to={`/library/tag/${tagSlug}`}
                                       onClick={(e) => e.stopPropagation()}
-                                      className="text-xs px-2 py-0.5 rounded-full bg-[#F3EEFF] text-[#754BDD] hover:bg-[#754BDD] hover:text-white transition-colors"
+                                      className="text-xs px-2 py-0.5 rounded-full bg-[#DBEAFE] text-[#1D4ED8] hover:bg-[#1D4ED8] hover:text-white transition-colors"
                                     >
                                       {tags.find((t) => t.slug === tagSlug)?.name ?? tagSlug}
                                     </Link>

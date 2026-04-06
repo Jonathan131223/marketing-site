@@ -99,7 +99,7 @@ export const BriefStep: React.FC<BriefStepProps> = ({
               <div className="flex-shrink-0">
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center text-white"
-                  style={{ backgroundColor: "#754BDD" }}
+                  style={{ backgroundColor: "#1D4ED8" }}
                 >
                   <Sparkles className="w-5 h-5" />
                 </div>
@@ -167,7 +167,7 @@ export const BriefStep: React.FC<BriefStepProps> = ({
             <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200 mb-8 relative overflow-hidden">
               <div
                 className="absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl"
-                style={{ backgroundColor: "#754BDD" }}
+                style={{ backgroundColor: "#1D4ED8" }}
               />
               <div className="flex items-center justify-center gap-3 mb-2">
                 <div className="p-2 bg-slate-100 rounded-full">
@@ -195,7 +195,7 @@ export const BriefStep: React.FC<BriefStepProps> = ({
             </button>
             <button
               type="submit"
-              className="flex-1 group inline-flex items-center justify-center bg-[#754BDD] text-white px-8 py-5 rounded-2xl font-semibold text-lg hover:opacity-95 transition-opacity shadow-sm"
+              className="flex-1 group inline-flex items-center justify-center bg-[#1D4ED8] text-white px-8 py-5 rounded-2xl font-semibold text-lg hover:opacity-95 transition-opacity shadow-sm"
             >
               <Sparkles className="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform" />
               Pick a style

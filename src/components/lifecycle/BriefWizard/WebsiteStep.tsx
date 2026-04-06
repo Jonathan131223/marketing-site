@@ -56,7 +56,7 @@ export const WebsiteStep: React.FC<WebsiteStepProps> = ({
                 onChange={(e) => onWebsiteUrlChange(e.target.value)}
                 onBlur={() => setTouched(true)}
                 placeholder="https://yourcompany.com"
-                className={`w-full pl-12 pr-5 py-4 border rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 focus:outline-none transition-all duration-200 bg-white text-slate-900 placeholder-slate-400 shadow-sm hover:shadow-md ${
+                className={`w-full pl-12 pr-5 py-4 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none transition-all duration-200 bg-white text-slate-900 placeholder-slate-400 shadow-sm hover:shadow-md ${
                   showError ? "border-red-300" : "border-slate-200"
                 }`}
                 disabled={isAnalyzing}
@@ -74,24 +74,24 @@ export const WebsiteStep: React.FC<WebsiteStepProps> = ({
             )}
           </div>
 
-          <div className="bg-purple-50/50 rounded-2xl p-6 border border-purple-100/50">
+          <div className="bg-blue-50/50 rounded-2xl p-6 border border-blue-100/50">
             <h3 className="font-semibold text-slate-800 mb-4">What we'll do:</h3>
             <ul className="space-y-3">
               <li className="flex items-center gap-3">
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center">
-                  <CheckCircle2 className="w-4 h-4 text-purple-600" />
+                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
+                  <CheckCircle2 className="w-4 h-4 text-blue-600" />
                 </div>
                 <span className="text-slate-700">Extract your value proposition</span>
               </li>
               <li className="flex items-center gap-3">
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center">
-                  <CheckCircle2 className="w-4 h-4 text-purple-600" />
+                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
+                  <CheckCircle2 className="w-4 h-4 text-blue-600" />
                 </div>
                 <span className="text-slate-700">Identify key features</span>
               </li>
               <li className="flex items-center gap-3">
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center">
-                  <CheckCircle2 className="w-4 h-4 text-purple-600" />
+                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
+                  <CheckCircle2 className="w-4 h-4 text-blue-600" />
                 </div>
                 <span className="text-slate-700">Suggest onboarding actions</span>
               </li>
@@ -103,7 +103,7 @@ export const WebsiteStep: React.FC<WebsiteStepProps> = ({
             disabled={!isValid || isAnalyzing}
             data-flat-purple
             style={{
-              backgroundColor: "#754bdd",
+              backgroundColor: "#1D4ED8",
               boxShadow: "none",
               outline: "none",
               border: "none",

@@ -168,7 +168,7 @@ const BlogPost: React.FC = () => {
       <div className="min-h-screen bg-white">
         <Navbar />
         <div className="flex items-center justify-center h-96">
-          <div className="text-gray-400">Loading...</div>
+          <div className="text-slate-400">Loading...</div>
         </div>
       </div>
     );
@@ -230,7 +230,7 @@ const BlogPost: React.FC = () => {
       <div className="fixed top-14 left-0 right-0 z-50 h-[2px] bg-transparent pointer-events-none">
         <div
           className="h-full"
-          style={{ width: `${scrollProgress}%`, backgroundColor: '#754BDD', transition: 'none' }}
+          style={{ width: `${scrollProgress}%`, backgroundColor: '#1D4ED8', transition: 'none' }}
         />
       </div>
       <main className="pt-24 pb-20">
@@ -238,7 +238,7 @@ const BlogPost: React.FC = () => {
 
           <Link
             to="/blog"
-            className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-gray-700 transition-colors mb-10"
+            className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-slate-700 transition-colors mb-10"
           >
             <ArrowLeft className="w-4 h-4" /> Back to Blog
           </Link>
@@ -247,7 +247,7 @@ const BlogPost: React.FC = () => {
           <header className="text-center mb-10 max-w-xl mx-auto">
             <h1
               className="leading-tight"
-              style={{ color: '#754BDD', fontSize: 'clamp(28px, 5vw, 48px)', fontWeight: '400', margin: '0px 0px 20px' }}
+              style={{ color: '#1D4ED8', fontSize: 'clamp(28px, 5vw, 48px)', fontWeight: '400', margin: '0px 0px 20px' }}
             >
               {title}
             </h1>
@@ -259,7 +259,7 @@ const BlogPost: React.FC = () => {
                 {description}
               </p>
             )}
-            <div className="flex items-center justify-center gap-3 text-sm text-gray-500">
+            <div className="flex items-center justify-center gap-3 text-sm text-slate-500">
               <img
                 src={jonProfile}
                 alt="Jonathan Bernard"
@@ -269,10 +269,10 @@ const BlogPost: React.FC = () => {
                 width={32}
                 height={32}
               />
-              <span className="text-gray-700">Jonathan Bernard</span>
+              <span className="text-slate-700">Jonathan Bernard</span>
               {formattedDate && (
                 <>
-                  <Calendar className="w-4 h-4 text-gray-400" />
+                  <Calendar className="w-4 h-4 text-slate-400" />
                   <span>{formattedDate}</span>
                 </>
               )}
@@ -295,7 +295,7 @@ const BlogPost: React.FC = () => {
             {tocItems.length > 0 && (
               <aside className="hidden lg:block w-52 shrink-0">
                 <div className="sticky top-28">
-                  <p className="text-sm font-semibold text-gray-900 mb-4">Table of Contents</p>
+                  <p className="text-sm font-semibold text-slate-900 mb-4">Table of Contents</p>
                   <ul className="space-y-3">
                     {tocItems.map((item) => (
                       <li key={item.id}>
@@ -303,8 +303,8 @@ const BlogPost: React.FC = () => {
                           href={`#${item.id}`}
                           className={`text-sm leading-snug transition-colors block ${
                             activeId === item.id
-                              ? "font-medium text-gray-900"
-                              : "text-gray-500 hover:text-gray-800"
+                              ? "font-medium text-slate-900"
+                              : "text-slate-500 hover:text-slate-800"
                           }`}
                         >
                           {item.text}
@@ -330,14 +330,14 @@ const BlogPost: React.FC = () => {
                       return (
                         <h2
                           id={id}
-                          style={{ color: '#754BDD', fontSize: '28px', fontWeight: '500', margin: '28px 0px 12px' }}
+                          style={{ color: '#1D4ED8', fontSize: '28px', fontWeight: '500', margin: '28px 0px 12px' }}
                         >
                           {children}
                         </h2>
                       );
                     },
                     h3: ({ children }) => (
-                      <h3 style={{ color: '#754BDD', fontSize: '22px', fontWeight: '500', margin: '20px 0px 10px' }}>
+                      <h3 style={{ color: '#1D4ED8', fontSize: '22px', fontWeight: '500', margin: '20px 0px 10px' }}>
                         {children}
                       </h3>
                     ),
@@ -345,7 +345,7 @@ const BlogPost: React.FC = () => {
                       const text = extractText(children);
                       if (/^subject(\s+line)?\s*:/i.test(text)) {
                         return (
-                          <p className="text-center text-sm font-normal text-gray-400 mb-6 px-2">
+                          <p className="text-center text-sm font-normal text-slate-400 mb-6 px-2">
                             {children}
                           </p>
                         );
@@ -357,12 +357,12 @@ const BlogPost: React.FC = () => {
                       );
                     },
                     blockquote: ({ children }) => (
-                      <blockquote className="bg-violet-50 border-l-4 border-violet-400 rounded-r-xl px-6 py-4 my-6 text-gray-700 text-base">
+                      <blockquote className="bg-violet-50 border-l-4 border-violet-400 rounded-r-xl px-6 py-4 my-6 text-slate-700 text-base">
                         {children}
                       </blockquote>
                     ),
                     strong: ({ children }) => (
-                      <strong className="font-semibold text-gray-800">{children}</strong>
+                      <strong className="font-semibold text-slate-800">{children}</strong>
                     ),
                     img: ({ src, alt }) =>
                       src ? (
@@ -370,7 +370,7 @@ const BlogPost: React.FC = () => {
                           <img
                             src={src}
                             alt={alt || ""}
-                            className="w-full rounded-xl border border-gray-100 shadow-sm"
+                            className="w-full rounded-xl border border-slate-100 shadow-sm"
                             loading="lazy"
                             decoding="async"
                           />
@@ -387,16 +387,16 @@ const BlogPost: React.FC = () => {
                       </a>
                     ),
                     ul: ({ children }) => (
-                      <ul className="list-disc list-inside space-y-2 mb-5 text-gray-600 text-base sm:text-lg">
+                      <ul className="list-disc list-inside space-y-2 mb-5 text-slate-600 text-base sm:text-lg">
                         {children}
                       </ul>
                     ),
                     ol: ({ children }) => (
-                      <ol className="list-decimal list-inside space-y-2 mb-5 text-gray-600 text-base sm:text-lg">
+                      <ol className="list-decimal list-inside space-y-2 mb-5 text-slate-600 text-base sm:text-lg">
                         {children}
                       </ol>
                     ),
-                    hr: () => <hr className="border-gray-200 my-10" />,
+                    hr: () => <hr className="border-slate-200 my-10" />,
                   }}
                 >
                   {content}
@@ -404,10 +404,10 @@ const BlogPost: React.FC = () => {
               </article>
 
               {/* About the author */}
-              <div className="mt-12 bg-gray-50 rounded-2xl p-6">
+              <div className="mt-12 bg-slate-50 rounded-2xl p-6">
                 <div className="flex items-center gap-2 mb-5">
-                  <UserRound className="w-5 h-5" style={{ color: '#754BDD' }} />
-                  <span className="font-bold text-gray-900">About the author</span>
+                  <UserRound className="w-5 h-5" style={{ color: '#1D4ED8' }} />
+                  <span className="font-bold text-slate-900">About the author</span>
                 </div>
                 <div className="flex items-start gap-5">
                   <img
@@ -419,7 +419,7 @@ const BlogPost: React.FC = () => {
                     width={64}
                     height={64}
                   />
-                  <p className="text-gray-700 text-sm leading-relaxed">
+                  <p className="text-slate-700 text-sm leading-relaxed">
                     Thanks for reading all the way! I'm Jonathan, founder of DigiStorms,
                     specializing in helping SaaS companies activate, retain, and expand their users
                     with emails. Feel free to connect with me on{" "}
@@ -450,11 +450,11 @@ const BlogPost: React.FC = () => {
                 const primaryTag = tags[0];
 
                 return (
-                  <div className="mt-10 pt-10 border-t border-gray-100">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                  <div className="mt-10 pt-10 border-t border-slate-100">
+                    <h3 className="text-lg font-semibold text-slate-900 mb-1">
                       See it in the wild
                     </h3>
-                    <p className="text-sm text-gray-500 mb-5">
+                    <p className="text-sm text-slate-500 mb-5">
                       Real examples from our library — see how top SaaS brands do it.
                     </p>
                     <div className="grid grid-cols-3 gap-3">
@@ -465,10 +465,10 @@ const BlogPost: React.FC = () => {
                           <Link
                             key={email.slug}
                             to={`/library/email/${email.slug}`}
-                            className="group flex flex-col rounded-xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow bg-white"
+                            className="group flex flex-col rounded-xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow bg-white"
                           >
                             {/* Thumbnail */}
-                            <div className="aspect-[4/3] overflow-hidden bg-[#F3EEFF]">
+                            <div className="aspect-[4/3] overflow-hidden bg-[#DBEAFE]">
                               {email.thumb ? (
                                 <img
                                   src={email.thumb}
@@ -489,14 +489,14 @@ const BlogPost: React.FC = () => {
                                   {brand.logo && (
                                     <img src={brand.logo} alt={brand.name} className="w-3.5 h-3.5 object-contain flex-shrink-0" />
                                   )}
-                                  <span className="text-[11px] text-gray-400 font-medium truncate">{brand.name}</span>
+                                  <span className="text-[11px] text-slate-400 font-medium truncate">{brand.name}</span>
                                 </div>
                               )}
-                              <p className="text-xs font-semibold text-gray-900 leading-snug line-clamp-2">
+                              <p className="text-xs font-semibold text-slate-900 leading-snug line-clamp-2">
                                 {email.subject}
                               </p>
                               {matchingTag && (
-                                <span className="self-start text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#F3EEFF] text-[#754BDD]">
+                                <span className="self-start text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#DBEAFE] text-[#1D4ED8]">
                                   {matchingTag.replace(/-/g, " ")}
                                 </span>
                               )}
@@ -528,9 +528,9 @@ const BlogPost: React.FC = () => {
             .slice(0, 3);
           if (related.length === 0) return null;
           return (
-            <div className="mt-20 border-t border-gray-100 pt-16 pb-4">
+            <div className="mt-20 border-t border-slate-100 pt-16 pb-4">
               <div className="container mx-auto px-4 max-w-6xl">
-                <h2 className="text-2xl font-semibold text-gray-900 mb-10">
+                <h2 className="text-2xl font-semibold text-slate-900 mb-10">
                   You might also be interested in...
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
@@ -538,7 +538,7 @@ const BlogPost: React.FC = () => {
                     <Link
                       key={post.slug}
                       to={`/blog/${post.slug}`}
-                      className="group flex flex-col rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+                      className="group flex flex-col rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
                     >
                       <div className="aspect-[16/9] overflow-hidden bg-violet-50">
                         <img
@@ -548,10 +548,10 @@ const BlogPost: React.FC = () => {
                         />
                       </div>
                       <div className="flex flex-col flex-1 p-5">
-                        <h3 className="font-semibold text-gray-900 text-base leading-snug mb-2 group-hover:text-violet-600 transition-colors">
+                        <h3 className="font-semibold text-slate-900 text-base leading-snug mb-2 group-hover:text-violet-600 transition-colors">
                           {post.title}
                         </h3>
-                        <p className="text-gray-500 text-sm leading-relaxed flex-1 mb-4">
+                        <p className="text-slate-500 text-sm leading-relaxed flex-1 mb-4">
                           {post.shortDescription || post.description}
                         </p>
                         <span className="inline-flex items-center gap-1 text-sm font-medium text-violet-600">
@@ -577,10 +577,10 @@ const BlogPost: React.FC = () => {
         {/* CTA */}
         <div className="container mx-auto px-4 max-w-6xl mt-16 mb-4">
           <div className="bg-violet-50 rounded-2xl p-8 text-center">
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+            <h3 className="text-xl font-semibold text-slate-900 mb-2">
               Ready to automate your onboarding emails?
             </h3>
-            <p className="text-gray-500 mb-6">
+            <p className="text-slate-500 mb-6">
               DigiStorms analyzes your product and generates a full onboarding sequence — in minutes.
             </p>
             <a

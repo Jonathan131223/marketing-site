@@ -195,10 +195,10 @@ const Index = () => {
         <section id="email-sequence-generator-section" className="py-16 md:py-20 lg:py-24 container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900 mb-4">
                 Turn more free users into paying customers automatically
               </h2>
-              <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>
+              <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>
                 Enter your website and our agent will generate your onboarding sequence in minutes.
               </p>
             </div>

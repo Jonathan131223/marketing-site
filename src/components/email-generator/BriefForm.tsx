@@ -12,7 +12,7 @@ import { Sparkles, Lightbulb, User } from "lucide-react";
 import { useCaseConfig, getWhyThisWorks } from "./briefFormConfig";
 
 const INPUT_CLASS =
-  "w-full px-5 py-4 h-[58px] border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#754BDD] focus:border-[#754BDD] focus:outline-none transition-all duration-200 bg-white text-slate-900 placeholder-slate-400 shadow-sm hover:border-slate-300";
+  "w-full px-5 py-4 h-[58px] border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#1D4ED8] focus:border-[#1D4ED8] focus:outline-none transition-all duration-200 bg-white text-slate-900 placeholder-slate-400 shadow-sm hover:border-slate-300";
 
 interface BriefFormProps {
   useCase: UseCase;
@@ -250,7 +250,7 @@ export const BriefForm: React.FC<BriefFormProps> = ({
                         handleInputChange(question.key, e.target.value)
                       }
                       placeholder={question.placeholder}
-                      className="w-full px-5 py-4 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#754BDD] focus:border-[#754BDD] focus:outline-none transition-all duration-200 bg-white text-slate-900 placeholder-slate-400 shadow-sm hover:border-slate-300"
+                      className="w-full px-5 py-4 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#1D4ED8] focus:border-[#1D4ED8] focus:outline-none transition-all duration-200 bg-white text-slate-900 placeholder-slate-400 shadow-sm hover:border-slate-300"
                       required={question.required}
                     />
                   )}
@@ -262,7 +262,7 @@ export const BriefForm: React.FC<BriefFormProps> = ({
             <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200 mb-8 relative overflow-hidden">
               <div
                 className="absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl"
-                style={{ backgroundColor: "#754BDD" }}
+                style={{ backgroundColor: "#1D4ED8" }}
               />
 
               <div className="flex items-center justify-center gap-3 mb-2">
@@ -282,7 +282,7 @@ export const BriefForm: React.FC<BriefFormProps> = ({
           <div className="flex justify-center">
             <button
               type="submit"
-              className="group inline-flex items-center justify-center bg-[#754BDD] text-white px-8 py-5 rounded-2xl font-semibold text-lg hover:opacity-95 transition-opacity shadow-sm"
+              className="group inline-flex items-center justify-center bg-[#1D4ED8] text-white px-8 py-5 rounded-2xl font-semibold text-lg hover:opacity-95 transition-opacity shadow-sm"
             >
               <Sparkles className="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform" />
               Pick a style

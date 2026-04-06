@@ -171,7 +171,7 @@ export const InlineFormattingPopover: React.FC<
       "#3730a3",
       "#4f46e5",
       "#6366f1",
-      "#754BDD",
+      "#1D4ED8",
       "#a78bfa",
       "#c4b5fd",
       "#581c87",
@@ -390,7 +390,7 @@ export const InlineFormattingPopover: React.FC<
                         {commonColors.map((color) => (
                           <button
                             key={`link-edit-${color}`}
-                            className={`h-6 w-6 rounded border cursor-pointer transition-transform hover:scale-110 ${linkColor === color ? "border-blue-500 ring-1 ring-blue-500" : "border-gray-200"
+                            className={`h-6 w-6 rounded border cursor-pointer transition-transform hover:scale-110 ${linkColor === color ? "border-blue-500 ring-1 ring-blue-500" : "border-slate-200"
                               }`}
                             style={{ backgroundColor: color }}
                             onMouseDown={stopEvent}
@@ -507,7 +507,7 @@ export const InlineFormattingPopover: React.FC<
                       if (!persistent) e.stopPropagation();
                       onOpenStormy();
                     }}
-                    className="h-8 px-2 gap-1.5 bg-purple-50 text-purple-700 hover:bg-purple-100 hover:text-purple-800 border border-purple-200"
+                    className="h-8 px-2 gap-1.5 bg-blue-50 text-blue-700 hover:bg-blue-100 hover:text-blue-800 border border-blue-200"
                   >
                     <img
                       src="/lovable-uploads/8e728019-0b85-4a18-bc89-6b6583826e7d.png"
@@ -1092,7 +1092,7 @@ export const InlineFormattingPopover: React.FC<
                                 key={`link-${color}`}
                                 className={`h-6 w-6 rounded border cursor-pointer transition-transform hover:scale-110 ${linkColor === color
                                     ? "border-blue-500 ring-1 ring-blue-500"
-                                    : "border-gray-200"
+                                    : "border-slate-200"
                                   }`}
                                 style={{ backgroundColor: color }}
                         onMouseDown={stopEvent}

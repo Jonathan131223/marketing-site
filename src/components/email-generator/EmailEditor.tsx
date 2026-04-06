@@ -465,7 +465,7 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
       case "urgent":
         return "from-red-500 to-pink-600";
       default:
-        return "from-purple-500 to-purple-600";
+        return "from-blue-500 to-blue-600";
     }
   };
 
@@ -673,12 +673,12 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
       }
 
       tr.email-block:hover:not(.gemini-block-highlight) {
-        outline: 1px solid #754BDD;
+        outline: 1px solid #1D4ED8;
         outline-offset: -1px;
       }
 
       tr.email-block.gemini-block-highlight {
-        outline: 2px solid #754BDD !important;
+        outline: 2px solid #1D4ED8 !important;
         outline-offset: -2px;
       }
 
@@ -689,7 +689,7 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
       }
 
       tr.email-block.gemini-block-highlight:hover {
-        outline-color: #754BDD !important;
+        outline-color: #1D4ED8 !important;
       }
       
       /* Badge row should not be interactive */
@@ -729,7 +729,7 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
       .gemini-control-button {
         width: 23px;
         height: 23px;
-        background: #754BDD;
+        background: #1D4ED8;
         color: white;
         border-radius: 6px;
         display: flex;
@@ -743,7 +743,7 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
       }
 
       .gemini-control-button:hover {
-        background: #754BDD;
+        background: #1D4ED8;
         transform: translateY(-1px);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
       }
@@ -826,7 +826,7 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
       }
 
       .gemini-empty-state:hover {
-        border-color: #754BDD !important;
+        border-color: #1D4ED8 !important;
         background-color: #fafafa !important;
       }
 
@@ -873,7 +873,7 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
       }
       
       .stormy-input:focus {
-        border-color: #754BDD;
+        border-color: #1D4ED8;
         box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
       }
       
@@ -897,15 +897,15 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
       }
       
       .stormy-suggestion:hover {
-        background: #754BDD;
+        background: #1D4ED8;
         color: white;
-        border-color: #754BDD;
+        border-color: #1D4ED8;
         transform: translateY(-1px);
       }
       
       .stormy-submit {
         width: 100%;
-        background: #754BDD;
+        background: #1D4ED8;
         color: white;
         border: none;
         border-radius: 6px;
@@ -921,7 +921,7 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
       }
       
       .stormy-submit:hover {
-        background: #754BDD;
+        background: #1D4ED8;
       }
       
       .stormy-submit:disabled {
@@ -951,7 +951,7 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
         width: 20px;
         height: 20px;
         border: 2px solid #e5e7eb;
-        border-top: 2px solid #754BDD;
+        border-top: 2px solid #1D4ED8;
         border-radius: 50%;
         animation: spin 1s linear infinite;
       }
@@ -1144,7 +1144,7 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
                   <span class="width-value" style="font-size: 14px; color: #374151; font-variant-numeric: tabular-nums;">\${initialVal}px</span>
                 </div>
                 <div style="width: 100%;">
-                  <input type="range" min="20" max="200" value="\${initialVal}" class="width-slider" style="width: 100%; accent-color: #754BDD; height: 6px; border-radius: 3px; cursor: pointer; box-sizing: border-box;">
+                  <input type="range" min="20" max="200" value="\${initialVal}" class="width-slider" style="width: 100%; accent-color: #1D4ED8; height: 6px; border-radius: 3px; cursor: pointer; box-sizing: border-box;">
                 </div>
               \`;
             } else {
@@ -1155,7 +1155,7 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
                 <span class="width-value" style="font-size: 14px; color: #374151; font-variant-numeric: tabular-nums;">\${initialVal}%</span>
               </div>
               <div style="width: 100%;">
-                <input type="range" min="10" max="100" value="\${initialVal}" class="width-slider" style="width: 100%; accent-color: #754BDD; height: 6px; border-radius: 3px; cursor: pointer; box-sizing: border-box;">
+                <input type="range" min="10" max="100" value="\${initialVal}" class="width-slider" style="width: 100%; accent-color: #1D4ED8; height: 6px; border-radius: 3px; cursor: pointer; box-sizing: border-box;">
               </div>
             \`;
             }
@@ -2603,7 +2603,7 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
   const guestEditorLocked = !authLoading && (!user || !session);
 
   return (
-    <div className="max-w-7xl mx-auto border border-gray-200 rounded-2xl">
+    <div className="max-w-7xl mx-auto border border-slate-200 rounded-2xl">
       {/* Live Preview - Full Width */}
       <div className="bg-white rounded-2xl overflow-hidden relative">
         {/* Email metadata (From, To, Subject) */}
@@ -2703,7 +2703,7 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
           )}
 
           <div className="">
-          <div className="bg-gray-50 rounded-lg overflow-hidden">
+          <div className="bg-slate-50 rounded-lg overflow-hidden">
             {email.content && email.isHtml ? (
               <div className="relative">
                 <div
@@ -2726,8 +2726,8 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
                 </div>
                 {/* Loading indicator */}
                 {!isIframeReady && (
-                  <div className="absolute inset-0 bg-gray-100 flex items-center justify-center">
-                    <div className="text-gray-500">Loading editor...</div>
+                  <div className="absolute inset-0 bg-slate-100 flex items-center justify-center">
+                    <div className="text-slate-500">Loading editor...</div>
                   </div>
                 )}
 
@@ -2738,7 +2738,7 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
                       <div className="flex items-center gap-3">
                         <div className="w-5 h-5 border-2 border-primary/30 border-t-primary rounded-full animate-spin" />
                         <span
-                          className="text-sm font-medium text-gray-700"
+                          className="text-sm font-medium text-slate-700"
                           style={{ fontFamily: "Arial, sans-serif" }}
                         >
                           Stormy is working his magic ⚡
@@ -2764,7 +2764,7 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
                             }
                           }
                         }}
-                        className="px-4 py-2 text-sm text-gray-600 hover:text-gray-800 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+                        className="px-4 py-2 text-sm text-slate-600 hover:text-slate-800 border border-slate-300 rounded-md hover:bg-slate-50 transition-colors"
                         style={{ fontFamily: "Arial, sans-serif" }}
                       >
                         Cancel
@@ -2774,7 +2774,7 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
                 )}
               </div>
             ) : (
-              <div className="p-8 text-center text-gray-500">
+              <div className="p-8 text-center text-slate-500">
                 <p>No email content available</p>
               </div>
             )}
@@ -2785,10 +2785,10 @@ export const EmailEditor: React.FC<EmailEditorProps> = ({
           {guestEditorLocked && (
             <div className="absolute inset-0 z-[100] flex items-center justify-center bg-white/90 pointer-events-auto">
               <div className="bg-white rounded-lg p-6 max-w-md mx-4 text-center shadow-xl border border-border">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">
                   Sign In
                 </h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-slate-600 mb-4">
                   Get access to the email editor and save your work.
                 </p>
                 <button

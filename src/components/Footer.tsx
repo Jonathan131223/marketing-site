@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-white text-gray-900 border-t border-gray-200">
+    <footer className="bg-white text-slate-900 border-t border-slate-200">
       <div className="container mx-auto px-4 py-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           <div className="col-span-1 md:col-span-1">
@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
                 />
               </a>
             </div>
-            <p className="text-gray-600 mb-4">
+            <p className="text-slate-600 mb-4">
               The AI agent that moves your users from signup to paid.
             </p>
             <div className="flex space-x-4">
@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="DigiStorms on X (Twitter)"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center justify-center min-h-[44px] min-w-[44px]"
               >
                 <svg
                   className="w-5 h-5"
@@ -41,7 +41,7 @@ export const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="DigiStorms on LinkedIn"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center justify-center min-h-[44px] min-w-[44px]"
               >
                 <svg
                   className="w-5 h-5"
@@ -56,14 +56,14 @@ export const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="font-semibold text-lg mb-4 text-gray-900">
+            <h4 className="font-semibold text-lg mb-4 text-slate-900">
               Library
-            </h3>
+            </h4>
             <ul className="space-y-2">
               <li>
                 <Link
                   to="/library"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
                 >
                   Email Library
                 </Link>
@@ -71,7 +71,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/library/brands"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
                 >
                   Browse by Brand
                 </Link>
@@ -79,7 +79,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/library/usecases"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
                 >
                   Browse by Use Case
                 </Link>
@@ -87,7 +87,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/library/tags"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
                 >
                   Browse by Tag
                 </Link>
@@ -96,14 +96,14 @@ export const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="font-semibold text-lg mb-4 text-gray-900">
+            <h4 className="font-semibold text-lg mb-4 text-slate-900">
               Product
-            </h3>
+            </h4>
             <ul className="space-y-2">
               <li>
                 <Link
                   to="/manifesto"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
                 >
                   Manifesto
                 </Link>
@@ -111,7 +111,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/pricing"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
                 >
                   Pricing
                 </Link>
@@ -120,14 +120,14 @@ export const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="font-semibold text-lg mb-4 text-gray-900">
+            <h4 className="font-semibold text-lg mb-4 text-slate-900">
               Resources
-            </h3>
+            </h4>
             <ul className="space-y-2">
               <li>
                 <Link
                   to="/blog"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
                 >
                   Blog
                 </Link>
@@ -135,7 +135,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/lifecycle-score"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
                 >
                   Your Onboarding Score
                 </Link>
@@ -143,7 +143,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/roi-calculator"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
                 >
                   ROI Calculator
                 </Link>
@@ -151,7 +151,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/email-generator"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
                 >
                   Lifecycle Email Generator
                 </Link>
@@ -160,14 +160,14 @@ export const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="font-semibold text-lg mb-4 text-gray-900">
+            <h4 className="font-semibold text-lg mb-4 text-slate-900">
               Company
-            </h3>
+            </h4>
             <ul className="space-y-2">
               <li>
                 <Link
                   to="/contact"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
                 >
                   Contact
                 </Link>
@@ -175,7 +175,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/privacy"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
                 >
                   Privacy policy
                 </Link>
@@ -183,7 +183,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/terms"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
                 >
                   Terms of service
                 </Link>
@@ -192,8 +192,8 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-200 mt-12 pt-8">
-          <p className="text-gray-600 text-sm">
+        <div className="border-t border-slate-200 mt-12 pt-8">
+          <p className="text-slate-600 text-sm">
             © 2026 DigiStorms. All rights reserved.
           </p>
         </div>

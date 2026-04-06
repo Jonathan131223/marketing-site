@@ -39,15 +39,15 @@ export const RebuildNoticeModal: React.FC<RebuildNoticeModalProps> = ({
         role="dialog"
         aria-modal="true"
         aria-labelledby="rebuild-notice-title"
-        className="relative bg-white rounded-2xl shadow-xl max-w-md w-full p-6 md:p-8 border border-gray-100 text-left"
+        className="relative bg-white rounded-2xl shadow-xl max-w-md w-full p-6 md:p-8 border border-slate-100 text-left"
       >
         <h2
           id="rebuild-notice-title"
-          className="text-xl font-semibold text-gray-900 mb-3"
+          className="text-xl font-semibold text-slate-900 mb-3"
         >
           Thanks for stopping by
         </h2>
-        <div className="text-gray-600 text-[15px] leading-relaxed space-y-3 mb-6">
+        <div className="text-slate-600 text-[15px] leading-relaxed space-y-3 mb-6">
           <p>
             We&apos;re rebuilding DigiStorms right now, so you might notice a
             small glitch here and there. We&apos;d love for you to explore and
@@ -63,7 +63,7 @@ export const RebuildNoticeModal: React.FC<RebuildNoticeModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="w-full sm:w-auto px-4 py-3 rounded-xl font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 transition-colors"
+            className="w-full sm:w-auto px-4 py-3 rounded-xl font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 transition-colors"
           >
             Not now
           </button>
@@ -72,7 +72,7 @@ export const RebuildNoticeModal: React.FC<RebuildNoticeModalProps> = ({
             onClick={onContinue}
             data-flat-purple
             style={{
-              backgroundColor: "#754bdd",
+              backgroundColor: "#1D4ED8",
               boxShadow: "none",
               outline: "none",
               border: "none",

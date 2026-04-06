@@ -31,10 +31,10 @@ export const BrandInspirationSection: React.FC = () => {
     <section className="py-16 md:py-20 lg:py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900 mb-4">
             Inspired by the best SaaS onboarding programs
           </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>
+          <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>
             DigiStorms is trained on 1,000+ real SaaS lifecycle emails from companies that obsess over activation and retention.
           </p>
         </div>
@@ -52,7 +52,7 @@ export const BrandInspirationSection: React.FC = () => {
                   <Link
                     key={`${brand.slug}-${i}`}
                     to={`/library/brand/${brand.slug}`}
-                    className="flex-shrink-0 flex items-center gap-3 bg-white rounded-xl border border-gray-100 px-3 py-2 shadow-sm hover:border-[#754BDD] hover:shadow-md transition-all group"
+                    className="flex-shrink-0 flex items-center gap-3 bg-white rounded-xl border border-slate-100 px-3 py-2 shadow-sm hover:border-[#1D4ED8] hover:shadow-md transition-all group"
                     title={brand.name}
                   >
                     <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center overflow-hidden">
@@ -64,12 +64,12 @@ export const BrandInspirationSection: React.FC = () => {
                           loading="lazy"
                         />
                       ) : (
-                        <span className="text-sm font-bold text-gray-300">
+                        <span className="text-sm font-bold text-slate-300">
                           {brand.name[0]}
                         </span>
                       )}
                     </div>
-                    <span className="text-sm font-medium text-gray-700 group-hover:text-[#754BDD] transition-colors whitespace-nowrap">
+                    <span className="text-sm font-medium text-slate-700 group-hover:text-[#1D4ED8] transition-colors whitespace-nowrap">
                       {brand.name}
                     </span>
                   </Link>
@@ -83,7 +83,7 @@ export const BrandInspirationSection: React.FC = () => {
       <div className="text-center mt-10">
         <Link
           to="/library"
-          className="text-sm text-gray-600 hover:text-gray-900 underline transition-colors"
+          className="text-sm text-slate-600 hover:text-slate-900 underline transition-colors"
         >
           Explore our email library →
         </Link>

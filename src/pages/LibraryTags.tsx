@@ -9,7 +9,7 @@ import {
   buildCollectionPageJsonLd,
 } from "@/lib/seo";
 
-const PURPLE = "#754BDD";
+const PURPLE = "#1D4ED8";
 
 interface Tag {
   slug: string;
@@ -87,23 +87,23 @@ const LibraryTags: React.FC = () => {
       <Navbar />
 
       <main className="pt-16">
-        <div className="bg-white border-b border-gray-100 pb-8 pt-10">
+        <div className="bg-white border-b border-slate-100 pb-8 pt-10">
           <div className="container mx-auto px-4 max-w-6xl">
             <nav aria-label="Breadcrumb" className="mb-6">
-              <ol className="flex items-center gap-2 text-sm text-gray-400">
+              <ol className="flex items-center gap-2 text-sm text-slate-400">
                 <li>
-                  <Link to="/library" className="hover:text-[#754BDD] transition-colors">
+                  <Link to="/library" className="hover:text-[#1D4ED8] transition-colors">
                     Library
                   </Link>
                 </li>
                 <li aria-hidden="true"><span>/</span></li>
                 <li aria-current="page">
-                  <span className="text-gray-700 font-medium">Tags</span>
+                  <span className="text-slate-700 font-medium">Tags</span>
                 </li>
               </ol>
             </nav>
-            <h1 className="text-3xl font-bold text-gray-900 mb-1">All Tags</h1>
-            <p className="text-gray-400 text-sm">
+            <h1 className="text-3xl font-bold text-slate-900 mb-1">All Tags</h1>
+            <p className="text-slate-400 text-sm">
               {sortedTags.length} tag{sortedTags.length !== 1 ? "s" : ""} in library
             </p>
           </div>
@@ -125,13 +125,13 @@ const LibraryTags: React.FC = () => {
                   <Link
                     key={tag.slug}
                     to={`/library/tag/${tag.slug}`}
-                    className="group flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 bg-white hover:border-[#754BDD] hover:bg-[#F3EEFF] transition-all"
+                    className="group flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 bg-white hover:border-[#1D4ED8] hover:bg-[#DBEAFE] transition-all"
                   >
-                    <span className="text-sm font-medium text-gray-700 group-hover:text-[#754BDD] transition-colors">
+                    <span className="text-sm font-medium text-slate-700 group-hover:text-[#1D4ED8] transition-colors">
                       {tag.name}
                     </span>
                     {count > 0 && (
-                      <span className="text-xs text-gray-400 group-hover:text-[#754BDD]/70">
+                      <span className="text-xs text-slate-400 group-hover:text-[#1D4ED8]/70">
                         {count}
                       </span>
                     )}

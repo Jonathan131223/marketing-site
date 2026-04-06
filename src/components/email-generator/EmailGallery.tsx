@@ -1234,7 +1234,7 @@ export const EmailGallery: React.FC<EmailGalleryProps> = ({
   //     case 'professional': return 'from-blue-500 to-indigo-600';
   //     case 'friendly': return 'from-green-500 to-emerald-600';
   //     case 'urgent': return 'from-red-500 to-pink-600';
-  //     default: return 'from-purple-500 to-purple-600';
+  //     default: return 'from-blue-500 to-blue-600';
   //   }
   // };
 
@@ -1250,10 +1250,10 @@ export const EmailGallery: React.FC<EmailGalleryProps> = ({
   return (
     <div className="max-w-7xl mx-auto">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">
+        <h2 className="text-3xl font-bold text-slate-900 mb-4">
           Your Generated Email Options
         </h2>
-        <p className="text-gray-600 text-lg">
+        <p className="text-slate-600 text-lg">
           Choose the email that best fits your brand voice and objectives
         </p>
       </div>
@@ -1265,7 +1265,7 @@ export const EmailGallery: React.FC<EmailGalleryProps> = ({
             className="bg-white rounded-2xl shadow-lg hover:shadow-md transition-all duration-300 overflow-hidden transform hover:scale-105"
           >
             {/* Purple Header with Variant Name */}
-            <div className="bg-purple-600 px-4 py-3">
+            <div className="bg-blue-600 px-4 py-3">
               <h3 className="text-white font-semibold text-sm capitalize">
                 Template #{index + 1}
               </h3>
@@ -1291,7 +1291,7 @@ export const EmailGallery: React.FC<EmailGalleryProps> = ({
                   />
                 </div>
               ) : (
-                <div className="flex-1 p-6 text-sm text-gray-700 overflow-auto">
+                <div className="flex-1 p-6 text-sm text-slate-700 overflow-auto">
                   {email.content.split("\n").map((line, index) => (
                     <div key={index} className="mb-2">
                       {line}
@@ -1310,7 +1310,7 @@ export const EmailGallery: React.FC<EmailGalleryProps> = ({
                       preview: "",
                     })
                   }
-                  className="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors"
+                  className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
                 >
                   Customize This Email
                 </button>
