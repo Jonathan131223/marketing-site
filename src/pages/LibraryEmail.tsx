@@ -51,7 +51,7 @@ interface UseCase {
 
 // ── Helpers ────────────────────────────────────────────────────────────────────
 
-const PURPLE = "#754BDD";
+const PURPLE = "#1D4ED8";
 
 function formatDate(raw: string): string {
   if (!raw) return "";
@@ -82,7 +82,7 @@ const RelatedGrid: React.FC<RelatedGridProps> = ({ emails: items, getBrandName }
   <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
     {items.map((rel) => (
       <Link key={rel.id} to={`/library/email/${rel.slug}`} className="group block">
-        <div className="rounded-xl overflow-hidden border border-gray-100 bg-gray-50 aspect-[3/4] mb-2 group-hover:shadow-md group-hover:border-[#754BDD]/30 transition-all">
+        <div className="rounded-xl overflow-hidden border border-gray-100 bg-gray-50 aspect-[3/4] mb-2 group-hover:shadow-md group-hover:border-[#1D4ED8]/30 transition-all">
           {rel.thumb ? (
             <img
               src={rel.thumb}
@@ -91,10 +91,10 @@ const RelatedGrid: React.FC<RelatedGridProps> = ({ emails: items, getBrandName }
               loading="lazy"
             />
           ) : (
-            <div className="w-full h-full bg-[#F3EEFF]" />
+            <div className="w-full h-full bg-[#DBEAFE]" />
           )}
         </div>
-        <p className="text-xs font-medium text-gray-700 group-hover:text-[#754BDD] transition-colors line-clamp-2 leading-snug">
+        <p className="text-xs font-medium text-gray-700 group-hover:text-[#1D4ED8] transition-colors line-clamp-2 leading-snug">
           {rel.subject}
         </p>
       </Link>
@@ -230,7 +230,7 @@ const LibraryEmail: React.FC = () => {
           <nav aria-label="Breadcrumb">
             <ol className="flex items-center gap-2 text-sm text-gray-400">
               <li>
-                <Link to="/library" className="hover:text-[#754BDD] transition-colors font-medium">
+                <Link to="/library" className="hover:text-[#1D4ED8] transition-colors font-medium">
                   Library
                 </Link>
               </li>
@@ -240,7 +240,7 @@ const LibraryEmail: React.FC = () => {
                   <li>
                     <Link
                       to={`/library/brand/${brand.slug}`}
-                      className="hover:text-[#754BDD] transition-colors font-medium"
+                      className="hover:text-[#1D4ED8] transition-colors font-medium"
                     >
                       {brand.name}
                     </Link>
@@ -291,7 +291,7 @@ const LibraryEmail: React.FC = () => {
                   )}
                   <div>
                     <p className="text-xs text-gray-400 font-medium uppercase tracking-wide">Brand</p>
-                    <p className="font-semibold text-gray-900 group-hover:text-[#754BDD] transition-colors">
+                    <p className="font-semibold text-gray-900 group-hover:text-[#1D4ED8] transition-colors">
                       {brand.name}
                     </p>
                   </div>
@@ -345,7 +345,7 @@ const LibraryEmail: React.FC = () => {
                       <Link
                         key={tag.slug}
                         to={`/library/tag/${tag.slug}`}
-                        className="inline-block px-3 py-1 rounded-full text-xs font-medium border border-gray-200 bg-white text-gray-600 hover:border-[#754BDD] hover:text-[#754BDD] hover:bg-[#F3EEFF] transition-all"
+                        className="inline-block px-3 py-1 rounded-full text-xs font-medium border border-gray-200 bg-white text-gray-600 hover:border-[#1D4ED8] hover:text-[#1D4ED8] hover:bg-[#DBEAFE] transition-all"
                       >
                         {tag.name}
                       </Link>
@@ -420,7 +420,7 @@ const LibraryEmail: React.FC = () => {
               </h2>
               <p className="text-sm text-gray-400 mb-6">
                 <Link to={`/library/usecase/${useCase.slug}`}
-                  className="hover:text-[#754BDD] transition-colors">
+                  className="hover:text-[#1D4ED8] transition-colors">
                   Browse all {useCase.name} emails →
                 </Link>
               </p>
@@ -435,7 +435,7 @@ const LibraryEmail: React.FC = () => {
               </h2>
               <p className="text-sm text-gray-400 mb-6">
                 <Link to={`/library/tag/${firstTag.slug}`}
-                  className="hover:text-[#754BDD] transition-colors">
+                  className="hover:text-[#1D4ED8] transition-colors">
                   Browse all {firstTag.name} emails →
                 </Link>
               </p>

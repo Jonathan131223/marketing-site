@@ -328,7 +328,7 @@ const AILoadingScreen: React.FC<AILoadingScreenProps> = ({
                 <button
                   onClick={handleRetry}
                   disabled={isRetrying}
-                  className="w-full bg-purple-600 hover:bg-purple-700 disabled:bg-purple-400 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
+                  className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
                 >
                   {isRetrying ? "Retrying..." : "Try Again"}
                 </button>
@@ -372,7 +372,7 @@ const AILoadingScreen: React.FC<AILoadingScreenProps> = ({
             <>
               <div className="w-full bg-gray-100 rounded-full h-3 mb-6 overflow-hidden border border-gray-200 shadow-inner">
                 <div
-                  className="bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 h-3 rounded-full transition-all duration-700 ease-out relative"
+                  className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 h-3 rounded-full transition-all duration-700 ease-out relative"
                   style={{ width: `${progress}%` }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent rounded-full"></div>

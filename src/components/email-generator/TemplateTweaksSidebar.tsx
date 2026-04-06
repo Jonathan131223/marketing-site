@@ -94,7 +94,7 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
   const socialDropdownRef = useRef<HTMLDivElement>(null);
 
   // Use template color as default, fall back to purple
-  const defaultColor = templateCtaColor || "#754BDD";
+  const defaultColor = templateCtaColor || "#1D4ED8";
 
   // Local state for CTA Color and Radius (require Apply button)
   const [pendingColor, setPendingColor] = useState(tweaks.ctaButtonColor || defaultColor);
@@ -102,7 +102,7 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
 
   // Sync local state when tweaks prop changes or templateCtaColor changes
   useEffect(() => {
-    setPendingColor(tweaks.ctaButtonColor || templateCtaColor || "#754BDD");
+    setPendingColor(tweaks.ctaButtonColor || templateCtaColor || "#1D4ED8");
     setPendingRadius(tweaks.ctaButtonBorderRadius || "50px");
   }, [tweaks.ctaButtonColor, tweaks.ctaButtonBorderRadius, templateCtaColor]);
 
@@ -196,7 +196,7 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
               key={align.value}
               onClick={() => onChange(align.value)}
               className={`flex-1 flex items-center justify-center py-1.5 px-2 rounded-md text-sm transition-all duration-200 ${isSelected
-                ? "bg-white shadow-sm text-purple-600 font-medium"
+                ? "bg-white shadow-sm text-blue-600 font-medium"
                 : "text-gray-500 hover:text-gray-700 hover:bg-gray-200/50"
                 }`}
               title={align.label}
@@ -233,7 +233,7 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
               key={option.value}
               onClick={() => onChange(option.value)}
               className={`py-1.5 px-2 rounded-md text-xs font-medium transition-all duration-200 ${isSelected
-                ? "bg-white shadow-sm text-purple-600 border border-purple-200"
+                ? "bg-white shadow-sm text-blue-600 border border-blue-200"
                 : "text-gray-600 hover:text-gray-800 hover:bg-gray-200/50"
                 }`}
             >
@@ -272,14 +272,14 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
                   <button
                     type="button"
                     onClick={() => onApplyToAllChange(true)}
-                    className={`flex-1 py-2 px-3 text-sm font-medium transition-colors ${applyToAllEmails ? "bg-purple-100 text-purple-700 border-purple-300" : "bg-white text-gray-600 hover:bg-gray-50"}`}
+                    className={`flex-1 py-2 px-3 text-sm font-medium transition-colors ${applyToAllEmails ? "bg-blue-100 text-blue-700 border-blue-300" : "bg-white text-gray-600 hover:bg-gray-50"}`}
                   >
                     All emails
                   </button>
                   <button
                     type="button"
                     onClick={() => onApplyToAllChange(false)}
-                    className={`flex-1 py-2 px-3 text-sm font-medium transition-colors border-l border-gray-200 ${!applyToAllEmails ? "bg-purple-100 text-purple-700 border-purple-300" : "bg-white text-gray-600 hover:bg-gray-50"}`}
+                    className={`flex-1 py-2 px-3 text-sm font-medium transition-colors border-l border-gray-200 ${!applyToAllEmails ? "bg-blue-100 text-blue-700 border-blue-300" : "bg-white text-gray-600 hover:bg-gray-50"}`}
                   >
                     Current email
                   </button>
@@ -327,7 +327,7 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
                     logoBlendBackground: e.target.checked || undefined,
                   });
                 }}
-                className="h-4 w-4 accent-purple-600 mt-0.5 shrink-0"
+                className="h-4 w-4 accent-blue-600 mt-0.5 shrink-0"
               />
               <div>
                 <span className="text-sm text-gray-700">Blend-in logo</span>
@@ -403,7 +403,7 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
                   setPendingColor("#" + hex);
                 }}
                 placeholder={defaultColor}
-                className="flex-1 px-1.5 py-1.5 border border-gray-300 rounded-md text-xs font-mono focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="flex-1 px-1.5 py-1.5 border border-gray-300 rounded-md text-xs font-mono focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
             <Button
@@ -463,7 +463,7 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
                   const value = (e.target as HTMLInputElement).value + "px";
                   applyTweak("ctaButtonBorderRadius", value);
                 }}
-                className="flex-1 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-purple-600"
+                className="flex-1 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
               />
               <span className="text-xs font-mono bg-gray-100 px-1.5 py-0.5 rounded text-gray-600 w-12 text-center shrink-0">
                 {pendingRadius}
@@ -536,7 +536,7 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
                         <div
                           className={`w-4 h-4 rounded border flex items-center justify-center flex-shrink-0 transition-colors ${
                             isEnabled
-                              ? "bg-purple-600 border-purple-600"
+                              ? "bg-blue-600 border-blue-600"
                               : "border-gray-300 bg-white"
                           }`}
                         >
@@ -618,7 +618,7 @@ export const TemplateTweaksSidebar: React.FC<TemplateTweaksSidebarProps> = ({
                       footerBlendBackground: e.target.checked || undefined,
                     });
                   }}
-                  className="h-4 w-4 accent-purple-600 mt-0.5 shrink-0"
+                  className="h-4 w-4 accent-blue-600 mt-0.5 shrink-0"
                 />
                 <div>
                   <span className="text-sm text-gray-700">Blend-in footer</span>

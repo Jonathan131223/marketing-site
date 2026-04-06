@@ -422,7 +422,7 @@ const TemplatesPage = () => {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="w-8 h-8 border-4 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
           <p className="text-gray-600">Loading...</p>
         </div>
       </div>
@@ -442,7 +442,7 @@ const TemplatesPage = () => {
     <section className="py-16 bg-gradient-to-br from-slate-50 via-white to-slate-50 min-h-screen relative overflow-hidden">
       {/* Premium background elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-10 left-1/4 w-72 h-72 bg-purple-100/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-10 left-1/4 w-72 h-72 bg-blue-100/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-blue-100/20 rounded-full blur-3xl"></div>
       </div>
 
@@ -450,7 +450,7 @@ const TemplatesPage = () => {
         <div className="mb-12">
           <button
             onClick={handleBack}
-            className="group inline-flex items-center text-slate-600 hover:text-purple-600 font-medium transition-all duration-200 hover:translate-x-1"
+            className="group inline-flex items-center text-slate-600 hover:text-blue-600 font-medium transition-all duration-200 hover:translate-x-1"
           >
             <span className="mr-2 transform group-hover:-translate-x-1 transition-transform">
               ←

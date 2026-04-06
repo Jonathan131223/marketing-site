@@ -9,7 +9,7 @@ interface FounderStepProps {
 }
 
 const INPUT_CLASS =
-  "w-full px-5 py-4 border border-slate-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 focus:outline-none transition-all duration-200 bg-white/50 backdrop-blur-sm text-slate-900 placeholder-slate-400 shadow-sm hover:shadow-md";
+  "w-full px-5 py-4 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none transition-all duration-200 bg-white/50 backdrop-blur-sm text-slate-900 placeholder-slate-400 shadow-sm hover:shadow-md";
 
 export const FounderStep: React.FC<FounderStepProps> = ({
   founderName,
@@ -76,7 +76,7 @@ export const FounderStep: React.FC<FounderStepProps> = ({
               type="button"
               onClick={onNext}
               disabled={!canContinue}
-              className="flex-1 group inline-flex items-center justify-center bg-[#754BDD] text-white px-6 py-4 rounded-xl font-semibold hover:opacity-95 transition-opacity shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex-1 group inline-flex items-center justify-center bg-[#1D4ED8] text-white px-6 py-4 rounded-xl font-semibold hover:opacity-95 transition-opacity shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Continue
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />

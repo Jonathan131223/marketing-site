@@ -230,7 +230,7 @@ const BlogPost: React.FC = () => {
       <div className="fixed top-14 left-0 right-0 z-50 h-[2px] bg-transparent pointer-events-none">
         <div
           className="h-full"
-          style={{ width: `${scrollProgress}%`, backgroundColor: '#754BDD', transition: 'none' }}
+          style={{ width: `${scrollProgress}%`, backgroundColor: '#1D4ED8', transition: 'none' }}
         />
       </div>
       <main className="pt-24 pb-20">
@@ -247,7 +247,7 @@ const BlogPost: React.FC = () => {
           <header className="text-center mb-10 max-w-xl mx-auto">
             <h1
               className="leading-tight"
-              style={{ color: '#754BDD', fontSize: 'clamp(28px, 5vw, 48px)', fontWeight: '400', margin: '0px 0px 20px' }}
+              style={{ color: '#1D4ED8', fontSize: 'clamp(28px, 5vw, 48px)', fontWeight: '400', margin: '0px 0px 20px' }}
             >
               {title}
             </h1>
@@ -330,14 +330,14 @@ const BlogPost: React.FC = () => {
                       return (
                         <h2
                           id={id}
-                          style={{ color: '#754BDD', fontSize: '28px', fontWeight: '500', margin: '28px 0px 12px' }}
+                          style={{ color: '#1D4ED8', fontSize: '28px', fontWeight: '500', margin: '28px 0px 12px' }}
                         >
                           {children}
                         </h2>
                       );
                     },
                     h3: ({ children }) => (
-                      <h3 style={{ color: '#754BDD', fontSize: '22px', fontWeight: '500', margin: '20px 0px 10px' }}>
+                      <h3 style={{ color: '#1D4ED8', fontSize: '22px', fontWeight: '500', margin: '20px 0px 10px' }}>
                         {children}
                       </h3>
                     ),
@@ -406,7 +406,7 @@ const BlogPost: React.FC = () => {
               {/* About the author */}
               <div className="mt-12 bg-gray-50 rounded-2xl p-6">
                 <div className="flex items-center gap-2 mb-5">
-                  <UserRound className="w-5 h-5" style={{ color: '#754BDD' }} />
+                  <UserRound className="w-5 h-5" style={{ color: '#1D4ED8' }} />
                   <span className="font-bold text-gray-900">About the author</span>
                 </div>
                 <div className="flex items-start gap-5">
@@ -468,7 +468,7 @@ const BlogPost: React.FC = () => {
                             className="group flex flex-col rounded-xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow bg-white"
                           >
                             {/* Thumbnail */}
-                            <div className="aspect-[4/3] overflow-hidden bg-[#F3EEFF]">
+                            <div className="aspect-[4/3] overflow-hidden bg-[#DBEAFE]">
                               {email.thumb ? (
                                 <img
                                   src={email.thumb}
@@ -496,7 +496,7 @@ const BlogPost: React.FC = () => {
                                 {email.subject}
                               </p>
                               {matchingTag && (
-                                <span className="self-start text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#F3EEFF] text-[#754BDD]">
+                                <span className="self-start text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#DBEAFE] text-[#1D4ED8]">
                                   {matchingTag.replace(/-/g, " ")}
                                 </span>
                               )}

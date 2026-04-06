@@ -52,7 +52,7 @@ export const SuggestionField: React.FC<SuggestionFieldProps> = ({
           value={value}
           onChange={(e) => onChange(e.target.value)}
           onBlur={onBlur}
-          className="w-full px-5 py-4 h-[58px] border border-slate-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 focus:outline-none transition-all duration-200 bg-white/50 backdrop-blur-sm text-slate-900 shadow-sm hover:shadow-md appearance-none cursor-pointer"
+          className="w-full px-5 py-4 h-[58px] border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none transition-all duration-200 bg-white/50 backdrop-blur-sm text-slate-900 shadow-sm hover:shadow-md appearance-none cursor-pointer"
           required={required}
         >
           <option value="">Select an option</option>
@@ -83,7 +83,7 @@ export const SuggestionField: React.FC<SuggestionFieldProps> = ({
           onChange={(e) => onChange(e.target.value)}
           onBlur={onBlur}
           placeholder={placeholder}
-          className="w-full px-5 py-4 border border-slate-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 focus:outline-none transition-all duration-200 bg-white/50 backdrop-blur-sm text-slate-900 placeholder-slate-400 shadow-sm hover:shadow-md"
+          className="w-full px-5 py-4 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none transition-all duration-200 bg-white/50 backdrop-blur-sm text-slate-900 placeholder-slate-400 shadow-sm hover:shadow-md"
           required={required}
         />
       </div>
@@ -102,7 +102,7 @@ export const SuggestionField: React.FC<SuggestionFieldProps> = ({
             <button
               type="button"
               onClick={() => setShowAlternatives(!showAlternatives)}
-              className="inline-flex items-center gap-1.5 text-sm text-purple-600 hover:text-purple-700 transition-colors"
+              className="inline-flex items-center gap-1.5 text-sm text-blue-600 hover:text-blue-700 transition-colors"
             >
               Other suggestions
               {showAlternatives ? (
@@ -123,8 +123,8 @@ export const SuggestionField: React.FC<SuggestionFieldProps> = ({
               key={index}
               type="button"
               onClick={() => handleSelectAlternative(alt)}
-              className={`w-full px-4 py-3 text-left text-sm hover:bg-purple-50 transition-colors ${value === alt
-                  ? "bg-purple-50 text-purple-700"
+              className={`w-full px-4 py-3 text-left text-sm hover:bg-blue-50 transition-colors ${value === alt
+                  ? "bg-blue-50 text-blue-700"
                   : "text-slate-700"
                 }`}
             >

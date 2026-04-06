@@ -9,7 +9,7 @@ import {
   buildCollectionPageJsonLd,
 } from "@/lib/seo";
 
-const PURPLE = "#754BDD";
+const PURPLE = "#1D4ED8";
 
 interface Brand {
   slug: string;
@@ -72,7 +72,7 @@ const LibraryBrands: React.FC = () => {
             <nav aria-label="Breadcrumb" className="mb-6">
               <ol className="flex items-center gap-2 text-sm text-gray-400">
                 <li>
-                  <Link to="/library" className="hover:text-[#754BDD] transition-colors">
+                  <Link to="/library" className="hover:text-[#1D4ED8] transition-colors">
                     Library
                   </Link>
                 </li>
@@ -103,7 +103,7 @@ const LibraryBrands: React.FC = () => {
                 <Link
                   key={brand.slug}
                   to={`/library/brand/${brand.slug}`}
-                  className="group flex flex-col items-center text-center p-5 rounded-2xl border border-gray-100 bg-white hover:shadow-md hover:border-[#754BDD]/30 transition-all"
+                  className="group flex flex-col items-center text-center p-5 rounded-2xl border border-gray-100 bg-white hover:shadow-md hover:border-[#1D4ED8]/30 transition-all"
                 >
                   {brand.logo ? (
                     <img
@@ -120,7 +120,7 @@ const LibraryBrands: React.FC = () => {
                       {brand.name[0]}
                     </div>
                   )}
-                  <p className="text-sm font-semibold text-gray-800 group-hover:text-[#754BDD] transition-colors leading-snug mb-1">
+                  <p className="text-sm font-semibold text-gray-800 group-hover:text-[#1D4ED8] transition-colors leading-snug mb-1">
                     {brand.name}
                   </p>
                   <p className="text-xs text-gray-400">

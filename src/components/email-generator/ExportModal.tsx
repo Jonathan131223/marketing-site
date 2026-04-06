@@ -148,7 +148,7 @@ export const ExportModal: React.FC<ExportModalProps> = ({ email, onClose }) => {
               <div className="space-y-3">
                 <button
                   onClick={handleCopy}
-                  className="w-full bg-purple-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-purple-700 transition-colors flex items-center justify-center"
+                  className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center"
                 >
                   {copied ? (
                     <>

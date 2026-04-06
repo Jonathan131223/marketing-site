@@ -47,7 +47,7 @@ interface UseCase {
 
 // ── Constants ──────────────────────────────────────────────────────────────────
 
-const PURPLE = "#754BDD";
+const PURPLE = "#1D4ED8";
 
 const USE_CASE_DISPLAY: Record<string, { emoji: string }> = {
   "onboard-free-user":     { emoji: "👋" },
@@ -188,11 +188,11 @@ const LibraryUseCase: React.FC = () => {
             <nav aria-label="Breadcrumb" className="mb-6">
               <ol className="flex items-center gap-2 text-sm text-gray-400">
                 <li>
-                  <Link to="/library" className="hover:text-[#754BDD] transition-colors">Library</Link>
+                  <Link to="/library" className="hover:text-[#1D4ED8] transition-colors">Library</Link>
                 </li>
                 <li aria-hidden="true"><span>/</span></li>
                 <li>
-                  <Link to="/library/usecases" className="hover:text-[#754BDD] transition-colors">Use Cases</Link>
+                  <Link to="/library/usecases" className="hover:text-[#1D4ED8] transition-colors">Use Cases</Link>
                 </li>
                 <li aria-hidden="true"><span>/</span></li>
                 <li aria-current="page">
@@ -219,7 +219,7 @@ const LibraryUseCase: React.FC = () => {
                     <Link
                       key={tag.slug}
                       to={`/library/tag/${tag.slug}`}
-                      className="inline-block px-3 py-1 rounded-full text-xs font-medium border border-gray-200 bg-white text-gray-600 hover:border-[#754BDD] hover:text-[#754BDD] hover:bg-[#F3EEFF] transition-all"
+                      className="inline-block px-3 py-1 rounded-full text-xs font-medium border border-gray-200 bg-white text-gray-600 hover:border-[#1D4ED8] hover:text-[#1D4ED8] hover:bg-[#DBEAFE] transition-all"
                     >
                       {tag.name}
                     </Link>
@@ -243,7 +243,7 @@ const LibraryUseCase: React.FC = () => {
                     className={`flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-all whitespace-nowrap ${
                       uc.slug === slug
                         ? "text-white"
-                        : "text-gray-600 hover:text-[#754BDD] hover:bg-[#F3EEFF]"
+                        : "text-gray-600 hover:text-[#1D4ED8] hover:bg-[#DBEAFE]"
                     }`}
                     style={uc.slug === slug ? { background: PURPLE } : {}}
                   >
@@ -274,7 +274,7 @@ const LibraryUseCase: React.FC = () => {
                         <h2 className="text-base font-semibold text-gray-900">
                           <Link
                             to={`/library/brand/${brandSlug}`}
-                            className="flex items-center gap-3 group hover:text-[#754BDD] transition-colors"
+                            className="flex items-center gap-3 group hover:text-[#1D4ED8] transition-colors"
                           >
                             {brand?.logo && (
                               <img
@@ -308,7 +308,7 @@ const LibraryUseCase: React.FC = () => {
                                   loading="lazy"
                                 />
                               ) : (
-                                <div className="w-full h-full bg-[#F3EEFF] flex items-center justify-center">
+                                <div className="w-full h-full bg-[#DBEAFE] flex items-center justify-center">
                                   <span className="text-4xl opacity-30">✉️</span>
                                 </div>
                               )}
@@ -324,7 +324,7 @@ const LibraryUseCase: React.FC = () => {
                                       key={tagSlug}
                                       to={`/library/tag/${tagSlug}`}
                                       onClick={(e) => e.stopPropagation()}
-                                      className="text-xs px-2 py-0.5 rounded-full bg-[#F3EEFF] text-[#754BDD] hover:bg-[#754BDD] hover:text-white transition-colors"
+                                      className="text-xs px-2 py-0.5 rounded-full bg-[#DBEAFE] text-[#1D4ED8] hover:bg-[#1D4ED8] hover:text-white transition-colors"
                                     >
                                       {tags.find((t) => t.slug === tagSlug)?.name ?? tagSlug}
                                     </Link>

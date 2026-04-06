@@ -228,7 +228,7 @@ export default function LifecycleScorePage() {
                 <Button
                   size="lg"
                   onClick={scrollToQuiz}
-                  className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg"
                 >
                   Check my score
                   <ChevronDown className="ml-2 h-5 w-5" />
@@ -360,7 +360,7 @@ export default function LifecycleScorePage() {
                         >
                           <Button
                             size="lg"
-                            className="w-full bg-purple-600 hover:bg-purple-700 text-white py-6 text-lg"
+                            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-6 text-lg"
                           >
                             Build my onboarding emails
                             <ArrowRight className="ml-2 h-5 w-5" />

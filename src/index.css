@@ -15,7 +15,7 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 260 62% 60%;
+    --primary: 221 83% 48%;
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -38,7 +38,7 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
-    --purple-light: 254 40% 98%;
+    --primary-light: 217 91% 95%;
   }
 
   .dark {
@@ -48,7 +48,7 @@ All colors MUST be HSL.
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 260 62% 60%;
+    --primary: 221 83% 48%;
     --primary-foreground: 210 40% 98%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -69,7 +69,7 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
-    --purple-light: 254 20% 96%;
+    --primary-light: 217 80% 94%;
   }
 }
 
@@ -82,7 +82,7 @@ All colors MUST be HSL.
     font-family: 'instrument-sans', 'Instrument Sans', system-ui, sans-serif;
   }
 
-  /* Force flat purple CTA buttons - no effects */
+  /* Force flat CTA buttons - no effects */
   button[data-flat-purple] {
     box-shadow: none !important;
     outline: none !important;

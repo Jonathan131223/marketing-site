@@ -9,7 +9,7 @@ import {
   buildCollectionPageJsonLd,
 } from "@/lib/seo";
 
-const PURPLE = "#754BDD";
+const PURPLE = "#1D4ED8";
 
 interface Tag {
   slug: string;
@@ -92,7 +92,7 @@ const LibraryTags: React.FC = () => {
             <nav aria-label="Breadcrumb" className="mb-6">
               <ol className="flex items-center gap-2 text-sm text-gray-400">
                 <li>
-                  <Link to="/library" className="hover:text-[#754BDD] transition-colors">
+                  <Link to="/library" className="hover:text-[#1D4ED8] transition-colors">
                     Library
                   </Link>
                 </li>
@@ -125,13 +125,13 @@ const LibraryTags: React.FC = () => {
                   <Link
                     key={tag.slug}
                     to={`/library/tag/${tag.slug}`}
-                    className="group flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 bg-white hover:border-[#754BDD] hover:bg-[#F3EEFF] transition-all"
+                    className="group flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 bg-white hover:border-[#1D4ED8] hover:bg-[#DBEAFE] transition-all"
                   >
-                    <span className="text-sm font-medium text-gray-700 group-hover:text-[#754BDD] transition-colors">
+                    <span className="text-sm font-medium text-gray-700 group-hover:text-[#1D4ED8] transition-colors">
                       {tag.name}
                     </span>
                     {count > 0 && (
-                      <span className="text-xs text-gray-400 group-hover:text-[#754BDD]/70">
+                      <span className="text-xs text-gray-400 group-hover:text-[#1D4ED8]/70">
                         {count}
                       </span>
                     )}

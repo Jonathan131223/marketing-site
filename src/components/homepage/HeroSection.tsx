@@ -21,7 +21,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-gray-900 mb-6 leading-tight">
             Turn more free users into paying customers{" "}
-            <span className="italic" style={{ color: "#754bdd" }}>automatically</span>
+            <span className="italic" style={{ color: "#1D4ED8" }}>automatically</span>
           </h1>
 
           <p className="text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto" style={{ fontSize: "18px" }}>
@@ -36,14 +36,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               onKeyDown={handleKeyDown}
               placeholder="website.com"
               aria-label="Your website URL"
-              className="w-full px-5 py-4 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 focus:outline-none text-lg shadow-sm bg-white"
+              className="w-full px-5 py-4 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-lg shadow-sm bg-white"
             />
             <button
               onClick={onSubmit}
               disabled={!websiteUrl.trim()}
               data-flat-purple
               style={{
-                backgroundColor: "#754bdd",
+                backgroundColor: "#1D4ED8",
                 boxShadow: "none",
                 outline: "none",
                 border: "none",

@@ -9,7 +9,7 @@ import {
   buildCollectionPageJsonLd,
 } from "@/lib/seo";
 
-const PURPLE = "#754BDD";
+const PURPLE = "#1D4ED8";
 
 const USE_CASE_EMOJI: Record<string, string> = {
   "onboard-free-user":     "👋",
@@ -85,7 +85,7 @@ const LibraryUseCases: React.FC = () => {
             <nav aria-label="Breadcrumb" className="mb-6">
               <ol className="flex items-center gap-2 text-sm text-gray-400">
                 <li>
-                  <Link to="/library" className="hover:text-[#754BDD] transition-colors">
+                  <Link to="/library" className="hover:text-[#1D4ED8] transition-colors">
                     Library
                   </Link>
                 </li>
@@ -118,11 +118,11 @@ const LibraryUseCases: React.FC = () => {
                   <Link
                     key={uc.slug}
                     to={`/library/usecase/${uc.slug}`}
-                    className="group flex items-start gap-4 p-5 rounded-2xl border border-gray-100 bg-white hover:shadow-md hover:border-[#754BDD]/30 transition-all"
+                    className="group flex items-start gap-4 p-5 rounded-2xl border border-gray-100 bg-white hover:shadow-md hover:border-[#1D4ED8]/30 transition-all"
                   >
                     <span className="text-3xl flex-shrink-0">{emoji}</span>
                     <div className="min-w-0">
-                      <p className="text-sm font-semibold text-gray-800 group-hover:text-[#754BDD] transition-colors mb-1">
+                      <p className="text-sm font-semibold text-gray-800 group-hover:text-[#1D4ED8] transition-colors mb-1">
                         {uc.name}
                       </p>
                       {uc.description && (

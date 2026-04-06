@@ -189,14 +189,14 @@ export const ROISectionHomepage: React.FC<ROISectionHomepageProps> = ({
                         onChange={(e) => setUrlInput(e.target.value)}
                         onKeyDown={(e) => e.key === "Enter" && handleUrlSubmit()}
                         placeholder="website.com"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
                       />
                       <button
                         type="button"
                         onClick={handleUrlSubmit}
                         data-flat-purple
                         style={{
-                          backgroundColor: "#754bdd",
+                          backgroundColor: "#1D4ED8",
                           boxShadow: "none",
                           outline: "none",
                           border: "none",
@@ -319,7 +319,7 @@ export const ROISectionHomepage: React.FC<ROISectionHomepageProps> = ({
               type="button"
               onClick={calculate}
               disabled={isCalculating}
-              className="flat-purple-btn w-full bg-[#754bdd] text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-none border-0 focus:outline-none focus:ring-0 active:bg-[#754bdd] disabled:cursor-not-allowed"
+              className="flat-purple-btn w-full bg-[#1D4ED8] text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-none border-0 focus:outline-none focus:ring-0 active:bg-[#1D4ED8] disabled:cursor-not-allowed"
             >
               {isCalculating ? "Calculating…" : "Calculate ROI"}
             </button>

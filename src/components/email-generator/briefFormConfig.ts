@@ -108,7 +108,7 @@ export const useCaseConfig: Record<UseCase, UseCaseConfig> = {
   "activate-trialists": {
     title: "Activate free trialists",
     icon: "🚀",
-    color: "from-blue-400 via-purple-500 to-indigo-600",
+    color: "from-blue-400 via-blue-500 to-indigo-600",
     questions: [
       FORM_FIELDS.companyName,
       FORM_FIELDS.popularFeature,
@@ -190,7 +190,7 @@ export const useCaseConfig: Record<UseCase, UseCaseConfig> = {
   "notify-trial-ending": {
     title: "Trial ending notification",
     icon: "⏰",
-    color: "from-rose-400 via-pink-500 to-purple-600",
+    color: "from-rose-400 via-pink-500 to-blue-600",
     questions: [
       { ...FORM_FIELDS.companyName, label: "Website URL" },
       FORM_FIELDS.notificationTiming,
@@ -206,7 +206,7 @@ export const useCaseConfig: Record<UseCase, UseCaseConfig> = {
   "reactivate-lost-trialist": {
     title: "Reactivate lost trialists",
     icon: "🔁",
-    color: "from-blue-400 via-indigo-500 to-purple-600",
+    color: "from-blue-400 via-indigo-500 to-blue-600",
     questions: [
       FORM_FIELDS.companyName,
       FORM_FIELDS.enticementOffer,
@@ -302,7 +302,7 @@ export const useCaseConfig: Record<UseCase, UseCaseConfig> = {
   "offer-proactive-support": {
     title: "Offer proactive support",
     icon: "💬",
-    color: "from-indigo-400 via-purple-500 to-pink-600",
+    color: "from-indigo-400 via-blue-500 to-pink-600",
     questions: [
       {
         key: "companyName",
@@ -402,7 +402,7 @@ export const useCaseConfig: Record<UseCase, UseCaseConfig> = {
   "feature-drop": {
     title: "Feature drop",
     icon: "🧠",
-    color: "from-purple-400 via-indigo-500 to-blue-600",
+    color: "from-blue-400 via-indigo-500 to-blue-600",
     questions: [
       {
         key: "companyName",
@@ -572,7 +572,7 @@ export const useCaseConfig: Record<UseCase, UseCaseConfig> = {
   "unlock-feature-teaser": {
     title: "Unlock feature X teaser",
     icon: "🔓",
-    color: "from-purple-400 via-indigo-500 to-blue-600",
+    color: "from-blue-400 via-indigo-500 to-blue-600",
     questions: [
       {
         key: "companyName",
@@ -796,7 +796,7 @@ export const useCaseConfig: Record<UseCase, UseCaseConfig> = {
   "winback-lost-customer": {
     title: "Winback lost users",
     icon: "💔",
-    color: "from-purple-400 via-pink-500 to-red-600",
+    color: "from-blue-400 via-pink-500 to-red-600",
     questions: [
       {
         key: "companyName",
@@ -831,7 +831,7 @@ export const useCaseConfig: Record<UseCase, UseCaseConfig> = {
   "invite-accepted-notification": {
     title: "Invite accepted notification",
     icon: "👥",
-    color: "from-blue-400 via-indigo-500 to-purple-600",
+    color: "from-blue-400 via-indigo-500 to-blue-600",
     questions: [
       {
         key: "companyName",
@@ -880,7 +880,7 @@ export const useCaseConfig: Record<UseCase, UseCaseConfig> = {
   "join-the-community": {
     title: "Join the community",
     icon: "🫂",
-    color: "from-indigo-400 via-purple-500 to-pink-600",
+    color: "from-indigo-400 via-blue-500 to-pink-600",
     questions: [
       {
         key: "companyName",
@@ -986,7 +986,7 @@ export const useCaseConfig: Record<UseCase, UseCaseConfig> = {
   "promote-live-webinar": {
     title: "Promote a live webinar",
     icon: "📅",
-    color: "from-purple-400 via-indigo-500 to-blue-600",
+    color: "from-blue-400 via-indigo-500 to-blue-600",
     questions: [
       {
         key: "companyName",
@@ -1063,7 +1063,7 @@ export const useCaseConfig: Record<UseCase, UseCaseConfig> = {
   "share-guide-report-ebook": {
     title: "Share a guide, report, or ebook",
     icon: "📘",
-    color: "from-blue-400 via-indigo-500 to-purple-600",
+    color: "from-blue-400 via-indigo-500 to-blue-600",
     questions: [
       {
         key: "companyName",

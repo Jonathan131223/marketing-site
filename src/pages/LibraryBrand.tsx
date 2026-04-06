@@ -55,7 +55,7 @@ interface UseCase {
 
 // ── Constants ──────────────────────────────────────────────────────────────────
 
-const PURPLE = "#754BDD";
+const PURPLE = "#1D4ED8";
 
 function formatDate(raw: string): string {
   if (!raw) return "";
@@ -240,11 +240,11 @@ const LibraryBrand: React.FC = () => {
             <nav aria-label="Breadcrumb" className="mb-6">
               <ol className="flex items-center gap-2 text-sm text-gray-400">
                 <li>
-                  <Link to="/library" className="hover:text-[#754BDD] transition-colors">Library</Link>
+                  <Link to="/library" className="hover:text-[#1D4ED8] transition-colors">Library</Link>
                 </li>
                 <li aria-hidden="true"><span>/</span></li>
                 <li>
-                  <Link to="/library/brands" className="hover:text-[#754BDD] transition-colors">Brands</Link>
+                  <Link to="/library/brands" className="hover:text-[#1D4ED8] transition-colors">Brands</Link>
                 </li>
                 <li aria-hidden="true"><span>/</span></li>
                 <li aria-current="page">
@@ -280,19 +280,19 @@ const LibraryBrand: React.FC = () => {
                   <ul className="space-y-2 mb-4">
                     {filteredEmails.length > 0 && (
                       <li className="flex items-center gap-2 text-sm text-gray-600">
-                        <span className="text-[#754BDD] font-bold">·</span>
+                        <span className="text-[#1D4ED8] font-bold">·</span>
                         <span>{filteredEmails.length} email{filteredEmails.length !== 1 ? "s" : ""}</span>
                       </li>
                     )}
                     {brand.duration && (
                       <li className="flex items-center gap-2 text-sm text-gray-600">
-                        <span className="text-[#754BDD] font-bold">·</span>
+                        <span className="text-[#1D4ED8] font-bold">·</span>
                         <span>{brand.duration}</span>
                       </li>
                     )}
                     {brand.avgDelay && (
                       <li className="flex items-center gap-2 text-sm text-gray-600">
-                        <span className="text-[#754BDD] font-bold">·</span>
+                        <span className="text-[#1D4ED8] font-bold">·</span>
                         <span>avg {brand.avgDelay} between sends</span>
                       </li>
                     )}
@@ -320,7 +320,7 @@ const LibraryBrand: React.FC = () => {
                     <Link
                       key={tag.slug}
                       to={`/library/tag/${tag.slug}`}
-                      className="inline-block px-3 py-1 rounded-full text-xs font-medium border border-gray-200 bg-white text-gray-600 hover:border-[#754BDD] hover:text-[#754BDD] hover:bg-[#F3EEFF] transition-all"
+                      className="inline-block px-3 py-1 rounded-full text-xs font-medium border border-gray-200 bg-white text-gray-600 hover:border-[#1D4ED8] hover:text-[#1D4ED8] hover:bg-[#DBEAFE] transition-all"
                     >
                       {tag.name}
                     </Link>
@@ -343,7 +343,7 @@ const LibraryBrand: React.FC = () => {
                   className={`flex-shrink-0 flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium transition-all whitespace-nowrap ${
                     b.slug === slug
                       ? "text-white"
-                      : "text-gray-600 hover:text-[#754BDD] hover:bg-[#F3EEFF]"
+                      : "text-gray-600 hover:text-[#1D4ED8] hover:bg-[#DBEAFE]"
                   }`}
                   style={b.slug === slug ? { background: PURPLE } : {}}
                 >
@@ -375,7 +375,7 @@ const LibraryBrand: React.FC = () => {
                         <h2 className="text-base font-semibold text-gray-900">
                           <Link
                             to={`/library/usecase/${uc.slug}`}
-                            className="hover:text-[#754BDD] transition-colors"
+                            className="hover:text-[#1D4ED8] transition-colors"
                           >
                             {uc.name}
                           </Link>
@@ -401,7 +401,7 @@ const LibraryBrand: React.FC = () => {
                                   loading="lazy"
                                 />
                               ) : (
-                                <div className="w-full h-full bg-[#F3EEFF] flex items-center justify-center">
+                                <div className="w-full h-full bg-[#DBEAFE] flex items-center justify-center">
                                   <span className="text-4xl opacity-30">✉️</span>
                                 </div>
                               )}
@@ -417,7 +417,7 @@ const LibraryBrand: React.FC = () => {
                                       key={tagSlug}
                                       to={`/library/tag/${tagSlug}`}
                                       onClick={(e) => e.stopPropagation()}
-                                      className="text-xs px-2 py-0.5 rounded-full bg-[#F3EEFF] text-[#754BDD] hover:bg-[#754BDD] hover:text-white transition-colors"
+                                      className="text-xs px-2 py-0.5 rounded-full bg-[#DBEAFE] text-[#1D4ED8] hover:bg-[#1D4ED8] hover:text-white transition-colors"
                                     >
                                       {tags.find((t) => t.slug === tagSlug)?.name ?? tagSlug}
                                     </Link>
@@ -487,7 +487,7 @@ const LibraryBrand: React.FC = () => {
               {canScrollLeft && (
                 <button
                   onClick={() => scrollJourney("left")}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center text-gray-500 hover:text-[#754BDD] hover:border-[#754BDD] transition-colors"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center text-gray-500 hover:text-[#1D4ED8] hover:border-[#1D4ED8] transition-colors"
                   aria-label="Scroll left"
                 >
                   <ChevronLeft className="h-5 w-5" />
@@ -498,7 +498,7 @@ const LibraryBrand: React.FC = () => {
               {canScrollRight && (
                 <button
                   onClick={() => scrollJourney("right")}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center text-gray-500 hover:text-[#754BDD] hover:border-[#754BDD] transition-colors"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center text-gray-500 hover:text-[#1D4ED8] hover:border-[#1D4ED8] transition-colors"
                   aria-label="Scroll right"
                 >
                   <ChevronRight className="h-5 w-5" />
@@ -539,12 +539,12 @@ const LibraryBrand: React.FC = () => {
                             </span>
                           )}
                         </div>
-                        <p className="text-sm font-semibold text-gray-900 group-hover:text-[#754BDD] transition-colors line-clamp-2 leading-snug">
+                        <p className="text-sm font-semibold text-gray-900 group-hover:text-[#1D4ED8] transition-colors line-clamp-2 leading-snug">
                           {email.subject || email.templateTitle}
                         </p>
                         <div className="flex flex-wrap items-center gap-1.5 min-h-[20px]">
                           {uc && (
-                            <span className="text-[11px] px-2 py-0.5 rounded-full bg-[#F3EEFF] text-[#754BDD] font-medium whitespace-nowrap">
+                            <span className="text-[11px] px-2 py-0.5 rounded-full bg-[#DBEAFE] text-[#1D4ED8] font-medium whitespace-nowrap">
                               {uc.name}
                             </span>
                           )}
@@ -568,7 +568,7 @@ const LibraryBrand: React.FC = () => {
                       </div>
 
                       {/* Email thumbnail */}
-                      <div className="flex-1 overflow-hidden bg-[#F3EEFF]" style={{ minHeight: 180 }}>
+                      <div className="flex-1 overflow-hidden bg-[#DBEAFE]" style={{ minHeight: 180 }}>
                         {email.thumb ? (
                           <img
                             src={email.thumb}

@@ -55,9 +55,9 @@ const StepIndicator: React.FC<{
           <div className="flex flex-col items-center">
             <div
               className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold transition-all ${step.completed
-                  ? "bg-purple-600 text-white"
+                  ? "bg-blue-600 text-white"
                   : index === currentStep
-                    ? "bg-purple-600 text-white ring-4 ring-purple-100"
+                    ? "bg-blue-600 text-white ring-4 ring-blue-100"
                     : "bg-slate-100 text-slate-400"
                 }`}
             >
@@ -90,7 +90,7 @@ const StepIndicator: React.FC<{
           </div>
           {index < steps.length - 1 && (
             <div
-              className={`w-16 h-0.5 mt-[-20px] ${step.completed ? "bg-purple-600" : "bg-slate-200"
+              className={`w-16 h-0.5 mt-[-20px] ${step.completed ? "bg-blue-600" : "bg-slate-200"
                 }`}
             />
           )}

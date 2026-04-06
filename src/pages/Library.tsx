@@ -59,7 +59,7 @@ interface UseCase {
 
 // ── Constants ──────────────────────────────────────────────────────────────────
 
-const PURPLE = "#754BDD";
+const PURPLE = "#1D4ED8";
 const PAGE_SIZE = 24;
 
 
@@ -162,7 +162,7 @@ const EmailCard: React.FC<{
             decoding="async"
           />
         ) : (
-          <div className="w-full h-full bg-[#F3EEFF] flex items-center justify-center">
+          <div className="w-full h-full bg-[#DBEAFE] flex items-center justify-center">
             <span className="text-4xl opacity-30">✉️</span>
           </div>
         )}
@@ -176,7 +176,7 @@ const EmailCard: React.FC<{
           {brand?.logo && (
             <img src={brand.logo} alt={brand.name} className="h-4 w-4 object-contain" />
           )}
-          <span className="text-xs text-gray-400 font-medium group-hover/brand:text-[#754BDD] transition-colors">
+          <span className="text-xs text-gray-400 font-medium group-hover/brand:text-[#1D4ED8] transition-colors">
             {brand?.name ?? email.brand}
           </span>
         </Link>
@@ -190,7 +190,7 @@ const EmailCard: React.FC<{
                 key={tagSlug}
                 to={`/library/tag/${tagSlug}`}
                 onClick={(e) => e.stopPropagation()}
-                className="text-xs px-2 py-0.5 rounded-full bg-[#F3EEFF] text-[#754BDD] hover:bg-[#754BDD] hover:text-white transition-colors"
+                className="text-xs px-2 py-0.5 rounded-full bg-[#DBEAFE] text-[#1D4ED8] hover:bg-[#1D4ED8] hover:text-white transition-colors"
               >
                 {tagName(tagSlug, tags)}
               </Link>
@@ -473,7 +473,7 @@ const Library: React.FC = () => {
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-gray-900 mb-6 leading-tight">
               The largest search engine for B2B SaaS{" "}
-              <span className="italic" style={{ color: "#754bdd" }}>lifecycle emails.</span>
+              <span className="italic" style={{ color: "#1D4ED8" }}>lifecycle emails.</span>
             </h1>
 
             <p className="text-gray-600 mb-8 leading-relaxed mx-auto" style={{ fontSize: "18px", maxWidth: 420 }}>
@@ -488,12 +488,12 @@ const Library: React.FC = () => {
                 onFocus={() => setSearchOverlayOpen(true)}
                 placeholder="Search brands or email keywords"
                 aria-label="Search brands or email keywords"
-                className="w-full px-5 py-4 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 focus:outline-none text-lg shadow-sm bg-white cursor-pointer"
+                className="w-full px-5 py-4 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-lg shadow-sm bg-white cursor-pointer"
               />
               <button
                 onClick={handleSearch}
                 data-flat-purple
-                style={{ backgroundColor: "#754bdd", boxShadow: "none", outline: "none", border: "none" }}
+                style={{ backgroundColor: "#1D4ED8", boxShadow: "none", outline: "none", border: "none" }}
                 className="w-full text-white px-8 py-4 rounded-xl font-semibold text-lg"
               >
                 Search
@@ -506,7 +506,7 @@ const Library: React.FC = () => {
                   <Link
                     key={t.slug}
                     to={`/library/${t.type === "tag" ? "tag" : "usecase"}/${t.slug}`}
-                    className="text-sm font-medium border border-gray-200 bg-white px-3 py-1 rounded-full hover:border-[#754bdd] hover:text-[#754bdd] transition-all text-gray-600"
+                    className="text-sm font-medium border border-gray-200 bg-white px-3 py-1 rounded-full hover:border-[#1D4ED8] hover:text-[#1D4ED8] transition-all text-gray-600"
                   >
                     {t.label}
                   </Link>
@@ -540,10 +540,10 @@ const Library: React.FC = () => {
                 <Link
                   key={uc.slug}
                   to={`/library/usecase/${uc.slug}`}
-                  className="group text-left p-7 rounded-xl bg-white border border-gray-100/80 shadow-sm hover:shadow-md hover:border-[#754BDD]/20 transition-all block"
+                  className="group text-left p-7 rounded-xl bg-white border border-gray-100/80 shadow-sm hover:shadow-md hover:border-[#1D4ED8]/20 transition-all block"
                 >
                   <span className="text-3xl mb-4 block">{config.emoji}</span>
-                  <p className="font-semibold text-[18px] mb-2 text-gray-900 group-hover:text-[#754BDD] transition-colors leading-snug">
+                  <p className="font-semibold text-[18px] mb-2 text-gray-900 group-hover:text-[#1D4ED8] transition-colors leading-snug">
                     {uc.name}
                   </p>
                   <p className="text-gray-500 leading-relaxed" style={{ fontSize: "16px" }}>{desc}</p>
@@ -595,7 +595,7 @@ const Library: React.FC = () => {
                 style={{ width: 200 }}
               >
                 {/* Tag label above the card */}
-                <span className="self-start text-xs font-semibold px-2.5 py-1 rounded-full bg-[#F3EEFF] text-[#754BDD]">
+                <span className="self-start text-xs font-semibold px-2.5 py-1 rounded-full bg-[#DBEAFE] text-[#1D4ED8]">
                   {card.label}
                 </span>
                 {/* Email card */}
@@ -647,7 +647,7 @@ const Library: React.FC = () => {
                       <Link
                         key={`${brand.slug}-${i}`}
                         to={`/library/brand/${brand.slug}`}
-                        className="flex-shrink-0 flex items-center gap-3 group bg-white rounded-xl border border-gray-100 px-3 py-2 shadow-sm hover:border-[#754BDD] hover:shadow-md transition-all"
+                        className="flex-shrink-0 flex items-center gap-3 group bg-white rounded-xl border border-gray-100 px-3 py-2 shadow-sm hover:border-[#1D4ED8] hover:shadow-md transition-all"
                         title={brand.name}
                       >
                         <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center overflow-hidden">
@@ -657,7 +657,7 @@ const Library: React.FC = () => {
                             <span className="text-sm font-bold text-gray-300">{brand.name[0]}</span>
                           )}
                         </div>
-                        <span className="text-sm font-medium text-gray-700 group-hover:text-[#754BDD] transition-colors whitespace-nowrap">
+                        <span className="text-sm font-medium text-gray-700 group-hover:text-[#1D4ED8] transition-colors whitespace-nowrap">
                           {brand.name}
                         </span>
                       </Link>
@@ -714,10 +714,10 @@ const Library: React.FC = () => {
                           loading="lazy"
                         />
                       ) : (
-                        <div className="w-full h-full bg-[#F3EEFF]" />
+                        <div className="w-full h-full bg-[#DBEAFE]" />
                       )}
                     </div>
-                    <p className="text-xs font-semibold text-gray-800 leading-snug line-clamp-2 group-hover:text-[#754BDD] transition-colors">
+                    <p className="text-xs font-semibold text-gray-800 leading-snug line-clamp-2 group-hover:text-[#1D4ED8] transition-colors">
                       {step.subject}
                     </p>
                   </Link>
@@ -730,7 +730,7 @@ const Library: React.FC = () => {
           <div className="flex justify-center mt-8">
             <Link
               to="/library/brand/loom"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-gray-200 text-sm font-semibold text-gray-600 hover:border-[#754BDD] hover:text-[#754BDD] transition-all bg-white"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-gray-200 text-sm font-semibold text-gray-600 hover:border-[#1D4ED8] hover:text-[#1D4ED8] transition-all bg-white"
             >
               👁️ View all Loom emails →
             </Link>
@@ -765,7 +765,7 @@ const Library: React.FC = () => {
               {activeFilterLabel && (
                 <button
                   onClick={clearFilters}
-                  className="flex items-center gap-1.5 text-sm font-medium text-[#754BDD] border border-[#754BDD]/30 px-3 py-1.5 rounded-full hover:bg-[#F3EEFF] transition-colors"
+                  className="flex items-center gap-1.5 text-sm font-medium text-[#1D4ED8] border border-[#1D4ED8]/30 px-3 py-1.5 rounded-full hover:bg-[#DBEAFE] transition-colors"
                 >
                   <X className="h-3.5 w-3.5" /> Clear filter
                 </button>
@@ -795,7 +795,7 @@ const Library: React.FC = () => {
                   setQuery(e.target.value);
                 }}
                 placeholder="Search emails…"
-                className="w-full pl-10 pr-10 py-2.5 rounded-xl border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#754BDD]/20 focus:border-[#754BDD] transition"
+                className="w-full pl-10 pr-10 py-2.5 rounded-xl border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20 focus:border-[#1D4ED8] transition"
               />
               {draftQuery && (
                 <button type="button" onClick={() => { setDraftQuery(""); setQuery(""); }} aria-label="Clear search" className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
@@ -807,7 +807,7 @@ const Library: React.FC = () => {
 
           {loading ? (
             <div className="flex justify-center py-20">
-              <div className="w-8 h-8 rounded-full border-2 border-[#754BDD] border-t-transparent animate-spin" />
+              <div className="w-8 h-8 rounded-full border-2 border-[#1D4ED8] border-t-transparent animate-spin" />
             </div>
           ) : !browseActive ? (
             // Teaser grid — show 8 emails, blurred bottom
@@ -840,7 +840,7 @@ const Library: React.FC = () => {
             <div className="text-center py-20 text-gray-400">
               <p className="text-lg font-medium">No emails found.</p>
               <p className="text-sm mt-1">Try a different search or clear your filters.</p>
-              <button onClick={clearFilters} className="mt-4 text-[#754BDD] text-sm font-medium hover:underline">
+              <button onClick={clearFilters} className="mt-4 text-[#1D4ED8] text-sm font-medium hover:underline">
                 Clear filters
               </button>
             </div>
@@ -860,7 +860,7 @@ const Library: React.FC = () => {
                 <div className="flex flex-col items-center mt-10 gap-2">
                   <button
                     onClick={() => setPage((p) => p + 1)}
-                    className="flex items-center gap-2 px-6 py-3 rounded-xl border-2 font-semibold text-sm hover:text-white hover:bg-[#754BDD] hover:border-[#754BDD] transition-all"
+                    className="flex items-center gap-2 px-6 py-3 rounded-xl border-2 font-semibold text-sm hover:text-white hover:bg-[#1D4ED8] hover:border-[#1D4ED8] transition-all"
                     style={{ borderColor: PURPLE, color: PURPLE }}
                   >
                     Load more <ChevronDown className="h-4 w-4" />
@@ -896,12 +896,12 @@ const Library: React.FC = () => {
               readOnly
               onFocus={() => setSearchOverlayOpen(true)}
               placeholder="Search brands or email keywords"
-              className="w-full px-5 py-4 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 focus:outline-none text-lg shadow-sm bg-white cursor-pointer"
+              className="w-full px-5 py-4 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-lg shadow-sm bg-white cursor-pointer"
             />
             <button
               onClick={handleSearch}
               data-flat-purple
-              style={{ backgroundColor: "#754bdd", boxShadow: "none", outline: "none", border: "none" }}
+              style={{ backgroundColor: "#1D4ED8", boxShadow: "none", outline: "none", border: "none" }}
               className="w-full text-white px-8 py-4 rounded-xl font-semibold text-lg"
             >
               Search
@@ -912,7 +912,7 @@ const Library: React.FC = () => {
                 <Link
                   key={t.slug}
                   to={`/library/${t.type === "tag" ? "tag" : "usecase"}/${t.slug}`}
-                  className="text-sm font-medium border border-gray-200 bg-white px-3 py-1 rounded-full hover:border-[#754bdd] hover:text-[#754bdd] transition-all text-gray-600"
+                  className="text-sm font-medium border border-gray-200 bg-white px-3 py-1 rounded-full hover:border-[#1D4ED8] hover:text-[#1D4ED8] transition-all text-gray-600"
                 >
                   {t.label}
                 </Link>

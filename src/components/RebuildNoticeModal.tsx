@@ -72,7 +72,7 @@ export const RebuildNoticeModal: React.FC<RebuildNoticeModalProps> = ({
             onClick={onContinue}
             data-flat-purple
             style={{
-              backgroundColor: "#754bdd",
+              backgroundColor: "#1D4ED8",
               boxShadow: "none",
               outline: "none",
               border: "none",

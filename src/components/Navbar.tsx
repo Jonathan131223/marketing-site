@@ -60,7 +60,7 @@ export const Navbar: React.FC = () => {
               <NavLink
                 to="/library"
                 className={({ isActive }) =>
-                  `text-sm font-medium transition-colors ${isActive ? "text-[#754BDD]" : "text-gray-700 hover:text-gray-900"}`
+                  `text-sm font-medium transition-colors ${isActive ? "text-[#1D4ED8]" : "text-gray-700 hover:text-gray-900"}`
                 }
               >
                 Library
@@ -68,7 +68,7 @@ export const Navbar: React.FC = () => {
               <NavLink
                 to="/blog"
                 className={({ isActive }) =>
-                  `text-sm font-medium transition-colors ${isActive ? "text-[#754BDD]" : "text-gray-700 hover:text-gray-900"}`
+                  `text-sm font-medium transition-colors ${isActive ? "text-[#1D4ED8]" : "text-gray-700 hover:text-gray-900"}`
                 }
               >
                 Blog
@@ -76,7 +76,7 @@ export const Navbar: React.FC = () => {
               <NavLink
                 to="/pricing"
                 className={({ isActive }) =>
-                  `text-sm font-medium transition-colors ${isActive ? "text-[#754BDD]" : "text-gray-700 hover:text-gray-900"}`
+                  `text-sm font-medium transition-colors ${isActive ? "text-[#1D4ED8]" : "text-gray-700 hover:text-gray-900"}`
                 }
               >
                 Pricing
@@ -89,7 +89,7 @@ export const Navbar: React.FC = () => {
             {location.pathname.startsWith("/library") && (
               <button
                 onClick={() => setSearchOpen(true)}
-                className={`flex items-center gap-2 w-full max-w-xs px-4 py-2 rounded-xl border border-gray-200 bg-gray-50 text-sm text-gray-400 hover:border-[#754BDD] hover:bg-white transition-all text-left ${
+                className={`flex items-center gap-2 w-full max-w-xs px-4 py-2 rounded-xl border border-gray-200 bg-gray-50 text-sm text-gray-400 hover:border-[#1D4ED8] hover:bg-white transition-all text-left ${
                   showSearch ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
                 }`}
               >
@@ -134,7 +134,7 @@ export const Navbar: React.FC = () => {
             {showSearch && (
               <button
                 onClick={() => setSearchOpen(true)}
-                className="p-2 rounded-md text-gray-600 hover:text-[#754BDD] hover:bg-gray-100 transition-colors"
+                className="p-2 rounded-md text-gray-600 hover:text-[#1D4ED8] hover:bg-gray-100 transition-colors"
                 aria-label="Search"
               >
                 <Search className="h-5 w-5" />
@@ -161,7 +161,7 @@ export const Navbar: React.FC = () => {
             <NavLink
               to="/library"
               className={({ isActive }) =>
-                `block px-3 py-2.5 text-sm font-medium rounded-lg transition-colors hover:bg-gray-50 ${isActive ? "text-[#754BDD]" : "text-gray-700 hover:text-gray-900"}`
+                `block px-3 py-2.5 text-sm font-medium rounded-lg transition-colors hover:bg-gray-50 ${isActive ? "text-[#1D4ED8]" : "text-gray-700 hover:text-gray-900"}`
               }
               onClick={() => setMobileOpen(false)}
             >
@@ -170,7 +170,7 @@ export const Navbar: React.FC = () => {
             <NavLink
               to="/blog"
               className={({ isActive }) =>
-                `block px-3 py-2.5 text-sm font-medium rounded-lg transition-colors hover:bg-gray-50 ${isActive ? "text-[#754BDD]" : "text-gray-700 hover:text-gray-900"}`
+                `block px-3 py-2.5 text-sm font-medium rounded-lg transition-colors hover:bg-gray-50 ${isActive ? "text-[#1D4ED8]" : "text-gray-700 hover:text-gray-900"}`
               }
               onClick={() => setMobileOpen(false)}
             >
@@ -179,7 +179,7 @@ export const Navbar: React.FC = () => {
             <NavLink
               to="/pricing"
               className={({ isActive }) =>
-                `block px-3 py-2.5 text-sm font-medium rounded-lg transition-colors hover:bg-gray-50 ${isActive ? "text-[#754BDD]" : "text-gray-700 hover:text-gray-900"}`
+                `block px-3 py-2.5 text-sm font-medium rounded-lg transition-colors hover:bg-gray-50 ${isActive ? "text-[#1D4ED8]" : "text-gray-700 hover:text-gray-900"}`
               }
               onClick={() => setMobileOpen(false)}
             >

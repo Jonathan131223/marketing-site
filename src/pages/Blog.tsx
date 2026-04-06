@@ -53,8 +53,8 @@ const Blog: React.FC = () => {
       <main className="pt-28 pb-24">
         <div className="container mx-auto px-4 max-w-6xl">
 
-          <div className="text-center mb-12 pb-10 border-b-2" style={{ borderColor: '#754BDD' }}>
-            <h1 className="font-bold" style={{ color: '#754BDD', fontSize: '42px', margin: '10px 0px' }}>
+          <div className="text-center mb-12 pb-10 border-b-2" style={{ borderColor: '#1D4ED8' }}>
+            <h1 className="font-bold" style={{ color: '#1D4ED8', fontSize: '42px', margin: '10px 0px' }}>
               DigiStorms Blog
             </h1>
             <p className="text-gray-500 text-lg">
@@ -82,7 +82,7 @@ const Blog: React.FC = () => {
                     <EmailMockup />
                   )}
                 </div>
-                <h3 className="font-semibold leading-snug" style={{ color: '#754BDD', fontSize: '25px', margin: '20px 0px 10px' }}>
+                <h3 className="font-semibold leading-snug" style={{ color: '#1D4ED8', fontSize: '25px', margin: '20px 0px 10px' }}>
                   {post.title}
                 </h3>
                 <p style={{ color: '#333333', fontSize: '16px', margin: '0px 0px 20px' }}>

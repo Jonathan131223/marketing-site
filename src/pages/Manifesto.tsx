@@ -13,7 +13,7 @@ interface ArrowBulletProps {
 const ArrowBullet: React.FC<ArrowBulletProps> = ({ title, description }) => (
   <div className="flex items-start gap-3">
     <svg className="mt-1 w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M5 12h14M13 5l7 7-7 7" stroke="#754bdd" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M5 12h14M13 5l7 7-7 7" stroke="#1D4ED8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
     <div>
       <p className="text-lg text-gray-800 font-semibold">{title}</p>
@@ -48,7 +48,7 @@ const Manifesto: React.FC = () => {
       <Navbar />
       <main className="relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/4 w-72 h-72 bg-purple-100/30 rounded-full blur-3xl" />
+          <div className="absolute top-0 left-1/4 w-72 h-72 bg-blue-100/30 rounded-full blur-3xl" />
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-100/20 rounded-full blur-3xl" />
         </div>
 
@@ -204,7 +204,7 @@ const Manifesto: React.FC = () => {
             <p className="text-lg text-gray-600 mb-8">We map it, build it, and run it for you.</p>
             <Link
               to="/"
-              className="inline-block bg-[#754bdd] text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-[#6340c4] transition-colors"
+              className="inline-block bg-[#1D4ED8] text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-[#6340c4] transition-colors"
             >
               Generate my onboarding emails →
             </Link>

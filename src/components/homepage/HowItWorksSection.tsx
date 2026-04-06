@@ -29,7 +29,7 @@ export const HowItWorksSection: React.FC = () => {
   return (
     <section className="py-16 md:py-32 bg-slate-50 relative overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-1/4 w-72 h-72 bg-purple-100/20 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-1/4 w-72 h-72 bg-blue-100/20 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-1/4 w-80 h-80 bg-blue-100/20 rounded-full blur-3xl" />
       </div>
 
@@ -48,7 +48,7 @@ export const HowItWorksSection: React.FC = () => {
               className="bg-white/90 backdrop-blur-sm rounded-2xl border border-gray-200/60 shadow-sm hover:shadow-lg hover:border-indigo-200 transition-all duration-300 p-6 md:p-8 group"
             >
               <div className="relative mb-6 inline-flex">
-                <div className="w-11 h-11 bg-[#754bdd] text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg shadow-indigo-500/25">
+                <div className="w-11 h-11 bg-[#1D4ED8] text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg shadow-indigo-500/25">
                   {step.number}
                 </div>
               </div>
@@ -65,12 +65,12 @@ export const HowItWorksSection: React.FC = () => {
               value={url}
               onChange={(e) => setUrl(e.target.value)}
               placeholder="website.com"
-              className="w-full px-5 py-4 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 focus:outline-none text-lg shadow-sm bg-white"
+              className="w-full px-5 py-4 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-lg shadow-sm bg-white"
             />
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-purple-700 transition-all shadow-2xl hover:shadow-purple-500/25 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+              className="w-full bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-700 transition-all shadow-2xl hover:shadow-blue-500/25 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
             >
               {isLoading ? (
                 <>

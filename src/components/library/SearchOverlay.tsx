@@ -182,7 +182,7 @@ export const SearchOverlay: React.FC<Props> = ({ onClose, onSearch, onNavigate }
             type="button"
             onClick={onClose}
             className="flex-shrink-0 text-sm font-semibold ml-2"
-            style={{ color: "#754BDD" }}
+            style={{ color: "#1D4ED8" }}
           >
             Close
           </button>
@@ -199,7 +199,7 @@ export const SearchOverlay: React.FC<Props> = ({ onClose, onSearch, onNavigate }
                 className={`text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                   activeTab === tab.id ? "text-white" : "text-gray-600 hover:bg-gray-50"
                 }`}
-                style={activeTab === tab.id ? { backgroundColor: "#754BDD" } : {}}
+                style={activeTab === tab.id ? { backgroundColor: "#1D4ED8" } : {}}
               >
                 {tab.label}
               </button>
@@ -219,7 +219,7 @@ export const SearchOverlay: React.FC<Props> = ({ onClose, onSearch, onNavigate }
                       <button
                         key={tag.slug}
                         onClick={() => handleItemClick(`/library/tag/${tag.slug}`)}
-                        className="px-3 py-1.5 rounded-full border border-gray-200 text-sm text-gray-600 font-medium hover:border-[#754BDD] hover:text-[#754BDD] transition-colors bg-white"
+                        className="px-3 py-1.5 rounded-full border border-gray-200 text-sm text-gray-600 font-medium hover:border-[#1D4ED8] hover:text-[#1D4ED8] transition-colors bg-white"
                       >
                         {tag.name}
                       </button>
@@ -233,7 +233,7 @@ export const SearchOverlay: React.FC<Props> = ({ onClose, onSearch, onNavigate }
                       <button
                         key={brand.slug}
                         onClick={() => handleItemClick(`/library/brand/${brand.slug}`)}
-                        className="group text-left rounded-xl border border-gray-100 bg-gray-50 hover:border-[#754BDD] hover:bg-[#F3EEFF]/30 transition-all overflow-hidden"
+                        className="group text-left rounded-xl border border-gray-100 bg-gray-50 hover:border-[#1D4ED8] hover:bg-[#DBEAFE]/30 transition-all overflow-hidden"
                       >
                         <div className="h-24 bg-white overflow-hidden flex items-center justify-center border-b border-gray-100">
                           {latestThumbByBrand[brand.slug] ? (
@@ -244,14 +244,14 @@ export const SearchOverlay: React.FC<Props> = ({ onClose, onSearch, onNavigate }
                               loading="lazy"
                             />
                           ) : (
-                            <div className="w-full h-full bg-[#F3EEFF]" />
+                            <div className="w-full h-full bg-[#DBEAFE]" />
                           )}
                         </div>
                         <div className="px-3 py-2 flex items-center gap-2">
                           {brand.logo && (
                             <img src={brand.logo} alt={brand.name} className="w-5 h-5 object-contain flex-shrink-0" />
                           )}
-                          <span className="text-xs font-semibold text-gray-800 truncate group-hover:text-[#754BDD] transition-colors">
+                          <span className="text-xs font-semibold text-gray-800 truncate group-hover:text-[#1D4ED8] transition-colors">
                             {brand.name}
                           </span>
                         </div>
@@ -269,7 +269,7 @@ export const SearchOverlay: React.FC<Props> = ({ onClose, onSearch, onNavigate }
                   <button
                     key={brand.slug}
                     onClick={() => handleItemClick(`/library/brand/${brand.slug}`)}
-                    className="group flex flex-col items-center gap-2 p-3 rounded-xl border border-gray-100 bg-white hover:border-[#754BDD] hover:shadow-sm transition-all"
+                    className="group flex flex-col items-center gap-2 p-3 rounded-xl border border-gray-100 bg-white hover:border-[#1D4ED8] hover:shadow-sm transition-all"
                     title={brand.name}
                   >
                     <div className="w-12 h-12 rounded-xl border border-gray-100 bg-gray-50 flex items-center justify-center overflow-hidden">
@@ -279,7 +279,7 @@ export const SearchOverlay: React.FC<Props> = ({ onClose, onSearch, onNavigate }
                         <span className="text-lg font-bold text-gray-300">{brand.name[0]}</span>
                       )}
                     </div>
-                    <span className="text-xs text-gray-500 font-medium group-hover:text-[#754BDD] transition-colors text-center w-full truncate">
+                    <span className="text-xs text-gray-500 font-medium group-hover:text-[#1D4ED8] transition-colors text-center w-full truncate">
                       {brand.name}
                     </span>
                   </button>
@@ -297,7 +297,7 @@ export const SearchOverlay: React.FC<Props> = ({ onClose, onSearch, onNavigate }
                   <li key={uc.slug}>
                     <button
                       onClick={() => handleItemClick(`/library/usecase/${uc.slug}`)}
-                      className="w-full text-left px-3 py-2.5 rounded-lg text-sm text-gray-700 font-medium hover:bg-gray-50 hover:text-[#754BDD] transition-colors"
+                      className="w-full text-left px-3 py-2.5 rounded-lg text-sm text-gray-700 font-medium hover:bg-gray-50 hover:text-[#1D4ED8] transition-colors"
                     >
                       {uc.name}
                     </button>
@@ -316,7 +316,7 @@ export const SearchOverlay: React.FC<Props> = ({ onClose, onSearch, onNavigate }
                   <li key={tag.slug}>
                     <button
                       onClick={() => handleItemClick(`/library/tag/${tag.slug}`)}
-                      className="w-full text-left px-3 py-2.5 rounded-lg text-sm text-gray-700 font-medium hover:bg-gray-50 hover:text-[#754BDD] transition-colors"
+                      className="w-full text-left px-3 py-2.5 rounded-lg text-sm text-gray-700 font-medium hover:bg-gray-50 hover:text-[#1D4ED8] transition-colors"
                     >
                       {tag.name}
                     </button>

@@ -126,8 +126,8 @@ export const LogoStep: React.FC<LogoStepProps> = ({
             />
             <div
               className={`p-8 rounded-xl border-2 border-dashed transition-all ${currentLogoUrl
-                ? "border-purple-500 bg-purple-50"
-                : "border-slate-300 hover:border-purple-400"
+                ? "border-blue-500 bg-blue-50"
+                : "border-slate-300 hover:border-blue-400"
                 }`}
             >
               <div className="flex flex-col items-center text-center">
@@ -151,7 +151,7 @@ export const LogoStep: React.FC<LogoStepProps> = ({
                       <Image className="w-6 h-6 text-slate-400" />
                     </div>
                     <p className="text-slate-700">
-                      <span className="text-purple-600 font-medium">
+                      <span className="text-blue-600 font-medium">
                         Click to upload
                       </span>{" "}
                       or drag and drop
@@ -172,7 +172,7 @@ export const LogoStep: React.FC<LogoStepProps> = ({
                 type="button"
                 onClick={handleRemoveBackground}
                 disabled={isRemovingBg}
-                className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-medium text-purple-700 bg-purple-50 border border-purple-200 hover:bg-purple-100 hover:border-purple-300 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-medium text-blue-700 bg-blue-50 border border-blue-200 hover:bg-blue-100 hover:border-blue-300 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isRemovingBg ? (
                   <>
@@ -205,7 +205,7 @@ export const LogoStep: React.FC<LogoStepProps> = ({
               type="button"
               onClick={onNext}
               disabled={!currentLogoUrl}
-              className="flex-1 group inline-flex items-center justify-center bg-gradient-to-r from-purple-600 via-purple-700 to-blue-600 text-white px-6 py-4 rounded-xl font-semibold hover:from-purple-700 hover:via-purple-800 hover:to-blue-700 transition-all duration-300 shadow-xl shadow-purple-500/25 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex-1 group inline-flex items-center justify-center bg-gradient-to-r from-blue-600 via-blue-700 to-blue-600 text-white px-6 py-4 rounded-xl font-semibold hover:from-blue-700 hover:via-blue-800 hover:to-blue-700 transition-all duration-300 shadow-xl shadow-blue-500/25 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Continue
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />

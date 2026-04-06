@@ -49,7 +49,7 @@ interface UseCase {
 
 // ── Constants ──────────────────────────────────────────────────────────────────
 
-const PURPLE = "#754BDD";
+const PURPLE = "#1D4ED8";
 const PAGE_SIZE = 24;
 
 // ── Component ──────────────────────────────────────────────────────────────────
@@ -163,11 +163,11 @@ const LibraryTag: React.FC = () => {
             <nav aria-label="Breadcrumb" className="mb-6">
               <ol className="flex items-center gap-2 text-sm text-gray-400">
                 <li>
-                  <Link to="/library" className="hover:text-[#754BDD] transition-colors">Library</Link>
+                  <Link to="/library" className="hover:text-[#1D4ED8] transition-colors">Library</Link>
                 </li>
                 <li aria-hidden="true"><span>/</span></li>
                 <li>
-                  <Link to="/library/tags" className="hover:text-[#754BDD] transition-colors">Tags</Link>
+                  <Link to="/library/tags" className="hover:text-[#1D4ED8] transition-colors">Tags</Link>
                 </li>
                 <li aria-hidden="true"><span>/</span></li>
                 <li aria-current="page">
@@ -202,7 +202,7 @@ const LibraryTag: React.FC = () => {
                     <Link
                       key={uc.slug}
                       to={`/library/usecase/${uc.slug}`}
-                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border border-gray-200 bg-white text-gray-600 hover:border-[#754BDD] hover:text-[#754BDD] hover:bg-[#F3EEFF] transition-all"
+                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border border-gray-200 bg-white text-gray-600 hover:border-[#1D4ED8] hover:text-[#1D4ED8] hover:bg-[#DBEAFE] transition-all"
                     >
                       {uc.name}
                     </Link>
@@ -228,7 +228,7 @@ const LibraryTag: React.FC = () => {
                     className={`flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium transition-all whitespace-nowrap ${
                       t.slug === slug
                         ? "text-white"
-                        : "text-gray-600 border border-gray-200 hover:border-[#754BDD] hover:text-[#754BDD] hover:bg-[#F3EEFF]"
+                        : "text-gray-600 border border-gray-200 hover:border-[#1D4ED8] hover:text-[#1D4ED8] hover:bg-[#DBEAFE]"
                     }`}
                     style={t.slug === slug ? { background: PURPLE } : {}}
                   >
@@ -267,7 +267,7 @@ const LibraryTag: React.FC = () => {
                               loading="lazy"
                             />
                           ) : (
-                            <div className="w-full h-full bg-[#F3EEFF] flex items-center justify-center">
+                            <div className="w-full h-full bg-[#DBEAFE] flex items-center justify-center">
                               <span className="text-4xl opacity-30">✉️</span>
                             </div>
                           )}
@@ -285,7 +285,7 @@ const LibraryTag: React.FC = () => {
                                 className="h-4 w-4 object-contain"
                               />
                             )}
-                            <span className="text-xs text-gray-400 font-medium group-hover/brand:text-[#754BDD] transition-colors">
+                            <span className="text-xs text-gray-400 font-medium group-hover/brand:text-[#1D4ED8] transition-colors">
                               {brand?.name ?? email.brand}
                             </span>
                           </Link>
@@ -301,8 +301,8 @@ const LibraryTag: React.FC = () => {
                                   onClick={(e) => e.stopPropagation()}
                                   className={`text-xs px-2 py-0.5 rounded-full transition-colors ${
                                     tagSlug === slug
-                                      ? "bg-[#754BDD] text-white"
-                                      : "bg-[#F3EEFF] text-[#754BDD] hover:bg-[#754BDD] hover:text-white"
+                                      ? "bg-[#1D4ED8] text-white"
+                                      : "bg-[#DBEAFE] text-[#1D4ED8] hover:bg-[#1D4ED8] hover:text-white"
                                   }`}
                                 >
                                   {tags.find((t) => t.slug === tagSlug)?.name ?? tagSlug}
@@ -320,7 +320,7 @@ const LibraryTag: React.FC = () => {
                   <div className="flex flex-col items-center mt-10 gap-2">
                     <button
                       onClick={() => setPage((p) => p + 1)}
-                      className="flex items-center gap-2 px-6 py-3 rounded-full border-2 font-semibold text-sm hover:text-white hover:bg-[#754BDD] hover:border-[#754BDD] transition-all"
+                      className="flex items-center gap-2 px-6 py-3 rounded-full border-2 font-semibold text-sm hover:text-white hover:bg-[#1D4ED8] hover:border-[#1D4ED8] transition-all"
                       style={{ borderColor: PURPLE, color: PURPLE }}
                     >
                       Load more <ChevronDown className="h-4 w-4" />
