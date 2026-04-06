@@ -24,7 +24,7 @@ export interface WebsiteAnalysisResponse {
 }
 
 export interface WizardState {
-  currentStep: "website" | "logo" | "sender" | "brief";
+  currentStep: "website" | "logo" | "brief";
   websiteUrl: string;
   isAnalyzing: boolean;
   analysisError: string | null;
@@ -41,4 +41,4 @@ export interface BriefWizardProps {
   hideHeader?: boolean;
 }
 
-export type WizardStep = "website" | "logo" | "sender" | "brief";
+export type WizardStep = "website" | "logo" | "brief";
