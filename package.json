@@ -11,7 +11,8 @@
     "sitemap": "node scripts/generate-sitemap.js",
     "preview": "vite preview",
     "lint": "eslint .",
-    "convert-webp": "node scripts/convert-to-webp.mjs"
+    "convert-webp": "node scripts/convert-to-webp.mjs",
+    "srcset": "node scripts/generate-srcset.mjs"
   },
   "dependencies": {
     "@fontsource/instrument-sans": "^5.2.8",

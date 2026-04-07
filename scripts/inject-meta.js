@@ -416,7 +416,35 @@ writeRoute("/manifesto", buildHead({
 }));
 staticPageCount++;
 
-// ── 6. Contact /contact ──────────────────────────────────────────────────────
+// ── 6. About /about ─────────────────────────────────────────────────────────
+
+writeRoute("/about", buildHead({
+  title: "About DigiStorms — From Consulting to AI Onboarding Agent",
+  description: "DigiStorms started from consulting with SaaS companies on lifecycle email. After seeing the same onboarding problems everywhere, we built an AI agent to automate what we were doing manually.",
+  canonical: `${BASE_URL}/about`,
+  jsonLd: [
+    breadcrumbSchema([
+      { name: "Home", url: BASE_URL },
+      { name: "About", url: `${BASE_URL}/about` },
+    ]),
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      name: "About DigiStorms",
+      url: `${BASE_URL}/about`,
+      mainEntity: {
+        "@type": "Organization",
+        name: "DigiStorms",
+        url: BASE_URL,
+        founder: { "@type": "Person", name: "Jonathan Bernard", url: "https://www.linkedin.com/in/jonathan-digistorms/" },
+        description: "AI agent that builds lifecycle email systems for SaaS companies",
+      },
+    },
+  ],
+}));
+staticPageCount++;
+
+// ── 7. Contact /contact ──────────────────────────────────────────────────────
 
 writeRoute("/contact", buildHead({
   title: "Contact Us | DigiStorms",
@@ -438,7 +466,7 @@ writeRoute("/contact", buildHead({
 }));
 staticPageCount++;
 
-// ── 7. ROI Calculator /roi-calculator ────────────────────────────────────────
+// ── 8. ROI Calculator /roi-calculator ────────────────────────────────────────
 
 writeRoute("/roi-calculator", buildHead({
   title: "Onboarding Email ROI Calculator | DigiStorms",
@@ -467,7 +495,7 @@ writeRoute("/roi-calculator", buildHead({
 }));
 staticPageCount++;
 
-// ── 8. Lifecycle Score /lifecycle-score ───────────────────────────────────────
+// ── 9. Lifecycle Score /lifecycle-score ───────────────────────────────────────
 
 writeRoute("/lifecycle-score", buildHead({
   title: "Check Your Onboarding Score | DigiStorms",
@@ -496,7 +524,7 @@ writeRoute("/lifecycle-score", buildHead({
 }));
 staticPageCount++;
 
-// ── 9. Email Generator /email-generator ──────────────────────────────────────
+// ── 10. Email Generator /email-generator ─────────────────────────────────────
 
 writeRoute("/email-generator", buildHead({
   title: "Lifecycle Email Generator | DigiStorms",
@@ -525,7 +553,7 @@ writeRoute("/email-generator", buildHead({
 }));
 staticPageCount++;
 
-// ── 10. Privacy /privacy ─────────────────────────────────────────────────────
+// ── 11. Privacy /privacy ─────────────────────────────────────────────────────
 
 writeRoute("/privacy", buildHead({
   title: "Privacy Policy | DigiStorms",
@@ -534,7 +562,7 @@ writeRoute("/privacy", buildHead({
 }));
 staticPageCount++;
 
-// ── 11. Terms /terms ─────────────────────────────────────────────────────────
+// ── 12. Terms /terms ─────────────────────────────────────────────────────────
 
 writeRoute("/terms", buildHead({
   title: "Terms of Service | DigiStorms",

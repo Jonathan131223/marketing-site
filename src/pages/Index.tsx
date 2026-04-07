@@ -8,6 +8,7 @@ import { ROISectionHomepage } from "@/components/homepage/ROISectionHomepage";
 import { FAQSection } from "@/components/homepage/FAQSection";
 import { FounderStorySection } from "@/components/homepage/FounderStorySection";
 import { OnboardingPainSection } from "@/components/homepage/OnboardingPainSection";
+import { ComparisonSection } from "@/components/homepage/ComparisonSection";
 import { Footer } from "@/components/Footer";
 import { RebuildNoticeModal } from "@/components/RebuildNoticeModal";
 import { TestimonialSection } from "@/components/homepage/TestimonialSection";
@@ -222,6 +223,7 @@ const Index = () => {
           onSubmit={handleHeroSubmit}
         />
         <OnboardingPainSection />
+        <ComparisonSection />
         <BenefitsSection />
         <TestimonialSection />
         <BrandInspirationSection />
