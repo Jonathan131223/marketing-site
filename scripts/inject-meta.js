@@ -344,21 +344,6 @@ const blogPosts = [
     date: "2025-03-28",
     heroImage: "/blog/dunning-emails/banner.webp",
   },
-  // Pillar articles
-  {
-    slug: "email-marketing-for-saas",
-    title: "Email marketing for SaaS: 12 indispensable flows | DigiStorms",
-    description: "Master SaaS email marketing with these 12 indispensable automated flows. Learn how to set up lifecycle, marketing, and transactional emails that convert free users into paying customers.",
-    date: "2026-04-07",
-    heroImage: null,
-  },
-  {
-    slug: "lifecycle-email-marketing",
-    title: "Lifecycle email marketing for SaaS businesses | DigiStorms",
-    description: "Learn how to implement lifecycle email marketing for your SaaS business. Covers the 12 essential email flows, segmentation strategies, and tools to guide users from signup to advocacy.",
-    date: "2026-04-07",
-    heroImage: null,
-  },
   // Benchmark report
   {
     slug: "saas-email-benchmarks",

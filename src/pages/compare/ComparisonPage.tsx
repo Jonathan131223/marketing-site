@@ -101,7 +101,7 @@ export const ComparisonPage: React.FC<ComparisonPageProps> = (props) => {
         <div className="container mx-auto px-4 max-w-4xl">
 
           {/* Breadcrumb */}
-          <nav className="text-sm text-slate-400 mb-8">
+          <nav className="text-sm text-slate-400 mb-12">
             <Link to="/" className="hover:text-slate-600">Home</Link>
             <span className="mx-2">/</span>
             <span className="text-slate-600">Compare</span>
