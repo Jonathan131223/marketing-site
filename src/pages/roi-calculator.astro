@@ -1,0 +1,28 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Navbar } from '@/components/Navbar';
+import Footer from '@/components/astro/Footer.astro';
+import ROICalculatorPage from '@/components/react/ROICalculatorIsland';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "DigiStorms ROI Calculator",
+  "url": "https://www.digistorms.ai/roi-calculator",
+  "applicationCategory": "BusinessApplication",
+  "description": "Calculate the ROI of improving your SaaS onboarding emails with DigiStorms.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+};
+---
+
+<BaseLayout
+  title="ROI Calculator — DigiStorms"
+  description="Calculate the return on investment of improving your SaaS onboarding emails. See how much revenue you could recover with better activation and conversion."
+  jsonLd={jsonLd}
+>
+  <div class="min-h-screen bg-background">
+    <Navbar client:load pathname="/roi-calculator" />
+    <ROICalculatorPage client:visible />
+    <Footer />
+  </div>
+</BaseLayout>

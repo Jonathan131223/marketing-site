@@ -1,0 +1,106 @@
+---
+/**
+ * BrandInspirationSection - fetches brand data client-side and renders
+ * a scrolling marquee of brand logos. The section heading is static HTML;
+ * the marquee rows render client-side after the fetch completes.
+ *
+ * We render the static heading as Astro HTML and use a small inline script
+ * to populate the marquee, avoiding a React island entirely.
+ */
+---
+
+<section class="py-16 md:py-20 lg:py-24 bg-white overflow-hidden">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-slate-900 mb-4">
+        Inspired by the best SaaS onboarding programs
+      </h2>
+      <p class="text-slate-500 max-w-2xl mx-auto leading-relaxed">
+        DigiStorms is trained on 1,000+ real SaaS lifecycle emails from companies that obsess over activation and retention.
+      </p>
+    </div>
+  </div>
+
+  <div id="brand-marquee-container" class="space-y-5"></div>
+
+  <div class="text-center mt-10">
+    <a
+      href="/library"
+      class="text-sm text-slate-600 hover:text-slate-900 underline transition-colors"
+    >
+      Explore our email library &rarr;
+    </a>
+  </div>
+</section>
+
+<script>
+  const mask = "[mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]";
+
+  async function loadBrands() {
+    try {
+      const res = await fetch("/data/library/brands.json");
+      if (!res.ok) return;
+      const brands: { slug: string; name: string; logo: string }[] = await res.json();
+      if (!brands.length) return;
+
+      const container = document.getElementById("brand-marquee-container");
+      if (!container) return;
+
+      const third = Math.ceil(brands.length / 3);
+      const rows = [
+        brands.slice(0, third),
+        brands.slice(third, third * 2),
+        brands.slice(third * 2),
+      ];
+
+      rows.forEach((row, rowIdx) => {
+        const rowDiv = document.createElement("div");
+        rowDiv.className = `relative flex overflow-hidden ${mask}`;
+
+        const track = document.createElement("div");
+        track.className = `flex gap-4 items-center ${rowIdx === 1 ? "animate-scroll-brands-reverse" : "animate-scroll-brands"}`;
+        track.style.width = "fit-content";
+
+        const allBrands = [...row, ...row];
+        allBrands.forEach((brand) => {
+          const link = document.createElement("a");
+          link.href = `/library/brand/${brand.slug}`;
+          link.className = "flex-shrink-0 flex items-center gap-3 bg-white rounded-xl border border-slate-100 px-3 py-2 shadow-sm hover:border-[#1D4ED8] hover:shadow-md transition-all group";
+          link.title = brand.name;
+
+          const logoContainer = document.createElement("div");
+          logoContainer.className = "w-8 h-8 flex-shrink-0 flex items-center justify-center overflow-hidden";
+
+          if (brand.logo) {
+            const img = document.createElement("img");
+            img.src = brand.logo;
+            img.alt = brand.name;
+            img.className = "w-8 h-8 object-contain";
+            img.loading = "lazy";
+            logoContainer.appendChild(img);
+          } else {
+            const span = document.createElement("span");
+            span.className = "text-sm font-bold text-slate-300";
+            span.textContent = brand.name[0];
+            logoContainer.appendChild(span);
+          }
+
+          const nameSpan = document.createElement("span");
+          nameSpan.className = "text-sm font-medium text-slate-700 group-hover:text-[#1D4ED8] transition-colors whitespace-nowrap";
+          nameSpan.textContent = brand.name;
+
+          link.appendChild(logoContainer);
+          link.appendChild(nameSpan);
+          track.appendChild(link);
+        });
+
+        rowDiv.appendChild(track);
+        container.appendChild(rowDiv);
+      });
+    } catch {
+      /* silently ignore -- section just stays empty */
+    }
+  }
+
+  loadBrands();
+</script>

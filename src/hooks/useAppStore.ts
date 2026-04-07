@@ -14,7 +14,7 @@ import {
   uiSelectors,
   combinedSelectors,
 } from "@/store/selectors";
-import {
+import type {
   OperationType,
   EmailTemplate,
   UseCase,

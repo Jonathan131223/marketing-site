@@ -2,6 +2,7 @@
 title: "Product-led growth vs marketing-led growth - Comparison Guide"
 slug: "product-led-growth-vs-marketing-led-growth"
 description: "Discover why product-led growth vs marketing-led growth isn't really an honest debate, and learn how marketing supports both PLG and SLG models."
+shortDescription: "Why MLG is a myth and how marketing actually supports PLG and SLG models."
 date: "2026-04-03"
 readTime: "11 min read"
 ---

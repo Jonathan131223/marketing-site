@@ -1,4 +1,4 @@
-import { UseCase } from "@/types/emailGenerator";
+import type { UseCase } from "@/types/emailGenerator";
 import { FORM_FIELDS } from "@/config/emailFormFields";
 
 // Import the useCaseConfig from BriefForm to access label overrides

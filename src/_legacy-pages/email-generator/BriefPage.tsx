@@ -5,7 +5,7 @@ import { useStateRestoration } from "@/hooks/useStateRestoration";
 import { BriefWizard } from "@/components/email-generator/BriefWizard";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { BriefData, UseCase } from "@/types/emailGenerator";
+import type { BriefData, UseCase } from "@/types/emailGenerator";
 
 const BriefPage = () => {
   const navigate = useNavigate();

@@ -1,0 +1,169 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import HomepageIsland from '@/components/react/HomepageIsland';
+import OnboardingPainSection from '@/components/astro/OnboardingPainSection.astro';
+import ComparisonSection from '@/components/astro/ComparisonSection.astro';
+import BenefitsSection from '@/components/astro/BenefitsSection.astro';
+import TestimonialSection from '@/components/astro/TestimonialSection.astro';
+import BrandInspirationSection from '@/components/astro/BrandInspirationSection.astro';
+import FounderStorySection from '@/components/astro/FounderStorySection.astro';
+
+const SITE_URL = 'https://www.digistorms.ai';
+const DEFAULT_OG_IMAGE = `${SITE_URL}/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png`;
+
+const PAGE_TITLE = 'DigiStorms.ai - AI Agent for Onboarding Emails';
+const PAGE_DESC = 'DigiStorms is your AI agent for onboarding emails. It analyzes your product, maps the user journey, and builds a full lifecycle email system — automatically.';
+
+const webSiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "DigiStorms",
+  url: SITE_URL,
+  description: "AI agent for onboarding emails",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${SITE_URL}/library?q={search_term_string}`,
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "DigiStorms",
+  url: SITE_URL,
+  logo: {
+    "@type": "ImageObject",
+    url: DEFAULT_OG_IMAGE,
+    width: 1200,
+    height: 630,
+  },
+  description: "AI agent that builds lifecycle email systems for SaaS companies",
+  founder: {
+    "@type": "Person",
+    name: "Jonathan Bernard",
+    url: "https://www.linkedin.com/in/jonathan-digistorms/",
+  },
+  sameAs: [
+    "https://www.linkedin.com/company/digi-storms/",
+    "https://x.com/digistorms_ai",
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer support",
+    url: `${SITE_URL}/contact`,
+  },
+};
+
+const softwareJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "DigiStorms",
+  url: SITE_URL,
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  description: "AI lifecycle email generator for SaaS companies. Analyzes your product and creates behavior-based onboarding and retention email sequences automatically.",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How does DigiStorms generate onboarding emails?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "DigiStorms analyzes your product to understand how users reach value. It identifies key steps in your onboarding journey, then generates a complete email sequence tailored to those milestones. Instead of writing emails from scratch, you get a structured onboarding flow aligned with how your product actually works.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How is DigiStorms different from other email tools?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Traditional tools require you to manually design sequences and guess what to send. DigiStorms does the opposite \u2014 it figures out your onboarding flow automatically and builds the right emails for you. It also triggers messages based on real user behavior, not fixed schedules, so users get the right message at the right time.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can I edit the emails before sending them?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. You have full control over every email. DigiStorms generates the initial sequence for you, but you can review, edit, and customize everything before going live.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How long does it take to get started?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Just a few minutes. You enter your website, DigiStorms analyzes your product, and your onboarding sequence is generated automatically. You can review and launch it right away.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What do I need to connect to get started?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "All you need is your website to get started. To send emails and track user behavior, you'll connect your email provider and product events (via your existing tools or a simple integration).",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How does DigiStorms know when to send each email?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "DigiStorms sends emails based on what users actually do in your product. For example, it can trigger messages when someone signs up, reaches a milestone, or stops engaging. This ensures every email is sent at the most relevant moment.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does it really adapt to user behavior automatically?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. DigiStorms continuously reacts to user activity. If a user progresses quickly, stalls, or skips steps, the system adjusts and sends the most relevant message \u2014 no manual intervention needed.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What results can I expect from using DigiStorms?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Most SaaS products lose users before they reach value. DigiStorms helps fix that by guiding users through onboarding with the right messages at the right time. The result is typically higher activation, better engagement, and more users converting to paid.",
+      },
+    },
+  ],
+};
+---
+
+<PageLayout
+  title={PAGE_TITLE}
+  description={PAGE_DESC}
+  canonical={`${SITE_URL}/`}
+  ogTitle={PAGE_TITLE}
+  ogDescription={PAGE_DESC}
+  ogImage={DEFAULT_OG_IMAGE}
+  jsonLd={[webSiteJsonLd, organizationJsonLd, softwareJsonLd, faqJsonLd]}
+>
+  <main>
+    <HomepageIsland section="hero" client:load />
+    <OnboardingPainSection />
+    <ComparisonSection />
+    <BenefitsSection />
+    <TestimonialSection />
+    <BrandInspirationSection />
+    <HomepageIsland section="roi" client:visible />
+    <FounderStorySection />
+    <HomepageIsland section="faq" client:visible />
+    <HomepageIsland section="bottom-cta" client:visible />
+  </main>
+</PageLayout>

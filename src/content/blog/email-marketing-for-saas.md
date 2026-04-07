@@ -2,6 +2,7 @@
 title: "Email marketing for SaaS: 12 indispensable flows"
 slug: "email-marketing-for-saas"
 description: "Master SaaS email marketing with these 12 indispensable automated flows. Learn how to set up lifecycle, marketing, and transactional emails that convert free users into paying customers."
+shortDescription: "The 12 automated email flows every SaaS company needs to convert and retain users."
 date: "2026-04-07"
 readTime: "18 min read"
 ---

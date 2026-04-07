@@ -1,0 +1,88 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import usecasesData from '@/data/library/usecases.json';
+
+const SITE_URL = 'https://www.digistorms.ai';
+const DEFAULT_OG_IMAGE = `${SITE_URL}/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png`;
+
+const sortedUseCases = [...(usecasesData as any[])].sort((a, b) => a.order - b.order);
+
+const PAGE_TITLE = 'Browse Email Library by Use Case | DigiStorms';
+const PAGE_DESC = 'Explore lifecycle emails organized by use case: onboarding, upsell, win-back, feature announcements, and more. Real examples from top B2B SaaS companies.';
+const pageUrl = `${SITE_URL}/library/usecases`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: PAGE_TITLE,
+  description: PAGE_DESC,
+  url: pageUrl,
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Library", item: `${SITE_URL}/library` },
+      { "@type": "ListItem", position: 2, name: "Use Cases", item: pageUrl },
+    ],
+  },
+};
+---
+
+<PageLayout
+  title={PAGE_TITLE}
+  description={PAGE_DESC}
+  canonical={pageUrl}
+  ogTitle={PAGE_TITLE}
+  ogDescription={PAGE_DESC}
+  ogImage={DEFAULT_OG_IMAGE}
+  jsonLd={jsonLd}
+>
+  <main class="pt-16">
+    <!-- Page header -->
+    <div class="bg-white border-b border-slate-100 pb-8 pt-10">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <nav aria-label="Breadcrumb" class="mb-6">
+          <ol class="flex items-center gap-2 text-sm text-slate-400">
+            <li><a href="/library" class="hover:text-[#1D4ED8] transition-colors">Library</a></li>
+            <li aria-hidden="true"><span>/</span></li>
+            <li aria-current="page"><span class="text-slate-700 font-medium">Use Cases</span></li>
+          </ol>
+        </nav>
+
+        <h1 class="text-3xl font-serif font-bold text-slate-900 mb-2">Browse by Use Case</h1>
+        <p class="text-slate-500 text-lg">
+          {sortedUseCases.length} lifecycle email categories from onboarding to win-back
+        </p>
+      </div>
+    </div>
+
+    <!-- Use case grid -->
+    <section class="bg-[#FAFAFA] py-12 min-h-[400px]">
+      <div class="container mx-auto px-4 max-w-7xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {sortedUseCases.map((uc: any) => (
+            <a
+              href={`/library/usecase/${uc.slug}`}
+              class="group p-6 rounded-2xl border border-slate-100 bg-white hover:shadow-md transition-shadow block"
+            >
+              <div
+                class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold mb-3"
+                style="background: #EDE9FE; color: #1D4ED8;"
+              >
+                {uc.name}
+              </div>
+              <h2 class="text-lg font-semibold text-slate-900 group-hover:text-[#1D4ED8] transition-colors mb-2">
+                {uc.name}
+              </h2>
+              <p class="text-xs text-slate-400 mb-3">
+                {uc.brands?.length ?? 0} brand{(uc.brands?.length ?? 0) !== 1 ? 's' : ''}
+              </p>
+              {uc.description && (
+                <p class="text-sm text-slate-500 leading-relaxed line-clamp-3">{uc.description}</p>
+              )}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</PageLayout>

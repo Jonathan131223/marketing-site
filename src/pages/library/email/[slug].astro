@@ -1,0 +1,365 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import emailsData from '@/data/library/emails.json';
+import brandsData from '@/data/library/brands.json';
+import tagsData from '@/data/library/tags.json';
+import usecasesData from '@/data/library/usecases.json';
+
+export function getStaticPaths() {
+  return (emailsData as any[]).map((email) => ({
+    params: { slug: email.slug },
+    props: { email },
+  }));
+}
+
+const { email } = Astro.props;
+
+const SITE_URL = 'https://www.digistorms.ai';
+const DEFAULT_OG_IMAGE = `${SITE_URL}/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png`;
+
+const brand = (brandsData as any[]).find((b) => b.slug === email.brand);
+const useCase = (usecasesData as any[]).find((u) => u.slug === email.useCase);
+const emailTags = (tagsData as any[]).filter((t: any) => email.tags.includes(t.slug));
+
+const relatedEmails = (emailsData as any[])
+  .filter((e) => e.brand === email.brand && e.slug !== email.slug)
+  .slice(0, 6);
+
+const relatedByUseCase = (emailsData as any[])
+  .filter((e) => e.useCase === email.useCase && e.slug !== email.slug)
+  .slice(0, 6);
+
+const firstTag = emailTags[0];
+const relatedByTag = firstTag
+  ? (emailsData as any[])
+      .filter((e) => e.tags.includes(firstTag.slug) && e.slug !== email.slug)
+      .slice(0, 6)
+  : [];
+
+const brandName = brand?.name ?? email.brand;
+
+function truncateAtWord(text: string, limit: number): string {
+  if (!text || text.length <= limit) return text ?? '';
+  const cut = text.slice(0, limit);
+  const lastSpace = cut.lastIndexOf(' ');
+  return (lastSpace > 0 ? cut.slice(0, lastSpace) : cut) + '\u2026';
+}
+
+function formatDate(raw: string): string {
+  if (!raw) return '';
+  try {
+    return new Date(raw).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+  } catch {
+    return raw;
+  }
+}
+
+function isoDate(raw: string): string {
+  if (!raw) return '';
+  try { return new Date(raw).toISOString().split('T')[0]; } catch { return ''; }
+}
+
+function getBrandName(brandSlug: string): string {
+  const b = (brandsData as any[]).find((br) => br.slug === brandSlug);
+  return b?.name ?? brandSlug;
+}
+
+const pageTitle = `${email.subject} \u2014 ${brandName} | DigiStorms Library`;
+const rawDesc = email.summary || `${email.subject} \u2014 a lifecycle email from ${brandName}.`;
+const pageDesc = truncateAtWord(rawDesc, 155);
+const pageUrl = `${SITE_URL}/library/email/${email.slug}`;
+const ogImage = email.thumb || DEFAULT_OG_IMAGE;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: email.subject,
+  description: pageDesc,
+  ...(email.thumb ? { image: email.thumb } : {}),
+  url: pageUrl,
+  ...(isoDate(email.setDate) ? { datePublished: isoDate(email.setDate) } : {}),
+  author: { "@type": "Organization", name: brandName },
+  publisher: {
+    "@type": "Organization",
+    name: "DigiStorms",
+    url: SITE_URL,
+    logo: { "@type": "ImageObject", url: DEFAULT_OG_IMAGE },
+  },
+  breadcrumb: {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Library", item: `${SITE_URL}/library` },
+      { "@type": "ListItem", position: 2, name: brandName, item: `${SITE_URL}/library/brand/${email.brand}` },
+      { "@type": "ListItem", position: 3, name: email.subject, item: pageUrl },
+    ],
+  },
+};
+---
+
+<PageLayout
+  title={pageTitle}
+  description={pageDesc}
+  canonical={pageUrl}
+  ogImage={ogImage}
+  ogType="article"
+  ogTitle={pageTitle}
+  ogDescription={pageDesc}
+  jsonLd={jsonLd}
+>
+  <main class="pt-20 pb-24">
+    <!-- Breadcrumb -->
+    <div class="container mx-auto px-4 max-w-7xl mb-8">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2 text-sm text-slate-400">
+          <li>
+            <a href="/library" class="hover:text-[#1D4ED8] transition-colors font-medium">Library</a>
+          </li>
+          <li aria-hidden="true"><span>/</span></li>
+          {brand && (
+            <>
+              <li>
+                <a href={`/library/brand/${brand.slug}`} class="hover:text-[#1D4ED8] transition-colors font-medium">
+                  {brand.name}
+                </a>
+              </li>
+              <li aria-hidden="true"><span>/</span></li>
+            </>
+          )}
+          <li aria-current="page">
+            <span class="text-slate-600 font-medium truncate max-w-xs block">{email.subject}</span>
+          </li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- Main layout -->
+    <div class="container mx-auto px-4 max-w-7xl">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-8 items-start">
+        <!-- Left: email screenshot -->
+        <div>
+          <div class="rounded-2xl overflow-hidden border border-slate-100 shadow-sm bg-slate-50">
+            <img
+              src={email.thumb}
+              alt={`${email.subject} \u2014 email screenshot from ${brandName}`}
+              class="w-full block"
+              loading="eager"
+            />
+          </div>
+        </div>
+
+        <!-- Right: metadata sidebar -->
+        <div class="lg:sticky lg:top-20 space-y-5">
+          {/* Brand */}
+          {brand && (
+            <a href={`/library/brand/${brand.slug}`} class="flex items-center gap-3 group">
+              {brand.logo && (
+                <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center overflow-hidden flex-shrink-0">
+                  <img src={brand.logo} alt={`${brand.name} logo`} class="w-7 h-7 object-contain" />
+                </div>
+              )}
+              <div>
+                <p class="text-xs text-slate-400 font-medium uppercase tracking-wide">Brand</p>
+                <p class="font-semibold text-slate-900 group-hover:text-[#1D4ED8] transition-colors">{brand.name}</p>
+              </div>
+            </a>
+          )}
+
+          {/* Subject */}
+          <div>
+            <p class="text-xs text-slate-400 font-medium uppercase tracking-wide mb-1">Subject line</p>
+            <h1 class="text-xl font-serif font-bold text-slate-900 leading-snug">{email.subject}</h1>
+          </div>
+
+          {/* Sender + Date */}
+          <div class="flex flex-wrap gap-4">
+            {email.sender && (
+              <div class="flex items-center gap-2 text-sm text-slate-600">
+                <svg class="h-4 w-4 text-slate-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <span>{email.sender}</span>
+              </div>
+            )}
+            {email.setDate && (
+              <div class="flex items-center gap-2 text-sm text-slate-600">
+                <svg class="h-4 w-4 text-slate-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                <span>{formatDate(email.setDate)}</span>
+              </div>
+            )}
+          </div>
+
+          {/* Use case */}
+          {useCase && (
+            <div>
+              <p class="text-xs text-slate-400 font-medium uppercase tracking-wide mb-2">Use case</p>
+              <a
+                href={`/library/usecase/${useCase.slug}`}
+                class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-semibold transition-all hover:opacity-80"
+                style="background: #EDE9FE; color: #1D4ED8;"
+              >
+                {useCase.name}
+              </a>
+            </div>
+          )}
+
+          {/* Tags */}
+          {emailTags.length > 0 && (
+            <div>
+              <p class="text-xs text-slate-400 font-medium uppercase tracking-wide mb-2 flex items-center gap-1.5">
+                <svg class="h-3.5 w-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>
+                Tags
+              </p>
+              <div class="flex flex-wrap gap-2">
+                {emailTags.map((tag: any) => (
+                  <a
+                    href={`/library/tag/${tag.slug}`}
+                    class="inline-block px-3 py-1 rounded-full text-xs font-medium border border-slate-200 bg-white text-slate-600 hover:border-[#1D4ED8] hover:text-[#1D4ED8] hover:bg-[#DBEAFE] transition-all"
+                  >
+                    {tag.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Summary */}
+          {email.summary && (
+            <div>
+              <p class="text-xs text-slate-400 font-medium uppercase tracking-wide mb-2">About this email</p>
+              <p class="text-sm text-slate-600 leading-relaxed">{email.summary}</p>
+            </div>
+          )}
+
+          {/* Brand stats */}
+          {brand && (brand.duration || brand.emailCount) && (
+            <div class="rounded-xl border border-slate-100 bg-[#FAFAFA] p-4 space-y-2">
+              <p class="text-xs text-slate-400 font-medium uppercase tracking-wide mb-3">{brand.name} journey</p>
+              {brand.emailCount > 0 && (
+                <div class="flex items-center justify-between">
+                  <span class="text-xs text-slate-500">Emails in library</span>
+                  <span class="text-xs font-semibold text-slate-900">{brand.emailCount}</span>
+                </div>
+              )}
+              {brand.duration && (
+                <div class="flex items-center justify-between">
+                  <span class="text-xs text-slate-500">Journey span</span>
+                  <span class="text-xs font-semibold text-slate-900">{brand.duration}</span>
+                </div>
+              )}
+              {brand.avgDelay && (
+                <div class="flex items-center justify-between">
+                  <span class="text-xs text-slate-500">Avg. send gap</span>
+                  <span class="text-xs font-semibold text-slate-900">{brand.avgDelay}</span>
+                </div>
+              )}
+              <a
+                href={`/library/brand/${brand.slug}`}
+                class="flex items-center gap-1 text-xs font-semibold mt-2 transition-colors text-[#1D4ED8]"
+              >
+                See all {brand.name} emails
+                <svg class="h-3 w-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+              </a>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+
+    <!-- Related sections -->
+    <div class="container mx-auto px-4 max-w-7xl mt-16 space-y-12">
+      {relatedEmails.length > 0 && (
+        <div class="border-t border-slate-100 pt-12">
+          <h2 class="text-xl font-bold text-slate-900 mb-6">More from {brandName}</h2>
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {relatedEmails.map((rel: any) => (
+              <a href={`/library/email/${rel.slug}`} class="group block">
+                <div class="rounded-xl overflow-hidden border border-slate-100 bg-slate-50 aspect-[3/4] mb-2 group-hover:shadow-md group-hover:border-[#1D4ED8]/30 transition-all">
+                  {rel.thumb ? (
+                    <img
+                      src={rel.thumb}
+                      alt={`${rel.subject} \u2014 email screenshot from ${getBrandName(rel.brand)}`}
+                      class="w-full h-full object-cover object-top"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div class="w-full h-full bg-[#DBEAFE]"></div>
+                  )}
+                </div>
+                <p class="text-xs font-medium text-slate-700 group-hover:text-[#1D4ED8] transition-colors line-clamp-2 leading-snug">
+                  {rel.subject}
+                </p>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {relatedByUseCase.length > 0 && useCase && (
+        <div class="border-t border-slate-100 pt-12">
+          <h2 class="text-xl font-bold text-slate-900 mb-2">More {useCase.name} emails</h2>
+          <p class="text-sm text-slate-400 mb-6">
+            <a href={`/library/usecase/${useCase.slug}`} class="hover:text-[#1D4ED8] transition-colors">
+              Browse all {useCase.name} emails &rarr;
+            </a>
+          </p>
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {relatedByUseCase.map((rel: any) => (
+              <a href={`/library/email/${rel.slug}`} class="group block">
+                <div class="rounded-xl overflow-hidden border border-slate-100 bg-slate-50 aspect-[3/4] mb-2 group-hover:shadow-md group-hover:border-[#1D4ED8]/30 transition-all">
+                  {rel.thumb ? (
+                    <img
+                      src={rel.thumb}
+                      alt={`${rel.subject} \u2014 email screenshot from ${getBrandName(rel.brand)}`}
+                      class="w-full h-full object-cover object-top"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div class="w-full h-full bg-[#DBEAFE]"></div>
+                  )}
+                </div>
+                <p class="text-xs font-medium text-slate-700 group-hover:text-[#1D4ED8] transition-colors line-clamp-2 leading-snug">
+                  {rel.subject}
+                </p>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {relatedByTag.length > 0 && firstTag && (
+        <div class="border-t border-slate-100 pt-12">
+          <h2 class="text-xl font-bold text-slate-900 mb-2">More {firstTag.name} emails</h2>
+          <p class="text-sm text-slate-400 mb-6">
+            <a href={`/library/tag/${firstTag.slug}`} class="hover:text-[#1D4ED8] transition-colors">
+              Browse all {firstTag.name} emails &rarr;
+            </a>
+          </p>
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {relatedByTag.map((rel: any) => (
+              <a href={`/library/email/${rel.slug}`} class="group block">
+                <div class="rounded-xl overflow-hidden border border-slate-100 bg-slate-50 aspect-[3/4] mb-2 group-hover:shadow-md group-hover:border-[#1D4ED8]/30 transition-all">
+                  {rel.thumb ? (
+                    <img
+                      src={rel.thumb}
+                      alt={`${rel.subject} \u2014 email screenshot from ${getBrandName(rel.brand)}`}
+                      class="w-full h-full object-cover object-top"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div class="w-full h-full bg-[#DBEAFE]"></div>
+                  )}
+                </div>
+                <p class="text-xs font-medium text-slate-700 group-hover:text-[#1D4ED8] transition-colors line-clamp-2 leading-snug">
+                  {rel.subject}
+                </p>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </main>
+</PageLayout>

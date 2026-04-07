@@ -2,8 +2,12 @@
 title: "Webinar emails: best practices with 20 examples"
 slug: "webinar-emails"
 description: "Learn how to craft high-converting webinar emails with best practices and 20 real examples from top B2B SaaS brands to boost attendance and engagement."
+shortDescription: "See how top brands write compelling emails that drive signups, clicks, and webinar buzz."
 date: "2026-02-01"
 readTime: "9 min read"
+thumbnail: "/blog/webinar-emails/banner.webp"
+heroImage: "/blog/webinar-emails/banner.webp"
+libraryTags: ["webinar-invitation", "webinar-confirmation", "webinar-recording"]
 ---
 
 Webinars are everywhere right now—and for good reason.

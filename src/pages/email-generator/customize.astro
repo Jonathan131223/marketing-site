@@ -1,0 +1,11 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import EmailGeneratorApp from '@/components/react/EmailGeneratorApp';
+---
+
+<BaseLayout
+  title="Customize Your Email — DigiStorms Email Generator"
+  description="Edit and customize your AI-generated lifecycle email with our visual editor."
+>
+  <EmailGeneratorApp client:only="react" initialPath="/email-generator/customize" />
+</BaseLayout>

@@ -2,8 +2,12 @@
 title: "8 Dunning emails: best practices with 8 examples"
 slug: "dunning-emails"
 description: "Learn how to write a dunning email that recovers failed payments, reduces churn, and keeps your customer relationships intact with these tips and examples."
+shortDescription: "Real tips and examples to turn failed payments into recovered revenue--fast."
 date: "2025-03-28"
 readTime: "7 min read"
+thumbnail: "/blog/dunning-emails/banner.webp"
+heroImage: "/blog/dunning-emails/banner.webp"
+libraryTags: ["payment-declined", "payment-reminder", "billing-reminder"]
 ---
 
 Let's be honest—no one gets excited about failed payments.

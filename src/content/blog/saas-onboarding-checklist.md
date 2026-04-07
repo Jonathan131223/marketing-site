@@ -2,6 +2,7 @@
 title: "The ultimate SaaS onboarding checklist"
 slug: "saas-onboarding-checklist"
 description: "Use this SaaS onboarding checklist to optimize user experience, boost retention, and streamline the onboarding process for lasting user engagement."
+shortDescription: "A 10-point checklist to optimize your SaaS onboarding and boost user retention."
 date: "2026-04-03"
 readTime: "20 min read"
 ---

@@ -5,7 +5,7 @@ import { useStateRestoration } from "@/hooks/useStateRestoration";
 import AILoadingScreen from "@/components/email-generator/AILoadingScreen";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { BriefData } from "@/types/emailGenerator";
+import type { BriefData } from "@/types/emailGenerator";
 
 const GeneratePage = () => {
   const navigate = useNavigate();

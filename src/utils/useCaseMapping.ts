@@ -1,4 +1,4 @@
-import { UseCase, UseCaseCategory } from '@/types/emailGenerator';
+import type { UseCase, UseCaseCategory } from '@/types/emailGenerator';
 
 export const useCasesByCategory = {
   activation: [

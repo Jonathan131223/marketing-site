@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { UseCase, BriefData } from "@/types/emailGenerator";
+import type { UseCase, BriefData } from "@/types/emailGenerator";
 
 import {
   Select,

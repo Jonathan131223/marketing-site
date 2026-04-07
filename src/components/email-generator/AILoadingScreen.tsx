@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BriefData } from "@/types/emailGenerator";
+import type { BriefData } from "@/types/emailGenerator";
 import { ProgressBar } from "./ProgressBar";
 import GENERATION_GIF from "../../assets/GENERATION.gif";
 import { getFieldLabel } from "@/utils/getFieldLabel";

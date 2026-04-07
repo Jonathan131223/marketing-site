@@ -1,0 +1,224 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import emailsData from '@/data/library/emails.json';
+import brandsData from '@/data/library/brands.json';
+import tagsData from '@/data/library/tags.json';
+import usecasesData from '@/data/library/usecases.json';
+
+export function getStaticPaths() {
+  return (tagsData as any[]).map((tag) => ({
+    params: { slug: tag.slug },
+    props: { tag },
+  }));
+}
+
+const { tag } = Astro.props;
+const { slug } = Astro.params;
+
+const SITE_URL = 'https://www.digistorms.ai';
+const DEFAULT_OG_IMAGE = `${SITE_URL}/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png`;
+
+function truncateAtWord(text: string, limit: number): string {
+  if (!text || text.length <= limit) return text ?? '';
+  const cut = text.slice(0, limit);
+  const lastSpace = cut.lastIndexOf(' ');
+  return (lastSpace > 0 ? cut.slice(0, lastSpace) : cut) + '\u2026';
+}
+
+const filteredEmails = (emailsData as any[]).filter((e) => e.tags.includes(slug));
+const sortedTags = [...(tagsData as any[])].sort((a, b) => a.name.localeCompare(b.name));
+
+// Related use cases
+const ucCounts: Record<string, number> = {};
+filteredEmails.forEach((e) => {
+  if (e.useCase) ucCounts[e.useCase] = (ucCounts[e.useCase] ?? 0) + 1;
+});
+const relatedUseCases = Object.entries(ucCounts)
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 6)
+  .map(([ucSlug]) => (usecasesData as any[]).find((u) => u.slug === ucSlug))
+  .filter(Boolean);
+
+const rawDesc = tag.summary || `Browse ${filteredEmails.length} ${tag.name} emails from top B2B SaaS companies in the DigiStorms library.`;
+const pageDesc = truncateAtWord(rawDesc, 155);
+const pageUrl = `${SITE_URL}/library/tag/${slug}`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: `${tag.name} Emails \u2014 B2B SaaS Library`,
+  description: pageDesc,
+  url: pageUrl,
+  breadcrumb: {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Library", item: `${SITE_URL}/library` },
+      { "@type": "ListItem", position: 2, name: "Tags", item: `${SITE_URL}/library/tags` },
+      { "@type": "ListItem", position: 3, name: tag.name, item: pageUrl },
+    ],
+  },
+};
+---
+
+<PageLayout
+  title={`${tag.name} Emails \u2014 B2B SaaS Library | DigiStorms`}
+  description={pageDesc}
+  canonical={pageUrl}
+  ogImage={DEFAULT_OG_IMAGE}
+  ogTitle={`${tag.name} Emails \u2014 DigiStorms Library`}
+  ogDescription={pageDesc}
+  jsonLd={jsonLd}
+>
+  <main class="pt-16">
+    <!-- Page header -->
+    <div class="bg-white border-b border-slate-100 pb-8 pt-10">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <nav aria-label="Breadcrumb" class="mb-6">
+          <ol class="flex items-center gap-2 text-sm text-slate-400">
+            <li><a href="/library" class="hover:text-[#1D4ED8] transition-colors">Library</a></li>
+            <li aria-hidden="true"><span>/</span></li>
+            <li><a href="/library/tags" class="hover:text-[#1D4ED8] transition-colors">Tags</a></li>
+            <li aria-hidden="true"><span>/</span></li>
+            <li aria-current="page"><span class="text-slate-700 font-medium">{tag.name}</span></li>
+          </ol>
+        </nav>
+
+        <div
+          class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold mb-4"
+          style="background: #EDE9FE; color: #1D4ED8;"
+        >
+          {tag.name}
+        </div>
+        <h1 class="text-3xl font-serif font-bold text-slate-900 mb-1">{tag.name} emails</h1>
+        <p class="text-slate-400 text-sm">
+          {filteredEmails.length} email{filteredEmails.length !== 1 ? 's' : ''} in library
+        </p>
+        {tag.summary && (
+          <div
+            class="text-slate-500 text-sm mt-2 max-w-2xl leading-relaxed [&_p]:mb-2 [&_p:last-child]:mb-0"
+            set:html={tag.summary}
+          />
+        )}
+
+        {relatedUseCases.length > 0 && (
+          <div class="mt-5">
+            <p class="text-xs text-slate-400 font-medium uppercase tracking-wide mb-2">Related use cases</p>
+            <div class="flex flex-wrap gap-2">
+              {relatedUseCases.map((uc: any) => (
+                <a
+                  href={`/library/usecase/${uc.slug}`}
+                  class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border border-slate-200 bg-white text-slate-600 hover:border-[#1D4ED8] hover:text-[#1D4ED8] hover:bg-[#DBEAFE] transition-all"
+                >
+                  {uc.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+
+    <!-- Tag tab navigation -->
+    <div class="border-b border-slate-100 bg-white sticky top-16 z-10 shadow-sm">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="overflow-x-auto scrollbar-hide py-2">
+          <div
+            class="grid grid-rows-2 gap-1.5"
+            style="grid-auto-flow: column; grid-auto-columns: max-content;"
+          >
+            {sortedTags.map((t: any) => (
+              <a
+                href={`/library/tag/${t.slug}`}
+                class:list={[
+                  'flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium transition-all whitespace-nowrap',
+                  t.slug === slug
+                    ? 'text-white bg-[#1D4ED8]'
+                    : 'text-slate-600 border border-slate-200 hover:border-[#1D4ED8] hover:text-[#1D4ED8] hover:bg-[#DBEAFE]',
+                ]}
+              >
+                {t.name}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Email grid -->
+    <section class="bg-[#FAFAFA] py-12 min-h-[400px]" aria-label={`${tag.name} emails`}>
+      <div class="container mx-auto px-4 max-w-7xl">
+        {filteredEmails.length === 0 ? (
+          <div class="text-center py-20 text-slate-400">
+            <p class="text-lg font-medium">No emails found for "{tag.name}".</p>
+          </div>
+        ) : (
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            {filteredEmails.map((email: any) => {
+              const brand = (brandsData as any[]).find((b) => b.slug === email.brand);
+              return (
+                <a
+                  href={`/library/email/${email.slug}`}
+                  class="group rounded-2xl border border-slate-100 bg-white overflow-hidden hover:shadow-md transition-shadow block"
+                >
+                  <div class="relative overflow-hidden bg-slate-50 aspect-[4/3]">
+                    {email.thumb ? (
+                      <img
+                        src={email.thumb}
+                        alt={`${email.subject} \u2014 email screenshot from ${brand?.name ?? email.brand}`}
+                        class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-300"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div class="w-full h-full bg-[#DBEAFE] flex items-center justify-center">
+                        <span class="text-4xl opacity-30">{"\u2709\uFE0F"}</span>
+                      </div>
+                    )}
+                  </div>
+                  <div class="p-4">
+                    <a
+                      href={`/library/brand/${email.brand}`}
+                      onclick="event.stopPropagation()"
+                      class="flex items-center gap-2 mb-2 group/brand"
+                    >
+                      {brand?.logo && (
+                        <img src={brand.logo} alt={`${brand.name} logo`} class="h-4 w-4 object-contain" />
+                      )}
+                      <span class="text-xs text-slate-400 font-medium group-hover/brand:text-[#1D4ED8] transition-colors">
+                        {brand?.name ?? email.brand}
+                      </span>
+                    </a>
+                    <p class="text-sm font-semibold text-slate-900 leading-snug line-clamp-2 mb-3">
+                      {email.subject || email.templateTitle}
+                    </p>
+                    {email.tags.length > 0 && (
+                      <div class="flex flex-wrap gap-1.5">
+                        {email.tags.slice(0, 3).map((tagSlug: string) => {
+                          const tagObj = (tagsData as any[]).find((t) => t.slug === tagSlug);
+                          return (
+                            <a
+                              href={`/library/tag/${tagSlug}`}
+                              onclick="event.stopPropagation()"
+                              class:list={[
+                                'text-xs px-2 py-0.5 rounded-full transition-colors',
+                                tagSlug === slug
+                                  ? 'bg-[#1D4ED8] text-white'
+                                  : 'bg-[#DBEAFE] text-[#1D4ED8] hover:bg-[#1D4ED8] hover:text-white',
+                              ]}
+                            >
+                              {tagObj?.name ?? tagSlug}
+                            </a>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        )}
+      </div>
+    </section>
+  </main>
+</PageLayout>

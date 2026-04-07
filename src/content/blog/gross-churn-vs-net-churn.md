@@ -2,6 +2,7 @@
 title: "Gross churn vs net churn in SaaS: what matters?"
 slug: "gross-churn-vs-net-churn"
 description: "Learn how gross churn vs net churn can reduce churn and lead to negative churn, where expansion revenue exceeds losses, driving customer retention and growth."
+shortDescription: "Understand the difference between gross and net churn and how to turn churn into growth."
 date: "2026-04-03"
 readTime: "11 min read"
 ---

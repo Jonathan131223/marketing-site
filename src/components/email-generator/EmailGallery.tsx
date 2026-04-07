@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { BriefData, EmailTemplate } from "@/types/emailGenerator";
+import type { BriefData, EmailTemplate } from "@/types/emailGenerator";
 import { renderEmailForContext } from "@/utils/emailRenderer";
 import { TemplateTweaks } from "./TemplateTweaksSidebar";
 import { getFooterHTML } from "@/utils/templateTweaks";
