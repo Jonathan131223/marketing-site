@@ -36,8 +36,6 @@ const staticEntries = [
   urlEntry(`${BASE_URL}/privacy`,            "2026-01-01", "yearly",   "0.3"),
   urlEntry(`${BASE_URL}/terms`,              "2026-01-01", "yearly",   "0.3"),
   // Blog posts
-  urlEntry(`${BASE_URL}/blog/email-marketing-for-saas`,     "2026-04-07", "monthly", "0.9"),
-  urlEntry(`${BASE_URL}/blog/lifecycle-email-marketing`,     "2026-04-07", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/saas-welcome-email`,        "2026-03-23", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/webinar-email-sequence`,    "2026-03-23", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/product-launch-email`,      "2026-03-15", "monthly", "0.9"),

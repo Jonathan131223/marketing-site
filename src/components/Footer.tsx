@@ -5,7 +5,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-white text-slate-900 border-t border-slate-200">
       <div className="container mx-auto px-4 py-16 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
           <div className="col-span-1 md:col-span-1">
             <div className="mb-4">
               <a href="https://digistorms.ai">
@@ -156,6 +156,62 @@ export const Footer: React.FC = () => {
                   className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
                 >
                   Lifecycle Email Generator
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold text-lg mb-4 text-slate-900">
+              Compare
+            </h4>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  to="/compare/digistorms-vs-customer-io"
+                  className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
+                >
+                  vs Customer.io
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/compare/digistorms-vs-encharge"
+                  className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
+                >
+                  vs Encharge
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/compare/digistorms-vs-loops"
+                  className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
+                >
+                  vs Loops
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/compare/digistorms-vs-resend"
+                  className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
+                >
+                  vs Resend
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/compare/best-onboarding-email-tools"
+                  className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
+                >
+                  Best Email Tools
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/compare/customer-io-alternatives"
+                  className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
+                >
+                  Customer.io Alternatives
                 </Link>
               </li>
             </ul>

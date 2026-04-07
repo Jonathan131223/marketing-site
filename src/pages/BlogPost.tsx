@@ -467,6 +467,23 @@ const BlogPost: React.FC = () => {
                         {children}
                       </ul>
                     ),
+                    table: ({ children }) => (
+                      <div className="overflow-x-auto my-8">
+                        <table className="w-full border-collapse text-sm">{children}</table>
+                      </div>
+                    ),
+                    thead: ({ children }) => (
+                      <thead className="border-b-2 border-slate-200 text-left">{children}</thead>
+                    ),
+                    th: ({ children }) => (
+                      <th className="py-3 px-4 font-semibold text-slate-700 whitespace-nowrap">{children}</th>
+                    ),
+                    td: ({ children }) => (
+                      <td className="py-2.5 px-4 text-slate-600 border-b border-slate-100">{children}</td>
+                    ),
+                    tr: ({ children }) => (
+                      <tr className="even:bg-slate-50">{children}</tr>
+                    ),
                     ol: ({ children }) => (
                       <ol
                         className="list-decimal list-outside space-y-2 mb-5 ml-5 pl-1 text-slate-600 leading-relaxed text-base sm:text-lg"
