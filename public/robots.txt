@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://digistorms.ai/sitemap.xml
+Sitemap: https://www.digistorms.ai/sitemap.xml

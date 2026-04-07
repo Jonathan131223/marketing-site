@@ -39,11 +39,21 @@ const Manifesto: React.FC = () => {
       <Helmet>
         <title>The DigiStorms Manifesto — Turn Onboarding Into Revenue</title>
         <meta name="description" content="The DigiStorms manifesto. We believe onboarding is your growth engine. Discover how we map, build, and run lifecycle email systems that move users from signup to upgrade." />
-        <link rel="canonical" href="https://digistorms.ai/manifesto" />
+        <link rel="canonical" href="https://www.digistorms.ai/manifesto" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="The DigiStorms Manifesto — Turn Onboarding Into Revenue" />
         <meta property="og:description" content="We believe onboarding is your growth engine. Discover how we map, build, and run lifecycle email systems that move users from signup to upgrade." />
-        <meta property="og:url" content="https://digistorms.ai/manifesto" />
+        <meta property="og:url" content="https://www.digistorms.ai/manifesto" />
+        <meta property="og:image" content="https://www.digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png" />
+        <meta property="og:site_name" content="DigiStorms" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="The DigiStorms Manifesto — Turn Onboarding Into Revenue" />
+        <meta name="twitter:description" content="We believe onboarding is your growth engine. Discover how we map, build, and run lifecycle email systems." />
+        <meta name="twitter:image" content="https://www.digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png" />
+        <meta name="twitter:site" content="@digistorms_ai" />
       </Helmet>
       <Navbar />
       <main className="relative overflow-hidden">

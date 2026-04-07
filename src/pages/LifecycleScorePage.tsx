@@ -205,11 +205,21 @@ export default function LifecycleScorePage() {
       <Helmet>
         <title>Check Your Onboarding Score | DigiStorms</title>
         <meta name="description" content="See how well you onboard new users in 60 seconds. Discover gaps in your welcome, activation, milestone, and upgrade emails — and fix them automatically." />
-        <link rel="canonical" href="https://digistorms.ai/lifecycle-score" />
+        <link rel="canonical" href="https://www.digistorms.ai/lifecycle-score" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Check Your Onboarding Score | DigiStorms" />
         <meta property="og:description" content="See how well you onboard new users in 60 seconds. Discover gaps in your welcome, activation, milestone, and upgrade emails." />
-        <meta property="og:url" content="https://digistorms.ai/lifecycle-score" />
+        <meta property="og:url" content="https://www.digistorms.ai/lifecycle-score" />
+        <meta property="og:image" content="https://www.digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png" />
+        <meta property="og:site_name" content="DigiStorms" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Check Your Onboarding Score | DigiStorms" />
+        <meta name="twitter:description" content="See how well you onboard new users in 60 seconds." />
+        <meta name="twitter:image" content="https://www.digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png" />
+        <meta name="twitter:site" content="@digistorms_ai" />
       </Helmet>
       <Navbar />
 

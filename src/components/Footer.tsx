@@ -10,9 +10,11 @@ export const Footer: React.FC = () => {
             <div className="mb-4">
               <a href="https://digistorms.ai">
                 <img
-                  src="/images/b264ff90-d48c-4ee1-8397-adaeb0142ce4.png"
+                  src="/images/logo.webp"
                   alt="DigiStorms"
                   className="h-8 w-auto mb-4"
+                  width={120}
+                  height={32}
                 />
               </a>
             </div>

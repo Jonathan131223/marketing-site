@@ -26,26 +26,31 @@ const Blog: React.FC = () => {
       <Helmet>
         <title>Blog - SaaS Email Examples, Retention &amp; Growth | DigiStorms</title>
         <meta name="description" content="Guides and real email examples for SaaS lifecycle marketing—plus retention, PLG, and onboarding strategy. Activate users, reduce churn, and grow revenue." />
-        <link rel="canonical" href="https://digistorms.ai/blog" />
+        <link rel="canonical" href="https://www.digistorms.ai/blog" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Blog - SaaS Email Examples, Retention &amp; Growth | DigiStorms" />
         <meta property="og:description" content="Guides and real email examples for SaaS lifecycle marketing—plus retention, PLG, and onboarding strategy. Activate users, reduce churn, and grow revenue." />
-        <meta property="og:url" content="https://digistorms.ai/blog" />
-        <meta property="og:image" content="https://digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png" />
+        <meta property="og:url" content="https://www.digistorms.ai/blog" />
+        <meta property="og:image" content="https://www.digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Blog - SaaS Emails, Retention &amp; Growth | DigiStorms" />
         <meta name="twitter:description" content="Email examples, lifecycle guides, and retention and PLG strategy for SaaS teams." />
-        <meta name="twitter:image" content="https://digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png" />
+        <meta name="twitter:image" content="https://www.digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png" />
+        <meta property="og:site_name" content="DigiStorms" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:site" content="@digistorms_ai" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Blog",
           "name": "DigiStorms Blog",
-          "url": "https://digistorms.ai/blog",
+          "url": "https://www.digistorms.ai/blog",
           "description": "Guides, real email examples, and best practices for SaaS lifecycle marketing, retention, and product-led growth.",
           "publisher": {
             "@type": "Organization",
             "name": "DigiStorms",
-            "url": "https://digistorms.ai"
+            "url": "https://www.digistorms.ai"
           }
         })}</script>
       </Helmet>

@@ -71,32 +71,63 @@ const Index = () => {
       <Helmet>
         <title>DigiStorms.ai - AI Agent for Onboarding Emails</title>
         <meta name="description" content="DigiStorms is your AI agent for onboarding emails. It analyzes your product, maps the user journey, and builds a full lifecycle email system — automatically." />
-        <link rel="canonical" href="https://digistorms.ai/" />
+        <link rel="canonical" href="https://www.digistorms.ai/" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="DigiStorms.ai - AI Agent for Onboarding Emails" />
         <meta property="og:description" content="DigiStorms is your AI agent for onboarding emails. It analyzes your product, maps the user journey, and builds a full lifecycle email system — automatically." />
-        <meta property="og:url" content="https://digistorms.ai/" />
-        <meta property="og:image" content="https://digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png" />
+        <meta property="og:url" content="https://www.digistorms.ai/" />
+        <meta property="og:image" content="https://www.digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="DigiStorms.ai - AI Agent for Onboarding Emails" />
         <meta name="twitter:description" content="DigiStorms is your AI agent for onboarding emails. Analyzes your product and builds a full lifecycle email system automatically." />
-        <meta name="twitter:image" content="https://digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png" />
+        <meta name="twitter:image" content="https://www.digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png" />
+        <meta property="og:site_name" content="DigiStorms" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:site" content="@digistorms_ai" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "DigiStorms",
+          "url": "https://www.digistorms.ai",
+          "description": "AI agent for onboarding emails",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://www.digistorms.ai/library?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        })}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
           "name": "DigiStorms",
-          "url": "https://digistorms.ai",
-          "logo": "https://digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png",
+          "url": "https://www.digistorms.ai",
+          "logo": "https://www.digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png",
+          "description": "AI agent that builds lifecycle email systems for SaaS companies",
+          "founder": {
+            "@type": "Person",
+            "name": "Jonathan Bernard",
+            "url": "https://www.linkedin.com/in/jonathan-digistorms/"
+          },
           "sameAs": [
             "https://www.linkedin.com/company/digi-storms/",
             "https://x.com/digistorms_ai"
-          ]
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "url": "https://www.digistorms.ai/contact"
+          }
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "SoftwareApplication",
           "name": "DigiStorms",
-          "url": "https://digistorms.ai",
+          "url": "https://www.digistorms.ai",
           "applicationCategory": "BusinessApplication",
           "operatingSystem": "Web",
           "description": "AI lifecycle email generator for SaaS companies. Analyzes your product and creates behavior-based onboarding and retention email sequences automatically.",
@@ -104,6 +135,12 @@ const Index = () => {
             "@type": "Offer",
             "price": "0",
             "priceCurrency": "USD"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "6",
+            "bestRating": "5"
           }
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
