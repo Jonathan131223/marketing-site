@@ -163,6 +163,23 @@ export const BestToolsPage: React.FC<BestToolsPageProps> = (props) => {
             </div>
           </section>
 
+          {/* Library CTA */}
+          <div className="mb-16 rounded-2xl border border-slate-100 bg-slate-50 p-8 text-center">
+            <h2 className="text-xl font-serif font-semibold text-slate-900 mb-3">
+              Explore 1,000+ real SaaS emails
+            </h2>
+            <p className="text-slate-500 mb-4">
+              Browse lifecycle emails from 38+ companies in our free library — see real onboarding, upgrade, and retention sequences.
+            </p>
+            <Link
+              to="/library"
+              className="inline-flex items-center gap-2 text-white font-semibold px-6 py-3 rounded-xl transition-opacity hover:opacity-90"
+              style={{ backgroundColor: "#1D4ED8" }}
+            >
+              Browse the email library
+            </Link>
+          </div>
+
           {/* CTA */}
           <div className="bg-blue-50 rounded-2xl p-8 text-center">
             <h2 className="text-2xl font-serif font-semibold text-slate-900 mb-3">Ready to automate your onboarding emails?</h2>

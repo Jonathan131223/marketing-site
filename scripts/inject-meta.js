@@ -33,6 +33,8 @@ const tags     = JSON.parse(readFileSync(join(DATA, "tags.json"),     "utf8"));
 const usecases = JSON.parse(readFileSync(join(DATA, "usecases.json"), "utf8"));
 
 const brandMap = Object.fromEntries(brands.map((b) => [b.slug, b]));
+const tagMap = Object.fromEntries(tags.map((t) => [t.slug, t]));
+const usecaseMap = Object.fromEntries(usecases.map((u) => [u.slug, u]));
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -49,6 +51,241 @@ function stripHtml(html) {
 
 function esc(str) {
   return (str ?? "").replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+function formatDate(raw) {
+  if (!raw) return "";
+  try {
+    return new Date(raw).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+  } catch { return ""; }
+}
+
+// ── Blog posts for cross-linking ─────────────────────────────────────────────
+
+const blogPostsForLinks = [
+  { slug: "saas-email-benchmarks", title: "SaaS email benchmarks: what 1,051 lifecycle emails reveal", libraryTags: ["welcome-free-users", "welcome-paid-users", "upgrade-cta", "product-update"] },
+  { slug: "saas-welcome-email", title: "SaaS welcome email: best practices with 28 examples", libraryTags: ["welcome-free-users", "welcome-paid-users"] },
+  { slug: "product-launch-email", title: "Product launch email: best practices with 23 examples", libraryTags: ["product-update", "feature-update", "new-feature-nudge"] },
+  { slug: "saas-newsletter", title: "SaaS newsletter: best practices with 15 examples", libraryTags: ["newsletter"] },
+  { slug: "webinar-email-sequence", title: "How to build a webinar email sequence", libraryTags: ["webinar-invitation", "webinar-confirmation"] },
+  { slug: "webinar-follow-up-email", title: "Webinar follow-up email: best practices", libraryTags: ["webinar-recording", "follow-up"] },
+  { slug: "webinar-emails", title: "SaaS webinar emails: the complete guide", libraryTags: ["webinar-invitation", "webinar-confirmation", "webinar-recording"] },
+  { slug: "milestone-emails", title: "Milestone emails: best practices with examples", libraryTags: ["milestone-reached", "usage-summary", "year-in-review"] },
+  { slug: "upgrade-emails", title: "SaaS upgrade emails: best practices with examples", libraryTags: ["upgrade-cta", "trial-expired-upgrade", "trial-expiration-warning"] },
+  { slug: "dunning-emails", title: "SaaS dunning emails: best practices with examples", libraryTags: ["payment-declined", "payment-reminder", "billing-reminder"] },
+];
+
+function findRelatedBlogPosts(tagSlugs) {
+  return blogPostsForLinks.filter((p) =>
+    p.libraryTags.some((lt) => tagSlugs.includes(lt))
+  );
+}
+
+function blogLinksHtml(posts) {
+  if (!posts.length) return "";
+  return `<section><h2>Related articles</h2><ul>${posts.map((p) =>
+    `<li><a href="/blog/${esc(p.slug)}">${esc(p.title)}</a></li>`
+  ).join("")}</ul></section>`;
+}
+
+// ── Pre-rendered body builders ───────────────────────────────────────────────
+
+function buildEmailBody(email, brand, emailTagMap, emailUsecaseMap) {
+  const brandName = esc(brand?.name ?? email.brand);
+  const brandSlug = esc(email.brand);
+  const uc = emailUsecaseMap[email.useCase];
+  const ucName = esc(uc?.name ?? email.useCase);
+  const ucSlug = esc(uc?.slug ?? email.useCase);
+  const subject = esc(email.subject);
+  const sender = esc(email.sender || "");
+  const date = formatDate(email.setDate);
+  const summary = email.summary ? esc(stripHtml(email.summary)) : "";
+
+  const emailTags = (email.tags || [])
+    .map((slug) => emailTagMap[slug])
+    .filter(Boolean);
+  const tagsHtml = emailTags.length
+    ? `<section><h2>Tags</h2><ul>${emailTags.map((t) =>
+        `<li><a href="/library/tag/${esc(t.slug)}">${esc(t.name)}</a></li>`
+      ).join("")}</ul></section>`
+    : "";
+
+  // Subject line stats
+  const words = email.subject.trim().split(/\s+/).length;
+  const chars = email.subject.length;
+  const hasNumber = /\d/.test(email.subject);
+  const hasQuestion = email.subject.includes("?");
+  const hasEmoji = /[\u{1F600}-\u{1FFFF}]/u.test(email.subject);
+  const urgencyWords = ["last chance", "expires", "limited", "now", "today", "don't miss", "hurry", "urgent", "ending"];
+  const hasUrgency = urgencyWords.some((w) => email.subject.toLowerCase().includes(w));
+
+  const statsHtml = `<section><h2>Subject line breakdown</h2><ul>` +
+    `<li>${words} words, ${chars} characters</li>` +
+    (hasNumber ? `<li>Contains numbers</li>` : "") +
+    (hasQuestion ? `<li>Uses question format</li>` : "") +
+    (hasEmoji ? `<li>Contains emoji</li>` : "") +
+    (hasUrgency ? `<li>Uses urgency language</li>` : "") +
+    `</ul></section>`;
+
+  const relatedBlog = blogLinksHtml(findRelatedBlogPosts(email.tags || []));
+
+  return `<article>` +
+    `<nav aria-label="Breadcrumb"><a href="/library">Library</a> / <a href="/library/brand/${brandSlug}">${brandName}</a> / ${subject}</nav>` +
+    `<h1>${subject}</h1>` +
+    `<p>A <a href="/library/usecase/${ucSlug}">${ucName}</a> email from <a href="/library/brand/${brandSlug}">${brandName}</a>.</p>` +
+    (sender && date ? `<p>Sent by ${sender} on ${esc(date)}.</p>` : "") +
+    (summary ? `<section><h2>About this email</h2><p>${summary}</p></section>` : "") +
+    statsHtml +
+    tagsHtml +
+    `<p><a href="/library/brand/${brandSlug}">See all ${brandName} emails</a></p>` +
+    relatedBlog +
+    `</article>`;
+}
+
+function buildBrandBody(brand, brandEmails) {
+  const name = esc(brand.name);
+  const slug = esc(brand.slug);
+  const summary = brand.summary ? esc(stripHtml(brand.summary)) : "";
+  const stats = [];
+  if (brandEmails.length) stats.push(`${brandEmails.length} emails`);
+  if (brand.duration) stats.push(esc(brand.duration));
+  if (brand.avgDelay) stats.push(`avg ${esc(brand.avgDelay)} between sends`);
+
+  // Group emails by use case
+  const byUseCase = {};
+  brandEmails.forEach((e) => {
+    if (!byUseCase[e.useCase]) byUseCase[e.useCase] = [];
+    byUseCase[e.useCase].push(e);
+  });
+
+  const ucSections = Object.entries(byUseCase).map(([ucSlug, ucEmails]) => {
+    const uc = usecaseMap[ucSlug];
+    const ucName = esc(uc?.name ?? ucSlug);
+    const items = ucEmails.slice(0, 24).map((e) =>
+      `<li><a href="/library/email/${esc(e.slug)}">${esc(e.subject)}</a></li>`
+    ).join("");
+    return `<section><h2><a href="/library/usecase/${esc(ucSlug)}">${ucName}</a></h2><ul>${items}</ul></section>`;
+  }).join("");
+
+  // Collect brand tags for blog cross-links
+  const brandTagSlugs = [...new Set(brandEmails.flatMap((e) => e.tags))];
+  const relatedBlog = blogLinksHtml(findRelatedBlogPosts(brandTagSlugs));
+
+  return `<article>` +
+    `<nav aria-label="Breadcrumb"><a href="/library">Library</a> / <a href="/library/brands">Brands</a> / ${name}</nav>` +
+    `<h1>${name} lifecycle emails</h1>` +
+    (summary ? `<p>${summary}</p>` : "") +
+    (stats.length ? `<p>${stats.join(" | ")}</p>` : "") +
+    ucSections +
+    relatedBlog +
+    `</article>`;
+}
+
+function buildTagBody(tag, tagEmails) {
+  const name = esc(tag.name);
+  const slug = esc(tag.slug);
+  const summary = tag.summary ? esc(stripHtml(tag.summary)) : "";
+
+  // Related use cases
+  const ucCounts = {};
+  tagEmails.forEach((e) => {
+    if (e.useCase) ucCounts[e.useCase] = (ucCounts[e.useCase] || 0) + 1;
+  });
+  const relatedUCs = Object.entries(ucCounts)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 6)
+    .map(([ucSlug]) => usecaseMap[ucSlug])
+    .filter(Boolean);
+  const ucHtml = relatedUCs.length
+    ? `<section><h2>Related use cases</h2><ul>${relatedUCs.map((uc) =>
+        `<li><a href="/library/usecase/${esc(uc.slug)}">${esc(uc.name)}</a></li>`
+      ).join("")}</ul></section>`
+    : "";
+
+  // Email list (capped at 24)
+  const emailItems = tagEmails.slice(0, 24).map((e) => {
+    const bName = esc(brandMap[e.brand]?.name ?? e.brand);
+    return `<li><a href="/library/email/${esc(e.slug)}">${esc(e.subject)}</a> by <a href="/library/brand/${esc(e.brand)}">${bName}</a></li>`;
+  }).join("");
+
+  // Brand distribution
+  const brandCounts = {};
+  tagEmails.forEach((e) => { brandCounts[e.brand] = (brandCounts[e.brand] || 0) + 1; });
+  const topBrands = Object.entries(brandCounts)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10);
+  const brandStatsHtml = topBrands.length
+    ? `<section><h2>Brands sending ${name} emails</h2><ul>${topBrands.map(([bSlug, count]) => {
+        const b = brandMap[bSlug];
+        return `<li><a href="/library/brand/${esc(bSlug)}">${esc(b?.name ?? bSlug)}</a> — ${count} emails</li>`;
+      }).join("")}</ul></section>`
+    : "";
+
+  const relatedBlog = blogLinksHtml(findRelatedBlogPosts([tag.slug]));
+
+  return `<article>` +
+    `<nav aria-label="Breadcrumb"><a href="/library">Library</a> / <a href="/library/tags">Tags</a> / ${name}</nav>` +
+    `<h1>${name} emails</h1>` +
+    `<p>${tagEmails.length} emails in library</p>` +
+    (summary ? `<p>${summary}</p>` : "") +
+    ucHtml +
+    brandStatsHtml +
+    `<section><h2>${name} emails</h2><ul>${emailItems}</ul></section>` +
+    relatedBlog +
+    `</article>`;
+}
+
+function buildUseCaseBody(uc, ucEmails) {
+  const name = esc(uc.name);
+  const slug = esc(uc.slug);
+  const desc = uc.description ? esc(uc.description) : "";
+
+  // Related tags
+  const tagCounts = {};
+  ucEmails.forEach((e) => {
+    e.tags.forEach((t) => { tagCounts[t] = (tagCounts[t] || 0) + 1; });
+  });
+  const relatedTags = Object.entries(tagCounts)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 8)
+    .map(([tSlug]) => tagMap[tSlug])
+    .filter(Boolean);
+  const tagsHtml = relatedTags.length
+    ? `<section><h2>Related email types</h2><ul>${relatedTags.map((t) =>
+        `<li><a href="/library/tag/${esc(t.slug)}">${esc(t.name)}</a></li>`
+      ).join("")}</ul></section>`
+    : "";
+
+  // Group by brand
+  const byBrand = {};
+  ucEmails.forEach((e) => {
+    if (!byBrand[e.brand]) byBrand[e.brand] = [];
+    byBrand[e.brand].push(e);
+  });
+  const brandSections = Object.entries(byBrand)
+    .sort((a, b) => b[1].length - a[1].length)
+    .map(([bSlug, bEmails]) => {
+      const b = brandMap[bSlug];
+      const bName = esc(b?.name ?? bSlug);
+      const items = bEmails.slice(0, 24).map((e) =>
+        `<li><a href="/library/email/${esc(e.slug)}">${esc(e.subject)}</a></li>`
+      ).join("");
+      return `<section><h3><a href="/library/brand/${esc(bSlug)}">${bName}</a></h3><ul>${items}</ul></section>`;
+    }).join("");
+
+  // Blog cross-links via related tags
+  const allTagSlugs = [...new Set(ucEmails.flatMap((e) => e.tags))];
+  const relatedBlog = blogLinksHtml(findRelatedBlogPosts(allTagSlugs));
+
+  return `<article>` +
+    `<nav aria-label="Breadcrumb"><a href="/library">Library</a> / <a href="/library/usecases">Use Cases</a> / ${name}</nav>` +
+    `<h1>${name} emails</h1>` +
+    `<p>${ucEmails.length} emails in library</p>` +
+    (desc ? `<p>${desc}</p>` : "") +
+    tagsHtml +
+    brandSections +
+    relatedBlog +
+    `</article>`;
 }
 
 function buildHead({ title, description, canonical, ogType = "website", ogImage, jsonLd }) {
@@ -730,6 +967,7 @@ writeRoute("/library/usecases", buildHead({
 // ── Brand detail pages ────────────────────────────────────────────────────────
 
 brands.forEach((brand) => {
+  const brandEmails = emails.filter((e) => e.brand === brand.slug);
   const desc = brand.metaDesc || `Browse all ${brand.name} lifecycle emails in the DigiStorms library.`;
   writeRoute(`/library/brand/${brand.slug}`, buildHead({
     title: `${brand.name} Emails \u2014 B2B SaaS Library | DigiStorms`,
@@ -748,7 +986,7 @@ brands.forEach((brand) => {
         { name: brand.name, url: `${BASE_URL}/library/brand/${brand.slug}` },
       ]),
     },
-  }));
+  }), buildBrandBody(brand, brandEmails));
 });
 
 // ── Tag detail pages ──────────────────────────────────────────────────────────
@@ -773,7 +1011,7 @@ tags.forEach((tag) => {
         { name: tag.name,  url: `${BASE_URL}/library/tag/${tag.slug}` },
       ]),
     },
-  }));
+  }), buildTagBody(tag, emailsForTag));
 });
 
 // ── Use case detail pages ─────────────────────────────────────────────────────
@@ -798,7 +1036,7 @@ usecases.forEach((uc) => {
         { name: uc.name,     url: `${BASE_URL}/library/usecase/${uc.slug}` },
       ]),
     },
-  }));
+  }), buildUseCaseBody(uc, emailsForUC));
 });
 
 // ── Email detail pages ────────────────────────────────────────────────────────
@@ -836,7 +1074,7 @@ emails.forEach((email) => {
         { name: email.subject, url: `${BASE_URL}/library/email/${email.slug}` },
       ]),
     },
-  }));
+  }), buildEmailBody(email, brand, tagMap, usecaseMap));
 });
 
 // ── Summary ──────────────────────────────────────────────────────────────────

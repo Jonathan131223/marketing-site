@@ -51,7 +51,7 @@ You might say something like, "You've used 80% of your free plan—here's what h
 
 These small touches help convert trial users who are close to the finish line. They show you're not just sending a mass course of emails, but actually paying attention.
 
-## When to nudge trial users
+## When should you send upgrade emails to trial users?
 
 The timing of your upgrade email can make all the difference. For trial users, the days right before their trial ends are key—but it's not the only window.
 

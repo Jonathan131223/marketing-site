@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { X, Calendar, Tag, ChevronLeft, ChevronRight } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { blogPosts } from "@/content/blog";
 import {
   SITE_URL,
   DEFAULT_OG_IMAGE,
@@ -136,6 +137,14 @@ const LibraryBrand: React.FC = () => {
       .map(([tagSlug]) => tags.find((t) => t.slug === tagSlug))
       .filter(Boolean) as TagType[];
   }, [filteredEmails, tags]);
+
+  const relatedBlogPosts = useMemo(() => {
+    const brandTagSlugs = new Set<string>();
+    filteredEmails.forEach((e) => e.tags.forEach((t) => brandTagSlugs.add(t)));
+    return blogPosts.filter((p) =>
+      p.libraryTags?.some((lt) => brandTagSlugs.has(lt))
+    );
+  }, [filteredEmails]);
 
   const scrollJourney = useCallback((dir: "left" | "right") => {
     scrollRef.current?.scrollBy({ left: dir === "right" ? 300 : -300, behavior: "smooth" });
@@ -435,6 +444,41 @@ const LibraryBrand: React.FC = () => {
             )}
           </div>
         </section>
+
+        {/* ── Related articles ── */}
+        {relatedBlogPosts.length > 0 && (
+          <section className="bg-white py-12 border-t border-slate-100">
+            <div className="container mx-auto px-4 max-w-7xl">
+              <h2 className="text-xl font-bold text-slate-900 mb-6">Related articles</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                {relatedBlogPosts.slice(0, 3).map((post) => (
+                  <Link
+                    key={post.slug}
+                    to={`/blog/${post.slug}`}
+                    className="group rounded-2xl border border-slate-100 bg-white overflow-hidden hover:shadow-md transition-shadow block"
+                  >
+                    {post.thumbnail && (
+                      <div className="overflow-hidden bg-slate-50 aspect-[16/9]">
+                        <img
+                          src={post.thumbnail}
+                          alt=""
+                          className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                          loading="lazy"
+                        />
+                      </div>
+                    )}
+                    <div className="p-4">
+                      <p className="text-sm font-semibold text-slate-900 leading-snug line-clamp-2 mb-1 group-hover:text-[#1D4ED8] transition-colors">
+                        {post.title}
+                      </p>
+                      <p className="text-xs text-slate-400 line-clamp-2">{post.shortDescription}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
       </main>
 

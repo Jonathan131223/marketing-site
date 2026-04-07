@@ -38,7 +38,7 @@ Sometimes, it's a simple case of outdated billing information or a temporary hol
 
 The good news? With the right dunning strategy in place, you can recover payments quickly and painlessly—often before the customer even notices there's a problem.
 
-## The dunning process: how payment recovery actually works
+## How does the dunning payment recovery process work?
 
 The dunning process is a structured, multi-step approach to resolving failed payments and collecting overdue payments before they lead to service suspension. It typically starts with a pre dunning email—sent before the due date—to remind customers of an upcoming charge and prompt them to check their payment details.
 
@@ -48,7 +48,7 @@ The process may include multiple payment reminders spaced out over time, increas
 
 When done right, the dunning process reduces non payment, improves billing system efficiency, and helps subscription businesses recover revenue without damaging the customer relationship.
 
-## The keys to a successful dunning strategy
+## What makes a successful dunning email strategy?
 
 ![Dunning email open rates data from Baremetrics](/blog/dunning-emails/img-06.webp)
 
@@ -237,7 +237,7 @@ SMS and push notifications are great for short, timely reminders—especially wh
 
 Keep the message concise, link directly to the payment page, and avoid sounding too aggressive. These nudges can dramatically reduce non payment and service interruption—especially when combined with more detailed emails or in-app dunning messages.
 
-## Building trust into your dunning management process
+## How do you build trust into your dunning process?
 
 Trust plays a huge role in whether or not a customer follows through on a payment. If your dunning emails feel shady, cold, or confusing, people might hesitate—especially with billing information involved.
 
