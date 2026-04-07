@@ -1,0 +1,55 @@
+import React from "react";
+import { ComparisonPage } from "./ComparisonPage";
+
+const DigiStormsVsResend: React.FC = () => (
+  <ComparisonPage
+    slug="digistorms-vs-resend"
+    competitorName="Resend"
+    competitorUrl="https://resend.com"
+    competitorTagline="Email API for developers"
+    title="DigiStorms vs Resend: Onboarding Emails vs Developer Email API (2026)"
+    metaDescription="DigiStorms vs Resend for SaaS email. Compare an AI onboarding agent with a developer email API to find the right tool for your lifecycle emails."
+    h1="DigiStorms vs Resend"
+    subtitle="AI onboarding agent vs developer email API"
+    verdict="Resend and DigiStorms solve different problems. Resend is a developer email API for sending transactional and marketing emails — you build everything yourself with React Email. DigiStorms is an AI agent that generates your onboarding email sequences for you. Choose Resend if you're a developer who wants full code control over email sending. Choose DigiStorms if you want lifecycle email sequences created automatically without coding."
+    features={[
+      { name: "AI sequence generation", digistorms: true, competitor: false },
+      { name: "Email sending API", digistorms: false, competitor: true },
+      { name: "React Email templates", digistorms: false, competitor: true },
+      { name: "Free tier", digistorms: true, competitor: true },
+      { name: "Onboarding sequence generator", digistorms: true, competitor: false },
+      { name: "Email library (1,000+ examples)", digistorms: true, competitor: false },
+      { name: "Transactional emails", digistorms: false, competitor: true },
+      { name: "Behavior-triggered flows", digistorms: true, competitor: false },
+      { name: "Setup time", digistorms: "5 minutes", competitor: "Dev time required" },
+      { name: "Webhooks", digistorms: false, competitor: true },
+    ]}
+    pricingDigistorms="Free – $149/mo"
+    pricingCompetitor="Free – $80/mo"
+    pricingNote="Free for 100 emails/day. $20/mo for 50K emails."
+    faqs={[
+      {
+        question: "Are DigiStorms and Resend competitors?",
+        answer: "Not exactly — they solve different problems. Resend is an email sending API for developers who want to build their own email infrastructure with React Email templates. DigiStorms is an AI agent that generates onboarding email sequences automatically. You could even use them together: DigiStorms to design the sequences and Resend to send them.",
+      },
+      {
+        question: "Which is better for a non-technical founder?",
+        answer: "DigiStorms is dramatically better for non-technical users. It requires zero coding — enter your website URL and get a complete onboarding sequence in minutes. Resend is a developer tool that requires engineering resources to integrate, build templates with React Email, and manage sending infrastructure.",
+      },
+      {
+        question: "Can I use DigiStorms and Resend together?",
+        answer: "Yes, and it can be a powerful combination. DigiStorms generates your onboarding email strategy, sequences, and content based on AI analysis of your product. Resend provides the infrastructure to actually send those emails at scale with high deliverability. The two tools are complementary rather than competing.",
+      },
+      {
+        question: "How does pricing compare?",
+        answer: "Both offer free tiers. Resend is free for 100 emails per day, with paid plans from $20/mo based on volume. DigiStorms is free for up to 100 new signups per month, with paid plans from $19/mo based on signups onboarded. The pricing models are different because the tools serve different purposes — sending infrastructure vs. sequence generation.",
+      },
+      {
+        question: "Which should I choose if I only need onboarding emails?",
+        answer: "DigiStorms. It is specifically built for SaaS onboarding email automation. The AI analyzes your product, maps user activation milestones, and generates behavior-triggered sequences. Resend is a general-purpose email API with no onboarding-specific features — you would need to design and code everything yourself.",
+      },
+    ]}
+  />
+);
+
+export default DigiStormsVsResend;

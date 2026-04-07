@@ -38,7 +38,7 @@ User onboarding isn’t just a nice-to-have - it’s the foundation for user ret
 
 ### Finding the "Aha Moment"
 
-Ever had that lightbulb moment when you realized something would make your life so much easier? That’s the "[Aha moment](https://digistorms.ai/blog/aha-moment-examples)" in SaaS—when a user finally understands how your product will solve their problem or make their workflow smoother.
+Ever had that lightbulb moment when you realized something would make your life so much easier? That’s the "[Aha moment](https://www.digistorms.ai/blog/aha-moment-examples)" in SaaS—when a user finally understands how your product will solve their problem or make their workflow smoother.
 
 Every SaaS onboarding journey aims to get users to this moment as quickly as possible. It’s the point where they truly “get” your product’s value.
 
@@ -48,7 +48,7 @@ A well-designed SaaS onboarding isn’t about overwhelming users with all the fe
 
 > 💡 When users hit that "Aha moment, " they not only engage with your product but are also far more likely to stick around. Your job during onboarding is to connect the dots and help them see why your product is the solution they’ve been searching for. 
 
-Check our article on the [Jobs to be done theory](https://digistorms.ai/blog/jobs-to-be-done-examples) for more insights on this.
+Check our article on the [Jobs to be done theory](https://www.digistorms.ai/blog/jobs-to-be-done-examples) for more insights on this.
 
 ### How onboarding impacts retention
 
@@ -64,7 +64,7 @@ But if the onboarding is clunky or confusing, users may lose interest quickly, l
 
 Personalization is key here. By tailoring the onboarding experience to individual users, whether through personalized content, custom product tours, or targeted help resources, you show users that you understand their needs. This improves their experience and deepens their connection with your product.
 
-Ultimately, a well-executed SaaS onboarding strategy doesn’t just bring users in - it keeps them coming back. The more seamless the onboarding, the stronger the foundation for [long-term engagement, loyalty, and retention](https://digistorms.ai/blog/user-engagement-strategy).
+Ultimately, a well-executed SaaS onboarding strategy doesn’t just bring users in - it keeps them coming back. The more seamless the onboarding, the stronger the foundation for [long-term engagement, loyalty, and retention](https://www.digistorms.ai/blog/user-engagement-strategy).
 
 ## The ultimate SaaS onboarding checklist
 
@@ -87,7 +87,7 @@ A clear, concise welcome email reassures users they’ve made the right choice. 
 - Simplify the account setup by removing unnecessary steps and allowing users to begin exploring the product with minimal friction. Offer clear instructions and, if possible, auto-fill fields where relevant information is available.
 - Add a call to action (CTA) in the welcome email that directs users toward completing their initial onboarding tasks, such as setting up their profile and preferences or starting a product tour.
 - Make the signup process effortless by incorporating visual progress indicators showing users how far they’ve come and what’s next.
-- For more information on automated flows sent throughout your users' lifecycle, read our article [Lifecycle email marketing for SaaS businesses](https://digistorms.ai/blog/lifecycle-email-marketing).
+- For more information on automated flows sent throughout your users' lifecycle, read our article [Lifecycle email marketing for SaaS businesses](https://www.digistorms.ai/blog/lifecycle-email-marketing).
 
 
 
@@ -202,7 +202,7 @@ _Trello boosts engagement by offering a post-signup checklist with an immediate 
 #### How to implement it:
 
 - Implement visual progress indicators, such as checklists or progress bars within the user interface, to show users what steps they have completed and what actions remain. This helps users stay organized and feel a sense of accomplishment.
-- Set up automated reminders or nudges that are triggered by user inactivity. For example, if a user hasn’t logged in for a few days or completed an important task, send a friendly email reminding them to continue their SaaS onboarding. Check more [email strategies for SaaS](https://digistorms.ai/blog/email-marketing-for-saas) here. 
+- Set up automated reminders or nudges that are triggered by user inactivity. For example, if a user hasn’t logged in for a few days or completed an important task, send a friendly email reminding them to continue their SaaS onboarding. Check more [email strategies for SaaS](https://www.digistorms.ai/blog/email-marketing-for-saas) here. 
 - Personalize nudges based on the onboarding flow. If a user is stuck on a particular step, send a targeted nudge with additional resources or offer assistance from the customer support team.
 - Use gamification strategies, such as rewarding users for completing tasks or offering badges for reaching key milestones, to motivate users to stay motivated and finish the onboarding process.
 - Track SaaS onboarding metrics related to task completion and engagement levels to understand how well users are progressing and where further improvements can be made in the onboarding flow.
@@ -328,15 +328,15 @@ Tracking this metric helps identify whether your tasks are too complex, unclear,
 
 ### 3\. Customer retention and churn rates
 
-After users complete onboarding, [monitoring user retention and churn rates](https://digistorms.ai/blog/customer-churn-prediction) provides a long-term view of your onboarding’s success. Users who undergo a well-executed SaaS customer onboarding process will likely remain engaged with the product and renew subscriptions.
+After users complete onboarding, [monitoring user retention and churn rates](https://www.digistorms.ai/blog/customer-churn-prediction) provides a long-term view of your onboarding’s success. Users who undergo a well-executed SaaS customer onboarding process will likely remain engaged with the product and renew subscriptions.
 
-High [churn rates](https://digistorms.ai/blog/saas-churn-rate-benchmark) after onboarding may indicate that while users achieve the initial steps, they do not see ongoing value. This means your onboarding strategy might need refinement to better showcase the product’s benefits and ensure users remain active after their first few interactions.
+High [churn rates](https://www.digistorms.ai/blog/saas-churn-rate-benchmark) after onboarding may indicate that while users achieve the initial steps, they do not see ongoing value. This means your onboarding strategy might need refinement to better showcase the product’s benefits and ensure users remain active after their first few interactions.
 
 ### 4\. Net Promoter Score
 
 Gathering feedback throughout the onboarding offers valuable insights into how users perceive the onboarding experience. Regularly ask users about their pain points, areas of confusion and suggestions for improvement. This direct feedback can guide iterative improvements and ensure your SaaS onboarding strategy stays user-centric.
 
-For more onboarding metrics, read [7 SaaS onboarding KPIs you can't miss](https://digistorms.ai/blog/saas-onboarding-kpis).
+For more onboarding metrics, read [7 SaaS onboarding KPIs you can't miss](https://www.digistorms.ai/blog/saas-onboarding-kpis).
 
 ![Improve your user onboarding experiences with Digi Storms](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/679c9406e8c10a4224a941c9_670beaef3feae938fb6cc1ce_507ff67d-03af-439d-bb0c-38f5c295d553.png)
 

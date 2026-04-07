@@ -55,7 +55,7 @@ To calculate gross revenue churn, you simply look at how much revenue your busin
 
 This shows how much lost revenue needs to be offset by bringing in new customers or encouraging loyal customers to upgrade.
 
-Focusing on gross churn helps tech companies identify how well their [customer retention strategy](https://digistorms.ai/blog/user-engagement-strategy) is working and whether they need to improve customer satisfaction to retain more customers.
+Focusing on gross churn helps tech companies identify how well their [customer retention strategy](https://www.digistorms.ai/blog/user-engagement-strategy) is working and whether they need to improve customer satisfaction to retain more customers.
 
 ## What is net churn?
 
@@ -69,7 +69,7 @@ Unlike gross churn, net churn paints a fuller picture of your company’s financ
 
 This is the goal for most Tech companies—ensuring that their customer retention strategies are driving growth, not just plugging leaks.
 
-A good [lifecycle email marketing](https://digistorms.ai/blog/lifecycle-email-marketing) strategy can help you get there. 
+A good [lifecycle email marketing](https://www.digistorms.ai/blog/lifecycle-email-marketing) strategy can help you get there. 
 
 ### How to calculate net revenue churn
 
@@ -81,7 +81,7 @@ For example, if your business loses $1,000 in revenue churn but gains $500 from 
 
 A company with high gross churn might still see positive revenue growth if enough customers are upgrading their plans. This makes net churn a better indicator of overall revenue health for tech companies.
 
-Want to know where your company's churn stands compared to your competitors? Read our [SaaS churn rate benchmark](https://digistorms.ai/blog/saas-churn-rate-benchmark) article. 
+Want to know where your company's churn stands compared to your competitors? Read our [SaaS churn rate benchmark](https://www.digistorms.ai/blog/saas-churn-rate-benchmark) article. 
 
 ## Gross churn vs. net churn: Key differences
 
@@ -141,7 +141,7 @@ Early wins build customer satisfaction and set the stage for long-term retention
 
 A well-designed onboarding strategy increases customer lifetime value and ensures customers see your product’s benefits quickly.
 
-Read our [SaaS onboarding checklist](https://digistorms.ai/blog/saas-onboarding-checklist) article here to see how 20+ top SaaS companies onboard their users.
+Read our [SaaS onboarding checklist](https://www.digistorms.ai/blog/saas-onboarding-checklist) article here to see how 20+ top SaaS companies onboard their users.
 
 ### Enhance customer support and engagement
 
@@ -167,20 +167,20 @@ Keep customers in the loop with release notes or in-app notifications to highlig
 
 Continuous improvement leads to long-term customer retention and keeps your product competitive.
 
-On the same topic, read [7 SaaS onboarding KPIs you can't miss](https://digistorms.ai/blog/saas-onboarding-kpis).
+On the same topic, read [7 SaaS onboarding KPIs you can't miss](https://www.digistorms.ai/blog/saas-onboarding-kpis).
 
 ## Boost your monthly recurring revenue with Digi Storms
 
-[![achieve negative net churn rate with digi storms](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/6714f64b970a34a2b7f0b65e_cc043682-6aa1-465d-8923-03d7bf08de7f.png)](https://digistorms.ai/#Contact)
+[![achieve negative net churn rate with digi storms](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/6714f64b970a34a2b7f0b65e_cc043682-6aa1-465d-8923-03d7bf08de7f.png)](https://www.digistorms.ai/#Contact)
 
 Do you know what’s better than reducing churn? Achieving net negative churn.
 
 This means your expansion revenue—from upsells, cross-sells, and subscription upgrades—outweighs the revenue lost from churned customers. Instead of just plugging leaks, you’re actually growing your monthly recurring revenue (MRR) despite customer departures.
 
-To get there, reducing churn is the first step. The best lever for this is an [effective email marketing strategy](https://digistorms.ai/blog/email-marketing-for-saas). By sending personalized, timely emails, you can guide new users through a smooth onboarding, keep them engaged, and prevent customer cancellations. Regular email touchpoints reinforce your product’s value and build long-term loyalty.
+To get there, reducing churn is the first step. The best lever for this is an [effective email marketing strategy](https://www.digistorms.ai/blog/email-marketing-for-saas). By sending personalized, timely emails, you can guide new users through a smooth onboarding, keep them engaged, and prevent customer cancellations. Regular email touchpoints reinforce your product’s value and build long-term loyalty.
 
 But reducing churn is only part of the story. Email marketing can also drive revenue expansion by promoting upsells and cross-sells to existing customers. With the right targeted campaigns, you can introduce new features effectively, highlight subscription upgrades, and encourage customers to invest more in your product.
 
 Let Digi Storms help you reduce churn, generate expansion revenue, and ultimately achieve net negative churn for sustainable business growth.
 
-[Request your strategy call today.](https://digistorms.ai/#Contact)
+[Request your strategy call today.](https://www.digistorms.ai/#Contact)

@@ -56,7 +56,7 @@ Let's break it down:
 - **Expansion revenue:** This is the cherry on top. It includes revenue increase from upsells, cross-sells, and upgrades. Expansion showcases how much value you're creating for your consistent customer base.
 - **Lost revenue:** Unfortunately, not every story has a happy ending. Revenue loss occurs when customers churn, downgrade, or cancel their subscriptions. These revenue churn factors are subtracted from your totals.
 
-By plugging these numbers into the formula, you can assess your net [retention rate](https://digistorms.ai/blog/average-customer-retention-rate-saas) and determine if your subscription business is growing or merely maintaining. The higher the NRR, the better your business is performing in terms of retaining and expanding revenue.
+By plugging these numbers into the formula, you can assess your net [retention rate](https://www.digistorms.ai/blog/average-customer-retention-rate-saas) and determine if your subscription business is growing or merely maintaining. The higher the NRR, the better your business is performing in terms of retaining and expanding revenue.
 
 ### Net revenue retention examples
 
@@ -85,7 +85,7 @@ Here, expansion offsets revenue loss, meaning you're holding steady but not grow
 - Revenue loss: $20,000
 - NRR = (($100,000 + $5,000 - $20,000) ÷ $100,000) × 100 = 85%
 
-In this case, user [churn](https://digistorms.ai/blog/saas-churn-rate-benchmark) outweighs growth, signaling a need for a stronger retention approach.
+In this case, user [churn](https://www.digistorms.ai/blog/saas-churn-rate-benchmark) outweighs growth, signaling a need for a stronger retention approach.
 
 ## What is a good net revenue retention rate in SaaS?
 
@@ -157,7 +157,7 @@ Alignment across these teams, supported by shared metrics and a customer success
 
 ### Reduce churn
 
-Churn is the silent revenue killer, and reducing it should be a top priority. Start by identifying why customers leave—whether it's due to poor [onboarding](https://digistorms.ai/blog/saas-onboarding-kpis), lack of [engagement](https://digistorms.ai/blog/user-engagement-strategy), or unmet expectations.
+Churn is the silent revenue killer, and reducing it should be a top priority. Start by identifying why customers leave—whether it's due to poor [onboarding](https://www.digistorms.ai/blog/saas-onboarding-kpis), lack of [engagement](https://www.digistorms.ai/blog/user-engagement-strategy), or unmet expectations.
 
 Use a customer success platform to proactively address issues and deliver tailored solutions. Regular check-ins, personalized support, and product training can go a long way toward boosting customer satisfaction.
 
@@ -179,11 +179,11 @@ Regularly communicate these options in a way that highlights their value. When y
 
 ![Email marketing supporting retention and expansion revenue](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/674f1fcf938b68dc2bf641f7_ca31e6c0-1ef1-4564-bc00-6ef45e00e2f7.png)
 
-[Email marketing](https://digistorms.ai/blog/lifecycle-email-marketing) is a powerful tool for both customer retention and revenue growth. Use targeted email campaigns to nurture your existing customers, offering personalized tips, feature announcements, and reminders about upgrades.
+[Email marketing](https://www.digistorms.ai/blog/lifecycle-email-marketing) is a powerful tool for both customer retention and revenue growth. Use targeted email campaigns to nurture your existing customers, offering personalized tips, feature announcements, and reminders about upgrades.
 
 Highlight success stories or suggest price increases tied to increased value.
 
-Done right, [email marketing](https://digistorms.ai/blog/email-marketing-for-saas) can drive user satisfaction, reduce churn, and prompt account expansions—all of which contribute to increasing net revenue retention. Think of it as your secret weapon for keeping customers engaged and happy.
+Done right, [email marketing](https://www.digistorms.ai/blog/email-marketing-for-saas) can drive user satisfaction, reduce churn, and prompt account expansions—all of which contribute to increasing net revenue retention. Think of it as your secret weapon for keeping customers engaged and happy.
 
 ### Common pitfalls to avoid
 
@@ -199,7 +199,7 @@ By avoiding these pitfalls, SaaS companies can stay on track for sustainable rev
 
 ![Strategies to reduce revenue churn and improve net dollar retention](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/674f1fcf4e1e52f6748e2e4d_c98e134c-87df-4768-b064-da453eebaa94.png)
 
-Achieving stronger net revenue retention starts with [reducing customer churn](https://digistorms.ai/blog/customer-churn-prediction), limiting downgrades, and focusing on expansion opportunities.
+Achieving stronger net revenue retention starts with [reducing customer churn](https://www.digistorms.ai/blog/customer-churn-prediction), limiting downgrades, and focusing on expansion opportunities.
 
 Align your teams, prioritize customer satisfaction, and invest in tools like email marketing to drive engagement. A proactive retention strategy ensures sustainable growth and a thriving, loyal customer base.
 

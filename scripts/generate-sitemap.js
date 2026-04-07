@@ -36,6 +36,8 @@ const staticEntries = [
   urlEntry(`${BASE_URL}/privacy`,            "2026-01-01", "yearly",   "0.3"),
   urlEntry(`${BASE_URL}/terms`,              "2026-01-01", "yearly",   "0.3"),
   // Blog posts
+  urlEntry(`${BASE_URL}/blog/email-marketing-for-saas`,     "2026-04-07", "monthly", "0.9"),
+  urlEntry(`${BASE_URL}/blog/lifecycle-email-marketing`,     "2026-04-07", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/saas-welcome-email`,        "2026-03-23", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/webinar-email-sequence`,    "2026-03-23", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/product-launch-email`,      "2026-03-15", "monthly", "0.9"),
@@ -45,6 +47,15 @@ const staticEntries = [
   urlEntry(`${BASE_URL}/blog/milestone-emails`,          "2026-01-20", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/upgrade-emails`,            "2026-01-15", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/dunning-emails`,            "2025-03-28", "monthly", "0.9"),
+  // Comparison pages
+  urlEntry(`${BASE_URL}/compare/digistorms-vs-customer-io`, "2026-04-07", "monthly", "0.8"),
+  urlEntry(`${BASE_URL}/compare/digistorms-vs-encharge`,    "2026-04-07", "monthly", "0.8"),
+  urlEntry(`${BASE_URL}/compare/digistorms-vs-loops`,       "2026-04-07", "monthly", "0.8"),
+  urlEntry(`${BASE_URL}/compare/digistorms-vs-resend`,      "2026-04-07", "monthly", "0.8"),
+  urlEntry(`${BASE_URL}/compare/best-onboarding-email-tools`, "2026-04-07", "monthly", "0.8"),
+  urlEntry(`${BASE_URL}/compare/customer-io-alternatives`,  "2026-04-07", "monthly", "0.8"),
+  // Benchmark blog post
+  urlEntry(`${BASE_URL}/blog/saas-email-benchmarks`,        "2026-04-07", "monthly", "0.9"),
 ];
 
 writeFileSync(

@@ -13,6 +13,32 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "saas-email-benchmarks",
+    title: "SaaS email benchmarks: what 1,051 lifecycle emails reveal",
+    description: "We analyzed 1,051 lifecycle emails from 38 top SaaS companies. Here's what the data reveals about email types, subject lines, lifecycle coverage, and what the best brands do differently.",
+    shortDescription: "Original research: what 1,051 SaaS lifecycle emails reveal about types, subject lines, and brand strategies.",
+    date: "2026-04-07",
+    readTime: "12 min read",
+  },
+  {
+    slug: "email-marketing-for-saas",
+    title: "Email marketing for SaaS: 12 indispensable flows",
+    description: "Master SaaS email marketing with these 12 indispensable automated flows. Learn how to set up lifecycle, marketing, and transactional emails that convert free users into paying customers.",
+    shortDescription: "The 12 automated email flows every SaaS company needs to convert free users into paying customers.",
+    date: "2026-04-07",
+    readTime: "18 min read",
+    libraryTags: ["welcome-free-users", "upgrade-cta", "payment-declined", "feature-usage-nudge"],
+  },
+  {
+    slug: "lifecycle-email-marketing",
+    title: "Lifecycle email marketing for SaaS businesses",
+    description: "Learn how to implement lifecycle email marketing for your SaaS business. Covers the 12 essential email flows, segmentation strategies, and tools to guide users from signup to advocacy.",
+    shortDescription: "The complete guide to lifecycle email marketing — 12 flows, segmentation, tools, and best practices.",
+    date: "2026-04-07",
+    readTime: "16 min read",
+    libraryTags: ["welcome-free-users", "welcome-paid-users", "milestone-reached", "upgrade-cta"],
+  },
+  {
     slug: "net-revenue-retention",
     title: "Understanding net revenue retention and its formula",
     description:

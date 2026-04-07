@@ -59,7 +59,7 @@ The onboarding process is a critical phase where users form their first impressi
 
 By providing clear guidance, tutorials, and support, you can help users navigate the initial stages and achieve early successes, which are key to long-term engagement. Effective onboarding goes beyond basic introductions; it should be tailored to the user’s needs, offering personalized onboarding flows that address specific user personas.
 
-By highlighting key features and offering proactive customer support during this phase, you can [increase user activation and reduce the likelihood of churn](https://digistorms.ai/blog/customer-churn-prediction). A strong onboarding process sets the foundation for a successful customer relationship, turning new users into engaged customers more likely to remain loyal.
+By highlighting key features and offering proactive customer support during this phase, you can [increase user activation and reduce the likelihood of churn](https://www.digistorms.ai/blog/customer-churn-prediction). A strong onboarding process sets the foundation for a successful customer relationship, turning new users into engaged customers more likely to remain loyal.
 
 ### 3\. Create a personalized customer experience
 
@@ -139,7 +139,7 @@ Personalized emails that cater to user behavior can significantly increase engag
 
 Whether you’re onboarding new users, re-engaging inactive ones, or nurturing loyal customers, email marketing allows you to maintain a consistent and meaningful connection with your audience, ultimately driving long-term retention and satisfaction.
 
-If you'd like to dig deeper into lifecycle email marketing for SaaS, have a look at this article: [Email marketing for SaaS: 12 indispensable flows](https://digistorms.ai/blog/email-marketing-for-saas).
+If you'd like to dig deeper into lifecycle email marketing for SaaS, have a look at this article: [Email marketing for SaaS: 12 indispensable flows](https://www.digistorms.ai/blog/email-marketing-for-saas).
 
 ## User engagement metrics to measure
 
@@ -157,7 +157,7 @@ Net Promoter Score (NPS) is a widely used metric that measures customer loyalty 
 
 A high NPS indicates that a large percentage of your users are satisfied and likely to advocate for your brand. Monitoring NPS allows businesses to gauge overall customer sentiment, identify areas for improvement, and develop strategies to convert more users into promoters, driving retention and growth.
 
-[![enhance your customers experience and provide maximum value with Digi Storms customer journeys](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/66bb7bbd86b13f0f4bedc587_808aba87-eec6-4232-9b49-7964248d897e.png)](https://digistorms.ai/#Contact)
+[![enhance your customers experience and provide maximum value with Digi Storms customer journeys](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/66bb7bbd86b13f0f4bedc587_808aba87-eec6-4232-9b49-7964248d897e.png)](https://www.digistorms.ai/#Contact)
 
 ### User retention rate
 
@@ -165,7 +165,7 @@ User retention rate is a key metric that measures the percentage of users who co
 
 A high retention rate suggests that your product meets users' needs and expectations, while a low rate may indicate issues with user experience or value delivery. Tracking retention rate helps you understand long-term user behavior, identify factors contributing to churn, and implement strategies to improve engagement and retain existing customers.
 
-Related: [SaaS churn rate benchmark: Understand and improve retention](https://digistorms.ai/blog/saas-churn-rate-benchmark)
+Related: [SaaS churn rate benchmark: Understand and improve retention](https://www.digistorms.ai/blog/saas-churn-rate-benchmark)
 
 ### Core feature use
 
@@ -173,7 +173,7 @@ Core feature use measures how frequently users engage with the primary functiona
 
 High usage of core features indicates that users are fully utilizing the product as intended, which correlates with higher satisfaction and retention rates. Conversely, low usage may suggest that users are unaware of these features or find them difficult to use. Monitoring core feature use allows you to optimize user onboarding, improve feature visibility, and enhance overall engagement.
 
-For metrics focused on the onboarding process, read [7 SaaS onboarding KPIs you can't miss](https://digistorms.ai/blog/saas-onboarding-kpis).
+For metrics focused on the onboarding process, read [7 SaaS onboarding KPIs you can't miss](https://www.digistorms.ai/blog/saas-onboarding-kpis).
 
 ## 3 examples of how companies engage users via email
 
@@ -207,7 +207,7 @@ By providing more time, Pipedrive encourages users to dive back into the platfor
 
 This approach not only reactivates interest but also drives conversions by giving users another opportunity to experience the platform’s value.
 
-> ☝️ Interested in boosting your user engagement like Grammarly, Apollo, or Pipedrive? [Get in touch with us](https://digistorms.ai/#Contact) to discover how we can implement these effective email flows and turn your users into loyal customers.
+> ☝️ Interested in boosting your user engagement like Grammarly, Apollo, or Pipedrive? [Get in touch with us](https://www.digistorms.ai/#Contact) to discover how we can implement these effective email flows and turn your users into loyal customers.
 
 ## Top tools to elevate your user engagement
 
@@ -241,4 +241,4 @@ At Digi Storms, we specialize in helping SaaS businesses implement effective use
 
 Our team leverages data-driven insights to create personalized engagement campaigns and automated flows tailored to your unique customer base. From lifecycle email marketing to feature releases and monthly newsletters, we ensure that every interaction with your users adds value and strengthens their connection to your brand.
 
-If you’re looking to reduce your churn rate and foster long-term loyalty, let’s collaborate to create a strategy that aligns with your business goals. [Reach out to us today to get started](https://digistorms.ai/#Contact).
+If you’re looking to reduce your churn rate and foster long-term loyalty, let’s collaborate to create a strategy that aligns with your business goals. [Reach out to us today to get started](https://www.digistorms.ai/#Contact).

@@ -49,7 +49,7 @@ The primary distinction between product led growth vs sales led growth lies in h
 
 > 💡 In PLG, customer acquisition costs are typically lower since the product does much of the selling itself. In contrast, a sales led strategy often requires higher customer acquisition costs due to the need for skilled sales representatives and longer sales cycles.
 
-Another key difference is the focus on the customer journey. PLG emphasizes a [seamless onboarding process](https://digistorms.ai/blog/saas-onboarding-kpis) and high levels of user engagement from the start, while SLG relies on building trust and relationships through sales strategies.
+Another key difference is the focus on the customer journey. PLG emphasizes a [seamless onboarding process](https://www.digistorms.ai/blog/saas-onboarding-kpis) and high levels of user engagement from the start, while SLG relies on building trust and relationships through sales strategies.
 
 Both models impact revenue growth differently, with PLG driving organic, self-sustained growth, and SLG using targeted sales strategies to close high-value deals.
 
@@ -61,7 +61,7 @@ Both models impact revenue growth differently, with PLG driving organic, self-su
 
 At the heart of the product led growth approach are the principles of self-service and product-driven customer acquisition. PLG companies often rely on strategies like free trials or freemium versions that allow users to explore the product before committing to a paid subscription.
 
-The focus is on creating a product that demonstrates its value quickly, ideally [guiding users to an aha moment](https://digistorms.ai/blog/aha-moment-examples) \- when they realize how the product meets their needs. Additionally, customer feedback plays a crucial role in continuously improving the product, ensuring it evolves in response to user needs. 
+The focus is on creating a product that demonstrates its value quickly, ideally [guiding users to an aha moment](https://www.digistorms.ai/blog/aha-moment-examples) \- when they realize how the product meets their needs. Additionally, customer feedback plays a crucial role in continuously improving the product, ensuring it evolves in response to user needs. 
 
 Successful PLG strategies also emphasize the onboarding process, making it smooth and intuitive to increase user engagement early in the customer journey.
 
@@ -145,7 +145,7 @@ On the other hand, a sales led approach is better suited for companies with more
 
 ### When to choose product led growth
 
-A product led strategy is ideal when your product is intuitive, and users can experience its value early, such as through a free trial or freemium model. SaaS businesses targeting a broad audience, with lower acquisition costs, and a focus on [customer engagement and retention](https://digistorms.ai/blog/user-engagement-strategy) may benefit more from PLG. 
+A product led strategy is ideal when your product is intuitive, and users can experience its value early, such as through a free trial or freemium model. SaaS businesses targeting a broad audience, with lower acquisition costs, and a focus on [customer engagement and retention](https://www.digistorms.ai/blog/user-engagement-strategy) may benefit more from PLG. 
 
 This model is especially effective for companies that prioritize organic growth, leveraging word-of-mouth referrals and customer feedback to improve the product and acquire new users. If your goal is to scale quickly with a self-serve product that encourages viral growth, PLG might be the right choice.
 
@@ -213,10 +213,10 @@ Ultimately, prioritizing product-driven growth is often the best path to sustain
 
 At Digi Storms, we specialize in helping SaaS businesses unlock their growth potential, whether through product led growth, sales led growth, or a combination of both.
 
-Our [tailored email marketing strategies](https://digistorms.ai/blog/email-marketing-for-saas) can enhance your customer acquisition, retention, and overall business growth. We’ll work closely with your team to develop the perfect marketing plan that aligns with your growth model and business goals.
+Our [tailored email marketing strategies](https://www.digistorms.ai/blog/email-marketing-for-saas) can enhance your customer acquisition, retention, and overall business growth. We’ll work closely with your team to develop the perfect marketing plan that aligns with your growth model and business goals.
 
 Whether you’re scaling through PLG or nurturing high-value leads with a sales led model, our expertise will help you succeed.
 
-Ready to accelerate your SaaS growth? [Book a strategy call with Digi Storms today](https://digistorms.ai/#Contact)!
+Ready to accelerate your SaaS growth? [Book a strategy call with Digi Storms today](https://www.digistorms.ai/#Contact)!
 
 _Note: The content of this article is inspired by resources from_[ _ProductLed_](https://productled.com/) _._
