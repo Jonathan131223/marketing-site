@@ -44,6 +44,16 @@ export const ComparisonPage: React.FC<ComparisonPageProps> = (props) => {
   const canonical = `https://www.digistorms.ai/compare/${props.slug}`;
   const ogImage = "https://www.digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png";
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.digistorms.ai" },
+      { "@type": "ListItem", position: 2, name: "Compare", item: "https://www.digistorms.ai/compare" },
+      { "@type": "ListItem", position: 3, name: props.h1, item: canonical },
+    ],
+  };
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -93,6 +103,7 @@ export const ComparisonPage: React.FC<ComparisonPageProps> = (props) => {
         <meta name="twitter:description" content={props.metaDescription} />
         <meta name="twitter:image" content={ogImage} />
         <meta name="twitter:site" content="@digistorms_ai" />
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(softwareSchema)}</script>
       </Helmet>

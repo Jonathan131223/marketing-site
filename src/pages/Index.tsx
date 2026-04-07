@@ -107,7 +107,12 @@ const Index = () => {
           "@type": "Organization",
           "name": "DigiStorms",
           "url": "https://www.digistorms.ai",
-          "logo": "https://www.digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png",
+            "width": 1200,
+            "height": 630
+          },
           "description": "AI agent that builds lifecycle email systems for SaaS companies",
           "founder": {
             "@type": "Person",
@@ -120,7 +125,7 @@ const Index = () => {
           ],
           "contactPoint": {
             "@type": "ContactPoint",
-            "contactType": "sales",
+            "contactType": "customer support",
             "url": "https://www.digistorms.ai/contact"
           }
         })}</script>
@@ -136,12 +141,6 @@ const Index = () => {
             "@type": "Offer",
             "price": "0",
             "priceCurrency": "USD"
-          },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5",
-            "reviewCount": "6",
-            "bestRating": "5"
           }
         })}</script>
         <script type="application/ld+json">{JSON.stringify({

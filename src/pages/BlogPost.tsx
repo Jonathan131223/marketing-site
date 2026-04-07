@@ -239,10 +239,8 @@ const BlogPost: React.FC = () => {
     dateModified: date,
     articleSection,
     ...(readTimeIso ? { timeRequired: readTimeIso } : {}),
-    speakable: {
-      "@type": "SpeakableSpecification",
-      cssSelector: ["h1", "h2", "article p"],
-    },
+    inLanguage: "en-US",
+    wordCount: readTime ? Math.round(parseInt(readTime) * 250) : undefined,
     author: {
       "@type": "Person",
       name: "Jonathan Bernard",
@@ -282,6 +280,15 @@ const BlogPost: React.FC = () => {
         <meta property="og:image:height" content="630" />
         <meta name="twitter:site" content="@digistorms_ai" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://www.digistorms.ai" },
+            { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.digistorms.ai/blog" },
+            { "@type": "ListItem", position: 3, name: title, item: `https://www.digistorms.ai/blog/${slug}` },
+          ],
+        })}</script>
       </Helmet>
       <Navbar />
       {/* Scroll progress bar */}

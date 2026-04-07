@@ -4,7 +4,7 @@
 
 ## What is DigiStorms?
 
-DigiStorms is an AI-powered SaaS tool that generates behavior-based onboarding and lifecycle email sequences. Instead of manually writing emails or guessing what to send, DigiStorms analyzes your product to understand how users reach value, then creates a complete email system tailored to your onboarding journey.
+DigiStorms is an AI-powered SaaS tool that generates behavior-based onboarding and lifecycle email sequences. Instead of manually writing emails or guessing what to send, DigiStorms analyzes your product to understand how users reach value, then creates a complete email system tailored to your onboarding journey. It triggers messages based on real user behavior, not fixed schedules, so users get the right message at the right time.
 
 ## Who is it for?
 
@@ -17,8 +17,8 @@ DigiStorms is an AI-powered SaaS tool that generates behavior-based onboarding a
 - Analyzes your website to understand your product and user journey
 - Generates complete onboarding email sequences (welcome, activation, milestone, upgrade, win-back)
 - Triggers emails based on real user behavior, not fixed schedules
-- Trained on 1,000+ real SaaS lifecycle emails from companies like Notion, Slack, Stripe, Adobe
-- Includes an email library with 1,000+ B2B SaaS lifecycle email examples
+- Trained on 1,100+ real SaaS lifecycle emails from companies like Notion, Slack, Stripe, Adobe
+- Includes an email library with 1,100+ B2B SaaS lifecycle email examples from 38+ top companies
 
 ## Pricing
 
@@ -39,5 +39,30 @@ Jonathan Bernard — lifecycle email specialist for SaaS companies.
 - Blog: https://www.digistorms.ai/blog
 - Pricing: https://www.digistorms.ai/pricing
 - ROI Calculator: https://www.digistorms.ai/roi-calculator
+- Email Generator: https://www.digistorms.ai/email-generator
 - Manifesto: https://www.digistorms.ai/manifesto
 - Contact: https://www.digistorms.ai/contact
+
+## Optional
+
+### Blog Articles
+
+- [SaaS email benchmarks: what 1,051 lifecycle emails reveal](https://www.digistorms.ai/blog/saas-email-benchmarks) — Original research analyzing 1,051 lifecycle emails from 38 top SaaS companies. Published April 7, 2026.
+- [SaaS welcome email: best practices with 28 examples](https://www.digistorms.ai/blog/saas-welcome-email) — Best practices, timing tips, and real examples to level up your onboarding experience.
+- [Product launch email: best practices with 23 examples](https://www.digistorms.ai/blog/product-launch-email) — Real examples and proven strategies to boost engagement and conversions.
+- [SaaS newsletter: best practices with 15 examples](https://www.digistorms.ai/blog/saas-newsletter) — How to craft a standout SaaS newsletter with 15 real-life examples.
+- [Webinar email sequence: best practices with 25 examples](https://www.digistorms.ai/blog/webinar-email-sequence) — High-converting webinar email sequences with proven strategies.
+- [Webinar follow up email: best practices with 13 examples](https://www.digistorms.ai/blog/webinar-follow-up-email) — Effective webinar follow-up emails with smart segmentation and tips.
+- [Webinar emails: best practices with 20 examples](https://www.digistorms.ai/blog/webinar-emails) — Compelling webinar emails from top B2B SaaS brands.
+- [Milestone emails: best practices with 12 examples](https://www.digistorms.ai/blog/milestone-emails) — How to create milestone emails that drive engagement and retention.
+- [Upgrade emails: best practices with 13 examples](https://www.digistorms.ai/blog/upgrade-emails) — Upgrade emails that convert trial users into paying customers.
+- [Dunning emails: best practices with 8 examples](https://www.digistorms.ai/blog/dunning-emails) — Dunning emails that recover failed payments and reduce churn.
+
+### Comparison Pages
+
+- [DigiStorms vs Customer.io](https://www.digistorms.ai/compare/digistorms-vs-customer-io) — Side-by-side comparison for SaaS onboarding emails.
+- [DigiStorms vs Encharge](https://www.digistorms.ai/compare/digistorms-vs-encharge)
+- [DigiStorms vs Loops](https://www.digistorms.ai/compare/digistorms-vs-loops)
+- [DigiStorms vs Resend](https://www.digistorms.ai/compare/digistorms-vs-resend)
+- [Best onboarding email tools for SaaS](https://www.digistorms.ai/compare/best-onboarding-email-tools)
+- [Customer.io alternatives](https://www.digistorms.ai/compare/customer-io-alternatives)

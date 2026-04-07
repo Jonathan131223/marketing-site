@@ -196,7 +196,10 @@ writeRoute("/", buildHead({
       url: BASE_URL,
       potentialAction: {
         "@type": "SearchAction",
-        target: `${BASE_URL}/library?q={search_term_string}`,
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: `${BASE_URL}/library?q={search_term_string}`,
+        },
         "query-input": "required name=search_term_string",
       },
     },
@@ -206,7 +209,12 @@ writeRoute("/", buildHead({
       "@type": "Organization",
       name: "DigiStorms",
       url: BASE_URL,
-      logo: `${BASE_URL}/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png`,
+      logo: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png`,
+        width: 1200,
+        height: 630,
+      },
       description: "AI agent that builds lifecycle email systems for SaaS companies",
       founder: {
         "@type": "Person",
@@ -219,7 +227,7 @@ writeRoute("/", buildHead({
       ],
       contactPoint: {
         "@type": "ContactPoint",
-        contactType: "sales",
+        contactType: "customer support",
         url: `${BASE_URL}/contact`,
       },
     },
@@ -236,12 +244,6 @@ writeRoute("/", buildHead({
         "@type": "Offer",
         price: "0",
         priceCurrency: "USD",
-      },
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "5",
-        reviewCount: "6",
-        bestRating: "5",
       },
     },
     // d. FAQPage schema
@@ -363,22 +365,26 @@ blogPosts.forEach((post) => {
     canonical: `${BASE_URL}/blog/${post.slug}`,
     ogType: "article",
     ogImage,
-    jsonLd: {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      headline: post.title,
-      description: post.description,
-      ...(imageUrl ? { image: imageUrl } : {}),
-      url: `${BASE_URL}/blog/${post.slug}`,
-      datePublished: post.date,
-      dateModified: post.date,
-      speakable: {
-        "@type": "SpeakableSpecification",
-        cssSelector: ["h1", "h2", "article p"],
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: post.title,
+        description: post.description,
+        ...(imageUrl ? { image: imageUrl } : {}),
+        url: `${BASE_URL}/blog/${post.slug}`,
+        datePublished: post.date,
+        dateModified: post.date,
+        inLanguage: "en-US",
+        author: authorPerson,
+        publisher: publisherOrg,
       },
-      author: authorPerson,
-      publisher: publisherOrg,
-    },
+      breadcrumbSchema([
+        { name: "Home", url: BASE_URL },
+        { name: "Blog", url: `${BASE_URL}/blog` },
+        { name: post.title, url: `${BASE_URL}/blog/${post.slug}` },
+      ]),
+    ],
   }));
   staticPageCount++;
 });
