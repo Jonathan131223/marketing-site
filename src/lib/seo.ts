@@ -1,4 +1,4 @@
-export const SITE_URL  = "https://digistorms.ai";
+export const SITE_URL  = "https://www.digistorms.ai";
 export const SITE_NAME = "DigiStorms";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png`;
 
@@ -77,6 +77,10 @@ export function buildArticleJsonLd(opts: ArticleOptions) {
       "@type": "Organization",
       name: SITE_NAME,
       url: SITE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: DEFAULT_OG_IMAGE,
+      },
     },
     ...(opts.breadcrumbs ? { breadcrumb: buildBreadcrumbJsonLd(opts.breadcrumbs) } : {}),
   };
@@ -89,7 +93,7 @@ export function buildWebSiteJsonLd() {
     name: SITE_NAME,
     url: SITE_URL,
     description:
-      "Browse 1,000+ lifecycle emails from the best B2B SaaS companies. Filter by brand, tag, or use case.",
+      "Browse 1,100+ lifecycle emails from the best B2B SaaS companies. Filter by brand, tag, or use case.",
     potentialAction: {
       "@type": "SearchAction",
       target: {
