@@ -1,0 +1,64 @@
+name: Auto-Merge on CI Pass
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  pull-requests: write
+  contents: write
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_branch }}
+
+      - name: Get PR number
+        id: pr
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prs = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              head: `${context.repo.owner}:${{ github.event.workflow_run.head_branch }}`,
+              state: 'open'
+            });
+            if (prs.data.length > 0) {
+              core.setOutput('number', prs.data[0].number);
+            }
+
+      - name: Enable auto-merge
+        if: steps.pr.outputs.number
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.pulls.enableAutoMerge({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: ${{ steps.pr.outputs.number }},
+              merge_method: 'squash'
+            });
+            console.log('✓ Auto-merge enabled for PR #${{ steps.pr.outputs.number }}');
+
+      - name: Comment on PR
+        if: steps.pr.outputs.number
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: ${{ steps.pr.outputs.number }},
+              body: '🚀 **Auto-merge enabled** — This PR will automatically merge once approved.'
+            });
