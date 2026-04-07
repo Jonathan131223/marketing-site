@@ -50,6 +50,24 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://www.digistorms.ai/lifecycle-score</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.digistorms.ai/contact</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.digistorms.ai/email-generator/templates</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.digistorms.ai/blog/saas-welcome-email</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>

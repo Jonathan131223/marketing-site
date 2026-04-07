@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { ChevronDown } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { blogPosts } from "@/content/blog";
 import {
   SITE_URL,
   DEFAULT_OG_IMAGE,
@@ -97,6 +98,24 @@ const LibraryTag: React.FC = () => {
       .map(([ucSlug]) => usecases.find((u) => u.slug === ucSlug))
       .filter(Boolean) as UseCase[];
   }, [filteredEmails, usecases]);
+
+  const relatedBlogPosts = useMemo(
+    () => blogPosts.filter((p) => p.libraryTags?.includes(slug!)),
+    [slug]
+  );
+
+  const brandDistribution = useMemo(() => {
+    const counts: Record<string, number> = {};
+    filteredEmails.forEach((e) => { counts[e.brand] = (counts[e.brand] || 0) + 1; });
+    return Object.entries(counts)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 10)
+      .map(([brandSlug, count]) => ({
+        brand: brands.find((b) => b.slug === brandSlug),
+        count,
+      }))
+      .filter((x) => x.brand) as { brand: Brand; count: number }[];
+  }, [filteredEmails, brands]);
 
   useEffect(() => { setPage(1); }, [slug]);
   useEffect(() => { window.scrollTo(0, 0); }, [slug]);
@@ -205,6 +224,26 @@ const LibraryTag: React.FC = () => {
                       className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border border-slate-200 bg-white text-slate-600 hover:border-[#1D4ED8] hover:text-[#1D4ED8] hover:bg-[#DBEAFE] transition-all"
                     >
                       {uc.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Brand distribution */}
+            {brandDistribution.length > 0 && (
+              <div className="mt-5">
+                <p className="text-xs text-slate-400 font-medium uppercase tracking-wide mb-2">Brands sending this email</p>
+                <div className="flex flex-wrap gap-2">
+                  {brandDistribution.map(({ brand: b, count }) => (
+                    <Link
+                      key={b.slug}
+                      to={`/library/brand/${b.slug}`}
+                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium border border-slate-200 bg-white text-slate-600 hover:border-[#1D4ED8] hover:text-[#1D4ED8] hover:bg-[#DBEAFE] transition-all"
+                    >
+                      {b.logo && <img src={b.logo} alt="" className="h-3.5 w-3.5 object-contain" />}
+                      {b.name}
+                      <span className="text-slate-400">{count}</span>
                     </Link>
                   ))}
                 </div>
@@ -334,6 +373,41 @@ const LibraryTag: React.FC = () => {
             )}
           </div>
         </section>
+
+        {/* ── Related articles ── */}
+        {relatedBlogPosts.length > 0 && (
+          <section className="bg-white py-12 border-t border-slate-100">
+            <div className="container mx-auto px-4 max-w-7xl">
+              <h2 className="text-xl font-bold text-slate-900 mb-6">Related articles</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                {relatedBlogPosts.slice(0, 3).map((post) => (
+                  <Link
+                    key={post.slug}
+                    to={`/blog/${post.slug}`}
+                    className="group rounded-2xl border border-slate-100 bg-white overflow-hidden hover:shadow-md transition-shadow block"
+                  >
+                    {post.thumbnail && (
+                      <div className="overflow-hidden bg-slate-50 aspect-[16/9]">
+                        <img
+                          src={post.thumbnail}
+                          alt=""
+                          className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                          loading="lazy"
+                        />
+                      </div>
+                    )}
+                    <div className="p-4">
+                      <p className="text-sm font-semibold text-slate-900 leading-snug line-clamp-2 mb-1 group-hover:text-[#1D4ED8] transition-colors">
+                        {post.title}
+                      </p>
+                      <p className="text-xs text-slate-400 line-clamp-2">{post.shortDescription}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
       </main>
 

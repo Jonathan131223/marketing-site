@@ -16,6 +16,34 @@ const brands   = JSON.parse(readFileSync(join(ROOT, "public/data/library/brands.
 const tags     = JSON.parse(readFileSync(join(ROOT, "public/data/library/tags.json"), "utf8"));
 const usecases = JSON.parse(readFileSync(join(ROOT, "public/data/library/usecases.json"), "utf8"));
 
+// ── Derive lastmod dates from actual email data ──────────────────────────────
+
+function toISODate(raw) {
+  try { return new Date(raw).toISOString().split("T")[0]; } catch { return null; }
+}
+
+const brandLatestDate = {};
+const tagLatestDate = {};
+const usecaseLatestDate = {};
+
+emails.forEach((e) => {
+  const d = toISODate(e.setDate);
+  if (!d) return;
+  // Brand
+  if (!brandLatestDate[e.brand] || d > brandLatestDate[e.brand])
+    brandLatestDate[e.brand] = d;
+  // Tags
+  e.tags.forEach((t) => {
+    if (!tagLatestDate[t] || d > tagLatestDate[t]) tagLatestDate[t] = d;
+  });
+  // Use case
+  if (!usecaseLatestDate[e.useCase] || d > usecaseLatestDate[e.useCase])
+    usecaseLatestDate[e.useCase] = d;
+});
+
+const globalLatest = Object.values(brandLatestDate)
+  .reduce((a, b) => (a > b ? a : b), "2020-01-01");
+
 function urlEntry(loc, lastmod, changefreq, priority) {
   return `  <url>
     <loc>${loc}</loc>
@@ -35,6 +63,9 @@ const staticEntries = [
   urlEntry(`${BASE_URL}/email-generator`,    "2026-01-01", "monthly",  "0.7"),
   urlEntry(`${BASE_URL}/privacy`,            "2026-01-01", "yearly",   "0.3"),
   urlEntry(`${BASE_URL}/terms`,              "2026-01-01", "yearly",   "0.3"),
+  urlEntry(`${BASE_URL}/lifecycle-score`,    "2026-01-01", "monthly",  "0.7"),
+  urlEntry(`${BASE_URL}/contact`,            "2026-04-07", "monthly",  "0.6"),
+  urlEntry(`${BASE_URL}/email-generator/templates`, "2026-01-01", "monthly", "0.7"),
   // Blog posts
   urlEntry(`${BASE_URL}/blog/saas-welcome-email`,        "2026-03-23", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/webinar-email-sequence`,    "2026-03-23", "monthly", "0.9"),
@@ -64,16 +95,16 @@ writeFileSync(
 // ── sitemap-library.xml ───────────────────────────────────────────────────────
 const libraryEntries = [
   // Hub + index pages
-  urlEntry(`${BASE_URL}/library`,           TODAY, "weekly", "0.9"),
-  urlEntry(`${BASE_URL}/library/brands`,    TODAY, "weekly", "0.8"),
-  urlEntry(`${BASE_URL}/library/tags`,      TODAY, "weekly", "0.8"),
-  urlEntry(`${BASE_URL}/library/usecases`,  TODAY, "weekly", "0.8"),
+  urlEntry(`${BASE_URL}/library`,           globalLatest, "weekly", "0.9"),
+  urlEntry(`${BASE_URL}/library/brands`,    globalLatest, "weekly", "0.8"),
+  urlEntry(`${BASE_URL}/library/tags`,      globalLatest, "weekly", "0.8"),
+  urlEntry(`${BASE_URL}/library/usecases`,  globalLatest, "weekly", "0.8"),
   // Brand detail pages
-  ...brands.map((b) => urlEntry(`${BASE_URL}/library/brand/${b.slug}`, TODAY, "weekly", "0.7")),
+  ...brands.map((b) => urlEntry(`${BASE_URL}/library/brand/${b.slug}`, brandLatestDate[b.slug] || globalLatest, "weekly", "0.7")),
   // Tag detail pages
-  ...tags.map((t) => urlEntry(`${BASE_URL}/library/tag/${t.slug}`, TODAY, "weekly", "0.7")),
+  ...tags.map((t) => urlEntry(`${BASE_URL}/library/tag/${t.slug}`, tagLatestDate[t.slug] || globalLatest, "weekly", "0.7")),
   // Use case detail pages
-  ...usecases.map((u) => urlEntry(`${BASE_URL}/library/usecase/${u.slug}`, TODAY, "weekly", "0.7")),
+  ...usecases.map((u) => urlEntry(`${BASE_URL}/library/usecase/${u.slug}`, usecaseLatestDate[u.slug] || globalLatest, "weekly", "0.7")),
   // Email detail pages (use email's own date when available)
   ...emails.map((e) => {
     let lastmod = TODAY;

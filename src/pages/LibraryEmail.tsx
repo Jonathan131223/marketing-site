@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { ArrowLeft, Calendar, User, Tag, ExternalLink } from "lucide-react";
+import { ArrowLeft, Calendar, User, Tag, ExternalLink, BarChart3 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { blogPosts } from "@/content/blog";
 import {
   SITE_URL,
   DEFAULT_OG_IMAGE,
@@ -162,6 +163,24 @@ const LibraryEmail: React.FC = () => {
     brands.forEach((b) => { map[b.slug] = b.name; });
     return (brandSlug: string) => map[brandSlug] ?? brandSlug;
   }, [brands]);
+
+  const relatedBlogPosts = useMemo(
+    () => blogPosts.filter((p) => p.libraryTags?.some((lt) => email?.tags.includes(lt))),
+    [email]
+  );
+
+  const subjectStats = useMemo(() => {
+    if (!email) return null;
+    const s = email.subject;
+    const words = s.trim().split(/\s+/).length;
+    const chars = s.length;
+    const hasNumber = /\d/.test(s);
+    const hasQuestion = s.includes("?");
+    const hasEmoji = /[\u{1F600}-\u{1FFFF}]/u.test(s);
+    const urgencyWords = ["last chance", "expires", "limited", "now", "today", "don't miss", "hurry", "urgent", "ending"];
+    const hasUrgency = urgencyWords.some((w) => s.toLowerCase().includes(w));
+    return { words, chars, hasNumber, hasQuestion, hasEmoji, hasUrgency };
+  }, [email]);
 
   useEffect(() => {
     if (!loading && !email) navigate("/library", { replace: true });
@@ -354,11 +373,66 @@ const LibraryEmail: React.FC = () => {
                 </div>
               )}
 
+              {/* Email type context */}
+              {useCase && firstTag && (
+                <p className="text-sm text-slate-500 leading-relaxed">
+                  This is a{" "}
+                  <Link to={`/library/usecase/${useCase.slug}`} className="font-medium text-[#1D4ED8] hover:underline">
+                    {useCase.name}
+                  </Link>{" "}
+                  email, tagged as{" "}
+                  <Link to={`/library/tag/${firstTag.slug}`} className="font-medium text-[#1D4ED8] hover:underline">
+                    {firstTag.name}
+                  </Link>.
+                </p>
+              )}
+
               {/* Summary / Description */}
               {email.summary && (
                 <div>
                   <p className="text-xs text-slate-400 font-medium uppercase tracking-wide mb-2">About this email</p>
                   <p className="text-sm text-slate-600 leading-relaxed">{email.summary}</p>
+                </div>
+              )}
+
+              {/* Subject line breakdown */}
+              {subjectStats && (
+                <div className="rounded-xl border border-slate-100 bg-[#FAFAFA] p-4 space-y-2">
+                  <p className="text-xs text-slate-400 font-medium uppercase tracking-wide mb-3 flex items-center gap-1.5">
+                    <BarChart3 className="h-3.5 w-3.5" /> Subject line
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-slate-500">Words</span>
+                    <span className="text-xs font-semibold text-slate-900">{subjectStats.words}</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-slate-500">Characters</span>
+                    <span className="text-xs font-semibold text-slate-900">{subjectStats.chars}</span>
+                  </div>
+                  {subjectStats.hasNumber && (
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-slate-500">Contains number</span>
+                      <span className="text-xs font-semibold text-[#1D4ED8]">Yes</span>
+                    </div>
+                  )}
+                  {subjectStats.hasQuestion && (
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-slate-500">Question format</span>
+                      <span className="text-xs font-semibold text-[#1D4ED8]">Yes</span>
+                    </div>
+                  )}
+                  {subjectStats.hasEmoji && (
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-slate-500">Contains emoji</span>
+                      <span className="text-xs font-semibold text-[#1D4ED8]">Yes</span>
+                    </div>
+                  )}
+                  {subjectStats.hasUrgency && (
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-slate-500">Urgency language</span>
+                      <span className="text-xs font-semibold text-amber-600">Yes</span>
+                    </div>
+                  )}
                 </div>
               )}
 
@@ -440,6 +514,40 @@ const LibraryEmail: React.FC = () => {
                 </Link>
               </p>
               <RelatedGrid emails={relatedByTag} getBrandName={getBrandName} />
+            </div>
+          )}
+
+          {relatedBlogPosts.length > 0 && (
+            <div className="border-t border-slate-100 pt-12">
+              <h2 className="text-xl font-bold text-slate-900 mb-6">
+                Related articles
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                {relatedBlogPosts.slice(0, 3).map((post) => (
+                  <Link
+                    key={post.slug}
+                    to={`/blog/${post.slug}`}
+                    className="group rounded-2xl border border-slate-100 bg-white overflow-hidden hover:shadow-md transition-shadow block"
+                  >
+                    {post.thumbnail && (
+                      <div className="overflow-hidden bg-slate-50 aspect-[16/9]">
+                        <img
+                          src={post.thumbnail}
+                          alt=""
+                          className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                          loading="lazy"
+                        />
+                      </div>
+                    )}
+                    <div className="p-4">
+                      <p className="text-sm font-semibold text-slate-900 leading-snug line-clamp-2 mb-1 group-hover:text-[#1D4ED8] transition-colors">
+                        {post.title}
+                      </p>
+                      <p className="text-xs text-slate-400 line-clamp-2">{post.shortDescription}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
             </div>
           )}
 

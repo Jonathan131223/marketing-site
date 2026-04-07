@@ -3,14 +3,14 @@
   "configurations": [
     {
       "name": "digi-marketing-dev",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
+      "runtimeExecutable": "/bin/zsh",
+      "runtimeArgs": ["-c", "export PATH=/usr/local/bin:$PATH && npx vite --port 5173"],
       "port": 5173
     },
     {
       "name": "digi-marketing-preview",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "preview"],
+      "runtimeExecutable": "/usr/local/bin/npx",
+      "runtimeArgs": ["vite", "preview", "--port", "4173"],
       "port": 4173
     }
   ]
