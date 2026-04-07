@@ -344,21 +344,46 @@ const blogPosts = [
     date: "2025-03-28",
     heroImage: "/blog/dunning-emails/banner.webp",
   },
+  // Pillar articles
+  {
+    slug: "email-marketing-for-saas",
+    title: "Email marketing for SaaS: 12 indispensable flows | DigiStorms",
+    description: "Master SaaS email marketing with these 12 indispensable automated flows. Learn how to set up lifecycle, marketing, and transactional emails that convert free users into paying customers.",
+    date: "2026-04-07",
+    heroImage: null,
+  },
+  {
+    slug: "lifecycle-email-marketing",
+    title: "Lifecycle email marketing for SaaS businesses | DigiStorms",
+    description: "Learn how to implement lifecycle email marketing for your SaaS business. Covers the 12 essential email flows, segmentation strategies, and tools to guide users from signup to advocacy.",
+    date: "2026-04-07",
+    heroImage: null,
+  },
+  // Benchmark report
+  {
+    slug: "saas-email-benchmarks",
+    title: "SaaS email benchmarks: what 1,051 lifecycle emails reveal | DigiStorms",
+    description: "We analyzed 1,051 lifecycle emails from 38 top SaaS companies. Here's what the data reveals about email types, subject lines, lifecycle coverage, and what the best brands do differently.",
+    date: "2026-04-07",
+    heroImage: null,
+  },
 ];
 
 blogPosts.forEach((post) => {
+  const ogImage = post.heroImage ? `${BASE_URL}${post.heroImage}` : DEFAULT_OG_IMAGE;
+  const imageUrl = post.heroImage ? `${BASE_URL}${post.heroImage}` : undefined;
   writeRoute(`/blog/${post.slug}`, buildHead({
     title: post.title,
     description: post.description,
     canonical: `${BASE_URL}/blog/${post.slug}`,
     ogType: "article",
-    ogImage: `${BASE_URL}${post.heroImage}`,
+    ogImage,
     jsonLd: {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
       headline: post.title,
       description: post.description,
-      image: `${BASE_URL}${post.heroImage}`,
+      ...(imageUrl ? { image: imageUrl } : {}),
       url: `${BASE_URL}/blog/${post.slug}`,
       datePublished: post.date,
       dateModified: post.date,
@@ -568,6 +593,95 @@ writeRoute("/terms", buildHead({
   title: "Terms of Service | DigiStorms",
   description: "DigiStorms terms of service.",
   canonical: `${BASE_URL}/terms`,
+}));
+staticPageCount++;
+
+// ── Comparison pages ─────────────────────────────────────────────────────────
+
+writeRoute("/compare/digistorms-vs-customer-io", buildHead({
+  title: "DigiStorms vs Customer.io: Best for SaaS Onboarding Emails? (2026)",
+  description: "Compare DigiStorms and Customer.io for SaaS onboarding emails. See features, pricing, and which tool is best for automated lifecycle email sequences.",
+  canonical: `${BASE_URL}/compare/digistorms-vs-customer-io`,
+  jsonLd: [
+    breadcrumbSchema([
+      { name: "Home", url: BASE_URL },
+      { name: "Compare", url: `${BASE_URL}/compare` },
+      { name: "DigiStorms vs Customer.io", url: `${BASE_URL}/compare/digistorms-vs-customer-io` },
+    ]),
+    { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
+      { "@type": "Question", name: "Is DigiStorms better than Customer.io for onboarding emails?", acceptedAnswer: { "@type": "Answer", text: "For automated onboarding email generation, yes. DigiStorms uses AI to generate your entire sequence in minutes. Customer.io requires manual setup but offers broader multi-channel capabilities." }},
+    ]},
+  ],
+}));
+staticPageCount++;
+
+writeRoute("/compare/digistorms-vs-encharge", buildHead({
+  title: "DigiStorms vs Encharge: SaaS Email Automation Compared (2026)",
+  description: "DigiStorms vs Encharge for SaaS email automation. Compare AI-generated sequences, pricing, and features to find the best onboarding email tool.",
+  canonical: `${BASE_URL}/compare/digistorms-vs-encharge`,
+  jsonLd: breadcrumbSchema([
+    { name: "Home", url: BASE_URL },
+    { name: "Compare", url: `${BASE_URL}/compare` },
+    { name: "DigiStorms vs Encharge", url: `${BASE_URL}/compare/digistorms-vs-encharge` },
+  ]),
+}));
+staticPageCount++;
+
+writeRoute("/compare/digistorms-vs-loops", buildHead({
+  title: "DigiStorms vs Loops: Which SaaS Email Tool Is Right for You? (2026)",
+  description: "Compare DigiStorms and Loops for SaaS email. See how AI-generated onboarding sequences stack up against Loops' developer-first email platform.",
+  canonical: `${BASE_URL}/compare/digistorms-vs-loops`,
+  jsonLd: breadcrumbSchema([
+    { name: "Home", url: BASE_URL },
+    { name: "Compare", url: `${BASE_URL}/compare` },
+    { name: "DigiStorms vs Loops", url: `${BASE_URL}/compare/digistorms-vs-loops` },
+  ]),
+}));
+staticPageCount++;
+
+writeRoute("/compare/digistorms-vs-resend", buildHead({
+  title: "DigiStorms vs Resend: Onboarding Emails vs Developer Email API (2026)",
+  description: "DigiStorms vs Resend for SaaS email. Compare an AI onboarding agent with a developer email API to find the right tool for your lifecycle emails.",
+  canonical: `${BASE_URL}/compare/digistorms-vs-resend`,
+  jsonLd: breadcrumbSchema([
+    { name: "Home", url: BASE_URL },
+    { name: "Compare", url: `${BASE_URL}/compare` },
+    { name: "DigiStorms vs Resend", url: `${BASE_URL}/compare/digistorms-vs-resend` },
+  ]),
+}));
+staticPageCount++;
+
+writeRoute("/compare/best-onboarding-email-tools", buildHead({
+  title: "6 Best Onboarding Email Tools for SaaS in 2026",
+  description: "Compare the 6 best onboarding email tools for SaaS in 2026. Features, pricing, pros and cons for DigiStorms, Customer.io, Encharge, Loops, Userlist, and Sequenzy.",
+  canonical: `${BASE_URL}/compare/best-onboarding-email-tools`,
+  jsonLd: [
+    breadcrumbSchema([
+      { name: "Home", url: BASE_URL },
+      { name: "Compare", url: `${BASE_URL}/compare` },
+      { name: "Best Onboarding Email Tools", url: `${BASE_URL}/compare/best-onboarding-email-tools` },
+    ]),
+    { "@context": "https://schema.org", "@type": "ItemList", name: "Best Onboarding Email Tools for SaaS 2026", itemListOrder: "https://schema.org/ItemListOrderDescending", numberOfItems: 6, itemListElement: [
+      { "@type": "ListItem", position: 1, name: "DigiStorms", url: "https://www.digistorms.ai" },
+      { "@type": "ListItem", position: 2, name: "Customer.io", url: "https://customer.io" },
+      { "@type": "ListItem", position: 3, name: "Encharge", url: "https://encharge.io" },
+      { "@type": "ListItem", position: 4, name: "Loops", url: "https://loops.so" },
+      { "@type": "ListItem", position: 5, name: "Userlist", url: "https://userlist.com" },
+      { "@type": "ListItem", position: 6, name: "Sequenzy", url: "https://sequenzy.com" },
+    ]},
+  ],
+}));
+staticPageCount++;
+
+writeRoute("/compare/customer-io-alternatives", buildHead({
+  title: "5 Best Customer.io Alternatives for Startups (2026)",
+  description: "Looking for a Customer.io alternative? Compare 5 affordable options for SaaS startups including DigiStorms, Encharge, Loops, Userlist, and Sequenzy.",
+  canonical: `${BASE_URL}/compare/customer-io-alternatives`,
+  jsonLd: breadcrumbSchema([
+    { name: "Home", url: BASE_URL },
+    { name: "Compare", url: `${BASE_URL}/compare` },
+    { name: "Customer.io Alternatives", url: `${BASE_URL}/compare/customer-io-alternatives` },
+  ]),
 }));
 staticPageCount++;
 

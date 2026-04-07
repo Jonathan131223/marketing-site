@@ -169,7 +169,7 @@ In SLG, marketing supports sales reps by generating leads and nurturing them thr
 
 Marketing isn’t just about getting users through the door—it’s also about keeping them around.
 
-Through[ email campaigns](https://digistorms.ai/blog/email-marketing-for-saas), webinars, and customer feedback initiatives, marketing helps businesses[ increase customer retention](https://digistorms.ai/blog/user-engagement-strategy) and improve customer engagement. These post-acquisition efforts are critical in both PLG and SLG models.
+Through[ email campaigns](https://www.digistorms.ai/blog/email-marketing-for-saas), webinars, and customer feedback initiatives, marketing helps businesses[ increase customer retention](https://www.digistorms.ai/blog/user-engagement-strategy) and improve customer engagement. These post-acquisition efforts are critical in both PLG and SLG models.
 
 For product-led companies, marketing helps drive ongoing product usage, while for sales-led companies, it keeps customers informed and engaged through updates and educational content, ensuring they remain loyal for the long haul.
 
@@ -181,7 +181,7 @@ For product-led companies, marketing helps drive ongoing product usage, while fo
 
 Product-led growth is a fantastic choice for SaaS companies that offer products that are easy to adopt and scale.
 
-If your product delivers value from the first interaction and has a short[ onboarding](https://digistorms.ai/blog/saas-onboarding-checklist) process, PLG might be your best bet.
+If your product delivers value from the first interaction and has a short[ onboarding](https://www.digistorms.ai/blog/saas-onboarding-checklist) process, PLG might be your best bet.
 
 This strategy works particularly well when your product can engage customers quickly without the need for direct sales efforts. A product-led approach allows your product to become your main customer acquisition tool, minimizing the need for expensive sales reps.
 
@@ -197,7 +197,7 @@ SLG is the go-to choice for companies where a sales-led approach helps navigate 
 
 While marketing supports lead generation here, the sales process is key to converting those leads into paying users, making it a critical piece of the puzzle for high-value contracts.
 
-Not sure yet? Read[ Product-led-growth vs sales-led growth: Which is right](https://digistorms.ai/blog/product-led-growth-vs-sales-led-growth)?
+Not sure yet? Read[ Product-led-growth vs sales-led growth: Which is right](https://www.digistorms.ai/blog/product-led-growth-vs-sales-led-growth)?
 
 ## Marketing is key, but marketing-led isn’t real
 
@@ -209,4 +209,4 @@ Both PLG and SLG rely on marketing efforts to generate leads and create demand, 
 
 To drive growth, marketing must work in tandem with either product excellence or sales efforts. So, while marketing is essential, it’s never the only player on the field.
 
-If your go-to-market motion uses a PLG approach and you need help with your email marketing,[ get in touch](https://digistorms.ai/#Contact)!
+If your go-to-market motion uses a PLG approach and you need help with your email marketing,[ get in touch](https://www.digistorms.ai/#Contact)!

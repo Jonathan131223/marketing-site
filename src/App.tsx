@@ -24,6 +24,14 @@ const LibraryUseCases = lazy(() => import("./pages/LibraryUseCases"));
 const LibraryTags = lazy(() => import("./pages/LibraryTags"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
+// Comparison pages
+const DigiStormsVsCustomerIo = lazy(() => import("./pages/compare/DigiStormsVsCustomerIo"));
+const DigiStormsVsEncharge = lazy(() => import("./pages/compare/DigiStormsVsEncharge"));
+const DigiStormsVsLoops = lazy(() => import("./pages/compare/DigiStormsVsLoops"));
+const DigiStormsVsResend = lazy(() => import("./pages/compare/DigiStormsVsResend"));
+const BestOnboardingEmailTools = lazy(() => import("./pages/compare/BestOnboardingEmailTools"));
+const CustomerIoAlternatives = lazy(() => import("./pages/compare/CustomerIoAlternatives"));
+
 // Email Generator pages
 const EmailGeneratorPicker = lazy(() => import("./pages/email-generator/UseCasePickerPage"));
 const EmailGeneratorBrief = lazy(() => import("./pages/email-generator/BriefPage"));
@@ -70,6 +78,12 @@ const App = () => (
           <Route path="/email-generator/generate" element={<StoreProvider><EmailGeneratorGenerate /></StoreProvider>} />
           <Route path="/email-generator/templates" element={<StoreProvider><EmailGeneratorTemplates /></StoreProvider>} />
           <Route path="/email-generator/customize" element={<StoreProvider><EmailGeneratorCustomize /></StoreProvider>} />
+          <Route path="/compare/digistorms-vs-customer-io" element={<DigiStormsVsCustomerIo />} />
+          <Route path="/compare/digistorms-vs-encharge" element={<DigiStormsVsEncharge />} />
+          <Route path="/compare/digistorms-vs-loops" element={<DigiStormsVsLoops />} />
+          <Route path="/compare/digistorms-vs-resend" element={<DigiStormsVsResend />} />
+          <Route path="/compare/best-onboarding-email-tools" element={<BestOnboardingEmailTools />} />
+          <Route path="/compare/customer-io-alternatives" element={<CustomerIoAlternatives />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>

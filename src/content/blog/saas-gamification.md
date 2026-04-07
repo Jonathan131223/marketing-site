@@ -140,7 +140,7 @@ Apollo’s approach is simple but powerful, using emails to keep users engaged a
 
 For any SaaS company looking to enhance user engagement, milestone emails are a versatile and impactful way to drive both activation and retention.
 
-During onboarding, milestone emails help new users reach those crucial [aha moments](https://digistorms.ai/blog/aha-moment-examples) by celebrating early accomplishments. Start by identifying 4-7 key actions, like exploring essential features or completing initial tasks. Trigger personalized, congratulatory emails as users reach these milestones to encourage further exploration and boost activation rates.
+During onboarding, milestone emails help new users reach those crucial [aha moments](https://www.digistorms.ai/blog/aha-moment-examples) by celebrating early accomplishments. Start by identifying 4-7 key actions, like exploring essential features or completing initial tasks. Trigger personalized, congratulatory emails as users reach these milestones to encourage further exploration and boost activation rates.
 
 Beyond onboarding, milestone emails become powerful tools for retention and expansion. By recognizing achievements at later stages—such as mastering advanced features or hitting usage milestones—these emails keep users motivated and encourage them to discover the platform’s full potential. This approach supports long-term loyalty, helping turn regular users into power users who stay engaged and get the most out of the platform.
 
@@ -170,7 +170,7 @@ Include personalized statistics or badges to reward their activity, nudging user
 
 These emails are motivational boosts that keep users invested and looking forward to their next engagement with the platform. They create a habit-forming cycle that naturally encourages long-term usage.
 
-For more email strategies to engage your users, read [Lifecycle email marketing for SaaS businesses](https://digistorms.ai/blog/email-marketing-for-saas).
+For more email strategies to engage your users, read [Lifecycle email marketing for SaaS businesses](https://www.digistorms.ai/blog/email-marketing-for-saas).
 
 ### 6\. Duolingo: Leaderboards to foster healthy competition
 
@@ -178,7 +178,7 @@ For more email strategies to engage your users, read [Lifecycle email marketing 
 
 #### How Duolingo uses leaderboards to drive user engagement
 
-[Duolingo](https://www.duolingo.com/) has made a name for itself by using all sorts of gamification tactics, among which are leaderboards, to [drive user engagement](https://digistorms.ai/blog/user-engagement-strategy) through friendly competition.
+[Duolingo](https://www.duolingo.com/) has made a name for itself by using all sorts of gamification tactics, among which are leaderboards, to [drive user engagement](https://www.digistorms.ai/blog/user-engagement-strategy) through friendly competition.
 
 By showing users where they rank among their peers, the language learning app taps into the power of healthy competition—a powerful motivator that nudges users to keep practicing to improve their standing.
 
@@ -218,7 +218,7 @@ For SaaS companies, gamified onboarding can make a big difference in user satisf
 
 Visual aids, short tutorials, progress bars, and checklists are helpful for showing progress. Not only does this approach reduce friction, but it also builds users’ confidence with every step.
 
-[Effective onboarding](https://digistorms.ai/blog/saas-onboarding-checklist) with gamified elements makes users feel supported, keeps them engaged, and sets the foundation for [customer retention](https://digistorms.ai/blog/customer-churn-prediction) as they explore and master your product.
+[Effective onboarding](https://www.digistorms.ai/blog/saas-onboarding-checklist) with gamified elements makes users feel supported, keeps them engaged, and sets the foundation for [customer retention](https://www.digistorms.ai/blog/customer-churn-prediction) as they explore and master your product.
 
 ### 8\. Fiverr: Profile checklists to keep users on track
 
@@ -314,6 +314,6 @@ From onboarding to retention and expansion, we’ll design emails and engagement
 
 Ready to see how we can help you turn user activity into long-term success? 
 
-[Request your strategy call today](https://digistorms.ai/#Contact) to make your SaaS product stand out and grow!
+[Request your strategy call today](https://www.digistorms.ai/#Contact) to make your SaaS product stand out and grow!
 
 P.S. If you're thinking about adding gamification to your product, go check out our friends at [Trophy](https://trophy.so/?utm_source=digistorms). They make it super easy to drop in achievements, streaks, points, leaderboards, and even gamified emails without months of dev time.

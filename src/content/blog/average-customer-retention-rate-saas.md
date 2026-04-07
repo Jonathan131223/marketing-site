@@ -121,13 +121,13 @@ Delivering updates based on customer feedback can further enhance customer satis
 
 Prioritizing quality and valuable updates is essential for retaining customers over the long term, building a foundation of repeat customers who trust and rely on your solution.
 
-To dive deeper into building a product that solves a real need, read [Jobs to be done examples, theory & template for SaaS](https://digistorms.ai/blog/jobs-to-be-done-examples).
+To dive deeper into building a product that solves a real need, read [Jobs to be done examples, theory & template for SaaS](https://www.digistorms.ai/blog/jobs-to-be-done-examples).
 
 ![refine your JTBD for better customer acquisition and retention](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/672909e79d253c25d71a33eb_d88a9682-8003-4850-a8df-3c718f2e7b08.png)
 
 ### Factor #2: Customer onboarding and support
 
-An [effective customer onboarding process](https://digistorms.ai/blog/saas-onboarding-checklist) is like rolling out the welcome mat, helping new users get up to speed and start experiencing the product’s benefits right away. Smooth onboarding can dramatically reduce customer churn rate by setting the stage for a positive user experience from day one.
+An [effective customer onboarding process](https://www.digistorms.ai/blog/saas-onboarding-checklist) is like rolling out the welcome mat, helping new users get up to speed and start experiencing the product’s benefits right away. Smooth onboarding can dramatically reduce customer churn rate by setting the stage for a positive user experience from day one.
 
 When customers understand how to use your product effectively, they’re more likely to see value and stick around.
 
@@ -205,15 +205,15 @@ Implementing feedback-driven changes can also foster loyalty, as customers appre
 
 Personalized communication is key to building meaningful relationships with existing customers. By tailoring your messages to customer preferences, behaviors, and engagement history, you can create interactions that resonate more deeply.
 
-This can be as simple as acknowledging milestones (don't forget to add some [gamification techniques](https://digistorms.ai/blog/saas-gamification)), sending targeted content that drives revenue expansion, or simply minimizing churn through all sorts of tactics ([contact us](https://digistorms.ai/) so we can help you with that). 
+This can be as simple as acknowledging milestones (don't forget to add some [gamification techniques](https://www.digistorms.ai/blog/saas-gamification)), sending targeted content that drives revenue expansion, or simply minimizing churn through all sorts of tactics ([contact us](https://www.digistorms.ai/) so we can help you with that). 
 
 Such engagement not only boosts customer loyalty but also helps reinforce the value of your service. Customers who feel recognized and appreciated are more likely to continue their subscriptions, ultimately leading to a high customer retention rate.
 
-Dig deeper into engagement strategy by reading [Email marketing for SaaS: 12 indispensable flows](https://digistorms.ai/blog/email-marketing-for-saas).
+Dig deeper into engagement strategy by reading [Email marketing for SaaS: 12 indispensable flows](https://www.digistorms.ai/blog/email-marketing-for-saas).
 
 ### Strategy #4: Identify customers at risk of churning
 
-[Predictive churn analytics](https://digistorms.ai/blog/customer-churn-prediction) uses machine learning to analyze customer behaviors, flagging early signs of disengagement before they turn into churn.
+[Predictive churn analytics](https://www.digistorms.ai/blog/customer-churn-prediction) uses machine learning to analyze customer behaviors, flagging early signs of disengagement before they turn into churn.
 
 By examining usage patterns, login frequency, support tickets, and net promoter scores (NPS), you can proactively identify which customers might be at risk of leaving. This approach empowers customer support teams to take timely, targeted action, such as offering additional training, personalized support, or incentives to re-engage customers.
 
@@ -227,4 +227,4 @@ A strong retention strategy constantly adapts to meet evolving customer needs, h
 
 One of the most effective levers to increase customer retention? Email marketing. Consistent, tailored messaging keeps customers engaged and can even turn them into loyal advocates.
 
-Reach out to our team to build impactful email campaigns that boost retention and strengthen customer connections. [Contact us today](https://digistorms.ai/#Contact)!
+Reach out to our team to build impactful email campaigns that boost retention and strengthen customer connections. [Contact us today](https://www.digistorms.ai/#Contact)!

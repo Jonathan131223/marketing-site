@@ -42,7 +42,7 @@ CLV = Average revenue per user (ARPU) × Average customer lifespan
 
 For example, if your SaaS company has an ARPU of $50 per month and your customers stay for 24 months, the CLV would be $50 × 24 = $1,200.
 
-For a more nuanced approach, factor in metrics like [net revenue churn](https://digistorms.ai/blog/gross-churn-vs-net-churn) and customer acquisition cost. 
+For a more nuanced approach, factor in metrics like [net revenue churn](https://www.digistorms.ai/blog/gross-churn-vs-net-churn) and customer acquisition cost. 
 
 Want even more accuracy? Segment your users into different segments, such as typically activated users, users on different plans, or those with a high net promoter score. This allows for a more thorough understanding of which customers drive the most revenue growth.
 
@@ -52,7 +52,7 @@ Boosting CLV starts with delivering a stellar user experience. Here are some qui
 
   1. Enhance onboarding: Make sure new users find value quickly—this reduces time to value and builds loyalty.
   2. Encourage upgrades: Use personalized nudges to convert free users into paying customers or upsell to higher-tier plans.
-  3. Focus on [retention](https://digistorms.ai/blog/customer-churn-prediction): A happy customer is a loyal customer. Gather feedback, track user behavior, and respond to pain points quickly.
+  3. Focus on [retention](https://www.digistorms.ai/blog/customer-churn-prediction): A happy customer is a loyal customer. Gather feedback, track user behavior, and respond to pain points quickly.
 
 
 
@@ -152,7 +152,7 @@ Unlike marketing qualified leads (MQLs), which rely on external interest (like d
 
 Why are PQLs so important in a PLG motion? Because they cut through the noise, focusing your sales efforts on users who are more likely to convert.
 
-Plus, PQLs align seamlessly with the product-led approach, where the product itself drives adoption and eventual purchases. Measuring product-led growth with PQLs ensures you’re optimizing for success within the [product-led growth flywheel](https://digistorms.ai/blog/product-led-growth-flywheel).
+Plus, PQLs align seamlessly with the product-led approach, where the product itself drives adoption and eventual purchases. Measuring product-led growth with PQLs ensures you’re optimizing for success within the [product-led growth flywheel](https://www.digistorms.ai/blog/product-led-growth-flywheel).
 
 ### How to measure it
 
@@ -176,8 +176,8 @@ Using tools like [Segment](https://segment.com/) or [Amplitude](https://amplitud
 
 Here are some practical ways to increase your PQLs:
 
-  1. [Optimize onboarding](https://digistorms.ai/blog/saas-onboarding-checklist): Guide new users to the [aha moment](https://digistorms.ai/blog/aha-moment-examples) faster by simplifying their user journey. This reduces friction and accelerates time to value.
-  2. Nurture free users: Use targeted marketing efforts, like [personalized emails](https://digistorms.ai/blog/lifecycle-email-marketing) or in-app prompts, to encourage these users to engage with premium features.
+  1. [Optimize onboarding](https://www.digistorms.ai/blog/saas-onboarding-checklist): Guide new users to the [aha moment](https://www.digistorms.ai/blog/aha-moment-examples) faster by simplifying their user journey. This reduces friction and accelerates time to value.
+  2. Nurture free users: Use targeted marketing efforts, like [personalized emails](https://www.digistorms.ai/blog/lifecycle-email-marketing) or in-app prompts, to encourage these users to engage with premium features.
   3. Refine PQL criteria: Work with your cross-functional teams to identify behaviors that best predict conversion and refine your qualification process.
 
 
@@ -189,7 +189,7 @@ Don’t forget to track progress. Measuring how many users meet your PQL criteri
 ### How to interpret different results
 
 - High PQL numbers: Excellent! Your product is clearly delivering value, and users are advancing through the funnel. Use this momentum to refine your upselling strategy.
-- Low PQL numbers: This could signal a misaligned user experience, unclear onboarding, or a lack of [user engagement](https://digistorms.ai/blog/user-engagement-strategy). Revisit your user journey to identify drop-offs or confusing steps.
+- Low PQL numbers: This could signal a misaligned user experience, unclear onboarding, or a lack of [user engagement](https://www.digistorms.ai/blog/user-engagement-strategy). Revisit your user journey to identify drop-offs or confusing steps.
 
 
 
@@ -349,7 +349,7 @@ Again, tools like Amplitude and Mixpanel can help track user behavior to pinpoin
 
 Shortening TTV requires removing friction and guiding users more effectively through their user journey. Here’s how:
 
-  1. Streamline [onboarding](https://digistorms.ai/blog/saas-onboarding-kpis): Use clear instructions and guided walkthroughs to help new users complete setup faster.
+  1. Streamline [onboarding](https://www.digistorms.ai/blog/saas-onboarding-kpis): Use clear instructions and guided walkthroughs to help new users complete setup faster.
   2. Show value early: Highlight features that deliver immediate wins for your users, even if they’re small.
   3. Personalize the experience: Segment users into customer segments and customize their onboarding based on their specific needs.
 
@@ -361,7 +361,7 @@ Shortening TTV requires removing friction and guiding users more effectively thr
 
 ### How to interpret different results
 
-- Short TTV: Congratulations! Your users are experiencing value quickly, which likely leads to higher activation and [retention rates](https://digistorms.ai/blog/average-customer-retention-rate-saas).
+- Short TTV: Congratulations! Your users are experiencing value quickly, which likely leads to higher activation and [retention rates](https://www.digistorms.ai/blog/average-customer-retention-rate-saas).
 - Long TTV: Uh-oh. A lengthy TTV might indicate a confusing product-led user experience or an onboarding process that’s too complex. Review your customer journey for bottlenecks.
 
 
@@ -386,7 +386,7 @@ Customer churn measures the percentage of users who stop using your product with
 
 High churn undermines all the effort you’ve put into acquiring and retaining existing customers, cutting into your revenue growth and inflating customer acquisition costs.
 
-For [product-led](https://digistorms.ai/blog/product-led-growth-vs-marketing-led-growth) growth companies, churn is a direct reflection of customer satisfaction and how well your product delivers ongoing value. Keeping churn low ensures a healthy product-led growth model and maintains the momentum of your product-led growth flywheel.
+For [product-led](https://www.digistorms.ai/blog/product-led-growth-vs-marketing-led-growth) growth companies, churn is a direct reflection of customer satisfaction and how well your product delivers ongoing value. Keeping churn low ensures a healthy product-led growth model and maintains the momentum of your product-led growth flywheel.
 
 ### How to measure it
 
@@ -410,7 +410,7 @@ Reducing churn is all about enhancing the product-led user experience and keepin
 
   1. Improve onboarding: Simplify the first steps of your user journey to ensure users achieve time to value quickly.
   2. Analyze churn drivers: Dive into user feedback and data to identify pain points that lead to drop-offs.
-  3. Proactively engage: Use retention campaigns, [personalized emails](https://digistorms.ai/blog/email-marketing-for-saas), and in-app nudges to keep users active and aware of your product value.
+  3. Proactively engage: Use retention campaigns, [personalized emails](https://www.digistorms.ai/blog/email-marketing-for-saas), and in-app nudges to keep users active and aware of your product value.
 
 
 
@@ -457,4 +457,4 @@ Our tailored email strategies are designed to activate users, guide them through
 
 Not sure where to begin? Let us help you audit your current lifecycle strategy, fine-tune your user activation efforts, and optimize metrics like customer lifetime value and net revenue retention. Together, we’ll build an engagement strategy that’s as unique as your product.
 
-Growth starts with a conversation. [Reach out to us today](https://digistorms.ai/#Contact), and let’s take your product-led growth strategy to the next level.
+Growth starts with a conversation. [Reach out to us today](https://www.digistorms.ai/#Contact), and let’s take your product-led growth strategy to the next level.

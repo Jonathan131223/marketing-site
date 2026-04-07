@@ -58,7 +58,7 @@ By delivering immediate, tangible value, PLG also boosts customer satisfaction. 
 
 ![product led vs sales led](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/673244e68d24a0544df48eca_9a44d7e0-52a7-407d-b0dd-4dd583adc0cf.png)
 
-_Spoiler alert: I'm totally pro-PLG (see a full comparison here_[ _PLG vs SLG_](https://digistorms.ai/blog/product-led-growth-vs-sales-led-growth) _)_
+_Spoiler alert: I'm totally pro-PLG (see a full comparison here_[ _PLG vs SLG_](https://www.digistorms.ai/blog/product-led-growth-vs-sales-led-growth) _)_
 
 Additionally, PLG maximizes ROI by keeping acquisition costs low and increasing retention rates. Engaged users become paying users more naturally, and happy customers become advocates. 
 
@@ -76,7 +76,7 @@ In a successful product-led company, alignment between product, marketing, and s
 
 Start by creating shared goals and a unified vision that highlight how each team’s efforts contribute to each stage of the flywheel - from acquisition to advocacy. For example, the marketing team brings in new users and generates product-qualified leads (PQLs) by crafting messaging that resonates with user needs and expectations.
 
-Once users are acquired, the product team focuses on the activation phase, ensuring a smooth, engaging user experience. This team works to refine features, optimize onboarding, and highlight core functionality to [help newly acquired users reach those aha moments faster](https://digistorms.ai/blog/aha-moment-examples). Finally, the client success team takes the lead in retention and advocacy.
+Once users are acquired, the product team focuses on the activation phase, ensuring a smooth, engaging user experience. This team works to refine features, optimize onboarding, and highlight core functionality to [help newly acquired users reach those aha moments faster](https://www.digistorms.ai/blog/aha-moment-examples). Finally, the client success team takes the lead in retention and advocacy.
 
 Their role is to ensure users are satisfied, engaged, and supported, guiding them to adopt advanced functionality and building loyalty. When these teams collaborate around shared data and user insights, the flywheel gains momentum, driving sustainable growth across the entire company.
 
@@ -88,9 +88,9 @@ To build an effective PLG flywheel, it’s crucial to understand your key user s
 
 New users are those who’ve just started using the product but haven’t fully unlocked its potential. Active users, on the other hand, are engaging consistently and benefiting from the product's core features, while paying customers are the ones who have reached a deeper level of commitment and value advanced functionalities.
 
-> 💡 Mapping the customer journey is all about using behavioral data and user feedback to create an experience that resonates with each segment. For instance, prospective users need to be introduced to core benefits quickly, while new users benefit from [guided onboarding to help them reach activation](https://digistorms.ai/blog/saas-onboarding-checklist).
+> 💡 Mapping the customer journey is all about using behavioral data and user feedback to create an experience that resonates with each segment. For instance, prospective users need to be introduced to core benefits quickly, while new users benefit from [guided onboarding to help them reach activation](https://www.digistorms.ai/blog/saas-onboarding-checklist).
 
-Active and paying users may require more advanced support or even in-product training to [deepen their engagement](https://digistorms.ai/blog/user-engagement-strategy). When the journey is mapped to align with these needs, each user is more likely to advance through the flywheel stages, increasing retention and advocacy.
+Active and paying users may require more advanced support or even in-product training to [deepen their engagement](https://www.digistorms.ai/blog/user-engagement-strategy). When the journey is mapped to align with these needs, each user is more likely to advance through the flywheel stages, increasing retention and advocacy.
 
 ### Setting measurable goals for your product-led growth flywheel
 
@@ -124,7 +124,7 @@ Once prospective users convert to new users, the next goal is activation - that 
 
 Start with a user-friendly onboarding flow that introduces core functionality without overwhelming them. Tutorials, in-product prompts, and tooltips can be strategically placed to highlight key features and encourage users to explore further.
 
-To encourage ongoing product adoption, it helps to design habit loops - small, repeatable actions that lead to continuous engagement. For instance, [sending helpful email nudges](https://digistorms.ai/blog/lifecycle-email-marketing) based on user activity can remind them to return, while in-app messages offering tips help them make the most of each session. 
+To encourage ongoing product adoption, it helps to design habit loops - small, repeatable actions that lead to continuous engagement. For instance, [sending helpful email nudges](https://www.digistorms.ai/blog/lifecycle-email-marketing) based on user activity can remind them to return, while in-app messages offering tips help them make the most of each session. 
 
 The goal is to keep them discovering value and forming a routine, making the product a natural part of their workflow.
 
@@ -160,15 +160,15 @@ Attracting high-intent users is the first step in fueling a successful product-l
 
 To capture and convert PQLs, use targeted marketing tactics that encourage high-potential users to try the product. In a PLG motion, that means offering a free trial or freemium version to let users explore features on their own terms. Once they’re in, track behavioral data like feature engagement, repeat logins, or time spent within the product.
 
-These actions reveal when a user moves from curious to committed, helping the sales or success team to reach out with timely offers that support their next steps. You can also automate this whole process with lifecycle emails ([contact us](https://digistorms.ai/#Contact) for more information). By nurturing PQLs based on real product interaction, you build a pipeline of engaged leads who already see value in what you offer.
+These actions reveal when a user moves from curious to committed, helping the sales or success team to reach out with timely offers that support their next steps. You can also automate this whole process with lifecycle emails ([contact us](https://www.digistorms.ai/#Contact) for more information). By nurturing PQLs based on real product interaction, you build a pipeline of engaged leads who already see value in what you offer.
 
 ### Adoption tactics: Delivering early value and driving retention
 
 Early value delivery is crucial for keeping new users engaged and setting the foundation for long-term retention. The goal here is to guide users to their first aha moment, where they see clear, tangible benefits.
 
-A well-designed [onboarding](https://digistorms.ai/blog/saas-onboarding-kpis) experience is essential and should be structured to introduce core functionality gradually without overwhelming users. This might include step-by-step tutorials, in-app prompts, or even a checklist that helps users hit small milestones along the way.
+A well-designed [onboarding](https://www.digistorms.ai/blog/saas-onboarding-kpis) experience is essential and should be structured to introduce core functionality gradually without overwhelming users. This might include step-by-step tutorials, in-app prompts, or even a checklist that helps users hit small milestones along the way.
 
-Creating habit loops is another effective adoption tactic, encouraging users to return frequently and integrate the product into their daily routine. Small, repeatable actions - like [email reminders based on their activity](https://digistorms.ai/blog/email-marketing-for-saas) \- help users build a consistent engagement pattern. 
+Creating habit loops is another effective adoption tactic, encouraging users to return frequently and integrate the product into their daily routine. Small, repeatable actions - like [email reminders based on their activity](https://www.digistorms.ai/blog/email-marketing-for-saas) \- help users build a consistent engagement pattern. 
 
 Product analytics data plays a big role here, as it allows you to spot friction points in the user journey. For example, if data shows that users drop off after onboarding, it might be time to streamline the process or offer additional support at critical junctures. By constantly refining adoption strategies, you make it easy for users to keep discovering the product’s value.
 
@@ -178,11 +178,11 @@ Once users have adopted the product, client enablement steps in to nurture their
 
 The customer success team plays a crucial role by offering proactive support at key moments in the customer journey. For instance, regular check-ins and personalized advice help users fully leverage the product, especially as they grow more familiar with advanced features.
 
-To [reduce churn](https://digistorms.ai/blog/saas-churn-rate-benchmark), customer success teams can use personalized engagement tactics based on users’ behavior within the product. By leveraging product usage data, they can spot users who might be struggling or underutilizing certain features and offer tailored assistance before issues arise.
+To [reduce churn](https://www.digistorms.ai/blog/saas-churn-rate-benchmark), customer success teams can use personalized engagement tactics based on users’ behavior within the product. By leveraging product usage data, they can spot users who might be struggling or underutilizing certain features and offer tailored assistance before issues arise.
 
 In-product support, such as contextual tooltips or help articles, ensures that users feel confident in navigating the product. When success teams focus on personalized support, they turn potential churn risks into satisfied, loyal customers who continue to use and advocate for the product.
 
-To boost activation and retention, I encourage you to read the article [10 SaaS gamification examples for user engagement](https://digistorms.ai/blog/saas-gamification).
+To boost activation and retention, I encourage you to read the article [10 SaaS gamification examples for user engagement](https://www.digistorms.ai/blog/saas-gamification).
 
 ### Creating advocates: Generating customer advocacy and reviews
 
@@ -250,4 +250,4 @@ By aligning teams, harnessing user data, and refining the experience based on fe
 
 Ready to put these strategies into action? Digi Storms can help.
 
-[Book a free strategy session with us today](https://digistorms.ai/#Contact) to see how we can optimize your product-led growth model with lifecycle marketing.
+[Book a free strategy session with us today](https://www.digistorms.ai/#Contact) to see how we can optimize your product-led growth model with lifecycle marketing.
