@@ -105,6 +105,24 @@ const EmailCard: React.FC<{
       href={`/library/email/${email.slug}`}
       className="group rounded-xl border border-slate-100/80 bg-white overflow-hidden shadow-sm hover:shadow-md transition-shadow block"
     >
+      {/* Brand + Subject on top */}
+      <div className="px-3 pt-3 pb-2">
+        <a
+          href={`/library/brand/${email.brand}`}
+          onClick={(e) => e.stopPropagation()}
+          className="flex items-center gap-1.5 mb-1 group/brand"
+        >
+          {brand?.logo && (
+            <img src={brand.logo} alt={brand.name} className="h-3.5 w-3.5 object-contain" />
+          )}
+          <span className="text-[11px] text-slate-400 font-medium group-hover/brand:text-[#1D4ED8] transition-colors truncate">
+            {brand?.name ?? email.brand}
+          </span>
+        </a>
+        <p className="text-xs font-semibold text-slate-900 leading-snug line-clamp-2">
+          {email.subject || email.templateTitle}
+        </p>
+      </div>
       <div className="relative overflow-hidden bg-slate-50 aspect-[4/3]">
         {email.thumb ? (
           <img
@@ -120,42 +138,26 @@ const EmailCard: React.FC<{
           </div>
         )}
       </div>
-      <div className="p-4">
-        <a
-          href={`/library/brand/${email.brand}`}
-          onClick={(e) => e.stopPropagation()}
-          className="flex items-center gap-2 mb-2 group/brand"
-        >
-          {brand?.logo && (
-            <img src={brand.logo} alt={brand.name} className="h-4 w-4 object-contain" />
+      {/* Tags at bottom */}
+      {email.tags.length > 0 && (
+        <div className="px-3 pb-2.5 pt-1.5 flex flex-wrap gap-1">
+          {email.tags.slice(0, 2).map((tagSlug) => (
+            <a
+              key={tagSlug}
+              href={`/library/tag/${tagSlug}`}
+              onClick={(e) => e.stopPropagation()}
+              className="text-[10px] px-1.5 py-0.5 rounded-full bg-[#DBEAFE] text-[#1D4ED8] hover:bg-[#1D4ED8] hover:text-white transition-colors"
+            >
+              {tagName(tagSlug, tags)}
+            </a>
+          ))}
+          {email.tags.length > 2 && (
+            <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-slate-100 text-slate-400">
+              +{email.tags.length - 2}
+            </span>
           )}
-          <span className="text-xs text-slate-400 font-medium group-hover/brand:text-[#1D4ED8] transition-colors">
-            {brand?.name ?? email.brand}
-          </span>
-        </a>
-        <p className="text-sm font-semibold text-slate-900 leading-snug line-clamp-2 mb-3">
-          {email.subject || email.templateTitle}
-        </p>
-        {email.tags.length > 0 && (
-          <div className="flex flex-wrap gap-1.5">
-            {email.tags.slice(0, 3).map((tagSlug) => (
-              <a
-                key={tagSlug}
-                href={`/library/tag/${tagSlug}`}
-                onClick={(e) => e.stopPropagation()}
-                className="text-xs px-2 py-0.5 rounded-full bg-[#DBEAFE] text-[#1D4ED8] hover:bg-[#1D4ED8] hover:text-white transition-colors"
-              >
-                {tagName(tagSlug, tags)}
-              </a>
-            ))}
-            {email.tags.length > 3 && (
-              <span className="text-xs px-2 py-0.5 rounded-full bg-slate-100 text-slate-400">
-                +{email.tags.length - 3}
-              </span>
-            )}
-          </div>
-        )}
-      </div>
+        </div>
+      )}
     </a>
   );
 };
@@ -642,7 +644,7 @@ const LibraryPage: React.FC = () => {
             </div>
           ) : (
             <>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
                 {pagedEmails.map((email) => (
                   <EmailCard key={email.id} email={email} brands={brands} tags={tags} />
                 ))}

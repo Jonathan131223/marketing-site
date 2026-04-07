@@ -220,12 +220,17 @@ const jsonLd = {
                     </span>
                   </div>
 
-                  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+                  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
                     {ucEmails.map((email: any) => (
                       <a
                         href={`/library/email/${email.slug}`}
-                        class="group rounded-2xl border border-slate-100 bg-white overflow-hidden hover:shadow-md transition-shadow block"
+                        class="group rounded-xl border border-slate-100 bg-white overflow-hidden hover:shadow-md transition-shadow block"
                       >
+                        <div class="px-3 pt-3 pb-2">
+                          <p class="text-xs font-semibold text-slate-900 leading-snug line-clamp-2">
+                            {email.subject || email.templateTitle}
+                          </p>
+                        </div>
                         <div class="relative overflow-hidden bg-slate-50 aspect-[4/3]">
                           {email.thumb ? (
                             <img
@@ -240,27 +245,23 @@ const jsonLd = {
                             </div>
                           )}
                         </div>
-                        <div class="p-4">
-                          <p class="text-sm font-semibold text-slate-900 leading-snug line-clamp-2 mb-3">
-                            {email.subject || email.templateTitle}
-                          </p>
-                          {email.tags.length > 0 && (
-                            <div class="flex flex-wrap gap-1.5">
-                              {email.tags.slice(0, 3).map((tagSlug: string) => {
-                                const tagObj = (tagsData as any[]).find((t) => t.slug === tagSlug);
-                                return (
-                                  <a
-                                    href={`/library/tag/${tagSlug}`}
-                                    onclick="event.stopPropagation()"
-                                    class="text-xs px-2 py-0.5 rounded-full bg-[#DBEAFE] text-[#1D4ED8] hover:bg-[#1D4ED8] hover:text-white transition-colors"
-                                  >
-                                    {tagObj?.name ?? tagSlug}
-                                  </a>
-                                );
-                              })}
-                            </div>
-                          )}
-                        </div>
+                        {email.tags.length > 0 && (
+                          <div class="px-3 pb-2.5 pt-1.5 flex flex-wrap gap-1">
+                            {email.tags.slice(0, 2).map((tagSlug: string) => {
+                              const tagObj = (tagsData as any[]).find((t) => t.slug === tagSlug);
+                              return (
+                                <span class="text-[10px] px-1.5 py-0.5 rounded-full bg-[#DBEAFE] text-[#1D4ED8]">
+                                  {tagObj?.name ?? tagSlug}
+                                </span>
+                              );
+                            })}
+                            {email.tags.length > 2 && (
+                              <span class="text-[10px] px-1.5 py-0.5 rounded-full bg-slate-100 text-slate-400">
+                                +{email.tags.length - 2}
+                              </span>
+                            )}
+                          </div>
+                        )}
                       </a>
                     ))}
                   </div>
