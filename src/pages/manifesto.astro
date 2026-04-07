@@ -1,0 +1,309 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import { Image } from 'astro:assets';
+import mascotHome from '@/assets/mascots/home.png';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "The DigiStorms Manifesto",
+  "description": "We believe onboarding is your growth engine. Discover how we map, build, and run lifecycle email systems that move users from signup to upgrade.",
+  "url": "https://www.digistorms.ai/manifesto"
+};
+---
+
+<PageLayout
+  title="The DigiStorms Manifesto — Turn Onboarding Into Revenue"
+  description="The DigiStorms manifesto. We believe onboarding is your growth engine. Discover how we map, build, and run lifecycle email systems that move users from signup to upgrade."
+  ogTitle="The DigiStorms Manifesto — Turn Onboarding Into Revenue"
+  ogDescription="We believe onboarding is your growth engine. Discover how we map, build, and run lifecycle email systems that move users from signup to upgrade."
+  jsonLd={jsonLd}
+>
+  <main class="relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-0 left-1/4 w-72 h-72 bg-blue-100/30 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-100/20 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 py-16 relative z-10">
+
+      <!-- Header -->
+      <div class="text-center mb-20">
+        <h1 class="text-3xl lg:text-5xl font-serif font-semibold text-black mb-6 leading-tight">
+          The DigiStorms Manifesto
+        </h1>
+        <p class="text-xl lg:text-2xl font-medium text-slate-600">
+          Turn onboarding into revenue. Automatically.
+        </p>
+      </div>
+
+      <!-- What we refuse to accept -->
+      <section class="mb-20">
+        <h2 class="text-2xl lg:text-3xl font-serif font-semibold text-slate-900 mb-8">What we refuse to accept</h2>
+        <div class="space-y-6">
+          <div class="flex items-start gap-3">
+            <svg class="mt-1 w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 5l7 7-7 7" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div>
+              <p class="text-lg text-slate-800 font-semibold">Users signing up... and disappearing.</p>
+              <p class="text-base text-slate-600 mt-1">Half of your users never come back — not because your product is bad, but because no one guides them.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="mt-1 w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 5l7 7-7 7" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div>
+              <p class="text-lg text-slate-800 font-semibold">Onboarding built on guesswork.</p>
+              <p class="text-base text-slate-600 mt-1">Random sequences, generic emails, no clear path to value.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="mt-1 w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 5l7 7-7 7" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div>
+              <p class="text-lg text-slate-800 font-semibold">One-size-fits-all messaging.</p>
+              <p class="text-base text-slate-600 mt-1">Every user gets the same emails, regardless of what they do.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="mt-1 w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 5l7 7-7 7" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div>
+              <p class="text-lg text-slate-800 font-semibold">Manual lifecycle work.</p>
+              <p class="text-base text-slate-600 mt-1">Teams stitching flows together with tools, docs, and assumptions.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="mt-1 w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 5l7 7-7 7" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div>
+              <p class="text-lg text-slate-800 font-semibold">Missed moments.</p>
+              <p class="text-base text-slate-600 mt-1">Users stall, reach milestones, or churn — and nothing happens.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What we believe -->
+      <section class="mb-20">
+        <h2 class="text-2xl lg:text-3xl font-serif font-semibold text-slate-900 mb-8">What we believe</h2>
+        <div class="space-y-6">
+          <div class="flex items-start gap-3">
+            <svg class="mt-1 w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 5l7 7-7 7" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div>
+              <p class="text-lg text-slate-800 font-semibold">Onboarding is your growth engine.</p>
+              <p class="text-base text-slate-600 mt-1">Activation drives everything: retention, expansion, revenue.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="mt-1 w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 5l7 7-7 7" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div>
+              <p class="text-lg text-slate-800 font-semibold">Timing beats volume.</p>
+              <p class="text-base text-slate-600 mt-1">The right message at the right moment matters more than more emails.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="mt-1 w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 5l7 7-7 7" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div>
+              <p class="text-lg text-slate-800 font-semibold">Behavior is the signal.</p>
+              <p class="text-base text-slate-600 mt-1">What users do should dictate what happens next.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="mt-1 w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 5l7 7-7 7" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div>
+              <p class="text-lg text-slate-800 font-semibold">Systems beat sequences.</p>
+              <p class="text-base text-slate-600 mt-1">Onboarding isn't a list of emails — it's a journey.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="mt-1 w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 5l7 7-7 7" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div>
+              <p class="text-lg text-slate-800 font-semibold">AI should remove the work, not the thinking.</p>
+              <p class="text-base text-slate-600 mt-1">It handles the heavy lifting. You stay in control.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="mt-1 w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 5l7 7-7 7" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div>
+              <p class="text-lg text-slate-800 font-semibold">Clarity wins.</p>
+              <p class="text-base text-slate-600 mt-1">Users don't need more features — they need direction.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Our promise to teams -->
+      <section class="mb-20">
+        <h2 class="text-2xl lg:text-3xl font-serif font-semibold text-slate-900 mb-8">Our promise to teams</h2>
+        <div class="space-y-6">
+          <div class="flex items-start gap-3">
+            <svg class="mt-1 w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 5l7 7-7 7" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div>
+              <p class="text-lg text-slate-800 font-semibold">From signup to upgrade, handled.</p>
+              <p class="text-base text-slate-600 mt-1">DigiStorms maps your onboarding journey and builds the system that moves users forward.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="mt-1 w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 5l7 7-7 7" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div>
+              <p class="text-lg text-slate-800 font-semibold">Emails that follow behavior.</p>
+              <p class="text-base text-slate-600 mt-1">Messages trigger based on what users actually do — not arbitrary schedules.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="mt-1 w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 5l7 7-7 7" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div>
+              <p class="text-lg text-slate-800 font-semibold">No more guessing.</p>
+              <p class="text-base text-slate-600 mt-1">Your lifecycle is generated from your product, not assumptions.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="mt-1 w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 5l7 7-7 7" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div>
+              <p class="text-lg text-slate-800 font-semibold">Launch in minutes.</p>
+              <p class="text-base text-slate-600 mt-1">Enter your website → get a complete onboarding flow → go live.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="mt-1 w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 5l7 7-7 7" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div>
+              <p class="text-lg text-slate-800 font-semibold">Control everything.</p>
+              <p class="text-base text-slate-600 mt-1">Edit, adjust, and shape the experience — the system adapts with you.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How we build -->
+      <section class="mb-20">
+        <h2 class="text-2xl lg:text-3xl font-serif font-semibold text-slate-900 mb-8">How we build (so you don't have to)</h2>
+        <div class="space-y-6">
+          <div class="flex items-start gap-3">
+            <svg class="mt-1 w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 5l7 7-7 7" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div>
+              <p class="text-lg text-slate-800 font-semibold">Product-first thinking.</p>
+              <p class="text-base text-slate-600 mt-1">We start from how users reach value — not from templates.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="mt-1 w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 5l7 7-7 7" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div>
+              <p class="text-lg text-slate-800 font-semibold">Behavior-driven by default.</p>
+              <p class="text-base text-slate-600 mt-1">Every flow is tied to real user actions.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="mt-1 w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 5l7 7-7 7" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div>
+              <p class="text-lg text-slate-800 font-semibold">Simple on the surface.</p>
+              <p class="text-base text-slate-600 mt-1">Powerful underneath — no complexity exposed.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="mt-1 w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 5l7 7-7 7" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div>
+              <p class="text-lg text-slate-800 font-semibold">Ship fast. Improve continuously.</p>
+              <p class="text-base text-slate-600 mt-1">Your onboarding evolves as your product grows.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Who we're for -->
+      <section class="mb-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-2xl lg:text-3xl font-serif font-semibold text-slate-900 mb-8">Who we're for</h2>
+            <div class="space-y-5">
+              <div class="flex items-start gap-3">
+                <svg class="mt-1 w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12h14M13 5l7 7-7 7" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <div>
+                  <p class="text-lg text-slate-800 font-semibold">Founders who want activation, not just signups.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="mt-1 w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12h14M13 5l7 7-7 7" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <div>
+                  <p class="text-lg text-slate-800 font-semibold">Teams tired of building onboarding flows manually.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="mt-1 w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12h14M13 5l7 7-7 7" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <div>
+                  <p class="text-lg text-slate-800 font-semibold">SaaS companies that know lifecycle = revenue.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center lg:justify-end">
+            <Image
+              src={mascotHome}
+              alt="DigiStorms mascot"
+              class="w-full max-w-xs h-auto"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- CTA -->
+    <section class="pb-20 px-6">
+      <div class="max-w-2xl mx-auto text-center bg-white rounded-3xl border border-slate-100 px-8 py-14">
+        <h2 class="text-3xl font-serif font-semibold text-slate-900 mb-3">No onboarding system? No problem.</h2>
+        <p class="text-lg text-slate-600 mb-8">We map it, build it, and run it for you.</p>
+        <a
+          href="/"
+          class="inline-block bg-[#1D4ED8] text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-[#6340c4] transition-colors"
+        >
+          Generate my onboarding emails →
+        </a>
+      </div>
+    </section>
+
+  </main>
+</PageLayout>

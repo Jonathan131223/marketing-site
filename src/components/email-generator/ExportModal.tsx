@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { EmailTemplate } from '@/types/emailGenerator';
+import type { EmailTemplate } from '@/types/emailGenerator';
 
 interface ExportModalProps {
   email: EmailTemplate;

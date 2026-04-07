@@ -2,6 +2,7 @@
 title: "Average customer retention rate SaaS: Are you on track?"
 slug: "average-customer-retention-rate-saas"
 description: "Learn what the average customer retention rate SaaS companies should aim for, key metrics to track, and strategies to improve loyalty and reduce churn."
+shortDescription: "Key metrics and strategies to benchmark and improve your SaaS retention rate."
 date: "2026-04-03"
 readTime: "14 min read"
 ---

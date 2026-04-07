@@ -9,7 +9,7 @@ import { AIGeneratorPanel } from "@/components/email-generator/AIGeneratorPanel"
 import { ProgressBar } from "@/components/email-generator/ProgressBar";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { EmailTemplate, UseCase, TemplateTweaks } from "@/types/emailGenerator";
+import type { EmailTemplate, UseCase, TemplateTweaks } from "@/types/emailGenerator";
 import {
   ensureDigiStormsBadgeInitialized,
   hasDigiStormsBadge,

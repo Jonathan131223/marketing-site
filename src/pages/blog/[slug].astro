@@ -1,0 +1,407 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import jonProfile from '@/assets/founder/jonathan-profile.png';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.id.replace(/\.md$/, '') },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const title = post.data.title;
+const description = post.data.description;
+const date = post.data.date;
+const readTime = post.data.readTime;
+const heroImage = post.data.heroImage;
+const libraryTags = post.data.libraryTags ?? [];
+const slug = post.id.replace(/\.md$/, '');
+
+const siteUrl = 'https://www.digistorms.ai';
+
+/** Truncate to ~155 chars on a word boundary */
+function truncateMeta(text: string, limit = 155): string {
+  const t = (text || '').trim();
+  if (t.length <= limit) return t;
+  const cut = t.slice(0, limit);
+  const lastSpace = cut.lastIndexOf(' ');
+  return (lastSpace > 40 ? cut.slice(0, lastSpace) : cut) + '\u2026';
+}
+
+const metaDescription = truncateMeta(description);
+const ogImage = heroImage
+  ? `${siteUrl}${heroImage}`
+  : `${siteUrl}/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png`;
+
+const formattedDate = date
+  ? new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+  : '';
+
+const emailSeries = libraryTags.length > 0;
+const articleSection = emailSeries ? 'SaaS email examples' : 'SaaS growth and retention';
+
+const readTimeIso = (() => {
+  const m = readTime?.match(/(\d+)\s*min/i);
+  return m ? `PT${m[1]}M` : undefined;
+})();
+
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description: metaDescription,
+  image: ogImage,
+  url: `${siteUrl}/blog/${slug}`,
+  datePublished: date,
+  dateModified: date,
+  articleSection,
+  ...(readTimeIso ? { timeRequired: readTimeIso } : {}),
+  inLanguage: "en-US",
+  wordCount: readTime ? Math.round(parseInt(readTime) * 250) : undefined,
+  author: {
+    "@type": "Person",
+    name: "Jonathan Bernard",
+    url: "https://www.linkedin.com/in/jonathan-digistorms/",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "DigiStorms",
+    url: siteUrl,
+    logo: {
+      "@type": "ImageObject",
+      url: `${siteUrl}/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png`,
+    },
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+    { "@type": "ListItem", position: 2, name: "Blog", item: `${siteUrl}/blog` },
+    { "@type": "ListItem", position: 3, name: title, item: `${siteUrl}/blog/${slug}` },
+  ],
+};
+---
+
+<PageLayout
+  title={title ? `${title} | DigiStorms` : 'DigiStorms - AI Lifecycle Email Generator'}
+  description={metaDescription}
+  canonical={`${siteUrl}/blog/${slug}`}
+  ogType="article"
+  ogTitle={title}
+  ogDescription={metaDescription}
+  ogImage={ogImage}
+  jsonLd={[articleJsonLd, breadcrumbJsonLd]}
+>
+  <Fragment slot="head">
+    {date && <meta property="article:published_time" content={`${date}T12:00:00.000Z`} />}
+    <meta property="article:section" content={articleSection} />
+  </Fragment>
+
+  <main class="pt-24 pb-20">
+    <div class="container mx-auto px-4 max-w-6xl">
+
+      <!-- Back link -->
+      <a
+        href="/blog"
+        class="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-slate-700 transition-colors mb-10"
+      >
+        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+        Back to Blog
+      </a>
+
+      <!-- Article header -->
+      <header class="text-center mb-10 max-w-xl mx-auto">
+        <h1
+          class="leading-tight"
+          style="color: #1D4ED8; font-size: clamp(28px, 5vw, 48px); font-weight: 400; margin: 0px 0px 20px;"
+        >
+          {title}
+        </h1>
+        {description && (
+          <p
+            class="leading-relaxed max-w-2xl mx-auto mb-6"
+            style="color: #333333; font-size: 17px;"
+          >
+            {description}
+          </p>
+        )}
+        <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm text-slate-500">
+          <Image
+            src={jonProfile}
+            alt="Jonathan Bernard"
+            class="w-8 h-8 rounded-full object-cover"
+            loading="lazy"
+            decoding="async"
+            width={32}
+            height={32}
+          />
+          <span class="text-slate-700">Jonathan Bernard</span>
+          {formattedDate && (
+            <>
+              <span class="text-slate-300 hidden sm:inline" aria-hidden="true">&middot;</span>
+              <span class="inline-flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-400 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                <span>{formattedDate}</span>
+              </span>
+            </>
+          )}
+          {readTime && (
+            <>
+              <span class="text-slate-300 hidden sm:inline" aria-hidden="true">&middot;</span>
+              <span class="inline-flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-400 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>{readTime}</span>
+              </span>
+            </>
+          )}
+        </div>
+      </header>
+
+      <!-- Hero image -->
+      <div class="rounded-2xl overflow-hidden bg-[#EDE9FE] mb-12 aspect-[16/9] max-w-xl mx-auto">
+        {heroImage ? (
+          <img src={heroImage} alt={title} class="w-full h-full object-cover" decoding="async" />
+        ) : (
+          <svg viewBox="0 0 800 420" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+            <rect width="800" height="420" fill="#EDE9FE" />
+            <rect x="220" y="50" width="360" height="320" rx="16" fill="white" />
+            <rect x="220" y="50" width="360" height="64" rx="16" fill="#7C3AED" />
+            <rect x="252" y="74" width="140" height="14" rx="7" fill="white" opacity="0.9" />
+            <rect x="252" y="134" width="296" height="10" rx="5" fill="#E5E7EB" />
+            <rect x="252" y="154" width="260" height="10" rx="5" fill="#E5E7EB" />
+            <rect x="252" y="174" width="280" height="10" rx="5" fill="#E5E7EB" />
+            <rect x="252" y="194" width="240" height="10" rx="5" fill="#E5E7EB" />
+            <rect x="292" y="230" width="216" height="48" rx="10" fill="#7C3AED" />
+            <rect x="330" y="248" width="140" height="12" rx="6" fill="white" opacity="0.9" />
+            <rect x="252" y="308" width="200" height="8" rx="4" fill="#E5E7EB" />
+            <rect x="252" y="324" width="160" height="8" rx="4" fill="#E5E7EB" />
+          </svg>
+        )}
+      </div>
+
+      <!-- Article body -->
+      <div class="max-w-2xl mx-auto">
+        <article class="blog-prose">
+          <Content />
+        </article>
+
+        <!-- About the author -->
+        <div class="mt-12 bg-slate-50 rounded-2xl p-6">
+          <div class="flex items-center gap-2 mb-5">
+            <svg class="w-5 h-5" style="color: #1D4ED8;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+            <span class="font-bold text-slate-900">About the author</span>
+          </div>
+          <div class="flex items-start gap-5">
+            <Image
+              src={jonProfile}
+              alt="Jonathan Bernard"
+              class="w-16 h-16 rounded-full object-cover shrink-0"
+              loading="lazy"
+              decoding="async"
+              width={64}
+              height={64}
+            />
+            <p class="text-slate-700 text-sm leading-relaxed">
+              {emailSeries ? (
+                <>Thanks for reading all the way! I'm Jonathan, founder of DigiStorms,
+                specializing in helping SaaS companies activate, retain, and expand their users
+                with lifecycle emails. Connect with me on <a
+                  href="https://www.linkedin.com/in/jonathan-digistorms/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-violet-600 hover:underline"
+                >LinkedIn</a>.</>
+              ) : (
+                <>Thanks for reading! I'm Jonathan, founder of DigiStorms. We help SaaS teams
+                improve retention, onboarding, and expansion -- with strategy, lifecycle email,
+                and product-led motion in mind. Say hello on <a
+                  href="https://www.linkedin.com/in/jonathan-digistorms/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-violet-600 hover:underline"
+                >LinkedIn</a>.</>
+              )}
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="container mx-auto px-4 max-w-6xl mt-16 mb-4">
+      <div class="bg-violet-50 rounded-2xl p-8 text-center">
+        {emailSeries ? (
+          <>
+            <h3 class="text-xl font-semibold text-slate-900 mb-2">
+              Ready to automate your onboarding emails?
+            </h3>
+            <p class="text-slate-500 mb-6">
+              DigiStorms analyzes your product and generates a full onboarding sequence -- in minutes.
+            </p>
+          </>
+        ) : (
+          <>
+            <h3 class="text-xl font-semibold text-slate-900 mb-2">
+              Turn retention insights into lifecycle emails
+            </h3>
+            <p class="text-slate-500 mb-6">
+              Pair your growth strategy with onboarding and lifecycle sequences tailored to your product -- generated in minutes.
+            </p>
+          </>
+        )}
+        <a
+          href="https://app.digistorms.ai"
+          class="inline-flex items-center gap-2 bg-violet-600 hover:bg-violet-700 text-white font-medium px-6 py-3 rounded-xl transition-colors"
+        >
+          Try DigiStorms free
+        </a>
+      </div>
+    </div>
+  </main>
+</PageLayout>
+
+<style is:global>
+  .blog-prose h2 {
+    color: #1D4ED8;
+    font-size: 28px;
+    font-weight: 500;
+    margin: 28px 0 12px;
+  }
+
+  .blog-prose h3 {
+    color: #1D4ED8;
+    font-size: 22px;
+    font-weight: 500;
+    margin: 20px 0 10px;
+  }
+
+  .blog-prose p {
+    color: #333333;
+    font-size: 17px;
+    line-height: 1.625;
+    margin: 0 0 10px;
+  }
+
+  .blog-prose blockquote {
+    background-color: #f5f3ff;
+    border-left: 4px solid #a78bfa;
+    border-radius: 0 0.75rem 0.75rem 0;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    color: #334155;
+    font-size: 1rem;
+  }
+
+  .blog-prose blockquote p {
+    margin: 0;
+  }
+
+  .blog-prose strong {
+    font-weight: 600;
+    color: #1e293b;
+  }
+
+  .blog-prose img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+    border: 1px solid #f1f5f9;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    margin-top: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .blog-prose a {
+    color: #7c3aed;
+  }
+
+  .blog-prose a:hover {
+    text-decoration: underline;
+  }
+
+  .blog-prose ul {
+    list-style-type: disc;
+    list-style-position: outside;
+    margin-bottom: 1.25rem;
+    margin-left: 1.25rem;
+    padding-left: 0.25rem;
+    color: #475569;
+    line-height: 1.625;
+    font-size: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .blog-prose ul {
+      font-size: 1.125rem;
+    }
+  }
+
+  .blog-prose ul li + li {
+    margin-top: 0.5rem;
+  }
+
+  .blog-prose ol {
+    list-style-type: decimal;
+    list-style-position: outside;
+    margin-bottom: 1.25rem;
+    margin-left: 1.25rem;
+    padding-left: 0.25rem;
+    color: #475569;
+    line-height: 1.625;
+    font-size: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .blog-prose ol {
+      font-size: 1.125rem;
+    }
+  }
+
+  .blog-prose ol li + li {
+    margin-top: 0.5rem;
+  }
+
+  .blog-prose table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+    margin: 2rem 0;
+  }
+
+  .blog-prose thead {
+    border-bottom: 2px solid #e2e8f0;
+    text-align: left;
+  }
+
+  .blog-prose th {
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    color: #334155;
+    white-space: nowrap;
+  }
+
+  .blog-prose td {
+    padding: 0.625rem 1rem;
+    color: #475569;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .blog-prose tr:nth-child(even) {
+    background-color: #f8fafc;
+  }
+
+  .blog-prose hr {
+    border-color: #e2e8f0;
+    margin: 2.5rem 0;
+  }
+</style>

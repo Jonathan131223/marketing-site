@@ -1,0 +1,71 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import PricingSelfServe from '@/components/react/PricingSelfServe';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "DigiStorms",
+  "url": "https://www.digistorms.ai",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "AI agent for onboarding emails. Analyzes your product and builds lifecycle email sequences automatically.",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Free",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "100 new signups per month",
+      "url": "https://www.digistorms.ai/pricing"
+    },
+    {
+      "@type": "Offer",
+      "name": "Pro",
+      "price": "19",
+      "priceCurrency": "USD",
+      "description": "1,000 new signups per month",
+      "url": "https://www.digistorms.ai/pricing"
+    },
+    {
+      "@type": "Offer",
+      "name": "Business",
+      "price": "59",
+      "priceCurrency": "USD",
+      "description": "5,000 new signups per month",
+      "url": "https://www.digistorms.ai/pricing"
+    },
+    {
+      "@type": "Offer",
+      "name": "Scale",
+      "price": "149",
+      "priceCurrency": "USD",
+      "description": "10,000 new signups per month",
+      "url": "https://www.digistorms.ai/pricing"
+    }
+  ]
+};
+---
+
+<PageLayout
+  title="Pricing - DigiStorms AI Agent for Onboarding Emails"
+  description="Simple, transparent pricing for DigiStorms. Get your full onboarding email system built and running — from signup to upgrade."
+  jsonLd={jsonLd}
+>
+  <main>
+    <!-- Header -->
+    <div class="mx-auto max-w-4xl px-6 pt-16 pb-10 text-center">
+      <h1 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">
+        Onboarding that <span class="text-primary">runs itself</span>
+      </h1>
+      <p class="text-xl text-slate-600 max-w-lg mx-auto mb-10">
+        Pay for the users you onboard — nothing else.
+      </p>
+    </div>
+
+    <!-- Pricing cards (interactive: toggle + tier stepper) -->
+    <div class="mx-auto max-w-4xl px-6 pb-20">
+      <PricingSelfServe client:load />
+    </div>
+  </main>
+</PageLayout>

@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { useAppStore } from "@/hooks/useAppStore";
-import { UseCase } from "@/types/emailGenerator";
+import type { UseCase } from "@/types/emailGenerator";
 import { useCasesByCategory } from "@/utils/useCaseMapping";
 import { Zap, Lightbulb, TrendingUp, Shield, Users, Megaphone, ArrowRight, ChevronDown } from "lucide-react";
 

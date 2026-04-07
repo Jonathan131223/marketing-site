@@ -2,6 +2,7 @@
 title: "7 product-led growth metrics to track your PLG strategy"
 slug: "product-led-growth-metrics"
 description: "Discover 7 essential product-led growth metrics to refine your PLG strategy and drive SaaS success. Track the numbers that matter most for sustainable growth."
+shortDescription: "The 7 PLG metrics that matter most for tracking and refining your growth strategy."
 date: "2026-04-03"
 readTime: "20 min read"
 ---

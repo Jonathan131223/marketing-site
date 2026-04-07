@@ -1,5 +1,5 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
-import { EmailTemplate } from '@/types/emailGenerator';
+import type { EmailTemplate } from '@/types/emailGenerator';
 
 interface HistoryEntry {
   content: string;

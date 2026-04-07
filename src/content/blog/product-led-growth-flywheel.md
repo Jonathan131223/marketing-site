@@ -2,6 +2,7 @@
 title: "Building a successful product-led growth flywheel"
 slug: "product-led-growth-flywheel"
 description: "Learn how to build a product-led growth flywheel to drive scalable growth. Boost acquisition, activation, retention, and advocacy for your SaaS success"
+shortDescription: "Build a self-sustaining growth engine powered by your product with PLG flywheel strategies."
 date: "2026-04-03"
 readTime: "18 min read"
 ---

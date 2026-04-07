@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { UseCase, BriefData } from "@/types/emailGenerator";
+import type { UseCase, BriefData } from "@/types/emailGenerator";
 import { WebsiteStep } from "./WebsiteStep";
 import { LogoStep } from "./LogoStep";
 import { BriefStep } from "./BriefStep";

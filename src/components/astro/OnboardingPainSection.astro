@@ -1,0 +1,76 @@
+---
+const columns = [
+  {
+    image: "/onboarding-pain/card-1-left.webp",
+    srcSet:
+      "/onboarding-pain/card-1-left-400w.webp 400w, /onboarding-pain/card-1-left-600w.webp 600w, /onboarding-pain/card-1-left-800w.webp 800w",
+    imageAlt: "Five users receiving the same welcome message",
+    title: "Generic emails don't convert",
+    description:
+      "One-size-fits-all onboarding rarely helps users reach the milestones that drive activation.",
+  },
+  {
+    image: "/onboarding-pain/card-3-right.webp",
+    srcSet:
+      "/onboarding-pain/card-3-right-400w.webp 400w, /onboarding-pain/card-3-right-600w.webp 600w, /onboarding-pain/card-3-right-800w.webp 800w",
+    imageAlt:
+      "User journey funnel showing Signup, Setup, First value, Upgrade with most users abandoning between Setup and First value",
+    title: "Users never reach value",
+    description:
+      "New signups lose momentum fast when there's no clear path to their first successful outcome.",
+  },
+  {
+    image: "/onboarding-pain/card-2-middle.webp",
+    srcSet:
+      "/onboarding-pain/card-2-middle-400w.webp 400w, /onboarding-pain/card-2-middle-600w.webp 600w, /onboarding-pain/card-2-middle-800w.webp 800w",
+    imageAlt: "User completed setup but no email was sent - missed opportunity",
+    title: "Missed moments kill revenue",
+    description:
+      "When nobody follows up at the right time, users stall, disengage, and never make it to paid.",
+  },
+];
+---
+
+<section class="py-16 md:py-20 lg:py-24 bg-slate-50">
+  <div class="container mx-auto px-4 max-w-3xl text-center mb-12">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-slate-900 mb-4 leading-tight">
+      50% of users who sign up never come back
+    </h2>
+    <p class="text-slate-500 leading-relaxed">
+      Most SaaS products lose users before they ever reach value. Weak
+      onboarding doesn't just hurt activation, it leaves revenue on the
+      table.
+    </p>
+  </div>
+
+  <div class="container mx-auto px-4 max-w-[1110px]">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+      {columns.map((col) => (
+        <div class="flex flex-col bg-white rounded-xl shadow-sm border border-slate-100/80">
+          <div class="w-full overflow-hidden rounded-t-xl">
+            <img
+              src={col.image}
+              srcset={col.srcSet}
+              alt={col.imageAlt}
+              class="w-full h-auto max-h-[302px] object-contain block mx-auto"
+              width="800"
+              height="800"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 33vw"
+              decoding="async"
+            />
+          </div>
+
+          <div class="p-5 flex flex-col">
+            <h3 class="font-semibold text-slate-900 leading-snug mb-2">
+              {col.title}
+            </h3>
+            <p class="text-slate-500 leading-relaxed">
+              {col.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

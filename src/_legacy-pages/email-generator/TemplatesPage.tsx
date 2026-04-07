@@ -7,7 +7,7 @@ import { EmailGallery } from "@/components/email-generator/EmailGallery";
 import { ProgressBar } from "@/components/email-generator/ProgressBar";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { EmailTemplate, TemplateTweaks } from "@/types/emailGenerator";
+import type { EmailTemplate, TemplateTweaks } from "@/types/emailGenerator";
 import { TemplateTweaksSidebar, extractCtaColorFromHtml } from "@/components/email-generator/TemplateTweaksSidebar";
 import { extractSocialIconsFromHtml } from "@/utils/templateTweaks";
 

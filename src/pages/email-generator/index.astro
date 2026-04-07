@@ -1,0 +1,11 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import EmailGeneratorApp from '@/components/react/EmailGeneratorApp';
+---
+
+<BaseLayout
+  title="Free Lifecycle Email Generator — DigiStorms"
+  description="Generate professional SaaS lifecycle emails in minutes. Choose your use case, fill a quick brief, and let AI create your email sequence."
+>
+  <EmailGeneratorApp client:only="react" initialPath="/email-generator" />
+</BaseLayout>

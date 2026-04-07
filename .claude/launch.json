@@ -3,15 +3,15 @@
   "configurations": [
     {
       "name": "digi-marketing-dev",
-      "runtimeExecutable": "/bin/zsh",
-      "runtimeArgs": ["-c", "export PATH=/usr/local/bin:$PATH && npx vite --port 5173"],
-      "port": 5173
+      "runtimeExecutable": "/usr/local/bin/node",
+      "runtimeArgs": ["node_modules/.bin/astro", "dev"],
+      "port": 4321
     },
     {
       "name": "digi-marketing-preview",
-      "runtimeExecutable": "/usr/local/bin/npx",
-      "runtimeArgs": ["vite", "preview", "--port", "4173"],
-      "port": 4173
+      "runtimeExecutable": "/usr/local/bin/node",
+      "runtimeArgs": ["node_modules/.bin/astro", "preview"],
+      "port": 4321
     }
   ]
 }

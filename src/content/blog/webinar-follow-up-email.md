@@ -2,8 +2,12 @@
 title: "Webinar follow up email: best practices with 13 examples"
 slug: "webinar-follow-up-email"
 description: "Explore how to write an effective webinar follow up email with 13 real examples, smart segmentation, and tips to drive leads, clicks, and next steps."
+shortDescription: "Get 13 follow-up email examples and tips to boost engagement after your next webinar."
 date: "2026-02-15"
 readTime: "8 min read"
+thumbnail: "/blog/webinar-follow-up-email/banner.webp"
+heroImage: "/blog/webinar-follow-up-email/banner.webp"
+libraryTags: ["webinar-recording", "follow-up"]
 ---
 
 Let's be real—hosting a webinar is only half the battle.

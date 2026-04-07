@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { TemplateTweaks } from "@/types/emailGenerator";
+import type { TemplateTweaks } from "@/types/emailGenerator";
 import { AlignLeft, AlignCenter, AlignRight, ChevronDown, Check } from "lucide-react";
 import { ALL_SOCIAL_PLATFORMS } from "@/utils/templateTweaks";
 

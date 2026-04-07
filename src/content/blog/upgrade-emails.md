@@ -2,8 +2,12 @@
 title: "13 Upgrade emails: best practices with 13 examples"
 slug: "upgrade-emails"
 description: "Learn how to write upgrade emails that convert trial users into paying customers. Includes timing tips, best practices, and examples from top SaaS companies."
+shortDescription: "Turn free users into customers with pro tips and examples from top companies."
 date: "2026-01-15"
 readTime: "9 min read"
+thumbnail: "/blog/upgrade-emails/banner.webp"
+heroImage: "/blog/upgrade-emails/banner.webp"
+libraryTags: ["upgrade-cta", "trial-expired-upgrade", "trial-expiration-warning"]
 ---
 
 If you're building a SaaS product, upgrade emails are one of the most effective tools to turn free users into paying customers.

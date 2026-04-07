@@ -4,17 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "build:seo": "vite build && node scripts/inject-meta.js",
-    "postbuild": "node scripts/generate-sitemap.js && node scripts/inject-meta.js",
-    "sitemap": "node scripts/generate-sitemap.js",
-    "preview": "vite preview",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
     "lint": "eslint .",
-    "convert-webp": "node scripts/convert-to-webp.mjs",
-    "srcset": "node scripts/generate-srcset.mjs"
+    "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/react": "^4.4.2",
+    "@astrojs/sitemap": "^3.7.2",
+    "@astrojs/tailwind": "^5.1.5",
+    "@astrojs/vercel": "^9.0.5",
     "@fontsource/instrument-sans": "^5.2.8",
     "@fontsource/kalam": "^5.2.8",
     "@radix-ui/react-accordion": "^1.2.0",
@@ -35,6 +35,7 @@
     "@radix-ui/react-toggle-group": "^1.1.11",
     "@radix-ui/react-tooltip": "^1.2.8",
     "@types/dompurify": "^3.0.5",
+    "astro": "^5.18.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dompurify": "^3.3.3",

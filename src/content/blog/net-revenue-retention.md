@@ -2,6 +2,7 @@
 title: "Understanding net revenue retention and its formula"
 slug: "net-revenue-retention"
 description: "Master net revenue retention (NRR) to drive SaaS growth! Learn calculation methods, key strategies, and industry benchmarks for sustainable success."
+shortDescription: "Learn how to calculate NRR, compare benchmarks, and drive sustainable SaaS growth."
 date: "2026-04-03"
 readTime: "11 min read"
 ---

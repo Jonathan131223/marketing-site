@@ -2,6 +2,7 @@
 title: "Lifecycle email marketing for SaaS businesses"
 slug: "lifecycle-email-marketing"
 description: "Learn how to implement lifecycle email marketing for your SaaS business. Covers the 12 essential email flows, segmentation strategies, and tools to guide users from signup to advocacy."
+shortDescription: "The complete guide to lifecycle email flows, segmentation, and tools for SaaS."
 date: "2026-04-07"
 readTime: "16 min read"
 ---

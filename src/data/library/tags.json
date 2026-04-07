@@ -1,0 +1,402 @@
+[
+  {
+    "slug": "account-created-confirmation",
+    "name": "Account Created Confirmation",
+    "summary": "A transactional email confirming a new account has been created. Sets expectations for what comes next and establishes early trust with new users."
+  },
+  {
+    "slug": "activity-update",
+    "name": "Activity Update",
+    "summary": "Automated notifications summarizing recent activity or events triggered by user actions. Keeps users informed about what's happening in their account and drives return visits."
+  },
+  {
+    "slug": "affiliate-partnership",
+    "name": "Affiliate Partnership",
+    "summary": "Emails promoting affiliate or partner program opportunities. Encourages existing users to refer others in exchange for commissions or rewards, expanding the customer base organically."
+  },
+  {
+    "slug": "article",
+    "name": "Article",
+    "summary": "Content-driven emails sharing articles, blog posts, or editorial pieces. Used to educate, build authority, and keep subscribers engaged between product touchpoints."
+  },
+  {
+    "slug": "beta-testing",
+    "name": "Beta Testing",
+    "summary": "Invitations to test new features before they launch publicly. Rewards engaged users with early access while generating valuable product feedback ahead of a broader rollout."
+  },
+  {
+    "slug": "billing-reminder",
+    "name": "Billing Reminder",
+    "summary": "Proactive reminders about upcoming charges, plan renewals, or payment due dates. Reduces payment failures and involuntary churn by giving users advance notice."
+  },
+  {
+    "slug": "case-study",
+    "name": "Case Study",
+    "summary": "Emails highlighting real customer success stories and measurable results. Build social proof and help prospects or users envision similar outcomes with the product."
+  },
+  {
+    "slug": "complete-purchase",
+    "name": "Complete Purchase",
+    "summary": "Nudges sent to users who started but did not finish a purchase or upgrade flow. Recovers abandoned conversions by reducing friction and reinforcing the value proposition."
+  },
+  {
+    "slug": "conference-invite",
+    "name": "Conference Invite",
+    "summary": "Invitations to industry conferences, summits, or brand-hosted events. Strengthens community ties and positions the brand as a thought leader in its space."
+  },
+  {
+    "slug": "content-engagement",
+    "name": "Content Engagement",
+    "summary": "Emails designed to drive engagement with specific content — blog posts, webinars, guides, or videos. Keeps users active and deepens their connection to the brand between logins."
+  },
+  {
+    "slug": "course",
+    "name": "Course",
+    "summary": "Multi-step email sequences delivering structured educational content over time. Builds user competency and increases the likelihood of long-term product adoption."
+  },
+  {
+    "slug": "customer-success",
+    "name": "Customer Success",
+    "summary": "Check-in emails from customer success teams offering support, tips, and next steps. Reduces churn by proactively identifying and resolving user challenges early in the lifecycle."
+  },
+  {
+    "slug": "downgrade-receipt",
+    "name": "Downgrade Receipt",
+    "summary": "Confirmation emails sent when a user downgrades their plan. Acknowledges the change, clarifies which features are no longer available, and subtly reinforces the value of the higher tier."
+  },
+  {
+    "slug": "download-chrome-extension",
+    "name": "Download Chrome Extension",
+    "summary": "Prompts encouraging users to install the product's browser extension. Increases daily active use by embedding the product directly into the user's existing browser workflow."
+  },
+  {
+    "slug": "download-mobile-app",
+    "name": "Download Mobile App",
+    "summary": "Emails nudging users to download the mobile version of the product. Extends usage beyond desktop and improves retention by making the product accessible anywhere."
+  },
+  {
+    "slug": "download-web-app",
+    "name": "Download Web App",
+    "summary": "Prompts to access or bookmark the web app version of the product. Reduces friction for first-time access and drives users toward the core product experience."
+  },
+  {
+    "slug": "ebook",
+    "name": "eBook",
+    "summary": "Emails promoting or delivering downloadable eBooks and long-form guides. Generates leads, nurtures prospects, and positions the brand as a trusted authority in its category."
+  },
+  {
+    "slug": "email-verification",
+    "name": "Email Verification",
+    "summary": "Transactional emails asking users to confirm their email address. A critical trust and deliverability step that ensures accounts are tied to valid, active addresses."
+  },
+  {
+    "slug": "feature-update",
+    "name": "Feature Update",
+    "summary": "Announcements about new or improved product features. Reminds current users of evolving value and gives inactive users a compelling reason to return and re-engage."
+  },
+  {
+    "slug": "feature-upsell",
+    "name": "Feature Upsell",
+    "summary": "Targeted emails promoting a specific paid feature or capability the user hasn't unlocked yet. Converts free or lower-tier users by showcasing tangible, relevant benefits."
+  },
+  {
+    "slug": "feature-usage-nudge",
+    "name": "Feature Usage Nudge",
+    "summary": "Behavioral prompts sent when users haven't explored a key feature. Drives product adoption by surfacing capabilities at the moment they're most relevant to the user's journey."
+  },
+  {
+    "slug": "follow-up",
+    "name": "Follow up",
+    "summary": "Re-engagement emails sent after a significant action, inactivity period, or sales conversation. Maintains momentum with prospects or users and prevents opportunities from going cold."
+  },
+  {
+    "slug": "guide",
+    "name": "Guide",
+    "summary": "Step-by-step how-to emails helping users get more value from the product. Accelerates time-to-value and reduces support overhead by proactively answering common questions."
+  },
+  {
+    "slug": "inactivity-nudge",
+    "name": "Inactivity Nudge",
+    "summary": "Re-engagement emails triggered by a period of user inactivity. Remind dormant users of the product's value and prompt them to return before they fully churn."
+  },
+  {
+    "slug": "integration-prompt",
+    "name": "Integration Prompt",
+    "summary": "Emails encouraging users to connect third-party tools and integrations. Deeper integrations increase switching costs and make the product significantly stickier over time."
+  },
+  {
+    "slug": "interview",
+    "name": "Interview",
+    "summary": "Invitations to participate in customer interviews or user research calls. Collects qualitative insights that inform product roadmap decisions and improve retention strategies."
+  },
+  {
+    "slug": "irl-event",
+    "name": "IRL Event",
+    "summary": "Invitations to in-person meetups, workshops, or brand events. Deepens customer relationships beyond the digital product and builds lasting community loyalty."
+  },
+  {
+    "slug": "join-community",
+    "name": "Join Community",
+    "summary": "Emails inviting users to join a Slack group, forum, or online community. Community membership increases retention by creating social accountability and peer support networks."
+  },
+  {
+    "slug": "join-waitlist",
+    "name": "Join Waitlist",
+    "summary": "Emails encouraging users to join a waitlist for a new product, feature, or plan tier. Builds anticipation and captures demand before an official launch."
+  },
+  {
+    "slug": "join-team",
+    "name": "Join Your Team",
+    "summary": "Invitation emails prompting users to add teammates or colleagues to their workspace. Drives viral growth and increases stickiness by turning solo tools into team tools."
+  },
+  {
+    "slug": "login-from-new-device",
+    "name": "Login From New Device",
+    "summary": "Security alerts notifying users of a login from an unrecognized device or location. Builds trust through transparency and protects accounts from unauthorized access."
+  },
+  {
+    "slug": "milestone-reached",
+    "name": "Milestone Reached",
+    "summary": "Celebratory emails triggered when a user reaches a significant usage or engagement milestone. Reinforces positive behavior, creates emotional connection, and motivates continued engagement."
+  },
+  {
+    "slug": "month-in-review",
+    "name": "Month in Review",
+    "summary": "Monthly recap emails summarizing a user's activity, achievements, and product usage. Demonstrates ongoing value and reminds users why they subscribed in the first place."
+  },
+  {
+    "slug": "new-feature-nudge",
+    "name": "New Feature(s) Nudge",
+    "summary": "Targeted prompts encouraging existing users to try a newly launched feature. Bridges the gap between announcements and actual adoption by connecting the feature to the user's specific context."
+  },
+  {
+    "slug": "newsletter",
+    "name": "Newsletter",
+    "summary": "Regular email digests covering industry news, product updates, tips, and brand content. Maintains top-of-mind awareness and nurtures ongoing relationships with subscribers."
+  },
+  {
+    "slug": "nps-survey",
+    "name": "NPS Survey",
+    "summary": "Net Promoter Score emails asking users how likely they are to recommend the product. A benchmark metric for measuring customer satisfaction and identifying at-risk or promoter users."
+  },
+  {
+    "slug": "demo-invite",
+    "name": "Nudge to Book Demo",
+    "summary": "Emails encouraging trial or free users to book a personalized demo with the sales or success team. Accelerates conversion by offering direct human support at a critical decision point."
+  },
+  {
+    "slug": "nudge-to-invite-team",
+    "name": "Nudge to Invite Team",
+    "summary": "Prompts sent to solo users encouraging them to invite colleagues into the workspace. Drives account expansion and increases the overall stickiness of the product across organizations."
+  },
+  {
+    "slug": "onboarding-call-invite",
+    "name": "Onboarding Call Invite",
+    "summary": "Emails inviting new users to schedule a live onboarding or setup call. Ensures new customers get off to a strong start and significantly reduces early-stage churn."
+  },
+  {
+    "slug": "onboarding-call-summary",
+    "name": "Onboarding Call Summary",
+    "summary": "Follow-up emails recapping the key takeaways and next steps from an onboarding call. Reinforces commitments, provides a reference document, and keeps momentum going post-call."
+  },
+  {
+    "slug": "onboarding-checklist",
+    "name": "Onboarding Checklist",
+    "summary": "Structured emails guiding new users through a list of setup or activation tasks. Reduces time-to-value by breaking the onboarding journey into clear, achievable steps."
+  },
+  {
+    "slug": "onboarding-progress-nudge",
+    "name": "Onboarding Progress Nudge",
+    "summary": "Reminder emails sent to users who have started but not completed their onboarding setup. Keeps new users on track and reduces early drop-off before they reach their activation moment."
+  },
+  {
+    "slug": "partner-program",
+    "name": "Partner Program",
+    "summary": "Emails promoting partnership, reseller, or referral program opportunities. Expands the customer network by turning satisfied users into advocates and channel partners."
+  },
+  {
+    "slug": "password-reset",
+    "name": "Password Reset",
+    "summary": "Transactional emails delivering a secure link to reset a forgotten password. A critical trust touchpoint — fast, clear delivery reduces friction and prevents account abandonment."
+  },
+  {
+    "slug": "payment-declined",
+    "name": "Payment Declined",
+    "summary": "Dunning emails notifying users that their payment method has failed. Prompt, empathetic messaging helps recover failed payments and reduces involuntary churn."
+  },
+  {
+    "slug": "payment-receipt",
+    "name": "Payment Receipt",
+    "summary": "Transactional confirmation emails sent after a successful payment or subscription renewal. Builds trust, provides a paper trail, and can open the door to upsell or referral messaging."
+  },
+  {
+    "slug": "payment-reminder",
+    "name": "Payment Reminder",
+    "summary": "Proactive emails sent before a payment is due or a subscription expires. Reduces involuntary churn by giving users advance notice to ensure their payment method is current."
+  },
+  {
+    "slug": "product-education",
+    "name": "Product Education",
+    "summary": "In-depth emails teaching users how to get maximum value from specific product features. Increases product competency, reduces support tickets, and drives long-term retention."
+  },
+  {
+    "slug": "product-update",
+    "name": "Product Update",
+    "summary": "Changelog-style emails announcing recent improvements, fixes, and new capabilities. Demonstrates active product development and gives lapsed users a compelling reason to return."
+  },
+  {
+    "slug": "promotional-article",
+    "name": "Promotional Article",
+    "summary": "Content marketing emails featuring thought leadership articles tied to the product's core use case. Builds authority while keeping the product top of mind for subscribers."
+  },
+  {
+    "slug": "qualitative-feedback",
+    "name": "Qualitative Feedback",
+    "summary": "Open-ended feedback emails asking users to describe their experience in their own words. Uncovers deeper insights about friction points and unmet needs that structured surveys miss."
+  },
+  {
+    "slug": "quota-reached",
+    "name": "Quota Reached",
+    "summary": "Triggered emails notifying users they've hit a usage limit or plan quota. A natural upgrade moment — these emails convert free users to paid by making the plan constraint tangible."
+  },
+  {
+    "slug": "re-engage-cancelled-users",
+    "name": "Re-Engage Cancelled Users",
+    "summary": "Win-back emails targeting users who have explicitly cancelled their subscription. The right offer at the right moment can recover a meaningful percentage of churned revenue."
+  },
+  {
+    "slug": "re-engage-downgraded-users",
+    "name": "Re-Engage Downgraded Users",
+    "summary": "Targeted re-engagement emails for users who downgraded to a lower-tier plan. Demonstrates the premium value they're missing and aims to win back the upgrade."
+  },
+  {
+    "slug": "referral-prompt",
+    "name": "Referral Prompt",
+    "summary": "Emails encouraging satisfied users to refer friends, colleagues, or their network to the product. Referral emails convert at high rates because they come with built-in social proof."
+  },
+  {
+    "slug": "refund-policy",
+    "name": "Refund Policy",
+    "summary": "Emails communicating the product's refund or cancellation terms. Builds trust during the purchase decision and reduces disputes by setting clear expectations upfront."
+  },
+  {
+    "slug": "report",
+    "name": "Report",
+    "summary": "Data-driven report emails delivering personalized analytics, benchmarks, or performance summaries. Demonstrates ROI and gives users concrete proof of the value they're receiving."
+  },
+  {
+    "slug": "setup-prompt",
+    "name": "Setup Prompt",
+    "summary": "Nudges sent to users who haven't completed initial account or workspace setup. Reduces early churn by guiding users to complete the steps required to experience core product value."
+  },
+  {
+    "slug": "social-media-share",
+    "name": "Social Media Share",
+    "summary": "Emails encouraging users to share a milestone, achievement, or piece of content on social media. Generates organic word-of-mouth and expands brand visibility through user-generated promotion."
+  },
+  {
+    "slug": "special-offer",
+    "name": "Special Offer",
+    "summary": "Limited-time discount or promotional emails targeting specific user segments. Creates urgency and provides a financial incentive for users to upgrade, renew, or return."
+  },
+  {
+    "slug": "survey",
+    "name": "Survey",
+    "summary": "General-purpose survey emails collecting structured feedback on product satisfaction, feature preferences, or user needs. Informs roadmap decisions and makes customers feel heard."
+  },
+  {
+    "slug": "team-invite-accepted",
+    "name": "Team Invite Accepted",
+    "summary": "Notification emails confirming a teammate has joined the workspace. Reinforces collaborative usage and prompts the inviting user to take the next step in onboarding their team."
+  },
+  {
+    "slug": "terms-of-use-update",
+    "name": "Terms of Use Update",
+    "summary": "Compliance emails notifying users of changes to terms of service or privacy policy. Required for legal compliance and an opportunity to reinforce transparency and brand trust."
+  },
+  {
+    "slug": "thank-you--download",
+    "name": "Thank You - Download",
+    "summary": "Follow-up emails sent after a user downloads a resource like an ebook, report, or template. Delivers the promised content and opens a nurture sequence to convert the lead."
+  },
+  {
+    "slug": "trial-expiration-warning",
+    "name": "Trial Expiration Warning",
+    "summary": "Urgency-driving emails sent as a free trial approaches its end date. One of the highest-converting email types in SaaS — timing, personalization, and a clear CTA are critical."
+  },
+  {
+    "slug": "trial-expired-upgrade",
+    "name": "Trial Expired - Upgrade",
+    "summary": "Post-trial emails sent after a free trial has ended without conversion. Last-chance messaging designed to recover users who were close to upgrading before their trial lapsed."
+  },
+  {
+    "slug": "trial-extension-offer",
+    "name": "Trial Extension Offer",
+    "summary": "Emails offering users an extension of their free trial, often in exchange for completing a demo or specific action. Keeps prospects engaged longer and gives teams more time to convert."
+  },
+  {
+    "slug": "trial-just-started",
+    "name": "Trial Just Started",
+    "summary": "Welcome emails sent immediately when a user begins their free trial. Sets expectations, delivers the first activation nudge, and kicks off the onboarding email sequence."
+  },
+  {
+    "slug": "upgrade-cta",
+    "name": "Upgrade CTA",
+    "summary": "Emails with a primary call-to-action focused on plan upgrades. Deployed across multiple lifecycle touchpoints, these are the backbone of SaaS expansion revenue."
+  },
+  {
+    "slug": "upgrade-to-annual",
+    "name": "Upgrade to Annual",
+    "summary": "Emails promoting the switch from monthly to annual billing, typically with a discount incentive. Improves LTV and reduces voluntary churn by locking customers into longer commitments."
+  },
+  {
+    "slug": "usage-expansion",
+    "name": "Usage Expansion",
+    "summary": "Emails encouraging users to expand their usage — add more seats, increase limits, or unlock additional capacity. Targets power users who are approaching or exceeding their current plan thresholds."
+  },
+  {
+    "slug": "usage-summary",
+    "name": "Usage Summary",
+    "summary": "Personalized emails showing users how they've used the product over a specific period. Demonstrates ongoing value and surfaces a natural moment to highlight upgrade opportunities."
+  },
+  {
+    "slug": "video",
+    "name": "Video",
+    "summary": "Emails featuring video content — product walkthroughs, tutorials, or thought leadership. Video-led emails see higher engagement rates and communicate complex ideas more effectively than text alone."
+  },
+  {
+    "slug": "video-series",
+    "name": "Video Series",
+    "summary": "Multi-episode video email sequences delivering structured educational content over time. Builds a committed audience, deepens product knowledge, and improves long-term retention."
+  },
+  {
+    "slug": "webinar-confirmation",
+    "name": "Webinar Confirmation",
+    "summary": "Transactional confirmation emails sent after a user registers for a webinar or virtual event. Includes event details and calendar links to maximize attendance rates."
+  },
+  {
+    "slug": "webinar-invitation",
+    "name": "Webinar Invitation",
+    "summary": "Promotional emails inviting users and prospects to attend a live webinar or virtual event. An effective mid-funnel touchpoint that combines education with direct product exposure."
+  },
+  {
+    "slug": "webinar-recording",
+    "name": "Webinar Recording",
+    "summary": "Post-event follow-up emails sharing a recording of a completed webinar. Extends the reach of live events and delivers value to registrants who couldn't attend in real time."
+  },
+  {
+    "slug": "welcome-free-users",
+    "name": "Welcome - Free Users",
+    "summary": "The first email a free plan user receives after signing up. Sets the tone for the entire user relationship — great welcome emails activate users faster and reduce early-stage churn."
+  },
+  {
+    "slug": "welcome-paid-users",
+    "name": "Welcome - Paid Users",
+    "summary": "Onboarding emails sent to users immediately after their first paid conversion. Reinforces the purchase decision, sets expectations for success, and starts the customer success journey."
+  },
+  {
+    "slug": "year-in-review",
+    "name": "Year in Review",
+    "summary": "Annual personalized recap emails celebrating what a user has accomplished with the product over the past year. One of the highest-engagement email types in SaaS — builds loyalty and drives social sharing."
+  }
+]
