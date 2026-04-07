@@ -2,6 +2,16 @@
   "outputDirectory": "dist",
   "redirects": [
     {
+      "source": "/use-cases",
+      "destination": "/library/usecases",
+      "permanent": true
+    },
+    {
+      "source": "/lifecycle-blueprints",
+      "destination": "/library",
+      "permanent": true
+    },
+    {
       "source": "/(.*)",
       "has": [{ "type": "host", "value": "digistorms.ai" }],
       "destination": "https://www.digistorms.ai/$1",
