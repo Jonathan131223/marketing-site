@@ -70,12 +70,23 @@ export default function UseCasePickerPage() {
   return (
     <>
       <Helmet>
-        <title>Free Lifecycle Email Generator | DigiStorms</title>
-        <meta
-          name="description"
-          content="Generate professional lifecycle emails for free. Choose from 36+ use cases across activation, engagement, expansion, churn prevention, community, and content."
-        />
-        <link rel="canonical" href="https://digistorms.app/email-generator" />
+        <title>Lifecycle Email Generator | DigiStorms</title>
+        <meta name="description" content="Generate a complete lifecycle email sequence for your SaaS product. Choose your use case, enter your website, and get onboarding emails in minutes." />
+        <link rel="canonical" href="https://www.digistorms.ai/email-generator" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Lifecycle Email Generator | DigiStorms" />
+        <meta property="og:description" content="Generate a complete lifecycle email sequence for your SaaS product." />
+        <meta property="og:url" content="https://www.digistorms.ai/email-generator" />
+        <meta property="og:image" content="https://www.digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png" />
+        <meta property="og:site_name" content="DigiStorms" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Lifecycle Email Generator | DigiStorms" />
+        <meta name="twitter:description" content="Generate lifecycle email sequences for your SaaS product." />
+        <meta name="twitter:image" content="https://www.digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png" />
+        <meta name="twitter:site" content="@digistorms_ai" />
       </Helmet>
 
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50">

@@ -50,9 +50,11 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center gap-6 flex-shrink-0">
             <Link to="/" className="flex items-center">
               <img
-                src="/images/b264ff90-d48c-4ee1-8397-adaeb0142ce4.png"
+                src="/images/logo.webp"
                 alt="DigiStorms"
                 className="h-8 w-auto"
+                width={120}
+                height={32}
               />
             </Link>
 

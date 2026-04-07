@@ -213,8 +213,8 @@ const BlogPost: React.FC = () => {
   const metaDescription = truncateMetaDescription(description || "Generate high-converting lifecycle emails with AI.");
   const heroImage = postMeta?.heroImage;
   const ogImage = heroImage
-    ? `https://digistorms.ai${heroImage}`
-    : "https://digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png";
+    ? `https://www.digistorms.ai${heroImage}`
+    : "https://www.digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png";
 
   const formattedDate = date
     ? new Date(date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })
@@ -234,7 +234,7 @@ const BlogPost: React.FC = () => {
     headline: title,
     description: metaDescription,
     image: ogImage,
-    url: `https://digistorms.ai/blog/${slug}`,
+    url: `https://www.digistorms.ai/blog/${slug}`,
     datePublished: date,
     articleSection,
     ...(readTimeIso ? { timeRequired: readTimeIso } : {}),
@@ -246,10 +246,10 @@ const BlogPost: React.FC = () => {
     publisher: {
       "@type": "Organization",
       name: "DigiStorms",
-      url: "https://digistorms.ai",
+      url: "https://www.digistorms.ai",
       logo: {
         "@type": "ImageObject",
-        url: "https://digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png",
+        url: "https://www.digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png",
       },
     },
   };
@@ -259,18 +259,23 @@ const BlogPost: React.FC = () => {
       <Helmet>
         <title>{title ? `${title} | DigiStorms` : "DigiStorms - AI Lifecycle Email Generator"}</title>
         <meta name="description" content={metaDescription} />
-        <link rel="canonical" href={`https://digistorms.ai/blog/${slug}`} />
+        <link rel="canonical" href={`https://www.digistorms.ai/blog/${slug}`} />
         <meta property="og:type" content="article" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={metaDescription} />
         <meta property="og:image" content={ogImage} />
-        <meta property="og:url" content={`https://digistorms.ai/blog/${slug}`} />
+        <meta property="og:url" content={`https://www.digistorms.ai/blog/${slug}`} />
         {date ? <meta property="article:published_time" content={`${date}T12:00:00.000Z`} /> : null}
         <meta property="article:section" content={articleSection} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content={ogImage} />
+        <meta property="og:site_name" content="DigiStorms" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:site" content="@digistorms_ai" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <Navbar />

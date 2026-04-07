@@ -1,0 +1,43 @@
+# DigiStorms
+
+> AI agent for onboarding emails. Analyzes your product, maps the user journey, and builds a full lifecycle email system — automatically.
+
+## What is DigiStorms?
+
+DigiStorms is an AI-powered SaaS tool that generates behavior-based onboarding and lifecycle email sequences. Instead of manually writing emails or guessing what to send, DigiStorms analyzes your product to understand how users reach value, then creates a complete email system tailored to your onboarding journey.
+
+## Who is it for?
+
+- SaaS founders who want higher activation and free-to-paid conversion
+- Growth and product teams tired of building onboarding flows manually
+- Companies that know lifecycle email = revenue
+
+## Key capabilities
+
+- Analyzes your website to understand your product and user journey
+- Generates complete onboarding email sequences (welcome, activation, milestone, upgrade, win-back)
+- Triggers emails based on real user behavior, not fixed schedules
+- Trained on 1,000+ real SaaS lifecycle emails from companies like Notion, Slack, Stripe, Adobe
+- Includes an email library with 1,000+ B2B SaaS lifecycle email examples
+
+## Pricing
+
+- Free: $0/month for 100 new signups
+- Pro: $19/month for 1,000 new signups
+- Business: $59/month for 5,000 new signups
+- Scale: $149/month for 10,000 new signups
+- Concierge (done-for-you): custom pricing
+
+## Founded by
+
+Jonathan Bernard — lifecycle email specialist for SaaS companies.
+
+## Links
+
+- Homepage: https://www.digistorms.ai
+- Email Library: https://www.digistorms.ai/library
+- Blog: https://www.digistorms.ai/blog
+- Pricing: https://www.digistorms.ai/pricing
+- ROI Calculator: https://www.digistorms.ai/roi-calculator
+- Manifesto: https://www.digistorms.ai/manifesto
+- Contact: https://www.digistorms.ai/contact

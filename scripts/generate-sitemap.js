@@ -8,7 +8,7 @@ import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
-const BASE_URL = "https://digistorms.ai";
+const BASE_URL = "https://www.digistorms.ai";
 const TODAY = new Date().toISOString().split("T")[0];
 
 const emails   = JSON.parse(readFileSync(join(ROOT, "public/data/library/emails.json"), "utf8"));
@@ -29,11 +29,9 @@ function urlEntry(loc, lastmod, changefreq, priority) {
 const staticEntries = [
   urlEntry(`${BASE_URL}/`,                   "2026-03-23", "monthly",  "1.0"),
   urlEntry(`${BASE_URL}/blog`,               "2026-03-23", "weekly",   "0.9"),
-  urlEntry(`${BASE_URL}/pricing`,            "2026-03-01", "monthly",  "0.8"),
   urlEntry(`${BASE_URL}/manifesto`,          "2026-01-01", "yearly",   "0.5"),
-  urlEntry(`${BASE_URL}/lifecycle-score`,    "2026-01-01", "monthly",  "0.7"),
   urlEntry(`${BASE_URL}/roi-calculator`,     "2026-01-01", "monthly",  "0.7"),
-  urlEntry(`${BASE_URL}/contact`,            "2026-01-01", "yearly",   "0.5"),
+  urlEntry(`${BASE_URL}/email-generator`,    "2026-01-01", "monthly",  "0.7"),
   urlEntry(`${BASE_URL}/privacy`,            "2026-01-01", "yearly",   "0.3"),
   urlEntry(`${BASE_URL}/terms`,              "2026-01-01", "yearly",   "0.3"),
   // Blog posts

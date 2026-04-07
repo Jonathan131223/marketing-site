@@ -7,8 +7,6 @@ import "@fontsource/instrument-sans/500.css";
 import "@fontsource/instrument-sans/600.css";
 import "@fontsource/instrument-sans/700.css";
 import "@fontsource/kalam/300.css";
-import "@fontsource/kalam/400.css";
-import "@fontsource/kalam/700.css";
 
 const TRACKING_QUERY_KEYS = new Set([
   "_gl",

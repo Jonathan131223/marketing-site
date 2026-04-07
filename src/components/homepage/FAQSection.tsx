@@ -89,6 +89,16 @@ export const FAQSection: React.FC = () => {
             ))}
           </div>
         </div>
+
+        {/* Hidden FAQ content for crawlers that don't execute JS */}
+        <div className="sr-only" aria-hidden="true">
+          {faqs.map((faq, index) => (
+            <div key={`seo-${index}`}>
+              <h3>{faq.question}</h3>
+              <p>{faq.answer}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

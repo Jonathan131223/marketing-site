@@ -68,11 +68,21 @@ const Contact = () => {
       <Helmet>
         <title>Contact Us | DigiStorms</title>
         <meta name="description" content="Get in touch with the DigiStorms team. We help SaaS companies build lifecycle email sequences that drive activation, retention, and revenue." />
-        <link rel="canonical" href="https://digistorms.ai/contact" />
+        <link rel="canonical" href="https://www.digistorms.ai/contact" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Contact Us | DigiStorms" />
         <meta property="og:description" content="Get in touch with the DigiStorms team." />
-        <meta property="og:url" content="https://digistorms.ai/contact" />
+        <meta property="og:url" content="https://www.digistorms.ai/contact" />
+        <meta property="og:image" content="https://www.digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png" />
+        <meta property="og:site_name" content="DigiStorms" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Us | DigiStorms" />
+        <meta name="twitter:description" content="Get in touch with the DigiStorms team." />
+        <meta name="twitter:image" content="https://www.digistorms.ai/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png" />
+        <meta name="twitter:site" content="@digistorms_ai" />
       </Helmet>
       <Navbar />
       
