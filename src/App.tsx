@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect, lazy, Suspense } from "react";
-import Index from "./pages/Index";
+const Index = lazy(() => import("./pages/Index"));
 import { StoreProvider } from "@/store/context";
 
 const Pricing = lazy(() => import("./pages/Pricing"));
@@ -43,7 +43,7 @@ const App = () => (
     <BrowserRouter>
       <ScrollToTop />
       <Toaster />
-      <Suspense>
+      <Suspense fallback={<div className="min-h-screen bg-white" />}>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/pricing" element={<Pricing />} />

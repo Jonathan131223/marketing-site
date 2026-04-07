@@ -29,6 +29,7 @@ export const TestimonialSection: React.FC = () => {
                 className="w-11 h-11 rounded-full object-cover flex-shrink-0"
                 width="44"
                 height="44"
+                decoding="async"
               />
               <div>
                 <p className="text-sm font-semibold text-slate-900">
@@ -72,6 +73,7 @@ export const TestimonialSection: React.FC = () => {
                   width="400"
                   height="134"
                   style={{ height: '6.3rem' }}
+                  decoding="async"
                 />
               </div>
             </div>

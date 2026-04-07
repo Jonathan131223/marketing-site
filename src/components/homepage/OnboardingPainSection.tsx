@@ -59,6 +59,8 @@ export const OnboardingPainSection: React.FC = () => {
                   width="800"
                   height="800"
                   loading="lazy"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  decoding="async"
                 />
               </VisualArea>
 

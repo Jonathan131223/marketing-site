@@ -67,6 +67,49 @@ const Pricing: React.FC = () => {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:site" content="@digistorms_ai" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "DigiStorms",
+          "url": "https://www.digistorms.ai",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "description": "AI agent for onboarding emails. Analyzes your product and builds lifecycle email sequences automatically.",
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "Free",
+              "price": "0",
+              "priceCurrency": "USD",
+              "description": "100 new signups per month",
+              "url": "https://www.digistorms.ai/pricing"
+            },
+            {
+              "@type": "Offer",
+              "name": "Pro",
+              "price": "19",
+              "priceCurrency": "USD",
+              "description": "1,000 new signups per month",
+              "url": "https://www.digistorms.ai/pricing"
+            },
+            {
+              "@type": "Offer",
+              "name": "Business",
+              "price": "59",
+              "priceCurrency": "USD",
+              "description": "5,000 new signups per month",
+              "url": "https://www.digistorms.ai/pricing"
+            },
+            {
+              "@type": "Offer",
+              "name": "Scale",
+              "price": "149",
+              "priceCurrency": "USD",
+              "description": "10,000 new signups per month",
+              "url": "https://www.digistorms.ai/pricing"
+            }
+          ]
+        })}</script>
       </Helmet>
       <Navbar />
 

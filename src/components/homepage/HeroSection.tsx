@@ -53,6 +53,22 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               Generate my onboarding emails
             </button>
             <p className="text-sm text-slate-500 text-center">100 onboarded users free. No card required.</p>
+            <div className="flex items-center justify-center gap-6 sm:gap-10 mt-10 pt-8 border-t border-slate-100">
+              <div className="text-center">
+                <p className="text-2xl sm:text-3xl font-bold text-slate-900">1,000+</p>
+                <p className="text-xs sm:text-sm text-slate-500">Real SaaS emails analyzed</p>
+              </div>
+              <div className="w-px h-10 bg-slate-200" />
+              <div className="text-center">
+                <p className="text-2xl sm:text-3xl font-bold text-slate-900">38+</p>
+                <p className="text-xs sm:text-sm text-slate-500">SaaS brands studied</p>
+              </div>
+              <div className="w-px h-10 bg-slate-200" />
+              <div className="text-center">
+                <p className="text-2xl sm:text-3xl font-bold text-slate-900">5 min</p>
+                <p className="text-xs sm:text-sm text-slate-500">To generate your sequence</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
