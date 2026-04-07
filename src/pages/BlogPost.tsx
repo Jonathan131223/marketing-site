@@ -236,8 +236,13 @@ const BlogPost: React.FC = () => {
     image: ogImage,
     url: `https://www.digistorms.ai/blog/${slug}`,
     datePublished: date,
+    dateModified: date,
     articleSection,
     ...(readTimeIso ? { timeRequired: readTimeIso } : {}),
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "h2", "article p"],
+    },
     author: {
       "@type": "Person",
       name: "Jonathan Bernard",

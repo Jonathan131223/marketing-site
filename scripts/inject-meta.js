@@ -101,12 +101,21 @@ const template = readFileSync(join(DIST, "index.html"), "utf8");
 let count = 0;
 let staticPageCount = 0;
 
-function writeRoute(urlPath, headMeta) {
+function writeRoute(urlPath, headMeta, bodyContent) {
   // Replace default title and description, then inject all tags before </head>
   let html = template
     .replace(/<title>[^<]*<\/title>/, "")
     .replace(/<meta name="description"[^>]*\/?>/, "")
     .replace("</head>", `    ${headMeta}\n  </head>`);
+
+  // When bodyContent is provided, inject it inside the root div so the browser
+  // can paint above-the-fold HTML before React hydrates over it.
+  if (bodyContent) {
+    html = html.replace(
+      '<div id="root"></div>',
+      `<div id="root">${bodyContent}</div>`,
+    );
+  }
 
   const fsPath = join(DIST, ...urlPath.split("/").filter(Boolean), "index.html");
   mkdirSync(dirname(fsPath), { recursive: true });
@@ -169,6 +178,9 @@ const homepageFAQs = [
     a: "Most SaaS products lose users before they reach value. DigiStorms helps fix that by guiding users through onboarding with the right messages at the right time. The result is typically higher activation, better engagement, and more users converting to paid.",
   },
 ];
+
+// Above-the-fold hero HTML — enough for LCP and crawlers. React hydrates over it.
+const homepageBody = '<div class="min-h-screen bg-white"><nav class="h-14"></nav><main><section class="pt-20 pb-16 md:pb-40 bg-[#FFFFFF] min-h-screen flex items-center"><div class="container mx-auto px-4"><div class="text-center max-w-4xl mx-auto"><h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-slate-900 mb-6 leading-tight">Turn free users into paying customers <span class="italic" style="color:#1D4ED8">automatically</span></h1><p class="text-lg text-slate-600 mb-8 leading-relaxed max-w-2xl mx-auto">DigiStorms is an AI onboarding agent. It tracks user behavior, sends the right emails at the right time, and automatically moves users from signup to paid.</p></div></div></section></main></div>';
 
 writeRoute("/", buildHead({
   title: "DigiStorms.ai - AI Agent for Onboarding Emails",
@@ -246,7 +258,7 @@ writeRoute("/", buildHead({
       })),
     },
   ],
-}));
+}), homepageBody);
 staticPageCount++;
 
 // ── 2. Blog index /blog ──────────────────────────────────────────────────────
@@ -349,6 +361,11 @@ blogPosts.forEach((post) => {
       image: `${BASE_URL}${post.heroImage}`,
       url: `${BASE_URL}/blog/${post.slug}`,
       datePublished: post.date,
+      dateModified: post.date,
+      speakable: {
+        "@type": "SpeakableSpecification",
+        cssSelector: ["h1", "h2", "article p"],
+      },
       author: authorPerson,
       publisher: publisherOrg,
     },
@@ -362,10 +379,27 @@ writeRoute("/pricing", buildHead({
   title: "Pricing - DigiStorms AI Agent for Onboarding Emails",
   description: "Simple, transparent pricing for DigiStorms. Get your full onboarding email system built and running \u2014 from signup to upgrade.",
   canonical: `${BASE_URL}/pricing`,
-  jsonLd: breadcrumbSchema([
-    { name: "Home", url: BASE_URL },
-    { name: "Pricing", url: `${BASE_URL}/pricing` },
-  ]),
+  jsonLd: [
+    breadcrumbSchema([
+      { name: "Home", url: BASE_URL },
+      { name: "Pricing", url: `${BASE_URL}/pricing` },
+    ]),
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      name: "DigiStorms",
+      url: BASE_URL,
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      description: "AI agent for onboarding emails. Analyzes your product and builds lifecycle email sequences automatically.",
+      offers: [
+        { "@type": "Offer", name: "Free", price: "0", priceCurrency: "USD", description: "100 new signups per month", url: `${BASE_URL}/pricing` },
+        { "@type": "Offer", name: "Pro", price: "19", priceCurrency: "USD", description: "1,000 new signups per month", url: `${BASE_URL}/pricing` },
+        { "@type": "Offer", name: "Business", price: "59", priceCurrency: "USD", description: "5,000 new signups per month", url: `${BASE_URL}/pricing` },
+        { "@type": "Offer", name: "Scale", price: "149", priceCurrency: "USD", description: "10,000 new signups per month", url: `${BASE_URL}/pricing` },
+      ],
+    },
+  ],
 }));
 staticPageCount++;
 

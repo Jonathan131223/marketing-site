@@ -95,6 +95,9 @@ const Blog: React.FC = () => {
                 <p style={{ color: '#333333', fontSize: '16px', margin: '0px 0px 20px' }}>
                   {post.shortDescription}
                 </p>
+                <p className="text-sm text-slate-400 mt-1">
+                  {new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}
+                </p>
               </Link>
             ))}
           </div>
