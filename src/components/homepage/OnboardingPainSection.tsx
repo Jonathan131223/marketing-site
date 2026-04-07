@@ -9,6 +9,8 @@ const VisualArea: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 const columns = [
   {
     image: "/onboarding-pain/card-1-left.webp",
+    srcSet:
+      "/onboarding-pain/card-1-left-400w.webp 400w, /onboarding-pain/card-1-left-600w.webp 600w, /onboarding-pain/card-1-left-800w.webp 800w",
     imageAlt: "Five users receiving the same welcome message",
     title: "Generic emails don't convert",
     description:
@@ -16,6 +18,8 @@ const columns = [
   },
   {
     image: "/onboarding-pain/card-3-right.webp",
+    srcSet:
+      "/onboarding-pain/card-3-right-400w.webp 400w, /onboarding-pain/card-3-right-600w.webp 600w, /onboarding-pain/card-3-right-800w.webp 800w",
     imageAlt: "User journey funnel showing Signup, Setup, First value, Upgrade with most users abandoning between Setup and First value",
     title: "Users never reach value",
     description:
@@ -23,6 +27,8 @@ const columns = [
   },
   {
     image: "/onboarding-pain/card-2-middle.webp",
+    srcSet:
+      "/onboarding-pain/card-2-middle-400w.webp 400w, /onboarding-pain/card-2-middle-600w.webp 600w, /onboarding-pain/card-2-middle-800w.webp 800w",
     imageAlt: "User completed setup but no email was sent - missed opportunity",
     title: "Missed moments kill revenue",
     description:
@@ -54,6 +60,7 @@ export const OnboardingPainSection: React.FC = () => {
               <VisualArea>
                 <img
                   src={col.image}
+                  srcSet={col.srcSet}
                   alt={col.imageAlt}
                   className="w-full h-auto max-h-[302px] object-contain block mx-auto"
                   width="800"

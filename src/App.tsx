@@ -9,6 +9,7 @@ const TermsOfService = lazy(() => import("./pages/TermsOfService"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Manifesto = lazy(() => import("./pages/Manifesto"));
+const About = lazy(() => import("./pages/About"));
 const LifecycleScorePage = lazy(() => import("./pages/LifecycleScorePage"));
 const ROICalculator = lazy(() => import("./pages/ROICalculator"));
 const Blog = lazy(() => import("./pages/Blog"));
@@ -48,6 +49,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/manifesto" element={<Manifesto />} />
+          <Route path="/about" element={<About />} />
           <Route path="/lifecycle-score" element={<LifecycleScorePage />} />
           <Route path="/roi-calculator" element={<ROICalculator />} />
           <Route path="/contact" element={<Contact />} />

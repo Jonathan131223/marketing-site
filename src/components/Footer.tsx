@@ -168,6 +168,14 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li>
                 <Link
+                  to="/about"
+                  className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/contact"
                   className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
                 >
