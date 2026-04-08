@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
-import { useNavigate } from "react-router-dom";
 import { Search, X } from "lucide-react";
 
 // ── Types ──────────────────────────────────────────────────────────────────────
@@ -63,7 +62,6 @@ export const SearchOverlay: React.FC<Props> = ({ onClose, onSearch, onNavigate }
   const [usecases, setUsecases] = useState<UseCase[]>([]);
   const [emails, setEmails] = useState<Email[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
-  const navigate = useNavigate();
 
   // Self-load data on mount
   useEffect(() => {
@@ -139,9 +137,9 @@ export const SearchOverlay: React.FC<Props> = ({ onClose, onSearch, onNavigate }
   };
 
   const handleItemClick = (to: string) => {
-    navigate(to);
     onNavigate();
     onClose();
+    window.location.href = to;
   };
 
   const TABS: { id: Tab; label: string }[] = [

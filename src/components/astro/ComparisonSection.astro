@@ -1,0 +1,63 @@
+---
+const withoutItems = [
+  "Manually write every onboarding email",
+  "Same message for every user",
+  "Weeks to launch a sequence",
+  "No visibility into where users stall",
+  "Users churn silently — no follow-up",
+];
+
+const withItems = [
+  "AI generates your full email sequence",
+  "Behavior-triggered, personalized emails",
+  "Go live in 5 minutes",
+  "See exactly where users drop off",
+  "Auto-nudge at the right moment",
+];
+---
+
+<section class="py-16 md:py-20 lg:py-24 bg-white">
+  <div class="container mx-auto px-4 max-w-4xl">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-slate-900 mb-4">
+        What changes with DigiStorms
+      </h2>
+      <p class="text-slate-500 max-w-2xl mx-auto leading-relaxed">
+        Stop building onboarding from scratch. Let AI do the heavy lifting.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* Without */}
+      <div class="bg-slate-50 rounded-2xl p-8">
+        <p class="text-sm font-semibold text-slate-400 uppercase tracking-widest mb-6">Without DigiStorms</p>
+        <ul class="space-y-4">
+          {withoutItems.map((item) => (
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-slate-300 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 6 6 18"></path>
+                <path d="m6 6 12 12"></path>
+              </svg>
+              <span class="text-slate-500">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* With */}
+      <div class="bg-blue-50 rounded-2xl p-8 border border-blue-100">
+        <p class="text-sm font-semibold uppercase tracking-widest mb-6" style="color: #1D4ED8;">With DigiStorms</p>
+        <ul class="space-y-4">
+          {withItems.map((item) => (
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 flex-shrink-0 mt-0.5" style="color: #1D4ED8;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+              <span class="text-slate-800 font-medium">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

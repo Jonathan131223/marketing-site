@@ -19,6 +19,7 @@ export const blogPosts: BlogPost[] = [
     shortDescription: "Original research: what 1,051 SaaS lifecycle emails reveal about types, subject lines, and brand strategies.",
     date: "2026-04-07",
     readTime: "12 min read",
+    libraryTags: ["welcome-free-users", "welcome-paid-users", "upgrade-cta", "product-update"],
   },
   {
     slug: "saas-welcome-email",

@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
-import { AppState, AppAction } from './types';
+import type { AppState, AppAction } from './types';
 import { store } from './store';
 
 // Store Context

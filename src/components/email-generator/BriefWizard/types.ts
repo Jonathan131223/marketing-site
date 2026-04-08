@@ -1,4 +1,4 @@
-import { UseCase, BriefData } from "@/types/emailGenerator";
+import type { UseCase, BriefData } from "@/types/emailGenerator";
 
 export interface FieldSuggestion {
   selected: string;

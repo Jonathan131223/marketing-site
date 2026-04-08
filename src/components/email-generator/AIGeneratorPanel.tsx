@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
-import { EmailTemplate, UseCase } from "@/types/emailGenerator";
+import type { EmailTemplate, UseCase } from "@/types/emailGenerator";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";

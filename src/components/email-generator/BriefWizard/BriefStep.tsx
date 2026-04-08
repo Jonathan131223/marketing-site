@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { UseCase, BriefData } from "@/types/emailGenerator";
+import type { UseCase, BriefData } from "@/types/emailGenerator";
 import { Sparkles, Lightbulb, ArrowLeft } from "lucide-react";
 import { SuggestionField } from "./SuggestionField";
 import { WebsiteAnalysisResponse, FieldSuggestion } from "./types";

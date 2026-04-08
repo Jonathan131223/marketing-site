@@ -1,23 +1,50 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { appUrl } from "@/config/appUrl";
 import { Menu, X, Search } from "lucide-react";
 import { SearchOverlay } from "@/components/library/SearchOverlay";
 
-export const Navbar: React.FC = () => {
+interface NavLinkProps {
+  href: string;
+  pathname: string;
+  children: React.ReactNode;
+  className?: string;
+  onClick?: () => void;
+}
+
+const NavLinkItem: React.FC<NavLinkProps> = ({ href, pathname, children, className, onClick }) => {
+  const isActive = pathname === href || pathname.startsWith(href + "/");
+  return (
+    <a
+      href={href}
+      className={className || `text-sm font-medium transition-colors min-h-[44px] px-3 flex items-center rounded-lg hover:bg-slate-50 ${isActive ? "text-[#1D4ED8]" : "text-slate-700 hover:text-slate-900"}`}
+      onClick={onClick}
+    >
+      {children}
+    </a>
+  );
+};
+
+interface NavbarProps {
+  pathname?: string;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ pathname: initialPathname }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [showSearch, setShowSearch] = useState(true);
-  const navigate = useNavigate();
-  const location = useLocation();
+  const [currentPathname, setCurrentPathname] = useState(initialPathname || "/");
+
+  useEffect(() => {
+    setCurrentPathname(window.location.pathname);
+  }, []);
 
   // Show the search bar only on library pages.
   // On the library homepage specifically, hide it until the user has scrolled
   // past the hero section (which already has its own search bar).
   useEffect(() => {
-    const isLibraryPage = location.pathname.startsWith("/library");
-    const isLibraryHome = location.pathname === "/library";
+    const isLibraryPage = currentPathname.startsWith("/library");
+    const isLibraryHome = currentPathname === "/library";
 
     if (!isLibraryPage) {
       setShowSearch(false);
@@ -36,7 +63,7 @@ export const Navbar: React.FC = () => {
     const handleScroll = () => setShowSearch(window.scrollY > threshold);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [location.pathname]);
+  }, [currentPathname]);
 
   const loginUrl = appUrl("/portal");
   const signUpUrl = appUrl("/portal");
@@ -48,7 +75,7 @@ export const Navbar: React.FC = () => {
 
           {/* Left: logo + nav links */}
           <div className="flex items-center gap-6 flex-shrink-0">
-            <Link to="/" className="flex items-center">
+            <a href="/" className="flex items-center">
               <img
                 src="/images/logo.webp"
                 alt="DigiStorms"
@@ -56,39 +83,18 @@ export const Navbar: React.FC = () => {
                 width={120}
                 height={32}
               />
-            </Link>
+            </a>
 
             <div className="hidden md:flex items-center gap-1">
-              <NavLink
-                to="/library"
-                className={({ isActive }) =>
-                  `text-sm font-medium transition-colors min-h-[44px] px-3 flex items-center rounded-lg hover:bg-slate-50 ${isActive ? "text-[#1D4ED8]" : "text-slate-700 hover:text-slate-900"}`
-                }
-              >
-                Library
-              </NavLink>
-              <NavLink
-                to="/blog"
-                className={({ isActive }) =>
-                  `text-sm font-medium transition-colors min-h-[44px] px-3 flex items-center rounded-lg hover:bg-slate-50 ${isActive ? "text-[#1D4ED8]" : "text-slate-700 hover:text-slate-900"}`
-                }
-              >
-                Blog
-              </NavLink>
-              <NavLink
-                to="/pricing"
-                className={({ isActive }) =>
-                  `text-sm font-medium transition-colors min-h-[44px] px-3 flex items-center rounded-lg hover:bg-slate-50 ${isActive ? "text-[#1D4ED8]" : "text-slate-700 hover:text-slate-900"}`
-                }
-              >
-                Pricing
-              </NavLink>
+              <NavLinkItem href="/library" pathname={currentPathname}>Library</NavLinkItem>
+              <NavLinkItem href="/blog" pathname={currentPathname}>Blog</NavLinkItem>
+              <NavLinkItem href="/pricing" pathname={currentPathname}>Pricing</NavLinkItem>
             </div>
           </div>
 
           {/* Center: search bar (library pages only) — spacer always present to push CTAs right */}
           <div className="hidden md:flex flex-1 justify-center">
-            {location.pathname.startsWith("/library") && (
+            {currentPathname.startsWith("/library") && (
               <button
                 onClick={() => setSearchOpen(true)}
                 className={`flex items-center gap-2 w-full max-w-xs px-4 py-2 rounded-xl border border-slate-200 bg-slate-50 text-sm text-slate-400 hover:border-[#1D4ED8] hover:bg-white transition-all text-left ${
@@ -160,33 +166,30 @@ export const Navbar: React.FC = () => {
 
         {mobileOpen && (
           <div className="md:hidden border-t border-slate-100 bg-white px-4 py-4 space-y-1">
-            <NavLink
-              to="/library"
-              className={({ isActive }) =>
-                `block px-3 py-2.5 text-sm font-medium rounded-lg transition-colors hover:bg-slate-50 ${isActive ? "text-[#1D4ED8]" : "text-slate-700 hover:text-slate-900"}`
-              }
+            <NavLinkItem
+              href="/library"
+              pathname={currentPathname}
+              className={`block px-3 py-2.5 text-sm font-medium rounded-lg transition-colors hover:bg-slate-50 ${currentPathname.startsWith("/library") ? "text-[#1D4ED8]" : "text-slate-700 hover:text-slate-900"}`}
               onClick={() => setMobileOpen(false)}
             >
               Library
-            </NavLink>
-            <NavLink
-              to="/blog"
-              className={({ isActive }) =>
-                `block px-3 py-2.5 text-sm font-medium rounded-lg transition-colors hover:bg-slate-50 ${isActive ? "text-[#1D4ED8]" : "text-slate-700 hover:text-slate-900"}`
-              }
+            </NavLinkItem>
+            <NavLinkItem
+              href="/blog"
+              pathname={currentPathname}
+              className={`block px-3 py-2.5 text-sm font-medium rounded-lg transition-colors hover:bg-slate-50 ${currentPathname.startsWith("/blog") ? "text-[#1D4ED8]" : "text-slate-700 hover:text-slate-900"}`}
               onClick={() => setMobileOpen(false)}
             >
               Blog
-            </NavLink>
-            <NavLink
-              to="/pricing"
-              className={({ isActive }) =>
-                `block px-3 py-2.5 text-sm font-medium rounded-lg transition-colors hover:bg-slate-50 ${isActive ? "text-[#1D4ED8]" : "text-slate-700 hover:text-slate-900"}`
-              }
+            </NavLinkItem>
+            <NavLinkItem
+              href="/pricing"
+              pathname={currentPathname}
+              className={`block px-3 py-2.5 text-sm font-medium rounded-lg transition-colors hover:bg-slate-50 ${currentPathname === "/pricing" ? "text-[#1D4ED8]" : "text-slate-700 hover:text-slate-900"}`}
               onClick={() => setMobileOpen(false)}
             >
               Pricing
-            </NavLink>
+            </NavLinkItem>
             <a
               href="https://calendly.com/jonathan-digistorms/30-min-call"
               target="_blank"
@@ -212,7 +215,7 @@ export const Navbar: React.FC = () => {
         <SearchOverlay
           onClose={() => setSearchOpen(false)}
           onSearch={(q) => {
-            navigate(`/library?q=${encodeURIComponent(q)}`);
+            window.location.href = `/library?q=${encodeURIComponent(q)}`;
             setSearchOpen(false);
           }}
           onNavigate={() => setSearchOpen(false)}

@@ -1,0 +1,28 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Navbar } from '@/components/Navbar';
+import Footer from '@/components/astro/Footer.astro';
+import LifecycleScoreIsland from '@/components/react/LifecycleScoreIsland';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "DigiStorms Lifecycle Score",
+  "url": "https://www.digistorms.ai/lifecycle-score",
+  "applicationCategory": "BusinessApplication",
+  "description": "Score your SaaS onboarding and lifecycle email setup. Get actionable recommendations to improve activation.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+};
+---
+
+<BaseLayout
+  title="Your Onboarding Score — DigiStorms"
+  description="Take a quick quiz to score your current SaaS onboarding and lifecycle email setup. Get personalized recommendations to improve activation and conversion."
+  jsonLd={jsonLd}
+>
+  <div class="min-h-screen bg-background">
+    <Navbar client:load pathname="/lifecycle-score" />
+    <LifecycleScoreIsland client:visible />
+    <Footer />
+  </div>
+</BaseLayout>
