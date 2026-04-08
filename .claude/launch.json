@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "digi-marketing-dev",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": ["-c", "source ~/.nvm/nvm.sh && npm run dev"],
       "port": 5173
     },
     {
