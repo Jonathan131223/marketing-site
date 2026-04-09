@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
@@ -10,7 +9,7 @@ export const FAQSection: React.FC = () => {
     },
     {
       question: "How is DigiStorms different from other email tools?",
-      answer: "Traditional tools require you to manually design sequences and guess what to send. DigiStorms does the opposite — it figures out your onboarding flow automatically and builds the right emails for you. It also triggers messages based on real user behavior, not fixed schedules, so users get the right message at the right time."
+      answer: "Traditional tools require you to manually design sequences and guess what to send. DigiStorms does the opposite \u2014 it figures out your onboarding flow automatically and builds the right emails for you. It also triggers messages based on real user behavior, not fixed schedules, so users get the right message at the right time."
     },
     {
       question: "Can I edit the emails before sending them?",
@@ -30,7 +29,7 @@ export const FAQSection: React.FC = () => {
     },
     {
       question: "Does it really adapt to user behavior automatically?",
-      answer: "Yes. DigiStorms continuously reacts to user activity. If a user progresses quickly, stalls, or skips steps, the system adjusts and sends the most relevant message — no manual intervention needed."
+      answer: "Yes. DigiStorms continuously reacts to user activity. If a user progresses quickly, stalls, or skips steps, the system adjusts and sends the most relevant message \u2014 no manual intervention needed."
     },
     {
       question: "What results can I expect from using DigiStorms?",
@@ -39,55 +38,32 @@ export const FAQSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 md:py-20 lg:py-24 bg-slate-50 relative overflow-hidden">
-      <div className="container mx-auto px-4 max-w-6xl relative">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-slate-900 mb-4">
+    <section className="py-12 bg-background-warm">
+      <div className="container mx-auto px-6 max-w-[720px]">
+        <div className="text-center mb-10">
+          <p className="text-[13px] font-semibold tracking-[0.08em] uppercase text-primary mb-3">
+            FAQ
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-serif text-slate-900 tracking-[-0.01em]">
             Your questions, answered
           </h2>
-          <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed">
-            Everything you need to know about DigiStorms and onboarding automation.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="space-y-6">
-            {faqs.slice(0, 4).map((faq, index) => (
-              <Accordion key={index} type="single" collapsible className="w-full">
-                <AccordionItem value={`item-${index}`} className="group bg-white border border-slate-100/80 rounded-xl shadow-sm overflow-hidden">
-                  <AccordionTrigger className="text-left text-base sm:text-lg font-medium text-slate-900 hover:no-underline p-8 hover:bg-slate-50 transition-colors">
-                    <span>
-                      {faq.question}
-                    </span>
-                  </AccordionTrigger>
-                  <AccordionContent className="text-slate-600 text-sm sm:text-base leading-relaxed px-8 pb-8 pt-0">
-                    <div className="border-t border-slate-100 pt-4">
-                      {faq.answer}
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            ))}
-          </div>
-          
-          <div className="space-y-6">
-            {faqs.slice(4).map((faq, index) => (
-              <Accordion key={index + 4} type="single" collapsible className="w-full">
-                <AccordionItem value={`item-${index + 4}`} className="group bg-white border border-slate-100/80 rounded-xl shadow-sm overflow-hidden">
-                  <AccordionTrigger className="text-left text-base sm:text-lg font-medium text-slate-900 hover:no-underline p-8 hover:bg-slate-50 transition-colors">
-                    <span>
-                      {faq.question}
-                    </span>
-                  </AccordionTrigger>
-                  <AccordionContent className="text-slate-600 text-sm sm:text-base leading-relaxed px-8 pb-8 pt-0">
-                    <div className="border-t border-slate-100 pt-4">
-                      {faq.answer}
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            ))}
-          </div>
+        <div className="space-y-3">
+          {faqs.map((faq, index) => (
+            <Accordion key={index} type="single" collapsible className="w-full">
+              <AccordionItem value={`item-${index}`} className="bg-white border border-slate-100/80 rounded-xl shadow-sm overflow-hidden">
+                <AccordionTrigger className="text-left text-base font-medium text-slate-900 hover:no-underline px-6 py-5 hover:bg-slate-50 transition-colors">
+                  <span>{faq.question}</span>
+                </AccordionTrigger>
+                <AccordionContent className="text-slate-600 text-[15px] leading-relaxed px-6 pb-5 pt-0">
+                  <div className="border-t border-slate-100 pt-3">
+                    {faq.answer}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          ))}
         </div>
 
         {/* Hidden FAQ content for crawlers that don't execute JS */}

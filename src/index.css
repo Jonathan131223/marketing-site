@@ -39,6 +39,7 @@ All colors MUST be HSL.
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
     --primary-light: 217 91% 95%;
+    --background-warm: 36 33% 96%;
   }
 
   .dark {
@@ -70,6 +71,7 @@ All colors MUST be HSL.
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
     --primary-light: 217 80% 94%;
+    --background-warm: 220 20% 14%;
   }
 }
 
@@ -169,6 +171,20 @@ All colors MUST be HSL.
   .marquee-track:hover {
     animation-play-state: paused;
   }
+
+  /* Hero illustration: sequential glow pulse across 3 cards */
+  @keyframes hero-glow-pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.03); border-color: rgb(241 245 249); }
+    50% { box-shadow: 0 8px 28px rgba(37,99,235,0.15), 0 2px 8px rgba(37,99,235,0.08); border-color: rgb(191 219 254); }
+  }
+  @keyframes hero-glow-pulse-anchor {
+    0%, 100% { box-shadow: 0 8px 32px rgba(0,0,0,0.07), 0 2px 6px rgba(0,0,0,0.04); border-color: rgb(241 245 249); }
+    50% { box-shadow: 0 16px 48px rgba(37,99,235,0.18), 0 4px 12px rgba(37,99,235,0.1); border-color: rgb(191 219 254); }
+  }
+  .hero-card-detect { animation: hero-glow-pulse 4s ease-in-out infinite; }
+  .hero-card-track { animation: hero-glow-pulse-anchor 4s ease-in-out infinite 1.2s; }
+  .hero-card-engage { animation: hero-glow-pulse 4s ease-in-out infinite 2.4s; }
+
 }
 
 @media (prefers-reduced-motion: reduce) {

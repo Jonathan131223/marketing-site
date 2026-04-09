@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-white text-slate-900 border-t border-slate-200">
+    <footer className="bg-background-warm text-slate-900">
       <div className="container mx-auto px-4 py-16 pb-8">
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
           <div className="col-span-1 md:col-span-1">
@@ -13,13 +13,14 @@ export const Footer: React.FC = () => {
                   src="/images/logo.webp"
                   alt="DigiStorms"
                   className="h-8 w-auto mb-4"
+                  style={{ mixBlendMode: "multiply" }}
                   width={120}
                   height={32}
                 />
               </a>
             </div>
             <p className="text-slate-600 mb-4">
-              The AI agent that moves your users from signup to paid.
+              Turn free users into paying customers, on autopilot.
             </p>
             <div className="flex space-x-4">
               <a
