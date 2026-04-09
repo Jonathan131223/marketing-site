@@ -104,3 +104,13 @@ All colors MUST be defined as HSL in CSS custom properties (existing pattern in 
 | 2026-04-08 | Remove comparison table | Redundant with Before/After section |
 | 2026-04-08 | Single column FAQ | 8 questions, readability > compactness for SEO content |
 | 2026-04-08 | "Built the email marketing program at" framing | Specific about Drew's expertise, honest about relationship |
+| 2026-04-08 | "on autopilot" italic blue on own line | Visual hierarchy: benefit line 1, differentiator line 2. Instrument Serif italic shines here |
+| 2026-04-08 | HTML illustrations instead of images | No image loading, responsive, uses CSS variables, maintainable, text crawlable |
+| 2026-04-08 | Hero 3-card flow (Detect → Track → Engage) | Shows full product story: user signs up → milestones tracked → email sent |
+| 2026-04-08 | Animated particle streams between hero cards | 6 streams (3 per gap) with wave curves. Shows data flowing through the system |
+| 2026-04-08 | "Reacts to users in real time" over "Behavior-based" | More human, less jargon |
+| 2026-04-08 | SVG stroke icons over emojis in Benefits | Premium feel, no AI slop |
+| 2026-04-08 | Drew Price two-column attribution | Photo+name left, "Built email marketing at"+logo right. Breaks center-stack monotony |
+| 2026-04-08 | "Free for your first 100 users" pricing | Lifetime cap, not monthly. Best customers upgrade fastest |
+| 2026-04-08 | Footer tagline = headline | "Turn free users into paying customers, on autopilot." SEO visitors see value prop in footer |
+| 2026-04-08 | Footer cream + mix-blend-mode:multiply on logo | Removes white background from logo on cream |
