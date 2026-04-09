@@ -43,7 +43,7 @@ const jsonLd = {
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {sorted.map((post) => (
-          <a href={`/blog/${post.data.slug}`} class="group block">
+          <a href={`/blog/${post.id.replace(/\.md$/, '')}`} class="group block">
             <div class="rounded-2xl overflow-hidden aspect-[4/3] mb-4 bg-[#EDE9FE]">
               {post.data.thumbnail ? (
                 <img
