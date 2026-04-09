@@ -39,6 +39,7 @@ All colors MUST be HSL.
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
     --primary-light: 217 91% 95%;
+    --background-warm: 36 33% 96%;
   }
 
   .dark {
@@ -70,6 +71,7 @@ All colors MUST be HSL.
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
     --primary-light: 217 80% 94%;
+    --background-warm: 220 20% 14%;
   }
 }
 
