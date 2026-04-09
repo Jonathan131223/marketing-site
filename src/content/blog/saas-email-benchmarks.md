@@ -2,6 +2,7 @@
 title: "SaaS email benchmarks: what 1,051 lifecycle emails reveal"
 slug: "saas-email-benchmarks"
 description: "We analyzed 1,051 lifecycle emails from 38 top SaaS companies. Here's what the data reveals about email types, subject lines, lifecycle coverage, and what the best brands do differently."
+shortDescription: "Original research: what 1,051 SaaS lifecycle emails reveal about types, subject lines, and brand strategies."
 date: "2026-04-07"
 readTime: "12 min read"
 ---

@@ -1,5 +1,5 @@
 import React from "react";
-import { UseCase } from "@/types/emailGenerator";
+import type { UseCase } from "@/types/emailGenerator";
 import { getSuggestedUseCases } from "@/utils/useCaseMapping";
 import { Button } from "@/components/ui/button";
 

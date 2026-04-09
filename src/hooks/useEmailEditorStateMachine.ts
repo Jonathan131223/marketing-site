@@ -1,5 +1,5 @@
 import { useRef, useCallback, useState, useMemo } from "react";
-import { EmailTemplate } from "@/types/emailGenerator";
+import type { EmailTemplate } from "@/types/emailGenerator";
 import { renderEmailForContext } from "@/utils/emailRenderer";
 
 type EditorState = "IDLE" | "EDITING" | "SYNCING" | "UPDATING" | "LOCKED";

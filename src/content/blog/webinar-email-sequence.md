@@ -2,8 +2,12 @@
 title: "Webinar email sequence: best practices with 25 examples"
 slug: "webinar-email-sequence"
 description: "Learn how to craft a high-converting webinar email sequence with proven strategies, timing tips, and real-life examples to boost signups and engagement."
+shortDescription: "Want more webinar signups and engagement? Here's how your emails can deliver big."
 date: "2026-03-23"
 readTime: "11 min read"
+thumbnail: "/blog/webinar-email-sequence/banner.webp"
+heroImage: "/blog/webinar-email-sequence/banner.webp"
+libraryTags: ["webinar-invitation", "webinar-confirmation"]
 ---
 
 Running a webinar? Great!

@@ -2,7 +2,7 @@
  * Utility functions for applying template tweaks to email HTML
  */
 
-import { TemplateTweaks } from "@/types/emailGenerator";
+import type { TemplateTweaks } from "@/types/emailGenerator";
 
 /** All known social platforms (order used for rendering) */
 export const ALL_SOCIAL_PLATFORMS = ["linkedin", "twitter", "instagram", "facebook", "youtube"] as const;

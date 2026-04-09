@@ -1,0 +1,76 @@
+---
+const benefits = [
+  {
+    title: "Turn signups into paying customers",
+    description:
+      "DigiStorms detects your product's activation milestones and sends the right onboarding emails at the right moment to move users toward upgrade.",
+    image: "/benefits/benefit-2-new.webp",
+    srcSet:
+      "/benefits/benefit-2-new-400w.webp 400w, /benefits/benefit-2-new-600w.webp 600w, /benefits/benefit-2-new-800w.webp 800w",
+    imageAlt: "Journey from signup to upgrade",
+    visualLeft: false,
+  },
+  {
+    title: "Launch onboarding in minutes",
+    description:
+      "Just enter your website. DigiStorms analyzes your product, generates your onboarding sequence, and lets you edit everything before going live.",
+    image: "/benefits/benefit-1-new.webp",
+    srcSet:
+      "/benefits/benefit-1-new-400w.webp 400w, /benefits/benefit-1-new-600w.webp 600w, /benefits/benefit-1-new-800w.webp 800w",
+    imageAlt: "Analyzing website to detect upgrade path",
+    visualLeft: true,
+  },
+  {
+    title: "Runs automatically based on user behavior",
+    description:
+      "Emails trigger when users sign up, reach milestones, or stall in onboarding, so every user gets the right message at the right time.",
+    image: "/benefits/benefit-3-new.webp",
+    srcSet:
+      "/benefits/benefit-3-new-400w.webp 400w, /benefits/benefit-3-new-600w.webp 600w, /benefits/benefit-3-new-800w.webp 800w",
+    imageAlt: "Event triggers firing in real time",
+    visualLeft: false,
+  },
+];
+---
+
+<section class="py-16 md:py-20 lg:py-24 bg-white">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-slate-900 mb-4">
+        From signup to upgrade on autopilot
+      </h2>
+      <p class="text-slate-500 max-w-2xl mx-auto leading-relaxed">
+        DigiStorms detects activation milestones and sends the right onboarding emails at exactly the right moment.
+      </p>
+    </div>
+
+    <div class="space-y-16">
+      {benefits.map((benefit) => (
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 items-center">
+          <div class={benefit.visualLeft ? "order-1 md:order-2" : "order-1 md:order-1"}>
+            <h3 class="text-[24px] font-semibold text-slate-900 mb-3 leading-snug">
+              {benefit.title}
+            </h3>
+            <p class="text-[20px] text-slate-500 leading-relaxed">
+              {benefit.description}
+            </p>
+          </div>
+
+          <div class={`flex items-center justify-center ${benefit.visualLeft ? "order-2 md:order-1" : "order-2 md:order-2"}`}>
+            <img
+              src={benefit.image}
+              srcset={benefit.srcSet}
+              alt={benefit.imageAlt}
+              class="w-full h-auto object-contain"
+              width="900"
+              height="450"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              decoding="async"
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

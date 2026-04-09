@@ -1,4 +1,4 @@
-import { AppState, AppAction, Store, Middleware } from "./types";
+import type { AppState, AppAction, Store, Middleware } from "./types";
 import { rootReducer, initialState } from "./reducers";
 import { StatePersistence } from "./persistence";
 

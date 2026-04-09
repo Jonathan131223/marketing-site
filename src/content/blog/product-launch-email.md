@@ -2,8 +2,12 @@
 title: "Product launch email: best practices with 23 examples"
 slug: "product-launch-email"
 description: "Discover what makes a great product launch email for SaaS. See real examples, proven strategies, and templates to boost engagement and conversions."
+shortDescription: "Explore 23 standout emails and tips to nail your next big product launch."
 date: "2026-03-15"
 readTime: "10 min read"
+thumbnail: "/blog/product-launch-email/banner.webp"
+heroImage: "/blog/product-launch-email/banner.webp"
+libraryTags: ["product-update", "feature-update", "new-feature-nudge"]
 ---
 
 Product launch emails are your chance to rally your audience around something new—whether it's a shiny new product, a feature update, or an upcoming release.

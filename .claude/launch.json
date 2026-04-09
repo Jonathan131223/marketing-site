@@ -4,14 +4,14 @@
     {
       "name": "digi-marketing-dev",
       "runtimeExecutable": "/usr/local/bin/node",
-      "runtimeArgs": ["node_modules/.bin/vite", "--port", "5199"],
-      "port": 5199
+      "runtimeArgs": ["node_modules/.bin/astro", "dev"],
+      "port": 4321
     },
     {
       "name": "digi-marketing-preview",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "preview"],
-      "port": 4173
+      "runtimeExecutable": "/usr/local/bin/node",
+      "runtimeArgs": ["node_modules/.bin/astro", "preview"],
+      "port": 4321
     }
   ]
 }

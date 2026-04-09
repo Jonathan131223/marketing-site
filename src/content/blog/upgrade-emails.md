@@ -2,8 +2,12 @@
 title: "13 Upgrade emails: best practices with 13 examples"
 slug: "upgrade-emails"
 description: "Learn how to write upgrade emails that convert trial users into paying customers. Includes timing tips, best practices, and examples from top SaaS companies."
+shortDescription: "Turn free users into customers with pro tips and examples from top companies."
 date: "2026-01-15"
 readTime: "9 min read"
+thumbnail: "/blog/upgrade-emails/banner.webp"
+heroImage: "/blog/upgrade-emails/banner.webp"
+libraryTags: ["upgrade-cta", "trial-expired-upgrade", "trial-expiration-warning"]
 ---
 
 If you're building a SaaS product, upgrade emails are one of the most effective tools to turn free users into paying customers.
@@ -47,7 +51,7 @@ You might say something like, "You've used 80% of your free plan—here's what h
 
 These small touches help convert trial users who are close to the finish line. They show you're not just sending a mass course of emails, but actually paying attention.
 
-## When to nudge trial users
+## When should you send upgrade emails to trial users?
 
 The timing of your upgrade email can make all the difference. For trial users, the days right before their trial ends are key—but it's not the only window.
 

@@ -1,0 +1,43 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import LibraryPage from '@/components/react/LibraryPage';
+
+const SITE_URL = 'https://www.digistorms.ai';
+const PAGE_TITLE = 'Email Library \u2013 B2B SaaS Lifecycle Emails | DigiStorms';
+const PAGE_DESC = 'Browse 1,000+ lifecycle emails from the best B2B SaaS companies. Filter by brand, tag, or use case. The largest B2B SaaS email library.';
+
+const webSiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "DigiStorms",
+  url: SITE_URL,
+  description: "Browse 1,100+ lifecycle emails from the best B2B SaaS companies. Filter by brand, tag, or use case.",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${SITE_URL}/library?q={search_term_string}`,
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
+const collectionJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Email Library \u2013 B2B SaaS Lifecycle Emails",
+  description: "Browse 1,000+ lifecycle emails from the best B2B SaaS companies. Filter by brand, tag, or use case.",
+  url: `${SITE_URL}/library`,
+};
+---
+
+<PageLayout
+  title={PAGE_TITLE}
+  description={PAGE_DESC}
+  canonical={`${SITE_URL}/library`}
+  ogTitle={PAGE_TITLE}
+  ogDescription={PAGE_DESC}
+  jsonLd={[webSiteJsonLd, collectionJsonLd]}
+>
+  <LibraryPage client:load />
+</PageLayout>

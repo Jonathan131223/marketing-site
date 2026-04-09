@@ -6,7 +6,7 @@ import {
   historyActions,
 } from "@/store/actions";
 import { StatePersistence } from "@/store/persistence";
-import { AppState } from "@/store/types";
+import type { AppState } from "@/store/types";
 
 interface UseStateRestorationProps {
   onStateRestored?: (restoredState: Partial<AppState>) => void;

@@ -43,6 +43,76 @@ Jonathan Bernard — lifecycle email specialist for SaaS companies.
 - Manifesto: https://www.digistorms.ai/manifesto
 - Contact: https://www.digistorms.ai/contact
 
+## Email Library
+
+The DigiStorms Email Library contains 1,051 lifecycle emails from 38 B2B SaaS companies, organized by 80 email types (tags) and 9 use case categories. Browse the full library at https://www.digistorms.ai/library
+
+### Brands (38)
+
+- [Adobe](https://www.digistorms.ai/library/brand/adobe) — 25 emails
+- [Ahrefs](https://www.digistorms.ai/library/brand/ahrefs) — 28 emails
+- [Aircall](https://www.digistorms.ai/library/brand/aircall) — 10 emails
+- [Apollo.io](https://www.digistorms.ai/library/brand/apollo-io) — 22 emails
+- [Asana](https://www.digistorms.ai/library/brand/asana) — 13 emails
+- [Beehiiv](https://www.digistorms.ai/library/brand/beehiiv) — 54 emails
+- [Buffer](https://www.digistorms.ai/library/brand/buffer) — 29 emails
+- [Calendly](https://www.digistorms.ai/library/brand/calendly) — 55 emails
+- [Canva](https://www.digistorms.ai/library/brand/canva) — 26 emails
+- [Clickup](https://www.digistorms.ai/library/brand/clickup) — 20 emails
+- [Customer.io](https://www.digistorms.ai/library/brand/customer-io) — 32 emails
+- [Docusign](https://www.digistorms.ai/library/brand/docusign) — 15 emails
+- [Dropbox](https://www.digistorms.ai/library/brand/dropbox) — 22 emails
+- [Figma](https://www.digistorms.ai/library/brand/figma) — 39 emails
+- [Fiverr](https://www.digistorms.ai/library/brand/fiverr) — 50 emails
+- [Freepik](https://www.digistorms.ai/library/brand/freepik) — 44 emails
+- [Grammarly](https://www.digistorms.ai/library/brand/grammarly) — 7 emails
+- [Hubspot](https://www.digistorms.ai/library/brand/hubspot) — 7 emails
+- [Hunter.io](https://www.digistorms.ai/library/brand/hunter-io) — 26 emails
+- [Jira](https://www.digistorms.ai/library/brand/jira) — 11 emails
+- [Loom](https://www.digistorms.ai/library/brand/loom) — 41 emails
+- [Lovable](https://www.digistorms.ai/library/brand/lovable) — 14 emails
+- [Lucid](https://www.digistorms.ai/library/brand/lucid) — 47 emails
+- [MailChimp](https://www.digistorms.ai/library/brand/mailchimp) — 44 emails
+- [Make](https://www.digistorms.ai/library/brand/make) — 19 emails
+- [Miro](https://www.digistorms.ai/library/brand/miro) — 18 emails
+- [Monday](https://www.digistorms.ai/library/brand/monday) — 24 emails
+- [Notion](https://www.digistorms.ai/library/brand/notion) — 47 emails
+- [Paypal](https://www.digistorms.ai/library/brand/paypal) — 21 emails
+- [Phantom Busters](https://www.digistorms.ai/library/brand/phantom-busters) — 14 emails
+- [Pipedrive](https://www.digistorms.ai/library/brand/pipedrive) — 46 emails
+- [SemRush](https://www.digistorms.ai/library/brand/semrush) — 49 emails
+- [Slack](https://www.digistorms.ai/library/brand/slack) — 35 emails
+- [Stripe](https://www.digistorms.ai/library/brand/stripe) — 19 emails
+- [SurveyMonkey](https://www.digistorms.ai/library/brand/surveymonkey) — 11 emails
+- [Typeform](https://www.digistorms.ai/library/brand/typeform) — 14 emails
+- [Webflow](https://www.digistorms.ai/library/brand/webflow) — 27 emails
+- [Zapier](https://www.digistorms.ai/library/brand/zapier) — 26 emails
+
+### Use Cases (9)
+
+- [Onboard Free User](https://www.digistorms.ai/library/usecase/onboard-free-user)
+- [Onboard Paid User](https://www.digistorms.ai/library/usecase/onboard-paid-user)
+- [Educate & Engage](https://www.digistorms.ai/library/usecase/educate-engage)
+- [Win Back Churned User](https://www.digistorms.ai/library/usecase/win-back-churned-user)
+- [Expand User](https://www.digistorms.ai/library/usecase/expand-user)
+- [Announce New Features](https://www.digistorms.ai/library/usecase/announce-new-features)
+- [Celebrate Milestones](https://www.digistorms.ai/library/usecase/celebrate-milestones)
+- [Request Feedback](https://www.digistorms.ai/library/usecase/request-feedback)
+- [Transactional Emails](https://www.digistorms.ai/library/usecase/transactional-email)
+
+### Top Email Types (80 total)
+
+- [Feature Usage Nudge](https://www.digistorms.ai/library/tag/feature-usage-nudge) — 261 emails
+- [Content Engagement](https://www.digistorms.ai/library/tag/content-engagement) — 221 emails
+- [Product Education](https://www.digistorms.ai/library/tag/product-education) — 186 emails
+- [Usage Expansion](https://www.digistorms.ai/library/tag/usage-expansion) — 150 emails
+- [Webinar Invitation](https://www.digistorms.ai/library/tag/webinar-invitation) — 116 emails
+- [New Feature(s) Nudge](https://www.digistorms.ai/library/tag/new-feature-nudge) — 111 emails
+- [Product Update](https://www.digistorms.ai/library/tag/product-update) — 94 emails
+- [Newsletter](https://www.digistorms.ai/library/tag/newsletter) — 81 emails
+- [Upgrade CTA](https://www.digistorms.ai/library/tag/upgrade-cta) — 64 emails
+- [Welcome - Free Users](https://www.digistorms.ai/library/tag/welcome-free-users) — 35 emails
+
 ## Optional
 
 ### Blog Articles

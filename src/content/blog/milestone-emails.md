@@ -2,8 +2,12 @@
 title: "12 Milestone emails: best practices with 12 examples"
 slug: "milestone-emails"
 description: "Learn how to create a milestone email that drives engagement. Discover best practices, real SaaS examples, and tips to automate your customer success."
+shortDescription: "Make milestone emails your secret weapon for better SaaS engagement and retention."
 date: "2026-01-20"
 readTime: "8 min read"
+thumbnail: "/blog/milestone-emails/banner.webp"
+heroImage: "/blog/milestone-emails/banner.webp"
+libraryTags: ["milestone-reached", "usage-summary", "year-in-review"]
 ---
 
 If you're growing a SaaS product, milestone emails are one of the easiest ways to boost engagement and keep users moving through the journey.

@@ -1,0 +1,97 @@
+---
+import '@fontsource/instrument-sans/400.css';
+import '@fontsource/instrument-sans/500.css';
+import '@fontsource/instrument-sans/600.css';
+import '@fontsource/instrument-sans/700.css';
+import '@fontsource/kalam/400.css';
+import '@/styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  jsonLd?: object | object[];
+  noindex?: boolean;
+}
+
+const siteUrl = 'https://www.digistorms.ai';
+const {
+  title,
+  description,
+  canonical = new URL(Astro.url.pathname, siteUrl).href,
+  ogImage = `${siteUrl}/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png`,
+  ogType = 'website',
+  ogTitle = title,
+  ogDescription = description,
+  jsonLd,
+  noindex = false,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <meta name="theme-color" content="#1D4ED8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
+      />
+    </noscript>
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+    <link
+      rel="preload"
+      href="https://use.typekit.net/fte7csj.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="https://use.typekit.net/fte7csj.css" />
+    </noscript>
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <meta property="og:site_name" content="DigiStorms" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={ogDescription} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:site" content="@digistorms_ai" />
+    {jsonLd && (
+      Array.isArray(jsonLd)
+        ? jsonLd.map((item) => (
+            <script type="application/ld+json" set:html={JSON.stringify(item)} />
+          ))
+        : <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    )}
+    <slot name="head" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
