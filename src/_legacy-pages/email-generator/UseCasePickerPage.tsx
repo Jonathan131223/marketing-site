@@ -1,4 +1,4 @@
-import { useState, type ComponentType } from "react";
+import { useRef, useState, type ComponentType, type KeyboardEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -68,9 +68,57 @@ export default function UseCasePickerPage() {
   const [selectedCategory, setSelectedCategory] =
     useState<CategoryKey>("activation");
 
+  // Refs to each tab button so the WAI-ARIA keyboard handler can move
+  // focus in response to arrow keys. Only the active tab sits in the tab
+  // order (tabIndex 0); the others are tabIndex -1 and only reachable
+  // via arrow keys, per the authoring practices guide.
+  const tabRefs = useRef<Record<CategoryKey, HTMLButtonElement | null>>({
+    activation: null,
+    engagement: null,
+    expansion: null,
+    churn: null,
+    community: null,
+    content: null,
+  });
+
   const handleUseCaseSelect = (useCase: UseCase) => {
     workflow.setUseCase(useCase);
     navigate(`/email-generator/brief?useCase=${useCase}`);
+  };
+
+  // Keyboard navigation for the tab list — WAI-ARIA tabs pattern.
+  // Left/Right move between tabs (wrapping), Home/End jump to the
+  // first/last tab. Moving focus also activates the tab so the panel
+  // content updates in sync (automatic activation pattern).
+  const handleTabKeyDown = (
+    event: KeyboardEvent<HTMLButtonElement>,
+    currentKey: CategoryKey
+  ) => {
+    const currentIndex = categoryOrder.indexOf(currentKey);
+    let nextIndex: number | null = null;
+
+    switch (event.key) {
+      case "ArrowRight":
+        nextIndex = (currentIndex + 1) % categoryOrder.length;
+        break;
+      case "ArrowLeft":
+        nextIndex =
+          (currentIndex - 1 + categoryOrder.length) % categoryOrder.length;
+        break;
+      case "Home":
+        nextIndex = 0;
+        break;
+      case "End":
+        nextIndex = categoryOrder.length - 1;
+        break;
+      default:
+        return;
+    }
+
+    event.preventDefault();
+    const nextKey = categoryOrder[nextIndex];
+    setSelectedCategory(nextKey);
+    tabRefs.current[nextKey]?.focus();
   };
 
   const activeMeta = categoryMeta[selectedCategory];
@@ -167,11 +215,16 @@ export default function UseCasePickerPage() {
                 return (
                   <button
                     key={categoryKey}
+                    ref={(el) => {
+                      tabRefs.current[categoryKey] = el;
+                    }}
                     role="tab"
                     aria-selected={isActive}
                     aria-controls={`use-cases-${categoryKey}`}
                     id={`tab-${categoryKey}`}
+                    tabIndex={isActive ? 0 : -1}
                     onClick={() => setSelectedCategory(categoryKey)}
+                    onKeyDown={(e) => handleTabKeyDown(e, categoryKey)}
                     className={`group flex flex-col items-center text-center px-3 py-4 rounded-xl border transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] focus-visible:ring-offset-2 ${
                       isActive
                         ? "border-[#2563EB] bg-[#2563EB] shadow-md"
