@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppStore } from "@/hooks/useAppStore";
 import { useStateRestoration } from "@/hooks/useStateRestoration";
 import AILoadingScreen from "@/components/email-generator/AILoadingScreen";
+import { EmptyStateRedirect } from "@/components/email-generator/EmptyStateRedirect";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import type { BriefData } from "@/types/emailGenerator";
@@ -23,19 +24,6 @@ const GeneratePage = () => {
       setIsRestoring(false);
     },
   });
-
-  // Redirect if no brief data (after state restoration)
-  useEffect(() => {
-    if (isRestoring) return;
-
-    if (!workflow.briefData) {
-      if (workflow.selectedUseCase) {
-        navigate(`/email-generator/brief?useCase=${workflow.selectedUseCase}`);
-      } else {
-        navigate("/email-generator");
-      }
-    }
-  }, [workflow.briefData, workflow.selectedUseCase, navigate, isRestoring]);
 
   const handleLoadingComplete = (briefDataWithAPI: BriefData) => {
     workflow.setBriefData(briefDataWithAPI);
@@ -63,8 +51,9 @@ const GeneratePage = () => {
     );
   }
 
+  // No brief data → show empty state with CTA instead of silent redirect
   if (!workflow.briefData) {
-    return null; // Will redirect
+    return <EmptyStateRedirect step="generate" />;
   }
 
   const content = (

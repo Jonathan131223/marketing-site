@@ -10,3 +10,7 @@ dist/
 .vercel
 .env*.local
 .gstack/
+
+# Project uses npm (package-lock.json). Ignore bun lockfile if dev runs bun.
+bun.lock
+bun.lockb

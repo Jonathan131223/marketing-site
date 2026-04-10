@@ -35,6 +35,9 @@ jobs:
         run: npm run lint
         continue-on-error: true
 
+      - name: Run tests
+        run: npm test
+
       - name: Build application
         run: npm run build
 
@@ -58,5 +61,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `## CI Status\n${buildStatus}\n\n**Build**: npm run build\n**Lint**: npm run lint\n\nReady for auto-merge once approved.`
+              body: `## CI Status\n${buildStatus}\n\n**Build**: npm run build\n**Tests**: npm test\n**Lint**: npm run lint\n\nReady for auto-merge once approved.`
             });

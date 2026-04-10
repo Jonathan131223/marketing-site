@@ -16,12 +16,18 @@ interface EmailGeneratorAppProps {
 /**
  * Self-contained React island that wraps the entire email generator workflow.
  * Includes its own BrowserRouter and StoreProvider so it works independently
- * inside Astro pages.
+ * inside Astro pages. Meta tags (title, OG, Twitter, canonical) are set by
+ * each Astro page via BaseLayout props — React does not touch document head.
  */
 const EmailGeneratorApp: React.FC<EmailGeneratorAppProps> = ({ initialPath }) => {
   return (
     <StoreProvider>
-      <BrowserRouter>
+      <BrowserRouter
+        future={{
+          v7_startTransition: true,
+          v7_relativeSplatPath: true,
+        }}
+      >
         <Toaster />
         <Suspense fallback={<div className="min-h-screen bg-white" />}>
           <Routes>

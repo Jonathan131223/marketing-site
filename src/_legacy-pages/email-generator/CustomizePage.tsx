@@ -6,6 +6,7 @@ import { StatePersistence } from "@/store/persistence";
 import { EmailEditor } from "@/components/email-generator/EmailEditor";
 import { EmailSubjectPreviewSection } from "@/components/email-generator/EmailSubjectPreviewSection";
 import { AIGeneratorPanel } from "@/components/email-generator/AIGeneratorPanel";
+import { EmptyStateRedirect } from "@/components/email-generator/EmptyStateRedirect";
 import { ProgressBar } from "@/components/email-generator/ProgressBar";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -48,11 +49,15 @@ const CustomizePage = () => {
     } as TemplateTweaks;
   });
 
-  // Clear history when entering CustomizePage (fresh session)
+  // Clear history on mount — one fresh session per Customize visit.
+  // Previously depended on `location.pathname` (resolving to window.location)
+  // which never changed under SPA routing; comment said "fresh session" but
+  // the effect ran based on component mount/unmount anyway. Using [] is
+  // explicit about the real intent.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     history.clear();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location.pathname]);
+  }, []);
 
   // Restore state on mount
   useStateRestoration({
@@ -66,37 +71,21 @@ const CustomizePage = () => {
     },
   });
 
-  // Redirect if no email selected (after state restoration)
+  // Restore selected email from storage. No auto-redirect on missing
+  // state — fall through to EmptyStateRedirect below.
+  // Deps: we intentionally omit `workflow` (new reference every render).
+  // setSelectedEmail is a stable useCallback from useAppStore.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (isRestoring) return;
 
     const selectedEmailFromStore = workflow.selectedEmail;
     const selectedEmailFromStorage = StatePersistence.loadSelectedEmail();
-    const hasSelectedEmail = selectedEmailFromStore || selectedEmailFromStorage;
 
-    // If we found email in storage but not in store, restore it
     if (!selectedEmailFromStore && selectedEmailFromStorage) {
       workflow.setSelectedEmail(selectedEmailFromStorage);
-      return;
     }
-
-    if (!hasSelectedEmail) {
-      const briefDataFromStorage = StatePersistence.loadBriefData();
-      const hasBriefData = workflow.briefData || briefDataFromStorage;
-
-      if (hasBriefData) {
-        navigate("/email-generator/templates");
-      } else {
-        navigate("/email-generator");
-      }
-    }
-  }, [
-    workflow.selectedEmail,
-    workflow.briefData,
-    navigate,
-    isRestoring,
-    workflow,
-  ]);
+  }, [workflow.selectedEmail, isRestoring]);
 
   // Keep checkbox state in sync with current email HTML
   useEffect(() => {
@@ -261,7 +250,7 @@ const CustomizePage = () => {
   }, [workflow.briefData]);
 
   // Show loading state while restoring
-  if (isRestoring || !workflow.selectedEmail) {
+  if (isRestoring) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50 flex items-center justify-center">
         <div className="text-center">
@@ -270,6 +259,11 @@ const CustomizePage = () => {
         </div>
       </div>
     );
+  }
+
+  // No selected email → show empty state with CTA instead of silent redirect
+  if (!workflow.selectedEmail) {
+    return <EmptyStateRedirect step="customize" />;
   }
 
   const content = (

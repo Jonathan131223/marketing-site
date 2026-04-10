@@ -4,6 +4,7 @@ import { useAppStore } from "@/hooks/useAppStore";
 import { useStateRestoration } from "@/hooks/useStateRestoration";
 import { StatePersistence } from "@/store/persistence";
 import { EmailGallery } from "@/components/email-generator/EmailGallery";
+import { EmptyStateRedirect } from "@/components/email-generator/EmptyStateRedirect";
 import { ProgressBar } from "@/components/email-generator/ProgressBar";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -327,51 +328,32 @@ const TemplatesPage = () => {
     onStateRestored: () => {
       setTimeout(() => {
         setIsRestoring(false);
-      }, 200);
+      }, 100);
     },
     onNoStateFound: () => {
       setIsRestoring(false);
     },
   });
 
-  // Check for brief data in both store and localStorage before redirecting
+  // Check for brief data in both store and localStorage. No auto-redirect
+  // on missing state — fall through to EmptyStateRedirect below.
+  // Deps: we intentionally omit `workflow` (new reference every render).
+  // setBriefData is a stable useCallback from useAppStore.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (isRestoring) return;
     if (hasCheckedRedirect) return;
 
     const briefDataFromStore = workflow.briefData;
     const briefDataFromStorage = StatePersistence.loadBriefData();
-    const hasBriefData = briefDataFromStore || briefDataFromStorage;
 
-    if (!hasBriefData) {
-      setHasCheckedRedirect(true);
-
-      if (workflow.selectedUseCase) {
-        navigate(`/email-generator/brief?useCase=${workflow.selectedUseCase}`);
-      } else {
-        const workflowState = StatePersistence.loadWorkflowState();
-        const useCase =
-          workflowState?.selectedUseCase || workflow.selectedUseCase;
-        if (useCase) {
-          navigate(`/email-generator/brief?useCase=${useCase}`);
-        } else {
-          navigate("/email-generator");
-        }
-      }
-    } else {
+    if (briefDataFromStore || briefDataFromStorage) {
       if (!briefDataFromStore && briefDataFromStorage) {
         workflow.setBriefData(briefDataFromStorage);
       }
-      setHasCheckedRedirect(true);
     }
-  }, [
-    workflow.briefData,
-    workflow.selectedUseCase,
-    navigate,
-    isRestoring,
-    hasCheckedRedirect,
-    workflow,
-  ]);
+    setHasCheckedRedirect(true);
+  }, [workflow.briefData, isRestoring, hasCheckedRedirect]);
 
   const handleEmailSelect = (email: EmailTemplate) => {
     workflow.setSelectedEmail(email);
@@ -429,13 +411,9 @@ const TemplatesPage = () => {
     );
   }
 
-  // Only show null/redirect if we've checked and confirmed no data
-  if (hasCheckedRedirect && !finalBriefData) {
-    return null;
-  }
-
+  // No brief data → show empty state with CTA instead of silent redirect
   if (!finalBriefData) {
-    return null;
+    return <EmptyStateRedirect step="templates" />;
   }
 
   const content = (
