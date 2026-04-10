@@ -13,7 +13,7 @@ export const TestimonialSection: React.FC = () => {
             everyone I know give it a spin and see for themselves."
           </blockquote>
 
-          <div className="flex items-center justify-between mt-2">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0 mt-2">
             {/* Left: who he is */}
             <div className="flex items-center gap-3">
               <img
@@ -36,7 +36,7 @@ export const TestimonialSection: React.FC = () => {
               <img
                 src="/images/grammarly-logo-full.png"
                 alt="Grammarly"
-                className="h-7 w-auto"
+                className="h-7 w-auto max-w-[120px] flex-shrink-0"
                 height="28"
                 decoding="async"
               />
