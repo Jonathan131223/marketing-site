@@ -16,35 +16,21 @@
 **Priority:** P2 (after product stabilizes)
 **Depends on:** Generation engine working reliably.
 
-## Email generator sub-routes — empty-state UX (ISSUE-004 from /qa)
-**What:** `/email-generator/brief`, `/templates`, `/generate`, `/customize` silently `navigate("/email-generator")` when there's no workflow state. Replace with a friendly empty state CTA that explains "Pick a use case first" and links to the picker, OR set `<meta name="robots" content="noindex">` so search engines don't index 4 duplicates of the picker.
-**Why:** Deep links from email campaigns or shared URLs dump users on the picker with no explanation. Also bad for SEO — Google sees four URLs that all render identical content.
-**Effort:** S (human: ~30min / CC: ~10min)
-**Priority:** P2
-**Found by:** /qa on 2026-04-10, deferred from this run.
+## QA pass 2026-04-10 — all 8 issues shipped ✅
 
-## react-router-dom v7 future flags (ISSUE-006 from /qa)
-**What:** Add `v7_startTransition: true` and `v7_relativeSplatPath: true` to the `BrowserRouter` future-flags object in `EmailGeneratorApp.tsx` to silence deprecation warnings and prepare for v7.
-**Why:** Two console warnings on every email generator page load. Mechanical fix.
-**Effort:** XS (CC: ~5min)
-**Priority:** P3
+The 2026-04-10 /qa audit found 8 issues. All are fixed and on
+`claude/elastic-hopper`. ISSUE-001/002/003 first, then 004/005/006/008 in
+a batch, then 007 (test framework + regression test).
 
-## Pick one source of truth for /email-generator meta tags (ISSUE-005 from /qa)
-**What:** `BaseLayout.astro` sets `<title>` from props server-side; `UseCasePickerPage.tsx` then overwrites it client-side via `<Helmet>`. There's a brief flicker where the title swaps after hydration. Either delete `<Helmet>` from the React page (since each Astro sub-route already passes its own title to BaseLayout) or stop setting the title in BaseLayout for these routes.
-**Why:** Cleaner code, no flicker, less duplication.
-**Effort:** XS (CC: ~10min)
-**Priority:** P3
+| ID | Severity | Commit | Summary |
+|---|---|---|---|
+| 001 | Critical | `ade5103` (then superseded by 005) | `/email-generator` blank → HelmetProvider added, then Helmet removed entirely |
+| 002 | High | `65920de` | Dead Typekit kit + CSP entries removed (CSP error on every page) |
+| 003 | Medium | `b47174f` | Mobile homepage horizontal overflow (Grammarly logo) |
+| 004 | Medium | `7aebb0c` | Email generator sub-route empty-state UX (no more silent redirects) |
+| 005 | Low | `7aebb0c` | Removed redundant `<Helmet>` from UseCasePickerPage |
+| 006 | Low | `7aebb0c` | react-router v7 future flags |
+| 008 | Low | `7aebb0c` | `VITE_APP_BASE_URL` → `PUBLIC_APP_BASE_URL` (dev-mode hydration) |
+| 007 | P1 tech debt | `d190273` | vitest + @testing-library/react bootstrap, 3 regression tests, wired into CI |
 
-## Dev-mode Navbar hydration mismatch (ISSUE-008 from /qa)
-**What:** In `astro dev`, every page using `<Navbar client:load>` logs a React hydration warning: server renders `https://digistorms.ai/portal`, client renders `https://app.digistorms.ai/portal`. Cause: `src/config/appUrl.ts:9` falls back to `import.meta.env.VITE_APP_BASE_URL`, which Astro only exposes server-side; the client bundle gets `undefined` and falls back to the default `app.digistorms.ai`. `.env.development` sets `VITE_APP_BASE_URL=https://digistorms.ai`, so SSR uses the override and client uses the default — mismatch.
-**Why:** Production is unaffected (no env override means both sides use the default), but dev-mode console is noisy and hides real warnings. Also a hidden trap if anyone ever sets `VITE_APP_BASE_URL` in production.
-**Fix:** Rename `VITE_APP_BASE_URL` to `PUBLIC_APP_BASE_URL` in `.env.development`, `.env.example`, and remove the `VITE_*` fallback from `appUrl.ts`. Or remove the `VITE_*` check entirely if no one needs it.
-**Effort:** XS (CC: ~5min)
-**Priority:** P3
-**Found by:** /qa post-fix dev verification on 2026-04-10.
-
-## Add automated tests (ISSUE-007 from /qa)
-**What:** Bootstrap vitest + @testing-library/react. First test should be a smoke test that mounts `<EmailGeneratorApp initialPath="/email-generator" />` and asserts the H1 renders without throwing — exactly the bug fixed in `ade5103`. Then a thin Playwright suite for 5 critical routes (`/`, `/email-generator`, `/pricing`, `/contact`, `/library`).
-**Why:** Without tests, ISSUE-001 (a critical production crash) shipped silently. The exact test that would have caught it is one assertion. CI minutes are cheap; broken headline features are not.
-**Effort:** S (human: ~4hr / CC: ~30min including CI)
-**Priority:** P1
+Full report: `.gstack/qa-reports/qa-report-digistorms-ai-2026-04-10.md`
