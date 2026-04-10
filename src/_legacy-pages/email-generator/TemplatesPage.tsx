@@ -4,6 +4,7 @@ import { useAppStore } from "@/hooks/useAppStore";
 import { useStateRestoration } from "@/hooks/useStateRestoration";
 import { StatePersistence } from "@/store/persistence";
 import { EmailGallery } from "@/components/email-generator/EmailGallery";
+import { EmptyStateRedirect } from "@/components/email-generator/EmptyStateRedirect";
 import { ProgressBar } from "@/components/email-generator/ProgressBar";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -334,40 +335,24 @@ const TemplatesPage = () => {
     },
   });
 
-  // Check for brief data in both store and localStorage before redirecting
+  // Check for brief data in both store and localStorage. No auto-redirect
+  // on missing state — fall through to EmptyStateRedirect below.
   useEffect(() => {
     if (isRestoring) return;
     if (hasCheckedRedirect) return;
 
     const briefDataFromStore = workflow.briefData;
     const briefDataFromStorage = StatePersistence.loadBriefData();
-    const hasBriefData = briefDataFromStore || briefDataFromStorage;
 
-    if (!hasBriefData) {
-      setHasCheckedRedirect(true);
-
-      if (workflow.selectedUseCase) {
-        navigate(`/email-generator/brief?useCase=${workflow.selectedUseCase}`);
-      } else {
-        const workflowState = StatePersistence.loadWorkflowState();
-        const useCase =
-          workflowState?.selectedUseCase || workflow.selectedUseCase;
-        if (useCase) {
-          navigate(`/email-generator/brief?useCase=${useCase}`);
-        } else {
-          navigate("/email-generator");
-        }
-      }
-    } else {
+    if (briefDataFromStore || briefDataFromStorage) {
       if (!briefDataFromStore && briefDataFromStorage) {
         workflow.setBriefData(briefDataFromStorage);
       }
-      setHasCheckedRedirect(true);
     }
+    setHasCheckedRedirect(true);
   }, [
     workflow.briefData,
     workflow.selectedUseCase,
-    navigate,
     isRestoring,
     hasCheckedRedirect,
     workflow,
@@ -429,13 +414,13 @@ const TemplatesPage = () => {
     );
   }
 
-  // Only show null/redirect if we've checked and confirmed no data
+  // No brief data → show empty state with CTA instead of silent redirect
   if (hasCheckedRedirect && !finalBriefData) {
-    return null;
+    return <EmptyStateRedirect step="templates" />;
   }
 
   if (!finalBriefData) {
-    return null;
+    return <EmptyStateRedirect step="templates" />;
   }
 
   const content = (

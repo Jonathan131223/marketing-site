@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAppStore } from "@/hooks/useAppStore";
 import { useStateRestoration } from "@/hooks/useStateRestoration";
 import { BriefWizard } from "@/components/email-generator/BriefWizard";
+import { EmptyStateRedirect } from "@/components/email-generator/EmptyStateRedirect";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import type { BriefData, UseCase } from "@/types/emailGenerator";
@@ -25,7 +26,7 @@ const BriefPage = () => {
     },
   });
 
-  // Handle use case from URL or state
+  // Handle use case from URL param — let user land here via deep link
   const selectedUseCase = workflow.selectedUseCase;
   const setUseCase = workflow.setUseCase;
 
@@ -34,15 +35,12 @@ const BriefPage = () => {
 
     const useCaseParam = searchParams.get("useCase");
 
-    if (useCaseParam) {
-      if (useCaseParam !== selectedUseCase) {
-        setUseCase(useCaseParam as UseCase);
-      }
-    } else if (!selectedUseCase) {
-      navigate("/email-generator");
-      return;
+    if (useCaseParam && useCaseParam !== selectedUseCase) {
+      setUseCase(useCaseParam as UseCase);
     }
-  }, [searchParams, selectedUseCase, setUseCase, navigate, isRestoring]);
+    // No more silent redirect when selectedUseCase is missing — render
+    // EmptyStateRedirect below so the user sees a clear CTA.
+  }, [searchParams, selectedUseCase, setUseCase, isRestoring]);
 
   const handleBriefComplete = (data: BriefData) => {
     // Clear any previous template tweaks so the new generation starts fresh
@@ -70,7 +68,7 @@ const BriefPage = () => {
   }
 
   if (!workflow.selectedUseCase) {
-    return null; // Will redirect
+    return <EmptyStateRedirect step="brief" />;
   }
 
   const content = (

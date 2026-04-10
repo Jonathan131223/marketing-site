@@ -6,6 +6,7 @@ import { StatePersistence } from "@/store/persistence";
 import { EmailEditor } from "@/components/email-generator/EmailEditor";
 import { EmailSubjectPreviewSection } from "@/components/email-generator/EmailSubjectPreviewSection";
 import { AIGeneratorPanel } from "@/components/email-generator/AIGeneratorPanel";
+import { EmptyStateRedirect } from "@/components/email-generator/EmptyStateRedirect";
 import { ProgressBar } from "@/components/email-generator/ProgressBar";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -66,34 +67,20 @@ const CustomizePage = () => {
     },
   });
 
-  // Redirect if no email selected (after state restoration)
+  // Restore selected email from storage. No auto-redirect on missing
+  // state — fall through to EmptyStateRedirect below.
   useEffect(() => {
     if (isRestoring) return;
 
     const selectedEmailFromStore = workflow.selectedEmail;
     const selectedEmailFromStorage = StatePersistence.loadSelectedEmail();
-    const hasSelectedEmail = selectedEmailFromStore || selectedEmailFromStorage;
 
-    // If we found email in storage but not in store, restore it
     if (!selectedEmailFromStore && selectedEmailFromStorage) {
       workflow.setSelectedEmail(selectedEmailFromStorage);
-      return;
-    }
-
-    if (!hasSelectedEmail) {
-      const briefDataFromStorage = StatePersistence.loadBriefData();
-      const hasBriefData = workflow.briefData || briefDataFromStorage;
-
-      if (hasBriefData) {
-        navigate("/email-generator/templates");
-      } else {
-        navigate("/email-generator");
-      }
     }
   }, [
     workflow.selectedEmail,
     workflow.briefData,
-    navigate,
     isRestoring,
     workflow,
   ]);
@@ -261,7 +248,7 @@ const CustomizePage = () => {
   }, [workflow.briefData]);
 
   // Show loading state while restoring
-  if (isRestoring || !workflow.selectedEmail) {
+  if (isRestoring) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50 flex items-center justify-center">
         <div className="text-center">
@@ -270,6 +257,11 @@ const CustomizePage = () => {
         </div>
       </div>
     );
+  }
+
+  // No selected email → show empty state with CTA instead of silent redirect
+  if (!workflow.selectedEmail) {
+    return <EmptyStateRedirect step="customize" />;
   }
 
   const content = (
