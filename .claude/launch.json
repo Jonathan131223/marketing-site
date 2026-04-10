@@ -3,15 +3,15 @@
   "configurations": [
     {
       "name": "digi-marketing-dev",
-      "runtimeExecutable": "/Users/jonathanbernard/.bun/bin/bun",
-      "runtimeArgs": ["run", "astro", "dev", "--port", "4399"],
-      "port": 4399
+      "runtimeExecutable": "/usr/local/bin/node",
+      "runtimeArgs": ["node_modules/.bin/astro", "dev"],
+      "port": 4321
     },
     {
       "name": "digi-marketing-preview",
-      "runtimeExecutable": "/Users/jonathanbernard/.bun/bin/bun",
-      "runtimeArgs": ["run", "astro", "preview", "--port", "4399"],
-      "port": 4399
+      "runtimeExecutable": "/usr/local/bin/node",
+      "runtimeArgs": ["node_modules/.bin/astro", "preview"],
+      "port": 4321
     }
   ]
 }
