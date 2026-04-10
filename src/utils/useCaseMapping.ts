@@ -53,6 +53,20 @@ export const useCasesByCategory = {
   ]
 };
 
+/**
+ * Type guard: check whether an arbitrary string matches a known use case ID.
+ * Used when reading `?useCase=` URL params to reject malformed or injected
+ * values before they reach the store. Without this, an unvalidated cast
+ * poisons persistence and downstream `useCaseConfig[value]` lookups crash.
+ */
+const ALL_USE_CASE_IDS: ReadonlySet<string> = new Set(
+  Object.values(useCasesByCategory).flatMap(list => list.map(uc => uc.id as string))
+);
+
+export const isValidUseCase = (value: string | null | undefined): value is UseCase => {
+  return typeof value === "string" && ALL_USE_CASE_IDS.has(value);
+};
+
 export const getCategoryForUseCase = (useCase: UseCase | null): UseCaseCategory | null => {
   if (!useCase) return null;
 

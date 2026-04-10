@@ -1,9 +1,27 @@
 import "@testing-library/jest-dom/vitest";
 import { cleanup } from "@testing-library/react";
-import { afterEach } from "vitest";
+import { afterEach, vi } from "vitest";
 
 afterEach(() => {
   cleanup();
+});
+
+// jsdom does not implement window.matchMedia, which Radix, sonner, and other
+// UI primitives call during mount. Stub it once so every test file inherits
+// the same contract — avoids per-file copy-paste and isolation drift.
+Object.defineProperty(window, "matchMedia", {
+  writable: true,
+  configurable: true,
+  value: (query: string) => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: vi.fn(),
+    removeListener: vi.fn(),
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+    dispatchEvent: vi.fn(),
+  }),
 });
 
 // Astro injects PUBLIC_* env vars via import.meta.env; provide a default

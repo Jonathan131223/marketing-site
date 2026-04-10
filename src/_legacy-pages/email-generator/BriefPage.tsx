@@ -6,7 +6,8 @@ import { BriefWizard } from "@/components/email-generator/BriefWizard";
 import { EmptyStateRedirect } from "@/components/email-generator/EmptyStateRedirect";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import type { BriefData, UseCase } from "@/types/emailGenerator";
+import { isValidUseCase } from "@/utils/useCaseMapping";
+import type { BriefData } from "@/types/emailGenerator";
 
 const BriefPage = () => {
   const navigate = useNavigate();
@@ -26,7 +27,10 @@ const BriefPage = () => {
     },
   });
 
-  // Handle use case from URL param — let user land here via deep link
+  // Handle use case from URL param — let user land here via deep link.
+  // URL params are validated with isValidUseCase() before hitting the
+  // store; a malformed or attacker-controlled ?useCase=<garbage> falls
+  // through to EmptyStateRedirect instead of poisoning persistence.
   const selectedUseCase = workflow.selectedUseCase;
   const setUseCase = workflow.setUseCase;
 
@@ -35,11 +39,15 @@ const BriefPage = () => {
 
     const useCaseParam = searchParams.get("useCase");
 
-    if (useCaseParam && useCaseParam !== selectedUseCase) {
-      setUseCase(useCaseParam as UseCase);
+    if (
+      useCaseParam &&
+      isValidUseCase(useCaseParam) &&
+      useCaseParam !== selectedUseCase
+    ) {
+      setUseCase(useCaseParam);
     }
-    // No more silent redirect when selectedUseCase is missing — render
-    // EmptyStateRedirect below so the user sees a clear CTA.
+    // No silent redirect when selectedUseCase is missing or invalid —
+    // render EmptyStateRedirect below so the user sees a clear CTA.
   }, [searchParams, selectedUseCase, setUseCase, isRestoring]);
 
   const handleBriefComplete = (data: BriefData) => {

@@ -1,6 +1,11 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft, Sparkles } from "lucide-react";
+import { useCasesByCategory } from "@/utils/useCaseMapping";
+
+// Derived from the single source of truth so this stays in sync if a new
+// use case or category is added later.
+const TOTAL_USE_CASES = Object.values(useCasesByCategory).flat().length;
 
 interface EmptyStateRedirectProps {
   /**
@@ -31,8 +36,8 @@ export function EmptyStateRedirect({ step }: EmptyStateRedirectProps) {
 
       <main className="flex-1 flex items-center justify-center px-6 py-16">
         <div className="max-w-md text-center">
-          <div className="w-16 h-16 rounded-2xl bg-[#1D4ED8]/10 flex items-center justify-center mx-auto mb-6">
-            <Sparkles className="w-8 h-8 text-[#1D4ED8]" aria-hidden="true" />
+          <div className="w-16 h-16 rounded-2xl bg-[#EFF6FF] flex items-center justify-center mx-auto mb-6">
+            <Sparkles className="w-8 h-8 text-[#2563EB]" aria-hidden="true" />
           </div>
 
           <h1 className="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">
@@ -46,14 +51,15 @@ export function EmptyStateRedirect({ step }: EmptyStateRedirectProps) {
 
           <a
             href="/email-generator"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#1D4ED8] text-white font-semibold hover:bg-[#1e40af] transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#2563EB] text-white font-semibold hover:bg-[#1D4ED8] transition-colors"
           >
             <ArrowLeft className="w-4 h-4" aria-hidden="true" />
             Go to use case picker
           </a>
 
           <p className="text-xs text-slate-400 mt-6">
-            38 use cases across activation, engagement, expansion, churn, community, and content.
+            {TOTAL_USE_CASES} use cases across activation, engagement,
+            expansion, churn, community, and content.
           </p>
         </div>
       </main>

@@ -20,24 +20,10 @@
  */
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect, beforeEach } from "vitest";
 import EmailGeneratorApp from "@/components/react/EmailGeneratorApp";
 
-// jsdom has no matchMedia — several UI primitives (Radix, toasts) call it
-// during mount. Stub it so the island can hydrate in tests.
-Object.defineProperty(window, "matchMedia", {
-  writable: true,
-  value: (query: string) => ({
-    matches: false,
-    media: query,
-    onchange: null,
-    addListener: vi.fn(),
-    removeListener: vi.fn(),
-    addEventListener: vi.fn(),
-    removeEventListener: vi.fn(),
-    dispatchEvent: vi.fn(),
-  }),
-});
+// matchMedia is stubbed globally in test/setup.ts.
 
 // Route pushed before mount — react-router's BrowserRouter reads location.
 function setPath(pathname: string) {
@@ -45,6 +31,12 @@ function setPath(pathname: string) {
 }
 
 describe("EmailGeneratorApp — ISSUE-001 regression", () => {
+  beforeEach(() => {
+    // Reset path between tests so order-dependent state (navigation
+    // left over from a prior test) never leaks into the next one.
+    setPath("/");
+  });
+
   it("renders the use case picker at /email-generator without throwing", async () => {
     setPath("/email-generator");
 
@@ -204,5 +196,87 @@ describe("EmailGeneratorApp — ISSUE-001 regression", () => {
     expect(
       screen.getByText(/to customize your email/i),
     ).toBeInTheDocument();
+  });
+
+  it("renders the templates empty state with its own step-specific prompt", async () => {
+    setPath("/email-generator/templates");
+
+    render(<EmailGeneratorApp initialPath="/email-generator/templates" />);
+
+    await waitFor(
+      () => {
+        expect(
+          screen.getByRole("heading", {
+            level: 1,
+            name: /pick a use case first/i,
+          }),
+        ).toBeInTheDocument();
+      },
+      { timeout: 3000 },
+    );
+
+    expect(
+      screen.getByText(/to choose a template/i),
+    ).toBeInTheDocument();
+  });
+
+  it("renders the generate empty state with its own step-specific prompt", async () => {
+    setPath("/email-generator/generate");
+
+    render(<EmailGeneratorApp initialPath="/email-generator/generate" />);
+
+    await waitFor(
+      () => {
+        expect(
+          screen.getByRole("heading", {
+            level: 1,
+            name: /pick a use case first/i,
+          }),
+        ).toBeInTheDocument();
+      },
+      { timeout: 3000 },
+    );
+
+    expect(
+      screen.getByText(/to generate your emails/i),
+    ).toBeInTheDocument();
+  });
+
+  it("navigates to the brief page when a use case card is clicked", async () => {
+    setPath("/email-generator");
+
+    const user = userEvent.setup();
+    render(<EmailGeneratorApp initialPath="/email-generator" />);
+
+    // Wait for the picker to render
+    await waitFor(
+      () => {
+        expect(
+          screen.getByRole("button", { name: /welcome new free users/i }),
+        ).toBeInTheDocument();
+      },
+      { timeout: 3000 },
+    );
+
+    // Click the first Activation use case — should navigate to /brief
+    await user.click(
+      screen.getByRole("button", { name: /welcome new free users/i }),
+    );
+
+    // react-router-dom updates window.location via the History API, so we
+    // verify the navigation by checking that the picker H1 is gone and a
+    // BriefPage (or its loading state) is in the DOM.
+    await waitFor(
+      () => {
+        expect(window.location.pathname).toMatch(
+          /\/email-generator\/brief/,
+        );
+      },
+      { timeout: 3000 },
+    );
+
+    // The useCase query param must be set — that's how BriefPage finds
+    // which use case to render.
+    expect(window.location.search).toMatch(/useCase=welcome/);
   });
 });

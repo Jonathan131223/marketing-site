@@ -328,7 +328,7 @@ const TemplatesPage = () => {
     onStateRestored: () => {
       setTimeout(() => {
         setIsRestoring(false);
-      }, 200);
+      }, 100);
     },
     onNoStateFound: () => {
       setIsRestoring(false);
@@ -337,6 +337,9 @@ const TemplatesPage = () => {
 
   // Check for brief data in both store and localStorage. No auto-redirect
   // on missing state — fall through to EmptyStateRedirect below.
+  // Deps: we intentionally omit `workflow` (new reference every render).
+  // setBriefData is a stable useCallback from useAppStore.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (isRestoring) return;
     if (hasCheckedRedirect) return;
@@ -350,13 +353,7 @@ const TemplatesPage = () => {
       }
     }
     setHasCheckedRedirect(true);
-  }, [
-    workflow.briefData,
-    workflow.selectedUseCase,
-    isRestoring,
-    hasCheckedRedirect,
-    workflow,
-  ]);
+  }, [workflow.briefData, isRestoring, hasCheckedRedirect]);
 
   const handleEmailSelect = (email: EmailTemplate) => {
     workflow.setSelectedEmail(email);
@@ -415,10 +412,6 @@ const TemplatesPage = () => {
   }
 
   // No brief data → show empty state with CTA instead of silent redirect
-  if (hasCheckedRedirect && !finalBriefData) {
-    return <EmptyStateRedirect step="templates" />;
-  }
-
   if (!finalBriefData) {
     return <EmptyStateRedirect step="templates" />;
   }

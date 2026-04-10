@@ -49,11 +49,15 @@ const CustomizePage = () => {
     } as TemplateTweaks;
   });
 
-  // Clear history when entering CustomizePage (fresh session)
+  // Clear history on mount — one fresh session per Customize visit.
+  // Previously depended on `location.pathname` (resolving to window.location)
+  // which never changed under SPA routing; comment said "fresh session" but
+  // the effect ran based on component mount/unmount anyway. Using [] is
+  // explicit about the real intent.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     history.clear();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location.pathname]);
+  }, []);
 
   // Restore state on mount
   useStateRestoration({
@@ -69,6 +73,9 @@ const CustomizePage = () => {
 
   // Restore selected email from storage. No auto-redirect on missing
   // state — fall through to EmptyStateRedirect below.
+  // Deps: we intentionally omit `workflow` (new reference every render).
+  // setSelectedEmail is a stable useCallback from useAppStore.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (isRestoring) return;
 
@@ -78,12 +85,7 @@ const CustomizePage = () => {
     if (!selectedEmailFromStore && selectedEmailFromStorage) {
       workflow.setSelectedEmail(selectedEmailFromStorage);
     }
-  }, [
-    workflow.selectedEmail,
-    workflow.briefData,
-    isRestoring,
-    workflow,
-  ]);
+  }, [workflow.selectedEmail, isRestoring]);
 
   // Keep checkbox state in sync with current email HTML
   useEffect(() => {
