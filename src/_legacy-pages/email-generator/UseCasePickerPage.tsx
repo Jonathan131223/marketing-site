@@ -1,70 +1,80 @@
-import { useState, type ReactNode } from "react";
+import { useState, type ComponentType } from "react";
 import { useNavigate } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { useAppStore } from "@/hooks/useAppStore";
 import type { UseCase } from "@/types/emailGenerator";
 import { useCasesByCategory } from "@/utils/useCaseMapping";
-import { Zap, Lightbulb, TrendingUp, Shield, Users, Megaphone, ArrowRight, ChevronDown } from "lucide-react";
+import { Zap, Lightbulb, TrendingUp, Shield, Users, Megaphone } from "lucide-react";
+
+type CategoryKey =
+  | "activation"
+  | "engagement"
+  | "expansion"
+  | "churn"
+  | "community"
+  | "content";
 
 const categoryMeta: Record<
-  string,
-  { label: string; icon: ReactNode; description: string }
+  CategoryKey,
+  { label: string; Icon: ComponentType<{ className?: string }>; description: string }
 > = {
   activation: {
     label: "Activation",
-    icon: <Zap className="w-6 h-6 text-[#1D4ED8]" />,
+    Icon: Zap,
     description: "Welcome, onboard, and activate new users fast.",
   },
   engagement: {
     label: "Engagement",
-    icon: <Lightbulb className="w-6 h-6 text-[#1D4ED8]" />,
+    Icon: Lightbulb,
     description: "Keep users engaged with tips, surveys, and feature drops.",
   },
   expansion: {
     label: "Expansion",
-    icon: <TrendingUp className="w-6 h-6 text-[#1D4ED8]" />,
+    Icon: TrendingUp,
     description: "Upsell, cross-sell, and grow revenue per user.",
   },
   churn: {
     label: "Churn Prevention",
-    icon: <Shield className="w-6 h-6 text-[#1D4ED8]" />,
+    Icon: Shield,
     description: "Detect risk signals and retain at-risk customers.",
   },
   community: {
     label: "Community",
-    icon: <Users className="w-6 h-6 text-[#1D4ED8]" />,
+    Icon: Users,
     description: "Referrals, feedback, beta invites, and community growth.",
   },
   content: {
     label: "Content & PR",
-    icon: <Megaphone className="w-6 h-6 text-[#1D4ED8]" />,
+    Icon: Megaphone,
     description: "Promote webinars, articles, case studies, and press mentions.",
   },
 };
 
-const categoryOrder = [
+const categoryOrder: CategoryKey[] = [
   "activation",
   "engagement",
   "expansion",
   "churn",
   "community",
   "content",
-] as const;
+];
 
 export default function UseCasePickerPage() {
   const navigate = useNavigate();
   const { workflow } = useAppStore();
-  const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
+  // Default to activation — user lands with the first category already open
+  // so 8 use cases are visible above the fold instead of 6 closed cards.
+  const [selectedCategory, setSelectedCategory] =
+    useState<CategoryKey>("activation");
 
   const handleUseCaseSelect = (useCase: UseCase) => {
     workflow.setUseCase(useCase);
     navigate(`/email-generator/brief?useCase=${useCase}`);
   };
 
-  const handleCategoryClick = (category: string) => {
-    setExpandedCategory((prev) => (prev === category ? null : category));
-  };
+  const activeMeta = categoryMeta[selectedCategory];
+  const activeUseCases = useCasesByCategory[selectedCategory];
 
   return (
     <>
@@ -132,85 +142,116 @@ export default function UseCasePickerPage() {
           </div>
         </section>
 
-        {/* Category Cards Grid */}
-        <section className="pb-24">
+        {/* Category Tabs + Use Cases */}
+        <section className="pb-24" aria-labelledby="use-case-picker-heading">
           <div className="container mx-auto px-6 max-w-5xl">
-            <h2 className="text-2xl font-serif font-bold text-slate-900 text-center mb-8">Choose your use case</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <h2
+              id="use-case-picker-heading"
+              className="text-2xl font-serif font-bold text-slate-900 text-center mb-8"
+            >
+              Choose your use case
+            </h2>
+
+            {/* Category tab bar — all 6 visible at once, one active */}
+            <div
+              role="tablist"
+              aria-label="Use case categories"
+              className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3 mb-8"
+            >
               {categoryOrder.map((categoryKey) => {
                 const meta = categoryMeta[categoryKey];
-                const useCases = useCasesByCategory[categoryKey];
-                const isExpanded = expandedCategory === categoryKey;
+                const isActive = selectedCategory === categoryKey;
+                const useCaseCount = useCasesByCategory[categoryKey].length;
+                const Icon = meta.Icon;
 
                 return (
-                  <div
+                  <button
                     key={categoryKey}
-                    className={`rounded-2xl border transition-all duration-300 ${
-                      isExpanded
-                        ? "border-[#1D4ED8]/40 bg-white shadow-lg col-span-1 md:col-span-2 lg:col-span-3"
-                        : "border-slate-200 bg-white hover:border-[#1D4ED8]/30 hover:shadow-lg hover:-translate-y-0.5 cursor-pointer"
+                    role="tab"
+                    aria-selected={isActive}
+                    aria-controls={`use-cases-${categoryKey}`}
+                    id={`tab-${categoryKey}`}
+                    onClick={() => setSelectedCategory(categoryKey)}
+                    className={`group flex flex-col items-center text-center px-3 py-4 rounded-xl border transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] focus-visible:ring-offset-2 ${
+                      isActive
+                        ? "border-[#2563EB] bg-[#2563EB] shadow-md"
+                        : "border-slate-200 bg-white hover:border-[#2563EB]/40 hover:-translate-y-0.5 hover:shadow-sm"
                     }`}
                   >
-                    {/* Category Header */}
-                    <button
-                      onClick={() => handleCategoryClick(categoryKey)}
-                      className="w-full text-left p-6 flex items-start gap-4 group"
+                    <div
+                      className={`w-9 h-9 rounded-lg flex items-center justify-center mb-2 transition-colors ${
+                        isActive ? "bg-white/15" : "bg-[#EFF6FF]"
+                      }`}
                     >
-                      <div className="w-10 h-10 rounded-lg bg-[#1D4ED8]/10 flex items-center justify-center flex-shrink-0">{meta.icon}</div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="text-lg font-semibold text-slate-900 mb-1">
-                          {meta.label}
-                        </h3>
-                        <p className="text-sm text-slate-500 mb-3">
-                          {meta.description}
-                        </p>
-                        <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1D4ED8] group-hover:gap-2.5 transition-all">
-                          Explore {useCases.length} use case{useCases.length !== 1 ? "s" : ""}
-                          <ArrowRight className="w-3.5 h-3.5" />
-                        </span>
-                      </div>
-                      <ChevronDown
-                        className={`w-5 h-5 text-slate-400 transition-transform duration-200 mt-1 flex-shrink-0 ${
-                          isExpanded ? "rotate-180" : ""
+                      <Icon
+                        className={`w-5 h-5 transition-colors ${
+                          isActive ? "text-white" : "text-[#2563EB]"
                         }`}
                       />
-                    </button>
-
-                    {/* Expanded Use Cases */}
-                    {isExpanded && (
-                      <div className="px-6 pb-6 pt-0">
-                        <div className="border-t border-slate-100 pt-4">
-                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                            {useCases.map((uc) => (
-                              <button
-                                key={uc.id}
-                                onClick={() =>
-                                  handleUseCaseSelect(uc.id as UseCase)
-                                }
-                                className="group text-left p-4 rounded-xl border border-slate-100 hover:border-[#1D4ED8]/30 hover:bg-blue-50/50 transition-all duration-200"
-                              >
-                                <div className="flex items-start gap-3">
-                                  <span className="text-xl flex-shrink-0">
-                                    {uc.icon}
-                                  </span>
-                                  <div className="min-w-0">
-                                    <h4 className="text-sm font-semibold text-slate-800 group-hover:text-[#1D4ED8] transition-colors">
-                                      {uc.title}
-                                    </h4>
-                                    <p className="text-xs text-slate-500 mt-1 line-clamp-2">
-                                      {uc.summary}
-                                    </p>
-                                  </div>
-                                </div>
-                              </button>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
+                    </div>
+                    <span
+                      className={`text-sm font-semibold leading-tight transition-colors ${
+                        isActive ? "text-white" : "text-slate-900"
+                      }`}
+                    >
+                      {meta.label}
+                    </span>
+                    <span
+                      className={`text-[11px] font-medium mt-1 transition-colors ${
+                        isActive ? "text-white/80" : "text-slate-400"
+                      }`}
+                    >
+                      {useCaseCount} use case{useCaseCount !== 1 ? "s" : ""}
+                    </span>
+                  </button>
                 );
               })}
+            </div>
+
+            {/* Active category description */}
+            <div
+              id={`use-cases-${selectedCategory}`}
+              role="tabpanel"
+              aria-labelledby={`tab-${selectedCategory}`}
+              className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm"
+            >
+              <div className="mb-6 flex items-start gap-4">
+                <div className="w-10 h-10 rounded-lg bg-[#EFF6FF] flex items-center justify-center flex-shrink-0">
+                  <activeMeta.Icon className="w-5 h-5 text-[#2563EB]" />
+                </div>
+                <div className="min-w-0">
+                  <h3 className="text-lg font-semibold text-slate-900 mb-1">
+                    {activeMeta.label}
+                  </h3>
+                  <p className="text-sm text-slate-500">
+                    {activeMeta.description}
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                {activeUseCases.map((uc) => (
+                  <button
+                    key={uc.id}
+                    onClick={() => handleUseCaseSelect(uc.id as UseCase)}
+                    className="group text-left p-4 rounded-xl border border-slate-200 hover:border-[#2563EB]/40 hover:bg-[#EFF6FF]/50 hover:shadow-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] focus-visible:ring-offset-2"
+                  >
+                    <div className="flex items-start gap-3">
+                      <span className="text-xl flex-shrink-0" aria-hidden="true">
+                        {uc.icon}
+                      </span>
+                      <div className="min-w-0">
+                        <h4 className="text-sm font-semibold text-slate-900 group-hover:text-[#2563EB] transition-colors">
+                          {uc.title}
+                        </h4>
+                        <p className="text-xs text-slate-500 mt-1 line-clamp-2">
+                          {uc.summary}
+                        </p>
+                      </div>
+                    </div>
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </section>
