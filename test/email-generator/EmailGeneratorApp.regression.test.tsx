@@ -332,15 +332,38 @@ describe("EmailGeneratorApp — ISSUE-001 regression", () => {
       screen.getByRole("tab", { name: /content & pr/i }),
     ).toHaveAttribute("aria-selected", "true");
 
-    // End key from anywhere should jump to the last tab (still Content & PR).
+    // ArrowRight from the last tab (Content & PR) should wrap back to the
+    // first tab (Activation). Covers the forward-wrap branch so both
+    // wrapping paths in the modular arithmetic are verified.
+    await user.keyboard("{ArrowRight}");
+    expect(
+      screen.getByRole("tab", { name: /activation/i }),
+    ).toHaveAttribute("aria-selected", "true");
+
+    // End key should jump to the last tab.
+    await user.keyboard("{End}");
+    expect(
+      screen.getByRole("tab", { name: /content & pr/i }),
+    ).toHaveAttribute("aria-selected", "true");
+
+    // Home key should jump back to the first tab.
     await user.keyboard("{Home}");
     expect(
       screen.getByRole("tab", { name: /activation/i }),
     ).toHaveAttribute("aria-selected", "true");
 
-    await user.keyboard("{End}");
+    // Non-navigation keys (letters, Tab, Space) should NOT be intercepted
+    // by the handler. Pressing 'a' or Tab must not change the active tab.
+    // This covers the `default: return;` branch of handleTabKeyDown — a
+    // regression that swallowed Tab would trap screen reader users inside
+    // the tablist.
+    const activationAfterHome = screen.getByRole("tab", {
+      name: /activation/i,
+    });
+    activationAfterHome.focus();
+    await user.keyboard("a");
     expect(
-      screen.getByRole("tab", { name: /content & pr/i }),
+      screen.getByRole("tab", { name: /activation/i }),
     ).toHaveAttribute("aria-selected", "true");
   });
 });

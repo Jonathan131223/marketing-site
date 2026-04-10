@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback, useMemo, useRef } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppStore } from "@/hooks/useAppStore";
 import { useStateRestoration } from "@/hooks/useStateRestoration";
@@ -100,15 +100,19 @@ const CustomizePage = () => {
   // with the post-badge content, but history init read selected.content in
   // the same render cycle before the dispatch committed, so history entry 0
   // was the pre-badge content. First undo removed the badge the user never
-  // saw get applied. This version computes the post-badge content once and
-  // uses it for BOTH the store update AND the history seed, guaranteed in
-  // sync. Guarded by a ref so it runs exactly once per mount regardless of
-  // how many times the effect deps change.
-  const hasInitialized = useRef(false);
-  const historyEntriesLength = history.entries.length;
+  // saw get applied.
+  //
+  // Fix: compute the canonical post-badge content ONCE, use it for both the
+  // store update AND the history seed.
+  //
+  // Runs on every content change (not just mount) so downstream flows that
+  // replace `selectedEmail.content` in place — stormy regeneration, template
+  // tweak application — get re-normalized through the badge logic. The
+  // history seed uses `history.entries.length === 0` as its idempotency
+  // gate, so it only fires on the very first content that reaches an empty
+  // history, regardless of how many times the effect re-runs.
   useEffect(() => {
     if (isRestoring) return;
-    if (hasInitialized.current) return;
 
     const selected = workflow.selectedEmail;
     if (!selected?.content) return;
@@ -118,23 +122,21 @@ const CustomizePage = () => {
       ? ensureDigiStormsBadgeInitialized(selected.content)
       : selected.content;
 
-    // Apply badge if it changed anything.
+    // Apply badge if it changed anything. ensureDigiStormsBadgeInitialized
+    // is idempotent — if the badge is already present, initialContent ===
+    // selected.content and this dispatch is skipped, so the effect does
+    // not ping-pong.
     if (initialContent !== selected.content) {
       workflow.setSelectedEmail({ ...selected, content: initialContent });
     }
 
-    // Seed history with the SAME content the user sees on frame 1.
-    if (historyEntriesLength === 0) {
+    // Seed history ONLY when empty. Guard protects against re-seeding
+    // after user edits, and against double-seeding under React strict mode.
+    if (history.entries.length === 0) {
       history.addEntry(initialContent, "inline-edit");
     }
-
-    hasInitialized.current = true;
-    // Reset on unmount so a fresh visit re-initializes cleanly.
-    return () => {
-      hasInitialized.current = false;
-    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isRestoring, workflow.selectedEmail?.id]);
+  }, [isRestoring, workflow.selectedEmail?.content]);
 
   // Handle template tweaks change
   const handleTweaksChange = useCallback((newTweaks: TemplateTweaks) => {

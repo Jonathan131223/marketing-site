@@ -72,20 +72,38 @@ describe("Navbar — smoke", () => {
   it("opens the mobile menu when the hamburger button is clicked", async () => {
     const user = userEvent.setup();
     render(<Navbar />);
-    // Mobile menu button has an accessible name of "Toggle menu" or similar.
-    // Find it by looking for a button with an aria-label mentioning menu,
-    // then verify that clicking it changes the DOM (mobile menu appears).
-    const menuButton = screen.getAllByRole("button").find((b) => {
-      const label = b.getAttribute("aria-label") || b.textContent || "";
-      return /menu/i.test(label);
+
+    // The mobile menu is initially closed — Library appears in the desktop
+    // nav once (twice when mobile menu is also open). Count baseline links
+    // so we can detect the menu actually opened.
+    const libraryLinksBefore = screen.queryAllByRole("link", {
+      name: /^library$/i,
     });
-    expect(menuButton).toBeDefined();
-    if (!menuButton) return;
+    const libraryCountBefore = libraryLinksBefore.length;
+
+    // Find the hamburger button by its aria-label.
+    const menuButton = screen.getByRole("button", { name: /toggle menu/i });
+    expect(menuButton).toBeInTheDocument();
 
     await user.click(menuButton);
-    // After opening, the mobile menu should have some link content visible.
-    // The exact structure depends on Navbar's implementation but the safe
-    // assertion is that clicking didn't throw.
-    expect(() => user.click(menuButton)).not.toThrow();
+
+    // After opening, the mobile drawer renders a duplicate Library link,
+    // so the count should have increased. This verifies the menu actually
+    // opened, not just that the click did not throw.
+    const libraryLinksAfter = screen.getAllByRole("link", {
+      name: /^library$/i,
+    });
+    expect(libraryLinksAfter.length).toBeGreaterThan(libraryCountBefore);
+  });
+
+  it("does not leak PII or tokens into the rendered HTML", () => {
+    // Sanity check — ISSUE-008 could re-regress and silently embed the wrong
+    // app URL in every link. Assert none of the rendered hrefs contain
+    // obviously-wrong substrings (localhost, undefined, wrong-url, etc.).
+    const { container } = render(<Navbar />);
+    const html = container.innerHTML;
+    expect(html).not.toContain("undefined");
+    expect(html).not.toContain("localhost");
+    expect(html).not.toContain("[object Object]");
   });
 });

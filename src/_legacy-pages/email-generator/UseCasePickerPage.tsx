@@ -51,14 +51,59 @@ const categoryMeta: Record<
   },
 };
 
-const categoryOrder: CategoryKey[] = [
+// Explicit display order. Not derived from `Object.keys(categoryMeta)`
+// because we don't want the tab sequence to silently shift if someone
+// reorders entries in the meta object. The `as const` + `satisfies` clauses
+// together validate that every item is a valid CategoryKey AND preserve
+// the tuple literal so the exhaustiveness check below can detect drift.
+const categoryOrder = [
   "activation",
   "engagement",
   "expansion",
   "churn",
   "community",
   "content",
-];
+] as const satisfies ReadonlyArray<CategoryKey>;
+
+// Compile-time exhaustiveness + length check. Two independent guarantees:
+//
+// 1. `_MissingKeys`: if a new value is added to the `CategoryKey` type
+//    but not appended here, this type resolves to the new key (not never),
+//    which breaks the assignment below.
+//
+// 2. `_LengthMatches`: counts the number of distinct union members in
+//    `CategoryKey` and asserts categoryOrder has the same number of
+//    entries. Catches duplicates (e.g. a typo that lists "activation"
+//    twice while omitting "churn") which the first check alone would
+//    miss — `Exclude<CategoryKey, "activation" | "activation">` is still
+//    just the missing member, but the length check fails.
+type _MissingKeys = Exclude<CategoryKey, (typeof categoryOrder)[number]>;
+type _UnionToIntersection<U> = (U extends unknown ? (x: U) => void : never) extends (
+  x: infer I,
+) => void
+  ? I
+  : never;
+type _LastOfUnion<U> = _UnionToIntersection<
+  U extends unknown ? () => U : never
+> extends () => infer R
+  ? R
+  : never;
+type _UnionLength<U, Acc extends unknown[] = []> = [U] extends [never]
+  ? Acc["length"]
+  : _UnionLength<Exclude<U, _LastOfUnion<U>>, [_LastOfUnion<U>, ...Acc]>;
+type _CategoryKeyCount = _UnionLength<CategoryKey>;
+type _LengthMatches = (typeof categoryOrder)["length"] extends _CategoryKeyCount
+  ? _CategoryKeyCount extends (typeof categoryOrder)["length"]
+    ? true
+    : "ERROR: categoryOrder length does not match CategoryKey union size"
+  : "ERROR: categoryOrder length does not match CategoryKey union size";
+
+const _categoryOrderIsExhaustive: [_MissingKeys] extends [never]
+  ? true
+  : "ERROR: categoryOrder is missing keys from CategoryKey" = true;
+const _categoryOrderHasNoDuplicates: _LengthMatches = true;
+void _categoryOrderIsExhaustive;
+void _categoryOrderHasNoDuplicates;
 
 export default function UseCasePickerPage() {
   const navigate = useNavigate();

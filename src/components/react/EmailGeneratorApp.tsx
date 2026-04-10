@@ -16,9 +16,10 @@ const CustomizePage = lazy(() => import("@/_legacy-pages/email-generator/Customi
  * each Astro page via BaseLayout props — React does not touch document head.
  *
  * BrowserRouter reads the initial route from window.location directly, so
- * no initialPath prop is needed. Prior versions accepted an initialPath that
- * was never read inside the component — deleted to avoid the Chesterton's
- * fence where a future refactor might try to use it and break silently.
+ * no initialPath prop is needed. Prior versions accepted an `initialPath`
+ * prop that was passed by all 5 Astro callers but never referenced inside
+ * the component — deleted to prevent silent drift where Astro pages pass a
+ * value the island ignores.
  */
 const EmailGeneratorApp: React.FC = () => {
   return (
