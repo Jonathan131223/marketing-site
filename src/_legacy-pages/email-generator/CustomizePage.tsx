@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback, useMemo } from "react";
+import { useEffect, useState, useCallback, useMemo, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppStore } from "@/hooks/useAppStore";
 import { useStateRestoration } from "@/hooks/useStateRestoration";
@@ -95,34 +95,46 @@ const CustomizePage = () => {
     );
   }, [workflow.selectedEmail?.content]);
 
-  // Ensure badge exists by default when entering customize (idempotent)
-  useEffect(() => {
-    if (isRestoring) return;
-    const selected = workflow.selectedEmail;
-    if (!selected?.isHtml || !selected.content) return;
-
-    const nextContent = ensureDigiStormsBadgeInitialized(selected.content);
-    if (nextContent !== selected.content) {
-      workflow.setSelectedEmail({ ...selected, content: nextContent });
-    }
-  }, [isRestoring, workflow.selectedEmail, workflow]);
-
-  // Initialize history with the initial email state
+  // Initialize badge AND history in a single ordered effect. Previously
+  // these were two separate effects: badge init dispatched setSelectedEmail
+  // with the post-badge content, but history init read selected.content in
+  // the same render cycle before the dispatch committed, so history entry 0
+  // was the pre-badge content. First undo removed the badge the user never
+  // saw get applied. This version computes the post-badge content once and
+  // uses it for BOTH the store update AND the history seed, guaranteed in
+  // sync. Guarded by a ref so it runs exactly once per mount regardless of
+  // how many times the effect deps change.
+  const hasInitialized = useRef(false);
   const historyEntriesLength = history.entries.length;
   useEffect(() => {
     if (isRestoring) return;
+    if (hasInitialized.current) return;
+
     const selected = workflow.selectedEmail;
     if (!selected?.content) return;
 
-    if (historyEntriesLength === 0) {
-      history.addEntry(selected.content, "inline-edit");
+    // Compute the canonical first-frame content (post-badge init).
+    const initialContent = selected.isHtml
+      ? ensureDigiStormsBadgeInitialized(selected.content)
+      : selected.content;
+
+    // Apply badge if it changed anything.
+    if (initialContent !== selected.content) {
+      workflow.setSelectedEmail({ ...selected, content: initialContent });
     }
-  }, [
-    isRestoring,
-    workflow.selectedEmail,
-    historyEntriesLength,
-    history.addEntry,
-  ]);
+
+    // Seed history with the SAME content the user sees on frame 1.
+    if (historyEntriesLength === 0) {
+      history.addEntry(initialContent, "inline-edit");
+    }
+
+    hasInitialized.current = true;
+    // Reset on unmount so a fresh visit re-initializes cleanly.
+    return () => {
+      hasInitialized.current = false;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isRestoring, workflow.selectedEmail?.id]);
 
   // Handle template tweaks change
   const handleTweaksChange = useCallback((newTweaks: TemplateTweaks) => {
