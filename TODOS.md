@@ -35,6 +35,14 @@
 **Effort:** XS (CC: ~10min)
 **Priority:** P3
 
+## Dev-mode Navbar hydration mismatch (ISSUE-008 from /qa)
+**What:** In `astro dev`, every page using `<Navbar client:load>` logs a React hydration warning: server renders `https://digistorms.ai/portal`, client renders `https://app.digistorms.ai/portal`. Cause: `src/config/appUrl.ts:9` falls back to `import.meta.env.VITE_APP_BASE_URL`, which Astro only exposes server-side; the client bundle gets `undefined` and falls back to the default `app.digistorms.ai`. `.env.development` sets `VITE_APP_BASE_URL=https://digistorms.ai`, so SSR uses the override and client uses the default — mismatch.
+**Why:** Production is unaffected (no env override means both sides use the default), but dev-mode console is noisy and hides real warnings. Also a hidden trap if anyone ever sets `VITE_APP_BASE_URL` in production.
+**Fix:** Rename `VITE_APP_BASE_URL` to `PUBLIC_APP_BASE_URL` in `.env.development`, `.env.example`, and remove the `VITE_*` fallback from `appUrl.ts`. Or remove the `VITE_*` check entirely if no one needs it.
+**Effort:** XS (CC: ~5min)
+**Priority:** P3
+**Found by:** /qa post-fix dev verification on 2026-04-10.
+
 ## Add automated tests (ISSUE-007 from /qa)
 **What:** Bootstrap vitest + @testing-library/react. First test should be a smoke test that mounts `<EmailGeneratorApp initialPath="/email-generator" />` and asserts the H1 renders without throwing — exactly the bug fixed in `ade5103`. Then a thin Playwright suite for 5 critical routes (`/`, `/email-generator`, `/pricing`, `/contact`, `/library`).
 **Why:** Without tests, ISSUE-001 (a critical production crash) shipped silently. The exact test that would have caught it is one assertion. CI minutes are cheap; broken headline features are not.
