@@ -199,14 +199,17 @@ export default function LifecycleScoreIsland() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-primary/5">
+      <section className="pt-24 pb-16 md:pb-24 bg-background-warm">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
             <div className="flex-1">
-              <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">
-                Check your onboarding score in 60 seconds.
+              <p className="text-[13px] font-semibold tracking-[0.08em] uppercase text-primary mb-3">
+                Lifecycle Score
+              </p>
+              <h1 className="text-4xl sm:text-5xl lg:text-[52px] font-serif text-slate-900 leading-[1.1] tracking-[-0.02em] mb-4">
+                Check your onboarding score in 60 seconds
               </h1>
-              <p className="text-lg text-muted-foreground mb-8">
+              <p className="text-lg text-slate-500 mb-8 leading-relaxed">
                 Answer 6 quick questions to see how well you welcome new users, celebrate milestones, nudge the ones who stall, follow up when they go quiet, and upgrade them at the right time.
               </p>
               <Button
