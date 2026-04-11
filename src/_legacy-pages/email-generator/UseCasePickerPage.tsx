@@ -180,12 +180,15 @@ export default function UseCasePickerPage() {
         <Navbar />
 
         {/* Hero Section */}
-        <section className="pt-20 pb-12">
+        <section className="pt-24 pb-12">
           <div className="container mx-auto px-6 text-center">
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">
+            <p className="text-[13px] font-semibold tracking-[0.08em] uppercase text-primary mb-3">
+              Email Generator
+            </p>
+            <h1 className="text-4xl sm:text-5xl lg:text-[52px] font-serif text-slate-900 leading-[1.1] tracking-[-0.02em] mb-4">
               Lifecycle Email Generator
             </h1>
-            <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-8">
+            <p className="text-lg text-slate-500 max-w-2xl mx-auto mb-8 leading-relaxed">
               Generate professional, conversion-ready lifecycle emails for free.
               Pick a use case, answer a few questions, and get production-ready
               HTML in minutes.
@@ -240,7 +243,7 @@ export default function UseCasePickerPage() {
           <div className="container mx-auto px-6 max-w-5xl">
             <h2
               id="use-case-picker-heading"
-              className="text-2xl font-serif font-bold text-slate-900 text-center mb-8"
+              className="text-3xl sm:text-4xl font-serif text-slate-900 tracking-[-0.01em] text-center mb-8"
             >
               Choose your use case
             </h2>

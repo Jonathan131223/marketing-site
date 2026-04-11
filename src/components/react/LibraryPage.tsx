@@ -49,11 +49,11 @@ interface UseCase {
 
 // ── Constants ──────────────────────────────────────────────────────────────────
 
-const PURPLE = "#1D4ED8";
+const PRIMARY = "#1D4ED8";
 const PAGE_SIZE = 24;
 
 const USE_CASE_DISPLAY: Record<string, { emoji: string; bg: string; textColor: string }> = {
-  "onboard-free-user":    { emoji: "\u{1F44B}", bg: "#EDE9FE", textColor: "#5B21B6" },
+  "onboard-free-user":    { emoji: "\u{1F44B}", bg: "#EFF6FF", textColor: "#1D4ED8" },
   "educate-engage":       { emoji: "\u{1F4A1}", bg: "#FEF9C3", textColor: "#92400E" },
   "expand-user":          { emoji: "\u{1F4B8}", bg: "#DCFCE7", textColor: "#166534" },
   "celebrate-milestones": { emoji: "\u{1F3C6}", bg: "#FEF3C7", textColor: "#92400E" },
@@ -301,15 +301,18 @@ const LibraryPage: React.FC = () => {
   return (
     <main>
       {/* HERO SECTION */}
-      <section className="pt-20 pb-16 md:pb-40 bg-white min-h-screen flex items-center">
+      <section className="pt-24 pb-16 md:pb-40 bg-white min-h-screen flex items-center">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-slate-900 mb-6 leading-tight">
+          <div className="text-center max-w-3xl mx-auto">
+            <p className="text-[13px] font-semibold tracking-[0.08em] uppercase text-primary mb-3">
+              Email Library
+            </p>
+            <h1 className="text-4xl sm:text-5xl lg:text-[52px] font-serif text-slate-900 mb-4 leading-[1.1] tracking-[-0.02em]">
               The largest search engine for B2B SaaS{" "}
-              <span className="italic" style={{ color: "#1D4ED8" }}>lifecycle emails.</span>
+              <span className="italic text-primary">lifecycle emails</span>
             </h1>
 
-            <p className="text-slate-600 mb-8 leading-relaxed mx-auto" style={{ fontSize: "18px", maxWidth: 420 }}>
+            <p className="text-lg text-slate-500 mb-8 leading-relaxed max-w-[640px] mx-auto">
               See how the best PLG companies onboard, upsell, and re-engage — and copy what works.
             </p>
 
@@ -350,13 +353,16 @@ const LibraryPage: React.FC = () => {
       </section>
 
       {/* USE CASES */}
-      <section className="py-16 md:py-20 lg:py-24 bg-slate-50">
+      <section className="py-12 bg-background-warm">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-slate-900 mb-4">
-              Flows mapped to business goals.
+          <div className="text-center mb-10">
+            <p className="text-[13px] font-semibold tracking-[0.08em] uppercase text-primary mb-3">
+              Use cases
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-serif text-slate-900 mb-4 tracking-[-0.01em]">
+              Flows mapped to business goals
             </h2>
-            <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>
+            <p className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
               Discover what to send based on where your users are — from onboarding to retention and revenue.
             </p>
           </div>
@@ -385,13 +391,16 @@ const LibraryPage: React.FC = () => {
       </section>
 
       {/* TAGS MARQUEE */}
-      <section className="py-16 md:py-20 lg:py-24 bg-white overflow-hidden">
+      <section className="py-12 bg-white overflow-hidden">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-slate-900 mb-4">
-              Find the perfect email in seconds.
+          <div className="text-center mb-10">
+            <p className="text-[13px] font-semibold tracking-[0.08em] uppercase text-primary mb-3">
+              Browse by tag
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-serif text-slate-900 mb-4 tracking-[-0.01em]">
+              Find the perfect email in seconds
             </h2>
-            <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>
+            <p className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
               Browse real SaaS emails by format, intent, or topic. Save time and grab what fits your next campaign.
             </p>
           </div>
@@ -432,12 +441,15 @@ const LibraryPage: React.FC = () => {
       </section>
 
       {/* BRANDS TICKER */}
-      <section className="py-16 md:py-20 lg:py-24 bg-slate-50 overflow-hidden">
+      <section className="py-12 bg-background-warm overflow-hidden">
         <div className="container mx-auto px-4 max-w-6xl mb-10 text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-slate-900 mb-4">
-            Learn how top SaaS brands grow.
+          <p className="text-[13px] font-semibold tracking-[0.08em] uppercase text-primary mb-3">
+            Browse by brand
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-serif text-slate-900 mb-4 tracking-[-0.01em]">
+            Learn how top SaaS brands grow
           </h2>
-          <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>
+          <p className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
             See exactly how companies like Notion, Miro, and Calendly use email to convert and retain.
           </p>
         </div>
@@ -486,13 +498,16 @@ const LibraryPage: React.FC = () => {
       </section>
 
       {/* JOURNEY */}
-      <section className="py-16 md:py-20 lg:py-24 bg-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-slate-900 mb-4">
-              See every email, in real order.
+          <div className="text-center mb-10">
+            <p className="text-[13px] font-semibold tracking-[0.08em] uppercase text-primary mb-3">
+              Full journeys
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-serif text-slate-900 mb-4 tracking-[-0.01em]">
+              See every email, in real order
             </h2>
-            <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>
+            <p className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
               Reconstruct full lifecycle journeys — day by day, touchpoint by touchpoint. No more guesswork.
             </p>
           </div>
@@ -510,7 +525,7 @@ const LibraryPage: React.FC = () => {
                     <div className="mb-3 flex items-center gap-3">
                       <span
                         className="text-xs font-semibold px-3 py-1 rounded-full flex-shrink-0"
-                        style={{ background: "#EDE9FE", color: PURPLE }}
+                        style={{ background: "#EFF6FF", color: PRIMARY }}
                       >
                         {step.day}
                       </span>
@@ -552,12 +567,12 @@ const LibraryPage: React.FC = () => {
       <section
         ref={browserRef}
         id="browse"
-        className="py-16 md:py-20 lg:py-24 bg-slate-50"
+        className="py-12 bg-background-warm"
       >
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-serif font-semibold text-slate-900">
+              <h2 className="text-3xl sm:text-4xl font-serif text-slate-900 tracking-[-0.01em]">
                 {activeFilterLabel ? `Emails \u2014 ${activeFilterLabel}` : "Browse all emails"}
               </h2>
               {!loading && (
@@ -580,7 +595,7 @@ const LibraryPage: React.FC = () => {
                 <button
                   onClick={handleBrowseAll}
                   data-flat-purple
-                  style={{ backgroundColor: PURPLE, boxShadow: "none", outline: "none", border: "none" }}
+                  style={{ backgroundColor: PRIMARY, boxShadow: "none", outline: "none", border: "none" }}
                   className="text-sm font-semibold px-5 py-2.5 rounded-xl text-white hover:opacity-90 transition-opacity"
                 >
                   Browse all {emails.length > 0 ? `${emails.length.toLocaleString()} emails` : ""}
@@ -626,7 +641,7 @@ const LibraryPage: React.FC = () => {
                 <button
                   onClick={handleBrowseAll}
                   data-flat-purple
-                  style={{ backgroundColor: PURPLE, boxShadow: "none", outline: "none", border: "none" }}
+                  style={{ backgroundColor: PRIMARY, boxShadow: "none", outline: "none", border: "none" }}
                   className="flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white text-lg hover:opacity-90 transition-opacity"
                 >
                   Browse all {emails.length.toLocaleString()} emails
@@ -654,7 +669,7 @@ const LibraryPage: React.FC = () => {
                   <button
                     onClick={() => setPage((p) => p + 1)}
                     className="flex items-center gap-2 px-6 py-3 rounded-xl border-2 font-semibold text-sm hover:text-white hover:bg-[#1D4ED8] hover:border-[#1D4ED8] transition-all"
-                    style={{ borderColor: PURPLE, color: PURPLE }}
+                    style={{ borderColor: PRIMARY, color: PRIMARY }}
                   >
                     Load more <ChevronDown className="h-4 w-4" />
                   </button>
@@ -669,13 +684,13 @@ const LibraryPage: React.FC = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-20 lg:py-24 bg-slate-50">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-4xl mx-auto mb-8">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-slate-900 mb-4">
-              Start exploring.
+          <div className="text-center max-w-3xl mx-auto mb-8">
+            <h2 className="text-3xl sm:text-4xl font-serif text-slate-900 mb-4 leading-[1.15] tracking-[-0.01em]">
+              Start exploring
             </h2>
-            <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: "22px" }}>
+            <p className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
               Search real SaaS emails. Browse by use case, tag, or brand. Get inspired — and copy what works.
             </p>
           </div>

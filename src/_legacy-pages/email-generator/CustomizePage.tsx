@@ -310,10 +310,10 @@ const CustomizePage = () => {
           {/* Header with title */}
           <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
             <div>
-              <h1 className="text-3xl font-serif font-bold text-foreground mb-2">
-                Make It Yours
+              <h1 className="text-3xl sm:text-4xl font-serif text-slate-900 tracking-[-0.01em] mb-2">
+                Make it yours
               </h1>
-              <p className="text-muted-foreground">
+              <p className="text-slate-500">
                 Customize and export your lifecycle email — fast, effective, and on-brand.
               </p>
             </div>

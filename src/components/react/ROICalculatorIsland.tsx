@@ -109,12 +109,15 @@ export default function ROICalculatorIsland() {
   return (
     <main className="min-h-screen bg-background">
       {/* Hero */}
-      <section className="py-12 px-4">
+      <section className="pt-24 pb-12 px-4">
         <div className="container mx-auto max-w-4xl text-center">
-          <h1 className="text-5xl font-serif font-bold text-foreground mb-6">
-            See how much revenue better onboarding emails could unlock.
+          <p className="text-[13px] font-semibold tracking-[0.08em] uppercase text-primary mb-3">
+            ROI Calculator
+          </p>
+          <h1 className="text-4xl sm:text-5xl lg:text-[52px] font-serif text-slate-900 leading-[1.1] tracking-[-0.02em] mb-6">
+            See how much revenue better onboarding emails could unlock
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-500 mb-8 max-w-2xl mx-auto leading-relaxed">
             Estimate the ROI of improving your free-to-paid conversion with onboarding emails built by DigiStorms.
           </p>
         </div>
@@ -129,7 +132,7 @@ export default function ROICalculatorIsland() {
 
                 {/* Inputs */}
                 <div className="space-y-6">
-                  <h2 className="text-2xl font-serif font-semibold text-foreground">Your Numbers</h2>
+                  <h2 className="text-2xl sm:text-3xl font-serif text-slate-900 tracking-[-0.01em]">Your numbers</h2>
 
                   <div className="space-y-2">
                     <Label htmlFor="currentConversionRate">Current free-to-paid conversion rate (%)</Label>
@@ -191,7 +194,7 @@ export default function ROICalculatorIsland() {
 
                 {/* Results */}
                 <div className="space-y-6">
-                  <h2 className="text-2xl font-serif font-semibold text-foreground">Your Results</h2>
+                  <h2 className="text-2xl sm:text-3xl font-serif text-slate-900 tracking-[-0.01em]">Your results</h2>
 
                   {!results ? (
                     <div className="flex items-center justify-center h-full min-h-[300px] text-center">

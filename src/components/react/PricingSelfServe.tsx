@@ -72,8 +72,8 @@ export default function PricingSelfServe() {
         {/* Left: Self-serve */}
         <div className="bg-white rounded-2xl border border-slate-200 shadow-sm flex flex-col">
           <div className="px-8 pt-8 pb-6 border-b border-slate-100">
-            <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-1">Self-serve</p>
-            <h2 className="text-2xl font-serif font-bold text-slate-900 mb-5">Start free, scale as you grow</h2>
+            <p className="text-[13px] font-semibold tracking-[0.08em] uppercase text-primary mb-2">Self-serve</p>
+            <h2 className="text-2xl sm:text-3xl font-serif text-slate-900 tracking-[-0.01em] mb-5">Start free, scale as you grow</h2>
 
             {/* User tier stepper */}
             <div className="flex items-center justify-between bg-slate-50 border border-slate-200 rounded-xl px-4 py-3">
@@ -158,8 +158,8 @@ export default function PricingSelfServe() {
           style={{ background: "linear-gradient(145deg, #1D4ED8 0%, #1E3A8A 100%)" }}
         >
           <div className="px-8 pt-8 pb-6 border-b border-white/10">
-            <p className="text-xs font-semibold text-white/50 uppercase tracking-widest mb-1">Done for you</p>
-            <h2 className="text-2xl font-serif font-bold text-white mb-1">Concierge</h2>
+            <p className="text-[13px] font-semibold tracking-[0.08em] uppercase text-white/70 mb-2">Done for you</p>
+            <h2 className="text-2xl sm:text-3xl font-serif text-white tracking-[-0.01em] mb-1">Concierge</h2>
             <p className="text-white/60 text-sm">We create and run your emails for you</p>
           </div>
 
