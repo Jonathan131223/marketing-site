@@ -2,6 +2,20 @@
 
 All notable changes to DigiStorms marketing site will be documented in this file.
 
+## [0.1.2.0] - 2026-04-11
+
+### Changed
+- Library page headings now match the homepage. Same Instrument Serif typography, same sizes (52px hero, 38px section), same letter-spacing, same text color. Each section gets a small blue eyebrow label ("EMAIL LIBRARY", "USE CASES", "BROWSE BY BRAND") and the cream/white background alternation matches the homepage rhythm. Previously the library used its own heading treatment with synthetic-bolded serif text and was visibly inconsistent with the rest of the site
+- Blog post headings and body prose restyled to match the brand. Article titles are now slate-900 Instrument Serif (previously blue `#1D4ED8` with a wrong weight), in-body H2 and H3 are slate-900 Instrument Serif at 30px and 24px, blockquotes use the cream background with a primary-blue left border, and links are primary blue
+- Pricing, About, Manifesto, Contact, Terms, Privacy, 404, ROI Calculator, Lifecycle Score, and all Compare pages now use the homepage heading system. Every H1 gets a category eyebrow ("PRICING", "ABOUT", "MANIFESTO", etc.) above the serif display heading
+- Library sub-pages (brand, tag, use case, email detail, and the browse-by-\* index pages) align with the same heading scale
+- Use-case tag backgrounds switched from lavender `#EDE9FE` with purple text to primary-light `#EFF6FF` with primary-blue text. Tag backgrounds in the tag/usecase/email pages match
+
+### Fixed
+- Removed synthetic bolding on every Instrument Serif heading site-wide. The font ships as a single weight (`Instrument+Serif:ital@0;1`) so `font-bold`/`font-semibold` classes were producing faux-bold that looked cheap against the homepage's correct rendering
+- Eliminated every purple/violet usage from the live site. DESIGN.md explicitly lists purple/violet as an anti-pattern, but blog placeholders used `#7C3AED` fills, the blog post CTA used `bg-violet-50` and `bg-violet-600`, the blog-prose link color was `#7c3aed`, the manifesto and about CTA hover used `#6340c4`, the library use-case "onboard-free-user" display color was `#5B21B6`, and blog-prose blockquotes had a lavender background with a purple border. All replaced with primary blue (`#2563EB`) or cream (`#F8F6F2`) per DESIGN.md
+- Headings that were previously rendered in primary blue (intended for CTAs and links, not body copy) now render in `#0F172A` slate-900. The blog index H1, blog post H1, and blog-prose H2/H3 were the worst offenders
+
 ## [0.1.1.0] - 2026-04-11
 
 ### Added
