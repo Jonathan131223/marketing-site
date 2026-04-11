@@ -2,6 +2,17 @@
 
 All notable changes to DigiStorms marketing site will be documented in this file.
 
+## [0.1.3.1] - 2026-04-11
+
+### Fixed
+- Lifecycle email generator no longer shows a blank white page when the JavaScript bundle is still loading, when a stale cache holds an old bundle hash, or when a browser extension breaks the page. Users now see a branded spinner with "Loading lifecycle email generator…" copy plus a collapsible "Stuck on this loading screen?" disclosure with a "Clear cache and reload" escape button. The recovery button works via vanilla JavaScript so it survives even complete React failures
+- Users with JavaScript disabled now see a visible "This page needs JavaScript to work" message on the email generator instead of a blank page, via a `<noscript>` fallback
+- Any unexpected crash during React hydration or first render on the email generator is now caught by an error boundary that renders a helpful error state with a "Clear cache and reload" button, instead of leaving the user stranded on a blank page
+
+### Added
+- `EmailGeneratorFallback.astro` — shared server-rendered loading fallback used by all 5 email generator routes (picker, brief, templates, generate, customize)
+- `EmailGeneratorErrorBoundary.tsx` — React class boundary wrapping the entire email generator island, with localStorage-clearing recovery action
+
 ## [0.1.3.0] - 2026-04-11
 
 ### Added
