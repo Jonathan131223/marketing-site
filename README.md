@@ -61,7 +61,7 @@ npm test           # vitest run (single pass)
 npm run test:watch # vitest watch mode
 ```
 
-Test files live under `test/`. See `TESTING.md` if present, or the existing specs in `test/email-generator/` and `test/config/` for conventions.
+Test files live under `test/`. See `TESTING.md` if present, or the existing specs in `test/email-generator/`, `test/blog/`, and `test/config/` for conventions.
 
 ## Production
 

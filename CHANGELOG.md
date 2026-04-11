@@ -2,6 +2,25 @@
 
 All notable changes to DigiStorms marketing site will be documented in this file.
 
+## [0.1.3.0] - 2026-04-11
+
+### Added
+- "See it in the wild" library section on blog articles with `libraryTags`. Up to 3 real email examples from the library surface below the article, matched on tag intersection, with brand logo, subject, and matching tag pill. Each article gets a "Browse all examples →" link to the primary tag page. Drives readers from the blog into the library, a key conversion surface. Rendered server-side so it ships in the SSG output with no layout shift
+- Test scope `test/blog/` with 32 regression tests covering the four blog article invariants (TOC, progress bar, related articles, subject lines) plus 10 new coverage tests added during the pre-landing review (unscrollable-page NaN guard, missing heading IDs, missing nav.sticky, cleanup listener symmetry, initBlogArticle composite orchestrator, eight file-grep template invariants)
+- `CLAUDE.md` section "Blog article invariants" documenting all 5 features that must render on every blog article. Future Claude sessions reading the project file see an explicit list with file references and regression-test pointers
+
+### Changed
+- Blog article pre-existing scroll handlers now cache `offsetTop` and `scrollHeight` at init time (reading them on every scroll event was forcing a layout reflow per scroll tick) and batch DOM writes through `requestAnimationFrame`. On long articles with 10+ H2s the scroll path went from 10+ forced layouts per tick to zero. The resize handler debounces via rAF too
+- The reading progress bar now computes its vertical position from the navbar's actual rendered `getBoundingClientRect().bottom` instead of a hard-coded `top-14` (56px). The navbar is 68px tall, so the old offset placed the bar inside the navbar content. Positioning is re-applied on window resize so it stays flush when the navbar height changes at a breakpoint
+
+### Fixed
+- Restored the sticky table of contents on the left of every blog article (desktop only, `lg:block`). H2s only — H3s are filtered out by `filterTocHeadings()` so they don't flood the TOC with the 28+ brand-name sub-headings from the "examples" sections. Active section is tracked on scroll
+- Restored the reading progress bar under the navbar. The empty `<div data-blog-progress>` fills from 0% to 100% as the article is scrolled
+- Restored the "You might also be interested in..." related articles section at the bottom of every article, with same-series preference (email examples vs. guides)
+- Restored the centered, non-bold, muted styling on "Subject line: ..." paragraphs in email example articles. The markdown is `**Subject line: Welcome to Miro!**`; the renderer now tags those paragraphs with `is-subject-line` so CSS can style them distinctly from body copy
+- Related article cards now render an SVG placeholder when both `heroImage` and `thumbnail` are missing. Previously a card with no image rendered `<img src="">` which showed as a broken image (flagged by the user on the saas-email-benchmarks card)
+- Progress bar regression test was asserting against a `data-progress-wrapper` attribute that did not exist in production markup — a refactor that wrapped the bar in another div would have silently passed the test while breaking production. The test now asserts against the real `parentElement` relationship the production code uses
+
 ## [0.1.2.1] - 2026-04-11
 
 ### Changed
