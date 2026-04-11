@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import EmailGeneratorApp from '@/components/react/EmailGeneratorApp';
+import EmailGeneratorFallback from '@/components/astro/EmailGeneratorFallback.astro';
 ---
 
 <BaseLayout
@@ -9,5 +10,7 @@ import EmailGeneratorApp from '@/components/react/EmailGeneratorApp';
   canonical="https://www.digistorms.ai/email-generator"
   noindex={true}
 >
-  <EmailGeneratorApp client:only="react" />
+  <EmailGeneratorApp client:only="react">
+    <EmailGeneratorFallback slot="fallback" />
+  </EmailGeneratorApp>
 </BaseLayout>
