@@ -3,6 +3,27 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { StoreProvider } from "@/store/context";
 import { Toaster } from "@/components/ui/sonner";
 import { EmailGeneratorErrorBoundary } from "@/components/react/EmailGeneratorErrorBoundary";
+import { StatePersistence } from "@/store/persistence";
+
+// Run the schema version check exactly once, at module load time, BEFORE
+// the StoreProvider mounts and BEFORE any React restoration logic runs.
+// This covers users who land on /email-generator (the picker) without
+// ever mounting BriefPage/CustomizePage/etc. — those sub-pages have their
+// own useStateRestoration that also calls this gate, but the picker does
+// not. Without this top-level call, users with stale localStorage from
+// prior releases would crash on their first visit to the picker before
+// the sub-pages ever get a chance to clean up.
+//
+// ensureSchemaVersion is idempotent: it reads a single localStorage key
+// and no-ops if the version matches. Safe to call repeatedly.
+if (typeof window !== "undefined") {
+  try {
+    StatePersistence.ensureSchemaVersion();
+  } catch {
+    // ignore — any throw here is non-fatal, the rest of the app will
+    // handle degraded localStorage via its own try/catch layers
+  }
+}
 
 const UseCasePickerPage = lazy(() => import("@/_legacy-pages/email-generator/UseCasePickerPage"));
 const BriefPage = lazy(() => import("@/_legacy-pages/email-generator/BriefPage"));
