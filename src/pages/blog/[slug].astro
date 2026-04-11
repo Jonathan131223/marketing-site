@@ -3,6 +3,25 @@ import PageLayout from '@/layouts/PageLayout.astro';
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import jonProfile from '@/assets/founder/jonathan-profile.png';
+import { blogPosts, type BlogPost as BlogPostMeta } from '@/content/blog';
+import libraryEmailsData from '@/data/library/emails.json';
+import libraryBrandsData from '@/data/library/brands.json';
+import { filterTocHeadings } from '@/scripts/blog-article';
+
+interface LibraryEmail {
+  slug: string;
+  subject: string;
+  thumb: string;
+  tags: string[];
+  brand: string;
+}
+interface LibraryBrand {
+  slug: string;
+  name: string;
+  logo?: string;
+}
+const libraryEmails = libraryEmailsData as LibraryEmail[];
+const libraryBrands = libraryBrandsData as LibraryBrand[];
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -13,7 +32,7 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content, headings } = await post.render();
 
 const title = post.data.title;
 const description = post.data.description;
@@ -50,6 +69,53 @@ const readTimeIso = (() => {
   const m = readTime?.match(/(\d+)\s*min/i);
   return m ? `PT${m[1]}M` : undefined;
 })();
+
+// Table of contents: H2s only (filterTocHeadings guards this invariant — the
+// user flagged a regression where H3 sub-headings were bleeding into the TOC
+// and flooding it with brand names from the "28 examples" section). These
+// IDs match the `id` attributes that Astro writes onto the rendered <h2>
+// elements via its built-in remark-slug step, so #anchor jumps work out of
+// the box.
+const tocItems = filterTocHeadings(headings);
+
+// Related articles: stay in the same "series" (email examples vs guides)
+// when possible. Matches the legacy behavior from the old React BlogPost page
+// so readers see a coherent recommendation cluster at the end of the article.
+function isEmailExamplePost(meta: BlogPostMeta | undefined): boolean {
+  return (meta?.libraryTags?.length ?? 0) > 0;
+}
+function relatedPostsFor(
+  currentSlug: string,
+  meta: BlogPostMeta | undefined,
+): BlogPostMeta[] {
+  const others = blogPosts.filter((p) => p.slug !== currentSlug);
+  const emailPool = others.filter(isEmailExamplePost);
+  const guidePool = others.filter((p) => !isEmailExamplePost(p));
+  if (isEmailExamplePost(meta)) {
+    const pool = emailPool.length >= 3 ? emailPool : [...emailPool, ...guidePool];
+    return pool.slice(0, 3);
+  }
+  const pool = guidePool.length >= 3 ? guidePool : [...guidePool, ...emailPool];
+  return pool.slice(0, 3);
+}
+const currentPostMeta = blogPosts.find((p) => p.slug === slug);
+const relatedArticles = relatedPostsFor(slug, currentPostMeta);
+
+// "See it in the wild" — surface real library email examples that match this
+// article's libraryTags. Drives users from the blog into the library, which
+// is a big conversion surface. DO NOT remove without user approval.
+const matchedLibraryEmails: (LibraryEmail & { brandMeta?: LibraryBrand; primaryMatchTag?: string })[] = (() => {
+  if (libraryTags.length === 0) return [];
+  const matched = libraryEmails
+    .filter((e) => e.tags.some((t) => libraryTags.includes(t)))
+    .slice(0, 3);
+  return matched.map((email) => ({
+    ...email,
+    brandMeta: libraryBrands.find((b) => b.slug === email.brand),
+    primaryMatchTag: email.tags.find((t) => libraryTags.includes(t)) ?? email.tags[0],
+  }));
+})();
+const primaryLibraryTag = libraryTags[0];
 
 const articleJsonLd = {
   "@context": "https://schema.org",
@@ -105,6 +171,24 @@ const breadcrumbJsonLd = {
     {date && <meta property="article:published_time" content={`${date}T12:00:00.000Z`} />}
     <meta property="article:section" content={articleSection} />
   </Fragment>
+
+  <!--
+    Reading progress bar. DO NOT REMOVE without explicit user approval —
+    regression guarded by test/blog/blog-article.test.ts. Sits flush against
+    the navbar's bottom edge (positioned at runtime by initScrollProgress via
+    getBoundingClientRect) and fills from 0% to 100% as the article is scrolled.
+  -->
+  <div
+    class="fixed left-0 right-0 z-50 h-[2px] bg-transparent pointer-events-none"
+    style="top: 68px;"
+    aria-hidden="true"
+  >
+    <div
+      data-blog-progress
+      class="h-full"
+      style="width: 0%; background-color: #2563EB;"
+    ></div>
+  </div>
 
   <main class="pt-24 pb-20">
     <div class="container mx-auto px-4 max-w-6xl">
@@ -182,54 +266,217 @@ const breadcrumbJsonLd = {
         )}
       </div>
 
-      <!-- Article body -->
-      <div class="max-w-2xl mx-auto">
-        <article class="blog-prose">
-          <Content />
-        </article>
+      <!--
+        Two-column body: sticky TOC on the left, article on the right.
+        DO NOT collapse this back into a single column without explicit user
+        approval — regression guarded by test/blog/blog-article.test.ts.
+      -->
+      <div class="flex gap-12">
+        {tocItems.length > 0 && (
+          <aside class="hidden lg:block w-52 shrink-0" aria-label="Table of contents">
+            <nav class="sticky top-28">
+              <p class="text-sm font-semibold text-slate-900 mb-4">Table of Contents</p>
+              <ul class="space-y-3">
+                {tocItems.map((item) => (
+                  <li>
+                    <a
+                      data-toc-link
+                      href={`#${item.slug}`}
+                      class="toc-link text-sm leading-snug transition-colors block text-slate-500 hover:text-slate-800"
+                    >
+                      {item.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </aside>
+        )}
 
-        <!-- About the author -->
-        <div class="mt-12 bg-slate-50 rounded-2xl p-6">
-          <div class="flex items-center gap-2 mb-5">
-            <svg class="w-5 h-5" style="color: #1D4ED8;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
-            <span class="font-bold text-slate-900">About the author</span>
+        <div class="flex-1 min-w-0 max-w-2xl">
+          <article class="blog-prose">
+            <Content />
+          </article>
+
+          <!-- About the author -->
+          <div class="mt-12 bg-slate-50 rounded-2xl p-6">
+            <div class="flex items-center gap-2 mb-5">
+              <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+              <span class="font-bold text-slate-900">About the author</span>
+            </div>
+            <div class="flex items-start gap-5">
+              <Image
+                src={jonProfile}
+                alt="Jonathan Bernard"
+                class="w-16 h-16 rounded-full object-cover shrink-0"
+                loading="lazy"
+                decoding="async"
+                width={64}
+                height={64}
+              />
+              <p class="text-slate-700 text-sm leading-relaxed">
+                {emailSeries ? (
+                  <>Thanks for reading all the way! I'm Jonathan, founder of DigiStorms,
+                  specializing in helping SaaS companies activate, retain, and expand their users
+                  with lifecycle emails. Connect with me on <a
+                    href="https://www.linkedin.com/in/jonathan-digistorms/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-primary hover:underline"
+                  >LinkedIn</a>.</>
+                ) : (
+                  <>Thanks for reading! I'm Jonathan, founder of DigiStorms. We help SaaS teams
+                  improve retention, onboarding, and expansion -- with strategy, lifecycle email,
+                  and product-led motion in mind. Say hello on <a
+                    href="https://www.linkedin.com/in/jonathan-digistorms/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-primary hover:underline"
+                  >LinkedIn</a>.</>
+                )}
+              </p>
+            </div>
           </div>
-          <div class="flex items-start gap-5">
-            <Image
-              src={jonProfile}
-              alt="Jonathan Bernard"
-              class="w-16 h-16 rounded-full object-cover shrink-0"
-              loading="lazy"
-              decoding="async"
-              width={64}
-              height={64}
-            />
-            <p class="text-slate-700 text-sm leading-relaxed">
-              {emailSeries ? (
-                <>Thanks for reading all the way! I'm Jonathan, founder of DigiStorms,
-                specializing in helping SaaS companies activate, retain, and expand their users
-                with lifecycle emails. Connect with me on <a
-                  href="https://www.linkedin.com/in/jonathan-digistorms/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-primary hover:underline"
-                >LinkedIn</a>.</>
-              ) : (
-                <>Thanks for reading! I'm Jonathan, founder of DigiStorms. We help SaaS teams
-                improve retention, onboarding, and expansion -- with strategy, lifecycle email,
-                and product-led motion in mind. Say hello on <a
-                  href="https://www.linkedin.com/in/jonathan-digistorms/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-primary hover:underline"
-                >LinkedIn</a>.</>
+
+          <!--
+            "See it in the wild" — surface real examples from the email library
+            matching this article's libraryTags. DO NOT REMOVE without user
+            approval — regression guarded by test/blog/blog-article.test.ts.
+            Drives click-throughs from blog to library (a key conversion surface).
+          -->
+          {matchedLibraryEmails.length > 0 && (
+            <div class="mt-10 pt-10 border-t border-slate-100">
+              <h3 class="text-lg font-semibold text-slate-900 mb-1">
+                See it in the wild
+              </h3>
+              <p class="text-sm text-slate-500 mb-5">
+                Real examples from our library -- see how top SaaS brands do it.
+              </p>
+              <div class="grid grid-cols-3 gap-3">
+                {matchedLibraryEmails.map((email) => (
+                  <a
+                    href={`/library/email/${email.slug}`}
+                    class="group flex flex-col rounded-xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow bg-white"
+                  >
+                    <div class="aspect-[4/3] overflow-hidden bg-[#EFF6FF]">
+                      {email.thumb ? (
+                        <img
+                          src={email.thumb}
+                          alt={email.subject}
+                          loading="lazy"
+                          decoding="async"
+                          class="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-300"
+                        />
+                      ) : (
+                        <div class="w-full h-full flex items-center justify-center text-3xl opacity-20">&#9993;</div>
+                      )}
+                    </div>
+                    <div class="p-3 flex flex-col gap-1.5">
+                      {email.brandMeta && (
+                        <div class="flex items-center gap-1.5">
+                          {email.brandMeta.logo && (
+                            <img src={email.brandMeta.logo} alt={email.brandMeta.name} class="w-3.5 h-3.5 object-contain flex-shrink-0" loading="lazy" />
+                          )}
+                          <span class="text-[11px] text-slate-400 font-medium truncate">{email.brandMeta.name}</span>
+                        </div>
+                      )}
+                      <p class="text-xs font-semibold text-slate-900 leading-snug line-clamp-2">
+                        {email.subject}
+                      </p>
+                      {email.primaryMatchTag && (
+                        <span class="self-start text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#EFF6FF] text-primary">
+                          {email.primaryMatchTag.replace(/-/g, ' ')}
+                        </span>
+                      )}
+                    </div>
+                  </a>
+                ))}
+              </div>
+              {primaryLibraryTag && (
+                <div class="mt-4 text-right">
+                  <a
+                    href={`/library/tag/${primaryLibraryTag}`}
+                    class="text-sm font-medium text-primary hover:underline"
+                  >
+                    Browse all examples &rarr;
+                  </a>
+                </div>
               )}
-            </p>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+
+    <!--
+      Related articles. DO NOT REMOVE without explicit user approval —
+      regression guarded by test/blog/blog-article.test.ts. Drives internal
+      linking, dwell time, and helps readers discover related content.
+    -->
+    {relatedArticles.length > 0 && (
+      <div class="mt-20 border-t border-slate-100 pt-16 pb-4">
+        <div class="container mx-auto px-4 max-w-6xl">
+          <h2 class="text-3xl font-serif font-normal text-slate-900 mb-10 tracking-[-0.01em]">
+            You might also be interested in...
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            {relatedArticles.map((rel) => {
+              const relImage = rel.heroImage || rel.thumbnail;
+              return (
+              <a
+                href={`/blog/${rel.slug}`}
+                class="group flex flex-col rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div class="aspect-[4/3] overflow-hidden bg-[#EFF6FF] flex items-center justify-center">
+                  {relImage ? (
+                    <img
+                      src={relImage}
+                      alt={rel.title}
+                      class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : (
+                    <svg viewBox="0 0 320 240" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                      <rect width="320" height="240" fill="#EFF6FF" />
+                      <rect x="60" y="40" width="200" height="160" rx="10" fill="white" />
+                      <rect x="60" y="40" width="200" height="32" rx="10" fill="#2563EB" />
+                      <rect x="80" y="52" width="80" height="8" rx="4" fill="white" opacity="0.9" />
+                      <rect x="80" y="86" width="160" height="6" rx="3" fill="#E5E7EB" />
+                      <rect x="80" y="100" width="140" height="6" rx="3" fill="#E5E7EB" />
+                      <rect x="80" y="114" width="150" height="6" rx="3" fill="#E5E7EB" />
+                      <rect x="80" y="128" width="120" height="6" rx="3" fill="#E5E7EB" />
+                      <rect x="100" y="156" width="120" height="28" rx="6" fill="#2563EB" />
+                      <rect x="120" y="166" width="80" height="8" rx="4" fill="white" opacity="0.9" />
+                    </svg>
+                  )}
+                </div>
+                <div class="flex flex-col flex-1 p-5">
+                  <h3 class="font-semibold text-slate-900 text-base leading-snug mb-2 group-hover:text-primary transition-colors">
+                    {rel.title}
+                  </h3>
+                  <p class="text-slate-500 text-sm leading-relaxed flex-1 mb-4">
+                    {rel.shortDescription || rel.description}
+                  </p>
+                  <span class="inline-flex items-center gap-1 text-sm font-medium text-primary">
+                    Read more &rarr;
+                  </span>
+                </div>
+              </a>
+              );
+            })}
+          </div>
+          <div class="text-center">
+            <a
+              href="/blog"
+              class="inline-flex items-center gap-2 border border-primary text-primary hover:bg-[#EFF6FF] font-medium px-6 py-3 rounded-xl transition-colors"
+            >
+              See all articles
+            </a>
           </div>
         </div>
       </div>
-
-    </div>
+    )}
 
     <!-- CTA -->
     <div class="container mx-auto px-4 max-w-6xl mt-16 mb-4">
@@ -264,6 +511,16 @@ const breadcrumbJsonLd = {
   </main>
 </PageLayout>
 
+<!--
+  Client-side enhancements — wire up TOC active tracking, scroll progress bar,
+  and subject-line styling. DO NOT REMOVE without explicit user approval.
+  Regression guarded by test/blog/blog-article.test.ts.
+-->
+<script>
+  import { initBlogArticle } from '@/scripts/blog-article';
+  initBlogArticle();
+</script>
+
 <style is:global>
   .blog-prose h2 {
     font-family: "Instrument Serif", Georgia, serif;
@@ -273,6 +530,7 @@ const breadcrumbJsonLd = {
     letter-spacing: -0.01em;
     line-height: 1.2;
     margin: 32px 0 12px;
+    scroll-margin-top: 96px; /* land below sticky navbar + progress bar on anchor jumps */
   }
 
   .blog-prose h3 {
@@ -290,6 +548,27 @@ const breadcrumbJsonLd = {
     font-size: 17px;
     line-height: 1.625;
     margin: 0 0 10px;
+  }
+
+  /*
+    Subject-line paragraphs from email-example articles. The markdown looks like
+    `**Subject line: Welcome to Miro!**` on its own line, which renders as
+    <p><strong>Subject line: ...</strong></p>. `styleSubjectLines()` adds the
+    `is-subject-line` class at runtime; this rule centers it, mutes the color,
+    and removes the bold from the inner <strong>. DO NOT REMOVE without user
+    approval — regression guarded by test/blog/blog-article.test.ts.
+  */
+  .blog-prose p.is-subject-line {
+    text-align: center;
+    color: #94a3b8; /* slate-400 */
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0 0 24px;
+    padding: 0 0.5rem;
+  }
+  .blog-prose p.is-subject-line strong {
+    font-weight: 400;
+    color: inherit;
   }
 
   .blog-prose blockquote {
@@ -403,5 +682,11 @@ const breadcrumbJsonLd = {
   .blog-prose hr {
     border-color: #e2e8f0;
     margin: 2.5rem 0;
+  }
+
+  /* Table of contents — active section tracking */
+  .toc-link.is-active {
+    font-weight: 500;
+    color: #0f172a; /* slate-900 */
   }
 </style>
