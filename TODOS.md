@@ -73,4 +73,28 @@ Still open:
 **Effort:** XS (CC: ~10min per callsite)
 **Priority:** P3
 
+### Extract blog article server-side helpers to a testable module
+**What:** `relatedPostsFor()`, `isEmailExamplePost()`, and the `matchedLibraryEmails` IIFE live inline in `src/pages/blog/[slug].astro`. They are pure functions but are not unit-tested because they are tangled with the Astro frontmatter. The Testing specialist flagged 9 untested branches across these helpers during the v0.1.3.0 review.
+**Fix:** Move the three helpers into `src/scripts/blog-related.ts` as exported pure functions taking `(posts, slug, meta)` arguments, then import them from `[slug].astro`. Add ~10 unit tests covering email-series vs. guide pools, `<3` fallback, `undefined` meta, currentSlug exclusion, empty-libraryTags short-circuit, brand-miss, primaryMatchTag fallback, and the 3-item cap.
+**Effort:** S (CC: ~30min including tests)
+**Priority:** P2 (regression hardening — deferred from v0.1.3.0 pre-landing review)
+
+### Centralize navbar height in a CSS variable
+**What:** The blog article page has four hardcoded offsets that all track the same "navbar + breathing room" concept: `top: 68px` on the progress bar wrapper (inline style), `scroll-margin-top: 96px` on `.blog-prose h2`, `sticky top-28` (112px) on the TOC aside, and `OFFSET = 120` in `initTableOfContents()`. If the navbar height ever changes, a reviewer has to grep across three files to update all four.
+**Fix:** Define `--navbar-height` on `:root` in `global.css`, have the Navbar component write its actual height to the variable, then reference it from all four places via `calc()`. Or pick a simpler approach: compute everything from `nav.sticky.getBoundingClientRect().bottom` at runtime (already done for the progress bar) and extend the same pattern to TOC and scroll margin.
+**Effort:** M (CC: ~45min — needs Navbar component edit + global CSS var + 3 consumer updates + regression test)
+**Priority:** P2 (maintainability — deferred from v0.1.3.0 pre-landing review)
+
+### Migrate blog article hex colors to Tailwind tokens
+**What:** `src/pages/blog/[slug].astro` still has literal hex colors scattered through the markup and CSS: `#EFF6FF`, `#2563EB`, `#94a3b8`, `#0f172a`, plus the progress bar's inline `background-color: #2563EB`. DESIGN.md is the source of truth, so these should reference `bg-primary`, `text-primary`, `text-slate-400`, `text-slate-900` tokens instead.
+**Fix:** Replace literal hex with Tailwind theme utilities. The `--primary` CSS variable already resolves to `#2563EB` in HSL form — use `bg-primary` on the progress bar inner div. Swap `#EFF6FF` → `bg-primary-light` (or define the token if missing). Swap `#94a3b8` → `text-slate-400` in the subject-line CSS via `theme('colors.slate.400')`.
+**Effort:** XS (CC: ~15min)
+**Priority:** P3 (design-system hygiene — deferred from v0.1.3.0 pre-landing review)
+
+### Runtime validation on `src/data/library/*.json` imports
+**What:** `[slug].astro` imports `libraryEmailsData` and `libraryBrandsData` as raw JSON and casts them with unchecked type assertions (`as LibraryEmail[]`). If the JSON schema drifts (e.g., a new email is missing `tags`, or a brand lacks `slug`), the build still succeeds and the page crashes at runtime inside the `.some()` / `.find()` calls on 11 blog pages.
+**Fix:** Create `src/data/library/index.ts` that imports the JSON, validates with a zod schema, exports typed arrays, and logs/throws clearly on validation failure at build time. All library-consuming pages (`[slug].astro`, library index, brand, tag, usecase, email) import from this single loader.
+**Effort:** S (CC: ~30min including schema definition + migrating 6 consumers)
+**Priority:** P2 (type safety — deferred from v0.1.3.0 pre-landing review)
+
 <!-- Demo video / GIF entry already tracked at the top of the file — removed duplicate. -->
