@@ -120,17 +120,11 @@ const breadcrumbJsonLd = {
 
       <!-- Article header -->
       <header class="text-center mb-10 max-w-xl mx-auto">
-        <h1
-          class="leading-tight"
-          style="color: #1D4ED8; font-size: clamp(28px, 5vw, 48px); font-weight: 400; margin: 0px 0px 20px;"
-        >
+        <h1 class="text-4xl sm:text-5xl lg:text-[52px] font-serif text-slate-900 leading-[1.1] tracking-[-0.02em] mb-5">
           {title}
         </h1>
         {description && (
-          <p
-            class="leading-relaxed max-w-2xl mx-auto mb-6"
-            style="color: #333333; font-size: 17px;"
-          >
+          <p class="text-lg text-slate-500 leading-relaxed max-w-2xl mx-auto mb-6">
             {description}
           </p>
         )}
@@ -167,20 +161,20 @@ const breadcrumbJsonLd = {
       </header>
 
       <!-- Hero image -->
-      <div class="rounded-2xl overflow-hidden bg-[#EDE9FE] mb-12 aspect-[16/9] max-w-xl mx-auto">
+      <div class="rounded-2xl overflow-hidden bg-[#EFF6FF] mb-12 aspect-[16/9] max-w-xl mx-auto">
         {heroImage ? (
           <img src={heroImage} alt={title} class="w-full h-full object-cover" decoding="async" />
         ) : (
           <svg viewBox="0 0 800 420" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-            <rect width="800" height="420" fill="#EDE9FE" />
+            <rect width="800" height="420" fill="#EFF6FF" />
             <rect x="220" y="50" width="360" height="320" rx="16" fill="white" />
-            <rect x="220" y="50" width="360" height="64" rx="16" fill="#7C3AED" />
+            <rect x="220" y="50" width="360" height="64" rx="16" fill="#2563EB" />
             <rect x="252" y="74" width="140" height="14" rx="7" fill="white" opacity="0.9" />
             <rect x="252" y="134" width="296" height="10" rx="5" fill="#E5E7EB" />
             <rect x="252" y="154" width="260" height="10" rx="5" fill="#E5E7EB" />
             <rect x="252" y="174" width="280" height="10" rx="5" fill="#E5E7EB" />
             <rect x="252" y="194" width="240" height="10" rx="5" fill="#E5E7EB" />
-            <rect x="292" y="230" width="216" height="48" rx="10" fill="#7C3AED" />
+            <rect x="292" y="230" width="216" height="48" rx="10" fill="#2563EB" />
             <rect x="330" y="248" width="140" height="12" rx="6" fill="white" opacity="0.9" />
             <rect x="252" y="308" width="200" height="8" rx="4" fill="#E5E7EB" />
             <rect x="252" y="324" width="160" height="8" rx="4" fill="#E5E7EB" />
@@ -218,7 +212,7 @@ const breadcrumbJsonLd = {
                   href="https://www.linkedin.com/in/jonathan-digistorms/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="text-violet-600 hover:underline"
+                  class="text-primary hover:underline"
                 >LinkedIn</a>.</>
               ) : (
                 <>Thanks for reading! I'm Jonathan, founder of DigiStorms. We help SaaS teams
@@ -227,7 +221,7 @@ const breadcrumbJsonLd = {
                   href="https://www.linkedin.com/in/jonathan-digistorms/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="text-violet-600 hover:underline"
+                  class="text-primary hover:underline"
                 >LinkedIn</a>.</>
               )}
             </p>
@@ -239,7 +233,7 @@ const breadcrumbJsonLd = {
 
     <!-- CTA -->
     <div class="container mx-auto px-4 max-w-6xl mt-16 mb-4">
-      <div class="bg-violet-50 rounded-2xl p-8 text-center">
+      <div class="bg-background-warm rounded-2xl p-8 text-center">
         {emailSeries ? (
           <>
             <h3 class="text-xl font-semibold text-slate-900 mb-2">
@@ -261,7 +255,7 @@ const breadcrumbJsonLd = {
         )}
         <a
           href="https://app.digistorms.ai"
-          class="inline-flex items-center gap-2 bg-violet-600 hover:bg-violet-700 text-white font-medium px-6 py-3 rounded-xl transition-colors"
+          class="inline-flex items-center gap-2 bg-primary hover:bg-[#1D4ED8] text-white font-semibold px-6 py-3 rounded-xl transition-colors"
         >
           Try DigiStorms free
         </a>
@@ -272,29 +266,35 @@ const breadcrumbJsonLd = {
 
 <style is:global>
   .blog-prose h2 {
-    color: #1D4ED8;
-    font-size: 28px;
-    font-weight: 500;
-    margin: 28px 0 12px;
+    font-family: "Instrument Serif", Georgia, serif;
+    color: #0F172A;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin: 32px 0 12px;
   }
 
   .blog-prose h3 {
-    color: #1D4ED8;
-    font-size: 22px;
-    font-weight: 500;
-    margin: 20px 0 10px;
+    font-family: "Instrument Serif", Georgia, serif;
+    color: #0F172A;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+    margin: 24px 0 10px;
   }
 
   .blog-prose p {
-    color: #333333;
+    color: #475569;
     font-size: 17px;
     line-height: 1.625;
     margin: 0 0 10px;
   }
 
   .blog-prose blockquote {
-    background-color: #f5f3ff;
-    border-left: 4px solid #a78bfa;
+    background-color: #F8F6F2;
+    border-left: 4px solid #2563EB;
     border-radius: 0 0.75rem 0.75rem 0;
     padding: 1rem 1.5rem;
     margin: 1.5rem 0;
@@ -322,7 +322,7 @@ const breadcrumbJsonLd = {
   }
 
   .blog-prose a {
-    color: #7c3aed;
+    color: #2563EB;
   }
 
   .blog-prose a:hover {

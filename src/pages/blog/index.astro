@@ -29,14 +29,17 @@ const jsonLd = {
   ogDescription="Guides and real email examples for SaaS lifecycle marketing—plus retention, PLG, and onboarding strategy. Activate users, reduce churn, and grow revenue."
   jsonLd={jsonLd}
 >
-  <main class="pt-28 pb-24">
+  <main class="pt-24 pb-24">
     <div class="container mx-auto px-4 max-w-6xl">
 
-      <div class="text-center mb-12 pb-10 border-b-2" style="border-color: #1D4ED8;">
-        <h1 class="font-serif font-bold" style="color: #1D4ED8; font-size: 42px; margin: 10px 0px;">
+      <div class="text-center mb-12 pb-10 border-b border-slate-200">
+        <p class="text-[13px] font-semibold tracking-[0.08em] uppercase text-primary mb-3">
+          Blog
+        </p>
+        <h1 class="text-4xl sm:text-5xl lg:text-[52px] font-serif text-slate-900 leading-[1.1] tracking-[-0.02em] mb-4">
           DigiStorms Blog
         </h1>
-        <p class="text-slate-500 text-lg max-w-2xl mx-auto">
+        <p class="text-lg text-slate-500 max-w-2xl mx-auto">
           Real email examples, lifecycle marketing guides, and ideas for retention, onboarding, and growth.
         </p>
       </div>
@@ -44,7 +47,7 @@ const jsonLd = {
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {sorted.map((post) => (
           <a href={`/blog/${post.id.replace(/\.md$/, '')}`} class="group block">
-            <div class="rounded-2xl overflow-hidden aspect-[4/3] mb-4 bg-[#EDE9FE]">
+            <div class="rounded-2xl overflow-hidden aspect-[4/3] mb-4 bg-[#EFF6FF]">
               {post.data.thumbnail ? (
                 <img
                   src={post.data.thumbnail}
@@ -55,23 +58,23 @@ const jsonLd = {
                 />
               ) : (
                 <svg viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-                  <rect width="320" height="200" fill="#EDE9FE" />
+                  <rect width="320" height="200" fill="#EFF6FF" />
                   <rect x="60" y="24" width="200" height="152" rx="10" fill="white" />
-                  <rect x="60" y="24" width="200" height="32" rx="10" fill="#7C3AED" />
+                  <rect x="60" y="24" width="200" height="32" rx="10" fill="#2563EB" />
                   <rect x="80" y="36" width="80" height="8" rx="4" fill="white" opacity="0.9" />
                   <rect x="80" y="68" width="160" height="6" rx="3" fill="#E5E7EB" />
                   <rect x="80" y="82" width="140" height="6" rx="3" fill="#E5E7EB" />
                   <rect x="80" y="96" width="150" height="6" rx="3" fill="#E5E7EB" />
                   <rect x="80" y="110" width="120" height="6" rx="3" fill="#E5E7EB" />
-                  <rect x="100" y="134" width="120" height="28" rx="6" fill="#7C3AED" />
+                  <rect x="100" y="134" width="120" height="28" rx="6" fill="#2563EB" />
                   <rect x="120" y="144" width="80" height="8" rx="4" fill="white" opacity="0.9" />
                 </svg>
               )}
             </div>
-            <h3 class="font-semibold leading-snug" style="color: #1D4ED8; font-size: 25px; margin: 20px 0px 10px;">
+            <h3 class="text-xl font-semibold text-slate-900 leading-snug mb-2 group-hover:text-primary transition-colors">
               {post.data.title}
             </h3>
-            <p style="color: #333333; font-size: 16px; margin: 0px 0px 20px;">
+            <p class="text-slate-500 leading-relaxed mb-4">
               {post.data.shortDescription || post.data.description}
             </p>
             <div class="flex items-center gap-3 text-sm text-slate-400 mt-1">
