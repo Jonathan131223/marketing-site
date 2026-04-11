@@ -2,6 +2,13 @@
 
 All notable changes to DigiStorms marketing site will be documented in this file.
 
+## [0.1.3.2] - 2026-04-11
+
+### Fixed
+- Lifecycle email generator no longer crashes during render for users who have stale `localStorage` state from prior releases. A schema version gate now runs at `EmailGeneratorApp` module load (before the store or any page mounts) and wipes all `digistorms_*` keys whenever the stored version does not match the current release. Pre-existing users whose accumulated brief data, selected email, or workflow state had an older shape were hitting a render-time error inside the error boundary. Now their state is automatically cleaned up on their next visit and the picker loads normally
+- The "Clear cache and reload" recovery button in both the Astro loading fallback and the React error boundary actually clears the correct `localStorage` keys now. Prior versions matched `digistorms-` (hyphen) but the real keys use `digistorms_` (underscore), so the button ran successfully while silently clearing nothing, leaving users stuck in a reload loop. Also clears `sessionStorage` as a belt-and-suspenders measure
+- Error boundary now exposes the error name, message, and first 8 stack frames behind a "Show error details" disclosure in production. Previously the error was only shown in development mode, making it impossible to debug user-reported crashes. The details are hidden by default so they do not dominate the recovery UI but available on one click
+
 ## [0.1.3.1] - 2026-04-11
 
 ### Fixed
