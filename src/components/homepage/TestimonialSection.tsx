@@ -1,6 +1,6 @@
 import React from "react";
-import drewPriceImage from "@/assets/testimonials/drew-price.webp";
-import grammarlyLogo from "@/assets/logos/grammarly-logo.webp";
+// Drew Price headshot and Grammarly logo are served as raw paths from
+// /public/images/* (not via vite asset imports) — so no imports needed here.
 
 export const TestimonialSection: React.FC = () => {
   return (

@@ -95,34 +95,48 @@ const CustomizePage = () => {
     );
   }, [workflow.selectedEmail?.content]);
 
-  // Ensure badge exists by default when entering customize (idempotent)
+  // Initialize badge AND history in a single ordered effect. Previously
+  // these were two separate effects: badge init dispatched setSelectedEmail
+  // with the post-badge content, but history init read selected.content in
+  // the same render cycle before the dispatch committed, so history entry 0
+  // was the pre-badge content. First undo removed the badge the user never
+  // saw get applied.
+  //
+  // Fix: compute the canonical post-badge content ONCE, use it for both the
+  // store update AND the history seed.
+  //
+  // Runs on every content change (not just mount) so downstream flows that
+  // replace `selectedEmail.content` in place — stormy regeneration, template
+  // tweak application — get re-normalized through the badge logic. The
+  // history seed uses `history.entries.length === 0` as its idempotency
+  // gate, so it only fires on the very first content that reaches an empty
+  // history, regardless of how many times the effect re-runs.
   useEffect(() => {
     if (isRestoring) return;
-    const selected = workflow.selectedEmail;
-    if (!selected?.isHtml || !selected.content) return;
 
-    const nextContent = ensureDigiStormsBadgeInitialized(selected.content);
-    if (nextContent !== selected.content) {
-      workflow.setSelectedEmail({ ...selected, content: nextContent });
-    }
-  }, [isRestoring, workflow.selectedEmail, workflow]);
-
-  // Initialize history with the initial email state
-  const historyEntriesLength = history.entries.length;
-  useEffect(() => {
-    if (isRestoring) return;
     const selected = workflow.selectedEmail;
     if (!selected?.content) return;
 
-    if (historyEntriesLength === 0) {
-      history.addEntry(selected.content, "inline-edit");
+    // Compute the canonical first-frame content (post-badge init).
+    const initialContent = selected.isHtml
+      ? ensureDigiStormsBadgeInitialized(selected.content)
+      : selected.content;
+
+    // Apply badge if it changed anything. ensureDigiStormsBadgeInitialized
+    // is idempotent — if the badge is already present, initialContent ===
+    // selected.content and this dispatch is skipped, so the effect does
+    // not ping-pong.
+    if (initialContent !== selected.content) {
+      workflow.setSelectedEmail({ ...selected, content: initialContent });
     }
-  }, [
-    isRestoring,
-    workflow.selectedEmail,
-    historyEntriesLength,
-    history.addEntry,
-  ]);
+
+    // Seed history ONLY when empty. Guard protects against re-seeding
+    // after user edits, and against double-seeding under React strict mode.
+    if (history.entries.length === 0) {
+      history.addEntry(initialContent, "inline-edit");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isRestoring, workflow.selectedEmail?.content]);
 
   // Handle template tweaks change
   const handleTweaksChange = useCallback((newTweaks: TemplateTweaks) => {

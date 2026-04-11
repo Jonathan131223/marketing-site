@@ -9,17 +9,19 @@ const GeneratePage = lazy(() => import("@/_legacy-pages/email-generator/Generate
 const TemplatesPage = lazy(() => import("@/_legacy-pages/email-generator/TemplatesPage"));
 const CustomizePage = lazy(() => import("@/_legacy-pages/email-generator/CustomizePage"));
 
-interface EmailGeneratorAppProps {
-  initialPath?: string;
-}
-
 /**
  * Self-contained React island that wraps the entire email generator workflow.
  * Includes its own BrowserRouter and StoreProvider so it works independently
  * inside Astro pages. Meta tags (title, OG, Twitter, canonical) are set by
  * each Astro page via BaseLayout props — React does not touch document head.
+ *
+ * BrowserRouter reads the initial route from window.location directly, so
+ * no initialPath prop is needed. Prior versions accepted an `initialPath`
+ * prop that was passed by all 5 Astro callers but never referenced inside
+ * the component — deleted to prevent silent drift where Astro pages pass a
+ * value the island ignores.
  */
-const EmailGeneratorApp: React.FC<EmailGeneratorAppProps> = ({ initialPath }) => {
+const EmailGeneratorApp: React.FC = () => {
   return (
     <StoreProvider>
       <BrowserRouter

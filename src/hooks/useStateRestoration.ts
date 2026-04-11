@@ -24,12 +24,22 @@ export const useStateRestoration = ({
     if (hasRestored.current) return;
     hasRestored.current = true;
 
-    console.log("Checking for persisted state...");
+    // Dev-only logging. Previously these console.log statements fired in
+    // production on every email generator page mount and some dumped full
+    // brief data (companyName, productName, senderName) — customer-provided
+    // PII into a medium that browser extensions can scrape. Gated behind
+    // import.meta.env.DEV so prod bundles stay silent.
+    const devLog = import.meta.env.DEV
+      ? // eslint-disable-next-line no-console
+        (...args: unknown[]) => console.log(...args)
+      : () => {};
+
+    devLog("Checking for persisted state...");
     const stateInfo = StatePersistence.getStateInfo();
-    console.log("Persisted state info:", stateInfo);
+    devLog("Persisted state info:", stateInfo);
 
     if (!StatePersistence.hasPersistedState()) {
-      console.log("No persisted state found");
+      devLog("No persisted state found");
       onNoStateFound?.();
       return;
     }
@@ -47,7 +57,9 @@ export const useStateRestoration = ({
 
       // Restore workflow state
       if (workflowState) {
-        console.log("Restoring workflow state:", workflowState);
+        // Dev log the keys only, not the values — even in dev, selectedUseCase
+        // is the only identifying field here and it's a non-sensitive slug.
+        devLog("Restoring workflow state", Object.keys(workflowState));
         dispatch(workflowActions.setStep(workflowState.currentStep));
         dispatch(workflowActions.setCategory(workflowState.selectedCategory));
         dispatch(workflowActions.setUseCase(workflowState.selectedUseCase));
@@ -56,21 +68,21 @@ export const useStateRestoration = ({
 
       // Restore brief data
       if (briefData) {
-        console.log("Restoring brief data");
+        devLog("Restoring brief data");
         dispatch(workflowActions.setBriefData(briefData));
         restoredState.workflow = { ...restoredState.workflow, briefData };
       }
 
       // Restore selected email
       if (selectedEmail) {
-        console.log("Restoring selected email");
+        devLog("Restoring selected email");
         dispatch(workflowActions.setSelectedEmail(selectedEmail));
         restoredState.workflow = { ...restoredState.workflow, selectedEmail };
       }
 
       // Restore template tweaks
       if (templateTweaks) {
-        console.log("Restoring template tweaks");
+        devLog("Restoring template tweaks");
         // Use the action from store/actions.ts (we need to cast or ensure it exists)
         // Assuming workflowActions.setTemplateTweaks exists as added in previous steps
         if (workflowActions.setTemplateTweaks) {
@@ -84,7 +96,8 @@ export const useStateRestoration = ({
 
       // Restore editor state
       if (editorState) {
-        console.log("Restoring editor state:", editorState);
+        // Log keys only — lastSyncedContent can contain user email HTML.
+        devLog("Restoring editor state", Object.keys(editorState));
         if (editorState.iframeHeight) {
           dispatch(editorActions.setHeight(editorState.iframeHeight));
         }
@@ -101,7 +114,11 @@ export const useStateRestoration = ({
 
       // Restore history state
       if (historyState) {
-        console.log("Restoring history state:", historyState);
+        // Log entry count only — entries contain full email HTML.
+        devLog(
+          "Restoring history state",
+          { entries: historyState.entries.length, currentIndex: historyState.currentIndex }
+        );
         // Clear existing history first
         dispatch(historyActions.clear());
 
@@ -120,9 +137,13 @@ export const useStateRestoration = ({
         restoredState.history = historyState;
       }
 
-      console.log("State restoration completed");
+      devLog("State restoration completed");
       onStateRestored?.(restoredState);
     } catch (error) {
+      // Errors are always logged, even in prod — silent failures are worse
+      // than visible ones for debugging. The error object itself does not
+      // contain restored PII.
+      // eslint-disable-next-line no-console
       console.error("Error during state restoration:", error);
       // Clear corrupted state
       StatePersistence.clearAll();
@@ -134,7 +155,10 @@ export const useStateRestoration = ({
     hasRestored: hasRestored.current,
     clearPersistedState: () => {
       StatePersistence.clearAll();
-      console.log("Cleared all persisted state");
+      if (import.meta.env.DEV) {
+        // eslint-disable-next-line no-console
+        console.log("Cleared all persisted state");
+      }
     },
     getStateInfo: StatePersistence.getStateInfo,
   };

@@ -1,4 +1,4 @@
-import { useState, type ComponentType } from "react";
+import { useRef, useState, type ComponentType, type KeyboardEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -51,14 +51,59 @@ const categoryMeta: Record<
   },
 };
 
-const categoryOrder: CategoryKey[] = [
+// Explicit display order. Not derived from `Object.keys(categoryMeta)`
+// because we don't want the tab sequence to silently shift if someone
+// reorders entries in the meta object. The `as const` + `satisfies` clauses
+// together validate that every item is a valid CategoryKey AND preserve
+// the tuple literal so the exhaustiveness check below can detect drift.
+const categoryOrder = [
   "activation",
   "engagement",
   "expansion",
   "churn",
   "community",
   "content",
-];
+] as const satisfies ReadonlyArray<CategoryKey>;
+
+// Compile-time exhaustiveness + length check. Two independent guarantees:
+//
+// 1. `_MissingKeys`: if a new value is added to the `CategoryKey` type
+//    but not appended here, this type resolves to the new key (not never),
+//    which breaks the assignment below.
+//
+// 2. `_LengthMatches`: counts the number of distinct union members in
+//    `CategoryKey` and asserts categoryOrder has the same number of
+//    entries. Catches duplicates (e.g. a typo that lists "activation"
+//    twice while omitting "churn") which the first check alone would
+//    miss — `Exclude<CategoryKey, "activation" | "activation">` is still
+//    just the missing member, but the length check fails.
+type _MissingKeys = Exclude<CategoryKey, (typeof categoryOrder)[number]>;
+type _UnionToIntersection<U> = (U extends unknown ? (x: U) => void : never) extends (
+  x: infer I,
+) => void
+  ? I
+  : never;
+type _LastOfUnion<U> = _UnionToIntersection<
+  U extends unknown ? () => U : never
+> extends () => infer R
+  ? R
+  : never;
+type _UnionLength<U, Acc extends unknown[] = []> = [U] extends [never]
+  ? Acc["length"]
+  : _UnionLength<Exclude<U, _LastOfUnion<U>>, [_LastOfUnion<U>, ...Acc]>;
+type _CategoryKeyCount = _UnionLength<CategoryKey>;
+type _LengthMatches = (typeof categoryOrder)["length"] extends _CategoryKeyCount
+  ? _CategoryKeyCount extends (typeof categoryOrder)["length"]
+    ? true
+    : "ERROR: categoryOrder length does not match CategoryKey union size"
+  : "ERROR: categoryOrder length does not match CategoryKey union size";
+
+const _categoryOrderIsExhaustive: [_MissingKeys] extends [never]
+  ? true
+  : "ERROR: categoryOrder is missing keys from CategoryKey" = true;
+const _categoryOrderHasNoDuplicates: _LengthMatches = true;
+void _categoryOrderIsExhaustive;
+void _categoryOrderHasNoDuplicates;
 
 export default function UseCasePickerPage() {
   const navigate = useNavigate();
@@ -68,9 +113,57 @@ export default function UseCasePickerPage() {
   const [selectedCategory, setSelectedCategory] =
     useState<CategoryKey>("activation");
 
+  // Refs to each tab button so the WAI-ARIA keyboard handler can move
+  // focus in response to arrow keys. Only the active tab sits in the tab
+  // order (tabIndex 0); the others are tabIndex -1 and only reachable
+  // via arrow keys, per the authoring practices guide.
+  const tabRefs = useRef<Record<CategoryKey, HTMLButtonElement | null>>({
+    activation: null,
+    engagement: null,
+    expansion: null,
+    churn: null,
+    community: null,
+    content: null,
+  });
+
   const handleUseCaseSelect = (useCase: UseCase) => {
     workflow.setUseCase(useCase);
     navigate(`/email-generator/brief?useCase=${useCase}`);
+  };
+
+  // Keyboard navigation for the tab list — WAI-ARIA tabs pattern.
+  // Left/Right move between tabs (wrapping), Home/End jump to the
+  // first/last tab. Moving focus also activates the tab so the panel
+  // content updates in sync (automatic activation pattern).
+  const handleTabKeyDown = (
+    event: KeyboardEvent<HTMLButtonElement>,
+    currentKey: CategoryKey
+  ) => {
+    const currentIndex = categoryOrder.indexOf(currentKey);
+    let nextIndex: number | null = null;
+
+    switch (event.key) {
+      case "ArrowRight":
+        nextIndex = (currentIndex + 1) % categoryOrder.length;
+        break;
+      case "ArrowLeft":
+        nextIndex =
+          (currentIndex - 1 + categoryOrder.length) % categoryOrder.length;
+        break;
+      case "Home":
+        nextIndex = 0;
+        break;
+      case "End":
+        nextIndex = categoryOrder.length - 1;
+        break;
+      default:
+        return;
+    }
+
+    event.preventDefault();
+    const nextKey = categoryOrder[nextIndex];
+    setSelectedCategory(nextKey);
+    tabRefs.current[nextKey]?.focus();
   };
 
   const activeMeta = categoryMeta[selectedCategory];
@@ -167,11 +260,16 @@ export default function UseCasePickerPage() {
                 return (
                   <button
                     key={categoryKey}
+                    ref={(el) => {
+                      tabRefs.current[categoryKey] = el;
+                    }}
                     role="tab"
                     aria-selected={isActive}
                     aria-controls={`use-cases-${categoryKey}`}
                     id={`tab-${categoryKey}`}
+                    tabIndex={isActive ? 0 : -1}
                     onClick={() => setSelectedCategory(categoryKey)}
+                    onKeyDown={(e) => handleTabKeyDown(e, categoryKey)}
                     className={`group flex flex-col items-center text-center px-3 py-4 rounded-xl border transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] focus-visible:ring-offset-2 ${
                       isActive
                         ? "border-[#2563EB] bg-[#2563EB] shadow-md"

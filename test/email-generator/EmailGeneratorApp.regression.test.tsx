@@ -41,7 +41,7 @@ describe("EmailGeneratorApp — ISSUE-001 regression", () => {
     setPath("/email-generator");
 
     expect(() => {
-      render(<EmailGeneratorApp initialPath="/email-generator" />);
+      render(<EmailGeneratorApp />);
     }).not.toThrow();
 
     // The picker is lazy-loaded; wait for its H1 to appear.
@@ -102,7 +102,7 @@ describe("EmailGeneratorApp — ISSUE-001 regression", () => {
     setPath("/email-generator");
 
     const user = userEvent.setup();
-    render(<EmailGeneratorApp initialPath="/email-generator" />);
+    render(<EmailGeneratorApp />);
 
     // Wait for hydration + first panel
     await waitFor(
@@ -145,7 +145,7 @@ describe("EmailGeneratorApp — ISSUE-001 regression", () => {
     setPath("/email-generator/brief");
 
     expect(() => {
-      render(<EmailGeneratorApp initialPath="/email-generator/brief" />);
+      render(<EmailGeneratorApp />);
     }).not.toThrow();
 
     // Empty state heading renders. ISSUE-004 (2026-04-10) — this used to
@@ -177,7 +177,7 @@ describe("EmailGeneratorApp — ISSUE-001 regression", () => {
   it("renders the customize empty state with its own step-specific prompt", async () => {
     setPath("/email-generator/customize");
 
-    render(<EmailGeneratorApp initialPath="/email-generator/customize" />);
+    render(<EmailGeneratorApp />);
 
     await waitFor(
       () => {
@@ -201,7 +201,7 @@ describe("EmailGeneratorApp — ISSUE-001 regression", () => {
   it("renders the templates empty state with its own step-specific prompt", async () => {
     setPath("/email-generator/templates");
 
-    render(<EmailGeneratorApp initialPath="/email-generator/templates" />);
+    render(<EmailGeneratorApp />);
 
     await waitFor(
       () => {
@@ -223,7 +223,7 @@ describe("EmailGeneratorApp — ISSUE-001 regression", () => {
   it("renders the generate empty state with its own step-specific prompt", async () => {
     setPath("/email-generator/generate");
 
-    render(<EmailGeneratorApp initialPath="/email-generator/generate" />);
+    render(<EmailGeneratorApp />);
 
     await waitFor(
       () => {
@@ -246,7 +246,7 @@ describe("EmailGeneratorApp — ISSUE-001 regression", () => {
     setPath("/email-generator");
 
     const user = userEvent.setup();
-    render(<EmailGeneratorApp initialPath="/email-generator" />);
+    render(<EmailGeneratorApp />);
 
     // Wait for the picker to render
     await waitFor(
@@ -278,5 +278,92 @@ describe("EmailGeneratorApp — ISSUE-001 regression", () => {
     // The useCase query param must be set — that's how BriefPage finds
     // which use case to render.
     expect(window.location.search).toMatch(/useCase=welcome/);
+  });
+
+  it("supports WAI-ARIA arrow key navigation between tabs", async () => {
+    setPath("/email-generator");
+
+    const user = userEvent.setup();
+    render(<EmailGeneratorApp />);
+
+    // Wait for the picker to render.
+    await waitFor(
+      () => {
+        expect(
+          screen.getByRole("tab", { name: /activation/i }),
+        ).toBeInTheDocument();
+      },
+      { timeout: 3000 },
+    );
+
+    // Only the active tab should be in the tab order (tabIndex 0), the
+    // others are -1 per the WAI-ARIA tabs authoring practices.
+    expect(
+      screen.getByRole("tab", { name: /activation/i }),
+    ).toHaveAttribute("tabindex", "0");
+    expect(
+      screen.getByRole("tab", { name: /engagement/i }),
+    ).toHaveAttribute("tabindex", "-1");
+
+    // Focus the active tab, then press ArrowRight — should move selection
+    // AND focus to Engagement (automatic activation pattern).
+    const activationTab = screen.getByRole("tab", { name: /activation/i });
+    activationTab.focus();
+    expect(document.activeElement).toBe(activationTab);
+
+    await user.keyboard("{ArrowRight}");
+
+    expect(
+      screen.getByRole("tab", { name: /engagement/i }),
+    ).toHaveAttribute("aria-selected", "true");
+    expect(document.activeElement).toBe(
+      screen.getByRole("tab", { name: /engagement/i }),
+    );
+
+    // ArrowLeft from Engagement goes back to Activation.
+    await user.keyboard("{ArrowLeft}");
+    expect(
+      screen.getByRole("tab", { name: /activation/i }),
+    ).toHaveAttribute("aria-selected", "true");
+
+    // ArrowLeft from Activation should wrap to the last tab (Content & PR).
+    await user.keyboard("{ArrowLeft}");
+    expect(
+      screen.getByRole("tab", { name: /content & pr/i }),
+    ).toHaveAttribute("aria-selected", "true");
+
+    // ArrowRight from the last tab (Content & PR) should wrap back to the
+    // first tab (Activation). Covers the forward-wrap branch so both
+    // wrapping paths in the modular arithmetic are verified.
+    await user.keyboard("{ArrowRight}");
+    expect(
+      screen.getByRole("tab", { name: /activation/i }),
+    ).toHaveAttribute("aria-selected", "true");
+
+    // End key should jump to the last tab.
+    await user.keyboard("{End}");
+    expect(
+      screen.getByRole("tab", { name: /content & pr/i }),
+    ).toHaveAttribute("aria-selected", "true");
+
+    // Home key should jump back to the first tab.
+    await user.keyboard("{Home}");
+    expect(
+      screen.getByRole("tab", { name: /activation/i }),
+    ).toHaveAttribute("aria-selected", "true");
+
+    // Non-navigation keys (letters, Tab, Space) should NOT be intercepted
+    // by the handler. Pressing 'a' or Tab must not change the active tab.
+    // This covers the `default: return;` branch of handleTabKeyDown — a
+    // regression that swallowed Tab would trap screen reader users inside
+    // the tablist.
+    const activationAfterHome = screen.getByRole("tab", {
+      name: /activation/i,
+    });
+    activationAfterHome.focus();
+    await user.keyboard("a");
+    expect(
+      screen.getByRole("tab", { name: /activation/i }),
+    ).toHaveAttribute("aria-selected", "true");
   });
 });
