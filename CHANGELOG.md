@@ -2,6 +2,29 @@
 
 All notable changes to DigiStorms marketing site will be documented in this file.
 
+## [0.1.1.0] - 2026-04-11
+
+### Added
+- Keyboard navigation for the email generator category tabs. Arrow Left / Arrow Right move between categories with wrap-around at both ends, Home jumps to Activation, End jumps to Content & PR. Only the active tab sits in the natural tab order so screen reader users traverse the tablist with one keystroke instead of six
+- Automated smoke tests for the site-wide Navbar and Footer components
+- Test-only guard verifying that the email generator state restoration never leaks customer-provided brief data (company name, product name, email HTML) to the production browser console
+- Compile-time exhaustiveness check on the email generator category list that fails the build if a new category is added to the type without being added to the tab order, or if the list drifts into duplicates
+
+### Fixed
+- Undo on the first edit in the customize email step no longer removes the DigiStorms attribution badge. Two separate React effects used to race — badge insertion dispatched the post-badge content while history initialization captured the pre-badge content from the same render cycle, so the first undo reverted to a version the user never saw. Reworked into a single ordered effect that computes the post-badge content once and uses it for both operations
+- Content regeneration (e.g., AI template tweaks, "Stormy" rewrites) that replaces the email body now correctly re-runs badge insertion instead of leaving regenerated content un-badged
+- State restoration in the email generator no longer emits eight `console.log` calls on every page mount in production, some of which exposed full brief data (company name, product name, email HTML) to any browser extension hooking the console
+- Hydration mismatch warning on every navbar render in dev mode caused by environment variable naming (`VITE_APP_BASE_URL` → `PUBLIC_APP_BASE_URL`)
+
+### Changed
+- Mobile menu smoke test now asserts the menu content actually appears after the hamburger click, instead of only that the click did not throw
+- Email generator app's meta tag contract is documented once, clearly, in the React island docstring. Prior versions mislabeled the deleted `initialPath` prop as a "Chesterton's fence" (the metaphor was inverted)
+
+### Removed
+- Unused `dompurify` dependency and its `@types/dompurify` sibling (3 packages removed from `node_modules`)
+- Dead `initialPath` prop from `EmailGeneratorApp` and its 5 Astro call sites (the prop was passed but never read — `BrowserRouter` uses `window.location` directly)
+- Dead webp asset imports in the homepage testimonial section (Vite was bundling unused Drew Price and Grammarly webp files into the homepage bundle)
+
 ## [0.1.0.0] - 2026-04-10
 
 ### Added

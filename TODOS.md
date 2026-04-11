@@ -40,43 +40,37 @@ all 38 use cases discoverable in one click).
 
 Full QA report: `.gstack/qa-reports/qa-report-digistorms-ai-2026-04-10.md`
 
-## Tech debt (follow-ups discovered during v0.1.0.0 ship review)
+## Tech debt (still open after v0.1.1.0)
 
-These are real but out of scope for the current PR. Grouped by severity.
+Shipped in v0.1.1.0 from the previous tech debt list: `useStateRestoration` PII
+(P2), `TestimonialSection` dead imports (P3), `initialPath` dead prop (P3),
+`CustomizePage` badge/history undo (P1), tab keyboard navigation (P2),
+`dompurify` drop (part of P2). See the v0.1.1.0 CHANGELOG entry for details.
 
-### `useStateRestoration` ships console.log statements to production
-**What:** `src/hooks/useStateRestoration.ts` has 8 `console.log` calls that run on every email generator page mount. Some dump full brief data (companyName, productName, senderName) which is PII.
-**Why:** Pollutes user devtools, leaks PII, obscures real errors in bug reports.
-**Fix:** Wrap in `if (import.meta.env.DEV)` or replace with a `debug` namespace that ships disabled.
-**Effort:** XS (CC: ~10min)
+Still open:
+
+### CSP `'unsafe-inline'` hardening
+**What:** `vercel.json` CSP has `'unsafe-inline'` on both `script-src` and `style-src`, which allows any inline script. Typekit removal shipped in v0.1.0.0 (ISSUE-002) closed half of this; the `'unsafe-inline'` half remains.
+**Fix:** Switch CSP to nonce-based inline scripts via Astro's integration. Non-trivial because Astro's hydration scripts currently rely on `'unsafe-inline'`.
+**Effort:** M (CC: ~1hr plus testing across all 1214 built pages)
+**Priority:** P2 (security hardening)
+
+### CustomizePage badge/history E2E regression test
+**What:** The v0.1.1.0 fix for the "first undo strips the badge" bug has no end-to-end regression test. Unit testing CustomizePage requires mocking EmailEditor + Monaco + Radix which is impractical. A Playwright E2E test would catch any future regression.
+**Fix:** Add a minimal Playwright suite targeting `/email-generator/customize` with a seeded `selectedEmail`, verify initial render, make an edit, undo, assert content still has `data-digistorms-badge`.
+**Effort:** M (CC: ~1hr including Playwright bootstrap)
 **Priority:** P2
 
-### Dead imports in TestimonialSection
-**What:** `src/components/homepage/TestimonialSection.tsx:2-3` imports `drewPriceImage` and `grammarlyLogo` but the JSX uses raw string paths from `/images/`. Dead imports cause vite to bundle unused assets.
-**Fix:** Delete the imports, or switch to the imported hashed URLs (cache-busting).
-**Effort:** XS (CC: ~5min)
+### State restoration + history clear ordering contradiction
+**What:** `CustomizePage` calls `history.clear()` on mount (line 58 "fresh session per Customize visit") but `useStateRestoration` restores `history.entries` from localStorage. Restoration runs after the clear, so restoration wins — meaning the mount-clear is dead code. The comment lies about its effect.
+**Fix:** Decide: do we want history persisted across reloads or not? Pick one, then either delete the mount-clear OR remove history from `useStateRestoration`.
+**Effort:** S (CC: ~20min, but needs product decision)
 **Priority:** P3
 
-### `initialPath` prop on EmailGeneratorApp is dead
-**What:** `src/components/react/EmailGeneratorApp.tsx` accepts `initialPath` from all 5 Astro pages but never uses it. BrowserRouter reads `window.location` directly.
-**Fix:** Delete the prop and remove from the 5 Astro callers, OR wire it through to MemoryRouter when provided.
-**Effort:** XS (CC: ~15min)
+### `useStateRestoration` setTimeout leak on fast unmount
+**What:** All 4 email generator sub-pages use `onStateRestored: () => setTimeout(() => setIsRestoring(false), 100)`. If the user navigates away within 100ms, the timeout fires on an unmounted component. React 18 silences the warning but the pattern will surface in React 19 and fails E2E tests under fast teardown.
+**Fix:** Use `requestAnimationFrame` or a useEffect-cleanup-aware ref flag.
+**Effort:** XS (CC: ~10min per callsite)
 **Priority:** P3
 
-### Email generator history/badge undo bug
-**What:** `CustomizePage.tsx` history-init and badge-init effects interact such that undo from the first edit reverts to pre-badge content, hiding the DigiStorms badge without the user ever seeing it applied.
-**Fix:** Reorder effects so badge init runs before history init, or include post-badge content in the initial history entry.
-**Effort:** S (CC: ~30min)
-**Priority:** P1 (user-visible bug on the customize page)
-
-### Tab keyboard navigation incomplete
-**What:** `UseCasePickerPage.tsx` tablist has correct ARIA roles but no arrow-key navigation. Screen reader users get 6 focus stops instead of 1 with arrow-key movement (WAI-ARIA tabs pattern).
-**Fix:** Add `onKeyDown` handler to intercept ArrowLeft/Right/Home/End. Set `tabIndex={isActive ? 0 : -1}`.
-**Effort:** S (CC: ~20min)
-**Priority:** P2 (accessibility)
-
-### `dompurify` is in dependencies but unused; CSP still has `'unsafe-inline'`
-**What:** `dompurify` is imported in package.json but nothing in `src/` uses it. Meanwhile `vercel.json` CSP has `'unsafe-inline'` on both `script-src` and `style-src`, which allows any inline script. Half of ISSUE-002's cleanup was Typekit removal; the `'unsafe-inline'` half is still open.
-**Fix:** Either drop dompurify, or use it to sanitize anywhere user-supplied content renders. Separately, switch CSP to nonce-based or hashed inline scripts via Astro's integration.
-**Effort:** M (CC: ~1hr)
-**Priority:** P2 (security hardening)
+<!-- Demo video / GIF entry already tracked at the top of the file — removed duplicate. -->
