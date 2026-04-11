@@ -2,6 +2,11 @@
 
 All notable changes to DigiStorms marketing site will be documented in this file.
 
+## [0.1.2.1] - 2026-04-11
+
+### Changed
+- New Stormi favicon — the blue smiling tornado mark replaces the older purple version across every tab and bookmark. Browser tabs, pinned-tab icons, and the apple-touch-icon on home-screen saves now all show the new brand mark
+
 ## [0.1.2.0] - 2026-04-11
 
 ### Changed
