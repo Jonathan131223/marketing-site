@@ -16,10 +16,64 @@ const STORAGE_KEYS = {
   EDITOR_STATE: "digistorms_editor_state",
   HISTORY_STATE: "digistorms_history_state",
   TEMPLATE_TWEAKS: "digistorms_template_tweaks",
+  SCHEMA_VERSION: "digistorms_schema_version",
 } as const;
+
+/**
+ * Bump this when the shape of any persisted data changes in a way that
+ * is NOT backward-compatible. On next load, users with an older version
+ * in their localStorage will have their entire persisted state wiped and
+ * rebuilt from scratch — preventing the "stale shape crashes render"
+ * failure mode reported on 2026-04-11 where users who had been hitting
+ * the site for weeks had old-schema briefData / selectedEmail objects
+ * that crashed the UseCasePickerPage render pass.
+ *
+ * Version history:
+ *   "1" — implicit before this constant existed (pre-v0.1.3.1)
+ *   "2" — 2026-04-11 — post-tab-layout, post-empty-state, post-badge-fix
+ *         shape. First versioned release.
+ */
+const CURRENT_SCHEMA_VERSION = "2";
 
 // Persistence utilities
 export class StatePersistence {
+  /**
+   * Ensures localStorage is on the current schema version. If the stored
+   * version is missing or different, wipes all digistorms state and writes
+   * the new version marker. Safe to call on every page mount — it's a
+   * no-op when the version matches.
+   *
+   * Returns `true` if state was wiped (caller should treat as fresh), or
+   * `false` if the existing state is compatible and can be loaded.
+   */
+  static ensureSchemaVersion(): boolean {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEYS.SCHEMA_VERSION);
+      if (stored === CURRENT_SCHEMA_VERSION) {
+        return false;
+      }
+      // Version mismatch or first visit. Wipe every digistorms_* key to
+      // prevent old-shape data from polluting the store on the next
+      // restoration attempt.
+      for (let i = localStorage.length - 1; i >= 0; i--) {
+        const key = localStorage.key(i);
+        if (key && key.startsWith("digistorms_")) {
+          localStorage.removeItem(key);
+        }
+      }
+      localStorage.setItem(
+        STORAGE_KEYS.SCHEMA_VERSION,
+        CURRENT_SCHEMA_VERSION,
+      );
+      return true;
+    } catch (error) {
+      // localStorage disabled / quota full / private mode. Treat as wiped.
+      // eslint-disable-next-line no-console
+      console.warn("Failed to verify schema version:", error);
+      return true;
+    }
+  }
+
   // Save workflow state (including complete email with subject/preview)
   static saveWorkflowState(state: {
     currentStep: FlowStep;

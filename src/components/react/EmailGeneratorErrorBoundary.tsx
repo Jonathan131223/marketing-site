@@ -40,16 +40,21 @@ export class EmailGeneratorErrorBoundary extends React.Component<
   }
 
   handleReset = (): void => {
-    // Clear every email-generator-related localStorage key so the next
-    // load starts from a clean slate. Defensive: wrap in try/catch because
-    // localStorage can throw in private mode / quota-full / disabled.
+    // Clear every digistorms-related localStorage key so the next load
+    // starts from a clean slate. CRITICAL: the real keys use the
+    // `digistorms_` underscore prefix (see src/store/persistence.ts). The
+    // prior version of this method only matched `digistorms-` with a
+    // hyphen — it ran successfully but silently cleared nothing, leaving
+    // users stuck in a reload loop. Also clear sessionStorage as a
+    // belt-and-suspenders measure.
     try {
       const toRemove: string[] = [];
       for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i);
         if (
           key &&
-          (key.startsWith("digistorms-") ||
+          (key.startsWith("digistorms_") ||
+            key.startsWith("digistorms-") ||
             key.startsWith("digi-marketing") ||
             key.includes("email-generator"))
         ) {
@@ -59,6 +64,11 @@ export class EmailGeneratorErrorBoundary extends React.Component<
       toRemove.forEach((k) => localStorage.removeItem(k));
     } catch {
       // ignore — reload will still happen below
+    }
+    try {
+      sessionStorage.clear();
+    } catch {
+      // ignore
     }
     window.location.reload();
   };
@@ -106,15 +116,28 @@ export class EmailGeneratorErrorBoundary extends React.Component<
               >
                 jonathan@digistorms.ai
               </a>{" "}
-              and we'll fix it.
+              and include the error details below.
             </p>
-            {import.meta.env.DEV && (
-              <pre className="mt-8 text-left text-xs text-red-600 bg-red-50 p-4 rounded-lg overflow-auto max-h-64">
-                {this.state.error.message}
-                {"\n"}
-                {this.state.error.stack}
+
+            {/*
+              Error details are shown in production too (behind a details
+              disclosure so they don't dominate the UI). This is the ONLY
+              way to debug crashes on user browsers we cannot access —
+              without this, every user-reported "blank page" or "something
+              went wrong" becomes a guessing game. We include the message
+              and the first few frames of the stack.
+            */}
+            <details className="mt-6 text-left">
+              <summary className="text-xs text-slate-400 cursor-pointer hover:text-slate-600">
+                Show error details
+              </summary>
+              <pre className="mt-3 text-left text-xs text-red-600 bg-red-50 p-4 rounded-lg overflow-auto max-h-64 whitespace-pre-wrap break-words">
+                {this.state.error.name}: {this.state.error.message}
+                {this.state.error.stack
+                  ? "\n\n" + this.state.error.stack.split("\n").slice(0, 8).join("\n")
+                  : ""}
               </pre>
-            )}
+            </details>
           </div>
         </div>
       );

@@ -35,6 +35,19 @@ export const useStateRestoration = ({
       : () => {};
 
     devLog("Checking for persisted state...");
+
+    // Schema version gate: if the stored shape is from a prior release,
+    // wipe it before any reducer tries to consume it. This prevents the
+    // "stale briefData shape crashes render" failure mode we saw on
+    // 2026-04-11 where users with weeks of accumulated state hit an
+    // error boundary after the tab layout redesign shipped.
+    const wiped = StatePersistence.ensureSchemaVersion();
+    if (wiped) {
+      devLog("Schema version mismatch — wiped old state");
+      onNoStateFound?.();
+      return;
+    }
+
     const stateInfo = StatePersistence.getStateInfo();
     devLog("Persisted state info:", stateInfo);
 
