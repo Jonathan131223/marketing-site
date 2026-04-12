@@ -1,11 +1,32 @@
 ---
 import PageLayout from '@/layouts/PageLayout.astro';
 import ContactForm from '@/components/react/ContactForm';
+
+const SITE_URL = 'https://www.digistorms.ai';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: "Contact DigiStorms",
+  url: `${SITE_URL}/contact`,
+  description: "Get in touch with the DigiStorms team. We help SaaS companies build lifecycle email sequences that drive activation, retention, and revenue.",
+  mainEntity: {
+    "@type": "Organization",
+    name: "DigiStorms",
+    url: SITE_URL,
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      url: `${SITE_URL}/contact`,
+    },
+  },
+};
 ---
 
 <PageLayout
   title="Contact Us | DigiStorms"
   description="Get in touch with the DigiStorms team. We help SaaS companies build lifecycle email sequences that drive activation, retention, and revenue."
+  jsonLd={jsonLd}
 >
   <main class="container mx-auto px-4 pt-24 pb-16">
     <div class="max-w-6xl mx-auto">

@@ -17,7 +17,8 @@ const jsonLd = {
       "price": "0",
       "priceCurrency": "USD",
       "description": "100 new signups per month",
-      "url": "https://www.digistorms.ai/pricing"
+      "url": "https://www.digistorms.ai/pricing",
+      "availability": "https://schema.org/InStock"
     },
     {
       "@type": "Offer",
@@ -25,7 +26,8 @@ const jsonLd = {
       "price": "19",
       "priceCurrency": "USD",
       "description": "1,000 new signups per month",
-      "url": "https://www.digistorms.ai/pricing"
+      "url": "https://www.digistorms.ai/pricing",
+      "availability": "https://schema.org/InStock"
     },
     {
       "@type": "Offer",
@@ -33,7 +35,8 @@ const jsonLd = {
       "price": "59",
       "priceCurrency": "USD",
       "description": "5,000 new signups per month",
-      "url": "https://www.digistorms.ai/pricing"
+      "url": "https://www.digistorms.ai/pricing",
+      "availability": "https://schema.org/InStock"
     },
     {
       "@type": "Offer",
@@ -41,16 +44,50 @@ const jsonLd = {
       "price": "149",
       "priceCurrency": "USD",
       "description": "10,000 new signups per month",
-      "url": "https://www.digistorms.ai/pricing"
+      "url": "https://www.digistorms.ai/pricing",
+      "availability": "https://schema.org/InStock"
     }
   ]
+};
+
+const pricingFaqs = [
+  {
+    question: "What happens when I exceed my signup limit?",
+    answer: "You'll get a heads-up as you approach your plan limit. You can upgrade anytime to unlock more capacity. Emails already in progress will continue sending — we never cut off active onboarding sequences mid-flow.",
+  },
+  {
+    question: "Can I change plans at any time?",
+    answer: "Yes. You can upgrade, downgrade, or cancel at any time. Changes take effect on your next billing cycle. No long-term contracts or commitments.",
+  },
+  {
+    question: "Is there a free trial?",
+    answer: "The Free plan gives you 100 new signups per month at no cost, forever. It's not a trial — it's a permanent free tier so you can see results before committing to a paid plan.",
+  },
+  {
+    question: "How does behavior-based email differ from time-based?",
+    answer: "Time-based tools send emails on a fixed schedule (Day 1, Day 3, Day 7). DigiStorms sends emails based on what users actually do in your product — signing up, hitting a milestone, or going inactive. This means the right message reaches each user at the right moment.",
+  },
+  {
+    question: "What do I need to get started?",
+    answer: "Just your website URL. DigiStorms analyzes your product and generates your onboarding email sequence in minutes. To start sending, connect your email provider and product events via a simple integration.",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: pricingFaqs.map((f) => ({
+    "@type": "Question",
+    name: f.question,
+    acceptedAnswer: { "@type": "Answer", text: f.answer },
+  })),
 };
 ---
 
 <PageLayout
   title="Pricing - DigiStorms AI Agent for Onboarding Emails"
   description="Simple, transparent pricing for DigiStorms. Get your full onboarding email system built and running — from signup to upgrade."
-  jsonLd={jsonLd}
+  jsonLd={[jsonLd, faqJsonLd]}
 >
   <main>
     <!-- Header -->
@@ -69,6 +106,21 @@ const jsonLd = {
     <!-- Pricing cards (interactive: toggle + tier stepper) -->
     <div class="mx-auto max-w-4xl px-6 pb-20">
       <PricingSelfServe client:load />
+    </div>
+
+    <!-- FAQ section -->
+    <div class="border-t border-slate-100 bg-[#FAFAFA] py-16">
+      <div class="mx-auto max-w-3xl px-6">
+        <h2 class="text-3xl font-serif text-slate-900 text-center mb-10">Frequently asked questions</h2>
+        <div class="space-y-6">
+          {pricingFaqs.map((faq) => (
+            <div class="bg-white rounded-2xl border border-slate-100 p-6">
+              <h3 class="font-semibold text-slate-900 mb-2">{faq.question}</h3>
+              <p class="text-slate-500 leading-relaxed">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   </main>
 </PageLayout>

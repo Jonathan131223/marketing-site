@@ -43,22 +43,25 @@ const rawDesc = tag.summary || `Browse ${filteredEmails.length} ${tag.name} emai
 const pageDesc = truncateAtWord(rawDesc, 155);
 const pageUrl = `${SITE_URL}/library/tag/${slug}`;
 
-const jsonLd = {
+const collectionJsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   name: `${tag.name} Emails \u2014 B2B SaaS Library`,
   description: pageDesc,
   url: pageUrl,
-  breadcrumb: {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Library", item: `${SITE_URL}/library` },
-      { "@type": "ListItem", position: 2, name: "Tags", item: `${SITE_URL}/library/tags` },
-      { "@type": "ListItem", position: 3, name: tag.name, item: pageUrl },
-    ],
-  },
 };
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Library", item: `${SITE_URL}/library` },
+    { "@type": "ListItem", position: 2, name: "Tags", item: `${SITE_URL}/library/tags` },
+    { "@type": "ListItem", position: 3, name: tag.name, item: pageUrl },
+  ],
+};
+
+const jsonLd = [collectionJsonLd, breadcrumbJsonLd];
 ---
 
 <PageLayout

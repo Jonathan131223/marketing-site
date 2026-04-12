@@ -124,16 +124,18 @@ const articleJsonLd = {
   description: metaDescription,
   image: ogImage,
   url: `${siteUrl}/blog/${slug}`,
-  datePublished: date,
-  dateModified: date,
+  datePublished: date ? `${date}T00:00:00Z` : undefined,
+  dateModified: date ? `${date}T00:00:00Z` : undefined,
   articleSection,
   ...(readTimeIso ? { timeRequired: readTimeIso } : {}),
   inLanguage: "en-US",
-  wordCount: readTime ? Math.round(parseInt(readTime) * 250) : undefined,
+  wordCount: post.body ? post.body.split(/\s+/).filter(Boolean).length : undefined,
   author: {
     "@type": "Person",
     name: "Jonathan Bernard",
     url: "https://www.linkedin.com/in/jonathan-digistorms/",
+    jobTitle: "Founder",
+    worksFor: { "@type": "Organization", name: "DigiStorms" },
   },
   publisher: {
     "@type": "Organization",
@@ -316,18 +318,22 @@ const breadcrumbJsonLd = {
               />
               <p class="text-slate-700 text-sm leading-relaxed">
                 {emailSeries ? (
-                  <>Thanks for reading all the way! I'm Jonathan, founder of DigiStorms,
-                  specializing in helping SaaS companies activate, retain, and expand their users
-                  with lifecycle emails. Connect with me on <a
+                  <>Thanks for reading all the way! I'm Jonathan, founder of DigiStorms.
+                  After 5+ years consulting SaaS growth teams on lifecycle email strategy,
+                  I built DigiStorms to automate what I used to do manually. Our research
+                  across 1,051 real lifecycle emails from 38 B2B SaaS companies informs
+                  everything we build. Connect with me on <a
                     href="https://www.linkedin.com/in/jonathan-digistorms/"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="text-primary hover:underline"
                   >LinkedIn</a>.</>
                 ) : (
-                  <>Thanks for reading! I'm Jonathan, founder of DigiStorms. We help SaaS teams
-                  improve retention, onboarding, and expansion -- with strategy, lifecycle email,
-                  and product-led motion in mind. Say hello on <a
+                  <>Thanks for reading! I'm Jonathan, founder of DigiStorms. After 5+ years
+                  helping SaaS teams improve retention and onboarding through lifecycle email
+                  strategy, I built DigiStorms to automate behavior-based email sequences.
+                  Our insights come from analyzing 1,051 real emails from 38 B2B SaaS
+                  companies. Say hello on <a
                     href="https://www.linkedin.com/in/jonathan-digistorms/"
                     target="_blank"
                     rel="noopener noreferrer"
