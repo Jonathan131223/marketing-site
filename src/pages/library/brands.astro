@@ -11,20 +11,24 @@ const PAGE_TITLE = 'Browse Email Library by Brand | DigiStorms';
 const PAGE_DESC = 'Explore lifecycle emails from 35+ leading B2B SaaS brands. See onboarding, engagement, upsell, and retention emails from companies like Notion, Loom, and Calendly.';
 const pageUrl = `${SITE_URL}/library/brands`;
 
-const jsonLd = {
+const collectionJsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   name: PAGE_TITLE,
   description: PAGE_DESC,
   url: pageUrl,
-  breadcrumb: {
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Library", item: `${SITE_URL}/library` },
-      { "@type": "ListItem", position: 2, name: "Brands", item: pageUrl },
-    ],
-  },
 };
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Library", item: `${SITE_URL}/library` },
+    { "@type": "ListItem", position: 2, name: "Brands", item: pageUrl },
+  ],
+};
+
+const jsonLd = [collectionJsonLd, breadcrumbJsonLd];
 ---
 
 <PageLayout

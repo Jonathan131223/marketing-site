@@ -26,4 +26,7 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
 Sitemap: https://www.digistorms.ai/sitemap.xml
