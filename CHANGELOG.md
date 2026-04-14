@@ -2,6 +2,11 @@
 
 All notable changes to DigiStorms marketing site will be documented in this file.
 
+## [0.1.3.3] - 2026-04-14
+
+### Changed
+- Manifesto page now reads as a focused, center-framed document. Each section's bullet list is capped at a readable column width and centered on the page, while the text and icons inside each bullet remain left-aligned so the eye still tracks naturally through the list. The "Who we're for" section is flattened to a single centered column — the purple mascot illustration has been removed so the closing section reads as a clean statement of audience rather than a decorative block. Headings keep their DESIGN.md-aligned serif treatment and are centered to match the new layout
+
 ## [0.1.3.2] - 2026-04-11
 
 ### Fixed
