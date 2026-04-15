@@ -14,3 +14,12 @@ dist/
 # Project uses npm (package-lock.json). Ignore bun lockfile if dev runs bun.
 bun.lock
 bun.lockb
+
+# Claude Code / Conductor artifacts
+.claude/
+
+# Stray Python deps (unrelated cache that sometimes lands in repo root)
+.pydeps/
+
+# Chrome partial downloads
+*.crdownload
