@@ -119,7 +119,7 @@ export const Navbar: React.FC<NavbarProps> = ({ pathname: initialPathname }) => 
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Book a demo
+                Talk to founder
               </a>
             </Button>
             <Button
@@ -197,7 +197,7 @@ export const Navbar: React.FC<NavbarProps> = ({ pathname: initialPathname }) => 
               className="block px-3 py-2.5 text-sm font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors"
               onClick={() => setMobileOpen(false)}
             >
-              Book a demo
+              Talk to founder
             </a>
             <a
               href={loginUrl}
