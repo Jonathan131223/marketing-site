@@ -298,43 +298,39 @@ const breadcrumbJsonLd = {
             <Content />
           </article>
 
-          <!-- About the author -->
-          <div class="mt-12 bg-slate-50 rounded-2xl p-6">
-            <div class="flex items-center gap-2 mb-5">
-              <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
-              <span class="font-bold text-slate-900">About the author</span>
-            </div>
-            <div class="flex items-start gap-5">
-              <Image
-                src={jonProfile}
-                alt="Jonathan Bernard"
-                class="w-16 h-16 rounded-full object-cover shrink-0"
-                loading="lazy"
-                decoding="async"
-                width={64}
-                height={64}
-              />
-              <p class="text-slate-700 text-sm leading-relaxed">
-                {emailSeries ? (
-                  <>Thanks for reading all the way! I'm Jonathan, founder of DigiStorms,
-                  specializing in helping SaaS companies activate, retain, and expand their users
-                  with lifecycle emails. Connect with me on <a
-                    href="https://www.linkedin.com/in/jonathan-digistorms/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-primary hover:underline"
-                  >LinkedIn</a>.</>
-                ) : (
-                  <>Thanks for reading! I'm Jonathan, founder of DigiStorms. We help SaaS teams
-                  improve retention, onboarding, and expansion -- with strategy, lifecycle email,
-                  and product-led motion in mind. Say hello on <a
-                    href="https://www.linkedin.com/in/jonathan-digistorms/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-primary hover:underline"
-                  >LinkedIn</a>.</>
-                )}
+          <!--
+            About the author. Same card shape as the About page founder
+            section (src/pages/about.astro Section 4): larger avatar, name
+            heading, role subtitle, and a visible "Connect on LinkedIn"
+            button. Keep these two cards in sync if either changes.
+          -->
+          <div class="mt-12 bg-slate-50 rounded-2xl border border-slate-100 p-6 sm:p-8 flex flex-col sm:flex-row items-center sm:items-start gap-6">
+            <Image
+              src={jonProfile}
+              alt="Jonathan Bernard, Founder of DigiStorms"
+              class="w-24 h-24 rounded-full object-cover flex-shrink-0"
+              loading="lazy"
+              decoding="async"
+              width={96}
+              height={96}
+            />
+            <div>
+              <p class="text-lg font-semibold text-slate-900">Jonathan Bernard</p>
+              <p class="text-sm text-slate-500 mb-3">Founder, DigiStorms</p>
+              <p class="text-slate-600 text-[15px] leading-relaxed mb-4">
+                Lifecycle email specialist for SaaS companies. Previously consulted with growth teams on onboarding, retention, and expansion strategy. Now building the AI that does it automatically.
               </p>
+              <a
+                href="https://www.linkedin.com/in/jonathan-digistorms/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-[#1D4ED8] font-medium hover:underline"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+                Connect on LinkedIn
+              </a>
             </div>
           </div>
 

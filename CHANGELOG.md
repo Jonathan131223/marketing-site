@@ -2,6 +2,17 @@
 
 All notable changes to DigiStorms marketing site will be documented in this file.
 
+## [0.1.3.4] - 2026-04-16
+
+### Added
+- Consulting testimonials section on the About page. Five quotes from past consulting clients — Thibault Le Meur (Triscale), Drew Price (BryteBridge), Matthieu Salvaggio (Blaze Type), Tahereh Pazouki (Magrid), Stefano Roncari (Bubbleye) — rendered as a static two-column card grid between the founder bio and the CTA. Each card shows company logo, industry, the quote, and the author with their avatar. The testimonials ground the "started as consulting" narrative the page tells earlier and carry real social proof into a page that previously had none
+
+### Changed
+- Blog article "About the author" section now matches the About page founder card: 96px avatar, bold name, "Founder, DigiStorms" subtitle, a clean bio paragraph, and a visible "Connect on LinkedIn" button with the LinkedIn icon. The previous compact variant split into two subtly-different versions depending on whether the article pulled from the email library or not — both are now unified to the single About-page copy for consistency across every article
+
+### Removed
+- `src/components/astro/FounderStorySection.astro` and `src/components/homepage/FounderStorySection.tsx`. Both were orphaned leftovers from an earlier homepage design and weren't imported anywhere in the live source tree. The testimonials they contained now live on the About page where they're actually rendered
+
 ## [0.1.3.3] - 2026-04-14
 
 ### Changed

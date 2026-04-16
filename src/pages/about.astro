@@ -3,6 +3,52 @@ import PageLayout from '@/layouts/PageLayout.astro';
 import { Image } from 'astro:assets';
 import jonProfile from '@/assets/founder/jonathan-profile.png';
 
+// Consulting testimonials — from the pre-DigiStorms freelance engagements.
+// About-page-only (not used on the homepage). Images live in
+// /public/images-testimonials/ (served at /images-testimonials/*.webp).
+const testimonials = [
+  {
+    company: "Triscale",
+    industry: "GTM Expert",
+    quote: "I've had the pleasure of collaborating with Jonathan on several projects, and his expertise in lifecycle marketing for B2B SaaS is outstanding. He deeply understands how to drive engagement and retention through smart, data-driven campaigns. Beyond his skills, he's a fantastic partner — insightful, proactive, and always focused on impact. I highly recommend working with him!",
+    author: "Thibault Le Meur",
+    logoUrl: "/images-testimonials/triscale.webp",
+    avatarUrl: "/images-testimonials/thibault.webp",
+  },
+  {
+    company: "BryteBridge",
+    industry: "Non-Profit Solutions",
+    quote: "Jonathan is a rising star in Lifecycle Marketing and one of a few trusted freelancers I send referrals to. If you need help going 0 to 1 on your B2B SaaS lifecycle programs, give Jonathan a shout. His attitude, quality, and speed to delivery are all top-notch.",
+    author: "Drew Price",
+    logoUrl: "/images-testimonials/brytebridge.webp",
+    avatarUrl: "/images-testimonials/drew.webp",
+  },
+  {
+    company: "Blaze Type",
+    industry: "Font Solutions",
+    quote: "Jonathan's approach to retention has been a game-changer for us. Our customer lifetime value has significantly increased.",
+    author: "Matthieu Salvaggio",
+    logoUrl: "/images-testimonials/blaze.webp",
+    avatarUrl: "/images-testimonials/matt.webp",
+  },
+  {
+    company: "Magrid",
+    industry: "EdTech",
+    quote: "The team's expertise in email marketing transformed our user engagement metrics. We've never seen such positive results!",
+    author: "Tahereh Pazouki",
+    logoUrl: "/images-testimonials/magrid.webp",
+    avatarUrl: "/images-testimonials/tahereh.webp",
+  },
+  {
+    company: "Bubbleye",
+    industry: "Marketing Automation",
+    quote: "Jonathan's professionalism, speed, and competence in writing and strategic planning are remarkable. I highly recommend him.",
+    author: "Stefano Roncari",
+    logoUrl: "/images-testimonials/bubbleye_logo.webp",
+    avatarUrl: "/images-testimonials/stefano.webp",
+  },
+];
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
@@ -107,6 +153,50 @@ const jsonLd = {
               Connect on LinkedIn
             </a>
           </div>
+        </div>
+      </section>
+
+      <!-- Section 5 — Consulting testimonials -->
+      <section class="mb-20">
+        <h2 class="text-3xl sm:text-4xl font-serif text-slate-900 tracking-[-0.01em] mb-3">What consulting clients say</h2>
+        <p class="text-lg text-slate-500 mb-10">
+          Before building DigiStorms, Jonathan worked directly with SaaS growth teams on their lifecycle email programs.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {testimonials.map((t) => (
+            <figure class="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm flex flex-col">
+              <div class="flex items-center gap-3 mb-4">
+                <img
+                  src={t.logoUrl}
+                  alt={`${t.company} logo`}
+                  class="h-10 w-10 rounded-lg object-contain flex-shrink-0"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div>
+                  <p class="font-semibold text-slate-900 leading-tight">{t.company}</p>
+                  <p class="text-xs text-slate-500">{t.industry}</p>
+                </div>
+              </div>
+              <blockquote class="text-slate-600 text-[15px] leading-relaxed mb-5 flex-1">
+                &ldquo;{t.quote}&rdquo;
+              </blockquote>
+              <figcaption class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                <img
+                  src={t.avatarUrl}
+                  alt={t.author}
+                  class="h-10 w-10 rounded-full object-cover flex-shrink-0"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <p class="text-sm font-medium text-slate-900">{t.author}</p>
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </section>
 
