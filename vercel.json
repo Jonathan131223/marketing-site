@@ -14,6 +14,11 @@
       "permanent": true
     },
     {
+      "source": "/blog/webinar-emails",
+      "destination": "/blog/webinar-email-sequence",
+      "permanent": true
+    },
+    {
       "source": "/(.*)",
       "has": [{ "type": "host", "value": "digistorms.ai" }],
       "destination": "https://www.digistorms.ai/$1",

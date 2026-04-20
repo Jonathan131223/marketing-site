@@ -15,7 +15,8 @@
     "sitemap": "node scripts/generate-sitemap.js",
     "og:render": "node scripts/og-images/render.mjs",
     "og:wire": "node scripts/og-images/wire-og-images.mjs",
-    "og:all": "npm run og:render && npm run og:wire"
+    "og:all": "npm run og:render && npm run og:wire",
+    "gsc": "node scripts/gsc/query.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
@@ -70,6 +71,7 @@
     "@vitejs/plugin-react-swc": "^3.5.0",
     "@vitest/coverage-v8": "^4.1.4",
     "autoprefixer": "^10.4.20",
+    "googleapis": "^171.4.0",
     "jsdom": "^29.0.2",
     "postcss": "^8.4.47",
     "satori": "^0.26.0",

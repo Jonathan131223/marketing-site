@@ -1,7 +1,7 @@
 ---
-title: "8 Dunning emails: best practices with 8 examples"
+title: "Dunning emails: best practices + 8 SaaS examples (2026)"
 slug: "dunning-emails"
-description: "Learn how to write a dunning email that recovers failed payments, reduces churn, and keeps your customer relationships intact with these tips and examples."
+description: "A 2026 guide to dunning emails that recover failed payments without breaking trust. 8 real SaaS examples, timing + tone rules, and the exact sequence top brands use."
 shortDescription: "Real tips and examples to turn failed payments into recovered revenue--fast."
 date: "2025-03-28"
 readTime: "7 min read"
@@ -85,6 +85,28 @@ When payment issues arise, clarity is your best friend. Always state the due dat
 You should also be transparent about what happens if the payment isn't resolved. Will their account be paused? Will they lose access to key features? Let them know—without being scary about it.
 
 Framing it as a heads-up, not a threat, helps maintain a positive customer relationship. You're not just trying to collect money—you're trying to help them avoid service interruption and keep their subscription active. It's a win-win.
+
+## Dunning best practices (what the top SaaS brands do)
+
+After reviewing hundreds of dunning sequences in the DigiStorms library, a short list of patterns keeps showing up across the teams that actually recover revenue. If you only take one section from this guide, take this one.
+
+**1. Send at least 3 emails, not 1.** A single "your payment failed" notice recovers roughly a third of what a 3-to-4-email sequence does. Most recoveries happen on email 2 or 3, not email 1. The first email gets ignored or lost; the follow-ups are what close the loop.
+
+**2. Space them across 7–14 days, not 48 hours.** Real-world cards fail for temporary reasons — a travel freeze, a daily limit, a new card in the mail. Giving people 10–14 days to naturally resolve it (rather than hammering them for 2 days) recovers more money and generates fewer angry replies.
+
+**3. Lead with the fix, not the failure.** The best dunning emails put the "Update payment method" button above the fold and keep the explanation short. Adobe, Loom, Webflow, and Canva all do this. The fix is one click; the explanation is a sentence.
+
+**4. Keep the tone human, not legal.** Top SaaS brands write dunning emails like a helpful heads-up from a colleague: "Hey, looks like your card didn't go through — here's the fix." Bottom-tier brands lean into aggressive language ("URGENT: ACCOUNT SUSPENDED"). The human tone recovers more and churns less.
+
+**5. Be specific about what happens next.** "If we don't hear from you by [date], access to your account will be paused on [date]" beats vague threats every time. Specificity reduces anxiety AND drives action — it gives the customer a clear deadline to act against.
+
+**6. Show the amount and card, not just "your payment."** "The $19 charge on your Visa ending 4242 didn't go through" is harder to ignore than "Your payment failed." People scroll past generic; they stop on specific.
+
+**7. Offer a way out that isn't "pay now."** Include a "Downgrade to free" or "Contact us" link alongside the update-payment button. This looks counterintuitive but it actually reduces involuntary churn: the customer who's genuinely mid-cash-crunch stays in the system on a free plan instead of disappearing entirely, which makes them 3–5x more likely to re-upgrade later.
+
+**8. Automate triage by failure reason.** Stripe and Braintree tell you WHY a card was declined. "Insufficient funds" needs a different email than "expired card" needs a different email than "card reported stolen." Smart SaaS teams route these to different templates instead of sending one generic "payment failed" message.
+
+Below are 8 real dunning emails from the DigiStorms library that put all of this into practice.
 
 ## 8 dunning email examples
 

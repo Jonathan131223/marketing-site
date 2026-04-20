@@ -1,7 +1,7 @@
 ---
-title: "Product launch email: best practices with 23 examples"
+title: "23 product launch email examples from real SaaS (2026)"
 slug: "product-launch-email"
-description: "Discover what makes a great product launch email for SaaS. See real examples, proven strategies, and templates to boost engagement and conversions."
+description: "23 real product launch emails from SaaS brands like Notion, Linear, Loom, and Figma — plus the timing, subject lines, and structure that actually drive adoption."
 shortDescription: "Explore 23 standout emails and tips to nail your next big product launch."
 date: "2026-03-15"
 readTime: "10 min read"

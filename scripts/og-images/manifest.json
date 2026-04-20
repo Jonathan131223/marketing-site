@@ -56,6 +56,26 @@
       "prompt": "Editorial OG card. Cream background. Instrument Serif headline '1,051 SaaS lifecycle emails analyzed' with '1,051' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
     },
     {
+      "id": "blog-webinar-follow-up-subject-lines",
+      "output": "public/og/blog-webinar-follow-up-subject-lines.webp",
+      "page_file": "src/content/blog/webinar-follow-up-subject-lines.md",
+      "background": "warm cream #F8F6F2",
+      "headline": "25 webinar follow up subject lines",
+      "italic_emphasis": "25",
+      "subline": "DigiStorms · Real SaaS examples, organized by audience and timing",
+      "prompt": "Editorial OG card. Cream background. Instrument Serif headline '25 webinar follow up subject lines' with '25' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
+    },
+    {
+      "id": "blog-product-launch-email-subject-lines",
+      "output": "public/og/blog-product-launch-email-subject-lines.webp",
+      "page_file": "src/content/blog/product-launch-email-subject-lines.md",
+      "background": "warm cream #F8F6F2",
+      "headline": "30 product launch email subject lines",
+      "italic_emphasis": "30",
+      "subline": "DigiStorms · From Notion, Loom, Linear, Zapier and more (2026)",
+      "prompt": "Editorial OG card. Cream background. Instrument Serif headline '30 product launch email subject lines' with '30' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
+    },
+    {
       "id": "pricing",
       "output": "public/og/pricing.webp",
       "page_file": "src/pages/pricing.astro",
