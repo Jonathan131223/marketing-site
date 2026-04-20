@@ -104,12 +104,12 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2">
               <li>
-                <Link
-                  to="/manifesto"
+                <a
+                  href="https://app.digistorms.ai/demo"
                   className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
                 >
-                  Manifesto
-                </Link>
+                  Live demo
+                </a>
               </li>
               <li>
                 <Link
@@ -117,6 +117,14 @@ export const Footer: React.FC = () => {
                   className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
                 >
                   Pricing
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/manifesto"
+                  className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
+                >
+                  Manifesto
                 </Link>
               </li>
             </ul>
