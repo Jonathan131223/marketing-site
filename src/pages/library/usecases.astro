@@ -3,7 +3,7 @@ import PageLayout from '@/layouts/PageLayout.astro';
 import usecasesData from '@/data/library/usecases.json';
 
 const SITE_URL = 'https://www.digistorms.ai';
-const DEFAULT_OG_IMAGE = `${SITE_URL}/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png`;
+const DEFAULT_OG_IMAGE = `https://www.digistorms.ai/og/library-usecases.webp`;
 
 const sortedUseCases = [...(usecasesData as any[])].sort((a, b) => a.order - b.order);
 

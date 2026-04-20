@@ -5,16 +5,20 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "node scripts/generate-sitemap.js",
     "build": "astro build",
     "preview": "astro preview",
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest",
-    "astro": "astro"
+    "astro": "astro",
+    "sitemap": "node scripts/generate-sitemap.js",
+    "og:render": "node scripts/og-images/render.mjs",
+    "og:wire": "node scripts/og-images/wire-og-images.mjs",
+    "og:all": "npm run og:render && npm run og:wire"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
-    "@astrojs/sitemap": "^3.7.2",
     "@astrojs/tailwind": "^5.1.5",
     "@astrojs/vercel": "^9.0.5",
     "@fontsource/instrument-sans": "^5.2.8",
@@ -42,6 +46,7 @@
     "framer-motion": "^12.23.25",
     "fuse.js": "^7.1.0",
     "lucide-react": "^0.462.0",
+    "posthog-js": "^1.369.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-helmet-async": "^3.0.0",
@@ -54,6 +59,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@fontsource/instrument-serif": "^5.2.8",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
@@ -66,6 +72,7 @@
     "autoprefixer": "^10.4.20",
     "jsdom": "^29.0.2",
     "postcss": "^8.4.47",
+    "satori": "^0.26.0",
     "sharp": "^0.34.5",
     "tailwindcss": "^3.4.11",
     "typescript": "^5.5.3",

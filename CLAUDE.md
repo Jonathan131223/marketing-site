@@ -42,6 +42,25 @@ shipped the email generator tab layout. See `test/email-generator/EmailGenerator
 for the ISSUE-001 regression test — the exact assertion that would have caught
 the blank-page bug that shipped to production before the test suite existed.
 
+## Canonical URL form
+
+Every page's canonical is **no trailing slash** (except root `/`). Three layers enforce this — do not weaken any one without weakening the others in the same change:
+
+1. `trailingSlash: 'never'` in `astro.config.mjs` — Astro emits internal hrefs without trailing slash.
+2. `trailingSlash: false` + `cleanUrls: true` in `vercel.json` — Vercel 308-redirects `/path/` → `/path`.
+3. `normalizePath()` in `src/layouts/BaseLayout.astro` — defensively strips a trailing slash from any explicit `canonical` prop a page passes.
+
+The three-layer approach prevents drift: breaking any one in isolation doesn't surface in dev (each layer covers the others), but breaking all three is caught by `/seo audit`. If you add a page that passes a literal `canonical` prop, pass it without a trailing slash.
+
+## Open Graph images
+
+Per-page OG cards live in `public/og/<id>.webp` (1200×630). Rendered deterministically from `scripts/og-images/manifest.json` via satori + sharp — see `scripts/og-images/README.md`. Edit a headline in the manifest → run `npm run og:all` → cards rebuild and Astro pages rewire automatically. When adding a new page that should have its own OG card:
+
+1. Append a card entry in `scripts/og-images/manifest.json` with `{id, output, page_file, background, headline, italic_emphasis, subline}`.
+2. Run `npm run og:all`.
+
+The wire script recognizes `<PageLayout>`, `<BaseLayout>`, `<ComparisonPage>`, and `<BestToolsPage>` — if you introduce a new layout wrapper that should accept per-page OG images, add an `ogImage?` passthrough prop and the layout name to the tag regex in `scripts/og-images/wire-og-images.mjs`.
+
 ## Environment variables
 
 Use the `PUBLIC_` prefix for any env var that must be readable from the client

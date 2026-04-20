@@ -19,10 +19,15 @@ interface Props {
 }
 
 const siteUrl = 'https://www.digistorms.ai';
+// Normalize to a single canonical form (no trailing slash, except root).
+// Belt-and-braces with `trailingSlash: 'never'` in astro.config.mjs and
+// `trailingSlash: false` in vercel.json — also protects explicit `canonical`
+// props passed by pages from accidentally diverging.
+const normalizePath = (p: string) => (p.length > 1 ? p.replace(/\/+$/, '') : p);
 const {
   title,
   description,
-  canonical = new URL(Astro.url.pathname, siteUrl).href,
+  canonical = new URL(normalizePath(Astro.url.pathname), siteUrl).href,
   ogImage = `${siteUrl}/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png`,
   ogType = 'website',
   ogTitle = title,
@@ -83,5 +88,9 @@ const {
   </head>
   <body>
     <slot />
+    <script>
+      import { initPostHog } from '@/lib/posthog';
+      initPostHog();
+    </script>
   </body>
 </html>
