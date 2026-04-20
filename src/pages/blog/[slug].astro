@@ -39,6 +39,7 @@ const description = post.data.description;
 const date = post.data.date;
 const readTime = post.data.readTime;
 const heroImage = post.data.heroImage;
+const ogImageOverride = post.data.ogImage;
 const libraryTags = post.data.libraryTags ?? [];
 const slug = post.id.replace(/\.md$/, '');
 
@@ -54,9 +55,14 @@ function truncateMeta(text: string, limit = 155): string {
 }
 
 const metaDescription = truncateMeta(description);
-const ogImage = heroImage
-  ? `${siteUrl}${heroImage}`
-  : `${siteUrl}/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png`;
+// Social preview priority: explicit ogImage override > heroImage > brand /blog card.
+// heroImage is ALSO rendered in-article as the hero banner; ogImage is OG-only so
+// a post can use a typography card for social without forcing it above the fold.
+const ogImage = ogImageOverride
+  ? `${siteUrl}${ogImageOverride}`
+  : heroImage
+    ? `${siteUrl}${heroImage}`
+    : `${siteUrl}/og/blog.webp`;
 
 const formattedDate = date
   ? new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })

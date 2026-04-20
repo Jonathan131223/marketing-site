@@ -77,7 +77,7 @@ for (const card of MANIFEST.cards) {
   }
 
   const original = readFileSync(pageFile, 'utf8');
-  const { source: wired, action } = wireOgImage(original, webpUrl, id);
+  const { source: wired, action } = wireOgImage(original, webpUrl, id, pageFile);
   if (action === 'no-match') {
     results.errors.push(`${id}: no PageLayout/BaseLayout/ComparisonPage/DEFAULT_OG_IMAGE found in ${card.page_file} — manual wiring needed`);
   } else if (action === 'no-op') {
@@ -122,7 +122,35 @@ if (results.errors.length) {
  * Recognized layouts: PageLayout, BaseLayout, ComparisonPage (compare/* pages
  * use a wrapper component that passes ogImage through to PageLayout).
  */
-function wireOgImage(source, url, _id) {
+function wireOgImage(source, url, _id, pageFile = '') {
+  // Case Z: Markdown frontmatter (content collection post). Inject or replace
+  // an `ogImage:` field inside the YAML fence. The path written to frontmatter
+  // is the site-relative path (e.g., /og/foo.webp) so Astro's content-loading
+  // code can resolve it — the full URL is constructed downstream.
+  //
+  // IMPORTANT: gated to `.md`/`.mdx` files only. Astro .astro files also start
+  // with `---\n...\n---` but that fence contains TypeScript (imports, consts),
+  // NOT YAML — injecting `ogImage: "..."` in there produces a syntax error.
+  const isMarkdown = /\.(md|mdx)$/i.test(pageFile);
+  const fmMatch = isMarkdown ? source.match(/^---\n([\s\S]*?)\n---/) : null;
+  if (fmMatch) {
+    const fm = fmMatch[1];
+    const relPath = new URL(url).pathname; // /og/<id>.webp
+    if (/^ogImage\s*:/m.test(fm)) {
+      const next = fm.replace(/^ogImage\s*:.*$/m, `ogImage: "${relPath}"`);
+      return {
+        source: source.replace(fmMatch[0], `---\n${next}\n---`),
+        action: next === fm ? 'no-op' : 'replaced',
+      };
+    }
+    // Insert before closing fence
+    const next = `${fm}\nogImage: "${relPath}"`;
+    return {
+      source: source.replace(fmMatch[0], `---\n${next}\n---`),
+      action: 'inserted',
+    };
+  }
+
   // Case A: DEFAULT_OG_IMAGE constant. Replace its value.
   const constantPattern = /const\s+DEFAULT_OG_IMAGE\s*=\s*[`'"][^`'"\n]*[`'"]\s*;?/;
   if (constantPattern.test(source)) {
