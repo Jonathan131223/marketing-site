@@ -3,6 +3,10 @@ import { Button } from "@/components/ui/button";
 import { appUrl } from "@/config/appUrl";
 import { Menu, X, Search } from "lucide-react";
 import { SearchOverlay } from "@/components/library/SearchOverlay";
+import { track } from "@/lib/analytics";
+import { appendUtmsToUrl } from "@/lib/posthog";
+
+const CALENDLY_URL = "https://calendly.com/jonathan-digistorms/30-min-call";
 
 interface NavLinkProps {
   href: string;
@@ -65,8 +69,17 @@ export const Navbar: React.FC<NavbarProps> = ({ pathname: initialPathname }) => 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [currentPathname]);
 
-  const loginUrl = appUrl("/portal");
-  const signUpUrl = appUrl("/portal");
+  const baseLoginUrl = appUrl("/portal");
+  const baseSignUpUrl = appUrl("/portal");
+  const [loginUrl, setLoginUrl] = useState(baseLoginUrl);
+  const [signUpUrl, setSignUpUrl] = useState(baseSignUpUrl);
+  const [calendlyUrl, setCalendlyUrl] = useState(CALENDLY_URL);
+
+  useEffect(() => {
+    setLoginUrl(appendUtmsToUrl(baseLoginUrl));
+    setSignUpUrl(appendUtmsToUrl(baseSignUpUrl));
+    setCalendlyUrl(appendUtmsToUrl(CALENDLY_URL));
+  }, [baseLoginUrl, baseSignUpUrl]);
 
   return (
     <>
@@ -115,9 +128,10 @@ export const Navbar: React.FC<NavbarProps> = ({ pathname: initialPathname }) => 
               asChild
             >
               <a
-                href="https://calendly.com/jonathan-digistorms/30-min-call"
+                href={calendlyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => track.ctaClicked({ cta_label: "Talk to founder", cta_destination: calendlyUrl, page_section: "nav" })}
               >
                 Talk to founder
               </a>
@@ -127,13 +141,23 @@ export const Navbar: React.FC<NavbarProps> = ({ pathname: initialPathname }) => 
               className="text-sm text-slate-700 hover:text-slate-900 border-slate-300 bg-white"
               asChild
             >
-              <a href={loginUrl}>Login</a>
+              <a
+                href={loginUrl}
+                onClick={() => track.ctaClicked({ cta_label: "Login", cta_destination: loginUrl, page_section: "nav" })}
+              >
+                Login
+              </a>
             </Button>
             <Button
               className="text-sm bg-primary hover:bg-primary/90 text-white px-6"
               asChild
             >
-              <a href={signUpUrl}>Sign up free</a>
+              <a
+                href={signUpUrl}
+                onClick={() => track.ctaClicked({ cta_label: "Sign up free", cta_destination: signUpUrl, page_section: "nav" })}
+              >
+                Sign up free
+              </a>
             </Button>
           </div>
 
@@ -152,7 +176,12 @@ export const Navbar: React.FC<NavbarProps> = ({ pathname: initialPathname }) => 
               className="text-sm bg-primary hover:bg-primary/90 text-white px-4 py-2 h-9"
               asChild
             >
-              <a href={signUpUrl}>Sign up free</a>
+              <a
+                href={signUpUrl}
+                onClick={() => track.ctaClicked({ cta_label: "Sign up free (mobile)", cta_destination: signUpUrl, page_section: "nav" })}
+              >
+                Sign up free
+              </a>
             </Button>
             <button
               onClick={() => setMobileOpen((o) => !o)}
@@ -191,18 +220,24 @@ export const Navbar: React.FC<NavbarProps> = ({ pathname: initialPathname }) => 
               Pricing
             </NavLinkItem>
             <a
-              href="https://calendly.com/jonathan-digistorms/30-min-call"
+              href={calendlyUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="block px-3 py-2.5 text-sm font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors"
-              onClick={() => setMobileOpen(false)}
+              onClick={() => {
+                track.ctaClicked({ cta_label: "Talk to founder (mobile)", cta_destination: calendlyUrl, page_section: "nav" });
+                setMobileOpen(false);
+              }}
             >
               Talk to founder
             </a>
             <a
               href={loginUrl}
               className="block px-3 py-2.5 text-sm font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors"
-              onClick={() => setMobileOpen(false)}
+              onClick={() => {
+                track.ctaClicked({ cta_label: "Login (mobile)", cta_destination: loginUrl, page_section: "nav" });
+                setMobileOpen(false);
+              }}
             >
               Login
             </a>

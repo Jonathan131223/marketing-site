@@ -56,6 +56,7 @@ function urlEntry(loc, lastmod, changefreq, priority) {
 // ── sitemap-static.xml ────────────────────────────────────────────────────────
 const staticEntries = [
   urlEntry(`${BASE_URL}/`,                   "2026-03-23", "monthly",  "1.0"),
+  urlEntry(`${BASE_URL}/pricing`,            TODAY,         "monthly",  "0.9"),
   urlEntry(`${BASE_URL}/blog`,               "2026-03-23", "weekly",   "0.9"),
   urlEntry(`${BASE_URL}/manifesto`,          "2026-01-01", "yearly",   "0.5"),
   urlEntry(`${BASE_URL}/about`,              "2026-04-07", "monthly",  "0.6"),

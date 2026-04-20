@@ -4,9 +4,9 @@ import HomepageIsland from '@/components/react/HomepageIsland';
 import Footer from '@/components/astro/Footer.astro';
 
 const SITE_URL = 'https://www.digistorms.ai';
-const DEFAULT_OG_IMAGE = `${SITE_URL}/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png`;
+const DEFAULT_OG_IMAGE = `https://www.digistorms.ai/og/homepage.webp`;
 
-const PAGE_TITLE = 'DigiStorms - AI Onboarding Agent for SaaS | Turn Free Users into Paying Customers';
+const PAGE_TITLE = 'AI Onboarding Agent for SaaS — DigiStorms';
 const PAGE_DESC = 'DigiStorms is your AI onboarding agent. It tracks user behavior and sends the right emails at the right time. Turn free users into paying customers, on autopilot.';
 
 const webSiteJsonLd = {
@@ -62,9 +62,12 @@ const softwareJsonLd = {
   operatingSystem: "Web",
   description: "AI onboarding agent for SaaS. Analyzes your product and creates behavior-based onboarding email sequences automatically.",
   offers: {
-    "@type": "Offer",
-    price: "0",
+    "@type": "AggregateOffer",
     priceCurrency: "USD",
+    lowPrice: "0",
+    highPrice: "149",
+    offerCount: "5",
+    url: `${SITE_URL}/pricing`,
   },
 };
 
