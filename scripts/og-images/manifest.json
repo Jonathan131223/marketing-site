@@ -36,6 +36,26 @@
       "prompt": "A 1200x630 horizontal Open Graph social-share card. Solid warm cream background (#F8F6F2) with the faintest paper texture, completely flat and uncluttered. Centered, the headline reads exactly: 'AI onboarding agent for SaaS', set in a large editorial serif font (Instrument Serif or Playfair Display style) approximately 96 pixels tall, color slate-900 navy (#0F172A), letter-spacing slightly tight, line-height 1.1. The single word 'onboarding' appears in italic and in primary blue (#2563EB) — the rest of the headline stays upright in navy. Below the headline, a single line of muted body text in clean sans-serif (Instrument Sans or Inter) reading: 'DigiStorms · Turn free users into paying customers, on autopilot' — color slate-500 grey (#475569), about 24 pixels tall. In the lower-left corner, a small wordmark 'DigiStorms' in clean modern sans-serif, color slate-900 navy. The composition is generous and editorial with significant negative space. Sharp, crisp, magazine-quality typography. Render every text character exactly as written, no decorative additions, no icons, no shapes, no gradients."
     },
     {
+      "id": "blog",
+      "output": "public/og/blog.webp",
+      "page_file": "src/pages/blog/index.astro",
+      "background": "warm cream #F8F6F2",
+      "headline": "Lifecycle email playbooks for SaaS",
+      "italic_emphasis": "playbooks",
+      "subline": "DigiStorms Blog · Real examples, research, and activation ideas",
+      "prompt": "Editorial OG card. Cream background. Instrument Serif headline 'Lifecycle email playbooks for SaaS' with 'playbooks' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
+    },
+    {
+      "id": "blog-saas-email-benchmarks",
+      "output": "public/og/blog-saas-email-benchmarks.webp",
+      "page_file": "src/content/blog/saas-email-benchmarks.md",
+      "background": "warm cream #F8F6F2",
+      "headline": "1,051 SaaS lifecycle emails analyzed",
+      "italic_emphasis": "1,051",
+      "subline": "DigiStorms Research · Types, subject lines, and what top brands do differently",
+      "prompt": "Editorial OG card. Cream background. Instrument Serif headline '1,051 SaaS lifecycle emails analyzed' with '1,051' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
+    },
+    {
       "id": "pricing",
       "output": "public/og/pricing.webp",
       "page_file": "src/pages/pricing.astro",
