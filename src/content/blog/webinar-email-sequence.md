@@ -1,7 +1,7 @@
 ---
-title: "Webinar email sequence: best practices with 25 examples"
+title: "The 7-email webinar sequence (25 SaaS examples, 2026)"
 slug: "webinar-email-sequence"
-description: "Learn how to craft a high-converting webinar email sequence with proven strategies, timing tips, and real-life examples to boost signups and engagement."
+description: "The 7-email webinar flow from invite to follow-up — with 25 real examples from Customer.io, Slack, HubSpot, and more. Timing, subject lines, and what to send when."
 shortDescription: "Want more webinar signups and engagement? Here's how your emails can deliver big."
 date: "2026-03-23"
 readTime: "11 min read"
