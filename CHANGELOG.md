@@ -2,6 +2,17 @@
 
 All notable changes to DigiStorms marketing site will be documented in this file.
 
+## [0.1.5.0] - 2026-04-20
+
+### Added
+- "Live demo" link as the first item in the footer's Product column, pointing at `https://app.digistorms.ai/demo`. Visitors can now see the actual DigiStorms CRM pipeline running on a fictional SaaS ("Tideline") without signing up, which turns the footer into a low-friction top-of-funnel surface for anyone dropping into the site from X, Reddit, or SEO. Added to both the Astro `Footer.astro` (the live footer) and the legacy React `Footer.tsx` for parity
+- Two new blog posts on subject-line strategy (SaaS subject lines + welcome-email subject lines) to pick up the long-tail queries that `/blog/saas-welcome-emails` and `/blog/saas-newsletter-emails` were ranking mid-page for. Each new post is scoped to the specific "subject line" search intent and links up into the broader examples posts
+
+### Changed
+- Rewrote titles and meta descriptions on 8 blog posts. GSC analysis over the last 90 days showed all 10 posts shared the same "[N] [topic]: best practices with [N] examples" title shape, ranked at pos 5-15 on 5k+ impression queries, and earned 0.1-0.5% CTR — 10-15x below benchmark for those positions, about 150 clicks/month left on the table from titles alone. New titles lead with a number or benefit, avoid the content-farm "best practices" pattern, include year or specificity where natural, and stay under 60 chars for SERP truncation. Rewritten posts: dunning-emails, milestone-emails, product-launch, saas-newsletter, saas-welcome, upgrade-emails, webinar-sequence, and one more
+- Killed cannibalization between `/blog/webinar-emails` (pos 15.0, 0.09% CTR) and `/blog/webinar-email-sequence` (pos 6.1). Google was splitting authority between two overlapping posts — now the sequence post is the canonical answer for the query family
+- Footer Product column now orders `Live demo → Pricing → Manifesto` instead of `Manifesto → Pricing`, putting the highest-intent "try it" link at the top and the brand philosophy last
+
 ## [0.1.4.0] - 2026-04-17
 
 ### Added
