@@ -1,0 +1,36 @@
+{
+  "_notes": "Targets for the weekly GSC report. Position is lower-is-better; all others are higher-is-better. Status thresholds: on-track ≥ 90% of target, behind 50-90%, way-behind < 50% (inverted for position). Update quarterly based on actual trajectory.",
+  "_baseline_date": "2026-04-20",
+  "_baseline": {
+    "clicks_per_month": 35,
+    "impressions_per_month": 7330,
+    "blog_ctr": 0.0028,
+    "position": 7.8
+  },
+  "milestones": {
+    "week4": {
+      "label": "4 weeks post-ship",
+      "date": "2026-05-18",
+      "clicks_per_month": 120,
+      "impressions_per_month": 30000,
+      "blog_ctr": 0.006,
+      "position": 7.0
+    },
+    "week8": {
+      "label": "8 weeks post-ship",
+      "date": "2026-06-15",
+      "clicks_per_month": 300,
+      "impressions_per_month": 50000,
+      "blog_ctr": 0.01,
+      "position": 6.5
+    },
+    "week12": {
+      "label": "12 weeks post-ship",
+      "date": "2026-07-13",
+      "clicks_per_month": 600,
+      "impressions_per_month": 80000,
+      "blog_ctr": 0.015,
+      "position": 5.5
+    }
+  }
+}
