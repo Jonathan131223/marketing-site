@@ -9,16 +9,14 @@ name: GSC weekly report
 #   GSC_REFRESH_TOKEN    refresh_token from ~/.gsc-token.json
 #   RESEND_API_KEY       same key the contact form uses (already in Vercel)
 #
-# The workflow commits the updated `scripts/gsc/last-run.json` snapshot back
-# to main so the following week's diff has a clean comparison point.
+# The rolling `last-run.json` snapshot is uploaded as a workflow artifact
+# (90-day retention by default). If we ever need week-over-week diffs
+# beyond what GSC itself answers, swap the artifact-download step in.
 
 on:
   schedule:
     - cron: "0 9 * * 1"  # Every Monday 09:00 UTC
   workflow_dispatch: {}
-
-permissions:
-  contents: write       # to commit the updated last-run.json snapshot
 
 jobs:
   report:
@@ -44,14 +42,10 @@ jobs:
           REPORT_TO:         jonathan@digistorms.ai
         run: node scripts/gsc/weekly-report.mjs
 
-      - name: Commit rolling snapshot for next week's diff
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if [ -n "$(git status --porcelain scripts/gsc/last-run.json)" ]; then
-            git add scripts/gsc/last-run.json
-            git commit -m "chore(gsc): weekly snapshot $(date -u +%Y-%m-%d)"
-            git push
-          else
-            echo "No snapshot changes to commit."
-          fi
+      - name: Upload snapshot artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gsc-snapshot-${{ github.run_id }}
+          path: scripts/gsc/last-run.json
+          retention-days: 90
