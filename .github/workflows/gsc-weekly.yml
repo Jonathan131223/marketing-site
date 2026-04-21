@@ -1,0 +1,51 @@
+name: GSC weekly report
+
+# Runs every Monday at 09:00 UTC (≈ 11:00 Paris). Also manually triggerable
+# via the "Actions" tab → "Run workflow" for on-demand reports.
+#
+# Required repository secrets (Settings → Secrets and variables → Actions):
+#   GSC_CLIENT_ID        OAuth client ID from ~/.gsc-client-secret.json
+#   GSC_CLIENT_SECRET    OAuth client secret from ~/.gsc-client-secret.json
+#   GSC_REFRESH_TOKEN    refresh_token from ~/.gsc-token.json
+#   RESEND_API_KEY       same key the contact form uses (already in Vercel)
+#
+# The rolling `last-run.json` snapshot is uploaded as a workflow artifact
+# (90-day retention by default). If we ever need week-over-week diffs
+# beyond what GSC itself answers, swap the artifact-download step in.
+
+on:
+  schedule:
+    - cron: "0 9 * * 1"  # Every Monday 09:00 UTC
+  workflow_dispatch: {}
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - run: npm ci --no-audit --no-fund
+
+      - name: Generate + send weekly report
+        env:
+          GSC_CLIENT_ID:     ${{ secrets.GSC_CLIENT_ID }}
+          GSC_CLIENT_SECRET: ${{ secrets.GSC_CLIENT_SECRET }}
+          GSC_REFRESH_TOKEN: ${{ secrets.GSC_REFRESH_TOKEN }}
+          RESEND_API_KEY:    ${{ secrets.RESEND_API_KEY }}
+          REPORT_TO:         jonathan@digistorms.ai
+        run: node scripts/gsc/weekly-report.mjs
+
+      - name: Upload snapshot artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gsc-snapshot-${{ github.run_id }}
+          path: scripts/gsc/last-run.json
+          retention-days: 90
