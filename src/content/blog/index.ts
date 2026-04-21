@@ -59,6 +59,15 @@ export const blogPosts: BlogPost[] = [
     libraryTags: ["newsletter"],
   },
   {
+    slug: "saas-email-templates",
+    title: "14 SaaS lifecycle email templates you can steal (2026)",
+    description: "14 ready-to-use SaaS lifecycle email templates covering the full customer journey: welcome, setup, education, milestone, trial-ending, upgrade, and re-engagement. Real examples from Buffer, Monday, Grammarly, Notion, Miro, SemRush, and more.",
+    shortDescription: "14 lifecycle email templates from top SaaS brands, organized by stage. Copy, adapt, ship.",
+    date: "2026-04-21",
+    readTime: "10 min read",
+    libraryTags: ["welcome-free-users", "setup-prompt", "feature-usage-nudge", "milestone-reached", "trial-expiration-warning", "upgrade-cta"],
+  },
+  {
     slug: "saas-onboarding-email-sequence",
     title: "The SaaS onboarding email sequence (7 emails, real examples)",
     description: "The complete 7-email SaaS onboarding sequence — from signup to upgrade — with real examples from Loom, Calendly, and Pipedrive. Timing, copy, and when to switch to behavior-based triggers.",
