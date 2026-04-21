@@ -1,0 +1,417 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Navbar } from '@/components/Navbar';
+import Footer from '@/components/astro/Footer.astro';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Account Readiness — DigiStorms",
+  "url": "https://www.digistorms.ai/account-readiness",
+  "description":
+    "See which trial accounts are ready to upgrade, which are warming up, and which went cold — scored automatically from milestone data you already have.",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "DigiStorms",
+    "url": "https://www.digistorms.ai",
+  },
+  "mainEntity": {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is readiness scored?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text":
+            "Three inputs: milestone progress (0, 1, or 2 completed), how recently the user was active, and how close their trial is to ending. A user who completed both milestones and was active in the last 7 days is Ready. A user with one milestone is Warming. A user with no milestones is Cold. Trial ending in 3 days promotes anyone with at least one milestone to Ready.",
+        },
+      },
+      {
+        "@type": "Question",
+        "name": "Does it need new instrumentation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text":
+            "No. It runs entirely on the milestone events DigiStorms is already ingesting. If your behavior-triggered emails are working, readiness is working.",
+        },
+      },
+      {
+        "@type": "Question",
+        "name": "Will DigiStorms auto-send upgrade emails to Ready accounts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text":
+            "Not in v1. The weekly digest tells you who is Ready and why — you stay in the loop on who gets the upgrade push. Auto-fired upgrade emails are on the roadmap for v2.",
+        },
+      },
+      {
+        "@type": "Question",
+        "name": "Can I turn off the weekly digest?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text":
+            "Yes. Each org can set the cadence to weekly (default), daily, or off in settings.",
+        },
+      },
+    ],
+  },
+};
+---
+
+<BaseLayout
+  title="Account Readiness — DigiStorms"
+  description="See which trial accounts are ready to upgrade, which are warming up, and which went cold. Scored automatically from the milestone data DigiStorms already tracks. No new instrumentation."
+  ogImage="https://www.digistorms.ai/og/account-readiness.webp"
+  jsonLd={jsonLd}
+>
+  <div class="min-h-screen bg-background">
+    <Navbar client:load pathname="/account-readiness" />
+
+    <!-- ================= HERO ================= -->
+    <section class="bg-background pt-20 pb-16 md:pt-28 md:pb-20">
+      <div class="max-w-[1280px] mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center">
+          <p
+            class="text-xs font-semibold uppercase tracking-[0.08em] text-primary mb-6"
+          >
+            New · Account Readiness
+          </p>
+          <h1
+            class="font-serif text-[40px] md:text-[56px] leading-[1.1] tracking-[-0.02em] text-foreground"
+          >
+            Know which trial accounts are
+            <span class="italic text-primary">ready to upgrade.</span>
+          </h1>
+          <p class="mt-6 text-lg md:text-xl text-muted-foreground leading-[1.6]">
+            A simple three-color signal on every account in your dashboard,
+            plus a Monday-morning email of who to focus on this week. Scored
+            from the milestone data you already track.
+          </p>
+          <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a
+              href="https://app.digistorms.ai"
+              class="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
+            >
+              See it in your dashboard
+            </a>
+            <a
+              href="#how-it-works"
+              class="inline-flex items-center justify-center rounded-lg border border-border px-6 py-3 text-sm font-semibold text-foreground hover:bg-muted transition-colors"
+            >
+              How it works
+            </a>
+          </div>
+          <p class="mt-4 text-sm text-muted-foreground">
+            Available on every DigiStorms plan, including the free tier.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= THE THREE COLORS ================= -->
+    <section class="bg-[#F8F6F2] py-16 md:py-20">
+      <div class="max-w-[1280px] mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center mb-14">
+          <h2
+            class="font-serif text-[32px] md:text-[40px] leading-[1.15] tracking-[-0.01em] text-foreground"
+          >
+            Three colors. One decision.
+          </h2>
+          <p class="mt-4 text-lg text-muted-foreground">
+            Every trial account gets one of three labels. Each label answers
+            the question you actually care about: who do I reach out to this
+            week?
+          </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
+          <article class="rounded-[14px] border border-border bg-background p-8">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-2xl" aria-hidden="true">🟢</span>
+              <h3 class="text-xl font-semibold text-foreground">Ready</h3>
+            </div>
+            <p class="text-base text-muted-foreground leading-[1.6] mb-4">
+              They completed both milestones and are still active. Or their
+              trial ends in three days and they have at least one milestone.
+              Or a team invite fired.
+            </p>
+            <p class="text-sm text-foreground font-medium">
+              Action: send a personal upgrade nudge this week.
+            </p>
+          </article>
+
+          <article class="rounded-[14px] border border-border bg-background p-8">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-2xl" aria-hidden="true">🟠</span>
+              <h3 class="text-xl font-semibold text-foreground">Warming</h3>
+            </div>
+            <p class="text-base text-muted-foreground leading-[1.6] mb-4">
+              One milestone completed. Or both milestones completed but they
+              went quiet for a week. They were hot. They are rescueable.
+            </p>
+            <p class="text-sm text-foreground font-medium">
+              Action: a light check-in, or wait for the nudge to fire.
+            </p>
+          </article>
+
+          <article class="rounded-[14px] border border-border bg-background p-8">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-2xl" aria-hidden="true">🔴</span>
+              <h3 class="text-xl font-semibold text-foreground">Cold</h3>
+            </div>
+            <p class="text-base text-muted-foreground leading-[1.6] mb-4">
+              Signed up, did nothing. Or completed milestones but disappeared
+              for weeks. The onboarding agent will keep trying. You do not
+              need to spend time here.
+            </p>
+            <p class="text-sm text-foreground font-medium">
+              Action: none. Let the agent work.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOW IT WORKS ================= -->
+    <section id="how-it-works" class="bg-background py-16 md:py-20">
+      <div class="max-w-[1280px] mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center mb-14">
+          <h2
+            class="font-serif text-[32px] md:text-[40px] leading-[1.15] tracking-[-0.01em] text-foreground"
+          >
+            How it works
+          </h2>
+          <p class="mt-4 text-lg text-muted-foreground">
+            Three inputs, one deterministic score. No machine learning. No
+            black box. Every status shows its reasoning in plain English.
+          </p>
+        </div>
+
+        <ol class="max-w-3xl mx-auto space-y-10">
+          <li class="flex gap-6 items-start">
+            <div
+              class="shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary text-sm font-semibold"
+            >
+              1
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-foreground mb-2">
+                You emit milestone events like you already do
+              </h3>
+              <p class="text-base text-muted-foreground leading-[1.6]">
+                Every DigiStorms customer emits three lifecycle events:
+                <code class="text-sm font-mono">user.signed_up</code>,
+                <code class="text-sm font-mono">milestone.1_achieved</code>,
+                <code class="text-sm font-mono">milestone.2_achieved</code>.
+                Account Readiness reads them. Nothing new to wire up.
+              </p>
+            </div>
+          </li>
+
+          <li class="flex gap-6 items-start">
+            <div
+              class="shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary text-sm font-semibold"
+            >
+              2
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-foreground mb-2">
+                DigiStorms scores every account at render time
+              </h3>
+              <p class="text-base text-muted-foreground leading-[1.6]">
+                A pure function combines milestone count, time since the last
+                event, and how close the trial is to ending. Output is one of
+                three statuses plus a one-line reason like
+                <em>&quot;Completed both milestones, last active 3 days ago&quot;</em>.
+                Open an account, see exactly why its status is what it is.
+              </p>
+            </div>
+          </li>
+
+          <li class="flex gap-6 items-start">
+            <div
+              class="shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary text-sm font-semibold"
+            >
+              3
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-foreground mb-2">
+                Monday morning, a digest lands in your inbox
+              </h3>
+              <p class="text-base text-muted-foreground leading-[1.6]">
+                Every week you get an email listing your Ready accounts with
+                their emails and reasons. Warming and Cold counts on the side.
+                If zero accounts are ready that week, we do not send. Silence
+                beats noise. Switch to daily or off in settings.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= WHO IT'S FOR ================= -->
+    <section class="bg-[#F8F6F2] py-16 md:py-20">
+      <div class="max-w-[1280px] mx-auto px-6">
+        <div class="max-w-3xl mx-auto">
+          <h2
+            class="font-serif text-[32px] md:text-[40px] leading-[1.15] tracking-[-0.01em] text-foreground text-center"
+          >
+            Built for solo founders and small teams
+          </h2>
+          <p class="mt-4 text-lg text-muted-foreground text-center">
+            If you have 50–500 trial signups a month and no full-time
+            lifecycle ops function, this is for you. The feature surfaces
+            the three accounts a week worth your personal time, and hides
+            the 497 that are not.
+          </p>
+
+          <div class="mt-12 grid gap-4 md:grid-cols-2">
+            <div class="rounded-[10px] border border-border bg-background p-6">
+              <h3 class="text-base font-semibold text-foreground mb-2">
+                Replaces your spreadsheet
+              </h3>
+              <p class="text-sm text-muted-foreground leading-[1.6]">
+                You stop dumping users to CSV every Monday to figure out who
+                to email. The list comes to you.
+              </p>
+            </div>
+            <div class="rounded-[10px] border border-border bg-background p-6">
+              <h3 class="text-base font-semibold text-foreground mb-2">
+                Not a black box
+              </h3>
+              <p class="text-sm text-muted-foreground leading-[1.6]">
+                Every status shows its reason. You can argue with the score,
+                override your instinct, or trust it. No ML tuning, no
+                mystery weights.
+              </p>
+            </div>
+            <div class="rounded-[10px] border border-border bg-background p-6">
+              <h3 class="text-base font-semibold text-foreground mb-2">
+                Respects your attention
+              </h3>
+              <p class="text-sm text-muted-foreground leading-[1.6]">
+                Empty weeks do not send an email. You only hear from us when
+                there is something worth doing.
+              </p>
+            </div>
+            <div class="rounded-[10px] border border-border bg-background p-6">
+              <h3 class="text-base font-semibold text-foreground mb-2">
+                Works with the free tier
+              </h3>
+              <p class="text-sm text-muted-foreground leading-[1.6]">
+                No upsell gate. If you are a DigiStorms customer, you get
+                Account Readiness.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="bg-background py-16 md:py-20">
+      <div class="max-w-[1280px] mx-auto px-6">
+        <div class="max-w-3xl mx-auto">
+          <h2
+            class="font-serif text-[32px] md:text-[40px] leading-[1.15] tracking-[-0.01em] text-foreground text-center mb-12"
+          >
+            Questions
+          </h2>
+
+          <div class="space-y-3">
+            <details class="group rounded-[10px] border border-border bg-background p-5">
+              <summary class="cursor-pointer list-none flex justify-between items-center text-base font-semibold text-foreground">
+                <span>How is readiness scored?</span>
+                <span class="text-muted-foreground group-open:rotate-180 transition-transform" aria-hidden="true">▾</span>
+              </summary>
+              <p class="mt-3 text-base text-muted-foreground leading-[1.6]">
+                Three inputs: milestone progress (0, 1, or 2 completed),
+                how recently the user was active, and how close their trial
+                is to ending. A user who completed both milestones and was
+                active in the last 7 days is Ready. A user with one
+                milestone is Warming. A user with no milestones is Cold.
+                Trial ending in 3 days promotes anyone with at least one
+                milestone to Ready.
+              </p>
+            </details>
+
+            <details class="group rounded-[10px] border border-border bg-background p-5">
+              <summary class="cursor-pointer list-none flex justify-between items-center text-base font-semibold text-foreground">
+                <span>Does it need new instrumentation?</span>
+                <span class="text-muted-foreground group-open:rotate-180 transition-transform" aria-hidden="true">▾</span>
+              </summary>
+              <p class="mt-3 text-base text-muted-foreground leading-[1.6]">
+                No. It runs entirely on the milestone events DigiStorms is
+                already ingesting. If your behavior-triggered emails are
+                working, readiness is working.
+              </p>
+            </details>
+
+            <details class="group rounded-[10px] border border-border bg-background p-5">
+              <summary class="cursor-pointer list-none flex justify-between items-center text-base font-semibold text-foreground">
+                <span>Will DigiStorms auto-send upgrade emails to Ready accounts?</span>
+                <span class="text-muted-foreground group-open:rotate-180 transition-transform" aria-hidden="true">▾</span>
+              </summary>
+              <p class="mt-3 text-base text-muted-foreground leading-[1.6]">
+                Not in v1. The weekly digest tells you who is Ready and why
+                so you stay in the loop on who gets the upgrade push.
+                Auto-fired upgrade emails are on the roadmap for v2.
+              </p>
+            </details>
+
+            <details class="group rounded-[10px] border border-border bg-background p-5">
+              <summary class="cursor-pointer list-none flex justify-between items-center text-base font-semibold text-foreground">
+                <span>Can I turn off the weekly digest?</span>
+                <span class="text-muted-foreground group-open:rotate-180 transition-transform" aria-hidden="true">▾</span>
+              </summary>
+              <p class="mt-3 text-base text-muted-foreground leading-[1.6]">
+                Yes. Each org can set the cadence to weekly (default),
+                daily, or off in settings.
+              </p>
+            </details>
+
+            <details class="group rounded-[10px] border border-border bg-background p-5">
+              <summary class="cursor-pointer list-none flex justify-between items-center text-base font-semibold text-foreground">
+                <span>What happens to upgraded and lost users?</span>
+                <span class="text-muted-foreground group-open:rotate-180 transition-transform" aria-hidden="true">▾</span>
+              </summary>
+              <p class="mt-3 text-base text-muted-foreground leading-[1.6]">
+                They are excluded from readiness scoring. Upgraded users
+                already converted. Lost users already churned. You see
+                them in the Stage column, not the Readiness column.
+              </p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FINAL CTA ================= -->
+    <section class="bg-[#F8F6F2] py-16 md:py-20">
+      <div class="max-w-[1280px] mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center">
+          <h2
+            class="font-serif text-[32px] md:text-[40px] leading-[1.15] tracking-[-0.01em] text-foreground"
+          >
+            Stop guessing who to reach out to.
+          </h2>
+          <p class="mt-4 text-lg text-muted-foreground">
+            Open your DigiStorms dashboard. The Ready column is waiting.
+          </p>
+          <div class="mt-8">
+            <a
+              href="https://app.digistorms.ai"
+              class="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
+            >
+              Open your dashboard
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </div>
+</BaseLayout>
