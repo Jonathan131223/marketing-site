@@ -1,0 +1,1060 @@
+{
+  "capturedAt": "2026-04-21T08:08:22.424Z",
+  "window": {
+    "startDate": "2026-04-13",
+    "endDate": "2026-04-19"
+  },
+  "summary": {
+    "clicks": 30,
+    "impressions": 6086,
+    "ctr": 0.004929346040092014,
+    "position": 6.895990798554059
+  },
+  "keywords": [
+    {
+      "query": "digistorms",
+      "clicks": 14,
+      "impressions": 31,
+      "ctr": 0.45161290322580644,
+      "position": 1
+    },
+    {
+      "query": "webinar email sequence",
+      "clicks": 2,
+      "impressions": 18,
+      "ctr": 0.1111111111111111,
+      "position": 25.22222222222222
+    },
+    {
+      "query": "post webinar email examples",
+      "clicks": 1,
+      "impressions": 12,
+      "ctr": 0.08333333333333333,
+      "position": 9.583333333333334
+    },
+    {
+      "query": "\"acme analytics\" acmeanalytics.com",
+      "clicks": 0,
+      "impressions": 18,
+      "ctr": 0,
+      "position": 5.055555555555555
+    },
+    {
+      "query": "\"acme analytics\" acmeanalytics.io",
+      "clicks": 0,
+      "impressions": 48,
+      "ctr": 0,
+      "position": 4.4375
+    },
+    {
+      "query": "\"acme analytics\" analytics saas",
+      "clicks": 0,
+      "impressions": 29,
+      "ctr": 0,
+      "position": 5.275862068965517
+    },
+    {
+      "query": "\"acmeanalytics.com\"",
+      "clicks": 0,
+      "impressions": 28,
+      "ctr": 0,
+      "position": 1.0714285714285714
+    },
+    {
+      "query": "\"acmeanalytics.io\"",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 9.333333333333334
+    },
+    {
+      "query": "- product launch email",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 40.5
+    },
+    {
+      "query": "acme analytics acmeanalytics.com",
+      "clicks": 0,
+      "impressions": 23,
+      "ctr": 0,
+      "position": 6.608695652173913
+    },
+    {
+      "query": "acme analytics acmeanalytics.com company",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 4.285714285714286
+    },
+    {
+      "query": "acme analytics acmeanalytics.io",
+      "clicks": 0,
+      "impressions": 56,
+      "ctr": 0,
+      "position": 4.928571428571429
+    },
+    {
+      "query": "acme analytics company acmeanalytics.com",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 5
+    },
+    {
+      "query": "acmeanalytics.com",
+      "clicks": 0,
+      "impressions": 428,
+      "ctr": 0,
+      "position": 4.322429906542056
+    },
+    {
+      "query": "acmeanalytics.com acme analytics",
+      "clicks": 0,
+      "impressions": 73,
+      "ctr": 0,
+      "position": 8.273972602739725
+    },
+    {
+      "query": "acmeanalytics.com acme analytics website",
+      "clicks": 0,
+      "impressions": 14,
+      "ctr": 0,
+      "position": 4.928571428571429
+    },
+    {
+      "query": "acmeanalytics.io",
+      "clicks": 0,
+      "impressions": 1070,
+      "ctr": 0,
+      "position": 3.3822429906542055
+    },
+    {
+      "query": "acmeanalytics.io acme analytics",
+      "clicks": 0,
+      "impressions": 70,
+      "ctr": 0,
+      "position": 7.185714285714286
+    },
+    {
+      "query": "apollo email checker semrush",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 30
+    },
+    {
+      "query": "as a webinar-focused marketer, which email and funnel tools handle registration, reminders, and post-webinar nurture sequences seamlessly?",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 4
+    },
+    {
+      "query": "automate collections and dunning without spamming clients",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 88
+    },
+    {
+      "query": "automated invoicing and dunning emails for saas to reduce failed payments",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 14.5
+    },
+    {
+      "query": "best practices for product launch email campaigns",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "query": "conference attendee follow up",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 85.4
+    },
+    {
+      "query": "content strategies that attract saas founders to newsletters",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 5
+    },
+    {
+      "query": "content upgrades",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 76
+    },
+    {
+      "query": "customer milestones",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 24
+    },
+    {
+      "query": "digi storm",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 12
+    },
+    {
+      "query": "digistorms.ai",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 16
+    },
+    {
+      "query": "digitstorm",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2
+    },
+    {
+      "query": "dunning best practices",
+      "clicks": 0,
+      "impressions": 22,
+      "ctr": 0,
+      "position": 17.59090909090909
+    },
+    {
+      "query": "dunning email",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 7
+    },
+    {
+      "query": "dunning email automation",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 18.25
+    },
+    {
+      "query": "dunning email examples",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 27
+    },
+    {
+      "query": "dunning email meaning",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 6.285714285714286
+    },
+    {
+      "query": "dunning email solutions",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 15
+    },
+    {
+      "query": "dunning email subject lines",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 16
+    },
+    {
+      "query": "dunning emails",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 11.8
+    },
+    {
+      "query": "dunning letter",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 62
+    },
+    {
+      "query": "dunning letter example",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 50
+    },
+    {
+      "query": "dunning letter examples",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 41
+    },
+    {
+      "query": "dunning letters",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 62
+    },
+    {
+      "query": "dunning message",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 15.833333333333334
+    },
+    {
+      "query": "dunning notice",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 43
+    },
+    {
+      "query": "dunning notices",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 49.5
+    },
+    {
+      "query": "dunning process best practices",
+      "clicks": 0,
+      "impressions": 9,
+      "ctr": 0,
+      "position": 33.888888888888886
+    },
+    {
+      "query": "email creator free",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 68
+    },
+    {
+      "query": "email generator",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 52.4
+    },
+    {
+      "query": "email maker",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 92
+    },
+    {
+      "query": "email marketing existing customer upgrade examples",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "query": "email to customer about new product",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 25
+    },
+    {
+      "query": "email upgrade",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 49
+    },
+    {
+      "query": "email webinar",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 42
+    },
+    {
+      "query": "emails for webinar no shows",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 12
+    },
+    {
+      "query": "emails informing webinar attendees of delayed webinar",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 6
+    },
+    {
+      "query": "emails to send to webinar absentees",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 22
+    },
+    {
+      "query": "example of dunning letter",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 52.333333333333336
+    },
+    {
+      "query": "follow up email after webinar",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 34
+    },
+    {
+      "query": "follow up webinar email",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 18.8
+    },
+    {
+      "query": "follow up webinar emails",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 50
+    },
+    {
+      "query": "free email generator",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 49.6
+    },
+    {
+      "query": "genarator email",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 80
+    },
+    {
+      "query": "how can i send webinar attendees into a nurture sequence automatically?",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 5
+    },
+    {
+      "query": "how to automatically send webinar attendees to nurture email sequence",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 2
+    },
+    {
+      "query": "how to automatically send webinar attendees to nurture sequence email marketing",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 12.6
+    },
+    {
+      "query": "how to build a product launch email sequence best practices",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 4.5
+    },
+    {
+      "query": "how to build a series of post-event thank you emails for webinars best practices",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 3
+    },
+    {
+      "query": "how to create a newsletter that turns saas subscribers into users?",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 1.7142857142857144
+    },
+    {
+      "query": "how to set up automated dunning emails",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "query": "hunter io login",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 7.333333333333333
+    },
+    {
+      "query": "hunter.io login",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11
+    },
+    {
+      "query": "i’m building a saas, is customer.io the top option for lifecycle emails or should i pick something else",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11
+    },
+    {
+      "query": "launch mail",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "query": "launch messages",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "query": "library.digistorms.ai",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 21.8
+    },
+    {
+      "query": "lifecycle email",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 85
+    },
+    {
+      "query": "mail upgrade",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 16
+    },
+    {
+      "query": "milestone email",
+      "clicks": 0,
+      "impressions": 18,
+      "ctr": 0,
+      "position": 7.277777777777778
+    },
+    {
+      "query": "milestone email template",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "query": "milestone emails",
+      "clicks": 0,
+      "impressions": 15,
+      "ctr": 0,
+      "position": 7.533333333333333
+    },
+    {
+      "query": "milestone messaging",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 18
+    },
+    {
+      "query": "milestones email",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "query": "missed webinar follow up email",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 22
+    },
+    {
+      "query": "new product emails",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 2
+    },
+    {
+      "query": "newsletter launch strategy first subscribers b2b saas 2025",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 9
+    },
+    {
+      "query": "newsletter saas",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 26.666666666666668
+    },
+    {
+      "query": "payment failed email subject line",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 11.4
+    },
+    {
+      "query": "post webinar",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 52
+    },
+    {
+      "query": "post webinar email",
+      "clicks": 0,
+      "impressions": 9,
+      "ctr": 0,
+      "position": 36.888888888888886
+    },
+    {
+      "query": "post webinar follow up email examples",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 28
+    },
+    {
+      "query": "post-event webinar emails",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 41.5
+    },
+    {
+      "query": "post-webinar email drip campaign consultant",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 45
+    },
+    {
+      "query": "product launch email",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 41
+    },
+    {
+      "query": "product launch email examples",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 4
+    },
+    {
+      "query": "product launch email marketing checklist 2025 2026",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "query": "product launch email subject lines",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 20.25
+    },
+    {
+      "query": "product launch email/ product launch email examples",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 32.5
+    },
+    {
+      "query": "product launch formula email sequence",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 26.5
+    },
+    {
+      "query": "product launch message examples",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 8.666666666666668
+    },
+    {
+      "query": "saas newsletter",
+      "clicks": 0,
+      "impressions": 18,
+      "ctr": 0,
+      "position": 31.72222222222222
+    }
+  ],
+  "pages": [
+    {
+      "page": "https://www.digistorms.ai/",
+      "clicks": 16,
+      "impressions": 2027,
+      "ctr": 0.007893438579181056,
+      "position": 4.023680315737543
+    },
+    {
+      "page": "https://www.digistorms.ai/blog/upgrade-emails",
+      "clicks": 4,
+      "impressions": 232,
+      "ctr": 0.017241379310344827,
+      "position": 8.14655172413793
+    },
+    {
+      "page": "https://www.digistorms.ai/blog/webinar-email-sequence",
+      "clicks": 3,
+      "impressions": 1572,
+      "ctr": 0.0019083969465648854,
+      "position": 6.624681933842239
+    },
+    {
+      "page": "https://www.digistorms.ai/blog/dunning-emails",
+      "clicks": 2,
+      "impressions": 433,
+      "ctr": 0.004618937644341801,
+      "position": 11.080831408775982
+    },
+    {
+      "page": "https://www.digistorms.ai/blog/saas-email-benchmarks",
+      "clicks": 2,
+      "impressions": 264,
+      "ctr": 0.007575757575757576,
+      "position": 4.583333333333334
+    },
+    {
+      "page": "https://www.digistorms.ai/blog/saas-newsletter",
+      "clicks": 2,
+      "impressions": 339,
+      "ctr": 0.0058997050147492625,
+      "position": 8.56047197640118
+    },
+    {
+      "page": "https://app.digistorms.ai/",
+      "clicks": 1,
+      "impressions": 26,
+      "ctr": 0.038461538461538464,
+      "position": 3.0384615384615383
+    },
+    {
+      "page": "https://www.digistorms.ai/blog/webinar-follow-up-email",
+      "clicks": 1,
+      "impressions": 706,
+      "ctr": 0.00141643059490085,
+      "position": 11.28328611898017
+    },
+    {
+      "page": "https://digistorms.ai/blog/webinar-emails",
+      "clicks": 0,
+      "impressions": 15,
+      "ctr": 0,
+      "position": 7.6
+    },
+    {
+      "page": "https://digistorms.ai/library/email/newsletter-from-beehiiv06272025",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 20
+    },
+    {
+      "page": "https://digistorms.ai/library/email/nudge-to-book-demo-from-fiverr-06272024",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 15
+    },
+    {
+      "page": "https://digistorms.ai/library/email/product-update-from-notion-notion-245",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 23
+    },
+    {
+      "page": "https://digistorms.ai/library/email/webinar-invitation-from-pipedrive-07172024",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 23
+    },
+    {
+      "page": "https://digistorms.ai/pricing",
+      "clicks": 0,
+      "impressions": 33,
+      "ctr": 0,
+      "position": 1.3636363636363638
+    },
+    {
+      "page": "https://digistorms.ai/privacy",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 2
+    },
+    {
+      "page": "https://www.digistorms.ai/blog",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 10.461538461538462
+    },
+    {
+      "page": "https://www.digistorms.ai/blog/milestone-emails",
+      "clicks": 0,
+      "impressions": 295,
+      "ctr": 0,
+      "position": 6.28135593220339
+    },
+    {
+      "page": "https://www.digistorms.ai/blog/product-launch-email",
+      "clicks": 0,
+      "impressions": 182,
+      "ctr": 0,
+      "position": 7.527472527472527
+    },
+    {
+      "page": "https://www.digistorms.ai/blog/saas-welcome-email",
+      "clicks": 0,
+      "impressions": 15,
+      "ctr": 0,
+      "position": 5.466666666666667
+    },
+    {
+      "page": "https://www.digistorms.ai/blog/webinar-emails",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 7.2727272727272725
+    },
+    {
+      "page": "https://www.digistorms.ai/contact",
+      "clicks": 0,
+      "impressions": 15,
+      "ctr": 0,
+      "position": 7.533333333333333
+    },
+    {
+      "page": "https://www.digistorms.ai/email-generator",
+      "clicks": 0,
+      "impressions": 22,
+      "ctr": 0,
+      "position": 53.77272727272727
+    },
+    {
+      "page": "https://www.digistorms.ai/library",
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 13.25
+    },
+    {
+      "page": "https://www.digistorms.ai/library/email/feature-usage-nudge-from-clickup-06042025",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 18
+    },
+    {
+      "page": "https://www.digistorms.ai/library/email/feature-usage-nudge-from-surveymonkey05242025",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 5
+    },
+    {
+      "page": "https://www.digistorms.ai/library/email/guide-from-customerio-person-07222024/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 17
+    },
+    {
+      "page": "https://www.digistorms.ai/library/email/join-community-from-figma-12292023",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 22.666666666666668
+    },
+    {
+      "page": "https://www.digistorms.ai/library/email/login-from-new-device-from-hunterio-06232024/",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 8.6
+    },
+    {
+      "page": "https://www.digistorms.ai/library/email/newsletter-from-figma-05302024",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 13
+    },
+    {
+      "page": "https://www.digistorms.ai/library/email/nudge-to-book-demo-from-fiverr-06272024",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 37
+    },
+    {
+      "page": "https://www.digistorms.ai/library/email/setup-prompt-from-lucid-02192024",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 16
+    },
+    {
+      "page": "https://www.digistorms.ai/library/email/trial-expired-upgrade-from-jira-06112025",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "page": "https://www.digistorms.ai/library/email/upgrade-cta-from-zapier-02222024",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 12
+    },
+    {
+      "page": "https://www.digistorms.ai/library/email/video-from-notion-02232024/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 38
+    },
+    {
+      "page": "https://www.digistorms.ai/library/email/webinar-invitation-from-pipedrive-07172024",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "page": "https://www.digistorms.ai/library/email/webinar-invitation-from-pipedrive-08302024",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "page": "https://www.digistorms.ai/library/tag/interview",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "page": "https://www.digistorms.ai/library/tag/join-community",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 12
+    },
+    {
+      "page": "https://www.digistorms.ai/library/tag/join-waitlist",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "page": "https://www.digistorms.ai/library/tag/special-offer",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 4.5
+    },
+    {
+      "page": "https://www.digistorms.ai/library/tag/survey",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "page": "https://www.digistorms.ai/library/tag/video/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 6
+    },
+    {
+      "page": "https://www.digistorms.ai/lifecycle-blueprints",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 19.5
+    },
+    {
+      "page": "https://www.digistorms.ai/lifecycle-score",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 3
+    },
+    {
+      "page": "https://www.digistorms.ai/manifesto",
+      "clicks": 0,
+      "impressions": 20,
+      "ctr": 0,
+      "position": 1.5
+    },
+    {
+      "page": "https://www.digistorms.ai/manifesto/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 7.7
+    },
+    {
+      "page": "https://www.digistorms.ai/roi-calculator",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 5.142857142857143
+    },
+    {
+      "page": "https://www.digistorms.ai/terms",
+      "clicks": 0,
+      "impressions": 9,
+      "ctr": 0,
+      "position": 7.111111111111111
+    },
+    {
+      "page": "https://www.digistorms.ai/use-cases",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 1.5
+    }
+  ]
+}

@@ -16,7 +16,10 @@
     "og:render": "node scripts/og-images/render.mjs",
     "og:wire": "node scripts/og-images/wire-og-images.mjs",
     "og:all": "npm run og:render && npm run og:wire",
-    "gsc": "node scripts/gsc/query.mjs"
+    "gsc": "node scripts/gsc/query.mjs",
+    "gsc:weekly": "node scripts/gsc/weekly-report.mjs --local",
+    "gsc:weekly:dry": "node scripts/gsc/weekly-report.mjs --local --dry-run",
+    "gsc:secrets": "node scripts/gsc/print-secrets.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
