@@ -74,6 +74,7 @@ const staticEntries = [
   urlEntry(`${BASE_URL}/blog/saas-newsletter`,           "2026-03-01", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/webinar-follow-up-email`,          "2026-02-15", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/webinar-follow-up-subject-lines`,  TODAY,        "monthly", "0.9"),
+  urlEntry(`${BASE_URL}/blog/saas-onboarding-email-sequence`,   TODAY,        "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/product-launch-email-subject-lines`, TODAY,      "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/milestone-emails`,                 "2026-01-20", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/upgrade-emails`,            "2026-01-15", "monthly", "0.9"),

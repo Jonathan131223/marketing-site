@@ -59,6 +59,15 @@ export const blogPosts: BlogPost[] = [
     libraryTags: ["newsletter"],
   },
   {
+    slug: "saas-onboarding-email-sequence",
+    title: "The SaaS onboarding email sequence (7 emails, real examples)",
+    description: "The complete 7-email SaaS onboarding sequence — from signup to upgrade — with real examples from Loom, Calendly, and Pipedrive. Timing, copy, and when to switch to behavior-based triggers.",
+    shortDescription: "The 7-email SaaS onboarding sequence broken down, with real examples from Loom, Calendly, and Pipedrive.",
+    date: "2026-04-21",
+    readTime: "11 min read",
+    libraryTags: ["welcome-free-users", "setup-prompt", "milestone-reached", "trial-expiration-warning", "upgrade-cta"],
+  },
+  {
     slug: "webinar-email-sequence",
     title: "The 7-email webinar sequence (25 SaaS examples, 2026)",
     description: "The 7-email webinar flow from invite to follow-up — with 25 real examples from Customer.io, Slack, HubSpot, and more. Timing, subject lines, and what to send when.",
