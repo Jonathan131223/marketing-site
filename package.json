@@ -20,6 +20,7 @@
     "gsc:weekly": "node scripts/gsc/weekly-report.mjs --local",
     "gsc:weekly:dry": "node scripts/gsc/weekly-report.mjs --local --dry-run",
     "gsc:secrets": "node scripts/gsc/print-secrets.mjs",
+    "lib:fetch": "node scripts/library-import/fetch-gmail-html.mjs",
     "lib:render": "node scripts/library-import/render-screenshots.mjs",
     "lib:write": "node scripts/library-import/write-data.mjs"
   },

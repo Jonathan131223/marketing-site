@@ -30,24 +30,28 @@ If either required arg is missing, ask via `AskUserQuestion`. Do not invent defa
 
 ## Phase A — Fetch from Gmail
 
-Use the Gmail MCP tools (`mcp__cdd89778-*__search_threads` + `get_thread`) — they're already configured in this environment.
+Run the dedicated fetch script — it authenticates to the Gmail API (not the MCP) and writes the authentic `text/html` body for each email to the cache:
 
-1. Query: `from:{sender}` (if `sender` is a bare domain, use `from:@{sender}`). Paginate `search_threads` until exhausted.
-2. For each thread, call `get_thread` to fetch messages with full HTML bodies.
-3. Drop messages not actually from the target sender (threads may contain replies/forwards).
-4. Sort messages ascending by internal `date`.
-5. If `limit=N` was passed, keep the first N.
-6. For each message, extract `subject`, `from` (display name + address), internal `date`, and the `text/html` part. Save to:
-   - `.cache/library-import/{brand-slug}/{YYYYMMDD-HHMMSS}-{short-msg-id}.html` — raw HTML body
-   - `.cache/library-import/{brand-slug}/manifest.json` — array of `{slug, subject, sender, date, bodyFile, plainTextPreview}` where `slug` is placeholder-computed (brand-slug + date + a temporary tag suffix — it will be finalized after Phase C, but needs to exist for Phase B). Preview = first ~1,500 chars of HTML-stripped text.
+```
+node scripts/library-import/fetch-gmail-html.mjs --brand={brand-slug} --sender={addr-or-domain} [--limit=N]
+```
+
+Do NOT use the Gmail MCP tools for this — they only expose `plaintextBody`, which forces a reconstruction step that produces inauthentic screenshots. The direct API returns the structured `payload.parts` tree and we pull the real `text/html` part out of it.
+
+**One-time OAuth bootstrap (first run only):** the script looks for `~/.gmail-client-secret.json`. If missing, it prints the setup instructions (create a Desktop-app OAuth client in Google Cloud Console, enable the Gmail API, download the JSON to that path). Subsequent runs reuse the cached refresh token at `~/.gmail-token.json`. This mirrors the GSC tooling in `scripts/gsc/query.mjs`.
+
+What the script does:
+1. `from:{sender}` query (bare domain → `from:@{sender}`), paginates threads exhaustively.
+2. `threads.get(format='FULL')` for each; filters messages to those actually from `{sender}` (skips replies/forwards).
+3. Sorts ascending by internal date, applies `--limit` if passed.
+4. For each selected message: walks `payload.parts` recursively, decodes the base64url `text/html` body, writes `.cache/library-import/{brand-slug}/{msgId}.html`. Falls back to `text/plain` wrapped in a `<pre>` only if `text/html` is absent (rare — the script warns).
+5. Emits `.cache/library-import/{brand-slug}/manifest.json` — array of `{slug, subject, sender, date, bodyFile, plainTextPreview}`. `slug` is a **placeholder** (`{brand-slug}-{YYYYMMDD}-{short-msg-id}`); it gets overwritten with the final `{primary-tag}-from-{brand}-{MMDDYYYY}` in Phase C. `bodyFile` is stable — do NOT rename the HTML file when you update the slug.
 
 ⚠ The cache dir is gitignored; never commit it.
 
 ### Slug pre-assignment note
 
-The final slug is `{primary-tag}-from-{brand}-{MMDDYYYY}` where `primary-tag` is the first tag assigned in Phase C. So Phase B can't render to the final filename yet. Workaround: Phase B renders from the manifest's placeholder slug; then `write-data.mjs` recomputes the final slug from the chosen tags, and a final step renames/copies the PNGs to their final slug names.
-
-Simpler workflow that avoids renames: run Phase C (categorization) BEFORE Phase B (screenshots). That way the manifest already has final slugs when rendering happens. Prefer this order.
+The final slug depends on the primary tag chosen in categorization, so the manifest initially ships placeholders. Workflow: categorize first (Phase B), rewrite each manifest entry's `slug` field to the final form, then render (Phase C) so the PNGs land at the final filenames directly and no renames are needed.
 
 ## Phase B — Analyze & categorize
 

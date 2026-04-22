@@ -5,6 +5,7 @@ Automates adding a brand's email library from a Gmail inbox. Orchestrated by the
 ## Scripts
 
 - `helpers.mjs` — slug/date/ID utilities, library JSON load/write, favicon fetch
+- `fetch-gmail-html.mjs` — OAuth2-authed Gmail API client: pulls the authentic `text/html` part of every message from `from:{sender}`, writes `.cache/library-import/{brand}/{msgId}.html` + `manifest.json`. Uses the `googleapis` SDK (already a devDependency); OAuth token cached at `~/.gmail-token.json`.
 - `render-screenshots.mjs` — Playwright renderer: `.cache/library-import/{brand}/*.html` → `public/email-screenshots/{slug}.png` at 490×1014
 - `write-data.mjs` — upserts brand + email entries into `brands.json`/`emails.json`/`usecases.json` across both `src/data/library/` and `public/data/library/` (they're kept in sync until Phase 3)
 
@@ -55,8 +56,9 @@ Both scripts accept `--dry-run`. `render-screenshots.mjs` also accepts `--only=s
 ## Invocation
 
 ```
+node scripts/library-import/fetch-gmail-html.mjs --brand=wispr-flow --sender=hello@mail.wispr.ai
 node scripts/library-import/render-screenshots.mjs --brand=wispr-flow
 node scripts/library-import/write-data.mjs --payload=.cache/library-import/wispr-flow/payload.json
 ```
 
-Convenience wrappers are registered as `npm run lib:render` and `npm run lib:write`.
+Convenience wrappers are registered as `npm run lib:fetch`, `npm run lib:render`, and `npm run lib:write`.
