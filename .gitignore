@@ -14,3 +14,26 @@ dist/
 # Project uses npm (package-lock.json). Ignore bun lockfile if dev runs bun.
 bun.lock
 bun.lockb
+
+# Claude Code / Conductor artifacts — everything under .claude/ except project-shared skills
+.claude/*
+!.claude/skills/
+.claude/skills/*/state/
+
+# Library-import workflow cache (raw Gmail HTML, never committed)
+.cache/
+
+# Stray Python deps (unrelated cache that sometimes lands in repo root)
+.pydeps/
+
+# Chrome partial downloads
+*.crdownload
+
+# OG image generation inbox — raw PNGs from nanobanana are not committed
+scripts/og-images/_inbox/
+
+# iCloud sync duplicates (e.g. "foo 2.md", "bar 3.webp")
+* [0-9].*
+* [0-9]
+* [0-9].rtfd
+* [0-9].md

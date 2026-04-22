@@ -5,6 +5,7 @@ description: "We analyzed 1,051 lifecycle emails from 38 top SaaS companies. Her
 shortDescription: "Original research: what 1,051 SaaS lifecycle emails reveal about types, subject lines, and brand strategies."
 date: "2026-04-07"
 readTime: "12 min read"
+ogImage: "/og/blog-saas-email-benchmarks.webp"
 ---
 
 Most advice about SaaS email strategy is based on opinion, gut feel, or a handful of cherry-picked examples. We wanted something better — actual data from real emails sent by real companies.

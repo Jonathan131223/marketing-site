@@ -1,0 +1,269 @@
+{
+  "$schema": "./manifest.schema.json",
+  "_brand": {
+    "background": "#F8F6F2 (warm cream) — alternate variant: #FFFFFF (pure white)",
+    "headline_color": "#0F172A (slate-900 navy)",
+    "emphasis_color": "#2563EB (primary blue) — italic only",
+    "body_color": "#475569 (slate-500)",
+    "headline_font": "Instrument Serif (or close substitute: Playfair Display, Cormorant Garamond, EB Garamond)",
+    "body_font": "Instrument Sans (or close substitute: Inter, IBM Plex Sans)",
+    "wordmark": "Lower-left corner, small (~32px equivalent), text 'DigiStorms' in clean modern sans-serif, slate-900 #0F172A. Optional simple storm/spark glyph immediately to the left.",
+    "rules": [
+      "1200x630 dimensions (16:9 close enough — actual is 1.905:1)",
+      "Centered single-headline composition",
+      "ITALIC the emphasis word and color it primary blue #2563EB",
+      "Generous negative space — editorial restraint, NOT busy",
+      "No icons, no decorative shapes, no abstract patterns, no gradients beyond a subtle paper texture",
+      "No stock photography, no product mockups, no UI screenshots",
+      "No 3-column icon grids, no logo bars, no stats",
+      "Anti-AI-slop: do not add sparkles, neon glows, holographic effects, or generic 'tech' visual cliches"
+    ],
+    "subline_position": "Bottom-center, body grey #475569, sans-serif, ~22px equivalent. Optional — can be omitted if it crowds the layout."
+  },
+  "_negative_prompt_suffix": "no busy backgrounds, no decorative borders, no icons, no gradients, no abstract shapes, no neon, no glow, no sparkles, no holographic, no purple, no orange, no amber, no warning colors, no stock photo, no product mockup, no UI screenshot, no 3D, no isometric, no people, no hands typing, no laptop on desk, no chart, no graph",
+  "_aspect_ratio": "16:9",
+  "_resolution": "1K",
+  "_model": "gemini-3.1-flash-image-preview",
+  "cards": [
+    {
+      "id": "homepage",
+      "output": "public/og/homepage.webp",
+      "page_file": "src/pages/index.astro",
+      "background": "warm cream #F8F6F2",
+      "headline": "AI onboarding agent for SaaS",
+      "italic_emphasis": "onboarding",
+      "subline": "DigiStorms · Turn free users into paying customers, on autopilot",
+      "prompt": "A 1200x630 horizontal Open Graph social-share card. Solid warm cream background (#F8F6F2) with the faintest paper texture, completely flat and uncluttered. Centered, the headline reads exactly: 'AI onboarding agent for SaaS', set in a large editorial serif font (Instrument Serif or Playfair Display style) approximately 96 pixels tall, color slate-900 navy (#0F172A), letter-spacing slightly tight, line-height 1.1. The single word 'onboarding' appears in italic and in primary blue (#2563EB) — the rest of the headline stays upright in navy. Below the headline, a single line of muted body text in clean sans-serif (Instrument Sans or Inter) reading: 'DigiStorms · Turn free users into paying customers, on autopilot' — color slate-500 grey (#475569), about 24 pixels tall. In the lower-left corner, a small wordmark 'DigiStorms' in clean modern sans-serif, color slate-900 navy. The composition is generous and editorial with significant negative space. Sharp, crisp, magazine-quality typography. Render every text character exactly as written, no decorative additions, no icons, no shapes, no gradients."
+    },
+    {
+      "id": "blog",
+      "output": "public/og/blog.webp",
+      "page_file": "src/pages/blog/index.astro",
+      "background": "warm cream #F8F6F2",
+      "headline": "Lifecycle email playbooks for SaaS",
+      "italic_emphasis": "playbooks",
+      "subline": "DigiStorms Blog · Real examples, research, and activation ideas",
+      "prompt": "Editorial OG card. Cream background. Instrument Serif headline 'Lifecycle email playbooks for SaaS' with 'playbooks' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
+    },
+    {
+      "id": "blog-saas-email-benchmarks",
+      "output": "public/og/blog-saas-email-benchmarks.webp",
+      "page_file": "src/content/blog/saas-email-benchmarks.md",
+      "background": "warm cream #F8F6F2",
+      "headline": "1,051 SaaS lifecycle emails analyzed",
+      "italic_emphasis": "1,051",
+      "subline": "DigiStorms Research · Types, subject lines, and what top brands do differently",
+      "prompt": "Editorial OG card. Cream background. Instrument Serif headline '1,051 SaaS lifecycle emails analyzed' with '1,051' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
+    },
+    {
+      "id": "blog-webinar-follow-up-subject-lines",
+      "output": "public/og/blog-webinar-follow-up-subject-lines.webp",
+      "page_file": "src/content/blog/webinar-follow-up-subject-lines.md",
+      "background": "warm cream #F8F6F2",
+      "headline": "25 webinar follow up subject lines",
+      "italic_emphasis": "25",
+      "subline": "DigiStorms · Real SaaS examples, organized by audience and timing",
+      "prompt": "Editorial OG card. Cream background. Instrument Serif headline '25 webinar follow up subject lines' with '25' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
+    },
+    {
+      "id": "blog-product-launch-email-subject-lines",
+      "output": "public/og/blog-product-launch-email-subject-lines.webp",
+      "page_file": "src/content/blog/product-launch-email-subject-lines.md",
+      "background": "warm cream #F8F6F2",
+      "headline": "30 product launch email subject lines",
+      "italic_emphasis": "30",
+      "subline": "DigiStorms · From Notion, Loom, Linear, Zapier and more (2026)",
+      "prompt": "Editorial OG card. Cream background. Instrument Serif headline '30 product launch email subject lines' with '30' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
+    },
+    {
+      "id": "blog-saas-onboarding-email-sequence",
+      "output": "public/og/blog-saas-onboarding-email-sequence.webp",
+      "page_file": "src/content/blog/saas-onboarding-email-sequence.md",
+      "background": "warm cream #F8F6F2",
+      "headline": "The 7-email SaaS onboarding sequence",
+      "italic_emphasis": "7-email",
+      "subline": "DigiStorms · Real examples from Loom, Calendly, and Pipedrive",
+      "prompt": "Editorial OG card. Cream background. Instrument Serif headline 'The 7-email SaaS onboarding sequence' with '7-email' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
+    },
+    {
+      "id": "blog-saas-email-templates",
+      "output": "public/og/blog-saas-email-templates.webp",
+      "page_file": "src/content/blog/saas-email-templates.md",
+      "background": "warm cream #F8F6F2",
+      "headline": "14 SaaS lifecycle email templates",
+      "italic_emphasis": "14",
+      "subline": "DigiStorms · Ready to copy, adapt, and ship",
+      "prompt": "Editorial OG card. Cream background. Instrument Serif headline '14 SaaS lifecycle email templates' with '14' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
+    },
+    {
+      "id": "pricing",
+      "output": "public/og/pricing.webp",
+      "page_file": "src/pages/pricing.astro",
+      "background": "warm cream #F8F6F2",
+      "headline": "Free for your first 100 users",
+      "italic_emphasis": "Free",
+      "subline": "DigiStorms · From $0 to $149 — pay for what you onboard",
+      "prompt": "A 1200x630 horizontal Open Graph social-share card. Solid warm cream background (#F8F6F2) with the faintest paper texture, flat and uncluttered. Centered, the headline reads exactly: 'Free for your first 100 users', set in a large editorial serif (Instrument Serif or Playfair Display), approximately 96 pixels tall, color slate-900 navy (#0F172A), letter-spacing slightly tight, line-height 1.1. The single word 'Free' appears in italic and in primary blue (#2563EB) — the rest stays upright in navy. Below, a single line of muted body text in clean sans-serif: 'DigiStorms · From $0 to $149 — pay for what you onboard', slate-500 grey (#475569), about 24 pixels tall. In the lower-left corner, small wordmark 'DigiStorms' in slate-900 sans-serif. Generous negative space, editorial composition, magazine-quality typography. Render every character exactly as written. No icons, no decorative shapes, no pricing tier cards, no dollar-sign graphics — text only."
+    },
+    {
+      "id": "library",
+      "output": "public/og/library.webp",
+      "page_file": "src/pages/library/index.astro",
+      "background": "white #FFFFFF",
+      "headline": "1,000+ SaaS lifecycle emails",
+      "italic_emphasis": "1,000+",
+      "subline": "DigiStorms Email Library · Browse by brand, tag, or use case",
+      "prompt": "A 1200x630 horizontal Open Graph social-share card. Pure white background (#FFFFFF), completely flat. Centered, the headline reads exactly: '1,000+ SaaS lifecycle emails', set in a large editorial serif (Instrument Serif or Playfair Display), approximately 96 pixels tall, color slate-900 navy (#0F172A), letter-spacing slightly tight, line-height 1.1. The text '1,000+' appears in italic and in primary blue (#2563EB) — the rest stays upright in navy. Below, a single line of muted body text in clean sans-serif: 'DigiStorms Email Library · Browse by brand, tag, or use case', slate-500 grey (#475569), about 24 pixels tall. In the lower-left corner, small wordmark 'DigiStorms' in slate-900 sans-serif. Generous negative space, editorial restraint, magazine-quality typography. Render every character exactly as written. No icons, no logo grids, no email screenshots — pure typography."
+    },
+    {
+      "id": "library-brands",
+      "output": "public/og/library-brands.webp",
+      "page_file": "src/pages/library/brands.astro",
+      "background": "white #FFFFFF",
+      "headline": "Browse onboarding emails by brand",
+      "italic_emphasis": "brand",
+      "subline": "DigiStorms Email Library · 38+ B2B SaaS brands",
+      "prompt": "A 1200x630 horizontal Open Graph social-share card. Pure white background (#FFFFFF), completely flat. Centered, the headline reads exactly: 'Browse onboarding emails by brand', set in a large editorial serif (Instrument Serif or Playfair Display), approximately 88 pixels tall, slate-900 navy (#0F172A), letter-spacing slightly tight, line-height 1.1. The single word 'brand' appears in italic and in primary blue (#2563EB) — the rest stays upright in navy. Below, a single line of muted body text in clean sans-serif: 'DigiStorms Email Library · 38+ B2B SaaS brands', slate-500 grey (#475569), about 24 pixels tall. Lower-left corner: small wordmark 'DigiStorms' in slate-900 sans-serif. Generous negative space, editorial composition. Render every character exactly. No icons, no actual brand logos, no decorative elements — pure typography."
+    },
+    {
+      "id": "library-tags",
+      "output": "public/og/library-tags.webp",
+      "page_file": "src/pages/library/tags.astro",
+      "background": "white #FFFFFF",
+      "headline": "Browse onboarding emails by tag",
+      "italic_emphasis": "tag",
+      "subline": "DigiStorms Email Library · 80+ lifecycle tags",
+      "prompt": "A 1200x630 horizontal Open Graph social-share card. Pure white background (#FFFFFF), completely flat. Centered, the headline reads exactly: 'Browse onboarding emails by tag', set in a large editorial serif (Instrument Serif or Playfair Display), approximately 88 pixels tall, slate-900 navy (#0F172A), letter-spacing slightly tight, line-height 1.1. The single word 'tag' appears in italic and in primary blue (#2563EB) — the rest stays upright in navy. Below, a single line of muted body text in clean sans-serif: 'DigiStorms Email Library · 80+ lifecycle tags', slate-500 grey (#475569), about 24 pixels tall. Lower-left: small wordmark 'DigiStorms' in slate-900 sans-serif. Generous negative space, editorial composition. Render every character exactly. No icons, no tag-pill graphics, no decorative elements."
+    },
+    {
+      "id": "library-usecases",
+      "output": "public/og/library-usecases.webp",
+      "page_file": "src/pages/library/usecases.astro",
+      "background": "white #FFFFFF",
+      "headline": "Browse onboarding emails by use case",
+      "italic_emphasis": "use case",
+      "subline": "DigiStorms Email Library · From welcome to win-back",
+      "prompt": "A 1200x630 horizontal Open Graph social-share card. Pure white background (#FFFFFF), completely flat. Centered, the headline reads exactly: 'Browse onboarding emails by use case', set in a large editorial serif (Instrument Serif or Playfair Display), approximately 84 pixels tall, slate-900 navy (#0F172A), letter-spacing slightly tight, line-height 1.1. The two words 'use case' appear in italic and in primary blue (#2563EB) — the rest stays upright in navy. Below, a single line of muted body text in clean sans-serif: 'DigiStorms Email Library · From welcome to win-back', slate-500 grey (#475569), about 24 pixels tall. Lower-left: small wordmark 'DigiStorms' in slate-900 sans-serif. Generous negative space, editorial composition. Render every character exactly."
+    },
+    {
+      "id": "lifecycle-score",
+      "output": "public/og/lifecycle-score.webp",
+      "page_file": "src/pages/lifecycle-score.astro",
+      "background": "warm cream #F8F6F2",
+      "headline": "Score your SaaS onboarding",
+      "italic_emphasis": "Score",
+      "subline": "DigiStorms · Free 2-minute quiz with personalized recommendations",
+      "prompt": "A 1200x630 horizontal Open Graph social-share card. Solid warm cream background (#F8F6F2), faintest paper texture, flat and uncluttered. Centered, the headline reads exactly: 'Score your SaaS onboarding', set in a large editorial serif (Instrument Serif or Playfair Display), approximately 96 pixels tall, slate-900 navy (#0F172A), letter-spacing slightly tight, line-height 1.1. The single word 'Score' appears in italic and in primary blue (#2563EB) — the rest stays upright in navy. Below, a single line of muted body text in clean sans-serif: 'DigiStorms · Free 2-minute quiz with personalized recommendations', slate-500 grey (#475569), about 24 pixels tall. Lower-left: small wordmark 'DigiStorms' in slate-900 sans-serif. Generous negative space, editorial composition. Render every character exactly. No score gauges, no progress bars, no icons — pure typography."
+    },
+    {
+      "id": "roi-calculator",
+      "output": "public/og/roi-calculator.webp",
+      "page_file": "src/pages/roi-calculator.astro",
+      "background": "warm cream #F8F6F2",
+      "headline": "How much revenue is your onboarding leaking?",
+      "italic_emphasis": "leaking",
+      "subline": "DigiStorms · Calculate your activation upside in 60 seconds",
+      "prompt": "A 1200x630 horizontal Open Graph social-share card. Solid warm cream background (#F8F6F2), faintest paper texture, flat and uncluttered. Centered, the headline reads exactly: 'How much revenue is your onboarding leaking?', set in a large editorial serif (Instrument Serif or Playfair Display), approximately 76 pixels tall, slate-900 navy (#0F172A), letter-spacing slightly tight, line-height 1.15, possibly wrapping onto two lines. The single word 'leaking' appears in italic and in primary blue (#2563EB) — the rest stays upright in navy. Below, a single line of muted body text in clean sans-serif: 'DigiStorms · Calculate your activation upside in 60 seconds', slate-500 grey (#475569), about 22 pixels tall. Lower-left: small wordmark 'DigiStorms' in slate-900 sans-serif. Generous negative space, editorial composition. Render every character exactly. No dollar signs, no charts, no calculator graphics — pure typography."
+    },
+    {
+      "id": "about",
+      "output": "public/og/about.webp",
+      "page_file": "src/pages/about.astro",
+      "background": "white #FFFFFF",
+      "headline": "Built by a SaaS lifecycle expert",
+      "italic_emphasis": "lifecycle expert",
+      "subline": "DigiStorms · Jonathan Bernard — from consulting to AI agent",
+      "prompt": "A 1200x630 horizontal Open Graph social-share card. Pure white background (#FFFFFF), completely flat. Centered, the headline reads exactly: 'Built by a SaaS lifecycle expert', set in a large editorial serif (Instrument Serif or Playfair Display), approximately 88 pixels tall, slate-900 navy (#0F172A), letter-spacing slightly tight, line-height 1.1. The two words 'lifecycle expert' appear in italic and in primary blue (#2563EB) — the rest stays upright in navy. Below, a single line of muted body text in clean sans-serif: 'DigiStorms · Jonathan Bernard — from consulting to AI agent', slate-500 grey (#475569), about 24 pixels tall. Lower-left: small wordmark 'DigiStorms' in slate-900 sans-serif. Generous negative space, editorial composition. Render every character exactly. No founder portrait, no avatar circles — pure typography."
+    },
+    {
+      "id": "manifesto",
+      "output": "public/og/manifesto.webp",
+      "page_file": "src/pages/manifesto.astro",
+      "background": "warm cream #F8F6F2",
+      "headline": "Onboarding is your growth engine",
+      "italic_emphasis": "growth engine",
+      "subline": "DigiStorms Manifesto",
+      "prompt": "A 1200x630 horizontal Open Graph social-share card. Solid warm cream background (#F8F6F2), faintest paper texture, flat and uncluttered. Centered, the headline reads exactly: 'Onboarding is your growth engine', set in a large editorial serif (Instrument Serif or Playfair Display), approximately 92 pixels tall, slate-900 navy (#0F172A), letter-spacing slightly tight, line-height 1.1. The two words 'growth engine' appear in italic and in primary blue (#2563EB) — the rest stays upright in navy. Below, a single line of muted body text in clean sans-serif: 'DigiStorms Manifesto', slate-500 grey (#475569), about 22 pixels tall. Lower-left: small wordmark 'DigiStorms' in slate-900 sans-serif. Generous negative space, editorial restraint, manifesto-style composition. Render every character exactly. No icons, no decorative elements."
+    },
+    {
+      "id": "email-generator",
+      "output": "public/og/email-generator.webp",
+      "page_file": "src/pages/email-generator/index.astro",
+      "background": "warm cream #F8F6F2",
+      "headline": "Free AI lifecycle email generator",
+      "italic_emphasis": "Free",
+      "subline": "DigiStorms · Pick a use case, get a sequence in seconds",
+      "prompt": "A 1200x630 horizontal Open Graph social-share card. Solid warm cream background (#F8F6F2), faintest paper texture, flat and uncluttered. Centered, the headline reads exactly: 'Free AI lifecycle email generator', set in a large editorial serif (Instrument Serif or Playfair Display), approximately 88 pixels tall, slate-900 navy (#0F172A), letter-spacing slightly tight, line-height 1.1. The single word 'Free' appears in italic and in primary blue (#2563EB) — the rest stays upright in navy. Below, a single line of muted body text in clean sans-serif: 'DigiStorms · Pick a use case, get a sequence in seconds', slate-500 grey (#475569), about 24 pixels tall. Lower-left: small wordmark 'DigiStorms' in slate-900 sans-serif. Generous negative space, editorial composition. Render every character exactly. No icons, no email mockups — pure typography."
+    },
+    {
+      "id": "compare-customer-io",
+      "output": "public/og/compare-customer-io.webp",
+      "page_file": "src/pages/compare/digistorms-vs-customer-io.astro",
+      "background": "warm cream #F8F6F2",
+      "headline": "DigiStorms vs Customer.io",
+      "italic_emphasis": "vs",
+      "subline": "Self-serve · Behavior-based · Minutes to live",
+      "prompt": "A 1200x630 horizontal Open Graph social-share card. Solid warm cream background (#F8F6F2), faintest paper texture, completely flat. A subtle thin vertical rule (1px, slate-300 #CBD5E1) runs down the exact center of the canvas, dividing left and right halves. On the LEFT half, centered vertically and horizontally within that half, the text 'DigiStorms' in editorial serif (Instrument Serif or Playfair Display), approximately 80 pixels tall, slate-900 navy (#0F172A). On the RIGHT half, centered vertically and horizontally, the text 'Customer.io' in the same editorial serif, same size, same navy color. Between them, the small word 'vs' in italic, primary blue (#2563EB), about 36 pixels tall, sits exactly on the vertical rule at vertical center. Below the entire composition, centered horizontally near the bottom, a single line of muted body text in clean sans-serif: 'Self-serve · Behavior-based · Minutes to live', slate-500 grey (#475569), about 22 pixels tall. Lower-left corner: small wordmark 'DigiStorms' in slate-900 sans-serif. Render every character exactly. No logos, no icons, no decorative elements — pure typography."
+    },
+    {
+      "id": "compare-encharge",
+      "output": "public/og/compare-encharge.webp",
+      "page_file": "src/pages/compare/digistorms-vs-encharge.astro",
+      "background": "warm cream #F8F6F2",
+      "headline": "DigiStorms vs Encharge",
+      "italic_emphasis": "vs",
+      "subline": "Self-serve · Behavior-based · Minutes to live",
+      "prompt": "A 1200x630 horizontal Open Graph social-share card. Solid warm cream background (#F8F6F2), faintest paper texture, completely flat. A subtle thin vertical rule (1px, slate-300 #CBD5E1) runs down the exact center of the canvas, dividing left and right halves. On the LEFT half, centered vertically and horizontally within that half, the text 'DigiStorms' in editorial serif (Instrument Serif or Playfair Display), approximately 80 pixels tall, slate-900 navy (#0F172A). On the RIGHT half, centered vertically and horizontally, the text 'Encharge' in the same editorial serif, same size, same navy color. Between them, the small word 'vs' in italic, primary blue (#2563EB), about 36 pixels tall, sits exactly on the vertical rule at vertical center. Below, centered horizontally near the bottom, a single line of muted body text in clean sans-serif: 'Self-serve · Behavior-based · Minutes to live', slate-500 grey (#475569), about 22 pixels tall. Lower-left corner: small wordmark 'DigiStorms' in slate-900 sans-serif. Render every character exactly. No logos, no icons — pure typography."
+    },
+    {
+      "id": "compare-loops",
+      "output": "public/og/compare-loops.webp",
+      "page_file": "src/pages/compare/digistorms-vs-loops.astro",
+      "background": "warm cream #F8F6F2",
+      "headline": "DigiStorms vs Loops",
+      "italic_emphasis": "vs",
+      "subline": "Self-serve · Behavior-based · Minutes to live",
+      "prompt": "A 1200x630 horizontal Open Graph social-share card. Solid warm cream background (#F8F6F2), faintest paper texture, completely flat. A subtle thin vertical rule (1px, slate-300 #CBD5E1) runs down the exact center of the canvas, dividing left and right halves. On the LEFT half, centered vertically and horizontally within that half, the text 'DigiStorms' in editorial serif (Instrument Serif or Playfair Display), approximately 80 pixels tall, slate-900 navy (#0F172A). On the RIGHT half, centered vertically and horizontally, the text 'Loops' in the same editorial serif, same size, same navy color. Between them, the small word 'vs' in italic, primary blue (#2563EB), about 36 pixels tall, sits exactly on the vertical rule at vertical center. Below, centered horizontally near the bottom, a single line of muted body text in clean sans-serif: 'Self-serve · Behavior-based · Minutes to live', slate-500 grey (#475569), about 22 pixels tall. Lower-left corner: small wordmark 'DigiStorms' in slate-900 sans-serif. Render every character exactly."
+    },
+    {
+      "id": "compare-resend",
+      "output": "public/og/compare-resend.webp",
+      "page_file": "src/pages/compare/digistorms-vs-resend.astro",
+      "background": "warm cream #F8F6F2",
+      "headline": "DigiStorms vs Resend",
+      "italic_emphasis": "vs",
+      "subline": "Self-serve · Behavior-based · Minutes to live",
+      "prompt": "A 1200x630 horizontal Open Graph social-share card. Solid warm cream background (#F8F6F2), faintest paper texture, completely flat. A subtle thin vertical rule (1px, slate-300 #CBD5E1) runs down the exact center of the canvas, dividing left and right halves. On the LEFT half, centered vertically and horizontally within that half, the text 'DigiStorms' in editorial serif (Instrument Serif or Playfair Display), approximately 80 pixels tall, slate-900 navy (#0F172A). On the RIGHT half, centered vertically and horizontally, the text 'Resend' in the same editorial serif, same size, same navy color. Between them, the small word 'vs' in italic, primary blue (#2563EB), about 36 pixels tall, sits exactly on the vertical rule at vertical center. Below, centered horizontally near the bottom, a single line of muted body text in clean sans-serif: 'Self-serve · Behavior-based · Minutes to live', slate-500 grey (#475569), about 22 pixels tall. Lower-left corner: small wordmark 'DigiStorms' in slate-900 sans-serif. Render every character exactly."
+    },
+    {
+      "id": "compare-best-tools",
+      "output": "public/og/compare-best-tools.webp",
+      "page_file": "src/pages/compare/best-onboarding-email-tools.astro",
+      "background": "warm cream #F8F6F2",
+      "headline": "Best onboarding email tools, compared",
+      "italic_emphasis": "compared",
+      "subline": "DigiStorms · 6 lifecycle email tools side-by-side",
+      "prompt": "A 1200x630 horizontal Open Graph social-share card. Solid warm cream background (#F8F6F2), faintest paper texture, flat and uncluttered. Centered, the headline reads exactly: 'Best onboarding email tools, compared', set in a large editorial serif (Instrument Serif or Playfair Display), approximately 84 pixels tall, slate-900 navy (#0F172A), letter-spacing slightly tight, line-height 1.1. The single word 'compared' appears in italic and in primary blue (#2563EB) — the rest stays upright in navy. Below, a single line of muted body text in clean sans-serif: 'DigiStorms · 6 lifecycle email tools side-by-side', slate-500 grey (#475569), about 24 pixels tall. Lower-left: small wordmark 'DigiStorms' in slate-900 sans-serif. Generous negative space, editorial composition. Render every character exactly. No tool logos, no comparison tables — pure typography."
+    },
+    {
+      "id": "compare-customer-io-alternatives",
+      "output": "public/og/compare-customer-io-alternatives.webp",
+      "page_file": "src/pages/compare/customer-io-alternatives.astro",
+      "background": "warm cream #F8F6F2",
+      "headline": "Customer.io alternatives for SaaS",
+      "italic_emphasis": "alternatives",
+      "subline": "DigiStorms · Self-serve, behavior-based, sub-mid-market pricing",
+      "prompt": "A 1200x630 horizontal Open Graph social-share card. Solid warm cream background (#F8F6F2), faintest paper texture, flat and uncluttered. Centered, the headline reads exactly: 'Customer.io alternatives for SaaS', set in a large editorial serif (Instrument Serif or Playfair Display), approximately 88 pixels tall, slate-900 navy (#0F172A), letter-spacing slightly tight, line-height 1.1. The single word 'alternatives' appears in italic and in primary blue (#2563EB) — the rest stays upright in navy. Below, a single line of muted body text in clean sans-serif: 'DigiStorms · Self-serve, behavior-based, sub-mid-market pricing', slate-500 grey (#475569), about 22 pixels tall. Lower-left: small wordmark 'DigiStorms' in slate-900 sans-serif. Generous negative space, editorial composition. Render every character exactly. No logos, no comparison tables."
+    },
+    {
+      "id": "account-readiness",
+      "output": "public/og/account-readiness.webp",
+      "page_file": "src/pages/account-readiness.astro",
+      "background": "warm cream #F8F6F2",
+      "headline": "Know who is ready to upgrade",
+      "italic_emphasis": "ready",
+      "subline": "DigiStorms · Account readiness, scored automatically",
+      "prompt": "A 1200x630 horizontal Open Graph social-share card. Solid warm cream background (#F8F6F2) with the faintest paper texture, completely flat and uncluttered. Centered, the headline reads exactly: 'Know who is ready to upgrade', set in a large editorial serif font (Instrument Serif or Playfair Display style) approximately 96 pixels tall, color slate-900 navy (#0F172A), letter-spacing slightly tight, line-height 1.1. The single word 'ready' appears in italic and in primary blue (#2563EB) — the rest of the headline stays upright in navy. Below the headline, a single line of muted body text in clean sans-serif (Instrument Sans or Inter) reading: 'DigiStorms · Account readiness, scored automatically' — color slate-500 grey (#475569), about 24 pixels tall. In the lower-left corner, a small wordmark 'DigiStorms' in clean modern sans-serif, color slate-900 navy. The composition is generous and editorial with significant negative space. Sharp, crisp, magazine-quality typography. Render every text character exactly as written, no decorative additions, no icons, no shapes, no gradients."
+    }
+  ]
+}

@@ -21,22 +21,36 @@ import { FAQSection } from "@/components/homepage/FAQSection";
 import { FinalCTASection } from "@/components/homepage/FinalCTASection";
 import { appUrl } from "@/config/appUrl";
 import { normalizeWebsiteUrl } from "@/lib/normalizeWebsiteUrl";
+import { track } from "@/lib/analytics";
+import { appendUtmsToUrl } from "@/lib/posthog";
 
 interface HomepageIslandProps {
   section: "hero" | "how-it-works" | "comparison" | "benefits" | "testimonial" | "faq" | "final-cta";
 }
 
-function directRedirect(url: string) {
-  const trimmed = url.trim();
+function directRedirect(rawUrl: string, pageSection: "hero" | "final-cta") {
+  const trimmed = rawUrl.trim();
   if (!trimmed) return;
+
+  let normalized: string | null = null;
   try {
-    const normalized = normalizeWebsiteUrl(trimmed);
-    window.location.href = appUrl(
-      `/email-sequence-generator?analyze=1&url=${encodeURIComponent(normalized)}`
-    );
+    normalized = normalizeWebsiteUrl(trimmed);
   } catch {
-    window.location.href = appUrl("/email-sequence-generator");
+    normalized = null;
   }
+
+  track.urlSubmitted({
+    page_section: pageSection,
+    raw_url: trimmed,
+    normalized_url: normalized,
+    is_valid: normalized !== null,
+  });
+
+  const target = normalized
+    ? appUrl(`/email-sequence-generator?analyze=1&url=${encodeURIComponent(normalized)}`)
+    : appUrl("/email-sequence-generator");
+
+  window.location.href = appendUtmsToUrl(target);
 }
 
 function HeroIsland() {
@@ -45,7 +59,7 @@ function HeroIsland() {
     <HeroSection
       websiteUrl={websiteUrl}
       onWebsiteUrlChange={setWebsiteUrl}
-      onSubmit={() => directRedirect(websiteUrl)}
+      onSubmit={() => directRedirect(websiteUrl, "hero")}
     />
   );
 }
@@ -56,7 +70,7 @@ function FinalCTAIsland() {
     <FinalCTASection
       websiteUrl={websiteUrl}
       onWebsiteUrlChange={setWebsiteUrl}
-      onSubmit={() => directRedirect(websiteUrl)}
+      onSubmit={() => directRedirect(websiteUrl, "final-cta")}
     />
   );
 }

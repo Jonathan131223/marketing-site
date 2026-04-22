@@ -1,7 +1,7 @@
 ---
-title: "SaaS welcome email: best practices with 28 examples"
+title: "28 SaaS welcome email examples that activate users"
 slug: "saas-welcome-email"
-description: "Build a winning SaaS welcome email! Discover best practices, timing tips, real-life examples and behavior-based ideas to level up your onboarding experience."
+description: "28 real welcome emails from SaaS brands that get activation right — plus behavior-based timing, subject-line patterns, and what to say in the first 24 hours."
 shortDescription: "Get expert tips to craft welcome emails that wow users and kickstart product engagement!"
 date: "2026-03-23"
 readTime: "12 min read"

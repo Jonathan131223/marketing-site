@@ -10,7 +10,9 @@
  *    re-introduces a VITE_* fallback, the default URL would diverge between
  *    SSR and client.
  * 2. Missing CTAs — the navbar must always have "Sign up free", "Login",
- *    and "Book a demo" links as they're the core conversion paths.
+ *    and "Talk to founder" links as they're the core conversion paths.
+ *    (Copy note: "Talk to founder" replaced "Book a demo" in v0.1.x to
+ *    better fit the PLG / indie-founder ICP — points at the same Calendly.)
  * 3. A broken mobile menu toggle — pressing the hamburger should open a
  *    menu drawer.
  */
@@ -60,9 +62,9 @@ describe("Navbar — smoke", () => {
     });
   });
 
-  it("renders the Book a demo CTA pointing at Calendly", () => {
+  it("renders the Talk to founder CTA pointing at Calendly", () => {
     render(<Navbar />);
-    const demoLinks = screen.getAllByRole("link", { name: /book a demo/i });
+    const demoLinks = screen.getAllByRole("link", { name: /talk to founder/i });
     expect(demoLinks.length).toBeGreaterThan(0);
     demoLinks.forEach((link) => {
       expect(link).toHaveAttribute("href", expect.stringContaining("calendly.com"));

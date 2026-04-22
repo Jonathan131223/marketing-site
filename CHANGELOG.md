@@ -2,6 +2,53 @@
 
 All notable changes to DigiStorms marketing site will be documented in this file.
 
+## [0.1.5.0] - 2026-04-20
+
+### Added
+- "Live demo" link as the first item in the footer's Product column, pointing at `https://app.digistorms.ai/demo`. Visitors can now see the actual DigiStorms CRM pipeline running on a fictional SaaS ("Tideline") without signing up, which turns the footer into a low-friction top-of-funnel surface for anyone dropping into the site from X, Reddit, or SEO. Added to both the Astro `Footer.astro` (the live footer) and the legacy React `Footer.tsx` for parity
+- Two new blog posts on subject-line strategy (SaaS subject lines + welcome-email subject lines) to pick up the long-tail queries that `/blog/saas-welcome-emails` and `/blog/saas-newsletter-emails` were ranking mid-page for. Each new post is scoped to the specific "subject line" search intent and links up into the broader examples posts
+
+### Changed
+- Rewrote titles and meta descriptions on 8 blog posts. GSC analysis over the last 90 days showed all 10 posts shared the same "[N] [topic]: best practices with [N] examples" title shape, ranked at pos 5-15 on 5k+ impression queries, and earned 0.1-0.5% CTR — 10-15x below benchmark for those positions, about 150 clicks/month left on the table from titles alone. New titles lead with a number or benefit, avoid the content-farm "best practices" pattern, include year or specificity where natural, and stay under 60 chars for SERP truncation. Rewritten posts: dunning-emails, milestone-emails, product-launch, saas-newsletter, saas-welcome, upgrade-emails, webinar-sequence, and one more
+- Killed cannibalization between `/blog/webinar-emails` (pos 15.0, 0.09% CTR) and `/blog/webinar-email-sequence` (pos 6.1). Google was splitting authority between two overlapping posts — now the sequence post is the canonical answer for the query family
+- Footer Product column now orders `Live demo → Pricing → Manifesto` instead of `Manifesto → Pricing`, putting the highest-intent "try it" link at the top and the brand philosophy last
+
+## [0.1.4.0] - 2026-04-17
+
+### Added
+- Per-page Open Graph / Twitter social-share cards for every primary page (17 in total — homepage, pricing, library, library/brands, library/tags, library/usecases, lifecycle-score, roi-calculator, about, manifesto, email-generator, and the six /compare pages). Cards are brand-consistent editorial typography — cream or white background, Instrument Serif headline in navy, italic emphasis word in primary blue, subline in muted slate, DigiStorms wordmark in the lower-left corner. When any of these pages is pasted into Slack, LinkedIn, Twitter, Facebook, or any other platform that reads Open Graph tags, it now renders a distinctive 1200×630 preview instead of the same generic logo image that every page used to share
+- `npm run og:render`, `npm run og:wire`, and `npm run og:all` scripts. The render script uses satori (HTML/JSX → SVG) + sharp (SVG → WebP) to produce all 17 cards from a single manifest in about 3 seconds, no browser or API key required. The wire script patches each page's `ogImage` prop automatically. Edit a headline in `scripts/og-images/manifest.json`, run `npm run og:all`, and all affected cards rebuild and rewire in one shot
+- `/pricing` is now present in the sitemap. It had been linked from the homepage but missing from `public/sitemap-static.xml`, which slowed discovery of the primary conversion page
+- Homepage `SoftwareApplication` JSON-LD and `/pricing` `SoftwareApplication` JSON-LD now use `AggregateOffer` with `lowPrice`, `highPrice`, and `offerCount`. The pricing page additionally nests the four named offers (Free, Pro, Business, Scale) inside the aggregate. This gives Google a complete price-range signal for rich results, where before it only saw a single `price: "0"` offer
+- `ComparisonPage.astro` and `BestToolsPage.astro` now accept an `ogImage` passthrough prop so comparison pages can opt into a per-page OG card
+
+### Changed
+- Homepage `<title>` is now `AI Onboarding Agent for SaaS — DigiStorms` (41 characters). The previous title was 86 characters and was being truncated in Google search results, dropping the benefit half ("Turn Free Users into Paying Customers") from the visible snippet
+- `/roi-calculator` title: `ROI Calculator — DigiStorms` (27 chars) → `SaaS Onboarding Email ROI Calculator — DigiStorms` (49 chars) so it actually carries SEO-relevant keywords
+- `/lifecycle-score` title: `Your Onboarding Score — DigiStorms` (34 chars) → `Free SaaS Onboarding Score Quiz — DigiStorms` (44 chars)
+- `/pricing` title: `Pricing - DigiStorms AI Agent for Onboarding Emails` → `SaaS Onboarding Email Pricing — DigiStorms` (42 chars); description also tightened to surface the $0/$19/$59/$149 tier shape
+- Canonical URL form is now no-trailing-slash site-wide. `trailingSlash: 'never'` in `astro.config.mjs` plus `cleanUrls: true` + `trailingSlash: false` in `vercel.json` plus a defensive `normalizePath` in `BaseLayout.astro` together guarantee that `/pricing` and `/pricing/` serve the same content with `/pricing` as the only canonical. Previously both URLs returned 200 with identical HTML, which diluted PageRank and wasted crawl budget across every major page on the site
+- Sitemap generation now runs automatically as a `prebuild` step. Previously `scripts/generate-sitemap.js` had to be invoked by hand, which is how `/pricing` went missing in the first place
+
+### Removed
+- `@astrojs/sitemap` integration from `astro.config.mjs`. Sitemaps are generated by `scripts/generate-sitemap.js`, which the integration was duplicating into unreferenced output files
+
+## [0.1.3.4] - 2026-04-16
+
+### Added
+- Consulting testimonials section on the About page. Five quotes from past consulting clients — Thibault Le Meur (Triscale), Drew Price (BryteBridge), Matthieu Salvaggio (Blaze Type), Tahereh Pazouki (Magrid), Stefano Roncari (Bubbleye) — rendered as a static two-column card grid between the founder bio and the CTA. Each card shows company logo, industry, the quote, and the author with their avatar. The testimonials ground the "started as consulting" narrative the page tells earlier and carry real social proof into a page that previously had none
+
+### Changed
+- Blog article "About the author" section now matches the About page founder card: 96px avatar, bold name, "Founder, DigiStorms" subtitle, a clean bio paragraph, and a visible "Connect on LinkedIn" button with the LinkedIn icon. The previous compact variant split into two subtly-different versions depending on whether the article pulled from the email library or not — both are now unified to the single About-page copy for consistency across every article
+
+### Removed
+- `src/components/astro/FounderStorySection.astro` and `src/components/homepage/FounderStorySection.tsx`. Both were orphaned leftovers from an earlier homepage design and weren't imported anywhere in the live source tree. The testimonials they contained now live on the About page where they're actually rendered
+
+## [0.1.3.3] - 2026-04-14
+
+### Changed
+- Manifesto page now reads as a focused, center-framed document. Each section's bullet list is capped at a readable column width and centered on the page, while the text and icons inside each bullet remain left-aligned so the eye still tracks naturally through the list. The "Who we're for" section is flattened to a single centered column — the purple mascot illustration has been removed so the closing section reads as a clean statement of audience rather than a decorative block. Headings keep their DESIGN.md-aligned serif treatment and are centered to match the new layout
+
 ## [0.1.3.2] - 2026-04-11
 
 ### Fixed

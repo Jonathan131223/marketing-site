@@ -1,5 +1,7 @@
 {
   "outputDirectory": "dist",
+  "cleanUrls": true,
+  "trailingSlash": false,
   "redirects": [
     {
       "source": "/use-cases",
@@ -9,6 +11,11 @@
     {
       "source": "/lifecycle-blueprints",
       "destination": "/library",
+      "permanent": true
+    },
+    {
+      "source": "/blog/webinar-emails",
+      "destination": "/blog/webinar-email-sequence",
       "permanent": true
     },
     {

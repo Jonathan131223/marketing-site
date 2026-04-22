@@ -1,7 +1,7 @@
 ---
-title: "13 Upgrade emails: best practices with 13 examples"
+title: "13 upgrade email examples that convert free users"
 slug: "upgrade-emails"
-description: "Learn how to write upgrade emails that convert trial users into paying customers. Includes timing tips, best practices, and examples from top SaaS companies."
+description: "13 real upgrade emails that move SaaS users from free to paid — with the triggers, timing, and framing that consistently drive conversion without pressure."
 shortDescription: "Turn free users into customers with pro tips and examples from top companies."
 date: "2026-01-15"
 readTime: "9 min read"

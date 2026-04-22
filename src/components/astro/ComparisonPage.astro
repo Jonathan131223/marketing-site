@@ -28,6 +28,7 @@ interface Props {
   pricingCompetitor: string;
   pricingNote: string;
   faqs: FAQ[];
+  ogImage?: string;
 }
 
 const {
@@ -45,6 +46,7 @@ const {
   pricingCompetitor,
   pricingNote,
   faqs,
+  ogImage,
 } = Astro.props;
 
 const canonical = `https://www.digistorms.ai/compare/${slug}`;
@@ -96,6 +98,7 @@ const ctaHref = appUrl("/portal");
   title={title}
   description={metaDescription}
   canonical={canonical}
+  ogImage={ogImage}
   jsonLd={jsonLd}
 >
   <main class="pt-20 pb-24">
