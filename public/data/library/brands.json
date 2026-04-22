@@ -2,7 +2,7 @@
   {
     "slug": "adobe",
     "name": "Adobe",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d8c38e080487d252656eb_Adobe_Acrobat_DC_logo_2020.svg.png",
+    "logo": "/logos/adobe.png",
     "emailCount": 25,
     "useCases": [
       "celebrate-milestones",
@@ -26,7 +26,7 @@
   {
     "slug": "ahrefs",
     "name": "Ahrefs",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d871f2ca571cfbc33b3e2_Ahrefs-Logo-PNG-Pic.png",
+    "logo": "/logos/ahrefs.png",
     "emailCount": 28,
     "useCases": [
       "expand-user",
@@ -50,7 +50,7 @@
   {
     "slug": "aircall",
     "name": "Aircall",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d8ce4812cc6292dbf9e23_unnamed%20(1).png",
+    "logo": "/logos/aircall.png",
     "emailCount": 10,
     "useCases": [
       "announce-new-features",
@@ -74,7 +74,7 @@
   {
     "slug": "apollo-io",
     "name": "Apollo.io",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d872da8954b6a4f9b6e27_Apollo-io.webp",
+    "logo": "/logos/apollo-io.webp",
     "emailCount": 22,
     "useCases": [
       "announce-new-features",
@@ -98,7 +98,7 @@
   {
     "slug": "asana",
     "name": "Asana",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d8a2db11466de959779b4_c39a60-asana.svg",
+    "logo": "/logos/asana.svg",
     "emailCount": 13,
     "useCases": [
       "celebrate-milestones",
@@ -122,7 +122,7 @@
   {
     "slug": "beehiiv",
     "name": "Beehiiv",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d89ba3317afd4585f58d0_download.jpeg",
+    "logo": "/logos/beehiiv.jpg",
     "emailCount": 51,
     "useCases": [
       "announce-new-features",
@@ -146,7 +146,7 @@
   {
     "slug": "buffer",
     "name": "Buffer",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d874e02e11356d97b5777_buffer-logo-png-transparent.png",
+    "logo": "/logos/buffer.png",
     "emailCount": 29,
     "useCases": [
       "celebrate-milestones",
@@ -170,7 +170,7 @@
   {
     "slug": "calendly",
     "name": "Calendly",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/67f4c286b67439c6ac016567_c73039fdecbf381f55fe529c673cecce.png",
+    "logo": "/logos/calendly.png",
     "emailCount": 55,
     "useCases": [
       "announce-new-features",
@@ -194,7 +194,7 @@
   {
     "slug": "canva",
     "name": "Canva",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d87398e51be05c79dbbae_canva_logo_icon_168460.webp",
+    "logo": "/logos/canva.webp",
     "emailCount": 22,
     "useCases": [
       "celebrate-milestones",
@@ -218,7 +218,7 @@
   {
     "slug": "clickup",
     "name": "Clickup",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d8a1324fc3e198d60c1c4_images%20(3).jpeg",
+    "logo": "/logos/clickup.jpg",
     "emailCount": 22,
     "useCases": [
       "celebrate-milestones",
@@ -242,7 +242,7 @@
   {
     "slug": "customer-io",
     "name": "Customer.io",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d8b7f238588e911eb5142_favicon.svg",
+    "logo": "/logos/customer-io.svg",
     "emailCount": 32,
     "useCases": [
       "announce-new-features",
@@ -266,7 +266,7 @@
   {
     "slug": "docusign",
     "name": "Docusign",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d8a74ebb6da464d8e6588_DOCU-60cafc67.png",
+    "logo": "/logos/docusign.png",
     "emailCount": 15,
     "useCases": [
       "expand-user",
@@ -290,7 +290,7 @@
   {
     "slug": "dropbox",
     "name": "Dropbox",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d8a6b900aa6e83e41ce56_674000d6c0a42d41f8c331be_dropbox-2-logo-png-transparent.png",
+    "logo": "/logos/dropbox.png",
     "emailCount": 19,
     "useCases": [
       "celebrate-milestones",
@@ -314,7 +314,7 @@
   {
     "slug": "figma",
     "name": "Figma",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d8c93bf4fd11a0c730d2b_figma-logo-512.webp",
+    "logo": "/logos/figma.webp",
     "emailCount": 40,
     "useCases": [
       "expand-user",
@@ -338,7 +338,7 @@
   {
     "slug": "fiverr",
     "name": "Fiverr",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d8b68f1d2ff29929ecc33_fiverr-logo-icon-online-platform-for-freelancers-free-vector.jpg",
+    "logo": "/logos/fiverr.jpg",
     "emailCount": 50,
     "useCases": [
       "announce-new-features",
@@ -362,7 +362,7 @@
   {
     "slug": "freepik",
     "name": "Freepik",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d8bf90ac9de0c3c3f24e0_freepik.svg",
+    "logo": "/logos/freepik.svg",
     "emailCount": 44,
     "useCases": [
       "announce-new-features",
@@ -386,7 +386,7 @@
   {
     "slug": "grammarly",
     "name": "Grammarly",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d876de46d519a09900356_grammarly-1.svg",
+    "logo": "/logos/grammarly.svg",
     "emailCount": 7,
     "useCases": [
       "celebrate-milestones",
@@ -410,7 +410,7 @@
   {
     "slug": "hubspot",
     "name": "Hubspot",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d8994e0481451a293f107_168_Hubspot_logo_logos-512.webp",
+    "logo": "/logos/hubspot.webp",
     "emailCount": 7,
     "useCases": [
       "celebrate-milestones",
@@ -434,7 +434,7 @@
   {
     "slug": "hunter-io",
     "name": "Hunter.io",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d86fbc360e745cd39741e_655b8092803c160e897dc450_hunter_logo.webp",
+    "logo": "/logos/hunter-io.webp",
     "emailCount": 26,
     "useCases": [
       "expand-user",
@@ -458,7 +458,7 @@
   {
     "slug": "jira",
     "name": "Jira",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d8a50c097b7292da94930_images%20(1).jpeg",
+    "logo": "/logos/jira.jpg",
     "emailCount": 11,
     "useCases": [
       "announce-new-features",
@@ -482,7 +482,7 @@
   {
     "slug": "loom",
     "name": "Loom",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/67f4c3310234b32004cf6270_pngegg.png",
+    "logo": "/logos/loom.png",
     "emailCount": 41,
     "useCases": [
       "announce-new-features",
@@ -506,7 +506,7 @@
   {
     "slug": "lovable",
     "name": "Lovable",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/689f6be49f87a9eafb1589e9_download.jpeg",
+    "logo": "/logos/lovable.jpg",
     "emailCount": 14,
     "useCases": [
       "announce-new-features",
@@ -530,7 +530,7 @@
   {
     "slug": "lucid",
     "name": "Lucid",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d870fd3a93cbad38b0018_3865608556737_8f4ae4a98b36ab6912b3_512.png",
+    "logo": "/logos/lucid.png",
     "emailCount": 47,
     "useCases": [
       "onboard-free-user",
@@ -554,7 +554,7 @@
   {
     "slug": "mailchimp",
     "name": "MailChimp",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d878dc5118ef5e09291b4_MC_Case_Study_V2-07-a3cdbb.avif",
+    "logo": "/logos/mailchimp.avif",
     "emailCount": 44,
     "useCases": [
       "announce-new-features",
@@ -578,7 +578,7 @@
   {
     "slug": "make",
     "name": "Make",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d898c7ab29a3048230933_658d1160346d50ccbcb96f6f_Make-Logo.svg",
+    "logo": "/logos/make.svg",
     "emailCount": 17,
     "useCases": [
       "announce-new-features",
@@ -602,7 +602,7 @@
   {
     "slug": "miro",
     "name": "Miro",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d8cf9f6399ed1929095a4_icon%20(1).webp",
+    "logo": "/logos/miro.webp",
     "emailCount": 18,
     "useCases": [
       "announce-new-features",
@@ -626,7 +626,7 @@
   {
     "slug": "monday",
     "name": "Monday",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d8d25971605faedc34b42_monday-logo-png_seeklogo-394605.png",
+    "logo": "/logos/monday.png",
     "emailCount": 25,
     "useCases": [
       "educate-engage",
@@ -650,7 +650,7 @@
   {
     "slug": "notion",
     "name": "Notion",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/67f4c2d44bdb4ee637753547_Notion-logo.svg.png",
+    "logo": "/logos/notion.png",
     "emailCount": 46,
     "useCases": [
       "announce-new-features",
@@ -674,7 +674,7 @@
   {
     "slug": "paypal",
     "name": "Paypal",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d8cc4613ede1ebf964496_250_Paypal_logo-512.webp",
+    "logo": "/logos/paypal.webp",
     "emailCount": 21,
     "useCases": [
       "announce-new-features",
@@ -698,7 +698,7 @@
   {
     "slug": "phantom-busters",
     "name": "Phantom Busters",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d87578c80061c7fe9be7f_cd8ba3e7-98f0-4d2c-9c07-9f536c7cbbab.jpg",
+    "logo": "/logos/phantom-busters.jpg",
     "emailCount": 14,
     "useCases": [
       "expand-user",
@@ -722,7 +722,7 @@
   {
     "slug": "pipedrive",
     "name": "Pipedrive",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/67f11c7a9bf370f0e1ac0f5e_67ee9b57b197da15375962a6_Pipedrive.png",
+    "logo": "/logos/pipedrive.png",
     "emailCount": 46,
     "useCases": [
       "announce-new-features",
@@ -746,7 +746,7 @@
   {
     "slug": "semrush",
     "name": "SemRush",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d8c6715e4175966906329_images%20(4).jpeg",
+    "logo": "/logos/semrush.jpg",
     "emailCount": 0,
     "useCases": [
       "expand-user",
@@ -770,7 +770,7 @@
   {
     "slug": "slack",
     "name": "Slack",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/68bf09208b1bc05c36bc169f_sl.jpg",
+    "logo": "/logos/slack.jpg",
     "emailCount": 35,
     "useCases": [
       "celebrate-milestones",
@@ -794,7 +794,7 @@
   {
     "slug": "stripe",
     "name": "Stripe",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d897581cd1903afc0cb01_images.jpeg",
+    "logo": "/logos/stripe.jpg",
     "emailCount": 18,
     "useCases": [
       "announce-new-features",
@@ -818,7 +818,7 @@
   {
     "slug": "surveymonkey",
     "name": "SurveyMonkey",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d8a459b50ba8a41d9982e_unnamed.png",
+    "logo": "/logos/surveymonkey.png",
     "emailCount": 11,
     "useCases": [
       "announce-new-features",
@@ -842,7 +842,7 @@
   {
     "slug": "typeform",
     "name": "Typeform",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d89690356fcda7d3f6792_typeform-logo-png_seeklogo-363144.png",
+    "logo": "/logos/typeform.png",
     "emailCount": 14,
     "useCases": [
       "announce-new-features",
@@ -866,7 +866,7 @@
   {
     "slug": "webflow",
     "name": "Webflow",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d87abf5f0c83f3cf57b4a_webflow.png",
+    "logo": "/logos/webflow.png",
     "emailCount": 27,
     "useCases": [
       "onboard-free-user",
@@ -910,7 +910,7 @@
   {
     "slug": "zapier",
     "name": "Zapier",
-    "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d87a1dcca6da79a801766_zapier-logo-png_seeklogo-274108.png",
+    "logo": "/logos/zapier.png",
     "emailCount": 27,
     "useCases": [
       "announce-new-features",
