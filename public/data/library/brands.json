@@ -888,6 +888,26 @@
     "metaDesc": "Webflow offers simple, plain-text onboarding, educational articles, reports, activity-based alerts, and frequent upsells for its localization feature."
   },
   {
+    "slug": "wispr-flow",
+    "name": "Wispr Flow",
+    "logo": "/logos/wispr-flow.png",
+    "emailCount": 7,
+    "useCases": [
+      "onboard-free-user",
+      "transactional-email",
+      "celebrate-milestones",
+      "expand-user",
+      "request-feedback"
+    ],
+    "duration": "About 4 weeks",
+    "dateStart": "March 25, 2026",
+    "dateEnd": "April 20, 2026",
+    "avgDelay": "~4 days",
+    "summary": "<p>Wispr Flow's email program is a tight, purple-accented onboarding sequence tied to its voice-dictation product — new users land in a 14-day Pro trial and receive a near-daily cadence of setup, feature-education, and habit-building nudges across the first week. The copy is personal and second-person throughout, with every email anchored by a single, unmistakable CTA that either opens the app or deep-links into a specific settings screen.</p><p>Later sends shift to lifecycle moments: a monthly 'Flow State' recap with personalized stats, a trial-expiration warning that frames downgrade risk in concrete product terms, and a one-click NPS survey. A plain-text incident apology — no illustrations, no marketing language — rounds out the stack and shows the team is willing to drop the brand voice when the moment calls for it.</p>",
+    "description": "",
+    "metaDesc": "Wispr Flow onboarding: 14-day Pro trial, daily feature nudges, monthly stats recap, trial-expiration urgency, plain-text incident apology, one-click NPS."
+  },
+  {
     "slug": "zapier",
     "name": "Zapier",
     "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d87a1dcca6da79a801766_zapier-logo-png_seeklogo-274108.png",

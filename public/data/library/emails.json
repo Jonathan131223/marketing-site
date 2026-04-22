@@ -16688,5 +16688,120 @@
     "useCase": "educate-engage",
     "setDate": "Fri May 03 2024 08:38:00 GMT+0000 (Coordinated Universal Time)",
     "sender": "James from Pipedrive"
+  },
+  {
+    "id": "69e8ebfc3d322297ff35c90f",
+    "slug": "welcome-free-users-from-wispr-flow-03252026",
+    "subject": "Welcome to Wispr Flow 💜",
+    "thumb": "/email-screenshots/welcome-free-users-from-wispr-flow-03252026.png",
+    "templateTitle": "Welcome to Wispr Flow",
+    "summary": "This welcome email greets new Wispr Flow signups with a 14-day free Pro trial and walks them through a three-step dictation setup — launch the Mac app, place the cursor in any text box, and hold Fn to speak. The design uses a clean, purple-accented layout with numbered steps and a single 'Try Flow today' CTA that makes the next action unmistakable.",
+    "tags": [
+      "welcome-free-users",
+      "trial-just-started",
+      "onboarding-checklist"
+    ],
+    "brand": "wispr-flow",
+    "useCase": "onboard-free-user",
+    "setDate": "Wed Mar 25 2026 10:29:21 GMT+0000 (Coordinated Universal Time)",
+    "sender": "Wispr Flow"
+  },
+  {
+    "id": "69e8ebfcdb129229738a7b35",
+    "slug": "feature-usage-nudge-from-wispr-flow-03262026",
+    "subject": "Talk more, type less 🗣️",
+    "thumb": "/email-screenshots/feature-usage-nudge-from-wispr-flow-03262026.png",
+    "templateTitle": "Talk more, type less",
+    "summary": "This day-two nudge reinforces the core value of voice dictation by highlighting three high-impact use cases — messages, email, and AI prompts — where new users can immediately save time. It balances habit-building language with a reassuring data-privacy note, ending with a single 'Open Flow to dictate' CTA that sends users straight back into the product.",
+    "tags": [
+      "feature-usage-nudge",
+      "product-education",
+      "trial-just-started"
+    ],
+    "brand": "wispr-flow",
+    "useCase": "onboard-free-user",
+    "setDate": "Thu Mar 26 2026 10:29:21 GMT+0000 (Coordinated Universal Time)",
+    "sender": "Wispr Flow"
+  },
+  {
+    "id": "69e8ebfc94f64544cb8125d8",
+    "slug": "customer-success-from-wispr-flow-03272026",
+    "subject": "Brief disruption earlier today",
+    "thumb": "/email-screenshots/customer-success-from-wispr-flow-03272026.png",
+    "templateTitle": "Brief disruption earlier today",
+    "summary": "This incident apology notifies users about a temporary backend outage that affected authentication, confirms the issue is resolved, and points readers to the support page for updates. The tone is plain, humble, and direct — no marketing flourishes, just a short status update signed by 'The team at Wispr Flow.'",
+    "tags": [
+      "customer-success",
+      "activity-update"
+    ],
+    "brand": "wispr-flow",
+    "useCase": "transactional-email",
+    "setDate": "Fri Mar 27 2026 18:02:17 GMT+0000 (Coordinated Universal Time)",
+    "sender": "Wispr Flow"
+  },
+  {
+    "id": "69e8ebfc2330752cd51e0670",
+    "slug": "feature-usage-nudge-from-wispr-flow-03292026",
+    "subject": "Voice-to-text that actually sounds like you!",
+    "thumb": "/email-screenshots/feature-usage-nudge-from-wispr-flow-03292026.png",
+    "templateTitle": "Voice-to-text that sounds like you",
+    "summary": "This feature-education email explains how Wispr Flow learns from the user over time through Styles, Dictionary, and Snippets, with each concept introduced via a short definition and a direct deep link into the relevant settings page. The layout uses icon-led cards and a friendly, second-person tone to turn abstract personalization features into concrete actions the reader can take right now.",
+    "tags": [
+      "feature-usage-nudge",
+      "product-education"
+    ],
+    "brand": "wispr-flow",
+    "useCase": "onboard-free-user",
+    "setDate": "Sun Mar 29 2026 11:29:25 GMT+0000 (Coordinated Universal Time)",
+    "sender": "Wispr Flow"
+  },
+  {
+    "id": "69e8ebfc04555e385c2a1fe2",
+    "slug": "month-in-review-from-wispr-flow-04022026",
+    "subject": "Your Flow State in March 💜",
+    "thumb": "/email-screenshots/month-in-review-from-wispr-flow-04022026.png",
+    "templateTitle": "Your Flow State in March",
+    "summary": "This monthly recap celebrates the user's dictation activity with personalized stats (words spoken, usage ranking, WPM, active days visualized as a heatmap calendar), then transitions into a what's-new changelog and a referral CTA. The emotional hook is specificity — naming apps the reader used Flow in and calling out their percentile — which makes the send feel like a personal achievement summary rather than a generic marketing blast.",
+    "tags": [
+      "month-in-review",
+      "milestone-reached",
+      "referral-prompt"
+    ],
+    "brand": "wispr-flow",
+    "useCase": "celebrate-milestones",
+    "setDate": "Thu Apr 02 2026 22:12:32 GMT+0000 (Coordinated Universal Time)",
+    "sender": "Wispr Flow"
+  },
+  {
+    "id": "69e8ebfc459252f6fdc23b84",
+    "slug": "trial-expiration-warning-from-wispr-flow-04102026",
+    "subject": "Your Flow Pro access ends soon ⏳",
+    "thumb": "/email-screenshots/trial-expiration-warning-from-wispr-flow-04102026.png",
+    "templateTitle": "Your Flow Pro access ends soon",
+    "summary": "This urgency-driven trial-expiration email tells the user their Flow Pro access ends within the day and contrasts what they'll lose on downgrade (2k-word weekly cap, slower support, no early feature access) with a single 'Continue with Flow Pro' CTA. The copy is short, benefit-focused, and softens the pressure by confirming auto-downgrade rather than auto-charge.",
+    "tags": [
+      "trial-expiration-warning",
+      "upgrade-cta"
+    ],
+    "brand": "wispr-flow",
+    "useCase": "expand-user",
+    "setDate": "Fri Apr 10 2026 11:19:28 GMT+0000 (Coordinated Universal Time)",
+    "sender": "Wispr Flow"
+  },
+  {
+    "id": "69e8ebfc1fd965650574e181",
+    "slug": "nps-survey-from-wispr-flow-04202026",
+    "subject": "One quick question for you",
+    "thumb": "/email-screenshots/nps-survey-from-wispr-flow-04202026.png",
+    "templateTitle": "One quick question for you",
+    "summary": "This NPS email asks the classic 'how likely are you to recommend Wispr Flow' 0–10 scorecard, with each score rendered as a tappable button so the user submits in one click from the inbox. The framing is short and personal — one question, one reason it matters — with a signature 'Written with Wispr Flow' that doubles as quiet social proof.",
+    "tags": [
+      "nps-survey",
+      "survey"
+    ],
+    "brand": "wispr-flow",
+    "useCase": "request-feedback",
+    "setDate": "Mon Apr 20 2026 11:14:20 GMT+0000 (Coordinated Universal Time)",
+    "sender": "Wispr Flow"
   }
 ]

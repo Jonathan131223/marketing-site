@@ -3,7 +3,7 @@
     "slug": "onboard-free-user",
     "name": "Onboard Free User",
     "description": "Activation-focused email sequences designed to get trial and freemium users to their first 'aha moment' fast. These flows reduce time-to-value, drive feature adoption, and set the stage for paid conversion — covering welcome emails, setup prompts, checklist nudges, and onboarding calls.",
-    "emailCount": 10,
+    "emailCount": 13,
     "order": 1,
     "brands": [
       "loom",
@@ -43,7 +43,8 @@
       "stripe",
       "typeform",
       "lovable",
-      "slack"
+      "slack",
+      "wispr-flow"
     ]
   },
   {
@@ -191,7 +192,7 @@
     "slug": "expand-user",
     "name": "Expand User",
     "description": "Revenue expansion emails targeting active users with upsell, cross-sell, and upgrade opportunities. Triggered by usage patterns, plan limits, or behavioral signals, these emails grow account value — covering upgrade CTAs, annual plan offers, seat expansion prompts, and quota-reached nudges.",
-    "emailCount": 10,
+    "emailCount": 11,
     "order": 5,
     "brands": [
       "calendly",
@@ -231,7 +232,8 @@
       "typeform",
       "aircall",
       "lovable",
-      "slack"
+      "slack",
+      "wispr-flow"
     ]
   },
   {
@@ -285,7 +287,7 @@
     "slug": "celebrate-milestones",
     "name": "Celebrate Milestones",
     "description": "Triggered emails celebrating when users reach significant usage milestones, product anniversaries, or personal achievements. These emotionally resonant messages reinforce positive behavior, generate loyalty, and are among the most shared and replied-to emails in the SaaS lifecycle.",
-    "emailCount": 10,
+    "emailCount": 11,
     "order": 7,
     "brands": [
       "notion",
@@ -325,14 +327,15 @@
       "stripe",
       "typeform",
       "lovable",
-      "slack"
+      "slack",
+      "wispr-flow"
     ]
   },
   {
     "slug": "request-feedback",
     "name": "Request Feedback",
     "description": "Structured feedback collection emails including NPS surveys, churn exit interviews, qualitative questions, and product satisfaction requests. These emails generate the insights that directly inform retention strategy, product roadmap, and customer success playbooks.",
-    "emailCount": 10,
+    "emailCount": 11,
     "order": 8,
     "brands": [
       "calendly",
@@ -372,14 +375,15 @@
       "typeform",
       "aircall",
       "lovable",
-      "slack"
+      "slack",
+      "wispr-flow"
     ]
   },
   {
     "slug": "transactional-email",
     "name": "Transactional Emails",
     "description": "System-generated emails triggered by specific user actions — password resets, payment receipts, billing alerts, account confirmations, and security notifications. Transactional emails have the highest open rates of any email type and are a significant but often overlooked brand touchpoint.",
-    "emailCount": 0,
+    "emailCount": 1,
     "order": 9,
     "brands": [
       "notion",
@@ -419,7 +423,8 @@
       "stripe",
       "typeform",
       "lovable",
-      "slack"
+      "slack",
+      "wispr-flow"
     ]
   }
 ]
