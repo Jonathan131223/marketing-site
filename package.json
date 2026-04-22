@@ -19,7 +19,9 @@
     "gsc": "node scripts/gsc/query.mjs",
     "gsc:weekly": "node scripts/gsc/weekly-report.mjs --local",
     "gsc:weekly:dry": "node scripts/gsc/weekly-report.mjs --local --dry-run",
-    "gsc:secrets": "node scripts/gsc/print-secrets.mjs"
+    "gsc:secrets": "node scripts/gsc/print-secrets.mjs",
+    "lib:render": "node scripts/library-import/render-screenshots.mjs",
+    "lib:write": "node scripts/library-import/write-data.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
@@ -76,6 +78,7 @@
     "autoprefixer": "^10.4.20",
     "googleapis": "^171.4.0",
     "jsdom": "^29.0.2",
+    "playwright": "^1.59.1",
     "postcss": "^8.4.47",
     "satori": "^0.26.0",
     "sharp": "^0.34.5",

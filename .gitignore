@@ -15,8 +15,13 @@ dist/
 bun.lock
 bun.lockb
 
-# Claude Code / Conductor artifacts
-.claude/
+# Claude Code / Conductor artifacts — everything under .claude/ except project-shared skills
+.claude/*
+!.claude/skills/
+.claude/skills/*/state/
+
+# Library-import workflow cache (raw Gmail HTML, never committed)
+.cache/
 
 # Stray Python deps (unrelated cache that sometimes lands in repo root)
 .pydeps/
