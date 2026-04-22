@@ -17,7 +17,7 @@ import { join } from "node:path";
 import { chromium } from "playwright";
 import { CACHE_DIR, SCREENSHOTS_DIR, ensureDir, parseArgs } from "./helpers.mjs";
 
-const VIEWPORT = { width: 840, height: 1200 };
+const VIEWPORT = { width: 1200, height: 1200 };
 
 const args = parseArgs(process.argv);
 if (!args.brand) {
@@ -94,7 +94,7 @@ function wrapEmailHtml(html) {
   const hasHtmlTag = /<html[\s>]/i.test(html);
   if (hasDoctype && hasHtmlTag) return html;
   return `<!doctype html><html><head><meta charset="utf-8">
-<meta name="viewport" content="width=840, initial-scale=1">
+<meta name="viewport" content="width=1200, initial-scale=1">
 <style>html,body{margin:0;padding:0;background:#fff;font-family:-apple-system,Segoe UI,Roboto,sans-serif}
 img{max-width:100%;height:auto;display:block}</style>
 </head><body>${html}</body></html>`;
