@@ -17,7 +17,7 @@ import { join } from "node:path";
 import { chromium } from "playwright";
 import { CACHE_DIR, SCREENSHOTS_DIR, ensureDir, parseArgs } from "./helpers.mjs";
 
-const VIEWPORT = { width: 490, height: 1014 };
+const VIEWPORT = { width: 680, height: 1200 };
 
 const args = parseArgs(process.argv);
 if (!args.brand) {
@@ -39,7 +39,6 @@ try {
   const context = await browser.newContext({
     viewport: VIEWPORT,
     deviceScaleFactor: 2,
-    userAgent: "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148",
   });
   const page = await context.newPage();
 
@@ -79,7 +78,7 @@ try {
     } catch {}
     await page.screenshot({
       path: outPath,
-      clip: { x: 0, y: 0, width: VIEWPORT.width, height: VIEWPORT.height },
+      fullPage: true,
       type: "png",
     });
     console.log(`rendered ${entry.slug}`);
@@ -95,8 +94,8 @@ function wrapEmailHtml(html) {
   const hasHtmlTag = /<html[\s>]/i.test(html);
   if (hasDoctype && hasHtmlTag) return html;
   return `<!doctype html><html><head><meta charset="utf-8">
-<meta name="viewport" content="width=490, initial-scale=1">
+<meta name="viewport" content="width=680, initial-scale=1">
 <style>html,body{margin:0;padding:0;background:#fff;font-family:-apple-system,Segoe UI,Roboto,sans-serif}
-body{width:490px}img{max-width:100%;height:auto;display:block}</style>
+img{max-width:100%;height:auto;display:block}</style>
 </head><body>${html}</body></html>`;
 }
