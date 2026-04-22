@@ -1,10 +1,10 @@
 import { useRef, useState, type ComponentType, type KeyboardEvent } from "react";
-import { useNavigate } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { useAppStore } from "@/hooks/useAppStore";
 import type { UseCase } from "@/types/emailGenerator";
 import { useCasesByCategory } from "@/utils/useCaseMapping";
+import { appUrl } from "@/config/appUrl";
 import { Zap, Lightbulb, TrendingUp, Shield, Users, Megaphone } from "lucide-react";
 
 type CategoryKey =
@@ -106,7 +106,6 @@ void _categoryOrderIsExhaustive;
 void _categoryOrderHasNoDuplicates;
 
 export default function UseCasePickerPage() {
-  const navigate = useNavigate();
   const { workflow } = useAppStore();
   // Default to activation — user lands with the first category already open
   // so 8 use cases are visible above the fold instead of 6 closed cards.
@@ -126,9 +125,13 @@ export default function UseCasePickerPage() {
     content: null,
   });
 
+  // Hand off to the app (app.digistorms.ai) instead of navigating to the
+  // marketing site's own /email-generator/brief page. The app owns the
+  // brief/generate/customize flow now; keeping state in the store so the
+  // user sees their selection reflected if they come back.
   const handleUseCaseSelect = (useCase: UseCase) => {
     workflow.setUseCase(useCase);
-    navigate(`/email-generator/brief?useCase=${useCase}`);
+    window.location.href = appUrl(`/generator/brief?useCase=${useCase}`);
   };
 
   // Keyboard navigation for the tab list — WAI-ARIA tabs pattern.
