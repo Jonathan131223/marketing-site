@@ -888,24 +888,6 @@
     "metaDesc": "Webflow offers simple, plain-text onboarding, educational articles, reports, activity-based alerts, and frequent upsells for its localization feature."
   },
   {
-    "slug": "wispr-flow",
-    "name": "Wispr Flow",
-    "logo": "/logos/wispr-flow.png",
-    "emailCount": 5,
-    "useCases": [
-      "onboard-free-user",
-      "transactional-email",
-      "celebrate-milestones"
-    ],
-    "duration": "About 8 days",
-    "dateStart": "March 25, 2026",
-    "dateEnd": "April 2, 2026",
-    "avgDelay": "~2 days",
-    "summary": "<p>Wispr Flow is a voice-to-text desktop app that lets users dictate into any text box at 200+ words per minute. Their email program leans hard into the speed-of-thought brand promise — the first touch is a three-step activation email with a CEO quote, followed by a short sequence of feature-education nudges during the 14-day Flow Pro trial.</p><p>What stands out is the monthly 'Flow State' recap — a richly personalized stats email blending word counts, a cohort leaderboard, app-level usage, and feature announcements. It's a textbook example of using personal data and brand narrative together to make a product feel alive between logins.</p>",
-    "description": "",
-    "metaDesc": "Wispr Flow email examples: 14-day trial onboarding, feature education nudges, service incident apology, and a personalized 'Flow State' monthly recap."
-  },
-  {
     "slug": "zapier",
     "name": "Zapier",
     "logo": "https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d87a1dcca6da79a801766_zapier-logo-png_seeklogo-274108.png",

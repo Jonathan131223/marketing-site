@@ -3,25 +3,25 @@
 
   <url>
     <loc>https://www.digistorms.ai/library</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2025-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.digistorms.ai/library/brands</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2025-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.digistorms.ai/library/tags</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2025-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.digistorms.ai/library/usecases</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2025-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -248,12 +248,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.digistorms.ai/library/brand/wispr-flow</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.digistorms.ai/library/brand/zapier</loc>
     <lastmod>2025-07-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -267,7 +261,7 @@
   </url>
   <url>
     <loc>https://www.digistorms.ai/library/tag/activity-update</loc>
-    <lastmod>2026-03-27</lastmod>
+    <lastmod>2025-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -303,7 +297,7 @@
   </url>
   <url>
     <loc>https://www.digistorms.ai/library/tag/complete-purchase</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2025-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -327,7 +321,7 @@
   </url>
   <url>
     <loc>https://www.digistorms.ai/library/tag/customer-success</loc>
-    <lastmod>2026-03-27</lastmod>
+    <lastmod>2025-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -375,13 +369,13 @@
   </url>
   <url>
     <loc>https://www.digistorms.ai/library/tag/feature-upsell</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2025-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.digistorms.ai/library/tag/feature-usage-nudge</loc>
-    <lastmod>2026-03-29</lastmod>
+    <lastmod>2025-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -429,7 +423,7 @@
   </url>
   <url>
     <loc>https://www.digistorms.ai/library/tag/join-waitlist</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2025-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -447,13 +441,13 @@
   </url>
   <url>
     <loc>https://www.digistorms.ai/library/tag/milestone-reached</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2025-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.digistorms.ai/library/tag/month-in-review</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2024-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -501,7 +495,7 @@
   </url>
   <url>
     <loc>https://www.digistorms.ai/library/tag/onboarding-checklist</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2025-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -537,13 +531,13 @@
   </url>
   <url>
     <loc>https://www.digistorms.ai/library/tag/payment-reminder</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2025-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.digistorms.ai/library/tag/product-education</loc>
-    <lastmod>2026-03-29</lastmod>
+    <lastmod>2025-08-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -585,13 +579,13 @@
   </url>
   <url>
     <loc>https://www.digistorms.ai/library/tag/referral-prompt</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.digistorms.ai/library/tag/refund-policy</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2025-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -627,7 +621,7 @@
   </url>
   <url>
     <loc>https://www.digistorms.ai/library/tag/team-invite-accepted</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2025-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -663,7 +657,7 @@
   </url>
   <url>
     <loc>https://www.digistorms.ai/library/tag/trial-just-started</loc>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2025-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -723,7 +717,7 @@
   </url>
   <url>
     <loc>https://www.digistorms.ai/library/tag/welcome-free-users</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2025-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -741,7 +735,7 @@
   </url>
   <url>
     <loc>https://www.digistorms.ai/library/usecase/onboard-free-user</loc>
-    <lastmod>2026-03-29</lastmod>
+    <lastmod>2025-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -777,7 +771,7 @@
   </url>
   <url>
     <loc>https://www.digistorms.ai/library/usecase/celebrate-milestones</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2025-08-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -789,7 +783,7 @@
   </url>
   <url>
     <loc>https://www.digistorms.ai/library/usecase/transactional-email</loc>
-    <lastmod>2026-03-27</lastmod>
+    <lastmod>2025-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -7096,36 +7090,6 @@
   <url>
     <loc>https://www.digistorms.ai/library/email/newsletter-from-pipedrive-05032024</loc>
     <lastmod>2024-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.digistorms.ai/library/email/welcome-free-users-from-wispr-flow-03252026</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.digistorms.ai/library/email/feature-usage-nudge-from-wispr-flow-03262026</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.digistorms.ai/library/email/customer-success-from-wispr-flow-03272026</loc>
-    <lastmod>2026-03-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.digistorms.ai/library/email/feature-usage-nudge-from-wispr-flow-03292026</loc>
-    <lastmod>2026-03-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.digistorms.ai/library/email/month-in-review-from-wispr-flow-04022026</loc>
-    <lastmod>2026-04-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
