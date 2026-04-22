@@ -58,6 +58,8 @@ async function main() {
     `https://${HOST}/blog/webinar-follow-up-email`,
     `https://${HOST}/blog/webinar-follow-up-subject-lines`,
     `https://${HOST}/blog/product-launch-email-subject-lines`,
+    `https://${HOST}/blog/saas-onboarding-email-sequence`,
+    `https://${HOST}/blog/saas-email-templates`,
     `https://${HOST}/blog/milestone-emails`,
     `https://${HOST}/blog/upgrade-emails`,
     `https://${HOST}/blog/dunning-emails`,

@@ -11,6 +11,16 @@ interface EmailGalleryProps {
 }
 
 const generateRealisticEmails = (briefData: BriefData): EmailTemplate[] => {
+  // Mock fallback emails shown when the real backend doesn't return content.
+  // Copy follows the same founder-voice rules as the production prompts in
+  // email-creation-backend (founder_email_sequence_generator.py):
+  //   - No em-dashes (single clearest tell of AI writing)
+  //   - No "unlock/dive/journey/elevate/crushing/superstar/family" slop words
+  //   - Contractions required (don't, it's, we're)
+  //   - Short sentences, concrete nouns
+  //   - Three variants keep the tone knob useful: "professional" is direct and
+  //     terse; "friendly" is personal with a light touch; "urgent" is short
+  //     and factual without fake scarcity language.
   const emailTemplates = {
     welcome: [
       {
@@ -19,261 +29,155 @@ const generateRealisticEmails = (briefData: BriefData): EmailTemplate[] => {
         brandTone: "Clean and trustworthy",
         content: `**Welcome to ${briefData.companyName}**
 
-Thanks for joining us! To get started, ${briefData.primaryAction?.toLowerCase()} and start ${briefData.keyOutcome || "achieving your goals"
-          }.
+Thanks for signing up. The quickest way to see what ${briefData.productName || briefData.companyName} does is to ${briefData.primaryAction?.toLowerCase() || "get set up"}, so that's what I'd start with.
 
-• ${briefData.keyOutcome || "Track performance instantly"}
-• Get insights in real-time
-• Scale with confidence
+${briefData.keyOutcome ? `That's the step that gets you ${briefData.keyOutcome.toLowerCase()}.` : ""}
 
-We're here if you need us — just reply to this email.
+If anything's unclear or you hit a wall, reply to this email. A real person reads it.
 
-Best regards,
-The ${briefData.companyName} Team
+Best,
+The ${briefData.companyName} team
 
-[${briefData.primaryAction || "Get Started"}]`,
+[${briefData.primaryAction || "Get started"}]`,
       },
       {
         style: "friendly" as const,
-        subject: `🎉 You're in! Here's what happens next`,
-        brandTone: "Warm and approachable",
-        content: `Hey there! 👋
+        subject: `you're in`,
+        brandTone: "Warm and personal",
+        content: `Hey,
 
-Welcome to the ${briefData.companyName
-          } family! We're genuinely excited you're here.
+Welcome to ${briefData.companyName}. Glad you signed up.
 
-You know that feeling when you find exactly what you've been looking for? That's what we want ${briefData.productName
-          } to be for you.
+Quick tip: the fastest way to see if this is a fit is to ${briefData.primaryAction?.toLowerCase() || "get set up"}. Takes a few minutes, and you'll know right away whether ${briefData.productName || briefData.companyName} is useful for you.
 
-**Let's dive in:** ${briefData.primaryAction}
+${briefData.keyOutcome ? `Most people who do this step end up ${briefData.keyOutcome.toLowerCase()}.` : ""}
 
-${briefData.keyOutcome
-            ? `Why this matters: ${briefData.keyOutcome} — and who doesn't want that? 😊`
-            : ""
-          }
+Anything in the way? Just reply and tell me what you're trying to do. I'll point you at the right thing.
 
-Quick question: What brought you to ${briefData.productName
-          }? Hit reply and let us know — we love hearing from our community.
-
-${briefData.supportOffered
-            ? `Stuck on anything? ${briefData.supportOffered}`
-            : "Need anything? Just reply to this email."
-          }
-
-Cheers to your success! 🚀
-[Your Name] & the ${briefData.companyName} team
-
-P.S. Follow us on Twitter @${(briefData.companyName || "yourcompany")
-            .toLowerCase()
-            .replace(
-              /[^a-z0-9_]/g,
-              ""
-            )} for daily tips and behind-the-scenes updates.`,
+Cheers,
+The ${briefData.companyName} team`,
       },
       {
         style: "urgent" as const,
-        subject: `⚡ Your ${briefData.productName} account is ready — start now`,
-        brandTone: "Direct and action-oriented",
-        content: `Your ${briefData.productName} account is live.
+        subject: `your ${briefData.productName || briefData.companyName} account is ready`,
+        brandTone: "Direct and short",
+        content: `Your account is live.
 
-Most successful ${briefData.targetAudience
-          } see results within their first session.
+Next step: ${briefData.primaryAction || "get started"}.
 
-**Action required:** ${briefData.primaryAction}
+${briefData.keyOutcome ? `You'll get ${briefData.keyOutcome.toLowerCase()} once that's done.` : ""}
 
-${briefData.keyOutcome ? `Expected outcome: ${briefData.keyOutcome}` : ""}
+[${briefData.primaryAction || "Get started"}]
 
-The difference between success and stagnation? Taking action immediately.
+If you get stuck, reply here.
 
-Start now: [Get Started Button]
-
-${briefData.companyName}
-
-P.S. This onboarding sequence is designed to get you results fast. Don't skip the next few emails.`,
+${briefData.companyName}`,
       },
     ],
     "milestone-celebration": [
       {
         style: "professional" as const,
-        subject: `Milestone achieved: ${briefData.milestone || "Congratulations"
-          }`,
-        brandTone: "Professional celebration",
-        content: `Congratulations!
+        subject: `${briefData.milestone || "Milestone"}, done`,
+        brandTone: "Direct congratulations",
+        content: `Nice work.
 
-You've just ${briefData.milestone} — this puts you ahead of 80% of ${briefData.targetAudience
-          } who use ${briefData.productName}.
+You just ${briefData.milestone?.toLowerCase() || "hit a milestone"}. ${briefData.keyOutcome ? briefData.keyOutcome : "That's the hard part."}
 
-**What this means:** ${briefData.keyOutcome || "You're building real momentum"}
+Next step when you're ready: ${briefData.primaryAction || "keep going"}.
 
-**Your next opportunity:** ${briefData.primaryAction}
+${briefData.supportOffered ? briefData.supportOffered : "Questions, reply here."}
 
-This milestone indicates you're getting genuine value from ${briefData.productName
-          }. Users who reach this point typically see even greater results when they take the next step.
-
-${briefData.supportOffered
-            ? `Want to accelerate your progress? ${briefData.supportOffered}`
-            : "Questions about your next steps? Reply to this email."
-          }
-
-Keep up the excellent work,
-The ${briefData.companyName} Team
-
-P.S. We'll be sharing advanced strategies with milestone achievers like you over the coming weeks.`,
+Best,
+The ${briefData.companyName} team`,
       },
       {
         style: "friendly" as const,
-        subject: `🏆 You're crushing it! (${briefData.milestone})`,
-        brandTone: "Enthusiastic and celebratory",
-        content: `Hey superstar! 🌟
+        subject: `nice, ${briefData.milestone?.toLowerCase() || "you made it"}`,
+        brandTone: "Warm and personal",
+        content: `Hey,
 
-We just noticed something amazing — you've ${briefData.milestone}!
+Saw you just ${briefData.milestone?.toLowerCase() || "hit your first milestone"}. Quick note to say: good work.
 
-Seriously, take a moment to celebrate this. ${briefData.keyOutcome
-            ? `${briefData.keyOutcome} — that's huge!`
-            : "This is a big deal!"
-          }
+${briefData.keyOutcome ? `${briefData.keyOutcome}, which is the whole point.` : "That's usually where people start to get real value out of it."}
 
-You're in the top 20% of ${briefData.productName
-          } users. Want to know what the top 5% do differently?
+When you've got a minute, the next thing worth doing is ${briefData.primaryAction?.toLowerCase() || "the next step"}. Smaller effort than the first one, more payoff.
 
-**They take this next step:** ${briefData.primaryAction}
+${briefData.supportOffered ? briefData.supportOffered : "Anything in the way? Reply and tell me."}
 
-${briefData.supportOffered
-            ? `Pro tip: ${briefData.supportOffered}`
-            : "Want a high-five? Hit reply — we love celebrating wins with our users! 🎉"
-          }
-
-Keep being awesome,
-[Your Name] from ${briefData.companyName}
-
-P.S. Screenshot this email and share your win! Tag us @${(
-            briefData.companyName || "yourcompany"
-          )
-            .toLowerCase()
-            .replace(
-              /[^a-z0-9_]/g,
-              ""
-            )} — we love amplifying our users' success stories.`,
+Cheers,
+The ${briefData.companyName} team`,
       },
       {
         style: "urgent" as const,
-        subject: `🔥 Momentum alert: ${briefData.milestone}`,
-        brandTone: "High-energy motivational",
-        content: `You're on fire! 🔥
+        subject: `${briefData.milestone || "step 1"}, done. step 2?`,
+        brandTone: "Short and factual",
+        content: `You just ${briefData.milestone?.toLowerCase() || "finished the first step"}.
 
-Achievement unlocked: ${briefData.milestone}
+${briefData.keyOutcome ? briefData.keyOutcome : "That's the tricky one."}
 
-${briefData.keyOutcome
-            ? `Impact: ${briefData.keyOutcome}`
-            : "Results: Ahead of 85% of users"
-          }
+Next: ${briefData.primaryAction || "keep going"}.
 
-**Strike while you're hot:** ${briefData.primaryAction}
+[${briefData.primaryAction || "Continue"}]
 
-Peak performers don't pause. They compound their wins.
-
-You have momentum. Use it.
-
-[Take Action Now]
-
-${briefData.companyName}
-
-P.S. Only 15% of users reach this milestone. Only 3% take the next step immediately. Which group are you in?`,
+${briefData.companyName}`,
       },
     ],
     "notify-trial-ending": [
       {
         style: "professional" as const,
-        subject: `Your ${briefData.productName} trial expires in ${briefData.trialDuration || "3 days"
-          }`,
-        brandTone: "Professional and helpful",
-        content: `Hi there,
+        subject: `your ${briefData.productName || briefData.companyName} trial ends in ${briefData.trialDuration || "3 days"}`,
+        brandTone: "Direct and helpful",
+        content: `Quick heads-up: your ${briefData.trialDuration || "14-day"} trial of ${briefData.productName || briefData.companyName} ends soon. Nothing auto-charges, it'll just stop working.
 
-Your ${briefData.trialDuration || "14-day"} trial of ${briefData.productName
-          } expires soon.
+If you want to keep going: ${briefData.primaryAction || "upgrade from your account page"}.
 
-Based on your usage, you've experienced firsthand how ${briefData.productName
-          } ${briefData.keyOutcome || "can streamline your workflow"}.
+What stays the same when you upgrade:
+• Your current data and settings
+• The features you've been using
+${briefData.supportOffered ? `• ${briefData.supportOffered}` : "• Direct email support"}
 
-**To continue your progress:** ${briefData.primaryAction}
+${briefData.supportOffered ? `Questions about plans? ${briefData.supportOffered}` : "Not sure which plan fits? Reply here and I'll help."}
 
-What you keep:
-• All your current data and settings
-• Continued access to features you're already using
-• ${briefData.supportOffered || "Priority support"}
+Best,
+The ${briefData.companyName} team
 
-${briefData.supportOffered
-            ? `Have questions about plans? ${briefData.supportOffered}`
-            : "Questions about pricing? Reply to this email for personalized help."
-          }
-
-We're here to ensure you make the right decision for your needs.
-
-Best regards,
-The ${briefData.companyName} Team
-
-P.S. Your trial data will be preserved for 30 days, giving you time to upgrade when you're ready.`,
+P.S. Your data is kept for 30 days, so if you come back later, you won't start from scratch.`,
       },
       {
         style: "friendly" as const,
-        subject: `Don't lose your ${briefData.productName} progress! 🚨`,
-        brandTone: "Friendly and supportive",
-        content: `Hey there! 👋
+        subject: `heads-up, trial ends in ${briefData.trialDuration || "a few days"}`,
+        brandTone: "Warm and personal",
+        content: `Hey,
 
-Quick heads up — your ${briefData.productName
-          } trial ends soon, and we'd hate for you to lose all the great work you've done!
+Your ${briefData.productName || briefData.companyName} trial ends in ${briefData.trialDuration || "a few days"}. Not trying to pressure you, just wanted to make sure you knew.
 
-You've already ${briefData.keyOutcome || "made great progress"
-          }, and we want to help you keep that momentum going.
+${briefData.keyOutcome ? `If ${briefData.keyOutcome.toLowerCase()} was useful, upgrading keeps that going.` : "If it's been useful, upgrading keeps everything in place."}
 
-**Ready to continue?** ${briefData.primaryAction}
+To keep going: ${briefData.primaryAction?.toLowerCase() || "upgrade from your account"}.
 
-Here's what happens when you upgrade:
-✅ Keep everything you've built
-✅ Unlock advanced features
-✅ ${briefData.supportOffered || "Get priority support"}
+Still figuring out if it's a fit? Reply and I'll extend your trial, no sweat. Easier than starting over later.
 
-${briefData.supportOffered
-            ? `Not sure which plan fits? ${briefData.supportOffered}`
-            : "Questions? Just hit reply — we're here to help! 😊"
-          }
-
-We're rooting for your success,
-[Your Name] & the ${briefData.companyName} team
-
-P.S. Over 10,000 ${briefData.targetAudience} trust ${briefData.productName
-          } to help them succeed. Join them?`,
+Cheers,
+The ${briefData.companyName} team`,
       },
       {
         style: "urgent" as const,
-        subject: `⏰ FINAL NOTICE: ${briefData.productName} trial expires soon`,
-        brandTone: "Urgent and direct",
-        content: `Your ${briefData.productName
-          } trial expires in less than 24 hours.
+        subject: `24h left on your ${briefData.productName || briefData.companyName} trial`,
+        brandTone: "Short and factual",
+        content: `Your trial ends tomorrow.
 
-Don't lose access to:
-• Your current progress
-• ${briefData.keyOutcome || "Advanced features"}  
-• All data you've created
+If you don't upgrade, you lose access to:
+• Your current setup
+${briefData.keyOutcome ? `• ${briefData.keyOutcome}` : ""}
+• The data you've put in
 
-**Last chance:** ${briefData.primaryAction}
+To keep it: ${briefData.primaryAction || "upgrade now"}.
 
-${briefData.trialDuration || "14 days"
-          } ago, you signed up because you needed a solution.
+[Upgrade]
 
-You found it. Don't lose it now.
+${briefData.supportOffered ? briefData.supportOffered : "Need more time? Reply here."}
 
-[Upgrade Immediately]
-
-${briefData.supportOffered
-            ? `Emergency questions? ${briefData.supportOffered}`
-            : "Last-minute questions? Call (555) 123-4567"
-          }
-
-Act now,
-${briefData.companyName}
-
-P.S. After expiration, account recovery takes 5-7 business days. Upgrade now to avoid interruption.`,
+${briefData.companyName}`,
       },
     ],
   };
@@ -1127,46 +1031,36 @@ export const EmailGallery: React.FC<EmailGalleryProps> = ({
     const apiEmails = briefData.apiResponse?.html_content || [];
 
     if (apiEmails.length > 0) {
-      // Get proper subject and preview based on use case
+      // Subject + preview fallbacks shown in the gallery card for each API-returned
+      // variant. Short, lowercase, no exclamation marks, no em-dashes, no slop words —
+      // same rules as the production prompts. Purpose is to set a tone example, not
+      // to be clever.
       const getSubjectForUseCase = (useCase: string) => {
-        const subjects = {
-          welcome: "Welcome to DigiStorms — let's get you started!",
-          "milestone-celebration": "You just hit your first milestone!",
-          "notify-trial-ending": "Your DigiStorms trial expires in 3 days",
-          "activate-trialists": "Ready to unlock DigiStorms's full potential?",
-          "trigger-nudge": "Quick question about your DigiStorms setup",
-          "stall-detection-rescue":
-            "Need help getting started with DigiStorms?",
-          "reactivate-trialists":
-            "We miss you! Your DigiStorms account is waiting",
-          "nurture-trialists":
-            "Still thinking about DigiStorms? Here's what you missed",
+        const subjects: Record<string, string> = {
+          welcome: "welcome to DigiStorms",
+          "milestone-celebration": "nice, milestone 1 done",
+          "notify-trial-ending": "your DigiStorms trial ends in 3 days",
+          "activate-trialists": "the quickest way to see if DigiStorms is a fit",
+          "trigger-nudge": "quick question about your setup",
+          "stall-detection-rescue": "stuck on anything?",
+          "reactivate-trialists": "your account is still here when you're ready",
+          "nurture-trialists": "a few things we shipped since you signed up",
         };
-        return subjects[useCase] || "Welcome to DigiStorms!";
+        return subjects[useCase] || "welcome to DigiStorms";
       };
 
       const getPreviewForUseCase = (useCase: string) => {
-        const previews = {
-          welcome:
-            "Get started with our amazing features and unlock your potential",
-          "milestone-celebration":
-            "Congratulations on your progress — here's what's next",
-          "notify-trial-ending":
-            "Don't lose access to your projects and team features",
-          "activate-trialists":
-            "Discover advanced features that will transform your workflow",
-          "trigger-nudge":
-            "One small step to unlock the full power of DigiStorms",
-          "stall-detection-rescue":
-            "Let us help you get the most out of your DigiStorms experience",
-          "reactivate-trialists":
-            "Your account is ready and waiting — let's continue where you left off",
-          "nurture-trialists":
-            "See the latest features and updates you've been missing",
+        const previews: Record<string, string> = {
+          welcome: "takes about 2 minutes to see if it's useful.",
+          "milestone-celebration": "here's the next thing worth doing.",
+          "notify-trial-ending": "nothing auto-charges, it'll just stop working.",
+          "activate-trialists": "one step, then you'll know if it's a fit.",
+          "trigger-nudge": "reply and tell me what you're trying to do.",
+          "stall-detection-rescue": "reply with what's in the way, I'll help.",
+          "reactivate-trialists": "no pressure, log in whenever.",
+          "nurture-trialists": "short update, you might care about one of these.",
         };
-        return (
-          previews[useCase] || "Everything you need to create powerful emails"
-        );
+        return previews[useCase] || "short note from the team.";
       };
 
       return apiEmails.map((variant: any, index: number) => ({
