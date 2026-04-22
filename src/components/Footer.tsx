@@ -160,12 +160,12 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/email-generator"
+                <a
+                  href="https://app.digistorms.ai/use-cases"
                   className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
                 >
                   Lifecycle Email Generator
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

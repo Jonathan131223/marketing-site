@@ -20,7 +20,7 @@
  */
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { describe, it, expect, beforeEach } from "vitest";
+import { describe, it, expect, beforeEach, vi } from "vitest";
 import EmailGeneratorApp from "@/components/react/EmailGeneratorApp";
 
 // matchMedia is stubbed globally in test/setup.ts.
@@ -242,42 +242,76 @@ describe("EmailGeneratorApp — ISSUE-001 regression", () => {
     ).toBeInTheDocument();
   });
 
-  it("navigates to the brief page when a use case card is clicked", async () => {
+  it("hands off to the app when a use case card is clicked", async () => {
+    // As of 2026-04 the marketing site no longer owns the brief/generate
+    // flow — clicking a use-case card hard-redirects to the app at
+    // app.digistorms.ai/generator/brief. We replace window.location with
+    // a stub that captures href assignments because jsdom can't actually
+    // perform a cross-origin navigation (assigning location.href is a
+    // no-op, so a pathname assertion would always fail). See
+    // UseCasePickerPage.handleUseCaseSelect.
     setPath("/email-generator");
 
-    const user = userEvent.setup();
-    render(<EmailGeneratorApp />);
-
-    // Wait for the picker to render
-    await waitFor(
-      () => {
-        expect(
-          screen.getByRole("button", { name: /welcome new free users/i }),
-        ).toBeInTheDocument();
+    const originalLocation = window.location;
+    const hrefSetter = vi.fn();
+    const stubbedLocation: Location = Object.assign(
+      Object.create(Object.getPrototypeOf(originalLocation)),
+      originalLocation,
+      {
+        assign: vi.fn((url: string) => hrefSetter(url)),
+        replace: vi.fn((url: string) => hrefSetter(url)),
       },
-      { timeout: 3000 },
     );
+    Object.defineProperty(stubbedLocation, "href", {
+      configurable: true,
+      get: () =>
+        `${originalLocation.pathname}${originalLocation.search}`,
+      set: hrefSetter,
+    });
+    Object.defineProperty(window, "location", {
+      configurable: true,
+      value: stubbedLocation,
+      writable: true,
+    });
 
-    // Click the first Activation use case — should navigate to /brief
-    await user.click(
-      screen.getByRole("button", { name: /welcome new free users/i }),
-    );
+    try {
+      const user = userEvent.setup();
+      render(<EmailGeneratorApp />);
 
-    // react-router-dom updates window.location via the History API, so we
-    // verify the navigation by checking that the picker H1 is gone and a
-    // BriefPage (or its loading state) is in the DOM.
-    await waitFor(
-      () => {
-        expect(window.location.pathname).toMatch(
-          /\/email-generator\/brief/,
-        );
-      },
-      { timeout: 3000 },
-    );
+      await waitFor(
+        () => {
+          expect(
+            screen.getByRole("button", { name: /welcome new free users/i }),
+          ).toBeInTheDocument();
+        },
+        { timeout: 3000 },
+      );
 
-    // The useCase query param must be set — that's how BriefPage finds
-    // which use case to render.
-    expect(window.location.search).toMatch(/useCase=welcome/);
+      await user.click(
+        screen.getByRole("button", { name: /welcome new free users/i }),
+      );
+
+      await waitFor(
+        () => {
+          expect(hrefSetter).toHaveBeenCalled();
+        },
+        { timeout: 3000 },
+      );
+
+      // The redirect target must point at the app, not the marketing site,
+      // and must carry the selected use case so BriefPage can render it.
+      const target = String(hrefSetter.mock.calls.at(-1)?.[0] ?? "");
+      expect(target).toMatch(/\/generator\/brief/);
+      expect(target).toMatch(/useCase=welcome/);
+      // Guard against accidentally reintroducing the old internal route.
+      expect(target).not.toMatch(/\/email-generator\/brief/);
+    } finally {
+      Object.defineProperty(window, "location", {
+        configurable: true,
+        value: originalLocation,
+        writable: true,
+      });
+    }
   });
 
   it("supports WAI-ARIA arrow key navigation between tabs", async () => {

@@ -94,8 +94,8 @@ type _UnionLength<U, Acc extends unknown[] = []> = [U] extends [never]
 type _CategoryKeyCount = _UnionLength<CategoryKey>;
 type _LengthMatches = (typeof categoryOrder)["length"] extends _CategoryKeyCount
   ? _CategoryKeyCount extends (typeof categoryOrder)["length"]
-    ? true
-    : "ERROR: categoryOrder length does not match CategoryKey union size"
+  ? true
+  : "ERROR: categoryOrder length does not match CategoryKey union size"
   : "ERROR: categoryOrder length does not match CategoryKey union size";
 
 const _categoryOrderIsExhaustive: [_MissingKeys] extends [never]
@@ -198,15 +198,15 @@ export default function UseCasePickerPage() {
             </p>
             <div className="flex items-center justify-center gap-6 text-sm text-slate-400">
               <span className="flex items-center gap-1.5">
-                <svg className="w-4 h-4 text-[#1D4ED8]" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
+                <svg className="w-4 h-4 text-[#1D4ED8]" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
                 38 use cases
               </span>
               <span className="flex items-center gap-1.5">
-                <svg className="w-4 h-4 text-[#1D4ED8]" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
+                <svg className="w-4 h-4 text-[#1D4ED8]" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
                 100% free
               </span>
               <span className="flex items-center gap-1.5">
-                <svg className="w-4 h-4 text-[#1D4ED8]" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
+                <svg className="w-4 h-4 text-[#1D4ED8]" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
                 Production-ready HTML
               </span>
             </div>
@@ -214,7 +214,7 @@ export default function UseCasePickerPage() {
         </section>
 
         {/* Sample Email Preview */}
-        <section className="pb-16">
+        {/* <section className="pb-16">
           <div className="container mx-auto px-6 max-w-4xl">
             <p className="text-sm font-medium text-slate-400 text-center mb-6 uppercase tracking-wider">
               See what you'll get
@@ -239,7 +239,7 @@ export default function UseCasePickerPage() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Category Tabs + Use Cases */}
         <section className="pb-24" aria-labelledby="use-case-picker-heading">
@@ -276,34 +276,29 @@ export default function UseCasePickerPage() {
                     tabIndex={isActive ? 0 : -1}
                     onClick={() => setSelectedCategory(categoryKey)}
                     onKeyDown={(e) => handleTabKeyDown(e, categoryKey)}
-                    className={`group flex flex-col items-center text-center px-3 py-4 rounded-xl border transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] focus-visible:ring-offset-2 ${
-                      isActive
+                    className={`group flex flex-col items-center text-center px-3 py-4 rounded-xl border transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] focus-visible:ring-offset-2 ${isActive
                         ? "border-[#2563EB] bg-[#2563EB] shadow-md"
                         : "border-slate-200 bg-white hover:border-[#2563EB]/40 hover:-translate-y-0.5 hover:shadow-sm"
-                    }`}
+                      }`}
                   >
                     <div
-                      className={`w-9 h-9 rounded-lg flex items-center justify-center mb-2 transition-colors ${
-                        isActive ? "bg-white/15" : "bg-[#EFF6FF]"
-                      }`}
+                      className={`w-9 h-9 rounded-lg flex items-center justify-center mb-2 transition-colors ${isActive ? "bg-white/15" : "bg-[#EFF6FF]"
+                        }`}
                     >
                       <Icon
-                        className={`w-5 h-5 transition-colors ${
-                          isActive ? "text-white" : "text-[#2563EB]"
-                        }`}
+                        className={`w-5 h-5 transition-colors ${isActive ? "text-white" : "text-[#2563EB]"
+                          }`}
                       />
                     </div>
                     <span
-                      className={`text-sm font-semibold leading-tight transition-colors ${
-                        isActive ? "text-white" : "text-slate-900"
-                      }`}
+                      className={`text-sm font-semibold leading-tight transition-colors ${isActive ? "text-white" : "text-slate-900"
+                        }`}
                     >
                       {meta.label}
                     </span>
                     <span
-                      className={`text-[11px] font-medium mt-1 transition-colors ${
-                        isActive ? "text-white/80" : "text-slate-400"
-                      }`}
+                      className={`text-[11px] font-medium mt-1 transition-colors ${isActive ? "text-white/80" : "text-slate-400"
+                        }`}
                     >
                       {useCaseCount} use case{useCaseCount !== 1 ? "s" : ""}
                     </span>
