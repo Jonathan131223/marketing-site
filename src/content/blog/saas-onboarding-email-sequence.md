@@ -6,6 +6,8 @@ shortDescription: "The 7-email SaaS onboarding sequence broken down, with real e
 date: "2026-04-21"
 readTime: "11 min read"
 libraryTags: ["welcome-free-users", "setup-prompt", "milestone-reached", "trial-expiration-warning", "upgrade-cta"]
+thumbnail: "/blog/saas-onboarding-email-sequence/banner.webp"
+heroImage: "/blog/saas-onboarding-email-sequence/banner.webp"
 ogImage: "/og/blog-saas-onboarding-email-sequence.webp"
 ---
 
@@ -87,25 +89,25 @@ Loom is the canonical B2B SaaS onboarding sequence to study. It's tight, behavio
 
 ### Loom Email 1: Welcome to trial
 
-> **Subject:** "Loom Business! Welcome to your trial 🔮"
+**Subject line: "Loom Business! Welcome to your trial 🔮"**
 
-![Loom welcome email screenshot](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/689b8c7b84928110f5398865_0f44aa9c-cd37-49fb-94dc-463c614d5572.png)
+![Loom welcome email screenshot](/email-screenshots/welcome-free-users-from-loom-10212023.png)
 
 Opens with a clear statement of what the trial unlocks (Business features), sets expectations ("14 days"), and gives one primary CTA: "Start recording." Zero feature-list-padding. Read the full email on [Loom's welcome page](/library/email/welcome-free-users-from-loom-10212023).
 
 ### Loom Email 2: Feature education
 
-> **Subject:** "Highlight new product features with Loom"
+**Subject line: "Highlight new product features with Loom"**
 
-![Loom feature education email](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/689b8ca688b1a325d4b1337f_c2001ac1-489c-412c-805f-19ff7479af4e.png)
+![Loom feature education email](/email-screenshots/loom--highlight-new-product-features-with-loom-from-loom-10222023.png)
 
 Day 2, one specific feature (highlights), one specific use case (announcements). No other CTAs. This is the "education" email done right. It doesn't tour the product, it teaches ONE thing the user likely doesn't know about yet. Full email: [Highlight new product features with Loom](/library/email/loom--highlight-new-product-features-with-loom-from-loom-10222023).
 
 ### Loom Email 3: First-milestone celebration
 
-> **Subject:** "Congrats, you recorded your first video on Loom 🥳"
+**Subject line: "Congrats, you recorded your first video on Loom 🥳"**
 
-![Loom milestone email](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/689b8dce29f4943aaf7118cb_3427b657-6969-4c6f-a543-9e5d4b0aa087.png)
+![Loom milestone email](/email-screenshots/milestone-reached-from-loom-11092023.png)
 
 This is THE email that separates behavior-based onboarding from time-based. It fires the moment the user records their first video, not on day 3, not at a scheduled time. The timing is what makes it feel human. See the full email: [Congrats, you recorded your first video on Loom](/library/email/milestone-reached-from-loom-11092023).
 
@@ -113,17 +115,17 @@ More examples of this pattern in our [12 SaaS milestone email examples that driv
 
 ### Loom Email 4: Trial-ending warning
 
-> **Subject:** "Only 3 days left on your free trial of Loom Business"
+**Subject line: "Only 3 days left on your free trial of Loom Business"**
 
-![Loom trial ending email](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/689b8cfb845fd16c41332533_ec180b17-656b-413f-9b4d-8f8e3b10b6cc.png)
+![Loom trial ending email](/email-screenshots/trial-expiration-warning-from-loom-11012023.png)
 
 Direct subject, specific number of days, preview of what's about to disappear. The body leads with what the user will lose (unlimited recording, transcripts, AI features) rather than what they can buy. Loss aversion. Full email: [Only 3 days left on your free trial](/library/email/trial-expiration-warning-from-loom-11012023).
 
 ### Loom Email 5: Upgrade CTA
 
-> **Subject:** "Jonathan, did you notice the magic of Loom AI in your last video? ✨"
+**Subject line: "Jonathan, did you notice the magic of Loom AI in your last video? ✨"**
 
-![Loom upgrade CTA email](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/689b92cbeb3023e626f3615f_122f71ce-5027-4f6a-bb6f-47af15108cc1.png)
+![Loom upgrade CTA email](/email-screenshots/upgrade-cta-from-loom-05302024.png)
 
 Personalized reference ("your last video") plus a specific feature hook (Loom AI transcription). This is the upgrade email done at 10/10: the user is inside the product, using it, and the email makes a case based on what they've *already done*, not generic marketing copy. Full teardown: [Loom upgrade CTA](/library/email/upgrade-cta-from-loom-05302024).
 
@@ -131,9 +133,9 @@ More upgrade-email patterns in [13 upgrade email examples that convert free user
 
 ### Loom Email 6: Post-trial downgrade notice
 
-> **Subject:** "Digistorms has been downgraded to Loom Starter"
+**Subject line: "Digistorms has been downgraded to Loom Starter"**
 
-![Loom post-trial downgrade email](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/689b8d4d5a31fbba060eecea_2093069a-ac30-4bcb-8e15-3c1b56f35525.png)
+![Loom post-trial downgrade email](/email-screenshots/trial-expired-upgrade-from-loom-11042023.png)
 
 Note the subject line: it personalizes with the workspace name and uses "downgraded" rather than "expired" for a softer product-driven tone. Loss aversion again: "you had these features, here's what you just lost, here's how to get them back." Full email: [Loom post-trial upgrade](/library/email/trial-expired-upgrade-from-loom-11042023).
 
@@ -143,29 +145,29 @@ Calendly runs a tighter sequence because its time-to-value is about 90 seconds. 
 
 ### Calendly Email 1: Welcome
 
-> **Subject:** "Welcome to Calendly"
+**Subject line: "Welcome to Calendly"**
 
 Clean, warm, single CTA ("connect your calendar"). See it: [Welcome to Calendly](/library/email/welcome-free-users-from-calendly-01182024).
 
 ### Calendly Email 2: Setup (day 1)
 
-> **Subject:** "Book meetings with multiple people"
+**Subject line: "Book meetings with multiple people"**
 
 Teaches one specific feature (Teams scheduling) that unlocks higher value, but only if the user has progressed past solo scheduling. Calendly segments users by plan here, with different setup emails for solo vs. Teams trials. See it: [Book meetings with multiple people](/library/email/setup-prompt-from-calendly-01252024).
 
 ### Calendly Email 3: First-milestone celebration
 
-> **Subject:** "Jonathan, you booked your first meeting 🙌"
+**Subject line: "Jonathan, you booked your first meeting 🙌"**
 
-![Calendly first milestone email](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/6899c82141a13c55f854ddce_bee7d68e-db74-4aa1-874f-d4f496d3d4f7.png)
+![Calendly first milestone email](/email-screenshots/feature-usage-nudge-from-calendly-01202024.png)
 
 Same pattern as Loom's milestone email: personalization, "first", emoji, behavior-triggered. Pattern-match across brands: this is the universal "you activated" subject line formula.
 
 ### Calendly Email 4: Trial-ending warning
 
-> **Subject:** "Jonathan, your Calendly Teams Trial ends tomorrow!"
+**Subject line: "Jonathan, your Calendly Teams Trial ends tomorrow!"**
 
-![Calendly trial ending email](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/6899ca2b6cb8c4720c92e218_113f9e43-3812-4a37-b9b5-7001fca5dc09.png)
+![Calendly trial ending email](/email-screenshots/trial-expiration-warning-from-calendly-01302024.png)
 
 One-day warning with a specific date. Calendly only sends ONE trial-ending email (not two) because its trials are short and most users have already converted by day 13. Worth noting: they personalize with first name, which their data presumably shows lifts open rates.
 
@@ -177,25 +179,25 @@ Pipedrive is interesting because it sits between PLG and sales-led. Its onboardi
 
 ### Pipedrive Email 1: Welcome
 
-> **Subject:** "Welcome to Pipedrive Jonathan!"
+**Subject line: "Welcome to Pipedrive Jonathan!"**
 
-![Pipedrive welcome email](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/689b7634a4a6813bf6423a91_0ae0aae2-9ee2-4974-829e-7f08fb389320.png)
+![Pipedrive welcome email](/email-screenshots/welcome-free-users-from-pipedrive-important-your-setup-is-not-complete-01182024.png)
 
 Personalized, warm, with a Getting Started checklist inline. The checklist is key: Pipedrive uses the welcome email itself as the first setup prompt, not a separate email. Fewer emails to manage, same effect.
 
 ### Pipedrive Email 2: Setup urgency
 
-> **Subject:** "Important: Your setup is not complete"
+**Subject line: "Important: Your setup is not complete"**
 
-![Pipedrive setup urgency email](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/689b769f095455c6952d6408_19a6c647-01f2-4526-8b8f-e50f09877ecd.png)
+![Pipedrive setup urgency email](/email-screenshots/setup-prompt-from-pipedrive-want-to-keep-your-progress-01222024.png)
 
 Strong language ("Important", "not complete"). Deliberate friction for users who haven't taken the setup action. You see this pattern from sales-led-ish tools: the onboarding flow ASSUMES the user wants to progress and treats non-progress as a problem to solve.
 
 ### Pipedrive Email 3: New AI feature
 
-> **Subject:** "Let our new AI feature write your emails"
+**Subject line: "Let our new AI feature write your emails"**
 
-![Pipedrive AI feature email](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/689b7d0fc997ff4687f7267c_b024b1c2-5217-4759-9d91-3d2246085218.png)
+![Pipedrive AI feature email](/email-screenshots/new-features-nudge-from-pipedrive-05162024.png)
 
 Pipedrive layers product-update nudges into the onboarding sequence so even active trial users get exposed to new capabilities. Smart: it keeps the sequence feeling fresh after 2 weeks of drip emails. Pattern is worth stealing.
 

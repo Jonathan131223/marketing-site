@@ -6,6 +6,8 @@ shortDescription: "25 real subject lines that get webinar follow-up emails opene
 date: "2026-04-20"
 readTime: "6 min read"
 libraryTags: ["webinar-recording", "follow-up"]
+thumbnail: "/blog/webinar-follow-up-subject-lines/banner.webp"
+heroImage: "/blog/webinar-follow-up-subject-lines/banner.webp"
 ogImage: "/og/blog-webinar-follow-up-subject-lines.webp"
 ---
 

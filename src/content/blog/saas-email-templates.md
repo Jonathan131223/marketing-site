@@ -6,6 +6,8 @@ shortDescription: "14 lifecycle email templates from top SaaS brands, organized 
 date: "2026-04-21"
 readTime: "10 min read"
 libraryTags: ["welcome-free-users", "setup-prompt", "feature-usage-nudge", "milestone-reached", "trial-expiration-warning", "upgrade-cta"]
+thumbnail: "/blog/saas-email-templates/banner.webp"
+heroImage: "/blog/saas-email-templates/banner.webp"
 ogImage: "/og/blog-saas-email-templates.webp"
 ---
 
@@ -31,9 +33,9 @@ The welcome email fires within 5 minutes of signup. It confirms the account work
 
 ### 1. Beehiiv: the founder-voice welcome (free users)
 
-> **Subject:** "A welcome note from our CEO"
+**Subject line: "A welcome note from our CEO"**
 
-![Beehiiv welcome email](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/68793ef805aa81beb15c2602_53da7502-cf43-4324-9584-7355109cce50.png)
+![Beehiiv welcome email](/email-screenshots/welcome-free-users-from-beehiiv05292025.png)
 
 **When to send:** Within 5 minutes of signup to your free tier.
 
@@ -69,9 +71,9 @@ CEO, [Product]
 
 ### 2. Buffer: the paid-user welcome
 
-> **Subject:** "Awesome! You are in."
+**Subject line: "Awesome! You are in."**
 
-![Buffer paid welcome email](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/689f7416310025dde465760c_6b5b4dd9-cf07-426c-a6be-f27b6ee3b9dd.png)
+![Buffer paid welcome email](/email-screenshots/welcome-paid-users-from-buffer-01312024.png)
 
 **When to send:** Immediately after a user upgrades to a paid plan. Separate from the free-tier welcome.
 
@@ -104,9 +106,9 @@ Welcome to [Plan Name].
 
 ### 3. SemRush: the tier-upgrade welcome
 
-> **Subject:** "It's official – you're a Semrush PRO!"
+**Subject line: "It's official – you're a Semrush PRO!"**
 
-![SemRush upgrade welcome email](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/68b1715ef83c59c81753e390_25a66f6a-61f1-4e1e-8ba3-d10c4311b53b.png)
+![SemRush upgrade welcome email](/email-screenshots/welcome-paid-users-from-semrush-01262024.png)
 
 **When to send:** Immediately after an existing user upgrades from one paid tier to a higher tier.
 
@@ -140,9 +142,9 @@ The setup prompt fires 24 hours after signup if the user has not completed the r
 
 ### 4. Grammarly: the explicit setup-required prompt
 
-> **Subject:** "Action required: Finish setting up your account"
+**Subject line: "Action required: Finish setting up your account"**
 
-![Grammarly setup email](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/689f0d8f548532415f0cf0e1_a4b4eacb-08a8-493d-9d39-313508bef36f.png)
+![Grammarly setup email](/email-screenshots/setup-prompt-from-grammarly-08062025.png)
 
 **When to send:** 24 to 36 hours after signup if the user has not installed the Grammarly extension (or whatever your critical setup step is).
 
@@ -174,9 +176,9 @@ The education email introduces one specific feature that solves one specific pro
 
 ### 5. Monday: the 2-tools education nudge
 
-> **Subject:** "2 key tools to maximize efficiency"
+**Subject line: "2 key tools to maximize efficiency"**
 
-![Monday education email](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/6879082f2e83ddc3ad7da995_a1c52532-733f-4b70-b0b6-d061f7ccf0b4.png)
+![Monday education email](/email-screenshots/feature-usage-nudge-from-monday-05172025.png)
 
 **When to send:** Day 3 to 5 of the trial. Targets users who have completed basic setup but have not yet adopted the 2 most-predictive-of-retention features.
 
@@ -208,9 +210,9 @@ average user about [N hours/week].
 
 ### 6. Miro: the "just the first step" progression email
 
-> **Subject:** "A great idea is just the first step"
+**Subject line: "A great idea is just the first step"**
 
-![Miro education email](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/686d423daeb7f8b40b302af3_350c30e7-ce37-470d-9cfc-1f099034ad43.png)
+![Miro education email](/email-screenshots/usage-expansion-from-miro-02062025.png)
 
 **When to send:** Day 5 to 7 of a trial, after the user has completed their first creative action (created a board, sketched an idea, etc).
 
@@ -245,9 +247,9 @@ The milestone email fires when the user completes a meaningful product event. It
 
 ### 7. Grammarly: the "first step" milestone
 
-> **Subject:** "Congrats on taking the first step toward effective communication"
+**Subject line: "Congrats on taking the first step toward effective communication"**
 
-![Grammarly milestone email](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/689f0db803abeae851cef956_f20f11b7-0e21-40ee-b350-72d160c13f20.png)
+![Grammarly milestone email](/email-screenshots/milestone-reached-from-grammarly-08082025.png)
 
 **When to send:** The moment the user first uses Grammarly to check a piece of text.
 
@@ -275,9 +277,9 @@ Nice work.
 
 ### 8. Zapier: the "first Zap" milestone
 
-> **Subject:** "Congrats, you've created your first Zap!"
+**Subject line: "Congrats, you've created your first Zap!"**
 
-![Zapier milestone email](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/6895f9eb93ac2fe8b24472a1_ec070e7d-4920-4143-959f-66d483d5f97f.png)
+![Zapier milestone email](/email-screenshots/milestone-reached-from-zapier-04122024.png)
 
 **When to send:** The moment the user creates their first automation.
 
@@ -312,9 +314,9 @@ Two sub-variants. The 7-day heads-up when there is still time to activate, and t
 
 ### 9. Monday: the 7-day friendly heads-up
 
-> **Subject:** "One more week to go! ⌛"
+**Subject line: "One more week to go! ⌛"**
 
-![Monday trial ending 7 days email](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/687908585248334003740c3d_a02718d5-8f82-47ee-8675-576a605c0f84.png)
+![Monday trial ending 7 days email](/email-screenshots/trial-expiration-warning-from-monday-05192025.png)
 
 **When to send:** 7 days before trial expires.
 
@@ -345,9 +347,9 @@ and let us know.
 
 ### 10. Buffer: the 3-day urgency push
 
-> **Subject:** "Last 3 days of your trial"
+**Subject line: "Last 3 days of your trial"**
 
-![Buffer trial ending 3 days email](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/689f73703016a388b10b2fb7_167f191c-a609-4890-b960-db4170293f90.png)
+![Buffer trial ending 3 days email](/email-screenshots/trial-expiration-warning-from-buffer-11302023.png)
 
 **When to send:** 3 days before trial expires.
 
@@ -384,9 +386,9 @@ The upgrade email works best when it references the user's actual behavior insid
 
 ### 11. Notion: the feature-led upgrade
 
-> **Subject:** "Custom domains and branding for your Notion Sites"
+**Subject line: "Custom domains and branding for your Notion Sites"**
 
-![Notion upgrade email](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/689b2c5b43a51376f2d668c5_147d5a9e-d464-4202-a25b-a1e36364d1e4.png)
+![Notion upgrade email](/email-screenshots/upgrade-cta-from-notion-03082025.png)
 
 **When to send:** When the user has created a Notion Site (product usage signal) but has not upgraded to the plan that unlocks custom domains.
 
@@ -420,9 +422,9 @@ plan does not include it.
 
 ### 12. SemRush: the loss-aversion upgrade
 
-> **Subject:** "Don't lose your marketing momentum 💪"
+**Subject line: "Don't lose your marketing momentum 💪"**
 
-![SemRush upgrade email](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/68b179a4fc79f4ff98ef9dfb_2de1ee07-21be-46f5-b8cb-be2a5792e56a.png)
+![SemRush upgrade email](/email-screenshots/upgrade-cta-from-semrush-11292024.png)
 
 **When to send:** Trial has expired or is about to expire for a user who has built up meaningful progress in the product (saved reports, tracked keywords, etc).
 
@@ -453,9 +455,9 @@ Re-engagement fires when a user has gone silent (cancelled, stopped opening emai
 
 ### 13. SemRush: the "before you go" cancellation catch
 
-> **Subject:** "Before you go"
+**Subject line: "Before you go"**
 
-![SemRush re-engage email](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/68b1788080412717b7f99098_c385f801-5d5d-4ee0-980b-4326db9bd5f4.png)
+![SemRush re-engage email](/email-screenshots/reengage-cancelled-users-from-semrush-09202024.png)
 
 **When to send:** Within 24 hours of the user hitting cancel, before the cancellation takes full effect.
 
@@ -490,9 +492,9 @@ Whatever you pick, no hard feelings.
 
 ### 14. Monday: the social-proof re-activation
 
-> **Subject:** "Don't just take our word for it."
+**Subject line: "Don't just take our word for it."**
 
-![Monday case study re-engage email](https://cdn.prod.website-files.com/6669acc77ba72bcf56a022e8/68790805884e02a0c944cb43_a5571992-5adf-4286-b5b6-567d815918c1.png)
+![Monday case study re-engage email](/email-screenshots/case-study-from-monday-05162025.png)
 
 **When to send:** Trial user who has opened earlier emails but has not taken the next activation action in 7+ days.
 

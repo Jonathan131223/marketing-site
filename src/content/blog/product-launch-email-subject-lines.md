@@ -6,6 +6,8 @@ shortDescription: "30 real subject lines that get product launch emails opened â
 date: "2026-04-20"
 readTime: "7 min read"
 libraryTags: ["product-update", "new-feature-nudge", "feature-update"]
+thumbnail: "/blog/product-launch-email-subject-lines/banner.webp"
+heroImage: "/blog/product-launch-email-subject-lines/banner.webp"
 ogImage: "/og/blog-product-launch-email-subject-lines.webp"
 ---
 

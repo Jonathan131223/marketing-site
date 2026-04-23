@@ -23,6 +23,8 @@ export const blogPosts: BlogPost[] = [
     shortDescription: "Original research: what 1,051 SaaS lifecycle emails reveal about types, subject lines, and brand strategies.",
     date: "2026-04-07",
     readTime: "12 min read",
+    thumbnail: "/blog/saas-email-benchmarks/banner.webp",
+    heroImage: "/blog/saas-email-benchmarks/banner.webp",
     libraryTags: ["welcome-free-users", "welcome-paid-users", "upgrade-cta", "product-update"],
   },
   {
@@ -65,6 +67,8 @@ export const blogPosts: BlogPost[] = [
     shortDescription: "14 lifecycle email templates from top SaaS brands, organized by stage. Copy, adapt, ship.",
     date: "2026-04-21",
     readTime: "10 min read",
+    thumbnail: "/blog/saas-email-templates/banner.webp",
+    heroImage: "/blog/saas-email-templates/banner.webp",
     libraryTags: ["welcome-free-users", "setup-prompt", "feature-usage-nudge", "milestone-reached", "trial-expiration-warning", "upgrade-cta"],
   },
   {
@@ -74,6 +78,8 @@ export const blogPosts: BlogPost[] = [
     shortDescription: "The 7-email SaaS onboarding sequence broken down, with real examples from Loom, Calendly, and Pipedrive.",
     date: "2026-04-21",
     readTime: "11 min read",
+    thumbnail: "/blog/saas-onboarding-email-sequence/banner.webp",
+    heroImage: "/blog/saas-onboarding-email-sequence/banner.webp",
     libraryTags: ["welcome-free-users", "setup-prompt", "milestone-reached", "trial-expiration-warning", "upgrade-cta"],
   },
   {
@@ -105,6 +111,8 @@ export const blogPosts: BlogPost[] = [
     shortDescription: "25 real subject lines that get webinar follow-up emails opened — by audience and timing.",
     date: "2026-04-20",
     readTime: "6 min read",
+    thumbnail: "/blog/webinar-follow-up-subject-lines/banner.webp",
+    heroImage: "/blog/webinar-follow-up-subject-lines/banner.webp",
     libraryTags: ["webinar-recording", "follow-up"],
   },
   {
@@ -114,6 +122,8 @@ export const blogPosts: BlogPost[] = [
     shortDescription: "30 real subject lines that get product launch emails opened — by launch type.",
     date: "2026-04-20",
     readTime: "7 min read",
+    thumbnail: "/blog/product-launch-email-subject-lines/banner.webp",
+    heroImage: "/blog/product-launch-email-subject-lines/banner.webp",
     libraryTags: ["product-update", "new-feature-nudge", "feature-update"],
   },
   {

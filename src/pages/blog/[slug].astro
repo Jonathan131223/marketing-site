@@ -573,6 +573,19 @@ const breadcrumbJsonLd = {
     color: inherit;
   }
 
+  /*
+    When a subject-line paragraph is immediately followed by an image (the
+    convention in every email-examples article — "subject" then screenshot of
+    the email itself), collapse the 48px gap caused by the subject paragraph's
+    margin-bottom stacking with the image's margin-top. Astro wraps an
+    image-only markdown line in a <p>, so `p + p img` is the selector that
+    actually fires for the `**Subject line: ...**\n\n![alt](img)` pattern.
+  */
+  .blog-prose p.is-subject-line + p img,
+  .blog-prose p.is-subject-line + img {
+    margin-top: 0.5rem;
+  }
+
   .blog-prose blockquote {
     background-color: #F8F6F2;
     border-left: 4px solid #2563EB;
