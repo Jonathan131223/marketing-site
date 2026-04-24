@@ -2,6 +2,15 @@
 
 All notable changes to DigiStorms marketing site will be documented in this file.
 
+## [0.1.5.1] - 2026-04-24
+
+### Changed
+- Unified the navbar and footer across every marketing page. `account-readiness`, `lifecycle-score`, `roi-calculator`, and `email-generator` (landing) previously used `BaseLayout` with their own inline `<Navbar>`/`<Footer>` imports, which drifted visually from the canonical chrome on `/`, `/blog`, `/library`, etc. All four now render through `PageLayout`, so nav and footer stay identical everywhere without per-page duplication. Email-generator sub-routes (`/email-generator/{brief,templates,generate,customize}`) remain intentionally chromeless — they're noindex flow-state pages per `CLAUDE.md`
+- Swapped the old purple DigiStorms logo for the new blue logo in every navbar and footer. Updated `Navbar.tsx`, `Footer.astro`, and the legacy `Footer.tsx` to point at `/images/logo.png`. Dropped the `mix-blend-mode: multiply` style on the footer logo (tuned for the purple mark, unnecessary for the blue one)
+
+### Removed
+- Deleted `src/pages/account-readiness 2.astro`, an accidental duplicate of the real account-readiness page that had been sitting in the repo unnoticed
+
 ## [0.1.5.0] - 2026-04-20
 
 ### Added

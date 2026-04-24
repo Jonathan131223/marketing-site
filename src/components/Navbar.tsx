@@ -90,7 +90,7 @@ export const Navbar: React.FC<NavbarProps> = ({ pathname: initialPathname }) => 
           <div className="flex items-center gap-6 flex-shrink-0">
             <a href="/" className="flex items-center">
               <img
-                src="/images/logo.webp"
+                src="/images/logo.png"
                 alt="DigiStorms"
                 className="h-8 w-auto"
                 width={120}

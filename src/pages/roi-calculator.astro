@@ -1,7 +1,5 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import { Navbar } from '@/components/Navbar';
-import Footer from '@/components/astro/Footer.astro';
+import PageLayout from '@/layouts/PageLayout.astro';
 import ROICalculatorPage from '@/components/react/ROICalculatorIsland';
 
 const jsonLd = {
@@ -15,15 +13,11 @@ const jsonLd = {
 };
 ---
 
-<BaseLayout
+<PageLayout
   ogImage="https://www.digistorms.ai/og/roi-calculator.webp"
   title="SaaS Onboarding Email ROI Calculator — DigiStorms"
   description="Calculate the return on investment of improving your SaaS onboarding emails. See how much revenue you could recover with better activation and conversion."
   jsonLd={jsonLd}
 >
-  <div class="min-h-screen bg-background">
-    <Navbar client:load pathname="/roi-calculator" />
-    <ROICalculatorPage client:visible />
-    <Footer />
-  </div>
-</BaseLayout>
+  <ROICalculatorPage client:visible />
+</PageLayout>

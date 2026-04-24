@@ -1,7 +1,5 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import { Navbar } from '@/components/Navbar';
-import Footer from '@/components/astro/Footer.astro';
+import PageLayout from '@/layouts/PageLayout.astro';
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -59,15 +57,12 @@ const jsonLd = {
 };
 ---
 
-<BaseLayout
+<PageLayout
   title="Account Readiness — DigiStorms"
   description="See which trial accounts are ready to upgrade, which are warming up, and which went cold. Scored automatically from the milestone data DigiStorms already tracks. No new instrumentation."
   ogImage="https://www.digistorms.ai/og/account-readiness.webp"
   jsonLd={jsonLd}
 >
-  <div class="min-h-screen bg-background">
-    <Navbar client:load pathname="/account-readiness" />
-
     <!-- ================= HERO ================= -->
     <section class="bg-background pt-20 pb-16 md:pt-28 md:pb-20">
       <div class="max-w-[1280px] mx-auto px-6">
@@ -412,6 +407,4 @@ const jsonLd = {
       </div>
     </section>
 
-    <Footer />
-  </div>
-</BaseLayout>
+</PageLayout>

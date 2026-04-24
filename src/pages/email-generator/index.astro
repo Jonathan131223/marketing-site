@@ -1,10 +1,10 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageLayout from '@/layouts/PageLayout.astro';
 import EmailGeneratorApp from '@/components/react/EmailGeneratorApp';
 import EmailGeneratorFallback from '@/components/astro/EmailGeneratorFallback.astro';
 ---
 
-<BaseLayout
+<PageLayout
   ogImage="https://www.digistorms.ai/og/email-generator.webp"
   title="Free Lifecycle Email Generator — DigiStorms"
   description="Generate professional SaaS lifecycle emails in minutes. Choose your use case, fill a quick brief, and let AI create your email sequence."
@@ -12,4 +12,4 @@ import EmailGeneratorFallback from '@/components/astro/EmailGeneratorFallback.as
   <EmailGeneratorApp client:only="react">
     <EmailGeneratorFallback slot="fallback" />
   </EmailGeneratorApp>
-</BaseLayout>
+</PageLayout>

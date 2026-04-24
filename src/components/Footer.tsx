@@ -10,10 +10,9 @@ export const Footer: React.FC = () => {
             <div className="mb-4">
               <a href="https://digistorms.ai">
                 <img
-                  src="/images/logo.webp"
+                  src="/images/logo.png"
                   alt="DigiStorms"
                   className="h-8 w-auto mb-4"
-                  style={{ mixBlendMode: "multiply" }}
                   width={120}
                   height={32}
                 />
