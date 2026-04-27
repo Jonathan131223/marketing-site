@@ -1,8 +1,8 @@
 ---
-title: "25 webinar follow up subject lines (real SaaS examples)"
+title: "25 webinar follow up subject lines that get opened"
 slug: "webinar-follow-up-subject-lines"
-description: "25 real webinar follow-up subject lines from Customer.io, Slack, Webflow, Stripe and other SaaS brands — organized by audience (attended vs no-show) and timing."
-shortDescription: "25 real subject lines that get webinar follow-up emails opened — by audience and timing."
+description: "25 webinar follow-up subject lines that earn the open — including real examples from Stripe, Slack, Customer.io, Beehiiv, Buffer, and Pipedrive — organized by audience (attended vs no-show) and timing."
+shortDescription: "25 subject lines that get webinar follow-up emails opened — by audience and timing."
 date: "2026-04-20"
 readTime: "6 min read"
 libraryTags: ["webinar-recording", "follow-up"]
@@ -15,7 +15,7 @@ The webinar is over. The real work starts now.
 
 Every attendee and no-show on your list is a warm lead for about 72 hours — and after that, they go cold fast. The single biggest lever between "ran a webinar" and "closed deals from the webinar" isn't the follow-up email body. It's the **subject line**. If it doesn't get opened, the recap inside doesn't matter.
 
-I pulled the subject lines below from the [DigiStorms email library](/library) — a collection of 1,000+ real lifecycle emails from top B2B SaaS brands — plus a handful of proven patterns from the playbook. They're organized by the two dimensions that actually matter for follow-up CTR: **who received it** (attendees vs no-shows) and **when it's sent** (same day, 2–3 days, 1 week, 2+ weeks).
+The subject lines below are a mix of real examples pulled from the [DigiStorms email library](/library) — a collection of 1,000+ lifecycle emails from top B2B SaaS brands — and proven lines from the playbook. Real ones are attributed to the brand that sent them; the rest are written to the same bar. They're organized by the two dimensions that actually matter for follow-up CTR: **who received it** (attendees vs no-shows) and **when it's sent** (same day, 2–3 days, 1 week, 2+ weeks).
 
 Grab the ones that fit your sequence. For the full tactical guide — segmentation, body copy, and CTAs — see the [13 webinar follow up email examples](/blog/webinar-follow-up-email) piece.
 
@@ -29,9 +29,9 @@ Sent within 2–4 hours of the session. These need to feel warm, not transaction
 
 > **"Catch the Full Recording: Personal Branding & Newsletters"** — Beehiiv
 
-> **"Thanks for joining us — your recap is inside"** — pattern
+> **"Thanks for joining us — your recap is inside"**
 
-> **"That was a good one. Recording + slides 👇"** — pattern
+> **"That was a good one. Recording + slides 👇"**
 
 **Why they work:** They front-load the deliverable (recording, recap) instead of burying it. Attendees who liked the session already want the replay to share with teammates — give it to them in the subject line and the open is automatic.
 
@@ -41,11 +41,11 @@ Sent the same evening or next morning. The single most important follow-up email
 
 > **"We missed you at the webinar!"** — Customer.io
 
-> **"Sorry we missed you — watch it anyway?"** — pattern
+> **"Sorry we missed you — watch it on your time"**
 
-> **"You weren't there. Here's the 10-minute version."** — pattern
+> **"You weren't there. Here's the 10-minute version."**
 
-> **"Couldn't make it? We recorded the whole thing."** — pattern
+> **"Couldn't make it? The full recording is ready."**
 
 **Why they work:** They acknowledge the no-show without guilt-tripping, and they immediately reduce the friction to consume (recording, 10-minute version). Customer.io's version is a classic because it's 5 words and doesn't pretend the no-show didn't happen — it just offers the path forward.
 
@@ -53,13 +53,13 @@ Sent the same evening or next morning. The single most important follow-up email
 
 Sent 2–3 days after the live session, to everyone (attendees and no-shows) who hasn't clicked yet. This email extracts takeaways and surfaces adjacent resources — it's where you turn passive recipients into engaged ones.
 
-> **"The 3 things everyone asked about yesterday"** — pattern
+> **"The 3 things everyone asked about yesterday"**
 
-> **"[Webinar topic]: the 2-minute recap"** — pattern
+> **"The 2-minute recap of yesterday's session"**
 
-> **"Slides, recording, and the resource pack inside"** — pattern
+> **"Slides, recording, and the resource pack inside"**
 
-> **"Missed the Q&A? Here's what you asked."** — pattern
+> **"Missed the Q&A? Here's what you asked."**
 
 **Why they work:** Specificity ("3 things", "2-minute recap", "Q&A") promises a defined payoff. The best-performing version of this email usually gets a higher open rate than the day-of recording email, because it answers "what was actually said" instead of "watch the whole hour."
 
@@ -67,11 +67,11 @@ Sent 2–3 days after the live session, to everyone (attendees and no-shows) who
 
 Sent 5–7 days after the session, to attendees who opened the first two emails. This is the first real conversion push — you have permission, the content is fresh, and you can reasonably ask for a next step.
 
-> **"Ready to try it yourself?"** — pattern
+> **"Ready to try it yourself?"**
 
-> **"One question before you go…"** — pattern
+> **"One question before you go…"**
 
-> **"Quick one — was the webinar useful?"** — pattern
+> **"Quick one — was the webinar useful?"**
 
 > **"Let our new AI feature write your emails"** — Pipedrive
 
@@ -81,9 +81,9 @@ Sent 5–7 days after the session, to attendees who opened the first two emails.
 
 Sent to attendees who engaged with 2+ follow-up emails, or who clicked the "learn more" CTA during the live session. These pivot from content to conversation.
 
-> **"Worth a 15-minute chat?"** — pattern
+> **"Worth a 15-minute chat?"**
 
-> **"Want to see [feature] in your own workspace?"** — pattern
+> **"Want to see it running in your own workspace?"**
 
 > **"[Demo + Q&A] Get started with your Buffer trial"** — Buffer
 
@@ -95,19 +95,19 @@ Sent to attendees who engaged with 2+ follow-up emails, or who clicked the "lear
 
 Sent to attendees who haven't opened since the day-of email. This is the last-touch subject line — get a reopen or archive the lead.
 
-> **"Still thinking about [webinar topic]?"** — pattern
+> **"Still thinking about what we covered?"**
 
-> **"Before you forget about us…"** — pattern
+> **"Before you forget about us…"**
 
-> **"One more thing from the [topic] session"** — pattern
+> **"One more thing from last month's session"**
 
-> **"Reviving your [topic] notes"** — pattern
+> **"Picking up where the webinar left off"**
 
 > **"Save your spot: Find out why accountability and transparency are crucial for AI deployment"** — Slack
 
 **Why they work:** They reference the earlier session explicitly ("still thinking", "one more thing") which rebuilds context for a cold reader. Slack's example uses a completely different angle: it invites cold attendees to the *next* session on a related topic, which often outperforms trying to reactivate the old lead for the old session.
 
-## The pattern behind the patterns
+## What works across all 25
 
 Read the 25 subject lines above and three rules pop out:
 
