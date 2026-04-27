@@ -33,9 +33,9 @@ The welcome email fires within 5 minutes of signup. It confirms the account work
 
 ### 1. Beehiiv: the founder-voice welcome (free users)
 
-**Subject line: "A welcome note from our CEO"**
-
 ![Beehiiv welcome email](/email-screenshots/welcome-free-users-from-beehiiv05292025.png)
+
+**Subject line: "A welcome note from our CEO"**
 
 **When to send:** Within 5 minutes of signup to your free tier.
 
@@ -71,9 +71,9 @@ CEO, [Product]
 
 ### 2. Buffer: the paid-user welcome
 
-**Subject line: "Awesome! You are in."**
-
 ![Buffer paid welcome email](/email-screenshots/welcome-paid-users-from-buffer-01312024.png)
+
+**Subject line: "Awesome! You are in."**
 
 **When to send:** Immediately after a user upgrades to a paid plan. Separate from the free-tier welcome.
 
@@ -106,9 +106,9 @@ Welcome to [Plan Name].
 
 ### 3. SemRush: the tier-upgrade welcome
 
-**Subject line: "It's official – you're a Semrush PRO!"**
-
 ![SemRush upgrade welcome email](/email-screenshots/welcome-paid-users-from-semrush-01262024.png)
+
+**Subject line: "It's official – you're a Semrush PRO!"**
 
 **When to send:** Immediately after an existing user upgrades from one paid tier to a higher tier.
 
@@ -142,9 +142,9 @@ The setup prompt fires 24 hours after signup if the user has not completed the r
 
 ### 4. Grammarly: the explicit setup-required prompt
 
-**Subject line: "Action required: Finish setting up your account"**
-
 ![Grammarly setup email](/email-screenshots/setup-prompt-from-grammarly-08062025.png)
+
+**Subject line: "Action required: Finish setting up your account"**
 
 **When to send:** 24 to 36 hours after signup if the user has not installed the Grammarly extension (or whatever your critical setup step is).
 
@@ -176,9 +176,9 @@ The education email introduces one specific feature that solves one specific pro
 
 ### 5. Monday: the 2-tools education nudge
 
-**Subject line: "2 key tools to maximize efficiency"**
-
 ![Monday education email](/email-screenshots/feature-usage-nudge-from-monday-05172025.png)
+
+**Subject line: "2 key tools to maximize efficiency"**
 
 **When to send:** Day 3 to 5 of the trial. Targets users who have completed basic setup but have not yet adopted the 2 most-predictive-of-retention features.
 
@@ -210,9 +210,9 @@ average user about [N hours/week].
 
 ### 6. Miro: the "just the first step" progression email
 
-**Subject line: "A great idea is just the first step"**
-
 ![Miro education email](/email-screenshots/usage-expansion-from-miro-02062025.png)
+
+**Subject line: "A great idea is just the first step"**
 
 **When to send:** Day 5 to 7 of a trial, after the user has completed their first creative action (created a board, sketched an idea, etc).
 
@@ -247,9 +247,9 @@ The milestone email fires when the user completes a meaningful product event. It
 
 ### 7. Grammarly: the "first step" milestone
 
-**Subject line: "Congrats on taking the first step toward effective communication"**
-
 ![Grammarly milestone email](/email-screenshots/milestone-reached-from-grammarly-08082025.png)
+
+**Subject line: "Congrats on taking the first step toward effective communication"**
 
 **When to send:** The moment the user first uses Grammarly to check a piece of text.
 
@@ -277,9 +277,9 @@ Nice work.
 
 ### 8. Zapier: the "first Zap" milestone
 
-**Subject line: "Congrats, you've created your first Zap!"**
-
 ![Zapier milestone email](/email-screenshots/milestone-reached-from-zapier-04122024.png)
+
+**Subject line: "Congrats, you've created your first Zap!"**
 
 **When to send:** The moment the user creates their first automation.
 
@@ -314,9 +314,9 @@ Two sub-variants. The 7-day heads-up when there is still time to activate, and t
 
 ### 9. Monday: the 7-day friendly heads-up
 
-**Subject line: "One more week to go! ⌛"**
-
 ![Monday trial ending 7 days email](/email-screenshots/trial-expiration-warning-from-monday-05192025.png)
+
+**Subject line: "One more week to go! ⌛"**
 
 **When to send:** 7 days before trial expires.
 
@@ -347,9 +347,9 @@ and let us know.
 
 ### 10. Buffer: the 3-day urgency push
 
-**Subject line: "Last 3 days of your trial"**
-
 ![Buffer trial ending 3 days email](/email-screenshots/trial-expiration-warning-from-buffer-11302023.png)
+
+**Subject line: "Last 3 days of your trial"**
 
 **When to send:** 3 days before trial expires.
 
@@ -386,9 +386,9 @@ The upgrade email works best when it references the user's actual behavior insid
 
 ### 11. Notion: the feature-led upgrade
 
-**Subject line: "Custom domains and branding for your Notion Sites"**
-
 ![Notion upgrade email](/email-screenshots/upgrade-cta-from-notion-03082025.png)
+
+**Subject line: "Custom domains and branding for your Notion Sites"**
 
 **When to send:** When the user has created a Notion Site (product usage signal) but has not upgraded to the plan that unlocks custom domains.
 
@@ -422,9 +422,9 @@ plan does not include it.
 
 ### 12. SemRush: the loss-aversion upgrade
 
-**Subject line: "Don't lose your marketing momentum 💪"**
-
 ![SemRush upgrade email](/email-screenshots/upgrade-cta-from-semrush-11292024.png)
+
+**Subject line: "Don't lose your marketing momentum 💪"**
 
 **When to send:** Trial has expired or is about to expire for a user who has built up meaningful progress in the product (saved reports, tracked keywords, etc).
 
@@ -455,9 +455,9 @@ Re-engagement fires when a user has gone silent (cancelled, stopped opening emai
 
 ### 13. SemRush: the "before you go" cancellation catch
 
-**Subject line: "Before you go"**
-
 ![SemRush re-engage email](/email-screenshots/reengage-cancelled-users-from-semrush-09202024.png)
+
+**Subject line: "Before you go"**
 
 **When to send:** Within 24 hours of the user hitting cancel, before the cancellation takes full effect.
 
@@ -492,9 +492,9 @@ Whatever you pick, no hard feelings.
 
 ### 14. Monday: the social-proof re-activation
 
-**Subject line: "Don't just take our word for it."**
-
 ![Monday case study re-engage email](/email-screenshots/case-study-from-monday-05162025.png)
+
+**Subject line: "Don't just take our word for it."**
 
 **When to send:** Trial user who has opened earlier emails but has not taken the next activation action in 7+ days.
 

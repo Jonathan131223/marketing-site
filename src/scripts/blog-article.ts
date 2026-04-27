@@ -213,7 +213,95 @@ export function styleSubjectLines(
 }
 
 /**
- * Initialize all three enhancements in one call. Safe to call multiple
+ * Wrap each `<pre>` code block with a copy-to-clipboard button. Returns the
+ * number of buttons added — used by regression tests.
+ *
+ * The button is appended into a wrapper div around the `<pre>`, positioned
+ * absolutely in the top-right. We wrap rather than inserting the button
+ * inside the `<pre>` itself because Shiki sets `overflow-x: auto` on `<pre>`
+ * and a button inside would scroll horizontally with the code.
+ *
+ * Idempotent: safe to call twice — already-wrapped `<pre>` elements are
+ * skipped via the `code-block-wrapper` parent check.
+ */
+export function initCodeCopyButtons(
+  container: Document | HTMLElement = document,
+): number {
+  const root: ParentNode =
+    container.querySelector<HTMLElement>('.blog-prose') ?? container;
+  const pres = root.querySelectorAll<HTMLPreElement>('pre');
+  let count = 0;
+  pres.forEach((pre) => {
+    if (pre.parentElement?.classList.contains('code-block-wrapper')) return;
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'code-block-wrapper';
+    pre.parentNode?.insertBefore(wrapper, pre);
+    wrapper.appendChild(pre);
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'code-copy-btn';
+    btn.setAttribute('aria-label', 'Copy code to clipboard');
+    btn.innerHTML =
+      '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span>Copy</span>';
+
+    const label = btn.querySelector('span');
+    let resetTimer: number | undefined;
+    const copyViaTextarea = (text: string): boolean => {
+      // Fallback for environments where the async Clipboard API is missing
+      // or rejects (older Safari, insecure contexts, automation eval).
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'absolute';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      let ok = false;
+      try {
+        ok = document.execCommand('copy');
+      } catch {
+        ok = false;
+      }
+      document.body.removeChild(ta);
+      return ok;
+    };
+
+    btn.addEventListener('click', async () => {
+      const text = pre.textContent ?? '';
+      let ok = false;
+      if (navigator.clipboard?.writeText) {
+        try {
+          await navigator.clipboard.writeText(text);
+          ok = true;
+        } catch {
+          ok = copyViaTextarea(text);
+        }
+      } else {
+        ok = copyViaTextarea(text);
+      }
+      if (ok) {
+        btn.setAttribute('data-copied', 'true');
+        if (label) label.textContent = 'Copied';
+        if (resetTimer) window.clearTimeout(resetTimer);
+        resetTimer = window.setTimeout(() => {
+          btn.removeAttribute('data-copied');
+          if (label) label.textContent = 'Copy';
+        }, 1500);
+      } else {
+        if (label) label.textContent = 'Failed';
+      }
+    });
+
+    wrapper.appendChild(btn);
+    count += 1;
+  });
+  return count;
+}
+
+/**
+ * Initialize all enhancements in one call. Safe to call multiple
  * times — each initializer short-circuits when its target element is
  * missing, so pages without a TOC or progress bar won't crash.
  */
@@ -221,6 +309,7 @@ export function initBlogArticle(): () => void {
   const cleanupToc = initTableOfContents();
   const cleanupProgress = initScrollProgress();
   styleSubjectLines();
+  initCodeCopyButtons();
   return () => {
     cleanupToc();
     cleanupProgress();
