@@ -2,6 +2,16 @@
 
 All notable changes to DigiStorms marketing site will be documented in this file.
 
+## [0.1.5.2] - 2026-04-27
+
+### Changed
+- Subject lines on `saas-email-templates` now sit *below* each email screenshot instead of above, matching the convention used in every other email-examples article (`saas-welcome-email`, `milestone-emails`, `dunning-emails`, etc.). Above-the-image placement was an outlier that read like a caption above a card with nothing to anchor it; below-the-image puts the subject where readers expect it after they've seen the email
+- "Steal this template" code blocks across the blog now have proper interior padding (1.25rem) and a 12px border radius. Previously the dark Shiki-rendered code block had zero padding — text sat flush against the edge of the box, which looked broken. Same rule applies to every blog article since the styles live in `[slug].astro`
+- Reworked the title and meta description on `webinar-follow-up-subject-lines` to lead with the open-rate benefit instead of the brand-list signal. Also dropped the visible `— pattern` attribution from non-attributed subject lines so the page reads as a clean list of usable subject lines, not an audit log
+
+### Added
+- One-click copy button on every fenced code block in the blog. Hover a "Steal this template" snippet, click Copy, paste into your ESP. Uses the async clipboard API with a `document.execCommand` fallback for older Safari and shows a transient "Copied" confirmation. Wired through `initCodeCopyButtons()` in `src/scripts/blog-article.ts`, so it applies to every current and future blog article without per-page changes
+
 ## [0.1.5.1] - 2026-04-24
 
 ### Changed
