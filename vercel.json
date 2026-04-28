@@ -23,6 +23,18 @@
       "has": [{ "type": "host", "value": "digistorms.ai" }],
       "destination": "https://www.digistorms.ai/$1",
       "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "library.digistorms.ai" }],
+      "destination": "https://www.digistorms.ai/library",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "blog.digistorms.ai" }],
+      "destination": "https://www.digistorms.ai/blog",
+      "permanent": true
     }
   ],
   "headers": [

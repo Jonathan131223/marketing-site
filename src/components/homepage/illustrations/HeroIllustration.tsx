@@ -138,7 +138,7 @@ export const HeroIllustration: React.FC = () => {
               <Avatar size={32} />
               <div className="min-w-0 text-left">
                 <p className="text-[12px] font-medium text-slate-800">Mike Taylor</p>
-                <p className="text-[10px] text-slate-400">Acme Analytics</p>
+                <p className="text-[10px] text-slate-400">YourApp</p>
               </div>
             </div>
             <div className="mt-2.5">
@@ -155,7 +155,7 @@ export const HeroIllustration: React.FC = () => {
               <Avatar size={40} />
               <div className="text-left">
                 <p className="text-[14px] font-semibold text-slate-900">Mike Taylor</p>
-                <p className="text-[12px] text-slate-400">Acme Analytics</p>
+                <p className="text-[12px] text-slate-400">YourApp</p>
               </div>
               <div className="ml-auto text-right">
                 <p className="text-[11px] font-medium text-slate-500">Day 4 of trial</p>
@@ -228,9 +228,9 @@ export const HeroIllustration: React.FC = () => {
             </div>
 
             <div className="bg-slate-50/60 rounded-lg p-3.5 border border-slate-100/80 text-left">
-              <p className="text-[10px] text-slate-400 mb-1 text-left">To: mike@acmeanalytics.com</p>
+              <p className="text-[10px] text-slate-400 mb-1 text-left">To: mike@yourapp.com</p>
               <p className="text-[11px] font-semibold text-slate-700 mb-2.5 pb-2 border-b border-slate-100 text-left">
-                Quick tip: invite your team to get more from Acme
+                Quick tip: invite your team to get more from YourApp
               </p>
               <div className="space-y-2 text-[11px] text-slate-700 leading-[1.6] text-left">
                 <p>Hey Mike,</p>

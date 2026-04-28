@@ -62,7 +62,7 @@ const EditorIllustration: React.FC = () => (
     <div className="bg-white rounded-md border border-slate-100 p-2.5">
       <div className="flex items-center gap-2 mb-2 pb-2 border-b border-slate-100">
         <span className="text-[8px] text-slate-400">Subject:</span>
-        <span className="text-[9px] font-medium text-slate-800">Welcome to Acme Analytics</span>
+        <span className="text-[9px] font-medium text-slate-800">Welcome to YourApp</span>
         <span className="ml-auto text-[8px] text-primary cursor-pointer">Edit</span>
       </div>
       <div className="space-y-1.5 text-[9px] text-slate-500 leading-relaxed">

@@ -11,7 +11,7 @@ const Step1Illustration: React.FC = () => (
     {/* URL input */}
     <div className="flex items-center gap-2 bg-slate-50 rounded-lg px-3 py-2.5 border border-slate-200 mb-4">
       <span className="text-[10px] text-slate-400">https://</span>
-      <span className="text-[13px] text-slate-800 font-medium">acmeanalytics.com</span>
+      <span className="text-[13px] text-slate-800 font-medium">yourapp.com</span>
       <span className="ml-auto text-[10px] text-primary font-medium bg-blue-50 px-2 py-0.5 rounded">Analyze</span>
     </div>
     {/* Analysis progress */}
@@ -47,7 +47,7 @@ const Step2Illustration: React.FC = () => (
     </div>
     <div className="space-y-1.5">
       {[
-        { subject: "Welcome to Acme Analytics", status: "ready", trigger: "Signup" },
+        { subject: "Welcome to YourApp", status: "ready", trigger: "Signup" },
         { subject: "Get started with your first dashboard", status: "ready", trigger: "Nudge" },
         { subject: "Congrats on creating your first dashboard!", status: "draft", trigger: "Milestone 1" },
         { subject: "Your trial ends tomorrow", status: "draft", trigger: "Trial -1d" },
