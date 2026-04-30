@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
                 <img
                   src="/images/logo.png"
                   alt="DigiStorms"
-                  className="h-12 w-auto mb-4"
+                  className="h-8 w-auto mb-4"
                   width={120}
                   height={32}
                 />

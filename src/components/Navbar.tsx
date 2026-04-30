@@ -92,7 +92,7 @@ export const Navbar: React.FC<NavbarProps> = ({ pathname: initialPathname }) => 
               <img
                 src="/images/logo.png"
                 alt="DigiStorms"
-                className="h-12 w-auto"
+                className="h-8 w-auto"
                 width={120}
                 height={32}
               />
