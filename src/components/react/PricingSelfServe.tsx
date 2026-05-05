@@ -5,7 +5,7 @@ import { appUrl } from "@/config/appUrl";
 const CALENDLY_URL = "https://calendly.com/jonathan-digistorms/30-min-call";
 
 const tiers = [
-  { label: "100 new signups per month",    monthlyPrice: 0,   btnText: "Get started free", isContact: false },
+  { label: "First 100 new signups",        monthlyPrice: 0,   btnText: "Get started free", isContact: false },
   { label: "1,000 new signups per month",  monthlyPrice: 19,  btnText: "Start now",        isContact: false },
   { label: "5,000 new signups per month",  monthlyPrice: 59,  btnText: "Start now",        isContact: false },
   { label: "10,000 new signups per month", monthlyPrice: 149, btnText: "Start now",        isContact: false },
