@@ -1,22 +1,33 @@
 ---
-title: "23 product launch email examples from real SaaS (2026)"
+title: "28 product launch and release email examples from real SaaS (2026)"
 slug: "product-launch-email"
-description: "23 real product launch emails from SaaS brands like Notion, Linear, Loom, and Figma — plus the timing, subject lines, and structure that actually drive adoption."
-shortDescription: "Explore 23 standout emails and tips to nail your next big product launch."
-date: "2026-03-15"
-readTime: "10 min read"
+description: "28 real product launch and release emails from SaaS brands like Notion, Slack, ClickUp, Asana, Webflow, Loom and Figma — plus the timing, subject lines, and structure that actually drive adoption."
+shortDescription: "Explore 28 standout product launch and release emails — plus tips to nail your next big rollout."
+date: "2026-05-06"
+readTime: "12 min read"
 thumbnail: "/blog/product-launch-email/banner.webp"
 heroImage: "/blog/product-launch-email/banner.webp"
 libraryTags: ["product-update", "feature-update", "new-feature-nudge"]
+ogImage: "/og/blog-product-launch-email.webp"
 ---
 
-Product launch emails are your chance to rally your audience around something new—whether it's a shiny new product, a feature update, or an upcoming release.
+Product launch emails — sometimes called product release emails or product update emails — are your chance to rally your audience around something new. Whether it's a shiny new product, a feature update, or a major release, the email is what turns "we built it" into "they're using it."
 
 But writing a compelling product launch email isn't just about listing features. It's about building anticipation, communicating value clearly, and getting people excited to take action.
 
-In this article, we'll break down what makes a great product launch email and how to write one that actually converts.
+In this article, we'll break down what makes a great product launch (or release) email and how to write one that actually converts. I'll walk you through 28 real-world examples — from Notion, Slack, ClickUp, Asana, Webflow, Hunter.io, Loom, Figma, and more — so you can see what works and how to apply it to your own launches.
 
-I'll walk you through real-world examples—including a smart launch from Notion—so you can see what works and how to apply it to your own launches.
+## Product launch vs product release vs product update — what's the difference?
+
+These three terms get used interchangeably, but they target slightly different moments in your product lifecycle, and the email patterns differ accordingly.
+
+A **product launch email** announces something new to the world for the first time — a brand new product, a major rebrand, or a flagship feature that fundamentally changes what the product does. The audience is broad (existing users + prospects) and the goal is awareness.
+
+A **product release email** announces a scheduled rollout — typically a versioned update like "Notion 2.48" or a feature drop like "Slack's free plan now includes security features." The audience is mostly existing users, and the goal is adoption of the new capability.
+
+A **product update email** is the most informal — often a recurring "what's new" digest summarizing recent changes. The audience is engaged users, and the goal is reinforcement: keeping the product top-of-mind for people already paying.
+
+In practice, most SaaS teams use one template and tune the framing to the moment. The examples below cover all three patterns — so whether you're launching, releasing, or updating, you'll find a template that fits.
 
 ## The different types of product launch
 
@@ -36,7 +47,7 @@ It's ideal when you're building on an existing product and want to encourage eng
 
 Either way, your email subject line and email body should clearly state the value—don't just describe what's new, explain why your reader should care.
 
-## 23 product launch email examples from top SaaS brands
+## 28 product launch and release email examples from top SaaS brands
 
 ### Pipedrive
 
@@ -215,6 +226,56 @@ Some added hierarchy, contrast, and warmth (especially in fonts, spacing, and ic
 EasyDMARC's product launch email is clear, professional, and highly informative. The structure is solid, and the copy communicates the value of the new feature well. That said, visually, it feels more like a technical changelog than a product announcement.
 
 The layout could benefit from better visual hierarchy, a lighter touch on text density, and more breathing room between sections to keep readers engaged. A slightly more polished, marketing-friendly design would make the new feature shine.
+
+### Slack
+
+![Product release email example from Slack](/email-screenshots/new-features-nudge-from-slack-25062025.png)
+
+**Subject line: Slack's free subscription will now include additional security features**
+
+This is a release email rather than a launch email — and that distinction matters. Slack isn't introducing a new product; they're announcing that an existing capability (security features) is being repackaged into a different plan tier. The framing is matter-of-fact and operational, not flashy.
+
+What works: the subject line tells you exactly who this affects (free subscription users) and what changes (additional security features). No mystery, no marketing fluff. For release emails about access changes or plan updates, this directness builds trust faster than excitement-driven copy.
+
+### ClickUp
+
+![Product release email example from ClickUp](/email-screenshots/feature-update-from-clickup-05172025.png)
+
+**Subject line: What's new in ClickUp: Autopilot Agents, web search, and more!**
+
+ClickUp's "What's new in ClickUp" framing is a recurring product release format — same subject line scaffold, different content each time. Existing users learn to expect it. The body packs three or four feature highlights with screenshots and one CTA per feature.
+
+What works: a consistent subject prefix ("What's new in ClickUp:") trains your audience to recognize and open these emails. It's the email equivalent of a magazine masthead — the predictability is the point. Pick a release email template you'll use *every* release and stick to it.
+
+### Hunter.io
+
+![Product release email example from Hunter.io](/email-screenshots/newsletter-from-hunterio-02042025.png)
+
+**Subject line: 2x more data for your outreach**
+
+Hunter.io's release email leads with a benefit number, not the feature name. The reader knows what they get ("2x more data") before they know what changed under the hood. This is a textbook outcome-first launch email — the implementation detail comes second.
+
+What works: numbers in subject lines lift open rates and set a clear expectation. "2x more data" beats "We've upgraded our database" every time. Whenever you can quantify the user-facing benefit of a release, lead with the number.
+
+### Webflow
+
+![Product release email example from Webflow](/email-screenshots/new-features-nudge-from-webflow-03042024.png)
+
+**Subject line: Learn more about Webflow's new Layout section**
+
+Webflow's email is positioned as a teaser for a deeper resource, not a self-contained announcement. The subject says "learn more" — implying there's a body of content waiting (a tutorial, a blog post, a video). The email is the doorway, not the destination.
+
+What works: when a feature is complex enough to need explanation, don't try to fit the whole pitch into the email body. Use the email to drive curiosity and pre-qualify clicks toward longer-form content (blog post, video, demo). The reader who clicks is much more invested than the one who scrolled past.
+
+### Asana
+
+![Product release email example from Asana](/email-screenshots/newsletter-from-asana-07012025.png)
+
+**Subject line: What's new? Visit the smart workflow gallery**
+
+Asana frames the release not as a feature drop but as a *destination* — "the smart workflow gallery." Users don't get a list; they get an invitation to browse. The framing creates lower friction (no commitment to read a long email) and higher engagement (browsing feels playful, reading feels like work).
+
+What works: when you're shipping multiple related features at once, package them as a "gallery," "library," or "hub" — give them a destination URL and let users self-direct. This pattern works especially well for templates, integrations, or any release with parallel options the user might want to compare.
 
 ## Bonus: product launch email sequence with Notion's Calendar
 

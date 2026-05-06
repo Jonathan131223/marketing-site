@@ -70,7 +70,10 @@ const staticEntries = [
   // Blog posts
   urlEntry(`${BASE_URL}/blog/saas-welcome-email`,        "2026-03-23", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/webinar-email-sequence`,    "2026-03-23", "monthly", "0.9"),
-  urlEntry(`${BASE_URL}/blog/product-launch-email`,      "2026-03-15", "monthly", "0.9"),
+  urlEntry(`${BASE_URL}/blog/product-launch-email`,      "2026-05-06", "monthly", "0.9"),
+  urlEntry(`${BASE_URL}/blog/b2b-lead-nurturing-email-examples`,    "2026-05-06", "monthly", "0.9"),
+  urlEntry(`${BASE_URL}/blog/re-engagement-email-examples`,         "2026-05-06", "monthly", "0.9"),
+  urlEntry(`${BASE_URL}/blog/transactional-email-vs-marketing-email`, "2026-05-06", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/saas-newsletter`,           "2026-03-01", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/webinar-follow-up-email`,          "2026-02-15", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/webinar-follow-up-subject-lines`,  TODAY,        "monthly", "0.9"),

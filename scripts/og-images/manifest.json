@@ -96,6 +96,46 @@
       "prompt": "Editorial OG card. Cream background. Instrument Serif headline '14 SaaS lifecycle email templates' with '14' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
     },
     {
+      "id": "blog-b2b-lead-nurturing-email-examples",
+      "output": "public/og/blog-b2b-lead-nurturing-email-examples.webp",
+      "page_file": "src/content/blog/b2b-lead-nurturing-email-examples.md",
+      "background": "warm cream #F8F6F2",
+      "headline": "15 B2B lead nurturing email examples",
+      "italic_emphasis": "15",
+      "subline": "DigiStorms · From Apollo, Notion, Ahrefs, Calendly and more",
+      "prompt": "Editorial OG card. Cream background. Instrument Serif headline '15 B2B lead nurturing email examples' with '15' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
+    },
+    {
+      "id": "blog-re-engagement-email-examples",
+      "output": "public/og/blog-re-engagement-email-examples.webp",
+      "page_file": "src/content/blog/re-engagement-email-examples.md",
+      "background": "warm cream #F8F6F2",
+      "headline": "12 re-engagement email examples",
+      "italic_emphasis": "12",
+      "subline": "DigiStorms · Real win-back emails from Adobe, Canva, Apollo and more",
+      "prompt": "Editorial OG card. Cream background. Instrument Serif headline '12 re-engagement email examples' with '12' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
+    },
+    {
+      "id": "blog-transactional-email-vs-marketing-email",
+      "output": "public/og/blog-transactional-email-vs-marketing-email.webp",
+      "page_file": "src/content/blog/transactional-email-vs-marketing-email.md",
+      "background": "warm cream #F8F6F2",
+      "headline": "Transactional email vs marketing email",
+      "italic_emphasis": "vs",
+      "subline": "DigiStorms · The practical difference, with real examples",
+      "prompt": "Editorial OG card. Cream background. Instrument Serif headline 'Transactional email vs marketing email' with 'vs' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
+    },
+    {
+      "id": "blog-product-launch-email",
+      "output": "public/og/blog-product-launch-email.webp",
+      "page_file": "src/content/blog/product-launch-email.md",
+      "background": "warm cream #F8F6F2",
+      "headline": "28 product launch email examples",
+      "italic_emphasis": "28",
+      "subline": "DigiStorms · Real launches from Notion, Slack, Loom, Figma and more",
+      "prompt": "Editorial OG card. Cream background. Instrument Serif headline '28 product launch email examples' with '28' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
+    },
+    {
       "id": "pricing",
       "output": "public/og/pricing.webp",
       "page_file": "src/pages/pricing.astro",
