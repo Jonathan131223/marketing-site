@@ -311,6 +311,38 @@ const CARDS = [
     cta: 'Copy them',
     icon: 'rocket',
   },
+  {
+    slug: 'product-launch-email',
+    subject: 'Launch playbook',
+    headline: '28 product launch & release emails',
+    body: 'Real launches from Notion, Slack, ClickUp, Asana, Webflow, Loom, Figma — copy, timing, and what works.',
+    cta: 'See the launches',
+    icon: 'rocket',
+  },
+  {
+    slug: 'b2b-lead-nurturing-email-examples',
+    subject: 'Lead nurture playbook',
+    headline: '15 B2B lead nurturing emails',
+    body: 'Real nurture emails from Apollo, Notion, Ahrefs, Calendly, Asana, ClickUp — patterns that move cold leads to closed.',
+    cta: 'See the patterns',
+    icon: 'sparkle',
+  },
+  {
+    slug: 're-engagement-email-examples',
+    subject: 'Win-back playbook',
+    headline: '12 emails that win back inactive users',
+    body: 'Real win-backs from Adobe, Canva, Apollo, Semrush, Pipedrive — the patterns that wake dormant users up.',
+    cta: 'See the win-backs',
+    icon: 'envelope',
+  },
+  {
+    slug: 'transactional-email-vs-marketing-email',
+    subject: 'Email types compared',
+    headline: 'Transactional vs marketing email',
+    body: 'The practical difference — with real examples from Stripe, Calendly, Notion, Beehiiv, Zapier.',
+    cta: 'See the difference',
+    icon: 'chart',
+  },
 ];
 
 async function renderOne(card) {
