@@ -520,10 +520,22 @@ const breadcrumbJsonLd = {
 -->
 <script>
   import { initBlogArticle } from '@/scripts/blog-article';
+  // GLightbox CSS — bundled with the article CSS so the lightbox is styled
+  // when initEmailLightbox() (called from initBlogArticle) opens it.
+  import 'glightbox/dist/css/glightbox.min.css';
   initBlogArticle();
 </script>
 
 <style is:global>
+  /* Lightbox library-link callout (shown as the description in the lightbox bottom bar). */
+  .glightbox-clean .gdesc-inner .lightbox-library-link {
+    color: #2563EB;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .glightbox-clean .gdesc-inner .lightbox-library-link:hover {
+    text-decoration: underline;
+  }
   .blog-prose h2 {
     font-family: "Instrument Serif", Georgia, serif;
     color: #0F172A;

@@ -301,6 +301,78 @@ export function initCodeCopyButtons(
 }
 
 /**
+ * Wire up GLightbox on all email screenshot images inside the article.
+ *
+ * The markdown wraps each email screenshot in an <a> linking to its library
+ * page (e.g. `[![alt](path.png)](/library/email/slug)`). We:
+ *   1. Detach the library URL from the <a>'s href and stash it on data-library-url.
+ *   2. Point the <a>'s href at the image src so GLightbox can open it inline.
+ *   3. Add a "View full library entry →" caption that becomes the lightbox description.
+ *   4. Tag the <a> with .lightbox-trigger so GLightbox's selector picks it up.
+ *
+ * Result: clicking an email screenshot opens the full image in a zoomable
+ * lightbox; the caption's "View full library entry →" link is the path back
+ * to the library page (preserving the routing the markdown originally encoded).
+ */
+export async function initEmailLightbox(
+  container: Document | HTMLElement = document,
+): Promise<() => void> {
+  const links = Array.from(
+    container.querySelectorAll<HTMLAnchorElement>('article a'),
+  ).filter((a) => {
+    const img = a.querySelector('img');
+    return img != null && /\/email-screenshots\//.test(img.getAttribute('src') || '');
+  });
+
+  if (links.length === 0) return () => {};
+
+  for (const a of links) {
+    const img = a.querySelector('img');
+    if (!img) continue;
+
+    const libraryHref = a.getAttribute('href') || '';
+    const imageSrc = img.getAttribute('src') || '';
+
+    a.setAttribute('href', imageSrc);
+    a.setAttribute('data-library-url', libraryHref);
+    a.setAttribute('data-gallery', 'email-screenshots');
+    a.setAttribute(
+      'data-description',
+      `<a href="${libraryHref}" class="lightbox-library-link" target="_self">View full library entry &rarr;</a>`,
+    );
+    a.classList.add('lightbox-trigger');
+
+    // Cursor affordance — signals zoomability without a hover scale jitter.
+    img.style.cursor = 'zoom-in';
+  }
+
+  // Lazy-import so non-blog pages don't bundle the GLightbox runtime.
+  let GLightbox;
+  try {
+    const mod = await import('glightbox');
+    GLightbox = (mod as any).default || mod;
+  } catch {
+    return () => {};
+  }
+
+  const lightbox = GLightbox({
+    selector: '.lightbox-trigger',
+    touchNavigation: true,
+    loop: false,
+    descPosition: 'bottom',
+    moreLength: 0,
+  });
+
+  return () => {
+    try {
+      lightbox.destroy();
+    } catch {
+      // ignore
+    }
+  };
+}
+
+/**
  * Initialize all enhancements in one call. Safe to call multiple
  * times — each initializer short-circuits when its target element is
  * missing, so pages without a TOC or progress bar won't crash.
@@ -310,8 +382,13 @@ export function initBlogArticle(): () => void {
   const cleanupProgress = initScrollProgress();
   styleSubjectLines();
   initCodeCopyButtons();
+  let cleanupLightbox: () => void = () => {};
+  initEmailLightbox().then((cleanup) => {
+    cleanupLightbox = cleanup;
+  });
   return () => {
     cleanupToc();
     cleanupProgress();
+    cleanupLightbox();
   };
 }
