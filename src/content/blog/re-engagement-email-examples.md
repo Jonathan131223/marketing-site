@@ -38,7 +38,7 @@ Several of the examples below cover both — Adobe's "Come back and do more with
 
 ### Apollo — "Did we lose you?"
 
-![Re-engagement email example from Apollo](/email-screenshots/product-education-from-apollo-how-to-avoid-the-spam-folder-01102024.png)
+[![Re-engagement email example from Apollo](/email-screenshots/product-education-from-apollo-how-to-avoid-the-spam-folder-01102024.png)](/library/email/product-education-from-apollo-how-to-avoid-the-spam-folder-01102024)
 
 **Subject line: Did we lose you?**
 
@@ -48,7 +48,7 @@ Three words. No emojis. No urgency. Apollo's re-engagement email opens with the 
 
 ### Canva — "Hey Jonathan, we miss you…"
 
-![Re-engagement email example from Canva](/email-screenshots/inactivity-nudge-from-canva-06272025.png)
+[![Re-engagement email example from Canva](/email-screenshots/inactivity-nudge-from-canva-06272025.png)](/library/email/inactivity-nudge-from-canva-06272025)
 
 **Subject line: Hey Jonathan, we miss you…**
 
@@ -58,7 +58,7 @@ Canva uses a personal first name + ellipsis to mimic the cadence of a human chec
 
 ### Adobe — "Come back and do more with Illustrator"
 
-![Re-engagement email example from Adobe](/email-screenshots/reengage-cancelled-users-from-adobe-08202025.png)
+[![Re-engagement email example from Adobe](/email-screenshots/reengage-cancelled-users-from-adobe-08202025.png)](/library/email/reengage-cancelled-users-from-adobe-08202025)
 
 **Subject line: Come back and do more with Illustrator**
 
@@ -68,7 +68,7 @@ Adobe specifies the *exact tool* in the subject — not "come back to Creative C
 
 ### Pipedrive — "Don't miss out on winning more deals"
 
-![Re-engagement email example from Pipedrive](/email-screenshots/reengage-cancelled-users-from-pipedrive-08022024.png)
+[![Re-engagement email example from Pipedrive](/email-screenshots/reengage-cancelled-users-from-pipedrive-08022024.png)](/library/email/reengage-cancelled-users-from-pipedrive-08022024)
 
 **Subject line: Don't miss out on winning more deals**
 
@@ -78,7 +78,7 @@ Pipedrive ties the re-engagement directly to the user's *outcome* — winning de
 
 ### Semrush — "Before you go"
 
-![Re-engagement email example from Semrush](/email-screenshots/reengage-cancelled-users-from-semrush-09202024.png)
+[![Re-engagement email example from Semrush](/email-screenshots/reengage-cancelled-users-from-semrush-09202024.png)](/library/email/reengage-cancelled-users-from-semrush-09202024)
 
 **Subject line: Before you go**
 
@@ -88,7 +88,7 @@ Semrush's cancellation-save email triggers right at the moment of intent — whe
 
 ### Lucid — "Final Notice: Your subscription has expired"
 
-![Re-engagement email example from Lucid](/email-screenshots/reengage-cancelled-users-from-lucid-08242024.png)
+[![Re-engagement email example from Lucid](/email-screenshots/reengage-cancelled-users-from-lucid-08242024.png)](/library/email/reengage-cancelled-users-from-lucid-08242024)
 
 **Subject line: Final Notice: Your subscription has expired, Jonathan Bernard**
 
@@ -98,7 +98,7 @@ Lucid's "Final Notice" subject does two things: it creates a deadline (last chan
 
 ### Calendly — "Are you already using a scheduling tool, Jonathan?"
 
-![Re-engagement email example from Calendly](/email-screenshots/video-from-calendly-09032024.png)
+[![Re-engagement email example from Calendly](/email-screenshots/video-from-calendly-09032024.png)](/library/email/video-from-calendly-09032024)
 
 **Subject line: Are you already using a scheduling tool, Jonathan?**
 
@@ -108,7 +108,7 @@ Calendly opens with a *survey-style* question that's actually a competitive disq
 
 ### Dropbox — "It's been a while Jonathan. Look what just arrived!"
 
-![Re-engagement email example from Dropbox](/email-screenshots/inactivity-nudge-from-dropbox-03052025.png)
+[![Re-engagement email example from Dropbox](/email-screenshots/inactivity-nudge-from-dropbox-03052025.png)](/library/email/inactivity-nudge-from-dropbox-03052025)
 
 **Subject line: It's been a while Jonathan. look what just arrived!**
 
@@ -118,7 +118,7 @@ Dropbox combines two motivators: explicit acknowledgment of dormancy ("it's been
 
 ### SurveyMonkey — "Don't leave your survey hanging"
 
-![Re-engagement email example from SurveyMonkey](/email-screenshots/inactivity-nudge-from-surveymonkey06162025.png)
+[![Re-engagement email example from SurveyMonkey](/email-screenshots/inactivity-nudge-from-surveymonkey06162025.png)](/library/email/inactivity-nudge-from-surveymonkey06162025)
 
 **Subject line: Don't leave your survey hanging**
 
@@ -128,7 +128,7 @@ SurveyMonkey targets a *specific behavior* — an unfinished survey draft — ra
 
 ### PhantomBuster — "Are you truly leveraging your PhantomBuster account?"
 
-![Re-engagement email example from PhantomBuster](/email-screenshots/phantom-busters--are-you-truly-leveraging-your-phantombuster-account-from-phantom-busters-03012025.png)
+[![Re-engagement email example from PhantomBuster](/email-screenshots/phantom-busters--are-you-truly-leveraging-your-phantombuster-account-from-phantom-busters-03012025.png)](/library/email/phantom-busters--are-you-truly-leveraging-your-phantombuster-account-from-phantom-busters-03012025)
 
 **Subject line: Are you truly leveraging your PhantomBuster account?**
 
@@ -138,7 +138,7 @@ PhantomBuster reframes inactivity as *underutilization*. The implication: you ha
 
 ### Monday — "Hear from our customers why they love their Work OS"
 
-![Re-engagement email example from Monday](/email-screenshots/case-study-from-monday-05162025.png)
+[![Re-engagement email example from Monday](/email-screenshots/case-study-from-monday-05162025.png)](/library/email/case-study-from-monday-05162025)
 
 **Subject line: Don't just take our word for it.**
 
@@ -148,7 +148,7 @@ Monday uses social proof as a re-engagement vector. The dormant user has presuma
 
 ### Pipedrive — "Have another week on us!"
 
-![Re-engagement email example from Pipedrive trial extension](/email-screenshots/trial-extension-offer-from-pipedrive-save-your-data-and-keep-your-account-01252024.png)
+[![Re-engagement email example from Pipedrive trial extension](/email-screenshots/trial-extension-offer-from-pipedrive-save-your-data-and-keep-your-account-01252024.png)](/library/email/trial-extension-offer-from-pipedrive-save-your-data-and-keep-your-account-01252024)
 
 **Subject line: Have another week on us!**
 

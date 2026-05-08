@@ -52,7 +52,7 @@ Transactional emails are sent through transactional email services (Postmark, Se
 
 ### Transactional email example #1 — Stripe email verification
 
-![Transactional email example from Stripe](/email-screenshots/email-verification-from-stripe-03062025.png)
+[![Transactional email example from Stripe](/email-screenshots/email-verification-from-stripe-03062025.png)](/library/email/email-verification-from-stripe-03062025)
 
 **Subject line: Verify your email address**
 
@@ -62,7 +62,7 @@ A textbook transactional email. Single CTA, no marketing language, no upsell, no
 
 ### Transactional email example #2 — Calendly payment receipt
 
-![Transactional email example from Calendly](/email-screenshots/payment-receipt-from-calendly-02202024.png)
+[![Transactional email example from Calendly](/email-screenshots/payment-receipt-from-calendly-02202024.png)](/library/email/payment-receipt-from-calendly-02202024)
 
 **Subject line: Your receipt from Calendly LLC**
 
@@ -72,7 +72,7 @@ The classic payment receipt. The email exists because the user paid — they nee
 
 ### Transactional email example #3 — Notion login from new device
 
-![Transactional email example from Notion](/email-screenshots/login-from-new-device-from-notion-05222024.png)
+[![Transactional email example from Notion](/email-screenshots/login-from-new-device-from-notion-05222024.png)](/library/email/login-from-new-device-from-notion-05222024)
 
 **Subject line: A new device logged into your account**
 
@@ -98,7 +98,7 @@ Marketing emails go through marketing email service providers (Mailchimp, Custom
 
 ### Marketing email example #1 — Beehiiv creator newsletter
 
-![Marketing email example from Beehiiv](/email-screenshots/newsletter-from-beehiiv06272025.png)
+[![Marketing email example from Beehiiv](/email-screenshots/newsletter-from-beehiiv06272025.png)](/library/email/newsletter-from-beehiiv06272025)
 
 **Subject line: 🔴 What 12+ successful creators taught us this quarter**
 
@@ -108,7 +108,7 @@ A pure content-marketing newsletter. The reader signed up for it. The intent is 
 
 ### Marketing email example #2 — Zapier promotional offer
 
-![Marketing email example from Zapier](/email-screenshots/special-offer-from-zapier-03022024.png)
+[![Marketing email example from Zapier](/email-screenshots/special-offer-from-zapier-03022024.png)](/library/email/special-offer-from-zapier-03022024)
 
 **Subject line: Get 3 months of our Starter plan for $10**
 
@@ -118,7 +118,7 @@ A promotional offer email — the most clearly "marketing" of the marketing cate
 
 ### Marketing email example #3 — Calendly webinar invitation
 
-![Marketing email example from Calendly](/email-screenshots/webinar-invitation-from-calendly-02122024.png)
+[![Marketing email example from Calendly](/email-screenshots/webinar-invitation-from-calendly-02122024.png)](/library/email/webinar-invitation-from-calendly-02122024)
 
 **Subject line: Tomorrow's webinar: Hit your numbers with the right Calendly plan**
 

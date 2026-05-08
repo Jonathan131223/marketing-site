@@ -43,7 +43,7 @@ The 15 examples below cover the full nurture toolkit: educational courses, video
 
 ### Apollo — "Why no one is responding to your cold emails"
 
-![B2B lead nurturing email example from Apollo](/email-screenshots/course-from-apollo-why-no-one-is-responding-to-your-cold-emails-02152024.png)
+[![B2B lead nurturing email example from Apollo](/email-screenshots/course-from-apollo-why-no-one-is-responding-to-your-cold-emails-02152024.png)](/library/email/course-from-apollo-why-no-one-is-responding-to-your-cold-emails-02152024)
 
 **Subject line: Why no one is responding to your cold emails…**
 
@@ -53,7 +53,7 @@ Apollo turns a real prospect pain point — silent inboxes — into a video cour
 
 ### Hunter.io — "2x more data for your outreach"
 
-![B2B lead nurturing email example from Hunter.io](/email-screenshots/newsletter-from-hunterio-02042025.png)
+[![B2B lead nurturing email example from Hunter.io](/email-screenshots/newsletter-from-hunterio-02042025.png)](/library/email/newsletter-from-hunterio-02042025)
 
 **Subject line: 2x more data for your outreach**
 
@@ -63,7 +63,7 @@ Hunter's product newsletter teases a quantitative improvement (2x) right in the 
 
 ### Notion — "A passwordless auth platform worth $1B?"
 
-![B2B lead nurturing email example from Notion](/email-screenshots/video-from-notion-11012023.png)
+[![B2B lead nurturing email example from Notion](/email-screenshots/video-from-notion-11012023.png)](/library/email/video-from-notion-11012023)
 
 **Subject line: A passwordless auth platform worth $1B?**
 
@@ -73,7 +73,7 @@ Notion's video series email pitches a third-party founder's story (not Notion's 
 
 ### ClickUp — "Your most productive workflow yet"
 
-![B2B lead nurturing email example from ClickUp](/email-screenshots/webinar-invitation-from-clickup-06162025.png)
+[![B2B lead nurturing email example from ClickUp](/email-screenshots/webinar-invitation-from-clickup-06162025.png)](/library/email/webinar-invitation-from-clickup-06162025)
 
 **Subject line: Jonathan, here's your most productive workflow yet — learn how to build it! 🚀**
 
@@ -83,7 +83,7 @@ ClickUp's webinar invite uses the lead's name in the subject (still effective wh
 
 ### Ahrefs — "All about AI tools in Ahrefs + upcoming features"
 
-![B2B lead nurturing email example from Ahrefs](/email-screenshots/webinar-invitation-from-ahrefs-05242025.png)
+[![B2B lead nurturing email example from Ahrefs](/email-screenshots/webinar-invitation-from-ahrefs-05242025.png)](/library/email/webinar-invitation-from-ahrefs-05242025)
 
 **Subject line: All about AI tools in Ahrefs + Upcoming features Webinar**
 
@@ -93,7 +93,7 @@ Ahrefs combines two motivators in a single webinar invite: education on a hot to
 
 ### Ahrefs — "Ahrefs Evolve hits the U.S! Grab 1 of first 50 tickets"
 
-![B2B lead nurturing email example from Ahrefs Evolve event](/email-screenshots/irl-event-from-ahrefs-06172025.png)
+[![B2B lead nurturing email example from Ahrefs Evolve event](/email-screenshots/irl-event-from-ahrefs-06172025.png)](/library/email/irl-event-from-ahrefs-06172025)
 
 **Subject line: Ahrefs Evolve hits the U.S! Grab 1 of first 50 tickets**
 
@@ -103,7 +103,7 @@ In-person events are the highest-trust nurture asset a B2B brand can ship. Ahref
 
 ### Asana — "Your ultimate guide to getting more done in Asana"
 
-![B2B lead nurturing email example from Asana](/email-screenshots/webinar-invitation-from-asana-06262025.png)
+[![B2B lead nurturing email example from Asana](/email-screenshots/webinar-invitation-from-asana-06262025.png)](/library/email/webinar-invitation-from-asana-06262025)
 
 **Subject line: 📆  Join live: Your ultimate guide to getting more done in Asana**
 
@@ -113,7 +113,7 @@ Asana's webinar email leans on two things: a calendar emoji that signals "this h
 
 ### Asana — "What's new? Visit the smart workflow gallery"
 
-![B2B lead nurturing email example from Asana newsletter](/email-screenshots/newsletter-from-asana-07012025.png)
+[![B2B lead nurturing email example from Asana newsletter](/email-screenshots/newsletter-from-asana-07012025.png)](/library/email/newsletter-from-asana-07012025)
 
 **Subject line: What's new? Visit the smart workflow gallery**
 
@@ -123,7 +123,7 @@ A product-update newsletter that frames the update as something the reader can *
 
 ### Calendly — "What do your peers think of Calendly?"
 
-![B2B lead nurturing email example from Calendly case study](/email-screenshots/case-study-from-calendly-08062024.png)
+[![B2B lead nurturing email example from Calendly case study](/email-screenshots/case-study-from-calendly-08062024.png)](/library/email/case-study-from-calendly-08062024)
 
 **Subject line: What do your peers think of Calendly?**
 
@@ -133,7 +133,7 @@ Social proof works hardest when the proof comes from people who look like the re
 
 ### Calendly — "The State of Meetings: New data reveals…"
 
-![B2B lead nurturing email example from Calendly report](/email-screenshots/report-from-calendly-10162024.png)
+[![B2B lead nurturing email example from Calendly report](/email-screenshots/report-from-calendly-10162024.png)](/library/email/report-from-calendly-10162024)
 
 **Subject line: The State of Meetings: New data reveals how to improve meetings in your org**
 
@@ -143,7 +143,7 @@ Calendly's industry report email is a textbook content-marketing nurture: origin
 
 ### Aircall — "Phone systems for better customer contact"
 
-![B2B lead nurturing email example from Aircall guide](/email-screenshots/guide-from-aircall-07012025.png)
+[![B2B lead nurturing email example from Aircall guide](/email-screenshots/guide-from-aircall-07012025.png)](/library/email/guide-from-aircall-07012025)
 
 **Subject line: Phone systems for better customer contact**
 
@@ -153,7 +153,7 @@ Aircall's nurture guide goes broad on the topic — "phone systems" — rather t
 
 ### Aircall — "Here's the ROI you can expect with Aircall"
 
-![B2B lead nurturing email example from Aircall ROI](/email-screenshots/inactivity-nudge-from-aircall-05152025.png)
+[![B2B lead nurturing email example from Aircall ROI](/email-screenshots/inactivity-nudge-from-aircall-05152025.png)](/library/email/inactivity-nudge-from-aircall-05152025)
 
 **Subject line: Jonathan, here's the ROI you can expect with Aircall**
 
@@ -163,7 +163,7 @@ When the prospect has cooled off, an ROI-framed email re-anchors the value with 
 
 ### Beehiiv — "🔴 What 12+ successful creators taught us this quarter"
 
-![B2B lead nurturing email example from Beehiiv newsletter](/email-screenshots/newsletter-from-beehiiv06272025.png)
+[![B2B lead nurturing email example from Beehiiv newsletter](/email-screenshots/newsletter-from-beehiiv06272025.png)](/library/email/newsletter-from-beehiiv06272025)
 
 **Subject line: 🔴 What 12+ successful creators taught us this quarter**
 
@@ -173,7 +173,7 @@ Beehiiv's creator newsletter aggregates lessons from real users — turning thei
 
 ### Calendly — "Live: See what you can do with your account"
 
-![B2B lead nurturing email example from Calendly webinar](/email-screenshots/webinar-invitation-from-calendly-02122024.png)
+[![B2B lead nurturing email example from Calendly webinar](/email-screenshots/webinar-invitation-from-calendly-02122024.png)](/library/email/webinar-invitation-from-calendly-02122024)
 
 **Subject line: Tomorrow's webinar: Hit your numbers with the right Calendly plan**
 
@@ -183,7 +183,7 @@ A webinar email pitched at signed-up-but-underactivated prospects — the "right
 
 ### Beehiiv — "Webinar: Newsletter Growth Hacking is starting soon"
 
-![B2B lead nurturing email example from Beehiiv webinar](/email-screenshots/webinar-invitation-from-beehiiv06172025.png)
+[![B2B lead nurturing email example from Beehiiv webinar](/email-screenshots/webinar-invitation-from-beehiiv06172025.png)](/library/email/webinar-invitation-from-beehiiv06172025)
 
 **Subject line: Webinar: Newsletter Growth Hacking is starting soon**
 

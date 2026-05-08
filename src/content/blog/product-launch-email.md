@@ -229,7 +229,7 @@ The layout could benefit from better visual hierarchy, a lighter touch on text d
 
 ### Slack
 
-![Product release email example from Slack](/email-screenshots/new-features-nudge-from-slack-25062025.png)
+[![Product release email example from Slack](/email-screenshots/new-features-nudge-from-slack-25062025.png)](/library/email/new-features-nudge-from-slack-25062025)
 
 **Subject line: Slack's free subscription will now include additional security features**
 
@@ -239,7 +239,7 @@ What works: the subject line tells you exactly who this affects (free subscripti
 
 ### ClickUp
 
-![Product release email example from ClickUp](/email-screenshots/feature-update-from-clickup-05172025.png)
+[![Product release email example from ClickUp](/email-screenshots/feature-update-from-clickup-05172025.png)](/library/email/feature-update-from-clickup-05172025)
 
 **Subject line: What's new in ClickUp: Autopilot Agents, web search, and more!**
 
@@ -249,7 +249,7 @@ What works: a consistent subject prefix ("What's new in ClickUp:") trains your a
 
 ### Hunter.io
 
-![Product release email example from Hunter.io](/email-screenshots/newsletter-from-hunterio-02042025.png)
+[![Product release email example from Hunter.io](/email-screenshots/newsletter-from-hunterio-02042025.png)](/library/email/newsletter-from-hunterio-02042025)
 
 **Subject line: 2x more data for your outreach**
 
@@ -259,7 +259,7 @@ What works: numbers in subject lines lift open rates and set a clear expectation
 
 ### Webflow
 
-![Product release email example from Webflow](/email-screenshots/new-features-nudge-from-webflow-03042024.png)
+[![Product release email example from Webflow](/email-screenshots/new-features-nudge-from-webflow-03042024.png)](/library/email/new-features-nudge-from-webflow-03042024)
 
 **Subject line: Learn more about Webflow's new Layout section**
 
@@ -269,7 +269,7 @@ What works: when a feature is complex enough to need explanation, don't try to f
 
 ### Asana
 
-![Product release email example from Asana](/email-screenshots/newsletter-from-asana-07012025.png)
+[![Product release email example from Asana](/email-screenshots/newsletter-from-asana-07012025.png)](/library/email/newsletter-from-asana-07012025)
 
 **Subject line: What's new? Visit the smart workflow gallery**
 
