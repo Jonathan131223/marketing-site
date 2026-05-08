@@ -173,10 +173,41 @@ function emailKeyword(emailObj: any): string {
 }
 
 const keyword = emailKeyword(email);
-const pageTitle = `${brandName} ${keyword} example: "${email.subject}" | DigiStorms Library`;
 const subjectClean = String(email.subject || "").replace(/"/g, "").trim();
+
+/**
+ * Compose a SERP-friendly title that fits within ~60 chars (Google's
+ * practical pixel-budget for desktop SERP titles). We drop the
+ * "| DigiStorms Library" suffix entirely — DigiStorms is in the JSON-LD
+ * publisher and the breadcrumb anyway, and the suffix burned 20 chars of
+ * SERP real estate. We also drop "example:" since the keyword + brand
+ * already convey "an example."
+ *
+ * If `{Brand} {keyword}: "{subject}"` would exceed 60 chars, the subject
+ * is word-boundary truncated.
+ */
+function composePageTitle(brand: string, kw: string, subject: string): string {
+  const TARGET = 60;
+  const prefix = `${brand} ${kw}: `;
+  const wrapped = `"${subject}"`;
+  if (prefix.length + wrapped.length <= TARGET) {
+    return `${prefix}${wrapped}`;
+  }
+  // Truncate the subject (not the prefix — the keyword is the SEO anchor).
+  const maxSubLen = Math.max(20, TARGET - prefix.length - 3); // -3 for the …" suffix
+  const truncated = subject.length > maxSubLen
+    ? subject.slice(0, maxSubLen).replace(/\s+\S*$/, '') + '…'
+    : subject;
+  return `${prefix}"${truncated}"`;
+}
+
+const pageTitle = composePageTitle(brandName, keyword, subjectClean);
+// Description gets the longer-form pitch (155-char meta budget is bigger).
 const rawDesc = `${brandName} ${keyword} example. Subject line: "${subjectClean}". ${email.summary || `A real ${keyword} from ${brandName}.`}`;
 const pageDesc = truncateAtWord(rawDesc, 155);
+// Open Graph title can be more verbose — social previews don't have the
+// same length pressure as Google SERPs.
+const ogTitle = `${brandName} ${keyword} example: "${subjectClean}" | DigiStorms Library`;
 const pageUrl = `${SITE_URL}/library/email/${email.slug}`;
 const ogImage = email.thumb || DEFAULT_OG_IMAGE;
 
@@ -213,7 +244,7 @@ const jsonLd = {
   canonical={pageUrl}
   ogImage={ogImage}
   ogType="article"
-  ogTitle={pageTitle}
+  ogTitle={ogTitle}
   ogDescription={pageDesc}
   jsonLd={jsonLd}
 >

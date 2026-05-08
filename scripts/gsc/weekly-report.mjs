@@ -140,9 +140,14 @@ async function main() {
     ? Math.floor((Date.now() - new Date(shipDate + 'T00:00:00Z').getTime()) / 86400000)
     : 0;
 
-  // Pick the nearest future milestone
+  // Pick the nearest future milestone — extended to support 6mo + 12mo strategic goals
   const milestones = targets?.milestones || {};
-  const activeMilestoneKey = daysSinceShip < 28 ? 'week4' : daysSinceShip < 56 ? 'week8' : 'week12';
+  const activeMilestoneKey =
+    daysSinceShip < 28  ? 'week4'  :
+    daysSinceShip < 56  ? 'week8'  :
+    daysSinceShip < 84  ? 'week12' :
+    daysSinceShip < 168 ? 'week24' :
+                          'week52';
   const activeMilestone = milestones[activeMilestoneKey];
 
   // Monthly projection from this week's data
@@ -186,13 +191,37 @@ async function main() {
     .slice(0, 3);
 
   // ── Striking-distance tracker ──────────────────────────────────────────────
+  // Updated 2026-05-08 — covers existing pages + new autopilot priority targets.
   const trackedQueries = [
+    // Existing post anchors
     'webinar email examples',
     'webinar follow up subject lines',
     'webinar follow up email examples',
     'product launch email subject lines',
-    'product launch message examples',
+    'product launch email',
+    'product release email',
     'dunning best practices',
+    'saas welcome email',
+    'saas onboarding email sequence',
+    'saas email templates',
+    // The 3 new posts shipped 2026-05-06
+    'b2b lead nurturing email examples',
+    're engagement email',
+    're-engagement email examples',
+    'transactional email vs marketing email',
+    // Top autopilot calendar targets
+    'customer retention email',
+    'customer retention examples',
+    'welcome email template',
+    'upsell email examples',
+    'customer activation',
+    'activation email',
+    'lifecycle email marketing examples',
+    'transactional email examples',
+    'product announcement email',
+    'feedback request email',
+    'free trial email',
+    'subscription cancellation email',
   ];
   const kwMap = new Map(keywords.map((r) => [r.keys[0], r]));
   const striking = trackedQueries.map((q) => {

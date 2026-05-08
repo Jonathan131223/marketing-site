@@ -1,36 +1,78 @@
 {
-  "_notes": "Targets for the weekly GSC report. Position is lower-is-better; all others are higher-is-better. Status thresholds: on-track ≥ 90% of target, behind 50-90%, way-behind < 50% (inverted for position). Update quarterly based on actual trajectory.",
-  "_baseline_date": "2026-04-20",
+  "_notes": "Goals for the weekly GSC report. Position is lower-is-better; everything else is higher-is-better. Status thresholds: on-track ≥ 90% of target, behind 50-90%, way-behind < 50% (inverted for position). Updated 2026-05-08 after autopilot launch (3 articles/week Mon/Wed/Fri) + library Stage 1 title overhaul (1,058 pages re-targeted) + 4 new articles already shipped + acme-analytics decay completing.",
+  "_baseline_date": "2026-05-08",
   "_baseline": {
     "clicks_per_month": 35,
     "impressions_per_month": 7330,
     "blog_ctr": 0.0028,
     "position": 7.8
   },
+  "_strategic_milestones": {
+    "3_months": {
+      "label": "3-month goal (Aug 8, 2026)",
+      "rationale": "Acme decay fully complete + ~36 autopilot articles shipped + library Stage 1 effect kicks in around month 2",
+      "clicks_per_month": 1500,
+      "impressions_per_month": 80000,
+      "blog_ctr": 0.018,
+      "position": 6.0
+    },
+    "6_months": {
+      "label": "6-month goal (Nov 8, 2026)",
+      "rationale": "~72 autopilot articles + library Stage 2 (content enrichment) ideally shipped + 5-8 articles ranking page 1",
+      "clicks_per_month": 4000,
+      "impressions_per_month": 180000,
+      "blog_ctr": 0.022,
+      "position": 5.0
+    },
+    "12_months": {
+      "label": "12-month goal (May 8, 2027)",
+      "rationale": "150+ articles, library fully optimized, 30-50 page-1 keywords, domain authority climbing, library entries each averaging 30+ impressions/mo",
+      "clicks_per_month": 12000,
+      "impressions_per_month": 400000,
+      "blog_ctr": 0.030,
+      "position": 4.5
+    }
+  },
   "milestones": {
     "week4": {
-      "label": "4 weeks post-ship",
-      "date": "2026-05-18",
-      "clicks_per_month": 120,
-      "impressions_per_month": 30000,
-      "blog_ctr": 0.006,
+      "label": "4 weeks (Jun 5, 2026)",
+      "date": "2026-06-05",
+      "clicks_per_month": 350,
+      "impressions_per_month": 35000,
+      "blog_ctr": 0.010,
       "position": 7.0
     },
     "week8": {
-      "label": "8 weeks post-ship",
-      "date": "2026-06-15",
-      "clicks_per_month": 300,
-      "impressions_per_month": 50000,
-      "blog_ctr": 0.01,
+      "label": "8 weeks (Jul 3, 2026)",
+      "date": "2026-07-03",
+      "clicks_per_month": 800,
+      "impressions_per_month": 55000,
+      "blog_ctr": 0.014,
       "position": 6.5
     },
     "week12": {
-      "label": "12 weeks post-ship",
-      "date": "2026-07-13",
-      "clicks_per_month": 600,
+      "label": "12 weeks (Jul 31, 2026)",
+      "date": "2026-07-31",
+      "clicks_per_month": 1500,
       "impressions_per_month": 80000,
-      "blog_ctr": 0.015,
-      "position": 5.5
+      "blog_ctr": 0.018,
+      "position": 6.0
+    },
+    "week24": {
+      "label": "6 months (Nov 8, 2026)",
+      "date": "2026-11-08",
+      "clicks_per_month": 4000,
+      "impressions_per_month": 180000,
+      "blog_ctr": 0.022,
+      "position": 5.0
+    },
+    "week52": {
+      "label": "12 months (May 8, 2027)",
+      "date": "2027-05-08",
+      "clicks_per_month": 12000,
+      "impressions_per_month": 400000,
+      "blog_ctr": 0.030,
+      "position": 4.5
     }
   }
 }
