@@ -45,9 +45,9 @@ Jonathan Bernard — lifecycle email specialist for SaaS companies.
 
 ## Email Library
 
-The DigiStorms Email Library contains 1,051 lifecycle emails from 38 B2B SaaS companies, organized by 80 email types (tags) and 9 use case categories. Browse the full library at https://www.digistorms.ai/library
+The DigiStorms Email Library contains 1,058 lifecycle emails from 39 B2B SaaS companies, organized by 80 email types (tags) and 9 use case categories. Browse the full library at https://www.digistorms.ai/library
 
-### Brands (38)
+### Brands (39)
 
 - [Adobe](https://www.digistorms.ai/library/brand/adobe) — 25 emails
 - [Ahrefs](https://www.digistorms.ai/library/brand/ahrefs) — 28 emails
@@ -119,7 +119,10 @@ The DigiStorms Email Library contains 1,051 lifecycle emails from 38 B2B SaaS co
 
 - [SaaS email benchmarks: what 1,051 lifecycle emails reveal](https://www.digistorms.ai/blog/saas-email-benchmarks) — Original research analyzing 1,051 lifecycle emails from 38 top SaaS companies. Published April 7, 2026.
 - [SaaS welcome email: best practices with 28 examples](https://www.digistorms.ai/blog/saas-welcome-email) — Best practices, timing tips, and real examples to level up your onboarding experience.
-- [Product launch email: best practices with 23 examples](https://www.digistorms.ai/blog/product-launch-email) — Real examples and proven strategies to boost engagement and conversions.
+- [Product launch and release email: 28 examples from real SaaS](https://www.digistorms.ai/blog/product-launch-email) — Real product launch and release emails from Notion, Slack, ClickUp, Asana, Webflow, Loom, and Figma.
+- [B2B lead nurturing email: 15 examples from real SaaS](https://www.digistorms.ai/blog/b2b-lead-nurturing-email-examples) — Real B2B lead nurturing emails from Apollo, Notion, Ahrefs, Calendly, Asana, and ClickUp.
+- [Re-engagement email: 12 examples that win back inactive users](https://www.digistorms.ai/blog/re-engagement-email-examples) — Real win-back and re-engagement emails from Adobe, Canva, Apollo, Semrush, and Pipedrive.
+- [Transactional email vs marketing email: the practical difference](https://www.digistorms.ai/blog/transactional-email-vs-marketing-email) — Side-by-side comparison with real examples from Stripe, Calendly, Notion, Beehiiv, and Zapier.
 - [SaaS newsletter: best practices with 15 examples](https://www.digistorms.ai/blog/saas-newsletter) — How to craft a standout SaaS newsletter with 15 real-life examples.
 - [Webinar email sequence: best practices with 25 examples](https://www.digistorms.ai/blog/webinar-email-sequence) — High-converting webinar email sequences with proven strategies.
 - [Webinar follow up email: best practices with 13 examples](https://www.digistorms.ai/blog/webinar-follow-up-email) — Effective webinar follow-up emails with smart segmentation and tips.

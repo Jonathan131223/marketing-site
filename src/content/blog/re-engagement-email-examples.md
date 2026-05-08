@@ -5,8 +5,8 @@ description: "12 real re-engagement emails from Adobe, Canva, Apollo, Semrush, P
 shortDescription: "12 real re-engagement emails — and the patterns that bring dormant users back."
 date: "2026-05-06"
 readTime: "9 min read"
-thumbnail: "/email-screenshots/inactivity-nudge-from-canva-06272025.png"
-heroImage: "/email-screenshots/inactivity-nudge-from-canva-06272025.png"
+thumbnail: "/blog/re-engagement-email-examples/banner.webp"
+heroImage: "/blog/re-engagement-email-examples/banner.webp"
 libraryTags: ["re-engage-cancelled-users", "inactivity-nudge", "re-engage-downgraded-users"]
 ogImage: "/og/blog-re-engagement-email-examples.webp"
 ---

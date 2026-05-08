@@ -5,8 +5,8 @@ description: "15 real B2B lead nurturing emails from Apollo, Notion, Ahrefs, Cal
 shortDescription: "15 real B2B lead nurturing emails — and the patterns that move leads from cold to closed."
 date: "2026-05-06"
 readTime: "11 min read"
-thumbnail: "/email-screenshots/newsletter-from-hunterio-02042025.png"
-heroImage: "/email-screenshots/newsletter-from-hunterio-02042025.png"
+thumbnail: "/blog/b2b-lead-nurturing-email-examples/banner.webp"
+heroImage: "/blog/b2b-lead-nurturing-email-examples/banner.webp"
 libraryTags: ["product-education", "content-engagement", "case-study", "webinar-invitation"]
 ogImage: "/og/blog-b2b-lead-nurturing-email-examples.webp"
 ---

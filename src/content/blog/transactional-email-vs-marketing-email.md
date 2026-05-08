@@ -5,8 +5,8 @@ description: "Transactional vs marketing emails differ in trigger, intent, deliv
 shortDescription: "The practical difference between transactional and marketing emails — with real examples and a side-by-side comparison."
 date: "2026-05-06"
 readTime: "8 min read"
-thumbnail: "/email-screenshots/email-verification-from-stripe-03062025.png"
-heroImage: "/email-screenshots/email-verification-from-stripe-03062025.png"
+thumbnail: "/blog/transactional-email-vs-marketing-email/banner.webp"
+heroImage: "/blog/transactional-email-vs-marketing-email/banner.webp"
 libraryTags: ["payment-receipt", "email-verification", "newsletter", "special-offer"]
 ogImage: "/og/blog-transactional-email-vs-marketing-email.webp"
 ---
