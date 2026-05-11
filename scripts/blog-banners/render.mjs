@@ -343,6 +343,14 @@ const CARDS = [
     cta: 'See the difference',
     icon: 'chart',
   },
+  {
+    slug: 'customer-retention-email-examples',
+    subject: 'Retention playbook',
+    headline: '12 customer retention email examples',
+    body: 'Real retention emails from Adobe, Semrush, Dropbox, Notion, Grammarly, Mailchimp — patterns that keep paying users paying.',
+    cta: 'See the patterns',
+    icon: 'envelope',
+  },
 ];
 
 async function renderOne(card) {
