@@ -4,6 +4,7 @@ import emailsData from '@/data/library/emails.json';
 import brandsData from '@/data/library/brands.json';
 import tagsData from '@/data/library/tags.json';
 import usecasesData from '@/data/library/usecases.json';
+import { composeEmailPageTitle, trimEmailSuffix } from '@/utils/libraryKeywords';
 
 export function getStaticPaths() {
   return (emailsData as any[]).map((email) => ({
@@ -68,146 +69,25 @@ function getBrandName(brandSlug: string): string {
   return b?.name ?? brandSlug;
 }
 
-/**
- * Map an email's tag/use-case to a search-friendly keyword phrase used in
- * the page title. Goal: rank for `{brand} {keyword}` queries (e.g.,
- * "freepik welcome email") instead of the original "Welcome to Premium \u2014
- * Freepik | DigiStorms Library" which targets zero search intent.
- *
- * Lookup order: primary tag \u2192 use case \u2192 "lifecycle email" fallback.
- * See ~/.claude/plans/library-indexation-plan.md (Stage 1) for rationale.
- */
-const TAG_TO_KEYWORD: Record<string, string> = {
-  // Welcome / onboarding
-  "welcome-paid-users": "welcome email",
-  "welcome-free-users": "welcome email",
-  "trial-just-started": "trial welcome email",
-  "setup-prompt": "onboarding email",
-  "onboarding-checklist": "onboarding checklist email",
-  "email-verification": "email verification",
-  // Engagement / education
-  "feature-usage-nudge": "feature engagement email",
-  "content-engagement": "content engagement email",
-  "product-education": "product education email",
-  "newsletter": "newsletter email",
-  "article": "educational email",
-  "guide": "guide email",
-  "video": "video email",
-  "video-series": "video series email",
-  "course": "email course",
-  "report": "industry report email",
-  "case-study": "case study email",
-  "customer-success": "customer success email",
-  "webinar-invitation": "webinar invitation email",
-  "webinar-confirmation": "webinar confirmation email",
-  "webinar-recording": "webinar recording email",
-  "demo-invite": "demo invitation email",
-  "irl-event": "event invitation email",
-  "conference-invite": "conference invitation email",
-  // Expansion / upgrade
-  "upgrade-cta": "upgrade email",
-  "usage-expansion": "upsell email",
-  "integration-prompt": "integration prompt email",
-  "upgrade-to-annual": "annual upgrade email",
-  "trial-extension-offer": "trial extension email",
-  "trial-expiration-warning": "trial expiration email",
-  "trial-expired-upgrade": "trial expired email",
-  "nudge-to-invite-team": "team invite email",
-  "download-mobile-app": "app download email",
-  "download-chrome-extension": "browser extension email",
-  "download-web-app": "web app download email",
-  // Re-engagement / win-back
-  "inactivity-nudge": "re-engagement email",
-  "re-engage-cancelled-users": "win-back email",
-  "re-engage-downgraded-users": "win-back email",
-  // Product updates
-  "new-feature-nudge": "new feature email",
-  "product-update": "product update email",
-  // Transactional
-  "payment-receipt": "payment receipt email",
-  "payment-declined": "failed payment email",
-  "downgrade-receipt": "downgrade confirmation email",
-  "login-from-new-device": "new device login email",
-  "password-reset": "password reset email",
-  "activity-update": "activity notification email",
-  // Feedback
-  "survey": "survey email",
-  "nps-survey": "NPS survey email",
-  "qualitative-feedback": "feedback email",
-  // Milestones / community
-  "milestone-reached": "milestone email",
-  "year-in-review": "year in review email",
-  "join-community": "community invitation email",
-  "referral-prompt": "referral email",
-  "affiliate-partnership": "affiliate email",
-  "partner-program": "partner program email",
-  // Promotional / admin
-  "special-offer": "promotional email",
-  "terms-of-use-update": "terms update email",
-  "quota-reached": "quota reached email",
-  "follow-up": "follow-up email",
-  "usage-summary": "usage summary email",
-};
-
-const USECASE_TO_KEYWORD: Record<string, string> = {
-  "onboard-free-user": "onboarding email",
-  "onboard-paid-user": "welcome email",
-  "educate-engage": "lifecycle email",
-  "win-back-churned-user": "win-back email",
-  "expand-user": "upsell email",
-  "announce-new-features": "product announcement email",
-  "celebrate-milestones": "milestone email",
-  "request-feedback": "feedback email",
-  "transactional-email": "transactional email",
-};
-
-function emailKeyword(emailObj: any): string {
-  const tags = (emailObj.tags as string[]) || [];
-  for (const tag of tags) {
-    if (TAG_TO_KEYWORD[tag]) return TAG_TO_KEYWORD[tag];
-  }
-  if (emailObj.useCase && USECASE_TO_KEYWORD[emailObj.useCase]) {
-    return USECASE_TO_KEYWORD[emailObj.useCase];
-  }
-  return "lifecycle email";
-}
-
-const keyword = emailKeyword(email);
 const subjectClean = String(email.subject || "").replace(/"/g, "").trim();
+// Primary tag = first tag listed on the email (respects authoring order from
+// the library-import flow, which puts the most representative tag first).
+// Falls back to the use case name, then to a generic "Lifecycle" label.
+const primaryTagSlug = (email.tags as string[] | undefined)?.[0];
+const primaryTag = primaryTagSlug
+  ? (tagsData as any[]).find((t: any) => t.slug === primaryTagSlug)
+  : undefined;
+const primaryTagName: string = trimEmailSuffix(
+  primaryTag?.name ?? useCase?.name ?? 'Lifecycle',
+);
 
-/**
- * Compose a SERP-friendly title that fits within ~60 chars (Google's
- * practical pixel-budget for desktop SERP titles). We drop the
- * "| DigiStorms Library" suffix entirely — DigiStorms is in the JSON-LD
- * publisher and the breadcrumb anyway, and the suffix burned 20 chars of
- * SERP real estate. We also drop "example:" since the keyword + brand
- * already convey "an example."
- *
- * If `{Brand} {keyword}: "{subject}"` would exceed 60 chars, the subject
- * is word-boundary truncated.
- */
-function composePageTitle(brand: string, kw: string, subject: string): string {
-  const TARGET = 60;
-  const prefix = `${brand} ${kw}: `;
-  const wrapped = `"${subject}"`;
-  if (prefix.length + wrapped.length <= TARGET) {
-    return `${prefix}${wrapped}`;
-  }
-  // Truncate the subject (not the prefix — the keyword is the SEO anchor).
-  const maxSubLen = Math.max(20, TARGET - prefix.length - 3); // -3 for the …" suffix
-  const truncated = subject.length > maxSubLen
-    ? subject.slice(0, maxSubLen).replace(/\s+\S*$/, '') + '…'
-    : subject;
-  return `${prefix}"${truncated}"`;
-}
-
-const pageTitle = composePageTitle(brandName, keyword, subjectClean);
-// Description gets the longer-form pitch (155-char meta budget is bigger).
-const rawDesc = `${brandName} ${keyword} example. Subject line: "${subjectClean}". ${email.summary || `A real ${keyword} from ${brandName}.`}`;
+const pageTitle = composeEmailPageTitle(brandName, primaryTagName, subjectClean);
+// Meta description leads with the tag name + "email example" so the snippet
+// matches the title intent, then anchors with brand + subject for context.
+const rawDesc = `${primaryTagName} email example from ${brandName}. Subject line: "${subjectClean}". ${email.summary || `A real ${primaryTagName.toLowerCase()} email from ${brandName}.`}`;
 const pageDesc = truncateAtWord(rawDesc, 155);
-// Open Graph title can be more verbose — social previews don't have the
-// same length pressure as Google SERPs.
-const ogTitle = `${brandName} ${keyword} example: "${subjectClean}" | DigiStorms Library`;
+// Open Graph title can be more verbose than the SERP title.
+const ogTitle = `${primaryTagName} email example — ${brandName}: "${subjectClean}" | DigiStorms Library`;
 const pageUrl = `${SITE_URL}/library/email/${email.slug}`;
 const ogImage = email.thumb || DEFAULT_OG_IMAGE;
 

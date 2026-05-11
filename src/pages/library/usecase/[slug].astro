@@ -4,6 +4,7 @@ import emailsData from '@/data/library/emails.json';
 import brandsData from '@/data/library/brands.json';
 import tagsData from '@/data/library/tags.json';
 import usecasesData from '@/data/library/usecases.json';
+import { composeHubPageTitle, trimEmailSuffix } from '@/utils/libraryKeywords';
 
 export function getStaticPaths() {
   return (usecasesData as any[]).map((usecase) => ({
@@ -49,14 +50,16 @@ const topTags = Object.entries(tagCounts)
   .map(([tagSlug]) => (tagsData as any[]).find((t) => t.slug === tagSlug))
   .filter(Boolean);
 
-const rawDesc = usecase.description || `Browse ${filteredEmails.length} ${usecase.name} emails from top B2B SaaS companies.`;
+const useCaseNameBase = trimEmailSuffix(usecase.name);
+const hubTitle = composeHubPageTitle(usecase.name, filteredEmails.length);
+const rawDesc = usecase.description || `Browse ${filteredEmails.length} ${useCaseNameBase} emails from top B2B SaaS companies. Real examples you can study, adapt, and ship.`;
 const pageDesc = truncateAtWord(rawDesc, 155);
 const pageUrl = `${SITE_URL}/library/usecase/${slug}`;
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  name: `${usecase.name} Emails — B2B SaaS Library`,
+  name: `${useCaseNameBase} Emails — ${filteredEmails.length} from Real SaaS Brands`,
   description: pageDesc,
   url: pageUrl,
   breadcrumb: {
@@ -72,11 +75,11 @@ const jsonLd = {
 ---
 
 <PageLayout
-  title={`${usecase.name} Emails — B2B SaaS Library | DigiStorms`}
+  title={hubTitle}
   description={pageDesc}
   canonical={pageUrl}
   ogImage={DEFAULT_OG_IMAGE}
-  ogTitle={`${usecase.name} Emails — DigiStorms Library`}
+  ogTitle={`${useCaseNameBase} Emails — ${filteredEmails.length} Real Examples from SaaS Brands | DigiStorms Library`}
   ogDescription={pageDesc}
   jsonLd={jsonLd}
 >
