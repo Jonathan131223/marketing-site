@@ -351,6 +351,14 @@ const CARDS = [
     cta: 'See the patterns',
     icon: 'envelope',
   },
+  {
+    slug: 'saas-welcome-email',
+    subject: 'Welcome templates',
+    headline: '28 SaaS welcome email templates',
+    body: 'Real welcome emails from Calendly, Miro, Loom, Stripe, Notion, Figma — copy-ready templates with subject lines.',
+    cta: 'See the templates',
+    icon: 'templates',
+  },
 ];
 
 async function renderOne(card) {

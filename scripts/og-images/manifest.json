@@ -314,6 +314,16 @@
       "italic_emphasis": "12",
       "subline": "DigiStorms · Real SaaS retention emails that keep users paying",
       "prompt": "Editorial OG card. Cream background. Instrument Serif headline '12 customer retention email examples' with '12' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
+    },
+    {
+      "id": "blog-saas-welcome-email",
+      "output": "public/og/blog-saas-welcome-email.webp",
+      "page_file": "src/content/blog/saas-welcome-email.md",
+      "background": "warm cream #F8F6F2",
+      "headline": "28 welcome email templates",
+      "italic_emphasis": "welcome",
+      "subline": "DigiStorms · Real SaaS welcome emails that activate new users",
+      "prompt": "Editorial OG card. Cream background. Instrument Serif headline '28 welcome email templates' with 'welcome' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
     }
   ]
 }
