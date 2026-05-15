@@ -90,6 +90,7 @@ const staticEntries = [
   urlEntry(`${BASE_URL}/compare/digistorms-vs-loops`,       "2026-04-07", "monthly", "0.8"),
   urlEntry(`${BASE_URL}/compare/digistorms-vs-resend`,      "2026-04-07", "monthly", "0.8"),
   urlEntry(`${BASE_URL}/compare/best-onboarding-email-tools`, "2026-04-07", "monthly", "0.8"),
+  urlEntry(`${BASE_URL}/compare/best-email-automation-saas-startups`, TODAY, "monthly", "0.8"),
   urlEntry(`${BASE_URL}/compare/customer-io-alternatives`,  "2026-04-07", "monthly", "0.8"),
   // Benchmark blog post
   urlEntry(`${BASE_URL}/blog/saas-email-benchmarks`,        "2026-04-07", "monthly", "0.9"),

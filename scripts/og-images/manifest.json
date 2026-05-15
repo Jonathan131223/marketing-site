@@ -296,6 +296,16 @@
       "prompt": "A 1200x630 horizontal Open Graph social-share card. Solid warm cream background (#F8F6F2), faintest paper texture, flat and uncluttered. Centered, the headline reads exactly: 'Customer.io alternatives for SaaS', set in a large editorial serif (Instrument Serif or Playfair Display), approximately 88 pixels tall, slate-900 navy (#0F172A), letter-spacing slightly tight, line-height 1.1. The single word 'alternatives' appears in italic and in primary blue (#2563EB) — the rest stays upright in navy. Below, a single line of muted body text in clean sans-serif: 'DigiStorms · Self-serve, behavior-based, sub-mid-market pricing', slate-500 grey (#475569), about 22 pixels tall. Lower-left: small wordmark 'DigiStorms' in slate-900 sans-serif. Generous negative space, editorial composition. Render every character exactly. No logos, no comparison tables."
     },
     {
+      "id": "compare-best-email-automation-startups",
+      "output": "public/og/compare-best-email-automation-startups.webp",
+      "page_file": "src/pages/compare/best-email-automation-saas-startups.astro",
+      "background": "warm cream #F8F6F2",
+      "headline": "Email automation for SaaS startups",
+      "italic_emphasis": "startups",
+      "subline": "DigiStorms · 8 tools picked for free tiers and fast setup",
+      "prompt": "A 1200x630 horizontal Open Graph social-share card. Solid warm cream background (#F8F6F2), faintest paper texture, flat and uncluttered. Centered, the headline reads exactly: 'Email automation for SaaS startups', set in a large editorial serif (Instrument Serif or Playfair Display), approximately 84 pixels tall, slate-900 navy (#0F172A), letter-spacing slightly tight, line-height 1.1. The single word 'startups' appears in italic and in primary blue (#2563EB) — the rest stays upright in navy. Below, a single line of muted body text in clean sans-serif: 'DigiStorms · 8 tools picked for free tiers and fast setup', slate-500 grey (#475569), about 22 pixels tall. Lower-left: small wordmark 'DigiStorms' in slate-900 sans-serif. Generous negative space, editorial composition. Render every character exactly. No logos, no comparison tables — pure typography."
+    },
+    {
       "id": "account-readiness",
       "output": "public/og/account-readiness.webp",
       "page_file": "src/pages/account-readiness.astro",
