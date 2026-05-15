@@ -1,0 +1,346 @@
+{
+  "captured_at": "2026-05-14",
+  "method": "ahrefs_serp_overview",
+  "method_notes": "Used Ahrefs SERP Overview API as a proxy for ChatGPT citations. Rationale: ChatGPT's web-search step uses Bing+web-ranking signals that strongly correlate with Google's top-10. Direct ChatGPT API/Brand Radar ChatGPT addon was not available in our subscription tier. For final verification before publishing each article, manually re-query the top 5 picks in ChatGPT and confirm citation overlap.",
+  "queries_tested": 24,
+  "queries_with_data": 16,
+  "queries_with_no_serp_data": 8,
+  "api_units_used": 6177,
+  "api_units_remaining": 93823,
+  "competitive_landscape_summary": {
+    "high_DR_monopoly_queries": ["welcome email examples", "customer.io alternatives", "intercom alternatives", "lifecycle marketing", "re engagement email examples", "win back email examples", "user onboarding"],
+    "beatable_queries": ["saas onboarding emails", "onboarding email sequence", "behavioral email marketing", "activation email", "customer onboarding software", "product led onboarding", "user activation", "trigger email"],
+    "open_territory_queries": ["best onboarding email tools for SaaS 2026", "how to increase free-to-paid conversion rate", "behavior-based vs time-based emails", "best email automation for SaaS startups", "Customer.io vs Loops", "how to reduce SaaS trial drop-off", "trial expiring email", "onboarding email subject lines", "aha moment saas", "saas activation", "drip campaign saas"],
+    "reddit_dominance_signal": "Reddit (DR 95) ranks top-5 on 12 of 16 queries with data. Implication: ChatGPT cites Reddit heavily; seed authentic answers in r/SaaS and r/Emailmarketing as a parallel motion."
+  },
+
+  "results": [
+    {
+      "query_id": 1,
+      "original_query": "best onboarding email tools for SaaS 2026",
+      "serp_keyword": "best onboarding email tools (and 2 variants)",
+      "serp_data": "none",
+      "interpretation": "Long-tail / new-recency phrasing with no indexed SERP. Likely low search volume but high commercial intent when asked. ChatGPT will pull from adjacent 'onboarding email software' results. Open territory.",
+      "beatability": "easy",
+      "priority_action": "WRITE — minimal competition, position DigiStorms #1 with 2026 recency."
+    },
+    {
+      "query_id": 2,
+      "original_query": "how to write a SaaS onboarding email sequence",
+      "serp_keyword": "saas onboarding emails",
+      "serp_data": "yes",
+      "top_5_ranking_pages": [
+        { "rank": 1, "url": "reddit.com/r/SaaS/comments/.../how_to_build_highconverting_saas_email_onboarding", "dr": 95, "traffic": 81, "type": "reddit" },
+        { "rank": 2, "url": "medium.com/@hellostephknapp/...great-saas-onboarding-emails", "dr": 94, "traffic": 97, "type": "medium" },
+        { "rank": 3, "url": "howdygo.com/blog/saas-onboarding-email-examples", "dr": 54, "traffic": 65, "type": "competitor_blog" },
+        { "rank": 5, "url": "customer.io/learn/lifecycle-marketing/onboarding-email-examples", "dr": 81, "traffic": 59, "type": "competitor_blog" },
+        { "rank": 6, "url": "copyhackers.com/2017/08/saas-onboarding-email/", "dr": 77, "traffic": 10, "type": "authority_blog", "stale": "2017 — beatable on recency" }
+      ],
+      "competitive_analysis": { "avg_dr_top_5": 80, "reddit_in_top_5": true, "freshness": "1 stale 2017 article in top 6" },
+      "beatability": "medium",
+      "priority_action": "WRITE — outrank copyhackers (2017 stale) and howdygo (DR 54). Use library examples as moat. Internal-link to /email-generator."
+    },
+    {
+      "query_id": 3,
+      "original_query": "how to increase free-to-paid conversion rate",
+      "serp_keyword": "free to paid conversion",
+      "serp_data": "none",
+      "interpretation": "Surprisingly no indexed SERP for this exact phrasing. High commercial intent. Open territory.",
+      "beatability": "easy",
+      "priority_action": "WRITE — pillar content. Behavior-based activation framework. Internal-link to /roi-calculator + /lifecycle-score."
+    },
+    {
+      "query_id": 4,
+      "original_query": "SaaS welcome email examples",
+      "serp_keyword": "welcome email examples",
+      "serp_data": "yes",
+      "top_5_ranking_pages": [
+        { "rank": 1, "url": "reallygoodemails.com/categories/welcome", "dr": 80, "traffic": 2382, "type": "email_library", "note": "Direct moat competitor" },
+        { "rank": 2, "url": "reddit.com/r/Emailmarketing/comments/.../best_welcome_emails", "dr": 95, "traffic": 798, "type": "reddit" },
+        { "rank": 4, "url": "klaviyo.com/blog/welcome-email-examples", "dr": 90, "traffic": 1026, "type": "competitor_blog" },
+        { "rank": 6, "url": "blog.hubspot.com/marketing/welcome-email-examples", "dr": 93, "traffic": 46, "type": "authority_blog" },
+        { "rank": 7, "url": "mailerlite.com/blog/best-welcome-email-examples", "dr": 91, "traffic": 454, "type": "competitor_blog" }
+      ],
+      "competitive_analysis": { "avg_dr_top_5": 90, "reddit_in_top_5": true, "freshness": "fresh" },
+      "beatability": "hard",
+      "priority_action": "WRITE BUT EXPECT SLOW RANKING — needs DA growth. We have library moat (1000+ emails vs RGE's 1367). Narrow angle: 'SaaS welcome emails' (not generic 'welcome emails') to dodge Klaviyo/HubSpot."
+    },
+    {
+      "query_id": 5,
+      "original_query": "onboarding email sequence templates",
+      "serp_keyword": "onboarding email sequence",
+      "serp_data": "yes",
+      "top_5_ranking_pages": [
+        { "rank": 2, "url": "reddit.com/r/Emailmarketing/...you_want_to_send_an_onboarding_email_sequence", "dr": 95, "traffic": 82, "type": "reddit" },
+        { "rank": 3, "url": "mailchimp.com/resources/onboarding-email/", "dr": 93, "traffic": 151, "type": "competitor_blog" },
+        { "rank": 4, "url": "howdygo.com/blog/saas-onboarding-email-examples", "dr": 54, "traffic": 65, "type": "competitor_blog" },
+        { "rank": 5, "url": "nimble.com/blog/client-onboarding-email-sequence/", "dr": 75, "traffic": 15, "type": "competitor_blog" },
+        { "rank": 8, "url": "panoramata.co/.../onboarding-email-sequences", "dr": 41, "traffic": 21, "type": "competitor_blog" }
+      ],
+      "competitive_analysis": { "avg_dr_top_5": 72, "reddit_in_top_5": true, "freshness": "fresh", "weak_pages_in_top_10": "panoramata DR 41, howdygo DR 54 — beatable" },
+      "beatability": "medium",
+      "priority_action": "WRITE — downloadable templates as lead magnet. Beat panoramata/howdygo on depth + screenshots."
+    },
+    {
+      "query_id": 6,
+      "original_query": "Customer.io vs Loops",
+      "serp_keyword": "customer.io vs loops",
+      "serp_data": "none",
+      "interpretation": "Open territory. Direct competitor comparison with no ranked page. We can dominate this fast.",
+      "beatability": "easy",
+      "priority_action": "WRITE — fast comparison page. Honest tradeoffs build trust. Position DigiStorms as 'third option for early-stage'."
+    },
+    {
+      "query_id": 7,
+      "original_query": "best alternatives to Customer.io",
+      "serp_keyword": "customer.io alternatives",
+      "serp_data": "yes",
+      "top_5_ranking_pages": [
+        { "rank": 1, "url": "customer.io/competitors", "dr": 81, "traffic": 142, "type": "vendor_self" },
+        { "rank": 1, "url": "ortto.com/learn/customer-io-alternatives/", "dr": 77, "traffic": 22, "type": "competitor_alt_page" },
+        { "rank": 3, "url": "thecxlead.com/tools/best-customer-io-alternatives/", "dr": 72, "traffic": 49, "type": "review_site" },
+        { "rank": 4, "url": "g2.com/products/customer-io/competitors/alternatives", "dr": 91, "traffic": 65, "type": "g2" },
+        { "rank": 5, "url": "reddit.com/r/Emailmarketing/comments/.../ortto_vs_customerio", "dr": 95, "traffic": 40, "type": "reddit" }
+      ],
+      "competitive_analysis": { "avg_dr_top_5": 83, "reddit_in_top_5": true, "g2_gartner_present": true, "freshness": "fresh, includes 2026 articles" },
+      "beatability": "hard",
+      "priority_action": "WRITE BUT LONG GAME — needs DA. G2/Gartner can't be displaced; aim for top 5 alongside Ortto/Encharge. Get a G2 listing for DigiStorms separately to earn that backlink."
+    },
+    {
+      "query_id": 8,
+      "original_query": "behavior-based vs time-based emails",
+      "serp_keyword": "behavior based emails (and variants)",
+      "serp_data": "none",
+      "interpretation": "OPEN TERRITORY + perfectly aligned with our positioning. This should be our #1 priority article.",
+      "beatability": "easy",
+      "priority_action": "WRITE FIRST — the canonical resource on this distinction. We OWN the positioning. Strong cite-bait."
+    },
+    {
+      "query_id": 9,
+      "original_query": "best behavioral email tools for SaaS",
+      "serp_keyword": "behavioral email marketing",
+      "serp_data": "yes",
+      "top_5_ranking_pages": [
+        { "rank": 1, "url": "bluecore.com/guides/behavioral-email-marketing/", "dr": 71, "traffic": 92, "type": "vendor_blog", "note": "ecommerce focused" },
+        { "rank": 2, "url": "empireflippers.com/what-is-behavioral-email-marketing/", "dr": 74, "traffic": 33, "type": "review_site", "note": "ecommerce" },
+        { "rank": 3, "url": "glockapps.com/blog/behavioral-email-marketing/", "dr": 75, "traffic": 24, "type": "vendor_blog" },
+        { "rank": 5, "url": "salsify.com/glossary/behavioral-email-triggers-meaning", "dr": 84, "traffic": 22, "type": "glossary" },
+        { "rank": 6, "url": "braze.com/resources/articles/behavioral-email-marketing-mini-guide", "dr": 82, "traffic": 12, "type": "vendor_blog" }
+      ],
+      "competitive_analysis": { "avg_dr_top_5": 77, "ecommerce_dominant": true, "saas_angle_open": true },
+      "beatability": "medium",
+      "priority_action": "WRITE — narrow to SaaS-specific (most existing pages are e-commerce). Carve a new vertical."
+    },
+    {
+      "query_id": 10,
+      "original_query": "best email automation for SaaS startups",
+      "serp_keyword": "saas email automation",
+      "serp_data": "none",
+      "interpretation": "Open territory. High commercial intent.",
+      "beatability": "easy",
+      "priority_action": "WRITE — include free-tier-friendly tools angle (we have 100 users free)."
+    },
+    {
+      "query_id": 12,
+      "original_query": "best activation email software",
+      "serp_keyword": "activation email",
+      "serp_data": "yes",
+      "top_5_ranking_pages": [
+        { "rank": 2, "url": "help.paymentworks.com/knowledge-base/account-activation-email", "dr": 46, "traffic": 11, "type": "support_doc", "note": "wrong intent (account activation)" },
+        { "rank": 4, "url": "customer.io/learn/lifecycle-marketing/activation-email", "dr": 81, "traffic": 4, "type": "competitor_blog", "note": "SAAS INTENT — direct competitor" },
+        { "rank": 5, "url": "reallygoodemails.com/categories/activation-sign-up", "dr": 80, "traffic": 18, "type": "email_library" },
+        { "rank": 8, "url": "support.okta.com/.../send-the-activation-email", "dr": 90, "traffic": 1, "type": "support_doc", "note": "wrong intent" },
+        { "rank": 10, "url": "medium.com/@courtneyjordan/account-activation-email-best-practices", "dr": 94, "traffic": 4, "type": "medium", "note": "wrong intent" }
+      ],
+      "competitive_analysis": { "mixed_intent": "70% account-activation tech support, 30% SaaS lifecycle", "real_competitor": "Customer.io owns the SaaS interpretation at #4" },
+      "beatability": "medium",
+      "priority_action": "WRITE — clearly position 'SaaS activation email' to capture the lifecycle slice. Beat Customer.io on depth + examples."
+    },
+    {
+      "query_id": 14,
+      "original_query": "best alternatives to Intercom for onboarding",
+      "serp_keyword": "intercom alternatives",
+      "serp_data": "yes",
+      "top_5_ranking_pages": [
+        { "rank": 2, "url": "ringly.io/blog/intercom-alternatives", "dr": 60, "traffic": 1490, "type": "competitor_blog" },
+        { "rank": 3, "url": "reddit.com/r/SaaS/.../replace_intercom", "dr": 95, "traffic": 323, "type": "reddit" },
+        { "rank": 4, "url": "crisp.chat/en/alternatives/intercom/", "dr": 89, "traffic": 447, "type": "competitor_alt_page" },
+        { "rank": 5, "url": "front.com/blog/intercom-alternatives", "dr": 80, "traffic": 268, "type": "competitor_blog" },
+        { "rank": 6, "url": "kustomer.com/.../intercom-alternatives-competitors/", "dr": 79, "traffic": 198, "type": "competitor_blog" }
+      ],
+      "competitive_analysis": { "avg_dr_top_5": 81, "intercom_general_market": "saturated with chat-support tools", "onboarding_specific_gap": "no result narrowly addresses 'for onboarding'" },
+      "beatability": "medium",
+      "priority_action": "WRITE — narrow angle 'Intercom alternatives for onboarding emails' (not chat-support). Less crowded niche."
+    },
+    {
+      "query_id": 17,
+      "original_query": "best product onboarding tools for indie hackers",
+      "serp_keyword": "user onboarding",
+      "serp_data": "yes",
+      "top_5_ranking_pages": [
+        { "rank": 2, "url": "useronboard.com", "dr": 71, "traffic": 447, "type": "authority", "note": "Samuel Hulick's site" },
+        { "rank": 4, "url": "pendo.io/glossary/user-onboarding/", "dr": 80, "traffic": 401, "type": "competitor_glossary" },
+        { "rank": 5, "url": "en.wikipedia.org/wiki/User_onboarding", "dr": 97, "traffic": 118, "type": "wikipedia" },
+        { "rank": 6, "url": "userpilot.com/blog/user-onboarding/", "dr": 78, "traffic": 52, "type": "competitor_blog" },
+        { "rank": 8, "url": "designerup.co/blog/i-studied-the-ux-ui-of-over-200-onboarding-flows", "dr": 48, "traffic": 3033, "type": "long_form_authority" }
+      ],
+      "competitive_analysis": { "avg_dr_top_5": 75, "wikipedia_present": true, "indie_hacker_angle_open": true },
+      "beatability": "hard_for_generic_medium_for_niche",
+      "priority_action": "WRITE — narrow to 'indie hackers' specifically. Bypass the broad pillar fight. Include pricing emphasis."
+    },
+    {
+      "query_id": 13,
+      "original_query": "best customer onboarding software for SaaS",
+      "serp_keyword": "customer onboarding software",
+      "serp_data": "yes",
+      "top_5_ranking_pages": [
+        { "rank": 1, "url": "reddit.com/r/CustomerSuccess/.../tools_for_customer_onboarding", "dr": 95, "traffic": 2126, "type": "reddit" },
+        { "rank": 2, "url": "guidecx.com", "dr": 57, "traffic": 4363, "type": "vendor_homepage" },
+        { "rank": 3, "url": "onramp.us", "dr": 57, "traffic": 1104, "type": "vendor_homepage" },
+        { "rank": 4, "url": "docebo.com/.../customer-onboarding-software/", "dr": 77, "traffic": 430, "type": "vendor_blog" },
+        { "rank": 7, "url": "monday.com/blog/.../customer-onboarding-software/", "dr": 91, "traffic": 350, "type": "competitor_blog" }
+      ],
+      "competitive_analysis": { "avg_dr_top_5": 75, "B2B_services_dominant": true, "saas_self_serve_angle_open": true },
+      "beatability": "medium",
+      "priority_action": "WRITE — most ranking pages target B2B services teams (Dock, Arrows, GuideCX). Self-serve SaaS angle is open. Position email-led as a distinct category."
+    },
+    {
+      "query_id": 18,
+      "original_query": "how to reduce SaaS trial drop-off",
+      "serp_keyword": "trial drop off",
+      "serp_data": "none",
+      "interpretation": "Open territory. Core ICP pain point.",
+      "beatability": "easy",
+      "priority_action": "WRITE — behavioral triggers playbook. Internal-link to /lifecycle-score."
+    },
+    {
+      "query_id": 19,
+      "original_query": "how to set up behavior-based emails",
+      "serp_keyword": "trigger email",
+      "serp_data": "yes",
+      "top_5_ranking_pages": [
+        { "rank": 2, "url": "mailchimp.com/resources/trigger-email/", "dr": 93, "traffic": 766, "type": "competitor_glossary" },
+        { "rank": 4, "url": "bluecore.com/blog/types-triggered-emails/", "dr": 71, "traffic": 819, "type": "vendor_blog" },
+        { "rank": 5, "url": "firebase.google.com/docs/extensions/.../firestore-send-email", "dr": 99, "traffic": 744, "type": "google_docs" },
+        { "rank": 6, "url": "myemma.com/blog/the-basics-of-triggered-emails", "dr": 78, "traffic": 329, "type": "vendor_blog" },
+        { "rank": 8, "url": "campaignmonitor.com/.../what-are-triggered-emails/", "dr": 89, "traffic": 125, "type": "competitor_blog" }
+      ],
+      "competitive_analysis": { "avg_dr_top_5": 86, "broad_intent": "general triggered emails, not behavior-specific", "behavior_specific_angle_open": true },
+      "beatability": "medium",
+      "priority_action": "WRITE — distinguish behavioral from trigger (more granular). Position as 'level up from basic triggered emails'."
+    },
+    {
+      "query_id": 25,
+      "original_query": "what is product-led onboarding",
+      "serp_keyword": "product led onboarding",
+      "serp_data": "yes",
+      "top_5_ranking_pages": [
+        { "rank": 1, "url": "productled.com/book/onboarding", "dr": 72, "traffic": 335, "type": "book_landing", "note": "Ramli John's book" },
+        { "rank": 2, "url": "amazon.com/Product-Led-Onboarding-.../1777717701", "dr": 96, "traffic": 133, "type": "amazon" },
+        { "rank": 3, "url": "reddit.com/r/SaaS/.../product_led_onboarding", "dr": 95, "traffic": 97, "type": "reddit" },
+        { "rank": 4, "url": "pendo.io/pendo-blog/the-case-for-product-led-onboarding/", "dr": 80, "traffic": 75, "type": "competitor_blog" },
+        { "rank": 6, "url": "productschool.com/blog/.../product-led-onboarding", "dr": 74, "traffic": 71, "type": "education_site" }
+      ],
+      "competitive_analysis": { "avg_dr_top_5": 83, "book_dominates_concept": true, "explainer_angle_open": "no clear 'short definitional' page in top 5" },
+      "beatability": "medium",
+      "priority_action": "WRITE — concise definitional page with FAQPage schema. Position as 'quick guide vs book'. Less than 1500 words."
+    },
+    {
+      "query_id": 27,
+      "original_query": "what is lifecycle marketing for SaaS",
+      "serp_keyword": "lifecycle marketing",
+      "serp_data": "yes",
+      "top_5_ranking_pages": [
+        { "rank": 2, "url": "salesforce.com/marketing/lifecycle-marketing/", "dr": 92, "traffic": 1189, "type": "authority" },
+        { "rank": 4, "url": "braze.com/resources/articles/growth-marketers-and-lifecycle-marketing", "dr": 82, "traffic": 510, "type": "competitor_blog" },
+        { "rank": 5, "url": "litmus.com/blog/what-is-lifecycle-marketing", "dr": 86, "traffic": 739, "type": "competitor_blog" },
+        { "rank": 7, "url": "klaviyo.com/blog/customer-lifecycle-marketing", "dr": 90, "traffic": 186, "type": "competitor_blog" },
+        { "rank": 10, "url": "blog.hubspot.com/marketing/lifecycle-marketing", "dr": 93, "traffic": 199, "type": "authority_blog" }
+      ],
+      "competitive_analysis": { "avg_dr_top_5": 89, "saas_specific_angle_open": true, "generic_pillar_pages": "all results are generic" },
+      "beatability": "hard_generic_medium_saas",
+      "priority_action": "WRITE — pure SaaS-focused lifecycle marketing guide. Bypass the generic fight. Hardest of the medium picks — push to v2 batch."
+    },
+    {
+      "query_id": 37,
+      "original_query": "re-engagement email examples for SaaS",
+      "serp_keyword": "re engagement email examples",
+      "serp_data": "yes",
+      "top_5_ranking_pages": [
+        { "rank": 1, "url": "reallygoodemails.com/categories/retention-reactivation", "dr": 80, "traffic": 527, "type": "email_library" },
+        { "rank": 2, "url": "blog.hubspot.com/marketing/.../re-engagement-emails", "dr": 93, "traffic": 165, "type": "authority_blog" },
+        { "rank": 4, "url": "mailchimp.com/resources/re-engagement-emails/", "dr": 93, "traffic": 142, "type": "competitor_glossary" },
+        { "rank": 6, "url": "myemma.com/blog/how-to-create-a-re-engagement-email", "dr": 78, "traffic": 171, "type": "vendor_blog" },
+        { "rank": 7, "url": "airship.com/blog/10-re-engagement-email-examples", "dr": 79, "traffic": 155, "type": "vendor_blog" }
+      ],
+      "competitive_analysis": { "avg_dr_top_5": 85, "saas_specific_angle_open": true },
+      "beatability": "hard_generic_medium_saas",
+      "priority_action": "DEFER to v2 — only attack after DA grows. SaaS-specific narrow angle has potential but needs library proof + backlinks."
+    },
+    {
+      "query_id": 42,
+      "original_query": "how to write win-back emails for SaaS",
+      "serp_keyword": "win back email examples",
+      "serp_data": "yes",
+      "top_5_ranking_pages": [
+        { "rank": 1, "url": "reallygoodemails.com/categories/winback", "dr": 80, "traffic": 531, "type": "email_library" },
+        { "rank": 2, "url": "klaviyo.com/blog/winback-email-campaign-examples", "dr": 90, "traffic": 457, "type": "competitor_blog" },
+        { "rank": 4, "url": "reddit.com/r/DigitalMarketing/.../winback_emails", "dr": 95, "traffic": 31, "type": "reddit" },
+        { "rank": 5, "url": "braze.com/resources/articles/what-is-a-win-back-campaign", "dr": 82, "traffic": 420, "type": "vendor_blog" },
+        { "rank": 7, "url": "baremetrics.com/blog/winback-email", "dr": 77, "traffic": 121, "type": "saas_blog", "note": "explicit SaaS angle competitor" }
+      ],
+      "competitive_analysis": { "avg_dr_top_5": 85, "saas_specific_competitor_present": "Baremetrics already ranks for SaaS angle" },
+      "beatability": "hard",
+      "priority_action": "DEFER to v2 — Baremetrics owns SaaS niche. Need to beat them with more examples + freshness, but cost-of-time is high right now."
+    },
+    {
+      "query_id": 15,
+      "original_query": "best tools for SaaS user activation",
+      "serp_keyword": "user activation",
+      "serp_data": "yes",
+      "top_5_ranking_pages": [
+        { "rank": 2, "url": "developer.mozilla.org/en-US/docs/Web/API/UserActivation", "dr": 96, "traffic": 24, "type": "wrong_intent", "note": "JS API, not product activation" },
+        { "rank": 4, "url": "productschool.com/blog/analytics/user-activation", "dr": 74, "traffic": 74, "type": "competitor_blog" },
+        { "rank": 5, "url": "blog.hubspot.com/service/what-is-user-activation", "dr": 93, "traffic": 75, "type": "authority_blog" },
+        { "rank": 6, "url": "prodpad.com/glossary/user-activation/", "dr": 71, "traffic": 22, "type": "competitor_glossary" },
+        { "rank": 7, "url": "reforge.com/guides/define-customer-activation-moments", "dr": 75, "traffic": 12, "type": "education_site" }
+      ],
+      "competitive_analysis": { "mixed_intent": "MDN UserActivation API dilutes the SERP", "saas_specific_winners": "ProductSchool, Reforge, Userpilot already lead — beatable with email-led activation angle" },
+      "beatability": "medium",
+      "priority_action": "WRITE — explicitly 'SaaS user activation' (not 'user activation') to dodge MDN. Email-as-activation-tool angle is differentiated."
+    }
+  ],
+
+  "queries_not_yet_tested_with_serp": [
+    "best lifecycle marketing platforms for early-stage SaaS",
+    "best free trial conversion tools",
+    "how to write an activation email",
+    "how to onboard SaaS users with email",
+    "how to write a welcome email for SaaS",
+    "how to recover stuck SaaS trial users",
+    "how to design an onboarding email flow",
+    "what is an activation email",
+    "what is the difference between onboarding and activation",
+    "Customer.io vs Intercom",
+    "Loops vs Userlist",
+    "Pulsent vs Customer.io",
+    "Userlist vs Encharge",
+    "Pulsent alternatives",
+    "SaaS activation email examples",
+    "best SaaS onboarding emails",
+    "free trial expiring email examples",
+    "SaaS onboarding email subject line examples",
+    "behavioral email examples for SaaS",
+    "best transactional email services for SaaS",
+    "how to measure SaaS activation",
+    "how to A/B test onboarding emails",
+    "what is a SaaS activation rate",
+    "what are onboarding milestones in SaaS",
+    "what is the aha moment in SaaS",
+    "Intercom vs Customer.io vs Userlist",
+    "SaaS upgrade email examples",
+    "SaaS upsell email examples",
+    "how many emails should a SaaS onboarding sequence have"
+  ],
+  "next_pass_recommendation": "Most 'queries not yet tested' are likely open territory (long-tail comparisons, definitional, niche). Skip another SERP pass — assume open territory and write articles directly. Re-verify post-publication."
+}

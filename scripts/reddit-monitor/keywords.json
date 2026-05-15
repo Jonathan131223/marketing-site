@@ -1,0 +1,33 @@
+{
+  "_comment": "Config for the daily Reddit monitor. poll.mjs reads this. SCOPE: SaaS lifecycle email + user onboarding / activation / retention / expansion / churn. Explicitly NOT ecommerce email and NOT cold outreach — see exclusion_keywords. Edit clusters as the strategy evolves.",
+  "subreddits": {
+    "tier1": ["SaaS", "Emailmarketing", "CustomerSuccess"],
+    "tier2": ["indiehackers", "DigitalMarketing", "SaaSMarketing"]
+  },
+  "keyword_clusters": {
+    "onboarding": ["onboarding email", "user onboarding", "onboarding sequence", "onboarding flow", "welcome email", "welcome sequence", "new user email", "onboard users", "onboarding"],
+    "activation": ["activation email", "user activation", "free trial conversion", "trial to paid", "free to paid", "trial conversion", "aha moment", "activate users", "activate trial", "convert free users", "convert trial users", "free users to paid", "trial users", "new signups"],
+    "lifecycle": ["lifecycle email", "lifecycle marketing", "email automation", "automated email", "email sequence", "automated onboarding", "drip sequence", "saas email"],
+    "behavioral": ["behavioral email", "behavior based", "behaviour based", "trigger email", "triggered email", "event based email", "behavior triggered"],
+    "retention": ["churn email", "win back", "winback", "re-engagement", "reengagement", "retention email", "cancellation email", "dunning", "customer churn", "reduce churn", "churn rate", "user retention", "customer retention", "logo churn", "churn"],
+    "expansion": ["expansion revenue", "account expansion", "upsell email", "upgrade email", "expansion mrr", "net revenue retention", "usage expansion", "expansion email", "upsell sequence"],
+    "tools": ["customer.io", "customerio", "loops.so", "intercom alternative", "userlist", "encharge", "what email tool", "best email tool", "email tool recommendation", "email tool for saas"]
+  },
+  "high_intent_signals": ["recommend", "recommendation", "anyone use", "anyone using", "looking for", "alternative to", "alternatives", "what tool", "which tool", " vs ", "help with", "best ", "suggestions", "advice on", "how do you", "how to", "struggling with"],
+  "search_clusters": ["onboarding email", "activation email", "email automation", "user retention", "trial conversion"],
+  "exclusion_keywords": ["cold email", "cold outreach", "cold dm", "cold call", "cold calling", "cold lead", "outbound sales", "prospecting", "lead list", "lead lists", "ecommerce", "e-commerce", "shopify", "woocommerce", "dropshipping", "abandoned cart", "dtc brand", "online store", "amazon fba"],
+  "scoring": {
+    "keyword_weight": 3,
+    "intent_weight": 2,
+    "question_bonus": 5,
+    "recency_bonus_24h": 5,
+    "recency_bonus_48h": 2,
+    "saturation_comment_threshold": 150,
+    "saturation_penalty": 5,
+    "exclusion_body_penalty": 4,
+    "exclusion_body_drop_threshold": 2,
+    "min_score": 6,
+    "max_age_hours": 72,
+    "max_candidates": 15
+  }
+}

@@ -32,6 +32,10 @@ bun.lockb
 # OG image generation inbox — raw PNGs from nanobanana are not committed
 scripts/og-images/_inbox/
 
+# Reddit monitor — daily poll output is ephemeral (regenerated each run).
+# The drafted digests (digest-*.md) ARE kept as the engagement log.
+data/reddit/candidates-*.json
+
 # iCloud sync duplicates (e.g. "foo 2.md", "bar 3.webp")
 * [0-9].*
 * [0-9]
