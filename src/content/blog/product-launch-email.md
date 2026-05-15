@@ -1,5 +1,5 @@
 ---
-title: "28 product launch and release email examples from real SaaS (2026)"
+title: "28 SaaS product launch & release email examples (2026)"
 slug: "product-launch-email"
 description: "28 real product launch and release emails from SaaS brands like Notion, Slack, ClickUp, Asana, Webflow, Loom and Figma — plus the timing, subject lines, and structure that actually drive adoption."
 shortDescription: "Explore 28 standout product launch and release emails — plus tips to nail your next big rollout."
