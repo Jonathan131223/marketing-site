@@ -359,6 +359,14 @@ const CARDS = [
     cta: 'See the templates',
     icon: 'templates',
   },
+  {
+    slug: 'upsell-email-examples',
+    subject: 'Upsell playbook',
+    headline: '12 upsell email examples',
+    body: 'Real upsell emails from Semrush, Hunter, Zapier, Loom, Typeform, Figma — the triggers that grow account value.',
+    cta: 'See the examples',
+    icon: 'chart',
+  },
 ];
 
 async function renderOne(card) {

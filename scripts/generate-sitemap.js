@@ -68,6 +68,7 @@ const staticEntries = [
   urlEntry(`${BASE_URL}/contact`,            "2026-04-07", "monthly",  "0.6"),
   urlEntry(`${BASE_URL}/email-generator/templates`, "2026-01-01", "monthly", "0.7"),
   // Blog posts
+  urlEntry(`${BASE_URL}/blog/upsell-email-examples`,     "2026-05-18", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/saas-welcome-email`,        "2026-05-13", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/webinar-email-sequence`,    "2026-03-23", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/product-launch-email`,      "2026-05-06", "monthly", "0.9"),
