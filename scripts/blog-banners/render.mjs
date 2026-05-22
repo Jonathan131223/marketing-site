@@ -367,6 +367,14 @@ const CARDS = [
     cta: 'See the examples',
     icon: 'chart',
   },
+  {
+    slug: 'behavior-based-vs-time-based-emails',
+    subject: 'Triggers vs timing',
+    headline: 'Behavior-based vs time-based email',
+    body: 'Real triggered emails from Loom, Zapier, Apollo, Jira, Calendly — when to send on action, not a schedule.',
+    cta: 'See the triggers',
+    icon: 'chart',
+  },
 ];
 
 async function renderOne(card) {
