@@ -290,9 +290,9 @@ const CARDS = [
   {
     slug: 'saas-onboarding-email-sequence',
     subject: 'Onboarding playbook',
-    headline: 'The 7-email onboarding sequence',
-    body: 'Real examples from Loom, Calendly, and Pipedrive — timing, copy, and behavior triggers.',
-    cta: 'See the sequence',
+    headline: '12 onboarding email examples',
+    body: 'Real onboarding emails from Loom, Calendly, Asana, Stripe, Zapier, Monday — subject lines, timing, patterns.',
+    cta: 'See the examples',
     icon: 'onboarding',
   },
   {

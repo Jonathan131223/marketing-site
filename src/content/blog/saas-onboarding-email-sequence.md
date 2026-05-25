@@ -1,15 +1,22 @@
 ---
-title: "The SaaS onboarding email sequence (7 emails, real examples)"
+title: "12 onboarding email examples from real SaaS brands (2026)"
 slug: "saas-onboarding-email-sequence"
-description: "The complete 7-email SaaS onboarding sequence, from signup to upgrade, with real examples from Loom, Calendly, and Pipedrive. Timing, copy, and when to switch to behavior-based triggers."
-shortDescription: "The 7-email SaaS onboarding sequence broken down, with real examples from Loom, Calendly, and Pipedrive."
-date: "2026-04-21"
-readTime: "11 min read"
-libraryTags: ["welcome-free-users", "setup-prompt", "milestone-reached", "trial-expiration-warning", "upgrade-cta"]
+description: "12 onboarding email examples from Loom, Calendly, Pipedrive, Asana, Stripe, Zapier, Monday, and more — with subject lines, timing, and the pattern behind each."
+shortDescription: "12 onboarding email examples from Loom, Calendly, Pipedrive, Asana, Stripe, Zapier, Monday and more."
+date: "2026-05-25"
+readTime: "13 min read"
+libraryTags: ["welcome-free-users", "welcome-paid-users", "setup-prompt", "trial-just-started", "milestone-reached", "upgrade-cta"]
 thumbnail: "/blog/saas-onboarding-email-sequence/banner.webp"
 heroImage: "/blog/saas-onboarding-email-sequence/banner.webp"
 ogImage: "/og/blog-saas-onboarding-email-sequence.webp"
 ---
+
+## TL;DR
+
+- The best onboarding email examples share three things: one job per email, behavior-triggered timing (not pure drip), and a single primary CTA tied to the next activation step.
+- Across 200+ onboarding emails in the [DigiStorms library](/library), the canonical sequence is 5–8 emails over 10–21 days: welcome → setup prompt → feature education → first-milestone celebration → trial-ending warning → upgrade CTA → post-trial nudge.
+- The 12 examples below — from **Loom, Calendly, Pipedrive, Asana, Stripe, Zapier, Slack, Monday, Hunter, Grammarly, Figma, and Miro** — show the pattern at every stage. Steal subject lines, copy structure, and trigger logic verbatim.
+
 
 You just signed someone up. You have about 14 days before they either activate, convert, or quietly disappear.
 
@@ -239,6 +246,106 @@ Across 200+ onboarding emails in the library, the subject-line patterns are rema
 - **Post-trial:** Soft language, workspace/feature name. "Digistorms has been downgraded to Loom Starter"
 
 More subject-line deep-dives in our [25 webinar follow up subject lines](/blog/webinar-follow-up-subject-lines) and [30 product launch email subject lines](/blog/product-launch-email-subject-lines) guides.
+
+## 12 onboarding email examples (quick-hit gallery)
+
+The Loom, Calendly, and Pipedrive deep-dives above show how a full sequence reads end-to-end. This section pulls 12 standout onboarding emails from across the library — different brands, different stages of the sequence, different jobs. Use these as a swipe file when you're writing your own.
+
+### 1. Calendly — Welcome (day 0)
+
+[![Calendly welcome email](/email-screenshots/welcome-free-users-from-calendly-01182024.png)](/library/email/welcome-free-users-from-calendly-01182024)
+
+**Subject line: Welcome to Calendly**
+
+Three lines of copy, one CTA ("Set up Calendly"), no feature list. Calendly knows the first action is connecting a calendar — everything else can wait. The pattern: cut the welcome email's word count in half, then in half again.
+
+### 2. Loom — Welcome to trial (day 0)
+
+[![Loom welcome email](/email-screenshots/welcome-free-users-from-loom-10212023.png)](/library/email/welcome-free-users-from-loom-10212023)
+
+**Subject line: Loom Business! Welcome to your trial 🔮**
+
+Names the plan explicitly ("Loom Business"), sets the 14-day expectation, single CTA ("Start recording"). The pattern: tell the user what they got, when it ends, and the one thing to do next — in that order.
+
+### 3. Monday — Welcome with team-invite nudge (day 0)
+
+[![Monday welcome email](/email-screenshots/welcome-free-users-from-monday-05122025.png)](/library/email/welcome-free-users-from-monday-05122025)
+
+**Subject line: Welcome to monday.com 🎉**
+
+Monday folds team-invite into the welcome email instead of saving it for email #2. For collaboration tools, the "invite a teammate" action IS the activation event — pulling it forward shortens time-to-value. The pattern: identify the action that turns "user" into "active workspace" and trigger it in email 1.
+
+### 4. Asana — Trial-starts-today welcome (day 0)
+
+[![Asana welcome email](/email-screenshots/welcome-free-users-from-asana-05122025.png)](/library/email/welcome-free-users-from-asana-05122025)
+
+**Subject line: Your Asana trial starts today**
+
+Asana opens with the trial countdown rather than a generic "welcome." Framing the trial as a clock that's already running creates mild urgency without being aggressive. The pattern: anchor the welcome on what the user just unlocked (a clock, a credit, an upgraded plan), not on the act of signing up.
+
+### 5. Figma — "Let's get you set up" welcome (day 0)
+
+[![Figma welcome email](/email-screenshots/welcome-free-users-from-figma-12222023.png)](/library/email/welcome-free-users-from-figma-12222023)
+
+**Subject line: Welcome to Figma! Let's get you set up.**
+
+The subject line itself is the CTA: "let's get you set up." Body copy doesn't oversell — it just lists the first three things to try, ranked. Figma trusts that designers will pick their own entry point if you give them options. The pattern: when your audience is technical, replace one CTA with a ranked checklist.
+
+### 6. Hunter.io — Personalized welcome (day 0)
+
+[![Hunter welcome email](/email-screenshots/welcome-free-users-from-hunterio-04102024.png)](/library/email/welcome-free-users-from-hunterio-04102024)
+
+**Subject line: Hey Jonathan, let's get started with Hunter**
+
+First-name personalization in the subject line plus a casual greeting ("Hey Jonathan") sets a 1:1 tone that doesn't read as marketing. For a tool like Hunter (sales prospecting), that founder-to-user voice matters more than polish. The pattern: match welcome-email tone to the job-to-be-done of the product — sales tools should sound like a salesperson, not a brand.
+
+### 7. Miro — Onboarding with a checklist (day 0)
+
+[![Miro welcome email](/email-screenshots/welcome-free-users-from-miro-10122024.png)](/library/email/welcome-free-users-from-miro-10122024)
+
+**Subject line: 👋 Welcome to Miro!**
+
+Miro embeds a 3-step interactive checklist directly in the email body — "create your first board," "invite teammates," "explore templates." Each step links into a deep route in the product. The pattern: when activation has multiple paths, give the user a literal checklist instead of forcing a single funnel.
+
+### 8. Stripe — Setup quickstarts (day 1–3)
+
+[![Stripe setup prompt email](/email-screenshots/setup-prompt-from-stripe-03132025.png)](/library/email/setup-prompt-from-stripe-03132025)
+
+**Subject line: Quickstart guides to get you up and running**
+
+Stripe segments by integration intent and sends a setup email with quickstarts matched to what the user said they're building (Payments, Connect, Billing, etc.). The pattern: ask one segmentation question at signup, then use it to route a tailored setup email — not a one-size-fits-all "here's how to use Stripe."
+
+### 9. Zapier — Welcome + first-Zap nudge (day 0–1)
+
+[![Zapier welcome email](/email-screenshots/welcome-free-users-from-zapier-02132024.png)](/library/email/welcome-free-users-from-zapier-02132024)
+
+**Subject line: Welcome to Zapier ⚡**
+
+Zapier's welcome email puts a "Make your first Zap" CTA above the fold and pairs it with three popular Zap templates the user can click straight into. The pattern: instead of teaching the abstraction (what a Zap is), let the user copy a working one — learning happens by doing.
+
+### 10. Make — Templates-driven feature usage nudge (day 2–4)
+
+[![Make feature usage nudge](/email-screenshots/feature-usage-nudge-from-make-05212025.png)](/library/email/feature-usage-nudge-from-make-05212025)
+
+**Subject line: 🟣 Automate Gmail and more: Pre-built templates inside**
+
+Make sends a "templates for popular integrations" email 2–3 days post-signup, pointing to copy-paste workflows for Gmail, Slack, and Notion. The subject line leads with the popular tool, not the product. The pattern: feature-education emails should headline the user's existing tool, not your product's feature name.
+
+### 11. Slack — Account-ready welcome (day 0)
+
+[![Slack welcome email](/email-screenshots/welcome-paid-users-from-slack-25122024.png)](/library/email/welcome-paid-users-from-slack-25122024)
+
+**Subject line: Jonathan started with Slack**
+
+Slack frames the welcome as a notification ("Jonathan started with Slack") rather than a marketing email. The visual treatment matches a workspace activity notification, so it slips past the "this is marketing" filter most users have on day 0. The pattern: in workspaces with multiple seats, make welcome emails look like product notifications, not campaigns.
+
+### 12. Grammarly — First-step milestone celebration (day 3–7, behavior-triggered)
+
+[![Grammarly milestone email](/email-screenshots/milestone-reached-from-grammarly-08082025.png)](/library/email/milestone-reached-from-grammarly-08082025)
+
+**Subject line: Congrats on taking the first step toward effective communication**
+
+Grammarly fires this email the moment the user installs the browser extension AND writes their first sentence with it active. The "Congrats" framing reinforces a habit that's still fragile. The pattern: behavior-triggered milestone emails work best on the *smallest* meaningful action — not "you've been a user for a week," but "you just did the thing."
 
 ## How to set up your own onboarding email sequence
 
