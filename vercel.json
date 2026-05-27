@@ -35,6 +35,60 @@
       "has": [{ "type": "host", "value": "blog.digistorms.ai" }],
       "destination": "https://www.digistorms.ai/blog",
       "permanent": true
+    },
+    {
+      "source": "/blog/saas-onboarding-checklist",
+      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
+      "destination": "https://www.digistorms.ai/blog/saas-onboarding-email-sequence",
+      "permanent": true
+    },
+    {
+      "source": "/blog/net-revenue-retention",
+      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
+      "destination": "https://www.digistorms.ai/blog/customer-retention-email-examples",
+      "permanent": true
+    },
+    {
+      "source": "/blog/jobs-to-be-done-examples",
+      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
+      "destination": "https://www.digistorms.ai/blog/saas-email-benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/blog/product-led-growth-flywheel",
+      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
+      "destination": "https://www.digistorms.ai/blog/saas-onboarding-email-sequence",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
+      "destination": "https://www.digistorms.ai/about",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
+      "destination": "https://www.digistorms.ai/blog",
+      "permanent": true
+    },
+    {
+      "source": "/privacy",
+      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
+      "destination": "https://www.digistorms.ai/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/terms",
+      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
+      "destination": "https://www.digistorms.ai/terms",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
+      "destination": "https://www.digistorms.ai/",
+      "permanent": true
     }
   ],
   "headers": [
