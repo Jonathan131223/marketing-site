@@ -8,6 +8,7 @@ readTime: "8 min read"
 thumbnail: "/blog/webinar-follow-up-email/banner.webp"
 heroImage: "/blog/webinar-follow-up-email/banner.webp"
 libraryTags: ["webinar-recording", "follow-up"]
+ogImage: "/og/blog-webinar-follow-up-email.webp"
 ---
 
 Let's be real—hosting a webinar is only half the battle.

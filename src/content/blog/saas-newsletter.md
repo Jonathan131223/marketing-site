@@ -8,6 +8,7 @@ readTime: "9 min read"
 thumbnail: "/blog/saas-newsletter/banner.webp"
 heroImage: "/blog/saas-newsletter/banner.webp"
 libraryTags: ["newsletter"]
+ogImage: "/og/blog-saas-newsletter.webp"
 ---
 
 Newsletters work. Simple as that.
