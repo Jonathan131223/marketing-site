@@ -12,6 +12,8 @@ libraryTags: ["upgrade-cta", "trial-expired-upgrade", "trial-expiration-warning"
 
 If you're building a SaaS product, upgrade emails are one of the most effective tools to turn free users into paying customers.
 
+This guide focuses on **plan upgrades** — moving a free user to paid. For the related but distinct play of expanding existing paying accounts (more seats, premium features, add-ons), see our [12 upsell email examples](/blog/upsell-email-examples).
+
 But what makes an upgrade email actually work—and when should you send it? In this guide, I'll walk you through how to write upgrade emails that feel helpful, timely, and drive real conversions.
 
 Here's what we'll cover:

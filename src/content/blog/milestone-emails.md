@@ -12,6 +12,8 @@ libraryTags: ["milestone-reached", "usage-summary", "year-in-review"]
 
 If you're growing a SaaS product, milestone emails are one of the easiest ways to boost engagement and keep users moving through the journey.
 
+They're the email that fires **after** the [welcome email](/blog/saas-welcome-email) and **before** the [upgrade nudge](/blog/upgrade-emails) — the moment a user hits their first "I get it" inside the product, and you celebrate it.
+
 But what makes a milestone email actually effective—and which moments are worth celebrating?
 
 In this guide, I'll show you how to send milestone emails that feel personal, timely, and build serious momentum.
