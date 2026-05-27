@@ -1,7 +1,7 @@
 ---
-title: "15 SaaS newsletter examples (and why they work)"
+title: "15 SaaS newsletter examples that grow your subscribers"
 slug: "saas-newsletter"
-description: "15 SaaS newsletters from teams that treat email as a product, not an afterthought. What they send, how often, and the structural choices that drive opens + clicks."
+description: "15 real SaaS newsletters from top brands. Subject lines, cadence, and what makes each one worth subscribing to. Steal the patterns."
 shortDescription: "Learn what makes a great newsletter with 15 SaaS examples that actually work."
 date: "2026-03-01"
 readTime: "9 min read"

@@ -1,7 +1,7 @@
 ---
-title: "13 webinar follow up email examples (with subject lines)"
+title: "13 webinar follow-up email examples (with subject lines)"
 slug: "webinar-follow-up-email"
-description: "13 real webinar follow-up emails from top SaaS brands — with the subject lines that get opened, segmentation by attendance, and the path from recap to booked demo."
+description: "13 real webinar follow-up emails from top SaaS — segmented by attendance, no-shows, and engagement. With subject lines and timing."
 shortDescription: "Get 13 follow-up email examples and tips to boost engagement after your next webinar."
 date: "2026-02-15"
 readTime: "8 min read"

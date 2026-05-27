@@ -17,8 +17,8 @@ DigiStorms is an AI-powered SaaS tool that generates behavior-based onboarding a
 - Analyzes your website to understand your product and user journey
 - Generates complete onboarding email sequences (welcome, activation, milestone, upgrade, win-back)
 - Triggers emails based on real user behavior, not fixed schedules
-- Trained on 1,100+ real SaaS lifecycle emails from companies like Notion, Slack, Stripe, Adobe
-- Includes an email library with 1,100+ B2B SaaS lifecycle email examples from 38+ top companies
+- Trained on 1,058 real SaaS lifecycle emails from companies like Notion, Slack, Stripe, Adobe
+- Includes an email library with 1,058 B2B SaaS lifecycle email examples from 39 top companies
 
 ## Pricing
 
@@ -30,7 +30,7 @@ DigiStorms is an AI-powered SaaS tool that generates behavior-based onboarding a
 
 ## Founded by
 
-Jonathan Bernard — lifecycle email specialist for SaaS companies.
+Jonathan Bernard (https://www.linkedin.com/in/jonathan-digistorms/) — lifecycle email specialist for SaaS companies. Previously consulted with growth teams on onboarding, retention, and expansion strategy.
 
 ## Links
 
@@ -117,25 +117,32 @@ The DigiStorms Email Library contains 1,058 lifecycle emails from 39 B2B SaaS co
 
 ### Blog Articles
 
-- [SaaS email benchmarks: what 1,051 lifecycle emails reveal](https://www.digistorms.ai/blog/saas-email-benchmarks) — Original research analyzing 1,051 lifecycle emails from 38 top SaaS companies. Published April 7, 2026.
-- [SaaS welcome email: best practices with 28 examples](https://www.digistorms.ai/blog/saas-welcome-email) — Best practices, timing tips, and real examples to level up your onboarding experience.
-- [Product launch and release email: 28 examples from real SaaS](https://www.digistorms.ai/blog/product-launch-email) — Real product launch and release emails from Notion, Slack, ClickUp, Asana, Webflow, Loom, and Figma.
-- [B2B lead nurturing email: 15 examples from real SaaS](https://www.digistorms.ai/blog/b2b-lead-nurturing-email-examples) — Real B2B lead nurturing emails from Apollo, Notion, Ahrefs, Calendly, Asana, and ClickUp.
-- [Re-engagement email: 12 examples that win back inactive users](https://www.digistorms.ai/blog/re-engagement-email-examples) — Real win-back and re-engagement emails from Adobe, Canva, Apollo, Semrush, and Pipedrive.
-- [Transactional email vs marketing email: the practical difference](https://www.digistorms.ai/blog/transactional-email-vs-marketing-email) — Side-by-side comparison with real examples from Stripe, Calendly, Notion, Beehiiv, and Zapier.
-- [SaaS newsletter: best practices with 15 examples](https://www.digistorms.ai/blog/saas-newsletter) — How to craft a standout SaaS newsletter with 15 real-life examples.
-- [Webinar email sequence: best practices with 25 examples](https://www.digistorms.ai/blog/webinar-email-sequence) — High-converting webinar email sequences with proven strategies.
-- [Webinar follow up email: best practices with 13 examples](https://www.digistorms.ai/blog/webinar-follow-up-email) — Effective webinar follow-up emails with smart segmentation and tips.
-- [Webinar emails: best practices with 20 examples](https://www.digistorms.ai/blog/webinar-emails) — Compelling webinar emails from top B2B SaaS brands.
-- [Milestone emails: best practices with 12 examples](https://www.digistorms.ai/blog/milestone-emails) — How to create milestone emails that drive engagement and retention.
-- [Upgrade emails: best practices with 13 examples](https://www.digistorms.ai/blog/upgrade-emails) — Upgrade emails that convert trial users into paying customers.
-- [Dunning emails: best practices with 8 examples](https://www.digistorms.ai/blog/dunning-emails) — Dunning emails that recover failed payments and reduce churn.
+- [12 onboarding email examples from real SaaS brands (2026)](https://www.digistorms.ai/blog/saas-onboarding-email-sequence) — The 7-email onboarding sequence with subject lines, timing, and patterns from Loom, Calendly, Pipedrive, Asana, Stripe, Zapier, and Monday. Published May 25, 2026.
+- [Behavior-based vs time-based emails: 2026 SaaS guide](https://www.digistorms.ai/blog/behavior-based-vs-time-based-emails) — 10 real behavioral emails grouped by milestone, feature-usage, and inactivity triggers. From Loom, Zapier, Apollo, Calendly, Jira. Published May 22, 2026.
+- [12 upsell email examples from real SaaS companies (2026)](https://www.digistorms.ai/blog/upsell-email-examples) — Real upsell emails from Semrush, Hunter, Zapier, Loom, and Typeform with subject lines and triggers. Published May 18, 2026.
+- [Welcome email templates: 28 SaaS examples to copy](https://www.digistorms.ai/blog/saas-welcome-email) — Best practices, timing tips, and real examples to level up your day-0 onboarding email.
+- [12 customer retention email examples (real SaaS, 2026)](https://www.digistorms.ai/blog/customer-retention-email-examples) — 12 retention emails from Adobe, Semrush, Dropbox, Notion, Grammarly, Mailchimp — milestone, inactivity, expansion, and win-back patterns. Published May 11, 2026.
+- [SaaS email benchmarks: what 1,058 lifecycle emails reveal](https://www.digistorms.ai/blog/saas-email-benchmarks) — Original research analyzing 1,058 lifecycle emails from 39 top SaaS companies. Published April 7, 2026.
+- [14 SaaS lifecycle email templates you can steal (2026)](https://www.digistorms.ai/blog/saas-email-templates) — 14 ready-to-use templates covering welcome, setup, education, milestone, trial-ending, upgrade, and reactivation.
+- [28 product launch email examples from real SaaS (2026)](https://www.digistorms.ai/blog/product-launch-email) — Real product launch and release emails from Notion, Slack, ClickUp, Asana, Webflow, Loom, and Figma.
+- [30 product launch email subject lines (real SaaS, 2026)](https://www.digistorms.ai/blog/product-launch-email-subject-lines) — Real product launch subject lines from Notion, Loom, Linear, Zapier and more.
+- [15 B2B lead nurturing email examples from real SaaS](https://www.digistorms.ai/blog/b2b-lead-nurturing-email-examples) — Real B2B lead nurturing emails from Apollo, Notion, Ahrefs, Calendly, Asana, and ClickUp.
+- [12 re-engagement email examples that win back inactive users (2026)](https://www.digistorms.ai/blog/re-engagement-email-examples) — Real win-back and re-engagement emails from Adobe, Canva, Apollo, Semrush, and Pipedrive.
+- [Transactional vs marketing email: 2026 SaaS guide](https://www.digistorms.ai/blog/transactional-email-vs-marketing-email) — Side-by-side comparison with real examples from Stripe, Calendly, Notion, Beehiiv, and Zapier.
+- [15 SaaS newsletter examples that grow your subscribers](https://www.digistorms.ai/blog/saas-newsletter) — 15 real SaaS newsletters with subject lines, cadence, and the structural choices that drive opens and clicks.
+- [25 webinar email examples: full 7-email sequence (2026)](https://www.digistorms.ai/blog/webinar-email-sequence) — High-converting webinar email sequences from Customer.io, Slack, HubSpot, Calendly.
+- [13 webinar follow-up email examples (with subject lines)](https://www.digistorms.ai/blog/webinar-follow-up-email) — Effective webinar follow-up emails with smart segmentation and tips.
+- [25 webinar follow up subject lines that get opened](https://www.digistorms.ai/blog/webinar-follow-up-subject-lines) — Real subject lines organized by audience type, attendance status, and timing.
+- [12 SaaS milestone email examples that drive retention](https://www.digistorms.ai/blog/milestone-emails) — How to create milestone emails that drive engagement and retention.
+- [13 upgrade email examples that convert free users (2026)](https://www.digistorms.ai/blog/upgrade-emails) — Upgrade emails that convert trial users into paying customers.
+- [8 dunning email examples that recover failed payments](https://www.digistorms.ai/blog/dunning-emails) — Dunning emails that recover failed payments and reduce involuntary churn.
 
 ### Comparison Pages
 
 - [DigiStorms vs Customer.io](https://www.digistorms.ai/compare/digistorms-vs-customer-io) — Side-by-side comparison for SaaS onboarding emails.
-- [DigiStorms vs Encharge](https://www.digistorms.ai/compare/digistorms-vs-encharge)
-- [DigiStorms vs Loops](https://www.digistorms.ai/compare/digistorms-vs-loops)
-- [DigiStorms vs Resend](https://www.digistorms.ai/compare/digistorms-vs-resend)
-- [Best onboarding email tools for SaaS](https://www.digistorms.ai/compare/best-onboarding-email-tools)
-- [Customer.io alternatives](https://www.digistorms.ai/compare/customer-io-alternatives)
+- [DigiStorms vs Encharge](https://www.digistorms.ai/compare/digistorms-vs-encharge) — Behavior-based onboarding email tools compared.
+- [DigiStorms vs Loops](https://www.digistorms.ai/compare/digistorms-vs-loops) — AI-generated onboarding sequences vs. modern SaaS email platform.
+- [DigiStorms vs Resend: AI onboarding vs email API](https://www.digistorms.ai/compare/digistorms-vs-resend) — AI onboarding agent vs. developer email API for SaaS.
+- [Best onboarding email tools for SaaS](https://www.digistorms.ai/compare/best-onboarding-email-tools) — Roundup of lifecycle email tools picked for SaaS onboarding.
+- [Best email automation for SaaS startups](https://www.digistorms.ai/compare/best-email-automation-saas-startups) — 8 email automation tools picked for free tiers and fast setup.
+- [5 best Customer.io alternatives for SaaS (from $0)](https://www.digistorms.ai/compare/customer-io-alternatives) — Affordable Customer.io alternatives: DigiStorms, Encharge, Loops, Userlist, Sequenzy.
