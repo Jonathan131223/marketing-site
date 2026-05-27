@@ -11,6 +11,20 @@ const ROOT = join(__dirname, "..");
 const BASE_URL = "https://www.digistorms.ai";
 const TODAY = new Date().toISOString().split("T")[0];
 
+// Read a blog post's frontmatter `date` field so the sitemap `lastmod`
+// reflects when the content actually changed — not the build date.
+// Returns YYYY-MM-DD or TODAY as a defensive fallback if the file or
+// the date field can't be parsed.
+function blogPostDate(slug) {
+  try {
+    const md = readFileSync(join(ROOT, `src/content/blog/${slug}.md`), "utf8");
+    const m = md.match(/^date:\s*"?(\d{4}-\d{2}-\d{2})"?/m);
+    return m ? m[1] : TODAY;
+  } catch {
+    return TODAY;
+  }
+}
+
 const emails   = JSON.parse(readFileSync(join(ROOT, "public/data/library/emails.json"), "utf8"));
 const brands   = JSON.parse(readFileSync(join(ROOT, "public/data/library/brands.json"), "utf8"));
 const tags     = JSON.parse(readFileSync(join(ROOT, "public/data/library/tags.json"), "utf8"));
@@ -56,7 +70,7 @@ function urlEntry(loc, lastmod, changefreq, priority) {
 // ── sitemap-static.xml ────────────────────────────────────────────────────────
 const staticEntries = [
   urlEntry(`${BASE_URL}/`,                   "2026-03-23", "monthly",  "1.0"),
-  urlEntry(`${BASE_URL}/pricing`,            TODAY,         "monthly",  "0.9"),
+  urlEntry(`${BASE_URL}/pricing`,            "2026-04-20", "monthly",  "0.9"),
   urlEntry(`${BASE_URL}/blog`,               "2026-03-23", "weekly",   "0.9"),
   urlEntry(`${BASE_URL}/manifesto`,          "2026-01-01", "yearly",   "0.5"),
   urlEntry(`${BASE_URL}/about`,              "2026-04-07", "monthly",  "0.6"),
@@ -79,10 +93,10 @@ const staticEntries = [
   urlEntry(`${BASE_URL}/blog/transactional-email-vs-marketing-email`, "2026-05-06", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/saas-newsletter`,           "2026-03-01", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/webinar-follow-up-email`,          "2026-02-15", "monthly", "0.9"),
-  urlEntry(`${BASE_URL}/blog/webinar-follow-up-subject-lines`,  TODAY,        "monthly", "0.9"),
-  urlEntry(`${BASE_URL}/blog/saas-onboarding-email-sequence`,   TODAY,        "monthly", "0.9"),
-  urlEntry(`${BASE_URL}/blog/saas-email-templates`,             TODAY,        "monthly", "0.9"),
-  urlEntry(`${BASE_URL}/blog/product-launch-email-subject-lines`, TODAY,      "monthly", "0.9"),
+  urlEntry(`${BASE_URL}/blog/webinar-follow-up-subject-lines`,  blogPostDate("webinar-follow-up-subject-lines"),  "monthly", "0.9"),
+  urlEntry(`${BASE_URL}/blog/saas-onboarding-email-sequence`,   blogPostDate("saas-onboarding-email-sequence"),   "monthly", "0.9"),
+  urlEntry(`${BASE_URL}/blog/saas-email-templates`,             blogPostDate("saas-email-templates"),             "monthly", "0.9"),
+  urlEntry(`${BASE_URL}/blog/product-launch-email-subject-lines`, blogPostDate("product-launch-email-subject-lines"), "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/milestone-emails`,                 "2026-01-20", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/upgrade-emails`,            "2026-01-15", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/dunning-emails`,            "2025-03-28", "monthly", "0.9"),
@@ -92,7 +106,7 @@ const staticEntries = [
   urlEntry(`${BASE_URL}/compare/digistorms-vs-loops`,       "2026-04-07", "monthly", "0.8"),
   urlEntry(`${BASE_URL}/compare/digistorms-vs-resend`,      "2026-04-07", "monthly", "0.8"),
   urlEntry(`${BASE_URL}/compare/best-onboarding-email-tools`, "2026-04-07", "monthly", "0.8"),
-  urlEntry(`${BASE_URL}/compare/best-email-automation-saas-startups`, TODAY, "monthly", "0.8"),
+  urlEntry(`${BASE_URL}/compare/best-email-automation-saas-startups`, "2026-04-30", "monthly", "0.8"),
   urlEntry(`${BASE_URL}/compare/customer-io-alternatives`,  "2026-04-07", "monthly", "0.8"),
   // Benchmark blog post
   urlEntry(`${BASE_URL}/blog/saas-email-benchmarks`,        "2026-04-07", "monthly", "0.9"),

@@ -13,6 +13,8 @@ ogImage: "/og/blog-saas-welcome-email.webp"
 
 The best welcome email templates do one job: turn a fresh signup into a first product action — fast.
 
+This is the **day-0 email** in the larger [7-email onboarding sequence](/blog/saas-onboarding-email-sequence) — the handshake before the setup prompts, milestone celebrations, and trial-end nudges that follow.
+
 The 28 templates below are real welcome emails sent by SaaS brands like Calendly, Miro, Stripe, Loom, Notion, and Figma. For each one you get the subject line, the structure, and the pattern you can lift into your own onboarding sequence.
 
 ## TL;DR

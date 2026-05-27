@@ -354,6 +354,66 @@
       "italic_emphasis": "vs",
       "subline": "DigiStorms · When to trigger emails on action, not a schedule",
       "prompt": "Editorial OG card. Cream background. Instrument Serif headline 'Behavior-based vs time-based email' with 'vs' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
+    },
+    {
+      "id": "blog-milestone-emails",
+      "output": "public/og/blog-milestone-emails.webp",
+      "page_file": "src/content/blog/milestone-emails.md",
+      "background": "warm cream #F8F6F2",
+      "headline": "12 SaaS milestone email examples",
+      "italic_emphasis": "milestone",
+      "subline": "DigiStorms · Behavior-triggered emails that reinforce activation",
+      "prompt": "Editorial OG card. Cream background. Instrument Serif headline '12 SaaS milestone email examples' with 'milestone' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
+    },
+    {
+      "id": "blog-upgrade-emails",
+      "output": "public/og/blog-upgrade-emails.webp",
+      "page_file": "src/content/blog/upgrade-emails.md",
+      "background": "warm cream #F8F6F2",
+      "headline": "13 upgrade email examples",
+      "italic_emphasis": "13",
+      "subline": "DigiStorms · Real upgrade emails that convert trial users into customers",
+      "prompt": "Editorial OG card. Cream background. Instrument Serif headline '13 upgrade email examples' with '13' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
+    },
+    {
+      "id": "blog-dunning-emails",
+      "output": "public/og/blog-dunning-emails.webp",
+      "page_file": "src/content/blog/dunning-emails.md",
+      "background": "warm cream #F8F6F2",
+      "headline": "8 SaaS dunning email examples",
+      "italic_emphasis": "dunning",
+      "subline": "DigiStorms · Recover failed payments and reduce involuntary churn",
+      "prompt": "Editorial OG card. Cream background. Instrument Serif headline '8 SaaS dunning email examples' with 'dunning' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
+    },
+    {
+      "id": "blog-saas-newsletter",
+      "output": "public/og/blog-saas-newsletter.webp",
+      "page_file": "src/content/blog/saas-newsletter.md",
+      "background": "warm cream #F8F6F2",
+      "headline": "15 SaaS newsletter examples",
+      "italic_emphasis": "15",
+      "subline": "DigiStorms · Real SaaS newsletters and why they work",
+      "prompt": "Editorial OG card. Cream background. Instrument Serif headline '15 SaaS newsletter examples' with '15' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
+    },
+    {
+      "id": "blog-webinar-email-sequence",
+      "output": "public/og/blog-webinar-email-sequence.webp",
+      "page_file": "src/content/blog/webinar-email-sequence.md",
+      "background": "warm cream #F8F6F2",
+      "headline": "The 7-email webinar sequence",
+      "italic_emphasis": "7-email",
+      "subline": "DigiStorms · From invite to follow-up, with 25 real SaaS examples",
+      "prompt": "Editorial OG card. Cream background. Instrument Serif headline 'The 7-email webinar sequence' with '7-email' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
+    },
+    {
+      "id": "blog-webinar-follow-up-email",
+      "output": "public/og/blog-webinar-follow-up-email.webp",
+      "page_file": "src/content/blog/webinar-follow-up-email.md",
+      "background": "warm cream #F8F6F2",
+      "headline": "13 webinar follow-up email examples",
+      "italic_emphasis": "13",
+      "subline": "DigiStorms · Real follow-up emails with subject lines and segmentation",
+      "prompt": "Editorial OG card. Cream background. Instrument Serif headline '13 webinar follow-up email examples' with '13' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
     }
   ]
 }

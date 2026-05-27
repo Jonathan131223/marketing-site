@@ -17,6 +17,10 @@ But writing a compelling product launch email isn't just about listing features.
 
 In this article, we'll break down what makes a great product launch (or release) email and how to write one that actually converts. I'll walk you through 28 real-world examples — from Notion, Slack, ClickUp, Asana, Webflow, Hunter.io, Loom, Figma, and more — so you can see what works and how to apply it to your own launches.
 
+> **Just need the subject lines?** Jump to our deep-dive on [30 product launch email subject lines](/blog/product-launch-email-subject-lines) — every example below paired with the line that earned its open.
+
+For the wider lifecycle context, the launch email typically lands in your existing users' inboxes between the [welcome series](/blog/saas-welcome-email) and the [milestone email](/blog/milestone-emails) — same audience, different job.
+
 ## Product launch vs product release vs product update — what's the difference?
 
 These three terms get used interchangeably, but they target slightly different moments in your product lifecycle, and the email patterns differ accordingly.

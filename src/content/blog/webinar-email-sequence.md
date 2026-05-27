@@ -20,6 +20,8 @@ Whether you're looking to convert leads, onboard users, or upsell existing custo
 
 In this guide, I'll walk you through everything from strategy to execution—plus examples that'll make hitting "send" a whole lot easier.
 
+Webinar emails sit alongside the rest of your lifecycle program — the [welcome series](/blog/saas-welcome-email) onboards new signups, the [milestone emails](/blog/milestone-emails) celebrate progress, and the webinar sequence below brings those same users back into your funnel for live education.
+
 ## Why a good webinar email sequence is crucial
 
 Running a successful webinar doesn't start when you go live—it starts in the inbox. A well-structured webinar email sequence is what turns casual browsers into webinar registrants, gets people to show up on time, and nudges them toward your desired action afterward.

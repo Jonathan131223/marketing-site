@@ -13,6 +13,8 @@ ogImage: "/og/blog-re-engagement-email-examples.webp"
 
 A re-engagement email is the last conversation you'll have with a user before they're lost for good. Get it right and you reactivate a paying customer. Get it wrong and you reinforce the reason they drifted away in the first place.
 
+This article focuses on the **dormant-user subset** of the broader [customer retention email program](/blog/customer-retention-email-examples) — the moment a still-active user goes quiet, before they cancel.
+
 This article breaks down 12 real re-engagement emails — from brands like Adobe, Canva, Apollo, Semrush, and Pipedrive — and the exact patterns that move dormant users back to active.
 
 ## TL;DR — what makes a re-engagement email work
