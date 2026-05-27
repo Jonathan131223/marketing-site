@@ -1,7 +1,7 @@
 ---
-title: "12 customer retention emails that keep users paying (2026)"
+title: "12 customer retention email examples (real SaaS, 2026)"
 slug: "customer-retention-email-examples"
-description: "12 real customer retention emails from Adobe, Semrush, Dropbox, Notion, Grammarly, Mailchimp — the subject lines, save offers, and timing that keep paying users from churning."
+description: "12 retention emails from Adobe, Semrush, Dropbox, Notion, Grammarly, Mailchimp — milestone, inactivity, expansion, and win-back patterns."
 shortDescription: "12 customer retention emails from real SaaS — and the patterns that keep paying users paying."
 date: "2026-05-11"
 readTime: "10 min read"

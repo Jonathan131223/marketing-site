@@ -1,7 +1,7 @@
 ---
-title: "Transactional email vs marketing email: the practical difference (with examples)"
+title: "Transactional vs marketing email: 2026 SaaS guide"
 slug: "transactional-email-vs-marketing-email"
-description: "Transactional vs marketing emails differ in trigger, intent, deliverability, and consent. Real examples from Stripe, Calendly, Notion, Beehiiv, Zapier and more — plus when to use which."
+description: "Side-by-side: transactional vs marketing email. Real Stripe, Calendly, Notion, Beehiiv, Zapier examples + when to use each."
 shortDescription: "The practical difference between transactional and marketing emails — with real examples and a side-by-side comparison."
 date: "2026-05-06"
 readTime: "8 min read"

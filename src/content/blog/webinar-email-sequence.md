@@ -1,7 +1,7 @@
 ---
-title: "The 7-email webinar sequence (25 SaaS examples, 2026)"
+title: "25 webinar email examples: full 7-email sequence (2026)"
 slug: "webinar-email-sequence"
-description: "The 7-email webinar flow from invite to follow-up — with 25 real examples from Customer.io, Slack, HubSpot, and more. Timing, subject lines, and what to send when."
+description: "25 real webinar emails from Customer.io, Slack, HubSpot, Calendly — invite, reminder, follow-up, no-show, replay. With subject lines and timing."
 shortDescription: "Want more webinar signups and engagement? Here's how your emails can deliver big."
 date: "2026-03-23"
 readTime: "11 min read"

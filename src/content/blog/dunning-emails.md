@@ -1,7 +1,7 @@
 ---
-title: "Dunning emails: best practices + 8 SaaS examples (2026)"
+title: "8 dunning email examples that recover failed payments"
 slug: "dunning-emails"
-description: "A 2026 guide to dunning emails that recover failed payments without breaking trust. 8 real SaaS examples, timing + tone rules, and the exact sequence top brands use."
+description: "8 real dunning emails from SaaS companies that recover failed payments and reduce involuntary churn. With subject lines, timing, and tone rules."
 shortDescription: "Real tips and examples to turn failed payments into recovered revenue--fast."
 date: "2025-03-28"
 readTime: "7 min read"
