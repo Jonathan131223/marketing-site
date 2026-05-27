@@ -8,6 +8,7 @@ readTime: "11 min read"
 thumbnail: "/blog/webinar-email-sequence/banner.webp"
 heroImage: "/blog/webinar-email-sequence/banner.webp"
 libraryTags: ["webinar-invitation", "webinar-confirmation"]
+ogImage: "/og/blog-webinar-email-sequence.webp"
 ---
 
 Running a webinar? Great!

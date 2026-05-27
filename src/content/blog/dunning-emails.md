@@ -8,6 +8,7 @@ readTime: "7 min read"
 thumbnail: "/blog/dunning-emails/banner.webp"
 heroImage: "/blog/dunning-emails/banner.webp"
 libraryTags: ["payment-declined", "payment-reminder", "billing-reminder"]
+ogImage: "/og/blog-dunning-emails.webp"
 ---
 
 Let's be honest—no one gets excited about failed payments.

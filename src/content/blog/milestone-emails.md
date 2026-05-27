@@ -8,6 +8,7 @@ readTime: "8 min read"
 thumbnail: "/blog/milestone-emails/banner.webp"
 heroImage: "/blog/milestone-emails/banner.webp"
 libraryTags: ["milestone-reached", "usage-summary", "year-in-review"]
+ogImage: "/og/blog-milestone-emails.webp"
 ---
 
 If you're growing a SaaS product, milestone emails are one of the easiest ways to boost engagement and keep users moving through the journey.

@@ -8,6 +8,7 @@ readTime: "9 min read"
 thumbnail: "/blog/upgrade-emails/banner.webp"
 heroImage: "/blog/upgrade-emails/banner.webp"
 libraryTags: ["upgrade-cta", "trial-expired-upgrade", "trial-expiration-warning"]
+ogImage: "/og/blog-upgrade-emails.webp"
 ---
 
 If you're building a SaaS product, upgrade emails are one of the most effective tools to turn free users into paying customers.
