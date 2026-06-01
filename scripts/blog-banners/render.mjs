@@ -375,6 +375,14 @@ const CARDS = [
     cta: 'See the triggers',
     icon: 'chart',
   },
+  {
+    slug: 'customer-activation-email-examples',
+    subject: 'Activation playbook',
+    headline: '10 customer activation emails',
+    body: 'Real activation emails from Calendly, Asana, Slack, Ahrefs, Loom, Jira — the nudges that turn signups into active users.',
+    cta: 'See the playbook',
+    icon: 'onboarding',
+  },
 ];
 
 async function renderOne(card) {
