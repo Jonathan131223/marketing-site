@@ -272,6 +272,14 @@ function buildCard({ subject, headline, body, cta, iconKey }) {
 
 const CARDS = [
   {
+    slug: 'onboarding-email-sequence-templates',
+    subject: 'Templates inside',
+    headline: '7 onboarding email templates',
+    body: 'Copy-paste templates backed by real emails from Calendly, Slack, Stripe, Figma, Grammarly, Miro.',
+    cta: 'Copy the templates',
+    icon: 'templates',
+  },
+  {
     slug: 'saas-email-benchmarks',
     subject: 'Inside the data',
     headline: '1,051 lifecycle emails analyzed',

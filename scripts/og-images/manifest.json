@@ -424,6 +424,16 @@
       "italic_emphasis": "10",
       "subline": "DigiStorms · The setup and first-action nudges that drive activation",
       "prompt": "Editorial OG card. Cream background. Instrument Serif headline '10 SaaS customer activation emails' with '10' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
+    },
+    {
+      "id": "blog-onboarding-email-sequence-templates",
+      "output": "public/og/blog-onboarding-email-sequence-templates.webp",
+      "page_file": "src/content/blog/onboarding-email-sequence-templates.md",
+      "background": "warm cream #F8F6F2",
+      "headline": "Onboarding email templates",
+      "italic_emphasis": "templates",
+      "subline": "DigiStorms · 7 copy-paste templates + 12 real SaaS examples",
+      "prompt": "Editorial OG card. Cream background. Instrument Serif headline 'Onboarding email templates' with 'templates' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
     }
   ]
 }
