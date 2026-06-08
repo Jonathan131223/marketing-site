@@ -7,7 +7,7 @@ const SITE_URL = 'https://www.digistorms.ai';
 const DEFAULT_OG_IMAGE = `https://www.digistorms.ai/og/homepage.webp`;
 
 const PAGE_TITLE = 'AI Onboarding Agent for SaaS — DigiStorms';
-const PAGE_DESC = 'DigiStorms is your AI onboarding agent. It tracks user behavior and sends the right emails at the right time. Turn free users into paying customers, on autopilot.';
+const PAGE_DESC = 'Your AI onboarding agent. Tracks user behavior and sends the right emails at the right time. Turn free users into paying customers, on autopilot.';
 
 const webSiteJsonLd = {
   "@context": "https://schema.org",
@@ -71,6 +71,10 @@ const softwareJsonLd = {
   },
 };
 
+// FAQ Q&A text must match the visible content in
+// src/components/homepage/FAQSection.tsx verbatim — Google's Rich Results
+// validator rejected the schema when the answer text diverged. If you change
+// either side, change both.
 const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -78,42 +82,42 @@ const faqJsonLd = {
     {
       "@type": "Question",
       name: "How does DigiStorms generate onboarding emails?",
-      acceptedAnswer: { "@type": "Answer", text: "DigiStorms analyzes your product to understand how users reach value. It identifies key steps in your onboarding journey, then generates a complete email sequence tailored to those milestones." },
+      acceptedAnswer: { "@type": "Answer", text: "DigiStorms analyzes your product to understand how users reach value. It identifies key steps in your onboarding journey, then generates a complete email sequence tailored to those milestones. Instead of writing emails from scratch, you get a structured onboarding flow aligned with how your product actually works." },
     },
     {
       "@type": "Question",
       name: "How is DigiStorms different from other email tools?",
-      acceptedAnswer: { "@type": "Answer", text: "Traditional tools require you to manually design sequences and guess what to send. DigiStorms figures out your onboarding flow automatically and triggers messages based on real user behavior, not fixed schedules." },
+      acceptedAnswer: { "@type": "Answer", text: "Traditional tools require you to manually design sequences and guess what to send. DigiStorms does the opposite — it figures out your onboarding flow automatically and builds the right emails for you. It also triggers messages based on real user behavior, not fixed schedules, so users get the right message at the right time." },
     },
     {
       "@type": "Question",
       name: "Can I edit the emails before sending them?",
-      acceptedAnswer: { "@type": "Answer", text: "Yes. You have full control over every email. DigiStorms generates the initial sequence, but you can review, edit, and customize everything before going live." },
+      acceptedAnswer: { "@type": "Answer", text: "Yes. You have full control over every email. DigiStorms generates the initial sequence for you, but you can review, edit, and customize everything before going live." },
     },
     {
       "@type": "Question",
       name: "How long does it take to get started?",
-      acceptedAnswer: { "@type": "Answer", text: "Just a few minutes. Enter your website, DigiStorms analyzes your product, and your onboarding sequence is generated automatically." },
+      acceptedAnswer: { "@type": "Answer", text: "Just a few minutes. You enter your website, DigiStorms analyzes your product, and your onboarding sequence is generated automatically. You can review and launch it right away." },
     },
     {
       "@type": "Question",
       name: "What do I need to connect to get started?",
-      acceptedAnswer: { "@type": "Answer", text: "All you need is your website. To send emails and track user behavior, connect your email provider and product events via a simple integration." },
+      acceptedAnswer: { "@type": "Answer", text: "All you need is your website to get started. To send emails and track user behavior, you'll connect your email provider and product events (via your existing tools or a simple integration)." },
     },
     {
       "@type": "Question",
       name: "How does DigiStorms know when to send each email?",
-      acceptedAnswer: { "@type": "Answer", text: "DigiStorms sends emails based on what users actually do in your product. It triggers messages when someone signs up, reaches a milestone, or stops engaging." },
+      acceptedAnswer: { "@type": "Answer", text: "DigiStorms sends emails based on what users actually do in your product. For example, it can trigger messages when someone signs up, reaches a milestone, or stops engaging. This ensures every email is sent at the most relevant moment." },
     },
     {
       "@type": "Question",
       name: "Does it really adapt to user behavior automatically?",
-      acceptedAnswer: { "@type": "Answer", text: "Yes. DigiStorms continuously reacts to user activity. If a user progresses quickly, stalls, or skips steps, the system adjusts and sends the most relevant message." },
+      acceptedAnswer: { "@type": "Answer", text: "Yes. DigiStorms continuously reacts to user activity. If a user progresses quickly, stalls, or skips steps, the system adjusts and sends the most relevant message — no manual intervention needed." },
     },
     {
       "@type": "Question",
       name: "What results can I expect from using DigiStorms?",
-      acceptedAnswer: { "@type": "Answer", text: "DigiStorms guides users through onboarding with the right messages at the right time. The result is typically higher activation, better engagement, and more users converting to paid." },
+      acceptedAnswer: { "@type": "Answer", text: "Most SaaS products lose users before they reach value. DigiStorms helps fix that by guiding users through onboarding with the right messages at the right time. The result is typically higher activation, better engagement, and more users converting to paid." },
     },
   ],
 };
