@@ -9,6 +9,13 @@ import EmailGeneratorFallback from '@/components/astro/EmailGeneratorFallback.as
   title="Free Lifecycle Email Generator — DigiStorms"
   description="Generate professional SaaS lifecycle emails in minutes. Choose your use case, fill a quick brief, and let AI create your email sequence."
 >
+  {/*
+    Server-rendered, visually-hidden H1 so crawlers see a page H1 even though
+    EmailGeneratorApp is client:only="react" and never renders during SSG.
+    Sits OUTSIDE the React island so React's hydration doesn't replace it.
+    Was flagged as missing H1 in the Ahrefs audit.
+  */}
+  <h1 class="sr-only">Free lifecycle email generator for SaaS</h1>
   <EmailGeneratorApp client:only="react">
     <EmailGeneratorFallback slot="fallback" />
   </EmailGeneratorApp>
