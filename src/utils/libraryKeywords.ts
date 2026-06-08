@@ -43,8 +43,12 @@ export function titleCase(phrase: string): string {
  * uniqueness signal (199 brand+tag combos in the library have duplicates,
  * so the subject is what disambiguates them).
  *
- * Soft target is 60 chars. When the natural title exceeds it, the subject
- * truncates at a word boundary — never the tag name or brand.
+ * Hard-capped at 60 chars. Subject truncates at a word boundary — never the
+ * tag name or brand. If the prefix alone exceeds 60 chars (very long
+ * tag+brand combos), the subject is dropped entirely; the trailing ": "
+ * separator also goes away so the title doesn't end with a dangling colon.
+ * Was previously a soft cap with a 20-char subject minimum, which let 34
+ * pages overflow per the Ahrefs audit (Warning-indexable-Title_too_long).
  */
 export function composeEmailPageTitle(
   brand: string,
@@ -57,12 +61,19 @@ export function composeEmailPageTitle(
   if (prefix.length + wrapped.length <= TARGET) {
     return `${prefix}${wrapped}`;
   }
-  const maxSubLen = Math.max(20, TARGET - prefix.length - 3); // -3 for the …" suffix
-  const truncated =
-    subject.length > maxSubLen
-      ? subject.slice(0, maxSubLen).replace(/\s+\S*$/, "") + "…"
-      : subject;
-  return `${prefix}"${truncated}"`;
+  // Budget for the quoted-and-truncated subject is whatever's left after the
+  // prefix. -3 accounts for the trailing …" suffix on truncation.
+  const maxSubLen = TARGET - prefix.length - 3;
+  if (maxSubLen >= 1) {
+    const truncated = subject.slice(0, maxSubLen).replace(/\s+\S*$/, "") + "…";
+    return `${prefix}"${truncated}"`;
+  }
+  // Prefix alone is at or over budget — drop the subject and the trailing
+  // ": " so the title reads cleanly as just "{Tag} email example — {Brand}".
+  const prefixNoColon = `${tagName} email example — ${brand}`;
+  return prefixNoColon.length <= TARGET
+    ? prefixNoColon
+    : prefixNoColon.slice(0, TARGET - 1).replace(/\s+\S*$/, "") + "…";
 }
 
 /**
