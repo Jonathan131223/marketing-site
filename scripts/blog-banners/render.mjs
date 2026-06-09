@@ -391,6 +391,14 @@ const CARDS = [
     cta: 'See the playbook',
     icon: 'onboarding',
   },
+  {
+    slug: 'behavioral-email-marketing',
+    subject: 'Behavioral playbook',
+    headline: '10 behavioral email examples',
+    body: 'Real behavioral emails from Freepik, Notion, Buffer, Webflow, Ahrefs — triggered by what users do, not the calendar.',
+    cta: 'See the triggers',
+    icon: 'sparkle',
+  },
 ];
 
 async function renderOne(card) {
