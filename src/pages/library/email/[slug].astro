@@ -91,12 +91,19 @@ const ogTitle = `${primaryTagName} email example — ${brandName}: "${subjectCle
 const pageUrl = `${SITE_URL}/library/email/${email.slug}`;
 const ogImage = email.thumb || DEFAULT_OG_IMAGE;
 
-const jsonLd = {
+// Schema.org Article and BreadcrumbList emitted as separate top-level JSON-LD
+// entries (BaseLayout accepts an array). `image` must be an absolute URL or
+// Google rejects the structured data — was previously a relative `/email-screenshots/...`
+// path which tripped Notice-Structured_data_has_schema.org_validation_error on
+// every library email page in the Ahrefs audit.
+const absoluteImage = email.thumb ? `${SITE_URL}${email.thumb}` : DEFAULT_OG_IMAGE;
+const articleJsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: email.subject,
   description: pageDesc,
-  ...(email.thumb ? { image: email.thumb } : {}),
+  image: absoluteImage,
+  mainEntityOfPage: { "@type": "WebPage", "@id": pageUrl },
   url: pageUrl,
   ...(isoDate(email.setDate) ? { datePublished: isoDate(email.setDate) } : {}),
   author: { "@type": "Organization", name: brandName },
@@ -106,16 +113,17 @@ const jsonLd = {
     url: SITE_URL,
     logo: { "@type": "ImageObject", url: DEFAULT_OG_IMAGE },
   },
-  breadcrumb: {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Library", item: `${SITE_URL}/library` },
-      { "@type": "ListItem", position: 2, name: brandName, item: `${SITE_URL}/library/brand/${email.brand}` },
-      { "@type": "ListItem", position: 3, name: email.subject, item: pageUrl },
-    ],
-  },
 };
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Library", item: `${SITE_URL}/library` },
+    { "@type": "ListItem", position: 2, name: brandName, item: `${SITE_URL}/library/brand/${email.brand}` },
+    { "@type": "ListItem", position: 3, name: email.subject, item: pageUrl },
+  ],
+};
+const jsonLd = [articleJsonLd, breadcrumbJsonLd];
 ---
 
 <PageLayout

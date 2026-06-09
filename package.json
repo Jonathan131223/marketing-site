@@ -22,7 +22,8 @@
     "gsc:secrets": "node scripts/gsc/print-secrets.mjs",
     "lib:fetch": "node scripts/library-import/fetch-gmail-html.mjs",
     "lib:render": "node scripts/library-import/render-screenshots.mjs",
-    "lib:write": "node scripts/library-import/write-data.mjs"
+    "lib:write": "node scripts/library-import/write-data.mjs",
+    "compress:screenshots": "node scripts/compress-email-screenshots.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",

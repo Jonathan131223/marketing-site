@@ -76,11 +76,11 @@ const staticEntries = [
   urlEntry(`${BASE_URL}/about`,              "2026-04-07", "monthly",  "0.6"),
   urlEntry(`${BASE_URL}/roi-calculator`,     "2026-01-01", "monthly",  "0.7"),
   urlEntry(`${BASE_URL}/email-generator`,    "2026-01-01", "monthly",  "0.7"),
-  urlEntry(`${BASE_URL}/privacy`,            "2026-01-01", "yearly",   "0.3"),
-  urlEntry(`${BASE_URL}/terms`,              "2026-01-01", "yearly",   "0.3"),
+  // /privacy, /terms, /email-generator/templates omitted: each sets
+  // noindex={true} in its .astro source. Including them tripped
+  // Error-Noindex_page_in_sitemap in the Ahrefs audit.
   urlEntry(`${BASE_URL}/lifecycle-score`,    "2026-01-01", "monthly",  "0.7"),
   urlEntry(`${BASE_URL}/contact`,            "2026-04-07", "monthly",  "0.6"),
-  urlEntry(`${BASE_URL}/email-generator/templates`, "2026-01-01", "monthly", "0.7"),
   // Blog posts
   urlEntry(`${BASE_URL}/blog/behavioral-email-marketing`, "2026-06-08", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/onboarding-email-sequence-templates`, "2026-06-08", "monthly", "0.9"),
