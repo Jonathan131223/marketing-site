@@ -444,6 +444,16 @@
       "italic_emphasis": "10",
       "subline": "DigiStorms · Triggered by what users do, not the calendar",
       "prompt": "Editorial OG card. Cream background. Instrument Serif headline '10 behavioral email examples' with '10' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
+    },
+    {
+      "id": "blog-best-time-to-send-marketing-emails",
+      "output": "public/og/blog-best-time-to-send-marketing-emails.webp",
+      "page_file": "src/content/blog/best-time-to-send-marketing-emails.md",
+      "background": "warm cream #F8F6F2",
+      "headline": "Best time to send marketing emails",
+      "italic_emphasis": "send",
+      "subline": "DigiStorms · Why SaaS lifecycle email runs on triggers, not the clock",
+      "prompt": "Editorial OG card. Cream background. Instrument Serif headline 'Best time to send marketing emails' with 'send' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
     }
   ]
 }

@@ -82,6 +82,7 @@ const staticEntries = [
   urlEntry(`${BASE_URL}/lifecycle-score`,    "2026-01-01", "monthly",  "0.7"),
   urlEntry(`${BASE_URL}/contact`,            "2026-04-07", "monthly",  "0.6"),
   // Blog posts
+  urlEntry(`${BASE_URL}/blog/best-time-to-send-marketing-emails`, "2026-06-10", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/behavioral-email-marketing`, "2026-06-08", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/onboarding-email-sequence-templates`, "2026-06-08", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/customer-activation-email-examples`, "2026-06-01", "monthly", "0.9"),

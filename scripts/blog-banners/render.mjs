@@ -399,6 +399,14 @@ const CARDS = [
     cta: 'See the triggers',
     icon: 'sparkle',
   },
+  {
+    slug: 'best-time-to-send-marketing-emails',
+    subject: 'Send-time playbook',
+    headline: 'Best time to send emails',
+    body: 'Mid-week mornings for broadcasts — but real SaaS emails from Calendly, Canva, Buffer run on triggers, not the clock.',
+    cta: 'See the timing',
+    icon: 'chart',
+  },
 ];
 
 async function renderOne(card) {
