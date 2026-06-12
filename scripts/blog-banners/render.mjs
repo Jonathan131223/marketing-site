@@ -407,6 +407,14 @@ const CARDS = [
     cta: 'See the timing',
     icon: 'chart',
   },
+  {
+    slug: 'free-to-paid-conversion-emails',
+    subject: 'Conversion playbook',
+    headline: '10 free-to-paid conversion emails',
+    body: 'Real trial-to-paid emails from Pipedrive, ClickUp, Loom, Calendly, Jira, Asana — the triggers that drive upgrades.',
+    cta: 'See the playbook',
+    icon: 'rocket',
+  },
 ];
 
 async function renderOne(card) {

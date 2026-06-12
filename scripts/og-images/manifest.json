@@ -454,6 +454,16 @@
       "italic_emphasis": "send",
       "subline": "DigiStorms · Why SaaS lifecycle email runs on triggers, not the clock",
       "prompt": "Editorial OG card. Cream background. Instrument Serif headline 'Best time to send marketing emails' with 'send' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
+    },
+    {
+      "id": "blog-free-to-paid-conversion-emails",
+      "output": "public/og/blog-free-to-paid-conversion-emails.webp",
+      "page_file": "src/content/blog/free-to-paid-conversion-emails.md",
+      "background": "warm cream #F8F6F2",
+      "headline": "10 free-to-paid conversion emails",
+      "italic_emphasis": "10",
+      "subline": "DigiStorms · The triggers that turn trials into revenue",
+      "prompt": "Editorial OG card. Cream background. Instrument Serif headline '10 free-to-paid conversion emails' with '10' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
     }
   ]
 }
