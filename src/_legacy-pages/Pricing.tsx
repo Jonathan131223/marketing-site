@@ -206,12 +206,14 @@ const Pricing: React.FC = () => {
               {/* CTA */}
               <div className="px-8 pb-8">
                 {tier.isContact ? (
-                  <Link
-                    to="/contact"
+                  <a
+                    href="https://calendly.com/jonathan-digistorms/30-min-call"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block w-full text-center py-3 px-6 rounded-xl font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors"
                   >
-                    Contact us
-                  </Link>
+                    Book a demo
+                  </a>
                 ) : (
                   <a
                     href={appUrl("/portal")}

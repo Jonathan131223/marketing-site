@@ -41,7 +41,6 @@ Jonathan Bernard (https://www.linkedin.com/in/jonathan-digistorms/) — lifecycl
 - ROI Calculator: https://www.digistorms.ai/roi-calculator
 - Email Generator: https://www.digistorms.ai/email-generator
 - Manifesto: https://www.digistorms.ai/manifesto
-- Contact: https://www.digistorms.ai/contact
 
 ## Email Library
 

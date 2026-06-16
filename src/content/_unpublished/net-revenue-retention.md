@@ -208,4 +208,4 @@ Ready to boost your NRR? Let DigiStorms help!
 
 Our email marketing strategies for SaaS products are designed to engage your customers, drive expansions, and reduce churn.
 
-[Contact us today](/contact) to unlock your next stage of sustainable revenue growth.
+[Book a demo today](https://calendly.com/jonathan-digistorms/30-min-call) to unlock your next stage of sustainable revenue growth.

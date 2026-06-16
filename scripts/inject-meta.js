@@ -465,7 +465,7 @@ writeRoute("/", buildHead({
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "customer support",
-        url: `${BASE_URL}/contact`,
+        url: "https://calendly.com/jonathan-digistorms/30-min-call",
       },
     },
     // c. SoftwareApplication schema
@@ -697,29 +697,7 @@ writeRoute("/about", buildHead({
 }));
 staticPageCount++;
 
-// ── 7. Contact /contact ──────────────────────────────────────────────────────
-
-writeRoute("/contact", buildHead({
-  title: "Contact Us | DigiStorms",
-  description: "Get in touch with the DigiStorms team. We help SaaS companies build lifecycle email sequences that drive activation, retention, and revenue.",
-  canonical: `${BASE_URL}/contact`,
-  jsonLd: [
-    {
-      "@context": "https://schema.org",
-      "@type": "ContactPage",
-      name: "Contact DigiStorms",
-      url: `${BASE_URL}/contact`,
-      description: "Get in touch with the DigiStorms team. We help SaaS companies build lifecycle email sequences that drive activation, retention, and revenue.",
-    },
-    breadcrumbSchema([
-      { name: "Home", url: BASE_URL },
-      { name: "Contact", url: `${BASE_URL}/contact` },
-    ]),
-  ],
-}));
-staticPageCount++;
-
-// ── 8. ROI Calculator /roi-calculator ────────────────────────────────────────
+// ── 7. ROI Calculator /roi-calculator ────────────────────────────────────────
 
 writeRoute("/roi-calculator", buildHead({
   title: "Onboarding Email ROI Calculator | DigiStorms",

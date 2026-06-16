@@ -7,7 +7,6 @@ import { StoreProvider } from "@/store/context";
 const Pricing = lazy(() => import("./pages/Pricing"));
 const TermsOfService = lazy(() => import("./pages/TermsOfService"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
-const Contact = lazy(() => import("./pages/Contact"));
 const Manifesto = lazy(() => import("./pages/Manifesto"));
 const About = lazy(() => import("./pages/About"));
 const LifecycleScorePage = lazy(() => import("./pages/LifecycleScorePage"));
@@ -60,7 +59,6 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/lifecycle-score" element={<LifecycleScorePage />} />
           <Route path="/roi-calculator" element={<ROICalculator />} />
-          <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfService />} />
           <Route path="/blog" element={<Blog />} />

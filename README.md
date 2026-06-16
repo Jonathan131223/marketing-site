@@ -10,7 +10,6 @@ Public marketing site for DigiStorms. All product CTAs (Sign up, Login, Generate
 - `/pricing` — Pricing
 - `/manifesto` — Manifesto
 - `/about` — About
-- `/contact` — Contact
 - `/privacy` — Privacy policy
 - `/terms` — Terms of service
 

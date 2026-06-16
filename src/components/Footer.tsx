@@ -254,14 +254,6 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  to="/contact"
-                  className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
-                >
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link
                   to="/privacy"
                   className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
                 >

@@ -88,7 +88,7 @@ const Index = () => {
           "contactPoint": {
             "@type": "ContactPoint",
             "contactType": "customer support",
-            "url": "https://www.digistorms.ai/contact"
+            "url": "https://calendly.com/jonathan-digistorms/30-min-call"
           }
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
