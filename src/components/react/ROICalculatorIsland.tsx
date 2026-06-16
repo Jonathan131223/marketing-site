@@ -13,10 +13,7 @@ import {
 import { appUrl } from "@/config/appUrl";
 
 const PLANS = [
-  { label: "Free – $0 / month (100 users)", value: "0" },
-  { label: "Pro – $19 / month (1,000 users)", value: "19" },
-  { label: "Business – $59 / month (5,000 users)", value: "59" },
-  { label: "Concierge – $690 / month (done for you)", value: "690" },
+  { label: "DigiStorms — from $299 / month", value: "299" },
 ];
 
 const formatNumber = (num: number) =>

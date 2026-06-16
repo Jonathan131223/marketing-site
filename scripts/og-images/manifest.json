@@ -32,8 +32,8 @@
       "background": "warm cream #F8F6F2",
       "headline": "AI onboarding agent for SaaS",
       "italic_emphasis": "onboarding",
-      "subline": "DigiStorms · Turn free users into paying customers, on autopilot",
-      "prompt": "A 1200x630 horizontal Open Graph social-share card. Solid warm cream background (#F8F6F2) with the faintest paper texture, completely flat and uncluttered. Centered, the headline reads exactly: 'AI onboarding agent for SaaS', set in a large editorial serif font (Instrument Serif or Playfair Display style) approximately 96 pixels tall, color slate-900 navy (#0F172A), letter-spacing slightly tight, line-height 1.1. The single word 'onboarding' appears in italic and in primary blue (#2563EB) — the rest of the headline stays upright in navy. Below the headline, a single line of muted body text in clean sans-serif (Instrument Sans or Inter) reading: 'DigiStorms · Turn free users into paying customers, on autopilot' — color slate-500 grey (#475569), about 24 pixels tall. In the lower-left corner, a small wordmark 'DigiStorms' in clean modern sans-serif, color slate-900 navy. The composition is generous and editorial with significant negative space. Sharp, crisp, magazine-quality typography. Render every text character exactly as written, no decorative additions, no icons, no shapes, no gradients."
+      "subline": "DigiStorms · Turn new signups into paying customers, on autopilot",
+      "prompt": "A 1200x630 horizontal Open Graph social-share card. Solid warm cream background (#F8F6F2) with the faintest paper texture, completely flat and uncluttered. Centered, the headline reads exactly: 'AI onboarding agent for SaaS', set in a large editorial serif font (Instrument Serif or Playfair Display style) approximately 96 pixels tall, color slate-900 navy (#0F172A), letter-spacing slightly tight, line-height 1.1. The single word 'onboarding' appears in italic and in primary blue (#2563EB) — the rest of the headline stays upright in navy. Below the headline, a single line of muted body text in clean sans-serif (Instrument Sans or Inter) reading: 'DigiStorms · Turn new signups into paying customers, on autopilot' — color slate-500 grey (#475569), about 24 pixels tall. In the lower-left corner, a small wordmark 'DigiStorms' in clean modern sans-serif, color slate-900 navy. The composition is generous and editorial with significant negative space. Sharp, crisp, magazine-quality typography. Render every text character exactly as written, no decorative additions, no icons, no shapes, no gradients."
     },
     {
       "id": "blog",
@@ -140,10 +140,10 @@
       "output": "public/og/pricing.webp",
       "page_file": "src/pages/pricing.astro",
       "background": "warm cream #F8F6F2",
-      "headline": "Free for your first 100 users",
-      "italic_emphasis": "Free",
-      "subline": "DigiStorms · From $0 to $149 — pay for what you onboard",
-      "prompt": "A 1200x630 horizontal Open Graph social-share card. Solid warm cream background (#F8F6F2) with the faintest paper texture, flat and uncluttered. Centered, the headline reads exactly: 'Free for your first 100 users', set in a large editorial serif (Instrument Serif or Playfair Display), approximately 96 pixels tall, color slate-900 navy (#0F172A), letter-spacing slightly tight, line-height 1.1. The single word 'Free' appears in italic and in primary blue (#2563EB) — the rest stays upright in navy. Below, a single line of muted body text in clean sans-serif: 'DigiStorms · From $0 to $149 — pay for what you onboard', slate-500 grey (#475569), about 24 pixels tall. In the lower-left corner, small wordmark 'DigiStorms' in slate-900 sans-serif. Generous negative space, editorial composition, magazine-quality typography. Render every character exactly as written. No icons, no decorative shapes, no pricing tier cards, no dollar-sign graphics — text only."
+      "headline": "Onboarding that runs itself",
+      "italic_emphasis": "runs itself",
+      "subline": "DigiStorms · Custom plans from $299/mo — book a demo",
+      "prompt": "A 1200x630 horizontal Open Graph social-share card. Solid warm cream background (#F8F6F2) with the faintest paper texture, flat and uncluttered. Centered, the headline reads exactly: 'Onboarding that runs itself', set in a large editorial serif (Instrument Serif or Playfair Display), approximately 96 pixels tall, color slate-900 navy (#0F172A), letter-spacing slightly tight, line-height 1.1. The two words 'runs itself' appear in italic and in primary blue (#2563EB) — the rest stays upright in navy. Below, a single line of muted body text in clean sans-serif: 'DigiStorms · Custom plans from $299/mo — book a demo', slate-500 grey (#475569), about 24 pixels tall. In the lower-left corner, small wordmark 'DigiStorms' in slate-900 sans-serif. Generous negative space, editorial composition, magazine-quality typography. Render every character exactly as written. No icons, no decorative shapes, no pricing tier cards, no dollar-sign graphics — text only."
     },
     {
       "id": "library",

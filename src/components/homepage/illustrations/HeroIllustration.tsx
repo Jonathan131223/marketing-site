@@ -159,7 +159,7 @@ export const HeroIllustration: React.FC = () => {
               </div>
               <div className="ml-auto text-right">
                 <p className="text-[11px] font-medium text-slate-500">Day 4 of trial</p>
-                <p className="text-[10px] text-slate-400">Free plan</p>
+                <p className="text-[10px] text-slate-400">Lifecycle</p>
               </div>
             </div>
 
