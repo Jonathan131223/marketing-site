@@ -41,7 +41,7 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
             </button>
           </div>
           <p className="text-sm text-slate-400 mt-3">
-            Free for your first 100 users. No card required.
+            See your sequence in minutes. No signup required.
           </p>
         </div>
       </div>

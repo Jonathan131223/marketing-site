@@ -70,16 +70,13 @@ export const Navbar: React.FC<NavbarProps> = ({ pathname: initialPathname }) => 
   }, [currentPathname]);
 
   const baseLoginUrl = appUrl("/portal");
-  const baseSignUpUrl = appUrl("/portal");
   const [loginUrl, setLoginUrl] = useState(baseLoginUrl);
-  const [signUpUrl, setSignUpUrl] = useState(baseSignUpUrl);
   const [calendlyUrl, setCalendlyUrl] = useState(CALENDLY_URL);
 
   useEffect(() => {
     setLoginUrl(appendUtmsToUrl(baseLoginUrl));
-    setSignUpUrl(appendUtmsToUrl(baseSignUpUrl));
     setCalendlyUrl(appendUtmsToUrl(CALENDLY_URL));
-  }, [baseLoginUrl, baseSignUpUrl]);
+  }, [baseLoginUrl]);
 
   return (
     <>
@@ -123,20 +120,6 @@ export const Navbar: React.FC<NavbarProps> = ({ pathname: initialPathname }) => 
           {/* Right: CTAs */}
           <div className="hidden md:flex items-center gap-3 flex-shrink-0">
             <Button
-              variant="ghost"
-              className="text-sm text-slate-700 hover:text-slate-900"
-              asChild
-            >
-              <a
-                href={calendlyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => track.ctaClicked({ cta_label: "Talk to founder", cta_destination: calendlyUrl, page_section: "nav" })}
-              >
-                Talk to founder
-              </a>
-            </Button>
-            <Button
               variant="outline"
               className="text-sm text-slate-700 hover:text-slate-900 border-slate-300 bg-white"
               asChild
@@ -153,10 +136,12 @@ export const Navbar: React.FC<NavbarProps> = ({ pathname: initialPathname }) => 
               asChild
             >
               <a
-                href={signUpUrl}
-                onClick={() => track.ctaClicked({ cta_label: "Sign up free", cta_destination: signUpUrl, page_section: "nav" })}
+                href={calendlyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => track.ctaClicked({ cta_label: "Book a demo", cta_destination: calendlyUrl, page_section: "nav" })}
               >
-                Sign up free
+                Book a demo
               </a>
             </Button>
           </div>
@@ -177,10 +162,12 @@ export const Navbar: React.FC<NavbarProps> = ({ pathname: initialPathname }) => 
               asChild
             >
               <a
-                href={signUpUrl}
-                onClick={() => track.ctaClicked({ cta_label: "Sign up free (mobile)", cta_destination: signUpUrl, page_section: "nav" })}
+                href={calendlyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => track.ctaClicked({ cta_label: "Book a demo (mobile)", cta_destination: calendlyUrl, page_section: "nav" })}
               >
-                Sign up free
+                Book a demo
               </a>
             </Button>
             <button
@@ -225,11 +212,11 @@ export const Navbar: React.FC<NavbarProps> = ({ pathname: initialPathname }) => 
               rel="noopener noreferrer"
               className="block px-3 py-2.5 text-sm font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors"
               onClick={() => {
-                track.ctaClicked({ cta_label: "Talk to founder (mobile)", cta_destination: calendlyUrl, page_section: "nav" });
+                track.ctaClicked({ cta_label: "Book a demo (mobile)", cta_destination: calendlyUrl, page_section: "nav" });
                 setMobileOpen(false);
               }}
             >
-              Talk to founder
+              Book a demo
             </a>
             <a
               href={loginUrl}

@@ -367,7 +367,7 @@ export default function LifecycleScoreIsland() {
                           className="w-full text-muted-foreground hover:text-foreground"
                         >
                           <Calendar className="mr-2 h-4 w-4" />
-                          Prefer talking to an expert? Book a strategy call
+                          Book a demo
                         </Button>
                       </a>
 

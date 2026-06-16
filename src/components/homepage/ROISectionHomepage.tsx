@@ -14,9 +14,7 @@ import { normalizeWebsiteUrl } from "@/lib/normalizeWebsiteUrl";
 const formatNumber = (num: number) => new Intl.NumberFormat("en-US").format(num);
 
 const PLANS = [
-  { label: "Free: 100 users/month ($0/mo)", value: "0", users: 100 },
-  { label: "Pro: 1,000 users/month ($19/mo)", value: "19", users: 1000 },
-  { label: "Business: 5,000 users/month ($59/mo)", value: "59", users: 5000 },
+  { label: "DigiStorms — from $299/mo", value: "299", users: 1000 },
 ];
 
 interface ROISectionHomepageProps {
@@ -205,7 +203,7 @@ export const ROISectionHomepage: React.FC<ROISectionHomepageProps> = ({
                       >
                         Generate my onboarding emails
                       </button>
-                      <p className="text-sm text-slate-500">100 onboarded users free. No card required.</p>
+                      <p className="text-sm text-slate-500">See your sequence in minutes. No signup required.</p>
                     </div>
                   </div>
                 </>

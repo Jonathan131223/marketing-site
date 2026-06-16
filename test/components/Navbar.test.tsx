@@ -9,10 +9,11 @@
  * 1. Regressions to the ISSUE-008 env-var rename — if a future refactor
  *    re-introduces a VITE_* fallback, the default URL would diverge between
  *    SSR and client.
- * 2. Missing CTAs — the navbar must always have "Sign up free", "Login",
- *    and "Talk to founder" links as they're the core conversion paths.
- *    (Copy note: "Talk to founder" replaced "Book a demo" in v0.1.x to
- *    better fit the PLG / indie-founder ICP — points at the same Calendly.)
+ * 2. Missing CTAs — the navbar must always have "Book a demo" and "Login"
+ *    links as they're the core conversion paths. (Copy note: the sales-led
+ *    pivot collapsed "Sign up free" + "Talk to founder" into a single
+ *    "Book a demo" CTA pointing at Calendly; "Login" still points at the
+ *    app portal / demo-gate.)
  * 3. A broken mobile menu toggle — pressing the hamburger should open a
  *    menu drawer.
  */
@@ -43,13 +44,13 @@ describe("Navbar — smoke", () => {
     expect(screen.getAllByRole("link", { name: /^pricing$/i }).length).toBeGreaterThan(0);
   });
 
-  it("renders the Sign up free CTA that points to the app portal", () => {
+  it("renders the Book a demo CTA pointing at Calendly", () => {
     render(<Navbar />);
-    const signupLinks = screen.getAllByRole("link", { name: /sign up free/i });
-    expect(signupLinks.length).toBeGreaterThan(0);
-    // All Sign up links should go to the portal, not to a broken path.
-    signupLinks.forEach((link) => {
-      expect(link).toHaveAttribute("href", expect.stringContaining("/portal"));
+    const demoLinks = screen.getAllByRole("link", { name: /book a demo/i });
+    expect(demoLinks.length).toBeGreaterThan(0);
+    // All Book a demo links should go to Calendly, not to a broken path.
+    demoLinks.forEach((link) => {
+      expect(link).toHaveAttribute("href", expect.stringContaining("calendly.com"));
     });
   });
 
@@ -62,13 +63,10 @@ describe("Navbar — smoke", () => {
     });
   });
 
-  it("renders the Talk to founder CTA pointing at Calendly", () => {
+  it("no longer renders retired Sign up free or Talk to founder CTAs", () => {
     render(<Navbar />);
-    const demoLinks = screen.getAllByRole("link", { name: /talk to founder/i });
-    expect(demoLinks.length).toBeGreaterThan(0);
-    demoLinks.forEach((link) => {
-      expect(link).toHaveAttribute("href", expect.stringContaining("calendly.com"));
-    });
+    expect(screen.queryAllByRole("link", { name: /sign up free/i }).length).toBe(0);
+    expect(screen.queryAllByRole("link", { name: /talk to founder/i }).length).toBe(0);
   });
 
   it("opens the mobile menu when the hamburger button is clicked", async () => {
