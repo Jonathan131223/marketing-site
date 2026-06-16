@@ -80,7 +80,6 @@ const staticEntries = [
   // noindex={true} in its .astro source. Including them tripped
   // Error-Noindex_page_in_sitemap in the Ahrefs audit.
   urlEntry(`${BASE_URL}/lifecycle-score`,    "2026-01-01", "monthly",  "0.7"),
-  urlEntry(`${BASE_URL}/contact`,            "2026-04-07", "monthly",  "0.6"),
   // Blog posts
   urlEntry(`${BASE_URL}/blog/free-to-paid-conversion-emails`, "2026-06-12", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/best-time-to-send-marketing-emails`, "2026-06-10", "monthly", "0.9"),

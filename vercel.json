@@ -4,6 +4,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/contact",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
       "source": "/use-cases",
       "destination": "/library/usecases",
       "permanent": true
