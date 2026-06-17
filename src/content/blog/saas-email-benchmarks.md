@@ -257,5 +257,3 @@ Here are the most quotable findings from our analysis of 1,051 SaaS lifecycle em
 ## Explore the full library
 
 Every email in this study is available to browse in the [DigiStorms Email Library](https://www.digistorms.ai/library). Filter by brand, lifecycle stage, or email type to see exactly what companies like Calendly, Notion, Slack, and Loom are sending at every point in the user journey.
-
-And if you want to generate your own onboarding or lifecycle email sequence based on patterns from the best SaaS companies, [try DigiStorms free](https://www.digistorms.ai).
