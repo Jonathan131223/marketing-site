@@ -1,6 +1,5 @@
 ---
 import PageLayout from '@/layouts/PageLayout.astro';
-import { appUrl } from '@/config/appUrl';
 
 interface Feature {
   name: string;
@@ -83,7 +82,7 @@ const softwareSchema = [
     url: "https://www.digistorms.ai",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
-    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    offers: { "@type": "AggregateOffer", lowPrice: "299", priceCurrency: "USD", url: "https://www.digistorms.ai/pricing" },
   },
   {
     "@context": "https://schema.org",
@@ -95,7 +94,7 @@ const softwareSchema = [
 ];
 
 const jsonLd = [breadcrumbSchema, faqSchema, ...softwareSchema];
-const ctaHref = appUrl("/portal");
+const ctaHref = "https://calendly.com/jonathan-digistorms/30-min-call";
 ---
 
 <PageLayout
@@ -207,17 +206,19 @@ const ctaHref = appUrl("/portal");
       {/* CTA */}
       <div class="bg-blue-50 rounded-2xl p-8 text-center">
         <h2 class="text-3xl sm:text-4xl font-serif text-slate-900 tracking-[-0.01em] mb-3">
-          Ready to automate your onboarding emails?
+          Want onboarding that prints revenue on autopilot?
         </h2>
         <p class="text-slate-500 mb-6">
-          DigiStorms generates your full email sequence in minutes — for free.
+          DigiStorms is the done-for-you AI agent that builds and runs the sequence turning your signups into paying customers — tailored to your product. Book a demo and we'll map it to your funnel.
         </p>
         <a
           href={ctaHref}
+          target="_blank"
+          rel="noopener noreferrer"
           class="inline-flex items-center gap-2 text-white font-semibold px-8 py-4 rounded-xl text-lg transition-colors"
           style="background-color: #1D4ED8;"
         >
-          Try DigiStorms free
+          Book a demo
         </a>
       </div>
 

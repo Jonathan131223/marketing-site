@@ -9,15 +9,16 @@ import ComparisonPage from '@/components/astro/ComparisonPage.astro';
   competitorUrl="https://resend.com"
   competitorTagline="Email API for developers"
   title="DigiStorms vs Resend: AI onboarding vs email API (2026)"
-  metaDescription="DigiStorms vs Resend: AI onboarding agent vs developer email API. Compare pricing, AI sequence generation, free tier, and setup time for SaaS."
+  metaDescription="DigiStorms vs Resend: done-for-you AI onboarding agent vs developer email API. Compare pricing, AI sequence generation, done-for-you setup, and activation for SaaS."
   h1="DigiStorms vs Resend"
   subtitle="AI onboarding agent vs developer email API"
-  verdict="Resend and DigiStorms solve different problems. Resend is a developer email API for sending transactional and marketing emails — you build everything yourself with React Email. DigiStorms is an AI agent that generates your onboarding email sequences for you. Choose Resend if you're a developer who wants full code control over email sending. Choose DigiStorms if you want lifecycle email sequences created automatically without coding."
+  verdict="Resend and DigiStorms sit at opposite ends of the build-vs-done-for-you spectrum. Resend is a powerful developer email API — you configure, build, and operate everything yourself with React Email and your own sending logic. DigiStorms is the done-for-you AI onboarding agent: it analyzes your product, maps your activation milestones, then writes and runs the behavior-based sequence that turns signups into paying customers — tailored to you, tied to revenue. Choose Resend to build it yourself. Choose DigiStorms to have it done for you and pointed at activation and revenue."
   features={[
     { name: "AI sequence generation", digistorms: true, competitor: false },
     { name: "Email sending API", digistorms: false, competitor: true },
     { name: "React Email templates", digistorms: false, competitor: true },
-    { name: "Free tier", digistorms: true, competitor: true },
+    { name: "Done-for-you setup", digistorms: true, competitor: false },
+    { name: "AI agent tailored to your product", digistorms: true, competitor: false },
     { name: "Onboarding sequence generator", digistorms: true, competitor: false },
     { name: "Email library (1,000+ examples)", digistorms: true, competitor: false },
     { name: "Transactional emails", digistorms: false, competitor: true },
@@ -25,29 +26,33 @@ import ComparisonPage from '@/components/astro/ComparisonPage.astro';
     { name: "Setup time", digistorms: "5 minutes", competitor: "Dev time required" },
     { name: "Webhooks", digistorms: false, competitor: true },
   ]}
-  pricingDigistorms="Free – $149/mo"
+  pricingDigistorms="Custom — from $299/mo"
   pricingCompetitor="Free – $80/mo"
   pricingNote="Free for 100 emails/day. $20/mo for 50K emails."
   faqs={[
     {
       question: "Are DigiStorms and Resend competitors?",
-      answer: "Not exactly — they solve different problems. Resend is an email sending API for developers who want to build their own email infrastructure with React Email templates. DigiStorms is an AI agent that generates onboarding email sequences automatically. You could even use them together: DigiStorms to design the sequences and Resend to send them.",
+      answer: "Not exactly — they solve different problems. Resend is an email sending API for developers who want to build their own email infrastructure with React Email templates. DigiStorms is a done-for-you AI onboarding agent: we analyze your product, map your activation milestones, then write and run the sequence for you. You could even use them together — DigiStorms to design and drive the onboarding strategy, Resend to send the mail.",
     },
     {
-      question: "Which is better for a non-technical founder?",
-      answer: "DigiStorms is dramatically better for non-technical users. It requires zero coding — enter your website URL and get a complete onboarding sequence in minutes. Resend is a developer tool that requires engineering resources to integrate, build templates with React Email, and manage sending infrastructure.",
+      question: "What's the real difference — self-serve vs done-for-you?",
+      answer: "Resend hands you a builder: you write the templates, wire the triggers, and operate the sending yourself. DigiStorms hands you results. We build and run the onboarding sequence for you — an AI agent that studies your product, maps where users activate, and reacts to what each user actually does. It's for teams serious about activation who don't want to assemble it themselves.",
     },
     {
-      question: "Can I use DigiStorms and Resend together?",
-      answer: "Yes, and it can be a powerful combination. DigiStorms generates your onboarding email strategy, sequences, and content based on AI analysis of your product. Resend provides the infrastructure to actually send those emails at scale with high deliverability. The two tools are complementary rather than competing.",
+      question: "Why is DigiStorms behavior-based instead of time-based?",
+      answer: "Because a fixed day-1 / day-3 / day-7 drip ignores what the user is doing. The DigiStorms agent reacts to real product behavior — a user who hit an activation milestone gets a different next step than one who stalled. That's how onboarding turns signups into paying customers instead of just sending email on a timer. Building behavior triggers yourself in Resend is possible, but you'd design, code, and maintain all of it.",
     },
     {
-      question: "How does pricing compare?",
-      answer: "Both offer free tiers. Resend is free for 100 emails per day, with paid plans from $20/mo based on volume. DigiStorms is free for your first 100 new signups, with paid plans from $19/mo based on signups onboarded. The pricing models are different because the tools serve different purposes — sending infrastructure vs. sequence generation.",
+      question: "Who should choose Resend?",
+      answer: "Developers who want full code control over email sending and are happy to build and operate their own lifecycle logic. Resend is a powerful, well-built API for transactional and marketing email with React Email templates, webhooks, and high deliverability. If your goal is owning the sending infrastructure yourself, Resend is the right tool. If your goal is activation and revenue done for you, that's DigiStorms.",
     },
     {
-      question: "Which should I choose if I only need onboarding emails?",
-      answer: "DigiStorms. It is specifically built for SaaS onboarding email automation. The AI analyzes your product, maps user activation milestones, and generates behavior-triggered sequences. Resend is a general-purpose email API with no onboarding-specific features — you would need to design and code everything yourself.",
+      question: "Does DigiStorms integrate with my stack and my sending provider?",
+      answer: "Yes. DigiStorms is the onboarding layer that plans and runs the sequence; it plugs into your product events and works alongside your existing sending setup — including Resend. We scope the integration with you on a quick onboarding call so the agent is wired to your real activation milestones from day one.",
+    },
+    {
+      question: "How do I get started, and what does it cost?",
+      answer: "DigiStorms is premium and done-for-you — you start with a quick demo, not an instant self-serve signup, so we can tailor the agent to your product. Pricing is custom, from $299/mo. Resend, by contrast, is self-serve developer pricing from $20/mo based on email volume. Different models because the tools do different jobs: Resend gives you sending infrastructure to operate; DigiStorms gives you an onboarding agent that drives activation and revenue for you.",
     },
   ]}
 />

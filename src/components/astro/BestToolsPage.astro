@@ -1,6 +1,5 @@
 ---
 import PageLayout from '@/layouts/PageLayout.astro';
-import { appUrl } from '@/config/appUrl';
 
 interface Tool {
   name: string;
@@ -81,7 +80,7 @@ const faqSchema = {
 };
 
 const jsonLd = [breadcrumbSchema, itemListSchema, faqSchema];
-const ctaHref = appUrl("/portal");
+const ctaHref = "https://calendly.com/jonathan-digistorms/30-min-call";
 ---
 
 <PageLayout
@@ -166,14 +165,16 @@ const ctaHref = appUrl("/portal");
 
       {/* CTA */}
       <div class="bg-blue-50 rounded-2xl p-8 text-center">
-        <h2 class="text-3xl sm:text-4xl font-serif text-slate-900 tracking-[-0.01em] mb-3">Ready to automate your onboarding emails?</h2>
-        <p class="text-slate-500 mb-6">DigiStorms generates your full email sequence in minutes — for free.</p>
+        <h2 class="text-3xl sm:text-4xl font-serif text-slate-900 tracking-[-0.01em] mb-3">Want onboarding done for you?</h2>
+        <p class="text-slate-500 mb-6">DigiStorms is the AI agent that builds and runs the onboarding sequence turning your signups into paying customers — tailored to your product, on autopilot. Book a demo and we'll map it to your funnel.</p>
         <a
           href={ctaHref}
+          target="_blank"
+          rel="noopener noreferrer"
           class="inline-flex items-center gap-2 text-white font-semibold px-8 py-4 rounded-xl text-lg transition-colors"
           style="background-color: #1D4ED8;"
         >
-          Try DigiStorms free
+          Book a demo
         </a>
       </div>
 

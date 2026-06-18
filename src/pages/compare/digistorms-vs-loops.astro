@@ -12,12 +12,13 @@ import ComparisonPage from '@/components/astro/ComparisonPage.astro';
   metaDescription="Compare DigiStorms and Loops for SaaS email. See how AI-generated onboarding sequences stack up against Loops' developer-first email platform."
   h1="DigiStorms vs Loops"
   subtitle="AI onboarding agent vs developer-first email platform"
-  verdict="Loops is a modern, developer-friendly email platform with beautiful templates and a clean API. It's great for teams that want to build custom email flows from scratch. DigiStorms takes a different approach — it generates your onboarding sequence automatically. Choose Loops if you want a flexible email platform with API-first control. Choose DigiStorms if you want onboarding emails generated for you in minutes without writing code."
+  verdict="Loops is a powerful, developer-friendly email platform with beautiful templates and a clean API — a DIY tool your team configures and operates. DigiStorms is the opposite model: a done-for-you AI onboarding agent that analyzes your product, maps your activation milestones, then writes and runs a behavior-based sequence that turns signups into paying customers on autopilot. Choose Loops to build and run it yourself. Choose DigiStorms to have it done for you, tailored to your product, and tied to revenue — set up by a quick onboarding call."
   features={[
     { name: "AI sequence generation", digistorms: true, competitor: false },
+    { name: "Done-for-you setup", digistorms: true, competitor: false },
+    { name: "AI agent tailored to your product", digistorms: true, competitor: false },
     { name: "Developer API/SDK", digistorms: "Basic", competitor: "Full API + SDK" },
     { name: "Transactional emails", digistorms: false, competitor: true },
-    { name: "Free tier", digistorms: true, competitor: true },
     { name: "Email library (1,000+ examples)", digistorms: true, competitor: "Small gallery" },
     { name: "DMARC/DKIM management", digistorms: false, competitor: true },
     { name: "Onboarding-specific features", digistorms: true, competitor: "General purpose" },
@@ -25,13 +26,17 @@ import ComparisonPage from '@/components/astro/ComparisonPage.astro';
     { name: "npm package", digistorms: false, competitor: true },
     { name: "Template marketplace", digistorms: false, competitor: true },
   ]}
-  pricingDigistorms="Free – $149/mo"
+  pricingDigistorms="Custom — from $299/mo"
   pricingCompetitor="From $49/mo"
   pricingNote="Free tier for up to 100 contacts. Paid plans from $49/mo."
   faqs={[
     {
-      question: "How does pricing compare between DigiStorms and Loops?",
-      answer: "Both offer free tiers. DigiStorms is free for your first 100 new signups with paid plans from $19/mo. Loops is free for up to 100 contacts with paid plans from $49/mo. DigiStorms is more affordable at every tier and includes AI-generated sequences in the price, while Loops requires you to build everything manually.",
+      question: "What's the real difference between DigiStorms and Loops?",
+      answer: "Loops hands you a builder; DigiStorms hands you results. Loops is a self-serve email platform you configure and operate yourself — you design the flows, write the emails, and manage delivery. DigiStorms is a done-for-you AI onboarding agent: it analyzes your product, maps your activation milestones, then writes and runs a behavior-based sequence for you. With Loops you build it; with DigiStorms it's done for you and tied to activation and revenue.",
+    },
+    {
+      question: "Is DigiStorms self-serve or done-for-you?",
+      answer: "Done-for-you. There's nothing to configure yourself — DigiStorms builds and runs your onboarding sequence as a white-glove service, starting with a quick onboarding call where we map your product and activation goals. Loops, by contrast, is a self-serve platform you set up and operate in-house. DigiStorms pricing is custom, from $299/mo, and is built for teams serious about turning signups into paying customers.",
     },
     {
       question: "Is Loops better for developers?",
@@ -39,15 +44,19 @@ import ComparisonPage from '@/components/astro/ComparisonPage.astro';
     },
     {
       question: "Which is better specifically for onboarding emails?",
-      answer: "DigiStorms is purpose-built for SaaS onboarding. It analyzes your product, maps the user journey, and generates behavior-triggered email sequences automatically. Loops is a general-purpose email platform that can handle onboarding but requires you to design and build every flow from scratch. For dedicated onboarding automation, DigiStorms is the more focused tool.",
+      answer: "DigiStorms is purpose-built for SaaS onboarding and it's behavior-based, not time-based — it reacts to what users actually do, firing the next step when someone activates a feature, stalls, or hits a milestone. It analyzes your product, maps the activation journey, and writes and runs the sequence for you. Loops is a general-purpose email platform that can handle onboarding but requires you to design, build, and trigger every flow from scratch. For done-for-you onboarding tied to activation, DigiStorms is the more focused tool.",
     },
     {
       question: "Can I use both DigiStorms and Loops together?",
       answer: "Yes, they complement each other well. You could use DigiStorms to generate and optimize your onboarding sequences while using Loops for transactional emails and developer-triggered messages. Many SaaS teams use different tools for different email categories based on each tool's strengths.",
     },
     {
-      question: "Which should I choose if I'm non-technical?",
-      answer: "DigiStorms is the clear choice for non-technical founders and marketers. It requires zero coding — just enter your website URL and get a complete onboarding sequence. Loops, while modern and well-designed, is built for developer-led teams and works best when you have engineering resources to build custom integrations and email flows.",
+      question: "Who should choose Loops over DigiStorms?",
+      answer: "Choose Loops if you have a developer-led team that wants full, hands-on control of your email stack. Loops offers a full API, SDK, npm package, React Email support, transactional email, and DMARC/DKIM management — ideal when you have engineering resources and want to build and operate custom flows yourself. Choose DigiStorms if you'd rather have your onboarding done for you: a tailored AI agent that maps your activation milestones and runs the sequence on autopilot, set up by a quick onboarding call instead of an in-house build.",
+    },
+    {
+      question: "What integrations and channels does DigiStorms support?",
+      answer: "DigiStorms connects to your product so its AI agent can react to real user behavior and trigger the right onboarding step at the right moment. It's focused on email today — there's no multi-channel SMS or push yet — and it's a newer, premium platform rather than a broad self-serve toolkit. If you need transactional email, a public API and SDK, or your own deliverability controls like DMARC/DKIM, Loops covers those directly.",
     },
   ]}
 />

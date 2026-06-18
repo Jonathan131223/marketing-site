@@ -181,29 +181,16 @@ export const ROISectionHomepage: React.FC<ROISectionHomepageProps> = ({
 
                   <div className="pt-4 border-t border-slate-100 text-center">
                     <div className="space-y-3">
-                      <input
-                        type="text"
-                        value={urlInput}
-                        onChange={(e) => setUrlInput(e.target.value)}
-                        onKeyDown={(e) => e.key === "Enter" && handleUrlSubmit()}
-                        placeholder="website.com"
-                        className="w-full px-4 py-3 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
-                      />
-                      <button
-                        type="button"
-                        onClick={handleUrlSubmit}
-                        data-flat-purple
-                        style={{
-                          backgroundColor: "#1D4ED8",
-                          boxShadow: "none",
-                          outline: "none",
-                          border: "none",
-                        }}
-                        className="w-full text-white px-8 py-4 rounded-xl font-semibold text-lg disabled:cursor-not-allowed"
+                      <a
+                        href="https://calendly.com/jonathan-digistorms/30-min-call"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex w-full items-center justify-center text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors hover:opacity-90"
+                        style={{ backgroundColor: "#1D4ED8" }}
                       >
-                        Generate my onboarding emails
-                      </button>
-                      <p className="text-sm text-slate-500">See your sequence in minutes. No signup required.</p>
+                        Book a demo
+                      </a>
+                      <p className="text-sm text-slate-500">See how we'd turn this ROI into reality for your product.</p>
                     </div>
                   </div>
                 </>

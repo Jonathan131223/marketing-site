@@ -22,26 +22,16 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
           Your users are signing up right now.<br />Are you onboarding them?
         </h2>
         <div className="max-w-[560px] mx-auto">
-          <div className="flex flex-col sm:flex-row">
-            <input
-              type="text"
-              value={websiteUrl}
-              onChange={(e) => onWebsiteUrlChange(e.target.value)}
-              onKeyDown={handleKeyDown}
-              placeholder="yourproduct.com"
-              aria-label="Your website URL"
-              className="flex-1 px-5 py-4 border-2 border-slate-200 sm:border-r-0 rounded-[10px] sm:rounded-r-none text-slate-900 placeholder-slate-400 focus:ring-0 focus:border-primary focus:outline-none text-base bg-white transition-colors"
-            />
-            <button
-              onClick={onSubmit}
-              disabled={!websiteUrl.trim()}
-              className="px-7 py-4 bg-primary text-white rounded-[10px] sm:rounded-l-none font-semibold text-base hover:bg-[#1D4ED8] transition-colors whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              Generate my onboarding emails
-            </button>
-          </div>
+          <a
+            href="https://calendly.com/jonathan-digistorms/30-min-call"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white rounded-[10px] font-semibold text-base hover:bg-[#1D4ED8] transition-colors"
+          >
+            Book a demo
+          </a>
           <p className="text-sm text-slate-400 mt-3">
-            See your sequence in minutes. No signup required.
+            A 20-minute walkthrough — we'll map onboarding to your funnel.
           </p>
         </div>
       </div>
