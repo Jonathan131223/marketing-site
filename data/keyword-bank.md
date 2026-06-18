@@ -22,7 +22,7 @@ Legend: `Q` = was in old calendar queue · `R` = refresh/retarget of an existing
 
 | # | Status | Keyword (target) | Vol | KD | Library tags | Ex | Working title |
 |---:|---|---|---:|---:|---|---:|---|
-| 1 | [ ] | trial drop off `Q` | 80 | 12 | inactivity-nudge, trial-expiration-warning, trial-extension-offer | 10 | SaaS Trial Drop-Off Playbook: 10 Recovery Emails |
+| 1 | [x] | trial drop off `Q` | 80 | 12 | inactivity-nudge, trial-expiration-warning, trial-extension-offer | 10 | SaaS Trial Drop-Off Playbook: 10 Recovery Emails — 2026-06-18 https://www.digistorms.ai/blog/trial-drop-off-emails |
 | 2 | [ ] | lifecycle email marketing examples `Q` | 150 | 3 | (mix: 2-3 per use case) | 20 | Lifecycle Email Marketing: 20 Examples by Stage |
 | 3 | [ ] | transactional email examples `Q` | 150 | 8 | payment-receipt, email-verification, password-reset, payment-declined | 12 | Transactional Email Examples (12 from Real SaaS) |
 | 4 | [ ] | product announcement email `Q` | 100 | 1 | new-feature-nudge, product-update, feature-update | 12 | Product Announcement Email Templates |

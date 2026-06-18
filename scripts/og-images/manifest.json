@@ -464,6 +464,16 @@
       "italic_emphasis": "10",
       "subline": "DigiStorms · The triggers that turn trials into revenue",
       "prompt": "Editorial OG card. Cream background. Instrument Serif headline '10 free-to-paid conversion emails' with '10' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
+    },
+    {
+      "id": "blog-trial-drop-off-emails",
+      "output": "public/og/blog-trial-drop-off-emails.webp",
+      "page_file": "src/content/blog/trial-drop-off-emails.md",
+      "background": "warm cream #F8F6F2",
+      "headline": "10 trial drop-off recovery emails",
+      "italic_emphasis": "10",
+      "subline": "DigiStorms · The nudges that pull stalled trials back before they lapse",
+      "prompt": "A 1200x630 horizontal Open Graph social-share card. Solid warm cream background (#F8F6F2) with the faintest paper texture, completely flat and uncluttered. Centered, the headline reads exactly: '10 trial drop-off recovery emails', set in a large editorial serif font (Instrument Serif or Playfair Display style) approximately 96 pixels tall, color slate-900 navy (#0F172A), letter-spacing slightly tight, line-height 1.1. The single character '10' appears in italic and in primary blue (#2563EB) — the rest of the headline stays upright in navy. Below the headline, a single line of muted body text in clean sans-serif (Instrument Sans or Inter) reading: 'DigiStorms · The nudges that pull stalled trials back before they lapse' — color slate-500 grey (#475569), about 24 pixels tall. In the lower-left corner, a small wordmark 'DigiStorms' in clean modern sans-serif, color slate-900 navy. The composition is generous and editorial with significant negative space. Sharp, crisp, magazine-quality typography. Render every text character exactly as written, no decorative additions, no icons, no shapes, no gradients."
     }
   ]
 }

@@ -415,6 +415,14 @@ const CARDS = [
     cta: 'See the playbook',
     icon: 'rocket',
   },
+  {
+    slug: 'trial-drop-off-emails',
+    subject: 'Recovery playbook',
+    headline: '10 trial drop-off recovery emails',
+    body: 'Real trial recovery emails from Pipedrive, Loom, Calendly, Asana, Monday, Jira — the nudges that pull stalled trials back.',
+    cta: 'See the recoveries',
+    icon: 'envelope',
+  },
 ];
 
 async function renderOne(card) {
