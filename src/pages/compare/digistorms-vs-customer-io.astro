@@ -12,12 +12,13 @@ import ComparisonPage from '@/components/astro/ComparisonPage.astro';
   metaDescription="Compare DigiStorms and Customer.io for SaaS onboarding emails. See features, pricing, and which tool is best for automated lifecycle email sequences."
   h1="DigiStorms vs Customer.io"
   subtitle="Which is better for automated SaaS onboarding emails?"
-  verdict="Customer.io is a powerful enterprise messaging platform with omnichannel capabilities, but it requires significant manual setup and starts at $100+/mo. DigiStorms is purpose-built for onboarding emails — it generates your entire sequence automatically from your website in minutes, starting free. Choose Customer.io if you need SMS, push, and in-app messaging at enterprise scale. Choose DigiStorms if you want automated onboarding emails fast without the complexity."
+  verdict="Customer.io is a powerful DIY messaging platform: omnichannel email, SMS, push, and in-app, with a visual builder you configure and operate yourself. DigiStorms is the done-for-you AI onboarding agent — it analyzes your product, maps your activation milestones, and writes and runs a behavior-based sequence tailored to you, tied directly to turning signups into paying customers. Choose Customer.io if you want to build and run it yourself across multiple channels. Choose DigiStorms if you want activation and revenue handled for you, on autopilot, by a team that builds and runs the sequence with you."
   features={[
     { name: "AI sequence generation", digistorms: true, competitor: false },
     { name: "Behavior-triggered emails", digistorms: true, competitor: true },
     { name: "Onboarding email templates", digistorms: true, competitor: true },
-    { name: "Free tier", digistorms: true, competitor: false },
+    { name: "Done-for-you setup", digistorms: true, competitor: false },
+    { name: "AI agent tailored to your product", digistorms: true, competitor: false },
     { name: "Multi-channel (SMS, push)", digistorms: false, competitor: true },
     { name: "Email library (1,000+ examples)", digistorms: true, competitor: false },
     { name: "Visual workflow builder", digistorms: false, competitor: true },
@@ -25,29 +26,29 @@ import ComparisonPage from '@/components/astro/ComparisonPage.astro';
     { name: "A/B testing", digistorms: false, competitor: true },
     { name: "Segmentation", digistorms: "AI-powered", competitor: "Manual rules" },
   ]}
-  pricingDigistorms="Free – $149/mo"
+  pricingDigistorms="Custom — from $299/mo"
   pricingCompetitor="From $100/mo"
   pricingNote="Starts at $100/mo for basic plan. Enterprise pricing available."
   faqs={[
     {
-      question: "Is DigiStorms cheaper than Customer.io?",
-      answer: "Yes. DigiStorms offers a free tier for your first 100 new signups and paid plans starting at $19/mo. Customer.io starts at $100/mo with no free option. For startups and early-stage SaaS, DigiStorms is significantly more affordable while still delivering behavior-triggered onboarding sequences.",
+      question: "What's the real difference between DigiStorms and Customer.io?",
+      answer: "Customer.io hands you a builder; DigiStorms hands you results. Customer.io is a DIY platform — you configure data sources, segments, workflows, and templates, then operate it yourself. DigiStorms is done-for-you: an AI agent analyzes your product, maps your activation milestones, and writes and runs the onboarding sequence for you, with strategy and implementation done with your team. You don't configure anything.",
+    },
+    {
+      question: "Is DigiStorms self-serve or done-for-you?",
+      answer: "Done-for-you. DigiStorms isn't a tool you log into and assemble yourself — it's an AI onboarding agent we build and run for you, tailored to your product. You start with a quick onboarding call rather than instant self-serve signup, which is why it fits teams that are serious about activation and want it handled instead of managing yet another platform.",
     },
     {
       question: "How do the features compare?",
-      answer: "Customer.io is a full omnichannel platform supporting email, SMS, push notifications, and in-app messaging with a visual workflow builder. DigiStorms focuses specifically on onboarding emails and uses AI to generate your entire sequence automatically. If you need multi-channel messaging at scale, Customer.io is the better fit. If you want onboarding emails up and running in minutes, DigiStorms is faster and easier.",
-    },
-    {
-      question: "Which is easier to set up?",
-      answer: "DigiStorms is dramatically easier. You enter your website URL and the AI agent analyzes your product, maps the user journey, and generates a complete onboarding sequence in about 5 minutes. Customer.io requires manual configuration of data sources, segment rules, workflow logic, and email templates — which typically takes days or weeks to get right.",
+      answer: "Customer.io is a full omnichannel platform supporting email, SMS, push notifications, and in-app messaging with a visual workflow builder you operate yourself. DigiStorms focuses on onboarding and activation: the AI agent analyzes your product, maps the activation milestones, and runs a behavior-based sequence — reacting to what users actually do, not a fixed time schedule — aimed squarely at turning signups into paying customers. Customer.io gives you more channels to build on; DigiStorms gives you the activation outcome without the build.",
     },
     {
       question: "Who should use Customer.io instead of DigiStorms?",
-      answer: "Customer.io is the better choice for mid-market and enterprise SaaS teams that need omnichannel messaging (email, SMS, push, in-app), advanced A/B testing, and deep integrations across their tech stack. If your lifecycle strategy spans multiple channels and you have a dedicated ops team to manage it, Customer.io provides the flexibility you need.",
+      answer: "Customer.io is the better choice for mid-market and enterprise teams that want to build and run their own messaging across multiple channels (email, SMS, push, in-app), with advanced A/B testing and deep integrations across their stack, and that have a dedicated ops team to manage it. If you want full hands-on control of a multi-channel lifecycle program, Customer.io gives you that flexibility.",
     },
     {
-      question: "Can I switch from Customer.io to DigiStorms?",
-      answer: "Absolutely. Many teams start with DigiStorms to get their onboarding emails live quickly, then evaluate whether they need a more complex tool later. DigiStorms generates sequences that can be exported and adapted to any email platform. The free tier lets you test the AI-generated approach risk-free before committing.",
+      question: "What does DigiStorms integrate with?",
+      answer: "DigiStorms connects to your signup and product-event data so the AI agent can trigger emails on real user behavior — activation milestones reached, features tried, drop-off points — rather than on a time schedule. We handle the setup and the wiring during onboarding, so the behavior-based sequence is live and tied to your activation and revenue goals without you building integrations yourself.",
     },
   ]}
 />
