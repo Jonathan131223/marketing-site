@@ -423,6 +423,14 @@ const CARDS = [
     cta: 'See the recoveries',
     icon: 'envelope',
   },
+  {
+    slug: 'lifecycle-email-marketing-examples',
+    subject: 'Lifecycle map',
+    headline: '20 lifecycle emails by stage',
+    body: 'Real lifecycle emails from Webflow, Stripe, Grammarly, Semrush, Slack — mapped to every stage from signup to win-back.',
+    cta: 'See the stages',
+    icon: 'onboarding',
+  },
 ];
 
 async function renderOne(card) {
