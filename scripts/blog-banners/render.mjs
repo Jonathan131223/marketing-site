@@ -431,6 +431,14 @@ const CARDS = [
     cta: 'See the stages',
     icon: 'onboarding',
   },
+  {
+    slug: 'transactional-email-examples',
+    subject: 'Receipt & reset',
+    headline: '12 transactional email examples',
+    body: 'Real receipts, verifications, resets & declines from Stripe, Calendly, Slack, Zapier — the emails users trust most.',
+    cta: 'See the examples',
+    icon: 'envelope',
+  },
 ];
 
 async function renderOne(card) {
