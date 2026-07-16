@@ -25,8 +25,8 @@ Legend: `Q` = was in old calendar queue · `R` = refresh/retarget of an existing
 | 1 | [x] | trial drop off `Q` | 80 | 12 | inactivity-nudge, trial-expiration-warning, trial-extension-offer | 10 | SaaS Trial Drop-Off Playbook: 10 Recovery Emails — 2026-06-18 https://www.digistorms.ai/blog/trial-drop-off-emails |
 | 2 | [x] | lifecycle email marketing examples `Q` | 150 | 3 | (mix: 2-3 per use case) | 20 | Lifecycle Email Marketing: 20 Examples by Stage — 2026-07-06 https://www.digistorms.ai/blog/lifecycle-email-marketing-examples |
 | 3 | [x] | transactional email examples `Q` | 150 | 8 | payment-receipt, email-verification, password-reset, payment-declined | 12 | Transactional Email Examples (12 from Real SaaS) — 2026-07-13 https://www.digistorms.ai/blog/transactional-email-examples |
-| 4 | [ ] | product announcement email `Q` | 100 | 1 | new-feature-nudge, product-update, feature-update | 12 | Product Announcement Email Templates |
-| 5 | [ ] | feedback request email `Q` | 150 | 0 | survey, nps-survey, qualitative-feedback | 12 | Feedback Request Email Templates |
+| 4 | [x] | product announcement email `Q` | 100 | 1 | new-feature-nudge, product-update, feature-update | 12 | ~~Product Announcement Email Templates~~ — 2026-07-16 skipped: already covered by https://www.digistorms.ai/blog/product-launch-email (same 3 library tags; that post defines launch/release/announcement and covers the term 18×). Refresh-only. |
+| 5 | [x] | feedback request email `Q` | 150 | 0 | survey, nps-survey, qualitative-feedback | 12 | 12 Feedback Request Email Examples (From Real SaaS) — 2026-07-16 https://www.digistorms.ai/blog/feedback-request-email |
 | 6 | [ ] | nps email / email nps `Q` | 100 | 4 | nps-survey, survey | 8 | NPS Email Examples & Templates |
 | 7 | [ ] | free trial email `Q` | 70 | 1 | trial-just-started, trial-expiration-warning, trial-extension-offer | 10 | Free Trial Email Sequence (Examples + Templates) |
 | 8 | [ ] | subscription cancellation email `Q` | 40 | 1 | downgrade-receipt, re-engage-cancelled-users, payment-declined | 10 | Subscription Cancellation Email Examples |

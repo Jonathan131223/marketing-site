@@ -439,6 +439,14 @@ const CARDS = [
     cta: 'See the examples',
     icon: 'envelope',
   },
+  {
+    slug: 'feedback-request-email',
+    subject: 'Quick question',
+    headline: '12 feedback request emails',
+    body: 'Real NPS, survey & qualitative asks from Loom, Semrush, Slack, Notion — the emails users actually answer.',
+    cta: 'See the examples',
+    icon: 'sparkle',
+  },
 ];
 
 async function renderOne(card) {
