@@ -2,6 +2,11 @@
 
 All notable changes to DigiStorms marketing site will be documented in this file.
 
+## [0.1.5.3] - 2026-07-16
+
+### Removed
+- The "Featured on FoundrList" badge no longer appears in the site footer. It sat below the social icons and linked out to foundrlist.com, loading its image from an external endpoint on every page. Removed from both the live Astro footer and the legacy React footer so it can't resurface if the React component is ever routed again
+
 ## [0.1.5.2] - 2026-04-27
 
 ### Changed
