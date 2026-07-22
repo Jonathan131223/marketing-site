@@ -447,6 +447,14 @@ const CARDS = [
     cta: 'See the examples',
     icon: 'sparkle',
   },
+  {
+    slug: 'nps-email-examples',
+    subject: 'One quick question',
+    headline: '8 NPS email examples',
+    body: 'Real NPS asks from Loom, Apollo, Semrush and Calendly — the subject lines that actually get answered.',
+    cta: 'See the examples',
+    icon: 'sparkle',
+  },
 ];
 
 async function renderOne(card) {
