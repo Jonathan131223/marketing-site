@@ -28,7 +28,7 @@ Legend: `Q` = was in old calendar queue · `R` = refresh/retarget of an existing
 | 4 | [x] | product announcement email `Q` | 100 | 1 | new-feature-nudge, product-update, feature-update | 12 | ~~Product Announcement Email Templates~~ — 2026-07-16 skipped: already covered by https://www.digistorms.ai/blog/product-launch-email (same 3 library tags; that post defines launch/release/announcement and covers the term 18×). Refresh-only. |
 | 5 | [x] | feedback request email `Q` | 150 | 0 | survey, nps-survey, qualitative-feedback | 12 | 12 Feedback Request Email Examples (From Real SaaS) — 2026-07-16 https://www.digistorms.ai/blog/feedback-request-email |
 | 6 | [x] | nps email / email nps `Q` | 100 | 4 | nps-survey, survey | 8 | 8 NPS Email Examples That Actually Get Answered — 2026-07-22 https://www.digistorms.ai/blog/nps-email-examples |
-| 7 | [ ] | free trial email `Q` | 70 | 1 | trial-just-started, trial-expiration-warning, trial-extension-offer | 10 | Free Trial Email Sequence (Examples + Templates) |
+| 7 | [x] | free trial email `Q` | 70 | 1 | trial-just-started, trial-expiration-warning, trial-extension-offer | 10 | Free Trial Email Sequence (Examples + Templates) — 2026-07-24 https://www.digistorms.ai/blog/free-trial-email |
 | 8 | [ ] | subscription cancellation email `Q` | 40 | 1 | downgrade-receipt, re-engage-cancelled-users, payment-declined | 10 | Subscription Cancellation Email Examples |
 | 9 | [ ] | win back email examples | 150 | 10 | re-engage-cancelled-users, inactivity-nudge | 10 | Win-Back Email Examples That Recover Churned Users |
 | 10 | [ ] | saas onboarding checklist `gap` | 200 | 3 | setup-prompt, onboarding-checklist, trial-just-started | 8 | SaaS Onboarding Checklist (+ Email Examples) |

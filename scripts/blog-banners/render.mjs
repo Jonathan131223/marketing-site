@@ -272,6 +272,14 @@ function buildCard({ subject, headline, body, cta, iconKey }) {
 
 const CARDS = [
   {
+    slug: 'free-trial-email',
+    subject: 'Trial sequence',
+    headline: '10 free trial email examples',
+    body: 'A day-by-day trial sequence from Calendly, Miro, Loom, Buffer, Jira, Monday — welcome to extension.',
+    cta: 'See the sequence',
+    icon: 'onboarding',
+  },
+  {
     slug: 'onboarding-email-sequence-templates',
     subject: 'Templates inside',
     headline: '7 onboarding email templates',
