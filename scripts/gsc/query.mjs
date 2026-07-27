@@ -50,6 +50,7 @@ const days  = parseInt(flags.days  || '90', 10);
 const limit = parseInt(flags.limit || '100', 10);
 const group = flags.group || 'week';
 const site  = flags.site  || DEFAULT_SITE;
+const pageFilter = flags.page || null;
 
 if (!cmd || cmd === '--help' || cmd === '-h') {
   printHelp(); process.exit(0);
@@ -184,6 +185,49 @@ async function query(sc, opts) {
 function pct(x) { return (x * 100).toFixed(2) + '%'; }
 function fmtPos(p) { return p === undefined ? '-' : p.toFixed(1); }
 
+// ── AI fan-out detection ─────────────────────────────────────────────────────
+// Google AI Mode / AI Overviews synthesise sub-queries to assemble an answer and
+// log them in GSC as impressions against whichever URL they drew from. There is
+// no blue link in that surface, so those impressions can never produce a click.
+// Left in the totals they crush CTR and inflate impressions — as of 2026-07,
+// 93% of digistorms.ai's top-10-ranking queries had literally zero clicks.
+//
+// Two signatures cover the bulk of it:
+//   1. Verbose natural-language queries (≥ 7 words). Real searchers rarely type
+//      "best customer.io alternatives for developers 2025 2026"; fan-out does.
+//   2. Queries carrying a quoted string — these are email subject lines matched
+//      out of /library/email/* pages, e.g. `"new figma releases, just for you"`.
+//      Navigational curiosities at best, never commercial intent.
+//
+// This is a heuristic, not a Google-supplied flag. It is deliberately
+// conservative: it strips impressions we are confident are unclickable rather
+// than trying to catch every last one.
+const FANOUT_MIN_WORDS = 7;
+
+function isFanoutQuery(q) {
+  if (!q) return false;
+  if (q.includes('"') || q.includes('“') || q.includes('”')) return true;
+  return q.trim().split(/\s+/).length >= FANOUT_MIN_WORDS;
+}
+
+// GSC reports #anchor URLs as separate rows (Google shows them as jump-to
+// sitelinks). For page-level roll-ups they belong to the parent document.
+function stripFragment(url) { return (url || '').split('#')[0]; }
+
+function pathOf(url) { return stripFragment(url).replace(/^https?:\/\/[^/]+/, '') || '/'; }
+
+function cohortOf(path) {
+  if (path.startsWith('/blog')) return '/blog';
+  if (path.startsWith('/library')) return '/library';
+  if (path.startsWith('/compare')) return '/compare';
+  return 'other (home + static)';
+}
+
+function pageFilterGroups(p) {
+  if (!p) return undefined;
+  return [{ filters: [{ dimension: 'page', operator: 'contains', expression: p }] }];
+}
+
 async function main() {
   const auth = await getAuthedClient();
   const sc = google.searchconsole({ version: 'v1', auth });
@@ -221,6 +265,86 @@ async function main() {
     console.log(`  ${'PAGE'.padEnd(70)} ${'CLK'.padStart(5)} ${'IMP'.padStart(7)} ${'CTR'.padStart(7)} ${'POS'.padStart(5)}`);
     rows.forEach((r) => console.log(
       `  ${(r.keys[0] || '').replace(/^https?:\/\/[^/]+/, '').slice(0, 70).padEnd(70)} ${String(r.clicks).padStart(5)} ${String(r.impressions).padStart(7)} ${pct(r.ctr).padStart(7)} ${fmtPos(r.position).padStart(5)}`
+    ));
+  }
+
+  else if (cmd === 'cohorts') {
+    // Clicks by section of the site. The single most useful view we have:
+    // /library is ~96% of indexed URLs but a rounding error of the clicks, so a
+    // sitewide number tells you nothing about whether the blog is working.
+    const rows = await query(sc, { dimensions: ['page'], rowLimit: 5000 });
+    const buckets = {};
+    let totalClicks = 0, totalImpressions = 0;
+    rows.forEach((r) => {
+      const c = cohortOf(pathOf(r.keys[0]));
+      if (!buckets[c]) buckets[c] = { clicks: 0, impressions: 0, pages: new Set() };
+      buckets[c].clicks += r.clicks;
+      buckets[c].impressions += r.impressions;
+      buckets[c].pages.add(pathOf(r.keys[0]));
+      totalClicks += r.clicks;
+      totalImpressions += r.impressions;
+    });
+    console.log(`  ${'COHORT'.padEnd(24)} ${'URLS'.padStart(5)} ${'CLK'.padStart(6)} ${'%CLK'.padStart(6)} ${'IMP'.padStart(8)} ${'CTR'.padStart(7)}`);
+    Object.keys(buckets)
+      .sort((a, b) => buckets[b].clicks - buckets[a].clicks)
+      .forEach((c) => {
+        const b = buckets[c];
+        const ctr = b.impressions ? b.clicks / b.impressions : 0;
+        const share = totalClicks ? b.clicks / totalClicks : 0;
+        console.log(`  ${c.padEnd(24)} ${String(b.pages.size).padStart(5)} ${String(b.clicks).padStart(6)} ${pct(share).padStart(6)} ${String(b.impressions).padStart(8)} ${pct(ctr).padStart(7)}`);
+      });
+    console.log(`  ${'─'.repeat(60)}`);
+    console.log(`  ${'TOTAL'.padEnd(24)} ${''.padStart(5)} ${String(totalClicks).padStart(6)} ${''.padStart(6)} ${String(totalImpressions).padStart(8)} ${pct(totalImpressions ? totalClicks / totalImpressions : 0).padStart(7)}`);
+  }
+
+  else if (cmd === 'real') {
+    // The honest KPI: strip query impressions that no human could have clicked.
+    // Note GSC only exposes queries above a privacy threshold, so the click
+    // totals here are lower than `summary` — use this for the CTR and the
+    // clickable-impression trend, and `cohorts` for absolute click counts.
+    const rows = await query(sc, { dimensions: ['query'], rowLimit: 5000 });
+    const real = rows.filter((r) => !isFanoutQuery(r.keys[0]));
+    const fanout = rows.filter((r) => isFanoutQuery(r.keys[0]));
+    const sum = (rs) => rs.reduce((a, r) => ({
+      clicks: a.clicks + r.clicks, impressions: a.impressions + r.impressions,
+    }), { clicks: 0, impressions: 0 });
+    const R = sum(real), F = sum(fanout), A = sum(rows);
+
+    console.log(`  ${'SEGMENT'.padEnd(28)} ${'KWS'.padStart(5)} ${'CLK'.padStart(6)} ${'IMP'.padStart(8)} ${'CTR'.padStart(7)}`);
+    console.log(`  ${'Clickable (real searchers)'.padEnd(28)} ${String(real.length).padStart(5)} ${String(R.clicks).padStart(6)} ${String(R.impressions).padStart(8)} ${pct(R.impressions ? R.clicks / R.impressions : 0).padStart(7)}`);
+    console.log(`  ${'AI fan-out (unclickable)'.padEnd(28)} ${String(fanout.length).padStart(5)} ${String(F.clicks).padStart(6)} ${String(F.impressions).padStart(8)} ${pct(F.impressions ? F.clicks / F.impressions : 0).padStart(7)}`);
+    console.log(`  ${'─'.repeat(60)}`);
+    console.log(`  ${'Reported by GSC'.padEnd(28)} ${String(rows.length).padStart(5)} ${String(A.clicks).padStart(6)} ${String(A.impressions).padStart(8)} ${pct(A.impressions ? A.clicks / A.impressions : 0).padStart(7)}`);
+    console.log(`\n  → ${pct(A.impressions ? F.impressions / A.impressions : 0)} of reported impressions are AI fan-out and can never convert.`);
+    console.log(`  → Real CTR is ${pct(R.impressions ? R.clicks / R.impressions : 0)}, not the ${pct(A.impressions ? A.clicks / A.impressions : 0)} GSC shows.`);
+
+    // Where the clickable demand actually sits. Fan-out explains only part of a
+    // bad CTR; the rest is usually just "we are not on page 1". Splitting real
+    // demand by SERP page says which of the two you are looking at, and sizes
+    // the prize for a refresh: impressions parked on page 2–3 are demand you
+    // have already earned relevance for but cannot monetise.
+    const BANDS = [
+      ['page 1  (pos 1-10)',   (p) => p <= 10],
+      ['page 2  (pos 11-20)',  (p) => p > 10 && p <= 20],
+      ['page 3  (pos 21-30)',  (p) => p > 20 && p <= 30],
+      ['page 4+ (pos 31+)',    (p) => p > 30],
+    ];
+    console.log(`\n  Clickable demand by SERP page:\n`);
+    console.log(`  ${'BAND'.padEnd(22)} ${'KWS'.padStart(5)} ${'CLK'.padStart(6)} ${'IMP'.padStart(8)} ${'CTR'.padStart(7)}`);
+    BANDS.forEach(([label, test]) => {
+      const seg = real.filter((r) => test(r.position ?? 999));
+      const s = sum(seg);
+      console.log(`  ${label.padEnd(22)} ${String(seg.length).padStart(5)} ${String(s.clicks).padStart(6)} ${String(s.impressions).padStart(8)} ${pct(s.impressions ? s.clicks / s.impressions : 0).padStart(7)}`);
+    });
+    const stranded = sum(real.filter((r) => (r.position ?? 999) > 10));
+    console.log(`\n  → ${stranded.impressions.toLocaleString()} clickable impressions are stranded beyond page 1.`);
+    console.log(`    That is the refresh prize — demand you rank for but cannot collect.\n`);
+
+    const top = real.filter((r) => r.impressions >= 20).sort((a, b) => b.impressions - a.impressions).slice(0, 25);
+    console.log(`  Top clickable queries (impressions ≥ 20):\n`);
+    console.log(`  ${'QUERY'.padEnd(50)} ${'CLK'.padStart(5)} ${'IMP'.padStart(7)} ${'CTR'.padStart(7)} ${'POS'.padStart(5)}`);
+    top.forEach((r) => console.log(
+      `  ${(r.keys[0] || '').slice(0, 50).padEnd(50)} ${String(r.clicks).padStart(5)} ${String(r.impressions).padStart(7)} ${pct(r.ctr).padStart(7)} ${fmtPos(r.position).padStart(5)}`
     ));
   }
 
@@ -275,21 +399,32 @@ async function main() {
   }
 
   else if (cmd === 'history') {
-    const rows = await query(sc, { dimensions: ['date'], rowLimit: days });
+    // `page=/blog/some-slug` scopes the trend to one URL — how you prove a
+    // content refresh actually moved something.
+    const rows = await query(sc, {
+      dimensions: ['date'],
+      rowLimit: days,
+      dimensionFilterGroups: pageFilterGroups(pageFilter),
+    });
+    if (pageFilter) console.log(`  (filtered to pages containing "${pageFilter}")\n`);
     // Optional grouping
     const weekly = {};
     rows.forEach((r) => {
       const d = r.keys[0];
       const key = group === 'week' ? weekStart(d) : d;
-      if (!weekly[key]) weekly[key] = { clicks: 0, impressions: 0 };
+      if (!weekly[key]) weekly[key] = { clicks: 0, impressions: 0, posWeighted: 0 };
       weekly[key].clicks += r.clicks;
       weekly[key].impressions += r.impressions;
+      // Position must be impression-weighted; a flat mean over days lets a
+      // single low-impression day swing the average.
+      weekly[key].posWeighted += (r.position || 0) * r.impressions;
     });
-    console.log(`  ${'PERIOD'.padEnd(12)} ${'CLK'.padStart(6)} ${'IMP'.padStart(8)} ${'CTR'.padStart(7)}`);
+    console.log(`  ${'PERIOD'.padEnd(12)} ${'CLK'.padStart(6)} ${'IMP'.padStart(8)} ${'CTR'.padStart(7)} ${'POS'.padStart(6)}`);
     Object.keys(weekly).sort().forEach((k) => {
       const b = weekly[k];
       const ctr = b.impressions ? b.clicks / b.impressions : 0;
-      console.log(`  ${k.padEnd(12)} ${String(b.clicks).padStart(6)} ${String(b.impressions).padStart(8)} ${pct(ctr).padStart(7)}`);
+      const pos = b.impressions ? b.posWeighted / b.impressions : undefined;
+      console.log(`  ${k.padEnd(12)} ${String(b.clicks).padStart(6)} ${String(b.impressions).padStart(8)} ${pct(ctr).padStart(7)} ${fmtPos(pos).padStart(6)}`);
     });
   }
 
@@ -309,6 +444,8 @@ function weekStart(dateStr) {
 
 function printHelp() {
   console.log(`\nGSC query tool. Commands:\n`);
+  console.log(`  cohorts       ★ clicks by site section (/blog vs /library vs /compare)`);
+  console.log(`  real          ★ CTR with AI-fan-out impressions stripped out`);
   console.log(`  summary         aggregate metrics over last [days=90]`);
   console.log(`  keywords        top queries (up to [limit=100])`);
   console.log(`  pages           top URLs (up to [limit=50])`);
@@ -316,9 +453,11 @@ function printHelp() {
   console.log(`  ctr-position    CTR bucketed by integer position`);
   console.log(`  device          clicks/imp by desktop/mobile/tablet`);
   console.log(`  country         clicks/imp by country (top 20)`);
-  console.log(`  history         weekly (or daily) trend`);
+  console.log(`  history         weekly (or daily) trend  [page=/blog/slug]`);
   console.log(`  sites           list verified GSC properties\n`);
-  console.log(`Flags:  days=N  limit=N  group=week|day  site=<siteUrl>\n`);
+  console.log(`Flags:  days=N  limit=N  group=week|day  page=<path>  site=<siteUrl>\n`);
+  console.log(`★ = report these. Sitewide CTR and avg position are corrupted by AI`);
+  console.log(`    Overview fan-out impressions and should not be used as KPIs.\n`);
 }
 
 main().catch((e) => {
