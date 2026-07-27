@@ -11,9 +11,16 @@ export interface BlogPost {
   libraryTags?: string[];
 }
 
-// Keep in sync with src/content/blog/*.md frontmatter. The `relatedPostsFor`
-// logic in [slug].astro reads from this list. When adding a post, also add a
-// matching .md file in this directory.
+// ⚠️ STALE — do not add to this list, and do not trust it as a post index.
+//
+// It is a hand-maintained mirror of the .md frontmatter and it drifted badly:
+// 13 entries against 31 real posts, missing everything published after ~May
+// 2026. src/pages/blog/[slug].astro no longer reads it — it derives posts from
+// `getCollection('blog')`, which cannot go out of date.
+//
+// Only the unrouted src/_legacy-pages/*.tsx React components still import it.
+// Delete this file when those go; until then the `BlogPost` type export is the
+// part that's still load-bearing.
 
 export const blogPosts: BlogPost[] = [
   {

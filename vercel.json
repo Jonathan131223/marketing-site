@@ -54,6 +54,54 @@
       "permanent": true
     },
     {
+      "source": "/blog/aha-moment-examples",
+      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
+      "destination": "https://www.digistorms.ai/blog/customer-activation-email-examples",
+      "permanent": true
+    },
+    {
+      "source": "/blog/average-customer-retention-rate-saas",
+      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
+      "destination": "https://www.digistorms.ai/blog/customer-retention-email-examples",
+      "permanent": true
+    },
+    {
+      "source": "/blog/gross-churn-vs-net-churn",
+      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
+      "destination": "https://www.digistorms.ai/blog/customer-retention-email-examples",
+      "permanent": true
+    },
+    {
+      "source": "/blog/product-led-growth-metrics",
+      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
+      "destination": "https://www.digistorms.ai/blog/saas-email-benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/blog/product-led-growth-vs-marketing-led-growth",
+      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
+      "destination": "https://www.digistorms.ai/blog/saas-onboarding-email-sequence",
+      "permanent": true
+    },
+    {
+      "source": "/blog/product-led-growth-vs-sales-led-growth",
+      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
+      "destination": "https://www.digistorms.ai/blog/saas-onboarding-email-sequence",
+      "permanent": true
+    },
+    {
+      "source": "/blog/saas-gamification",
+      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
+      "destination": "https://www.digistorms.ai/blog/milestone-emails",
+      "permanent": true
+    },
+    {
+      "source": "/blog/user-engagement-strategy",
+      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
+      "destination": "https://www.digistorms.ai/blog/behavioral-email-marketing",
+      "permanent": true
+    },
+    {
       "source": "/blog/jobs-to-be-done-examples",
       "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
       "destination": "https://www.digistorms.ai/blog/saas-email-benchmarks",

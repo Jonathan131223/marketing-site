@@ -3,7 +3,7 @@ import PageLayout from '@/layouts/PageLayout.astro';
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import jonProfile from '@/assets/founder/jonathan-profile.png';
-import { blogPosts, type BlogPost as BlogPostMeta } from '@/content/blog';
+import { type BlogPost as BlogPostMeta } from '@/content/blog';
 import libraryEmailsData from '@/data/library/emails.json';
 import libraryBrandsData from '@/data/library/brands.json';
 import { filterTocHeadings } from '@/scripts/blog-article';
@@ -37,6 +37,7 @@ const { Content, headings } = await post.render();
 const title = post.data.title;
 const description = post.data.description;
 const date = post.data.date;
+const updated = post.data.updated;
 const readTime = post.data.readTime;
 const heroImage = post.data.heroImage;
 const ogImageOverride = post.data.ogImage;
@@ -76,6 +77,23 @@ const readTimeIso = (() => {
   return m ? `PT${m[1]}M` : undefined;
 })();
 
+// Real word count off the markdown body. This used to be `parseInt(readTime) * 250`
+// — i.e. derived from a hand-typed "10 min read" string, so it reported whatever
+// the author guessed rather than what the page contains. Strip the syntax that
+// isn't prose (code fences, image/link URLs, HTML tags, table pipes) so the
+// number we hand Google is defensible.
+const wordCount = (() => {
+  const prose = post.body
+    .replace(/```[\s\S]*?```/g, ' ')        // fenced code
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')  // images
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')// links -> keep anchor text
+    .replace(/<[^>]+>/g, ' ')               // inline HTML
+    .replace(/[|>#*_`~-]/g, ' ')            // md punctuation + table pipes
+    .trim();
+  const n = prose ? prose.split(/\s+/).length : 0;
+  return n > 0 ? n : undefined;
+})();
+
 // Table of contents: H2s only (filterTocHeadings guards this invariant — the
 // user flagged a regression where H3 sub-headings were bleeding into the TOC
 // and flooding it with brand names from the "28 examples" section). These
@@ -90,21 +108,80 @@ const tocItems = filterTocHeadings(headings);
 function isEmailExamplePost(meta: BlogPostMeta | undefined): boolean {
   return (meta?.libraryTags?.length ?? 0) > 0;
 }
+// Rank candidates by how much they actually have in common with this post,
+// rather than taking the first three off a stably-ordered list — which is what
+// this did before (`pool.slice(0, 3)`) and which meant nearly every one of the
+// email-example posts recommended the same three siblings. That wasted the
+// strongest internal-linking surface on the site: 9 posts had no contextual
+// outbound links at all, so this block was their only way to pass equity, and
+// it was pointing all of them at the same place.
+//
+// Score = shared libraryTags (the closest thing we have to a topic taxonomy),
+// then same-series, then recency as the tie-break.
 function relatedPostsFor(
   currentSlug: string,
   meta: BlogPostMeta | undefined,
 ): BlogPostMeta[] {
-  const others = blogPosts.filter((p) => p.slug !== currentSlug);
-  const emailPool = others.filter(isEmailExamplePost);
-  const guidePool = others.filter((p) => !isEmailExamplePost(p));
-  if (isEmailExamplePost(meta)) {
-    const pool = emailPool.length >= 3 ? emailPool : [...emailPool, ...guidePool];
-    return pool.slice(0, 3);
-  }
-  const pool = guidePool.length >= 3 ? guidePool : [...guidePool, ...emailPool];
-  return pool.slice(0, 3);
+  const currentTags = new Set(meta?.libraryTags ?? []);
+  const sameSeries = isEmailExamplePost(meta);
+  const rotation = hash(currentSlug);
+
+  return allPostsMeta
+    .filter((p) => p.slug !== currentSlug)
+    .map((p) => {
+      const shared = (p.libraryTags ?? []).filter((t) => currentTags.has(t)).length;
+      return {
+        post: p,
+        // Tag overlap dominates; series match is a weaker nudge so a strongly
+        // related guide can still outrank a barely-related example post.
+        score: shared * 10 + (isEmailExamplePost(p) === sameSeries ? 1 : 0),
+      };
+    })
+    .sort((a, b) =>
+      b.score - a.score ||
+      // Ties (posts sharing no tags with this one) are broken by a rotation
+      // keyed off the current slug rather than by recency. Recency would make
+      // whichever post happens to be newest win *every* tie site-wide — the
+      // same pile-up the slice(0,3) had, just at a different address. This
+      // spreads the filler slots across the back catalogue instead, and is
+      // deterministic so builds stay reproducible.
+      ((hash(a.post.slug) + rotation) % 997) - ((hash(b.post.slug) + rotation) % 997)
+    )
+    .slice(0, 3)
+    .map((s) => s.post);
 }
-const currentPostMeta = blogPosts.find((p) => p.slug === slug);
+
+function hash(s: string): number {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 997;
+  return h;
+}
+// Derive the candidate pool from the content collection, NOT from the
+// hand-maintained `blogPosts` array in src/content/blog/index.ts.
+//
+// That array had drifted to 13 entries against 31 actual posts — every post
+// published since ~May 2026 was missing from it, which meant new articles
+// could never appear as a related-article recommendation anywhere on the site.
+// New posts were being published straight into an internal-linking dead zone,
+// which is part of why they got no traction. Reading the collection makes the
+// drift structurally impossible instead of relying on the publisher to
+// remember two places.
+const allPostsMeta: BlogPostMeta[] = (await getCollection('blog')).map((p) => {
+  const id = p.id.replace(/\.md$/, '');
+  return {
+    slug: p.data.slug ?? id,
+    title: p.data.title,
+    description: p.data.description,
+    shortDescription: p.data.shortDescription ?? p.data.description,
+    date: p.data.date,
+    readTime: p.data.readTime ?? '',
+    thumbnail: p.data.thumbnail,
+    heroImage: p.data.heroImage,
+    libraryTags: p.data.libraryTags,
+  };
+});
+
+const currentPostMeta = allPostsMeta.find((p) => p.slug === slug);
 const relatedArticles = relatedPostsFor(slug, currentPostMeta);
 
 // "See it in the wild" — surface real library email examples that match this
@@ -131,11 +208,11 @@ const articleJsonLd = {
   image: ogImage,
   url: `${siteUrl}/blog/${slug}`,
   datePublished: date,
-  dateModified: date,
+  dateModified: updated ?? date,
   articleSection,
   ...(readTimeIso ? { timeRequired: readTimeIso } : {}),
   inLanguage: "en-US",
-  wordCount: readTime ? Math.round(parseInt(readTime) * 250) : undefined,
+  wordCount,
   author: {
     "@type": "Person",
     name: "Jonathan Bernard",

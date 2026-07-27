@@ -8,6 +8,11 @@ const blog = defineCollection({
     description: z.string(),
     shortDescription: z.string().optional(),
     date: z.string(),
+    // Set this when materially rewriting a published post (the refresh cycle).
+    // It drives schema.org `dateModified`; without it Google sees no freshness
+    // signal and a refresh looks identical to an untouched page. Leave unset
+    // for new posts and for typo-level edits.
+    updated: z.string().optional(),
     readTime: z.string().optional(),
     thumbnail: z.string().optional(),
     heroImage: z.string().optional(),
