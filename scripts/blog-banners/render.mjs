@@ -272,6 +272,14 @@ function buildCard({ subject, headline, body, cta, iconKey }) {
 
 const CARDS = [
   {
+    slug: 'subscription-cancellation-email',
+    subject: 'Cancellation flow',
+    headline: '10 cancellation email examples',
+    body: 'Real cancellation and downgrade emails from Semrush, Pipedrive, Lucid, Adobe, Loom — and why they win users back.',
+    cta: 'See the sequence',
+    icon: 'envelope',
+  },
+  {
     slug: 'free-trial-email',
     subject: 'Trial sequence',
     headline: '10 free trial email examples',

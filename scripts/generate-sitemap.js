@@ -81,6 +81,7 @@ const staticEntries = [
   // Error-Noindex_page_in_sitemap in the Ahrefs audit.
   urlEntry(`${BASE_URL}/lifecycle-score`,    "2026-01-01", "monthly",  "0.7"),
   // Blog posts
+  urlEntry(`${BASE_URL}/blog/subscription-cancellation-email`, "2026-07-27", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/free-trial-email`, "2026-07-24", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/nps-email-examples`, "2026-07-22", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/feedback-request-email`, "2026-07-16", "monthly", "0.9"),

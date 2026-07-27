@@ -524,6 +524,16 @@
       "italic_emphasis": "10",
       "subline": "DigiStorms · A day-by-day trial sequence from real SaaS",
       "prompt": "Editorial OG card. Cream background. Instrument Serif headline '10 free trial email examples' with '10' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
+    },
+    {
+      "id": "blog-subscription-cancellation-email",
+      "output": "public/og/blog-subscription-cancellation-email.webp",
+      "page_file": "src/content/blog/subscription-cancellation-email.md",
+      "background": "warm cream #F8F6F2",
+      "headline": "10 cancellation email examples",
+      "italic_emphasis": "10",
+      "subline": "DigiStorms · Confirmations, downgrades and the win-back window",
+      "prompt": "Editorial OG card. Cream background. Instrument Serif headline '10 cancellation email examples' with '10' in italic primary blue. Slate-500 subline. DigiStorms wordmark lower-left."
     }
   ]
 }
