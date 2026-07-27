@@ -253,7 +253,12 @@ async function main() {
   }
 
   else if (cmd === 'keywords') {
-    const rows = await query(sc, { dimensions: ['query'], rowLimit: limit });
+    const rows = await query(sc, {
+      dimensions: ['query'],
+      rowLimit: limit,
+      dimensionFilterGroups: pageFilterGroups(pageFilter),
+    });
+    if (pageFilter) console.log(`  (filtered to pages containing "${pageFilter}")\n`);
     console.log(`  ${'QUERY'.padEnd(50)} ${'CLK'.padStart(5)} ${'IMP'.padStart(7)} ${'CTR'.padStart(7)} ${'POS'.padStart(5)}`);
     rows.forEach((r) => console.log(
       `  ${(r.keys[0] || '').slice(0, 50).padEnd(50)} ${String(r.clicks).padStart(5)} ${String(r.impressions).padStart(7)} ${pct(r.ctr).padStart(7)} ${fmtPos(r.position).padStart(5)}`
@@ -351,7 +356,12 @@ async function main() {
   else if (cmd === 'striking') {
     // Keywords at position 4-20 with meaningful impressions — the "close-but-not-top" set.
     // These are the highest-leverage click-through wins.
-    const rows = await query(sc, { dimensions: ['query'], rowLimit: 500 });
+    const rows = await query(sc, {
+      dimensions: ['query'],
+      rowLimit: 500,
+      dimensionFilterGroups: pageFilterGroups(pageFilter),
+    });
+    if (pageFilter) console.log(`  (filtered to pages containing "${pageFilter}")\n`);
     const hits = rows
       .filter((r) => r.position >= 4 && r.position <= 20 && r.impressions >= 30)
       .sort((a, b) => b.impressions - a.impressions)
@@ -447,9 +457,9 @@ function printHelp() {
   console.log(`  cohorts       ★ clicks by site section (/blog vs /library vs /compare)`);
   console.log(`  real          ★ CTR with AI-fan-out impressions stripped out`);
   console.log(`  summary         aggregate metrics over last [days=90]`);
-  console.log(`  keywords        top queries (up to [limit=100])`);
+  console.log(`  keywords        top queries (up to [limit=100])  [page=/blog/slug]`);
   console.log(`  pages           top URLs (up to [limit=50])`);
-  console.log(`  striking        pos 4–20 w/ ≥30 impressions (rank-lift targets)`);
+  console.log(`  striking        pos 4–20 w/ ≥30 impressions  [page=/blog/slug]`);
   console.log(`  ctr-position    CTR bucketed by integer position`);
   console.log(`  device          clicks/imp by desktop/mobile/tablet`);
   console.log(`  country         clicks/imp by country (top 20)`);
