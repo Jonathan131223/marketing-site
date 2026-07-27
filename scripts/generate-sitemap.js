@@ -141,14 +141,11 @@ const libraryEntries = [
   ...tags.map((t) => urlEntry(`${BASE_URL}/library/tag/${t.slug}`, tagLatestDate[t.slug] || globalLatest, "weekly", "0.7")),
   // Use case detail pages
   ...usecases.map((u) => urlEntry(`${BASE_URL}/library/usecase/${u.slug}`, usecaseLatestDate[u.slug] || globalLatest, "weekly", "0.7")),
-  // Email detail pages (use email's own date when available)
-  ...emails.map((e) => {
-    let lastmod = TODAY;
-    if (e.setDate) {
-      try { lastmod = new Date(e.setDate).toISOString().split("T")[0]; } catch {}
-    }
-    return urlEntry(`${BASE_URL}/library/email/${e.slug}`, lastmod, "monthly", "0.6");
-  }),
+  // NOTE: /library/email/<slug> detail pages are deliberately NOT listed here.
+  // They carry `noindex, follow` as of 2026-07-27 (see
+  // src/pages/library/email/[slug].astro for the reasoning), and submitting
+  // noindexed URLs in a sitemap sends Google contradictory signals.
+  // The hubs above stay listed — they are the indexable surface of the library.
 ];
 
 writeFileSync(
@@ -181,4 +178,4 @@ console.log(`    Hub + index pages  : 4`);
 console.log(`    Brand pages        : ${brands.length}`);
 console.log(`    Tag pages          : ${tags.length}`);
 console.log(`    Use case pages     : ${usecases.length}`);
-console.log(`    Email pages        : ${emails.length}`);
+console.log(`    Email pages        : 0 (${emails.length} built but noindex — excluded on purpose)`);

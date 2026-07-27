@@ -15,6 +15,21 @@ export function getStaticPaths() {
 
 const { email } = Astro.props;
 
+// These 1,058 email detail pages are `noindex, follow` on purpose (2026-07-27).
+//
+// They were 96% of our indexed URLs and ~3 organic clicks/month between them.
+// Worse, they were what actually ranked: exact email subject lines and other
+// brands' names ("ahrefs outreach" — 663 impressions, 0 clicks), which is
+// zero-intent traffic that dilutes site-level quality signals and burns crawl
+// budget that should go to /blog.
+//
+// `follow` (not `noarchive`/`nofollow`) is deliberate — the 320 internal links
+// from blog posts into the library still pass equity, and the library hubs
+// (/library, /library/tag/*, /library/brand/*, /library/usecase/*) stay fully
+// indexed because they are where the library's real clicks come from.
+//
+// The pages remain live and linked; this only removes them from search. They
+// are still a conversion surface for readers arriving from the blog.
 const SITE_URL = 'https://www.digistorms.ai';
 const DEFAULT_OG_IMAGE = `${SITE_URL}/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png`;
 
@@ -135,6 +150,7 @@ const jsonLd = [articleJsonLd, breadcrumbJsonLd];
   ogTitle={ogTitle}
   ogDescription={pageDesc}
   jsonLd={jsonLd}
+  noindex
 >
   <main class="pt-20 pb-24">
     <!-- Breadcrumb -->
