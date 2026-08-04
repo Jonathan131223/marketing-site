@@ -37,10 +37,9 @@ pass) or `npm run test:watch`. Test files live under `test/`.
 - When adding a conditional (if/else, switch, ternary), write tests for BOTH paths
 - Never commit code that makes existing tests fail
 
-The first test suite was bootstrapped in v0.1.0.0 as part of the QA pass that
-shipped the email generator tab layout. See `test/email-generator/EmailGeneratorApp.regression.test.tsx`
-for the ISSUE-001 regression test — the exact assertion that would have caught
-the blank-page bug that shipped to production before the test suite existed.
+The first test suite was bootstrapped in v0.1.0.0 as part of the QA pass on the
+email generator, which has since been removed from this site (see "No public
+email generator" below). Its regression tests went with it.
 
 ## Canonical URL form
 
@@ -68,14 +67,14 @@ bundle (e.g., `PUBLIC_APP_BASE_URL`). Astro only inlines `PUBLIC_*` variables in
 both server AND client bundles. `VITE_*` is server-only and will cause a hydration
 mismatch when components render differently on SSR vs client.
 
-## Email generator sub-routes
+## No public email generator
 
-`/email-generator/{brief,templates,generate,customize}` are flow-state pages that
-only make sense after a user picks a use case on the picker. They emit
-`<meta name="robots" content="noindex, follow">` with `canonical` pointing at
-`/email-generator` to prevent soft-404 SEO penalties from title-vs-body mismatches
-when users deep-link without state. If you add a new sub-route, include `noindex`
-and `canonical` props on the `BaseLayout`.
+The lifecycle email generator is **gated** — it lives behind auth in the app
+portal (`app.digistorms.ai/portal/*`), not on this site. `/email-generator` and
+its sub-routes were removed and 301 to `/` via `vercel.json`. Do not re-add a
+public generator page, and do not point marketing CTAs at the app's generator
+routes; the CTA for that intent is the Calendly "Book a demo" link already used
+in `src/components/Navbar.tsx`.
 
 ## Blog article invariants
 

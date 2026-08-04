@@ -10,7 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { appUrl } from "@/config/appUrl";
+const CALENDLY_URL = "https://calendly.com/jonathan-digistorms/30-min-call";
 
 const PLANS = [
   { label: "DigiStorms — from $299 / month", value: "299" },
@@ -243,7 +243,7 @@ export default function ROICalculatorIsland() {
                   <h3 className="text-xl font-semibold text-foreground mb-3">Ready to make it happen?</h3>
                   <p className="text-muted-foreground mb-4">DigiStorms builds your onboarding email sequence automatically — so you can start moving users from signup to paid.</p>
                   <Button size="lg" asChild className="w-full sm:w-auto">
-                    <a href={appUrl("/email-sequence-generator")}>Build my onboarding emails</a>
+                    <a href={CALENDLY_URL}>Build my onboarding emails</a>
                   </Button>
                 </div>
               )}

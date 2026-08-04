@@ -4,6 +4,16 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/email-generator",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/email-generator/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/contact",
       "destination": "/pricing",
       "permanent": true

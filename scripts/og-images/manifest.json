@@ -226,16 +226,6 @@
       "prompt": "A 1200x630 horizontal Open Graph social-share card. Solid warm cream background (#F8F6F2), faintest paper texture, flat and uncluttered. Centered, the headline reads exactly: 'Onboarding is your growth engine', set in a large editorial serif (Instrument Serif or Playfair Display), approximately 92 pixels tall, slate-900 navy (#0F172A), letter-spacing slightly tight, line-height 1.1. The two words 'growth engine' appear in italic and in primary blue (#2563EB) — the rest stays upright in navy. Below, a single line of muted body text in clean sans-serif: 'DigiStorms Manifesto', slate-500 grey (#475569), about 22 pixels tall. Lower-left: small wordmark 'DigiStorms' in slate-900 sans-serif. Generous negative space, editorial restraint, manifesto-style composition. Render every character exactly. No icons, no decorative elements."
     },
     {
-      "id": "email-generator",
-      "output": "public/og/email-generator.webp",
-      "page_file": "src/pages/email-generator/index.astro",
-      "background": "warm cream #F8F6F2",
-      "headline": "Free AI lifecycle email generator",
-      "italic_emphasis": "Free",
-      "subline": "DigiStorms · Pick a use case, get a sequence in seconds",
-      "prompt": "A 1200x630 horizontal Open Graph social-share card. Solid warm cream background (#F8F6F2), faintest paper texture, flat and uncluttered. Centered, the headline reads exactly: 'Free AI lifecycle email generator', set in a large editorial serif (Instrument Serif or Playfair Display), approximately 88 pixels tall, slate-900 navy (#0F172A), letter-spacing slightly tight, line-height 1.1. The single word 'Free' appears in italic and in primary blue (#2563EB) — the rest stays upright in navy. Below, a single line of muted body text in clean sans-serif: 'DigiStorms · Pick a use case, get a sequence in seconds', slate-500 grey (#475569), about 24 pixels tall. Lower-left: small wordmark 'DigiStorms' in slate-900 sans-serif. Generous negative space, editorial composition. Render every character exactly. No icons, no email mockups — pure typography."
-    },
-    {
       "id": "compare-customer-io",
       "output": "public/og/compare-customer-io.webp",
       "page_file": "src/pages/compare/digistorms-vs-customer-io.astro",

@@ -755,35 +755,6 @@ writeRoute("/lifecycle-score", buildHead({
 }));
 staticPageCount++;
 
-// ── 10. Email Generator /email-generator ─────────────────────────────────────
-
-writeRoute("/email-generator", buildHead({
-  title: "Lifecycle Email Generator | DigiStorms",
-  description: "Generate a complete lifecycle email sequence for your SaaS product. Choose your use case, enter your website, and get onboarding emails in minutes.",
-  canonical: `${BASE_URL}/email-generator`,
-  jsonLd: [
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      name: "Lifecycle Email Generator",
-      url: `${BASE_URL}/email-generator`,
-      applicationCategory: "BusinessApplication",
-      operatingSystem: "Web",
-      description: "Generate a complete lifecycle email sequence for your SaaS product. Choose your use case, enter your website, and get onboarding emails in minutes.",
-      offers: {
-        "@type": "Offer",
-        price: "0",
-        priceCurrency: "USD",
-      },
-    },
-    breadcrumbSchema([
-      { name: "Home", url: BASE_URL },
-      { name: "Email Generator", url: `${BASE_URL}/email-generator` },
-    ]),
-  ],
-}));
-staticPageCount++;
-
 // ── 11. Privacy /privacy ─────────────────────────────────────────────────────
 
 writeRoute("/privacy", buildHead({

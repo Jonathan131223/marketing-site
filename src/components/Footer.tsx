@@ -160,10 +160,10 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="https://app.digistorms.ai/use-cases"
+                  href="https://calendly.com/jonathan-digistorms/30-min-call"
                   className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center min-h-[44px]"
                 >
-                  Lifecycle Email Generator
+                  Book a demo
                 </a>
               </li>
             </ul>

@@ -75,10 +75,12 @@ const staticEntries = [
   urlEntry(`${BASE_URL}/manifesto`,          "2026-01-01", "yearly",   "0.5"),
   urlEntry(`${BASE_URL}/about`,              "2026-04-07", "monthly",  "0.6"),
   urlEntry(`${BASE_URL}/roi-calculator`,     "2026-01-01", "monthly",  "0.7"),
-  urlEntry(`${BASE_URL}/email-generator`,    "2026-01-01", "monthly",  "0.7"),
-  // /privacy, /terms, /email-generator/templates omitted: each sets
-  // noindex={true} in its .astro source. Including them tripped
-  // Error-Noindex_page_in_sitemap in the Ahrefs audit.
+  // /privacy and /terms omitted: each sets noindex={true} in its .astro
+  // source. Including them tripped Error-Noindex_page_in_sitemap in the
+  // Ahrefs audit.
+  // /email-generator omitted: the public generator was removed and the tool
+  // now lives behind auth in the app portal. vercel.json 301s the old URL
+  // (and its sub-routes) to /.
   urlEntry(`${BASE_URL}/lifecycle-score`,    "2026-01-01", "monthly",  "0.7"),
   // Blog posts
   urlEntry(`${BASE_URL}/blog/subscription-cancellation-email`, "2026-07-27", "monthly", "0.9"),

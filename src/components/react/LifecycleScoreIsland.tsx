@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { appUrl } from "@/config/appUrl";
+const CALENDLY_URL = "https://calendly.com/jonathan-digistorms/30-min-call";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -342,7 +342,7 @@ export default function LifecycleScoreIsland() {
                     {/* CTAs */}
                     <div className="space-y-4">
                       <a
-                        href={appUrl("/email-sequence-generator")}
+                        href={CALENDLY_URL}
                         onClick={() => handleCtaClick("generate_email")}
                       >
                         <Button

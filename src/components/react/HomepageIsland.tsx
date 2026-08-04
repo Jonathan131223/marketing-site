@@ -19,10 +19,11 @@ import { BenefitsSection } from "@/components/homepage/BenefitsSection";
 import { TestimonialSection } from "@/components/homepage/TestimonialSection";
 import { FAQSection } from "@/components/homepage/FAQSection";
 import { FinalCTASection } from "@/components/homepage/FinalCTASection";
-import { appUrl } from "@/config/appUrl";
 import { normalizeWebsiteUrl } from "@/lib/normalizeWebsiteUrl";
 import { track } from "@/lib/analytics";
 import { appendUtmsToUrl } from "@/lib/posthog";
+
+const CALENDLY_URL = "https://calendly.com/jonathan-digistorms/30-min-call";
 
 interface HomepageIslandProps {
   section: "hero" | "how-it-works" | "comparison" | "benefits" | "testimonial" | "faq" | "final-cta";
@@ -46,11 +47,10 @@ function directRedirect(rawUrl: string, pageSection: "hero" | "final-cta") {
     is_valid: normalized !== null,
   });
 
-  const target = normalized
-    ? appUrl(`/email-sequence-generator?analyze=1&url=${encodeURIComponent(normalized)}`)
-    : appUrl("/email-sequence-generator");
-
-  window.location.href = appendUtmsToUrl(target);
+  // The generator is gated (app portal, auth required), so this CTA books a
+  // demo rather than dead-ending visitors on a login modal. The URL they typed
+  // is still captured above by track.urlSubmitted.
+  window.location.href = appendUtmsToUrl(CALENDLY_URL);
 }
 
 function HeroIsland() {

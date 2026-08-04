@@ -8,8 +8,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { appUrl } from "@/config/appUrl";
-import { normalizeWebsiteUrl } from "@/lib/normalizeWebsiteUrl";
 
 const formatNumber = (num: number) => new Intl.NumberFormat("en-US").format(num);
 
@@ -104,12 +102,9 @@ export const ROISectionHomepage: React.FC<ROISectionHomepageProps> = ({
       if (onBeforeNavigateToApp) onBeforeNavigateToApp(href);
       else window.location.href = href;
     };
-    try {
-      const normalized = normalizeWebsiteUrl(trimmed);
-      go(appUrl(`/email-sequence-generator?analyze=1&url=${encodeURIComponent(normalized)}`));
-    } catch {
-      go(appUrl("/email-sequence-generator"));
-    }
+    // The generator is gated (app portal, auth required) — book a demo instead
+    // of dead-ending visitors on a login modal.
+    go("https://calendly.com/jonathan-digistorms/30-min-call");
   };
 
   return (

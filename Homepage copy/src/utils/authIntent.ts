@@ -6,12 +6,12 @@ export type AuthIntentAction =
   | "saveDraft"
   | "copyHtml"
   | "copyText"
-  | "exportEmail"
-  | "sendTestEmail";
+  | "exportEmail";
 
+// NOTE: there is no payload. The only action that ever carried one was
+// "sendTestEmail" (a recipient address), and test-email sending is gone.
 export interface AuthIntentPayload {
-  // For sendTestEmail, optional email address
-  testEmail?: string;
+  [key: string]: never;
 }
 
 export interface AuthIntent {
