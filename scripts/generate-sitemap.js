@@ -18,6 +18,10 @@ const TODAY = new Date().toISOString().split("T")[0];
 function blogPostDate(slug) {
   try {
     const md = readFileSync(join(ROOT, `src/content/blog/${slug}.md`), "utf8");
+    // Prefer `updated:` — on a refreshed post the original `date:` is stale and
+    // would tell crawlers nothing changed, wasting the refresh.
+    const u = md.match(/^updated:\s*"?(\d{4}-\d{2}-\d{2})"?/m);
+    if (u) return u[1];
     const m = md.match(/^date:\s*"?(\d{4}-\d{2}-\d{2})"?/m);
     return m ? m[1] : TODAY;
   } catch {
@@ -97,7 +101,7 @@ const staticEntries = [
   urlEntry(`${BASE_URL}/blog/upsell-email-examples`,     "2026-05-18", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/saas-welcome-email`,        "2026-05-13", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/webinar-email-sequence`,    "2026-03-23", "monthly", "0.9"),
-  urlEntry(`${BASE_URL}/blog/product-launch-email`,      "2026-05-06", "monthly", "0.9"),
+  urlEntry(`${BASE_URL}/blog/product-launch-email`,      blogPostDate("product-launch-email"), "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/b2b-lead-nurturing-email-examples`,    "2026-05-06", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/re-engagement-email-examples`,         "2026-05-06", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/customer-retention-email-examples`,    "2026-05-11", "monthly", "0.9"),
