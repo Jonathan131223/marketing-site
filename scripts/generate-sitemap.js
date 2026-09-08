@@ -100,7 +100,7 @@ const staticEntries = [
   urlEntry(`${BASE_URL}/blog/behavior-based-vs-time-based-emails`, "2026-05-22", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/upsell-email-examples`,     "2026-05-18", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/saas-welcome-email`,        "2026-05-13", "monthly", "0.9"),
-  urlEntry(`${BASE_URL}/blog/webinar-email-sequence`,    "2026-03-23", "monthly", "0.9"),
+  urlEntry(`${BASE_URL}/blog/webinar-email-sequence`,    blogPostDate("webinar-email-sequence"), "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/product-launch-email`,      blogPostDate("product-launch-email"), "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/b2b-lead-nurturing-email-examples`,    "2026-05-06", "monthly", "0.9"),
   urlEntry(`${BASE_URL}/blog/re-engagement-email-examples`,         "2026-05-06", "monthly", "0.9"),

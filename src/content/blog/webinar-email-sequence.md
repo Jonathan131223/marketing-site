@@ -1,25 +1,45 @@
 ---
-title: "25 webinar email examples: full 7-email sequence (2026)"
+title: "Webinar Email Sequence: 25 Examples + Templates"
 slug: "webinar-email-sequence"
-description: "25 real webinar emails from Customer.io, Slack, HubSpot, Calendly — invite, reminder, follow-up, no-show, replay. With subject lines and timing."
-shortDescription: "Want more webinar signups and engagement? Here's how your emails can deliver big."
+description: "The full 7-email webinar sequence with timing, 25 real examples from Customer.io, Slack, HubSpot, Zapier and Ahrefs, plus copy-paste webinar email templates."
+shortDescription: "The full 7-email webinar sequence — timing, 25 real examples and copy-paste templates."
 date: "2026-03-23"
-readTime: "11 min read"
+updated: "2026-09-08"
+readTime: "16 min read"
 thumbnail: "/blog/webinar-email-sequence/banner.webp"
 heroImage: "/blog/webinar-email-sequence/banner.webp"
-libraryTags: ["webinar-invitation", "webinar-confirmation"]
+libraryTags: ["webinar-invitation", "webinar-recording", "follow-up"]
 ogImage: "/og/blog-webinar-email-sequence.webp"
 ---
 
-Running a webinar? Great!
+A **webinar email sequence** is the set of emails that surrounds a live session — the invite that gets people to register, the confirmation that saves their spot, the reminders that get them to actually show up, and the follow-ups that turn attendance into a next step. Seven emails, sent across roughly two weeks, doing four different jobs.
 
-But if your email sequence isn't pulling its weight, you might end up talking to a half-empty (virtual) room.
+Most teams write the invite and stop. That's why the average webinar loses half its registrants between "yes, I'll be there" and the moment the session starts: the reminders are where attendance is won, and the follow-up is where the pipeline is.
 
-A strong webinar email sequence is what gets people to register, show up, and take action after it's over.
+This article covers what each email in the sequence does and when to send it, 25 real examples from Customer.io, Slack, HubSpot, Zapier, Grammarly, Litmus, Gong, Webflow and Ahrefs, copy-paste webinar email templates for every stage, and the no-show sequence most teams skip.
 
-Whether you're looking to convert leads, onboard users, or upsell existing customers, your emails are the real MVPs.
+## TL;DR — the webinar email sequence in three lines
 
-In this guide, I'll walk you through everything from strategy to execution—plus examples that'll make hitting "send" a whole lot easier.
+- **Seven emails, four jobs:** invite (10–14 days out), confirmation (instant), three reminders (1 week / 1 day / 1 hour), then thank-you and recording within 24 hours.
+- **Reminders drive attendance, not the invite.** Registration is a decision; showing up is a memory problem. The 1-hour reminder is the single highest-leverage email in the sequence.
+- **Split your follow-up by behaviour.** Attendees get next steps and a demo ask; no-shows get "sorry we missed you" plus the recording — the same email to both wastes your warmest segment.
+
+## What is a webinar email sequence?
+
+A webinar email sequence is an automated series of emails triggered by a webinar's timeline rather than by a user's lifecycle stage. It runs on a fixed schedule anchored to one date — the session — and every email in it is timed relative to that date.
+
+That makes it different from the rest of your [lifecycle email program](/blog/lifecycle-email-marketing-examples). A [welcome series](/blog/saas-welcome-email) is triggered by a signup and runs at the user's pace. A webinar sequence is triggered by a calendar and runs at the event's pace, which is why the same person can receive both at once without conflict.
+
+The sequence has four distinct phases:
+
+| Phase | Emails | Timing | The job |
+|---|---|---|---|
+| **Promote** | Invite (often 2–3 sends) | 10–14 days before | Get the registration |
+| **Confirm** | Registration confirmation | Instant | Save the spot, deliver the calendar link |
+| **Remind** | 3 reminders | 1 week / 1 day / 1 hour before | Get attendance |
+| **Follow up** | Thank-you, recording, no-show | 0–48 hours after | Convert attention into action |
+
+Registration and attendance are two separate conversion problems. Treating them as one — a great invite and nothing else — is the most common reason a well-promoted webinar plays to a quiet room.
 
 Webinar emails sit alongside the rest of your lifecycle program — the [welcome series](/blog/saas-welcome-email) onboards new signups, the [milestone emails](/blog/milestone-emails) celebrate progress, and the webinar sequence below brings those same users back into your funnel for live education.
 
@@ -305,6 +325,101 @@ Ahrefs delivers a high-energy webinar invitation email with clear visuals, conci
 
 A quick mention of the calendar link or what to expect after registering would round it out nicely for first-time webinar registrants.
 
+## Webinar email templates (copy-paste)
+
+Below is a webinar email template for every stage of the sequence. Swap the bracketed fields, keep the structure — the structure is what does the work.
+
+### Webinar invite email template
+
+> **Subject:** [Webinar] How [audience] are solving [problem]
+>
+> Hi [First name],
+>
+> On [day], [date] at [time + timezone], [speaker name] is running a live session on [topic].
+>
+> You'll leave with:
+> - [Concrete takeaway 1]
+> - [Concrete takeaway 2]
+> - [Concrete takeaway 3]
+>
+> It's [duration] minutes, including live Q&A. Can't make it live? Register anyway and we'll send you the recording.
+>
+> [**Save my seat** →]
+
+Send 10–14 days out. Lead with the takeaway, not the speaker's job title. The "register anyway for the recording" line is not a throwaway — it's what converts the half of your list that can't attend live.
+
+### Registration confirmation email template
+
+> **Subject:** You're registered: [Webinar title]
+>
+> You're in, [First name].
+>
+> **[Webinar title]**
+> [Day, date] at [time + timezone]
+> [Duration] minutes, live with Q&A
+>
+> [**Add to calendar** →]  [**Join link** →]
+>
+> Bring a question — we're saving the last 15 minutes for them.
+
+Send instantly. The calendar link is the entire point of this email; everything else is confirmation theatre. If someone doesn't add it to their calendar here, you're relying on the reminders alone.
+
+### Webinar reminder email template
+
+> **Subject:** Tomorrow: [Webinar title]
+>
+> [First name] — [webinar title] is tomorrow at [time + timezone].
+>
+> [One sentence on what they'll get out of it.]
+>
+> [**Join link** →]
+>
+> Can't make it? We'll email you the recording afterwards.
+
+Send this three times, shortening each one: a week out (re-sell the value), the day before (confirm the time), one hour before (link only, nothing else). The one-hour reminder should be the shortest email you send all month.
+
+### Post-webinar thank-you and recording template
+
+> **Subject:** Thanks for joining — recording inside
+>
+> Thanks for spending [duration] minutes with us, [First name].
+>
+> [**Watch the recording** →]
+>
+> The three things people asked about most:
+> - [Question 1] → [one-line answer or resource link]
+> - [Question 2] → [one-line answer or resource link]
+> - [Question 3] → [one-line answer or resource link]
+>
+> If you want to talk through how this applies to [their use case], [book 20 minutes here].
+
+Send within 24 hours while the session is still fresh. The Q&A recap is what makes this email get opened by people who already attended — it's new information, not a repeat.
+
+## Webinar no-show emails: the sequence most teams skip
+
+Between 40% and 60% of webinar registrants don't attend. They are not a failure — they raised their hand, gave you their email, and told you exactly what topic they care about. They're the warmest segment you'll generate all quarter, and most teams send them the same recap as the attendees.
+
+Split the list the moment the session ends:
+
+- **Attendees** get the thank-you, the recording, the Q&A recap, and a specific next step — a demo, a trial, a related resource.
+- **No-shows** get a "sorry we missed you" email with the recording front and centre, and no assumption that they saw anything.
+
+Customer.io's "What you missed yesterday" and Gong's "We missed you!" (both further up this page) are the pattern: acknowledge the absence in one line, hand over the recording immediately, and give one reason to watch it now rather than "sometime."
+
+> 💡 Send the no-show email the morning after, not the same evening. A registrant who missed a 2pm session has usually had a bad day; the recording lands better on a fresh one.
+
+Then treat non-openers of that email as a normal [re-engagement](/blog/re-engagement-email-examples) audience rather than continuing to email them about an event that has already happened.
+
+## Adapting the sequence for event invitations and demo invitations
+
+The same seven-email skeleton works for anything with a fixed date and a live host — you're only changing what the reminders protect.
+
+**Event invitation emails** (conferences, meetups, user groups, virtual summits) need more lead time and one extra email: send the invite 3–4 weeks out rather than 10–14 days, add a logistics email (venue, agenda, what to bring) about a week before, and keep the day-of reminder purely practical — location, start time, and where to go on arrival. Attendance is a travel decision, not a calendar decision, so the reminders exist to remove friction rather than to re-sell.
+
+**Demo invitation emails** compress the sequence instead of stretching it. A demo is one-to-one, so the "invite" is a booking link, the confirmation is the calendar hold, and one reminder 24 hours out is enough — a second feels like chasing. What matters is the pre-demo email: ask one question about their setup so the call opens with their context instead of your feature tour. The follow-up is where a demo sequence earns its keep — recap what you showed, answer the objection they actually raised, and propose the next step within the same day.
+
+Both variants reuse your webinar automation wholesale. Build the sequence once, clone it, and adjust the offsets.
+
 ## Key ingredients of a high-performing webinar email strategy
 
 A good email strategy isn't just about what you say—it's how, when, and to whom you say it. Let's break down the mechanics of crafting a sequence that feels personal, timely, and purposeful.
@@ -365,10 +480,17 @@ For product adoption webinars, look for different signals. Did your thank you em
 
 Tie these metrics back to goals. If people aren't progressing, it may not be the webinar date or event details—it could be the framing in your email subject line or the timing of your final reminder. Refining based on real outcomes helps turn your email sequences into a repeatable growth lever.
 
-## Nail your next webinar with smarter emails
+## The pattern behind every webinar sequence that worked
 
-When it comes to webinar marketing, your email sequence is your MVP. It's the first handshake, the friendly nudge, the final reminder, and the follow-through. A thoughtful, well-timed webinar email sequence keeps people informed, interested, and inspired to take action.
+Across all 25 examples on this page, the sequences that filled the room shared four habits:
 
-So whether you're planning your next webinar, looking to re-engage your webinar registrants, or scale up future events, treat your emails like a key part of your strategy—not just an afterthought.
+| Habit | What it looks like |
+|---|---|
+| **One takeaway per email** | The invite sells the outcome; the reminder sells the time; the follow-up sells the next step. Never all three at once. |
+| **Reminders get shorter, not louder** | A week out reads like an invite. An hour out is a subject line and a link. |
+| **The recording is promised upfront** | "Register anyway and we'll send the recording" converts the people who already know they can't attend. |
+| **Attendees and no-shows are split** | Two follow-up paths, written differently, sent the morning after. |
 
-When done right, these messages don't just drive attendance—they drive business growth.
+The emails themselves are not hard to write. What separates a sequence that fills a room from one that doesn't is that every message has exactly one job and is timed to the session rather than to a content calendar.
+
+If you want more examples to work from, the [webinar follow-up email guide](/blog/webinar-follow-up-email) goes deeper on the post-event half of the sequence, and the [webinar follow-up subject lines](/blog/webinar-follow-up-subject-lines) collection is the fastest place to steal a line. For everything else — invites, confirmations, reminders and recaps from hundreds of SaaS brands — browse the [free email library](/library) and filter by [webinar invitation](/library/tag/webinar-invitation) to see how other teams handle the same seven emails.
