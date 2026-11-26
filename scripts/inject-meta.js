@@ -372,7 +372,7 @@ const publisherOrg = {
 const authorPerson = {
   "@type": "Person",
   name: "Jonathan Bernard",
-  url: "https://www.linkedin.com/in/jonathan-digistorms/",
+  url: "https://www.linkedin.com/in/jonathan-bernard-paris/",
 };
 
 // ══════════════════════════════════════════════════════════════════════════════
@@ -456,7 +456,7 @@ writeRoute("/", buildHead({
       founder: {
         "@type": "Person",
         name: "Jonathan Bernard",
-        url: "https://www.linkedin.com/in/jonathan-digistorms/",
+        url: "https://www.linkedin.com/in/jonathan-bernard-paris/",
       },
       sameAs: [
         "https://www.linkedin.com/company/digistorms",
@@ -689,7 +689,7 @@ writeRoute("/about", buildHead({
         "@type": "Organization",
         name: "DigiStorms",
         url: BASE_URL,
-        founder: { "@type": "Person", name: "Jonathan Bernard", url: "https://www.linkedin.com/in/jonathan-digistorms/" },
+        founder: { "@type": "Person", name: "Jonathan Bernard", url: "https://www.linkedin.com/in/jonathan-bernard-paris/" },
         description: "AI agent that builds lifecycle email systems for SaaS companies",
       },
     },

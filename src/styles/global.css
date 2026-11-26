@@ -172,6 +172,34 @@ All colors MUST be HSL.
     animation-play-state: paused;
   }
 
+  /*
+   * Testimonial band on the homepage. The track holds the testimonial list
+   * twice, so translating it by -50% lands exactly on the start of the second
+   * copy and the loop is seamless. Speed is deliberately slow: it should read
+   * as a band of quotes drifting past, not as a carousel demanding attention.
+   */
+  .testimonial-marquee {
+    display: flex;
+    align-items: stretch;
+    width: max-content;
+    animation: marquee-scroll 70s linear infinite;
+  }
+
+  /*
+   * The spacing is a trailing margin on every card, NOT `gap`. With `gap` the
+   * track measures 10 cards + 9 gaps, so -50% lands half a gap short of the
+   * second copy and the loop visibly jumps. A trailing margin on each card
+   * makes the track exactly two identical halves.
+   */
+  .testimonial-marquee > * {
+    margin-right: 1.25rem;
+  }
+
+  .testimonial-marquee:hover,
+  .testimonial-marquee:focus-within {
+    animation-play-state: paused;
+  }
+
   /* Hero illustration: sequential glow pulse across 3 cards */
   @keyframes hero-glow-pulse {
     0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.03); border-color: rgb(241 245 249); }
@@ -189,7 +217,13 @@ All colors MUST be HSL.
 @media (prefers-reduced-motion: reduce) {
   .animate-scroll,
   .animate-scroll-reverse,
-  .marquee-track {
+  .marquee-track,
+  .testimonial-marquee {
     animation: none;
+  }
+
+  /* Without the animation the band cannot be read, so hand scrolling back. */
+  .testimonial-marquee-viewport {
+    overflow-x: auto;
   }
 }

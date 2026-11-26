@@ -20,7 +20,7 @@ import { Image } from 'astro:assets';
 import jonProfile from '@/assets/founder/jonathan-profile.png';
 
 const SITE_URL = 'https://www.digistorms.ai';
-const LINKEDIN_URL = 'https://www.linkedin.com/in/jonathan-digistorms/';
+const LINKEDIN_URL = 'https://www.linkedin.com/in/jonathan-bernard-paris/';
 const CALL_URL =
   'https://calendly.com/jonathan-digistorms/30-min-call?utm_source=home&utm_medium=page&utm_campaign=consulting';
 
@@ -214,49 +214,76 @@ const year = new Date().getFullYear();
       </section>
 
       <!-- Testimonials -->
-      <section class="bg-background">
-        <div class="max-w-5xl mx-auto px-6 py-16">
+      <section class="bg-background py-16">
+        <div class="max-w-5xl mx-auto px-6">
           <h2 class="text-3xl sm:text-4xl font-serif text-slate-900 tracking-[-0.01em] mb-3">
             What clients say
           </h2>
-          <p class="text-lg text-slate-500 mb-10">
+          <p class="text-lg text-slate-500">
             People I have worked with, in their own words.
           </p>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {testimonials.map((t) => (
-              <figure class="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col">
-                <div class="flex items-center gap-3 mb-4">
-                  <img
-                    src={t.logoUrl}
-                    alt={`${t.company} logo`}
-                    class="h-10 w-10 rounded-lg object-contain flex-shrink-0"
-                    width="40"
-                    height="40"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <div>
-                    <p class="font-semibold text-slate-900 leading-tight">{t.company}</p>
-                    <p class="text-xs text-slate-500">{t.industry}</p>
+        </div>
+
+        {/*
+          Full-bleed band that drifts right to left. The track renders the
+          testimonial list TWICE: `.testimonial-marquee` translates it by -50%,
+          which lands exactly on the start of the second copy, so the loop has
+          no visible seam. Both copies must stay identical, and the track must
+          carry no horizontal padding, or the two halves differ and the seam
+          shows. The second copy is aria-hidden so screen readers and search
+          engines read each quote once. Hovering pauses the band; adding a
+          sixth testimonial needs no change here.
+        */}
+        <div class="testimonial-marquee-viewport relative overflow-hidden mt-10">
+          <div class="testimonial-marquee">
+            {[0, 1].map((copy) =>
+              testimonials.map((t) => (
+                <figure
+                  class="w-[300px] sm:w-[360px] flex-shrink-0 bg-white rounded-2xl border border-slate-200 p-6 flex flex-col"
+                  aria-hidden={copy === 1 ? 'true' : undefined}
+                >
+                  <div class="flex items-center gap-3 mb-4">
+                    <img
+                      src={t.logoUrl}
+                      alt={`${t.company} logo`}
+                      class="h-10 w-10 rounded-lg object-contain flex-shrink-0"
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div>
+                      <p class="font-semibold text-slate-900 leading-tight">{t.company}</p>
+                      <p class="text-xs text-slate-500">{t.industry}</p>
+                    </div>
                   </div>
-                </div>
-                <blockquote class="text-slate-600 text-[15px] leading-relaxed mb-5 flex-1">
-                  &ldquo;{t.quote}&rdquo;
-                </blockquote>
-                <figcaption class="flex items-center gap-3 pt-4 border-t border-slate-100">
-                  <img
-                    src={t.avatarUrl}
-                    alt={t.author}
-                    class="h-10 w-10 rounded-full object-cover flex-shrink-0"
-                    width="40"
-                    height="40"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <p class="text-sm font-medium text-slate-900">{t.author}</p>
-                </figcaption>
-              </figure>
-            ))}
+                  <blockquote class="text-slate-600 text-[15px] leading-relaxed mb-5 flex-1">
+                    &ldquo;{t.quote}&rdquo;
+                  </blockquote>
+                  <figcaption class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                    <img
+                      src={t.avatarUrl}
+                      alt={t.author}
+                      class="h-10 w-10 rounded-full object-cover flex-shrink-0"
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <p class="text-sm font-medium text-slate-900">{t.author}</p>
+                  </figcaption>
+                </figure>
+              ))
+            )}
+          </div>
+          <!-- Cards fade into the page edges instead of being cut off. -->
+          <div
+            class="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-white to-transparent"
+          >
+          </div>
+          <div
+            class="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-white to-transparent"
+          >
           </div>
         </div>
       </section>
