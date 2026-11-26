@@ -107,7 +107,7 @@ By providing step-by-step guidance, helpful tips, and resources, you can help us
 
 An effective onboarding flow can reduce churn, enhance user experience, and set the stage for long-term user retention and loyalty.
 
-Related article: [7 SaaS onboarding KPIs you can't miss](https://www.digistorms.ai/blog/saas-onboarding-kpis)
+Related article: [7 SaaS onboarding KPIs you can't miss](https://www.digistorms.com/blog/saas-onboarding-kpis)
 
 #### Gamifying flow
 
@@ -127,7 +127,7 @@ By making the user experience more interactive and enjoyable, you can boost user
 
 *Source: freepik.com*
 
-The [annual upgrade flow](/blog/upgrade-emails) targets paid users currently on a monthly plan, encouraging them to upgrade to an annual plan. Pushing users to the annual plan greatly benefits SaaS companies by ensuring steady revenue, [reducing churn rates](https://www.digistorms.ai/blog/customer-churn-prediction), and enhancing customer lifetime value.
+The [annual upgrade flow](/blog/upgrade-emails) targets paid users currently on a monthly plan, encouraging them to upgrade to an annual plan. Pushing users to the annual plan greatly benefits SaaS companies by ensuring steady revenue, [reducing churn rates](https://www.digistorms.com/blog/customer-churn-prediction), and enhancing customer lifetime value.
 
 To effectively encourage users to switch to an annual plan, send an email every other month offering a discount, such as 20% off, for upgrading to the annual plan. This flow typically includes emails highlighting the benefits of committing to an annual plan, showcasing new features, and providing a discount incentive.
 
@@ -329,4 +329,4 @@ Our team of experts understands the unique challenges and opportunities in the S
 
 Partner with us to create personalized, targeted email campaigns that drive engagement, retention, and growth.
 
-Ready to automate your lifecycle emails? [Try DigiStorms free](https://www.digistorms.ai) — enter your website and get your onboarding sequence in minutes.
+Ready to automate your lifecycle emails? [Try DigiStorms free](https://www.digistorms.com) — enter your website and get your onboarding sequence in minutes.

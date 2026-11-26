@@ -71,12 +71,12 @@ describe("Footer — smoke", () => {
 
   it("links the tagline-level logo to the root domain", () => {
     renderFooter();
-    // The logo img has alt="DigiStorms", wrapped in an <a href="https://digistorms.ai">.
+    // The logo img has alt="DigiStorms", wrapped in an <a href="https://digistorms.com">.
     // Multiple links match /digistorms/i (social links, comparison pages,
     // footer tagline link) so query by the specific wrapped image instead.
     const logo = screen.getByAltText("DigiStorms");
     const logoLink = logo.closest("a");
     expect(logoLink).not.toBeNull();
-    expect(logoLink).toHaveAttribute("href", "https://digistorms.ai");
+    expect(logoLink).toHaveAttribute("href", "https://digistorms.com");
   });
 });

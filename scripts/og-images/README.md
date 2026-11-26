@@ -1,6 +1,6 @@
 # OG card generation
 
-17 brand-consistent Open Graph social-share images for digistorms.ai, rendered
+17 brand-consistent Open Graph social-share images for digistorms.com, rendered
 deterministically from a manifest. No browser, no API keys, no AI image
 generation — pure typography via satori (HTML/JSX → SVG) + sharp (SVG → WebP).
 
@@ -27,7 +27,7 @@ use case).
 
 - `manifest.json` — source of truth: 17 cards × `{ id, output, page_file, headline, italic_emphasis, subline, background, prompt }`. Edit headline/emphasis/subline here to change cards.
 - `render.mjs` — satori + sharp renderer. Reads manifest, renders 1200×630 WebP per card to `public/og/<id>.webp`. Also accepts a single card id as CLI arg: `node render.mjs homepage`.
-- `wire-og-images.mjs` — patches each Astro page in `card.page_file` to set `ogImage="https://www.digistorms.ai/og/<id>.webp"`. Idempotent. Recognizes `<PageLayout>`, `<BaseLayout>`, `<ComparisonPage>`, `<BestToolsPage>`, and the homepage's `DEFAULT_OG_IMAGE` constant.
+- `wire-og-images.mjs` — patches each Astro page in `card.page_file` to set `ogImage="https://www.digistorms.com/og/<id>.webp"`. Idempotent. Recognizes `<PageLayout>`, `<BaseLayout>`, `<ComparisonPage>`, `<BestToolsPage>`, and the homepage's `DEFAULT_OG_IMAGE` constant.
 - `_inbox/` — legacy folder for nanobanana PNG drops; left in place + `.gitignore`d in case you ever want to mix AI-generated cards alongside the rendered ones.
 
 ## Workflow
@@ -87,5 +87,5 @@ grep -l 'og/pricing.webp'  dist/pricing/index.html
 ```
 
 Once deployed, validate OG cards render correctly on the major platforms via
-[opengraph.xyz](https://www.opengraph.xyz/) (paste a digistorms.ai URL — it
+[opengraph.xyz](https://www.opengraph.xyz/) (paste a digistorms.com URL — it
 shows previews for Facebook, LinkedIn, Twitter, Slack, Discord).

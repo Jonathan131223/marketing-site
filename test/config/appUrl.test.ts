@@ -42,13 +42,13 @@ describe("getAppUrl — ISSUE-008 regression", () => {
   });
 
   it("returns the configured URL when PUBLIC_APP_BASE_URL is set", () => {
-    import.meta.env.PUBLIC_APP_BASE_URL = "https://digistorms.ai";
-    expect(getAppUrl()).toBe("https://digistorms.ai");
+    import.meta.env.PUBLIC_APP_BASE_URL = "https://digistorms.com";
+    expect(getAppUrl()).toBe("https://digistorms.com");
   });
 
   it("strips a trailing slash from the configured URL", () => {
-    import.meta.env.PUBLIC_APP_BASE_URL = "https://digistorms.ai/";
-    expect(getAppUrl()).toBe("https://digistorms.ai");
+    import.meta.env.PUBLIC_APP_BASE_URL = "https://digistorms.com/";
+    expect(getAppUrl()).toBe("https://digistorms.com");
   });
 
   it("supports a localhost override for local dev", () => {

@@ -77,7 +77,7 @@ Lifecycle email flows are designed to [accompany a SaaS user through different s
 
 The following flows start at the free trial, right before the purchase stage. We don't cover the awareness stage since cold outreach emails would be part of your sales process. Nor do we cover the consideration stage in this article. In email marketing, that would typically involve a lead magnet followed by a nurturing email sequence.
 
-Implementing the email flows below will allow you to send the right message to the right person at the right time, so you can [enhance user engagement](https://www.digistorms.ai/blog/user-engagement-strategy), drive conversions, and foster long-term loyalty.
+Implementing the email flows below will allow you to send the right message to the right person at the right time, so you can [enhance user engagement](https://www.digistorms.com/blog/user-engagement-strategy), drive conversions, and foster long-term loyalty.
 
 ### Welcome Flow - Convert free trial users into paid users
 
@@ -123,7 +123,7 @@ This flow ensures that users who were close to purchasing are given the necessar
 
 The onboarding flow ensures new paying users have a smooth and successful start with your product. This flow includes instructional emails guiding users through key features, setup processes, and best practices.
 
-Providing step-by-step guidance, helpful tips, and resources helps users quickly become proficient with your product, increasing their satisfaction and likelihood of continued use. An effective onboarding flow can [reduce churn](https://www.digistorms.ai/blog/saas-churn-rate-benchmark), enhance customer experience, and set the stage for long-term user retention and loyalty.
+Providing step-by-step guidance, helpful tips, and resources helps users quickly become proficient with your product, increasing their satisfaction and likelihood of continued use. An effective onboarding flow can [reduce churn](https://www.digistorms.com/blog/saas-churn-rate-benchmark), enhance customer experience, and set the stage for long-term user retention and loyalty.
 
 Ensuring users understand and utilize your product effectively from the start is crucial for their ongoing engagement.
 
@@ -301,4 +301,4 @@ SaaS businesses face the same challenges when it comes to reduce churn and incre
 
 From our experience, it's mostly because it's much more complicated in terms of technical implementation.
 
-Ready to automate your lifecycle emails? [Try DigiStorms free](https://www.digistorms.ai) — enter your website and get your onboarding sequence in minutes.
+Ready to automate your lifecycle emails? [Try DigiStorms free](https://www.digistorms.com) — enter your website and get your onboarding sequence in minutes.

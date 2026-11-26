@@ -26,4 +26,4 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-Sitemap: https://www.digistorms.ai/sitemap.xml
+Sitemap: https://www.digistorms.com/sitemap.xml

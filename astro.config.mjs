@@ -9,7 +9,7 @@ import tailwind from '@astrojs/tailwind';
 // `trailingSlash: 'never'`.
 
 export default defineConfig({
-  site: 'https://www.digistorms.ai',
+  site: 'https://www.digistorms.com',
   // Canonical URL form is no-trailing-slash. Astro emits dist/foo/index.html
   // (default `build.format: 'directory'`); Vercel's `cleanUrls: true` +
   // `trailingSlash: false` (vercel.json) serves it at `/foo` and 308-redirects

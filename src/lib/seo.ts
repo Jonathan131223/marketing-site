@@ -1,4 +1,4 @@
-export const SITE_URL  = "https://www.digistorms.ai";
+export const SITE_URL  = "https://www.digistorms.com";
 export const SITE_NAME = "DigiStorms";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png`;
 

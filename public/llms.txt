@@ -34,114 +34,114 @@ Jonathan Bernard (https://www.linkedin.com/in/jonathan-bernard-paris/) — lifec
 
 ## Links
 
-- Homepage: https://www.digistorms.ai
-- Email Library: https://www.digistorms.ai/library
-- Blog: https://www.digistorms.ai/blog
-- Pricing: https://www.digistorms.ai/pricing
-- ROI Calculator: https://www.digistorms.ai/roi-calculator
-- Email Generator: https://www.digistorms.ai/email-generator
-- Manifesto: https://www.digistorms.ai/manifesto
+- Homepage: https://www.digistorms.com
+- Email Library: https://www.digistorms.com/library
+- Blog: https://www.digistorms.com/blog
+- Pricing: https://www.digistorms.com/pricing
+- ROI Calculator: https://www.digistorms.com/roi-calculator
+- Email Generator: https://www.digistorms.com/email-generator
+- Manifesto: https://www.digistorms.com/manifesto
 
 ## Email Library
 
-The DigiStorms Email Library contains 1,058 lifecycle emails from 39 B2B SaaS companies, organized by 80 email types (tags) and 9 use case categories. Browse the full library at https://www.digistorms.ai/library
+The DigiStorms Email Library contains 1,058 lifecycle emails from 39 B2B SaaS companies, organized by 80 email types (tags) and 9 use case categories. Browse the full library at https://www.digistorms.com/library
 
 ### Brands (39)
 
-- [Adobe](https://www.digistorms.ai/library/brand/adobe) — 25 emails
-- [Ahrefs](https://www.digistorms.ai/library/brand/ahrefs) — 28 emails
-- [Aircall](https://www.digistorms.ai/library/brand/aircall) — 10 emails
-- [Apollo.io](https://www.digistorms.ai/library/brand/apollo-io) — 22 emails
-- [Asana](https://www.digistorms.ai/library/brand/asana) — 13 emails
-- [Beehiiv](https://www.digistorms.ai/library/brand/beehiiv) — 54 emails
-- [Buffer](https://www.digistorms.ai/library/brand/buffer) — 29 emails
-- [Calendly](https://www.digistorms.ai/library/brand/calendly) — 55 emails
-- [Canva](https://www.digistorms.ai/library/brand/canva) — 26 emails
-- [Clickup](https://www.digistorms.ai/library/brand/clickup) — 20 emails
-- [Customer.io](https://www.digistorms.ai/library/brand/customer-io) — 32 emails
-- [Docusign](https://www.digistorms.ai/library/brand/docusign) — 15 emails
-- [Dropbox](https://www.digistorms.ai/library/brand/dropbox) — 22 emails
-- [Figma](https://www.digistorms.ai/library/brand/figma) — 39 emails
-- [Fiverr](https://www.digistorms.ai/library/brand/fiverr) — 50 emails
-- [Freepik](https://www.digistorms.ai/library/brand/freepik) — 44 emails
-- [Grammarly](https://www.digistorms.ai/library/brand/grammarly) — 7 emails
-- [Hubspot](https://www.digistorms.ai/library/brand/hubspot) — 7 emails
-- [Hunter.io](https://www.digistorms.ai/library/brand/hunter-io) — 26 emails
-- [Jira](https://www.digistorms.ai/library/brand/jira) — 11 emails
-- [Loom](https://www.digistorms.ai/library/brand/loom) — 41 emails
-- [Lovable](https://www.digistorms.ai/library/brand/lovable) — 14 emails
-- [Lucid](https://www.digistorms.ai/library/brand/lucid) — 47 emails
-- [MailChimp](https://www.digistorms.ai/library/brand/mailchimp) — 44 emails
-- [Make](https://www.digistorms.ai/library/brand/make) — 19 emails
-- [Miro](https://www.digistorms.ai/library/brand/miro) — 18 emails
-- [Monday](https://www.digistorms.ai/library/brand/monday) — 24 emails
-- [Notion](https://www.digistorms.ai/library/brand/notion) — 47 emails
-- [Paypal](https://www.digistorms.ai/library/brand/paypal) — 21 emails
-- [Phantom Busters](https://www.digistorms.ai/library/brand/phantom-busters) — 14 emails
-- [Pipedrive](https://www.digistorms.ai/library/brand/pipedrive) — 46 emails
-- [SemRush](https://www.digistorms.ai/library/brand/semrush) — 49 emails
-- [Slack](https://www.digistorms.ai/library/brand/slack) — 35 emails
-- [Stripe](https://www.digistorms.ai/library/brand/stripe) — 19 emails
-- [SurveyMonkey](https://www.digistorms.ai/library/brand/surveymonkey) — 11 emails
-- [Typeform](https://www.digistorms.ai/library/brand/typeform) — 14 emails
-- [Webflow](https://www.digistorms.ai/library/brand/webflow) — 27 emails
-- [Zapier](https://www.digistorms.ai/library/brand/zapier) — 26 emails
+- [Adobe](https://www.digistorms.com/library/brand/adobe) — 25 emails
+- [Ahrefs](https://www.digistorms.com/library/brand/ahrefs) — 28 emails
+- [Aircall](https://www.digistorms.com/library/brand/aircall) — 10 emails
+- [Apollo.io](https://www.digistorms.com/library/brand/apollo-io) — 22 emails
+- [Asana](https://www.digistorms.com/library/brand/asana) — 13 emails
+- [Beehiiv](https://www.digistorms.com/library/brand/beehiiv) — 54 emails
+- [Buffer](https://www.digistorms.com/library/brand/buffer) — 29 emails
+- [Calendly](https://www.digistorms.com/library/brand/calendly) — 55 emails
+- [Canva](https://www.digistorms.com/library/brand/canva) — 26 emails
+- [Clickup](https://www.digistorms.com/library/brand/clickup) — 20 emails
+- [Customer.io](https://www.digistorms.com/library/brand/customer-io) — 32 emails
+- [Docusign](https://www.digistorms.com/library/brand/docusign) — 15 emails
+- [Dropbox](https://www.digistorms.com/library/brand/dropbox) — 22 emails
+- [Figma](https://www.digistorms.com/library/brand/figma) — 39 emails
+- [Fiverr](https://www.digistorms.com/library/brand/fiverr) — 50 emails
+- [Freepik](https://www.digistorms.com/library/brand/freepik) — 44 emails
+- [Grammarly](https://www.digistorms.com/library/brand/grammarly) — 7 emails
+- [Hubspot](https://www.digistorms.com/library/brand/hubspot) — 7 emails
+- [Hunter.io](https://www.digistorms.com/library/brand/hunter-io) — 26 emails
+- [Jira](https://www.digistorms.com/library/brand/jira) — 11 emails
+- [Loom](https://www.digistorms.com/library/brand/loom) — 41 emails
+- [Lovable](https://www.digistorms.com/library/brand/lovable) — 14 emails
+- [Lucid](https://www.digistorms.com/library/brand/lucid) — 47 emails
+- [MailChimp](https://www.digistorms.com/library/brand/mailchimp) — 44 emails
+- [Make](https://www.digistorms.com/library/brand/make) — 19 emails
+- [Miro](https://www.digistorms.com/library/brand/miro) — 18 emails
+- [Monday](https://www.digistorms.com/library/brand/monday) — 24 emails
+- [Notion](https://www.digistorms.com/library/brand/notion) — 47 emails
+- [Paypal](https://www.digistorms.com/library/brand/paypal) — 21 emails
+- [Phantom Busters](https://www.digistorms.com/library/brand/phantom-busters) — 14 emails
+- [Pipedrive](https://www.digistorms.com/library/brand/pipedrive) — 46 emails
+- [SemRush](https://www.digistorms.com/library/brand/semrush) — 49 emails
+- [Slack](https://www.digistorms.com/library/brand/slack) — 35 emails
+- [Stripe](https://www.digistorms.com/library/brand/stripe) — 19 emails
+- [SurveyMonkey](https://www.digistorms.com/library/brand/surveymonkey) — 11 emails
+- [Typeform](https://www.digistorms.com/library/brand/typeform) — 14 emails
+- [Webflow](https://www.digistorms.com/library/brand/webflow) — 27 emails
+- [Zapier](https://www.digistorms.com/library/brand/zapier) — 26 emails
 
 ### Use Cases (9)
 
-- [Onboard Free User](https://www.digistorms.ai/library/usecase/onboard-free-user)
-- [Onboard Paid User](https://www.digistorms.ai/library/usecase/onboard-paid-user)
-- [Educate & Engage](https://www.digistorms.ai/library/usecase/educate-engage)
-- [Win Back Churned User](https://www.digistorms.ai/library/usecase/win-back-churned-user)
-- [Expand User](https://www.digistorms.ai/library/usecase/expand-user)
-- [Announce New Features](https://www.digistorms.ai/library/usecase/announce-new-features)
-- [Celebrate Milestones](https://www.digistorms.ai/library/usecase/celebrate-milestones)
-- [Request Feedback](https://www.digistorms.ai/library/usecase/request-feedback)
-- [Transactional Emails](https://www.digistorms.ai/library/usecase/transactional-email)
+- [Onboard Free User](https://www.digistorms.com/library/usecase/onboard-free-user)
+- [Onboard Paid User](https://www.digistorms.com/library/usecase/onboard-paid-user)
+- [Educate & Engage](https://www.digistorms.com/library/usecase/educate-engage)
+- [Win Back Churned User](https://www.digistorms.com/library/usecase/win-back-churned-user)
+- [Expand User](https://www.digistorms.com/library/usecase/expand-user)
+- [Announce New Features](https://www.digistorms.com/library/usecase/announce-new-features)
+- [Celebrate Milestones](https://www.digistorms.com/library/usecase/celebrate-milestones)
+- [Request Feedback](https://www.digistorms.com/library/usecase/request-feedback)
+- [Transactional Emails](https://www.digistorms.com/library/usecase/transactional-email)
 
 ### Top Email Types (80 total)
 
-- [Feature Usage Nudge](https://www.digistorms.ai/library/tag/feature-usage-nudge) — 261 emails
-- [Content Engagement](https://www.digistorms.ai/library/tag/content-engagement) — 221 emails
-- [Product Education](https://www.digistorms.ai/library/tag/product-education) — 186 emails
-- [Usage Expansion](https://www.digistorms.ai/library/tag/usage-expansion) — 150 emails
-- [Webinar Invitation](https://www.digistorms.ai/library/tag/webinar-invitation) — 116 emails
-- [New Feature(s) Nudge](https://www.digistorms.ai/library/tag/new-feature-nudge) — 111 emails
-- [Product Update](https://www.digistorms.ai/library/tag/product-update) — 94 emails
-- [Newsletter](https://www.digistorms.ai/library/tag/newsletter) — 81 emails
-- [Upgrade CTA](https://www.digistorms.ai/library/tag/upgrade-cta) — 64 emails
-- [Welcome - Free Users](https://www.digistorms.ai/library/tag/welcome-free-users) — 35 emails
+- [Feature Usage Nudge](https://www.digistorms.com/library/tag/feature-usage-nudge) — 261 emails
+- [Content Engagement](https://www.digistorms.com/library/tag/content-engagement) — 221 emails
+- [Product Education](https://www.digistorms.com/library/tag/product-education) — 186 emails
+- [Usage Expansion](https://www.digistorms.com/library/tag/usage-expansion) — 150 emails
+- [Webinar Invitation](https://www.digistorms.com/library/tag/webinar-invitation) — 116 emails
+- [New Feature(s) Nudge](https://www.digistorms.com/library/tag/new-feature-nudge) — 111 emails
+- [Product Update](https://www.digistorms.com/library/tag/product-update) — 94 emails
+- [Newsletter](https://www.digistorms.com/library/tag/newsletter) — 81 emails
+- [Upgrade CTA](https://www.digistorms.com/library/tag/upgrade-cta) — 64 emails
+- [Welcome - Free Users](https://www.digistorms.com/library/tag/welcome-free-users) — 35 emails
 
 ## Optional
 
 ### Blog Articles
 
-- [12 onboarding email examples from real SaaS brands (2026)](https://www.digistorms.ai/blog/saas-onboarding-email-sequence) — The 7-email onboarding sequence with subject lines, timing, and patterns from Loom, Calendly, Pipedrive, Asana, Stripe, Zapier, and Monday. Published May 25, 2026.
-- [Behavior-based vs time-based emails: 2026 SaaS guide](https://www.digistorms.ai/blog/behavior-based-vs-time-based-emails) — 10 real behavioral emails grouped by milestone, feature-usage, and inactivity triggers. From Loom, Zapier, Apollo, Calendly, Jira. Published May 22, 2026.
-- [12 upsell email examples from real SaaS companies (2026)](https://www.digistorms.ai/blog/upsell-email-examples) — Real upsell emails from Semrush, Hunter, Zapier, Loom, and Typeform with subject lines and triggers. Published May 18, 2026.
-- [Welcome email templates: 28 SaaS examples to copy](https://www.digistorms.ai/blog/saas-welcome-email) — Best practices, timing tips, and real examples to level up your day-0 onboarding email.
-- [12 customer retention email examples (real SaaS, 2026)](https://www.digistorms.ai/blog/customer-retention-email-examples) — 12 retention emails from Adobe, Semrush, Dropbox, Notion, Grammarly, Mailchimp — milestone, inactivity, expansion, and win-back patterns. Published May 11, 2026.
-- [SaaS email benchmarks: what 1,058 lifecycle emails reveal](https://www.digistorms.ai/blog/saas-email-benchmarks) — Original research analyzing 1,058 lifecycle emails from 39 top SaaS companies. Published April 7, 2026.
-- [14 SaaS lifecycle email templates you can steal (2026)](https://www.digistorms.ai/blog/saas-email-templates) — 14 ready-to-use templates covering welcome, setup, education, milestone, trial-ending, upgrade, and reactivation.
-- [28 product launch email examples from real SaaS (2026)](https://www.digistorms.ai/blog/product-launch-email) — Real product launch and release emails from Notion, Slack, ClickUp, Asana, Webflow, Loom, and Figma.
-- [30 product launch email subject lines (real SaaS, 2026)](https://www.digistorms.ai/blog/product-launch-email-subject-lines) — Real product launch subject lines from Notion, Loom, Linear, Zapier and more.
-- [15 B2B lead nurturing email examples from real SaaS](https://www.digistorms.ai/blog/b2b-lead-nurturing-email-examples) — Real B2B lead nurturing emails from Apollo, Notion, Ahrefs, Calendly, Asana, and ClickUp.
-- [12 re-engagement email examples that win back inactive users (2026)](https://www.digistorms.ai/blog/re-engagement-email-examples) — Real win-back and re-engagement emails from Adobe, Canva, Apollo, Semrush, and Pipedrive.
-- [Transactional vs marketing email: 2026 SaaS guide](https://www.digistorms.ai/blog/transactional-email-vs-marketing-email) — Side-by-side comparison with real examples from Stripe, Calendly, Notion, Beehiiv, and Zapier.
-- [15 SaaS newsletter examples that grow your subscribers](https://www.digistorms.ai/blog/saas-newsletter) — 15 real SaaS newsletters with subject lines, cadence, and the structural choices that drive opens and clicks.
-- [25 webinar email examples: full 7-email sequence (2026)](https://www.digistorms.ai/blog/webinar-email-sequence) — High-converting webinar email sequences from Customer.io, Slack, HubSpot, Calendly.
-- [13 webinar follow-up email examples (with subject lines)](https://www.digistorms.ai/blog/webinar-follow-up-email) — Effective webinar follow-up emails with smart segmentation and tips.
-- [25 webinar follow up subject lines that get opened](https://www.digistorms.ai/blog/webinar-follow-up-subject-lines) — Real subject lines organized by audience type, attendance status, and timing.
-- [12 SaaS milestone email examples that drive retention](https://www.digistorms.ai/blog/milestone-emails) — How to create milestone emails that drive engagement and retention.
-- [13 upgrade email examples that convert free users (2026)](https://www.digistorms.ai/blog/upgrade-emails) — Upgrade emails that convert trial users into paying customers.
-- [8 dunning email examples that recover failed payments](https://www.digistorms.ai/blog/dunning-emails) — Dunning emails that recover failed payments and reduce involuntary churn.
+- [12 onboarding email examples from real SaaS brands (2026)](https://www.digistorms.com/blog/saas-onboarding-email-sequence) — The 7-email onboarding sequence with subject lines, timing, and patterns from Loom, Calendly, Pipedrive, Asana, Stripe, Zapier, and Monday. Published May 25, 2026.
+- [Behavior-based vs time-based emails: 2026 SaaS guide](https://www.digistorms.com/blog/behavior-based-vs-time-based-emails) — 10 real behavioral emails grouped by milestone, feature-usage, and inactivity triggers. From Loom, Zapier, Apollo, Calendly, Jira. Published May 22, 2026.
+- [12 upsell email examples from real SaaS companies (2026)](https://www.digistorms.com/blog/upsell-email-examples) — Real upsell emails from Semrush, Hunter, Zapier, Loom, and Typeform with subject lines and triggers. Published May 18, 2026.
+- [Welcome email templates: 28 SaaS examples to copy](https://www.digistorms.com/blog/saas-welcome-email) — Best practices, timing tips, and real examples to level up your day-0 onboarding email.
+- [12 customer retention email examples (real SaaS, 2026)](https://www.digistorms.com/blog/customer-retention-email-examples) — 12 retention emails from Adobe, Semrush, Dropbox, Notion, Grammarly, Mailchimp — milestone, inactivity, expansion, and win-back patterns. Published May 11, 2026.
+- [SaaS email benchmarks: what 1,058 lifecycle emails reveal](https://www.digistorms.com/blog/saas-email-benchmarks) — Original research analyzing 1,058 lifecycle emails from 39 top SaaS companies. Published April 7, 2026.
+- [14 SaaS lifecycle email templates you can steal (2026)](https://www.digistorms.com/blog/saas-email-templates) — 14 ready-to-use templates covering welcome, setup, education, milestone, trial-ending, upgrade, and reactivation.
+- [28 product launch email examples from real SaaS (2026)](https://www.digistorms.com/blog/product-launch-email) — Real product launch and release emails from Notion, Slack, ClickUp, Asana, Webflow, Loom, and Figma.
+- [30 product launch email subject lines (real SaaS, 2026)](https://www.digistorms.com/blog/product-launch-email-subject-lines) — Real product launch subject lines from Notion, Loom, Linear, Zapier and more.
+- [15 B2B lead nurturing email examples from real SaaS](https://www.digistorms.com/blog/b2b-lead-nurturing-email-examples) — Real B2B lead nurturing emails from Apollo, Notion, Ahrefs, Calendly, Asana, and ClickUp.
+- [12 re-engagement email examples that win back inactive users (2026)](https://www.digistorms.com/blog/re-engagement-email-examples) — Real win-back and re-engagement emails from Adobe, Canva, Apollo, Semrush, and Pipedrive.
+- [Transactional vs marketing email: 2026 SaaS guide](https://www.digistorms.com/blog/transactional-email-vs-marketing-email) — Side-by-side comparison with real examples from Stripe, Calendly, Notion, Beehiiv, and Zapier.
+- [15 SaaS newsletter examples that grow your subscribers](https://www.digistorms.com/blog/saas-newsletter) — 15 real SaaS newsletters with subject lines, cadence, and the structural choices that drive opens and clicks.
+- [25 webinar email examples: full 7-email sequence (2026)](https://www.digistorms.com/blog/webinar-email-sequence) — High-converting webinar email sequences from Customer.io, Slack, HubSpot, Calendly.
+- [13 webinar follow-up email examples (with subject lines)](https://www.digistorms.com/blog/webinar-follow-up-email) — Effective webinar follow-up emails with smart segmentation and tips.
+- [25 webinar follow up subject lines that get opened](https://www.digistorms.com/blog/webinar-follow-up-subject-lines) — Real subject lines organized by audience type, attendance status, and timing.
+- [12 SaaS milestone email examples that drive retention](https://www.digistorms.com/blog/milestone-emails) — How to create milestone emails that drive engagement and retention.
+- [13 upgrade email examples that convert free users (2026)](https://www.digistorms.com/blog/upgrade-emails) — Upgrade emails that convert trial users into paying customers.
+- [8 dunning email examples that recover failed payments](https://www.digistorms.com/blog/dunning-emails) — Dunning emails that recover failed payments and reduce involuntary churn.
 
 ### Comparison Pages
 
-- [DigiStorms vs Customer.io](https://www.digistorms.ai/compare/digistorms-vs-customer-io) — Side-by-side comparison for SaaS onboarding emails.
-- [DigiStorms vs Encharge](https://www.digistorms.ai/compare/digistorms-vs-encharge) — Behavior-based onboarding email tools compared.
-- [DigiStorms vs Loops](https://www.digistorms.ai/compare/digistorms-vs-loops) — AI-generated onboarding sequences vs. modern SaaS email platform.
-- [DigiStorms vs Resend: AI onboarding vs email API](https://www.digistorms.ai/compare/digistorms-vs-resend) — AI onboarding agent vs. developer email API for SaaS.
-- [Best onboarding email tools for SaaS](https://www.digistorms.ai/compare/best-onboarding-email-tools) — Roundup of lifecycle email tools picked for SaaS onboarding.
-- [Best email automation for SaaS startups](https://www.digistorms.ai/compare/best-email-automation-saas-startups) — 8 email automation tools picked for free tiers and fast setup.
-- [5 best Customer.io alternatives for SaaS (from $0)](https://www.digistorms.ai/compare/customer-io-alternatives) — Affordable Customer.io alternatives: DigiStorms, Encharge, Loops, Userlist, Sequenzy.
+- [DigiStorms vs Customer.io](https://www.digistorms.com/compare/digistorms-vs-customer-io) — Side-by-side comparison for SaaS onboarding emails.
+- [DigiStorms vs Encharge](https://www.digistorms.com/compare/digistorms-vs-encharge) — Behavior-based onboarding email tools compared.
+- [DigiStorms vs Loops](https://www.digistorms.com/compare/digistorms-vs-loops) — AI-generated onboarding sequences vs. modern SaaS email platform.
+- [DigiStorms vs Resend: AI onboarding vs email API](https://www.digistorms.com/compare/digistorms-vs-resend) — AI onboarding agent vs. developer email API for SaaS.
+- [Best onboarding email tools for SaaS](https://www.digistorms.com/compare/best-onboarding-email-tools) — Roundup of lifecycle email tools picked for SaaS onboarding.
+- [Best email automation for SaaS startups](https://www.digistorms.com/compare/best-email-automation-saas-startups) — 8 email automation tools picked for free tiers and fast setup.
+- [5 best Customer.io alternatives for SaaS (from $0)](https://www.digistorms.com/compare/customer-io-alternatives) — Affordable Customer.io alternatives: DigiStorms, Encharge, Loops, Userlist, Sequenzy.

@@ -22,7 +22,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT      = join(__dirname, "..");
 const DIST      = join(ROOT, "dist");
 const DATA      = join(ROOT, "public/data/library");
-const BASE_URL  = "https://www.digistorms.ai";
+const BASE_URL  = "https://www.digistorms.com";
 const DEFAULT_OG_IMAGE = `${BASE_URL}/images/7e09a043-6588-42c9-bb0d-6d8f4d6da036.png`;
 
 // ── Load data ─────────────────────────────────────────────────────────────────
@@ -868,7 +868,7 @@ writeRoute("/compare/best-onboarding-email-tools", buildHead({
       { name: "Best Onboarding Email Tools", url: `${BASE_URL}/compare/best-onboarding-email-tools` },
     ]),
     { "@context": "https://schema.org", "@type": "ItemList", name: "Best Onboarding Email Tools for SaaS 2026", itemListOrder: "https://schema.org/ItemListOrderDescending", numberOfItems: 6, itemListElement: [
-      { "@type": "ListItem", position: 1, name: "DigiStorms", url: "https://www.digistorms.ai" },
+      { "@type": "ListItem", position: 1, name: "DigiStorms", url: "https://www.digistorms.com" },
       { "@type": "ListItem", position: 2, name: "Customer.io", url: "https://customer.io" },
       { "@type": "ListItem", position: 3, name: "Encharge", url: "https://encharge.io" },
       { "@type": "ListItem", position: 4, name: "Loops", url: "https://loops.so" },
