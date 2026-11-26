@@ -175,14 +175,15 @@ All colors MUST be HSL.
   /*
    * Testimonial band on the homepage. The track holds the testimonial list
    * twice, so translating it by -50% lands exactly on the start of the second
-   * copy and the loop is seamless. Speed is deliberately slow: it should read
-   * as a band of quotes drifting past, not as a carousel demanding attention.
+   * copy and the loop is seamless. 24s per cycle is roughly 80px/s: brisk
+   * enough that the band reads as a stream rather than a fixed list, slow
+   * enough that a quote can still be read as it passes. Hover pauses it.
    */
   .testimonial-marquee {
     display: flex;
     align-items: stretch;
     width: max-content;
-    animation: marquee-scroll 70s linear infinite;
+    animation: marquee-scroll 24s linear infinite;
   }
 
   /*

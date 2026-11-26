@@ -159,13 +159,19 @@ const year = new Date().getFullYear();
       <!-- Hero -->
       <section class="bg-background">
         <div class="max-w-3xl mx-auto px-6 pt-16 pb-14 text-center">
+          {/*
+            Rendered at 288px and displayed at 96px (w-24). Asking Astro for a
+            96px intrinsic image leaves it soft on any 2x or 3x display, which
+            is most of them; 3x costs a few KB and is sharp everywhere.
+          */}
           <Image
             src={jonProfile}
             alt="Jonathan Bernard"
             class="w-24 h-24 rounded-full object-cover mx-auto mb-8"
             loading="eager"
-            width={96}
-            height={96}
+            width={288}
+            height={288}
+            quality={90}
           />
           <p class="text-[13px] font-semibold tracking-[0.08em] uppercase text-primary mb-4">
             Independent consultant
