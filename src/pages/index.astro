@@ -1,151 +1,351 @@
 ---
-import PageLayout from '@/layouts/PageLayout.astro';
-import HomepageIsland from '@/components/react/HomepageIsland';
-import Footer from '@/components/astro/Footer.astro';
+/*
+ * Homepage — independent consulting profile.
+ *
+ * Replaces the DigiStorms SaaS product landing page (hero + how-it-works +
+ * comparison + benefits + FAQ + pricing CTA). The old landing lives in git
+ * history; the React sections it used (`HomepageIsland`, the components under
+ * `src/components/homepage/`) are untouched and still build, they are just no
+ * longer rendered here.
+ *
+ * This page deliberately does NOT use PageLayout: that wrapper ships the
+ * product Navbar (Product / Pricing / Book a demo) and the six-column product
+ * Footer. It renders on BaseLayout with its own minimal header and footer so
+ * nothing on the page points at the SaaS product. Every other route
+ * (/library, /blog, /pricing, /email-generator, ...) is unchanged and still
+ * reachable by URL.
+ */
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import jonProfile from '@/assets/founder/jonathan-profile.png';
 
 const SITE_URL = 'https://www.digistorms.ai';
-const DEFAULT_OG_IMAGE = `https://www.digistorms.ai/og/homepage.webp`;
+const LINKEDIN_URL = 'https://www.linkedin.com/in/jonathan-bernard-paris/';
+const CALL_URL =
+  'https://calendly.com/jonathan-digistorms/30-min-call?utm_source=home&utm_medium=page&utm_campaign=consulting';
 
-const PAGE_TITLE = 'AI Onboarding Agent for SaaS — DigiStorms';
-const PAGE_DESC = 'Your AI onboarding agent. Tracks user behavior and sends the right emails at the right time. Turn free users into paying customers, on autopilot.';
+const PAGE_TITLE = 'Jonathan Bernard, independent consultant | Digi Storms';
+const PAGE_DESC =
+  'Digi Storms is the independent consulting practice of Jonathan Bernard. He works with startups on growth, customer lifecycle and digital transformation.';
 
-const webSiteJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "DigiStorms",
-  url: SITE_URL,
-  description: "AI onboarding agent for SaaS",
-  potentialAction: {
-    "@type": "SearchAction",
-    target: {
-      "@type": "EntryPoint",
-      urlTemplate: `${SITE_URL}/library?q={search_term_string}`,
+/*
+ * Client testimonials — carried over verbatim from /about, where they have
+ * always lived. Quotes are the clients' own words and are reproduced exactly,
+ * punctuation included. Do not edit, shorten or paraphrase them, and never add
+ * a testimonial that a client did not actually give.
+ *
+ * ADDING A SIXTH TESTIMONIAL: uncomment the template at the end of this array
+ * and fill in the five fields. Drop the logo and the portrait into
+ * public/images-testimonials/ (ideally .webp, square, around 200x200) and
+ * reference them from the site root, e.g. "/images-testimonials/acme.webp".
+ * The grid below takes any number of entries, so six will lay out as three
+ * rows of two with no other change.
+ */
+const testimonials = [
+  {
+    company: 'Triscale',
+    industry: 'GTM Expert',
+    quote:
+      "I've had the pleasure of collaborating with Jonathan on several projects, and his expertise in lifecycle marketing for B2B SaaS is outstanding. He deeply understands how to drive engagement and retention through smart, data-driven campaigns. Beyond his skills, he's a fantastic partner — insightful, proactive, and always focused on impact. I highly recommend working with him!",
+    author: 'Thibault Le Meur',
+    logoUrl: '/images-testimonials/triscale.webp',
+    avatarUrl: '/images-testimonials/thibault.webp',
+  },
+  {
+    company: 'BryteBridge',
+    industry: 'Non-Profit Solutions',
+    quote:
+      'Jonathan is a rising star in Lifecycle Marketing and one of a few trusted freelancers I send referrals to. If you need help going 0 to 1 on your B2B SaaS lifecycle programs, give Jonathan a shout. His attitude, quality, and speed to delivery are all top-notch.',
+    author: 'Drew Price',
+    logoUrl: '/images-testimonials/brytebridge.webp',
+    avatarUrl: '/images-testimonials/drew.webp',
+  },
+  {
+    company: 'Blaze Type',
+    industry: 'Font Solutions',
+    quote:
+      "Jonathan's approach to retention has been a game-changer for us. Our customer lifetime value has significantly increased.",
+    author: 'Matthieu Salvaggio',
+    logoUrl: '/images-testimonials/blaze.webp',
+    avatarUrl: '/images-testimonials/matt.webp',
+  },
+  {
+    company: 'Magrid',
+    industry: 'EdTech',
+    quote:
+      "The team's expertise in email marketing transformed our user engagement metrics. We've never seen such positive results!",
+    author: 'Tahereh Pazouki',
+    logoUrl: '/images-testimonials/magrid.webp',
+    avatarUrl: '/images-testimonials/tahereh.webp',
+  },
+  {
+    company: 'Bubbleye',
+    industry: 'Marketing Automation',
+    quote:
+      "Jonathan's professionalism, speed, and competence in writing and strategic planning are remarkable. I highly recommend him.",
+    author: 'Stefano Roncari',
+    logoUrl: '/images-testimonials/bubbleye_logo.webp',
+    avatarUrl: '/images-testimonials/stefano.webp',
+  },
+  // --- Slot for a sixth testimonial. Uncomment and fill in. ---------------
+  // {
+  //   company: '',          // client company name, as they write it
+  //   industry: '',         // short descriptor, e.g. "B2B SaaS" or "Fintech"
+  //   quote: '',            // their words, verbatim, without surrounding quotes
+  //   author: '',           // person who gave the quote
+  //   logoUrl: '/images-testimonials/<company>.webp',
+  //   avatarUrl: '/images-testimonials/<firstname>.webp',
+  // },
+];
+
+const focusAreas = [
+  {
+    title: 'Growth',
+    body: 'Where customers come from, which channels are worth the effort, and what it takes to turn interest into a signed customer.',
+  },
+  {
+    title: 'Customer lifecycle',
+    body: 'Onboarding, activation, retention and win-back. The journey from first contact to a customer who stays, and the programmes that run it.',
+  },
+  {
+    title: 'Digital transformation',
+    body: 'Putting the tooling, data and reporting in place so a team can see what is working and act on it without guesswork.',
+  },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  url: `${SITE_URL}/`,
+  mainEntity: {
+    '@type': 'Person',
+    name: 'Jonathan Bernard',
+    jobTitle: 'Independent consultant',
+    url: `${SITE_URL}/`,
+    sameAs: [LINKEDIN_URL],
+    description:
+      'Independent consultant working with startups on growth, customer lifecycle and digital transformation.',
+    knowsLanguage: ['en', 'fr'],
+    worksFor: {
+      '@type': 'Organization',
+      name: 'Digi Storms',
+      url: `${SITE_URL}/`,
+      description: 'Independent consulting practice of Jonathan Bernard.',
     },
-    "query-input": "required name=search_term_string",
   },
 };
 
-const organizationJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "DigiStorms",
-  url: SITE_URL,
-  logo: {
-    "@type": "ImageObject",
-    url: DEFAULT_OG_IMAGE,
-    width: 1200,
-    height: 630,
-  },
-  description: "AI onboarding agent that helps SaaS companies turn free users into paying customers",
-  founder: {
-    "@type": "Person",
-    name: "Jonathan Bernard",
-    url: "https://www.linkedin.com/in/jonathan-digistorms/",
-  },
-  sameAs: [
-    "https://www.linkedin.com/company/digi-storms/",
-    "https://x.com/digistorms_ai",
-  ],
-  contactPoint: {
-    "@type": "ContactPoint",
-    contactType: "customer support",
-    url: "https://calendly.com/jonathan-digistorms/30-min-call",
-  },
-};
-
-const softwareJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "DigiStorms",
-  url: SITE_URL,
-  applicationCategory: "BusinessApplication",
-  operatingSystem: "Web",
-  description: "AI onboarding agent for SaaS. Analyzes your product and creates behavior-based onboarding email sequences automatically.",
-  offers: {
-    "@type": "AggregateOffer",
-    priceCurrency: "USD",
-    lowPrice: "0",
-    highPrice: "149",
-    offerCount: "5",
-    url: `${SITE_URL}/pricing`,
-  },
-};
-
-// FAQ Q&A text must match the visible content in
-// src/components/homepage/FAQSection.tsx verbatim — Google's Rich Results
-// validator rejected the schema when the answer text diverged. If you change
-// either side, change both.
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How does DigiStorms generate onboarding emails?",
-      acceptedAnswer: { "@type": "Answer", text: "DigiStorms analyzes your product to understand how users reach value. It identifies key steps in your onboarding journey, then generates a complete email sequence tailored to those milestones. Instead of writing emails from scratch, you get a structured onboarding flow aligned with how your product actually works." },
-    },
-    {
-      "@type": "Question",
-      name: "How is DigiStorms different from other email tools?",
-      acceptedAnswer: { "@type": "Answer", text: "Traditional tools require you to manually design sequences and guess what to send. DigiStorms does the opposite — it figures out your onboarding flow automatically and builds the right emails for you. It also triggers messages based on real user behavior, not fixed schedules, so users get the right message at the right time." },
-    },
-    {
-      "@type": "Question",
-      name: "Can I edit the emails before sending them?",
-      acceptedAnswer: { "@type": "Answer", text: "Yes. You have full control over every email. DigiStorms generates the initial sequence for you, but you can review, edit, and customize everything before going live." },
-    },
-    {
-      "@type": "Question",
-      name: "How long does it take to get started?",
-      acceptedAnswer: { "@type": "Answer", text: "Just a few minutes. You enter your website, DigiStorms analyzes your product, and your onboarding sequence is generated automatically. You can review and launch it right away." },
-    },
-    {
-      "@type": "Question",
-      name: "What do I need to connect to get started?",
-      acceptedAnswer: { "@type": "Answer", text: "All you need is your website to get started. To send emails and track user behavior, you'll connect your email provider and product events (via your existing tools or a simple integration)." },
-    },
-    {
-      "@type": "Question",
-      name: "How does DigiStorms know when to send each email?",
-      acceptedAnswer: { "@type": "Answer", text: "DigiStorms sends emails based on what users actually do in your product. For example, it can trigger messages when someone signs up, reaches a milestone, or stops engaging. This ensures every email is sent at the most relevant moment." },
-    },
-    {
-      "@type": "Question",
-      name: "Does it really adapt to user behavior automatically?",
-      acceptedAnswer: { "@type": "Answer", text: "Yes. DigiStorms continuously reacts to user activity. If a user progresses quickly, stalls, or skips steps, the system adjusts and sends the most relevant message — no manual intervention needed." },
-    },
-    {
-      "@type": "Question",
-      name: "What results can I expect from using DigiStorms?",
-      acceptedAnswer: { "@type": "Answer", text: "Most SaaS products lose users before they reach value. DigiStorms helps fix that by guiding users through onboarding with the right messages at the right time. The result is typically higher activation, better engagement, and more users converting to paid." },
-    },
-  ],
-};
+const year = new Date().getFullYear();
 ---
 
-<PageLayout
+<BaseLayout
   title={PAGE_TITLE}
   description={PAGE_DESC}
   canonical={`${SITE_URL}/`}
-  ogTitle="DigiStorms - AI Onboarding Agent for SaaS"
-  ogDescription="Turn free users into paying customers, on autopilot. DigiStorms is your AI onboarding agent."
-  ogImage={DEFAULT_OG_IMAGE}
-  jsonLd={[webSiteJsonLd, organizationJsonLd, softwareJsonLd, faqJsonLd]}
+  ogTitle="Jonathan Bernard, independent consultant"
+  ogDescription="Digi Storms is the independent consulting practice of Jonathan Bernard. Growth, customer lifecycle and digital transformation for startups."
+  ogImage={`${SITE_URL}/og/homepage.webp`}
+  jsonLd={jsonLd}
 >
-  <main>
-    <!-- Section 1: Hero (white) -->
-    <HomepageIsland section="hero" client:load />
-    <!-- Section 2: How It Works (cream) -->
-    <HomepageIsland section="how-it-works" client:visible />
-    <!-- Section 3: The Difference (white) -->
-    <HomepageIsland section="comparison" client:visible />
-    <!-- Section 4: Benefits (cream) -->
-    <HomepageIsland section="benefits" client:visible />
-    <!-- Section 5: Drew Price Testimonial (white) -->
-    <HomepageIsland section="testimonial" client:visible />
-    <!-- Section 6: FAQ (cream) -->
-    <HomepageIsland section="faq" client:visible />
-    <!-- Section 7: Final CTA (white) -->
-    <HomepageIsland section="final-cta" client:visible />
-  </main>
-</PageLayout>
+  <div class="min-h-screen bg-background">
+    <!-- Header: the company name a visitor searched for, and nothing else. -->
+    <header class="border-b border-slate-100">
+      <div class="max-w-3xl mx-auto px-6 h-16 flex items-center">
+        <a href="/" class="text-xl font-serif text-slate-900 tracking-[-0.01em]">Digi Storms</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="bg-background">
+        <div class="max-w-3xl mx-auto px-6 pt-16 pb-14 text-center">
+          {/*
+            Rendered at 288px and displayed at 96px (w-24). Asking Astro for a
+            96px intrinsic image leaves it soft on any 2x or 3x display, which
+            is most of them; 3x costs a few KB and is sharp everywhere.
+          */}
+          <Image
+            src={jonProfile}
+            alt="Jonathan Bernard"
+            class="w-24 h-24 rounded-full object-cover mx-auto mb-8"
+            loading="eager"
+            width={288}
+            height={288}
+            quality={90}
+          />
+          <p class="text-[13px] font-semibold tracking-[0.08em] uppercase text-primary mb-4">
+            Independent consultant
+          </p>
+          <h1 class="text-4xl sm:text-5xl font-serif text-slate-900 leading-[1.1] tracking-[-0.02em] mb-5">
+            Jonathan Bernard
+          </h1>
+          <p class="text-lg sm:text-xl text-slate-600 leading-relaxed">
+            I work with startups on their growth, their customer lifecycle and their
+            digital transformation. Digi Storms is my consulting practice.
+          </p>
+        </div>
+      </section>
+
+      <!-- What the work looks like -->
+      <section class="bg-background-warm">
+        <div class="max-w-3xl mx-auto px-6 py-16">
+          <h2 class="text-3xl sm:text-4xl font-serif text-slate-900 tracking-[-0.01em] mb-8">
+            The work
+          </h2>
+          <div class="space-y-5 text-lg text-slate-600 leading-relaxed">
+            <p>
+              Most of my clients are early stage and growth stage software companies. The
+              questions they bring me sit between marketing, product and data: how
+              customers are won, how they reach a first result, and why some of them leave.
+            </p>
+            <p>
+              An engagement usually starts with a diagnosis. I map the customer journey,
+              look at what the numbers actually say, and come back with the two or three
+              things worth fixing first. From there I either hand over a plan the team runs
+              itself, or stay on and build it with them. Some projects last a few weeks,
+              others run for months.
+            </p>
+            <p>I work in English and in French.</p>
+          </div>
+
+          <ul class="mt-12 space-y-0 border-t border-slate-200">
+            {focusAreas.map((area) => (
+              <li class="border-b border-slate-200 py-6">
+                <p class="text-xl font-semibold text-slate-900 mb-2">{area.title}</p>
+                <p class="text-base text-slate-600 leading-relaxed">{area.body}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="bg-background py-16">
+        <div class="max-w-5xl mx-auto px-6">
+          <h2 class="text-3xl sm:text-4xl font-serif text-slate-900 tracking-[-0.01em] mb-3">
+            What clients say
+          </h2>
+          <p class="text-lg text-slate-500">
+            People I have worked with, in their own words.
+          </p>
+        </div>
+
+        {/*
+          Full-bleed band that drifts right to left. The track renders the
+          testimonial list TWICE: `.testimonial-marquee` translates it by -50%,
+          which lands exactly on the start of the second copy, so the loop has
+          no visible seam. Both copies must stay identical, and the track must
+          carry no horizontal padding, or the two halves differ and the seam
+          shows. The second copy is aria-hidden so screen readers and search
+          engines read each quote once. Hovering pauses the band; adding a
+          sixth testimonial needs no change here.
+        */}
+        <div class="testimonial-marquee-viewport relative overflow-hidden mt-10">
+          <div class="testimonial-marquee">
+            {[0, 1].map((copy) =>
+              testimonials.map((t) => (
+                <figure
+                  class="w-[300px] sm:w-[360px] flex-shrink-0 bg-white rounded-2xl border border-slate-200 p-6 flex flex-col"
+                  aria-hidden={copy === 1 ? 'true' : undefined}
+                >
+                  <div class="flex items-center gap-3 mb-4">
+                    <img
+                      src={t.logoUrl}
+                      alt={`${t.company} logo`}
+                      class="h-10 w-10 rounded-lg object-contain flex-shrink-0"
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div>
+                      <p class="font-semibold text-slate-900 leading-tight">{t.company}</p>
+                      <p class="text-xs text-slate-500">{t.industry}</p>
+                    </div>
+                  </div>
+                  <blockquote class="text-slate-600 text-[15px] leading-relaxed mb-5 flex-1">
+                    &ldquo;{t.quote}&rdquo;
+                  </blockquote>
+                  <figcaption class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                    <img
+                      src={t.avatarUrl}
+                      alt={t.author}
+                      class="h-10 w-10 rounded-full object-cover flex-shrink-0"
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <p class="text-sm font-medium text-slate-900">{t.author}</p>
+                  </figcaption>
+                </figure>
+              ))
+            )}
+          </div>
+          <!-- Cards fade into the page edges instead of being cut off. -->
+          <div
+            class="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-white to-transparent"
+          >
+          </div>
+          <div
+            class="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-white to-transparent"
+          >
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="bg-background-warm">
+        <div class="max-w-3xl mx-auto px-6 py-16">
+          <h2 class="text-3xl sm:text-4xl font-serif text-slate-900 tracking-[-0.01em] mb-4">
+            Get in touch
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed mb-8">
+            I take on a small number of projects at a time. LinkedIn is the quickest way to
+            reach me, or book a call if you would rather talk it through.
+          </p>
+          <div class="flex flex-wrap items-center gap-4">
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 bg-primary hover:bg-[#1D4ED8] text-white font-semibold px-5 py-3 rounded-xl transition-colors"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+              Connect on LinkedIn
+            </a>
+            <a
+              href={CALL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-[#1D4ED8] font-medium hover:underline"
+            >
+              Book a 30 minute call
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer: deliberately minimal, no product navigation. -->
+    <footer class="bg-background border-t border-slate-100">
+      <div
+        class="max-w-3xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-500"
+      >
+        <p>&copy; {year} Digi Storms</p>
+        <div class="flex items-center gap-5">
+          <a href="/privacy" class="hover:text-slate-900 transition-colors">Privacy</a>
+          <a href="/terms" class="hover:text-slate-900 transition-colors">Terms</a>
+          <a
+            href={LINKEDIN_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-slate-900 transition-colors">LinkedIn</a
+          >
+        </div>
+      </div>
+    </footer>
+  </div>
+</BaseLayout>
