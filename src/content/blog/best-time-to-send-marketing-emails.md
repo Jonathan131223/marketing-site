@@ -133,4 +133,4 @@ Benchmarks are a starting point. Your own data is the answer. Four steps:
 
 Every email above lives in the [DigiStorms email library](/library) alongside more than a thousand other real SaaS lifecycle emails — filterable by trigger, lifecycle stage, and brand, so you can see exactly when companies like Calendly, Canva, and Buffer fire each type. It's the fastest way to see how the best programs let behavior, not the clock, decide the send time.
 
-And if you'd rather skip the guesswork, [DigiStorms](https://www.digistorms.ai) generates a full lifecycle email sequence — triggers, timing, and copy — based on the patterns top SaaS companies actually use. [Try it free](https://www.digistorms.ai) and let the behavior set the schedule.
+And if you'd rather skip the guesswork, [DigiStorms](https://www.digistorms.com) generates a full lifecycle email sequence — triggers, timing, and copy — based on the patterns top SaaS companies actually use. [Try it free](https://www.digistorms.com) and let the behavior set the schedule.

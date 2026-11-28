@@ -28,7 +28,7 @@ const ROOT = join(__dirname, '..', '..');
 const MANIFEST = JSON.parse(readFileSync(join(__dirname, 'manifest.json'), 'utf8'));
 const INBOX = join(__dirname, '_inbox');
 const OUT = join(ROOT, 'public', 'og');
-const SITE_URL = 'https://www.digistorms.ai';
+const SITE_URL = 'https://www.digistorms.com';
 
 if (!existsSync(OUT)) mkdirSync(OUT, { recursive: true });
 if (!existsSync(INBOX)) mkdirSync(INBOX, { recursive: true });

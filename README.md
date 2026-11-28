@@ -65,7 +65,7 @@ Test files live under `test/`. See `TESTING.md` if present, or the existing spec
 ## Production
 
 - Set `PUBLIC_APP_BASE_URL=https://app.digistorms.ai` in Vercel env.
-- Deploy marketing to `digistorms.ai`, app to `app.digistorms.ai`.
+- Deploy marketing to `digistorms.com`, app to `app.digistorms.ai`.
 - CI runs lint → tests → build on every push via `.github/workflows/ci.yml`.
 
 ## Tech

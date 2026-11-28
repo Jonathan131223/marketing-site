@@ -21,7 +21,7 @@ import { join, resolve, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = resolve(fileURLToPath(new URL('../../', import.meta.url))); // digi-marketing/
-const SITE_HOST = 'www.digistorms.ai';
+const SITE_HOST = 'www.digistorms.com';
 
 // ── flags ──────────────────────────────────────────────────────────────────
 const argv = process.argv.slice(2);

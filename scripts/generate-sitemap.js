@@ -8,7 +8,7 @@ import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
-const BASE_URL = "https://www.digistorms.ai";
+const BASE_URL = "https://www.digistorms.com";
 const TODAY = new Date().toISOString().split("T")[0];
 
 // Read a blog post's frontmatter `date` field so the sitemap `lastmod`

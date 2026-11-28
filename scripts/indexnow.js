@@ -20,7 +20,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const API_KEY = "9887074e51ea47b0b67d26d806866382";
-const HOST = "www.digistorms.ai";
+const HOST = "www.digistorms.com";
 const KEY_LOCATION = `https://${HOST}/${API_KEY}.txt`;
 const BATCH_SIZE = 10000; // IndexNow hard cap per request
 

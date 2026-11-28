@@ -18,7 +18,7 @@ interface Props {
   noindex?: boolean;
 }
 
-const siteUrl = 'https://www.digistorms.ai';
+const siteUrl = 'https://www.digistorms.com';
 // Normalize to a single canonical form (no trailing slash, except root).
 // Belt-and-braces with `trailingSlash: 'never'` in astro.config.mjs and
 // `trailingSlash: false` in vercel.json — also protects explicit `canonical`
@@ -93,7 +93,7 @@ const {
     {/*
       Strip tracking-only query params (GA cross-domain `_gl`, `_ga`, `_ga_*`,
       `gclid`, `fbclid`, `msclkid`, `ttclid`) on page load. GA's cross-domain
-      linker appends `_gl=...` when navigating between digistorms.ai and
+      linker appends `_gl=...` when navigating between digistorms.com and
       app.digistorms.ai; without this the URL bar shows ugly tracking blobs.
       Inline so it fires before paint — `replaceState` rewrites the URL
       without reloading or losing GA's already-read cookie.

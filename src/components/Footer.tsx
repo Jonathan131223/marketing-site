@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
           <div className="col-span-1 md:col-span-1">
             <div className="mb-4">
-              <a href="https://digistorms.ai">
+              <a href="https://digistorms.com">
                 <img
                   src="/images/logo.png"
                   alt="DigiStorms"

@@ -24,123 +24,118 @@
       "permanent": true
     },
     {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "digistorms.ai" }],
-      "destination": "https://www.digistorms.ai/$1",
-      "permanent": true
-    },
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "library.digistorms.ai" }],
-      "destination": "https://www.digistorms.ai/library",
-      "permanent": true
-    },
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "blog.digistorms.ai" }],
-      "destination": "https://www.digistorms.ai/blog",
-      "permanent": true
-    },
-    {
       "source": "/blog/saas-onboarding-checklist",
-      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
-      "destination": "https://www.digistorms.ai/blog/saas-onboarding-email-sequence",
+      "destination": "/blog/saas-onboarding-email-sequence",
       "permanent": true
     },
     {
       "source": "/blog/net-revenue-retention",
-      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
-      "destination": "https://www.digistorms.ai/blog/customer-retention-email-examples",
+      "destination": "/blog/customer-retention-email-examples",
       "permanent": true
     },
     {
       "source": "/blog/aha-moment-examples",
-      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
-      "destination": "https://www.digistorms.ai/blog/customer-activation-email-examples",
+      "destination": "/blog/customer-activation-email-examples",
       "permanent": true
     },
     {
       "source": "/blog/average-customer-retention-rate-saas",
-      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
-      "destination": "https://www.digistorms.ai/blog/customer-retention-email-examples",
+      "destination": "/blog/customer-retention-email-examples",
       "permanent": true
     },
     {
       "source": "/blog/gross-churn-vs-net-churn",
-      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
-      "destination": "https://www.digistorms.ai/blog/customer-retention-email-examples",
+      "destination": "/blog/customer-retention-email-examples",
       "permanent": true
     },
     {
       "source": "/blog/product-led-growth-metrics",
-      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
-      "destination": "https://www.digistorms.ai/blog/saas-email-benchmarks",
+      "destination": "/blog/saas-email-benchmarks",
       "permanent": true
     },
     {
       "source": "/blog/product-led-growth-vs-marketing-led-growth",
-      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
-      "destination": "https://www.digistorms.ai/blog/saas-onboarding-email-sequence",
+      "destination": "/blog/saas-onboarding-email-sequence",
       "permanent": true
     },
     {
       "source": "/blog/product-led-growth-vs-sales-led-growth",
-      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
-      "destination": "https://www.digistorms.ai/blog/saas-onboarding-email-sequence",
+      "destination": "/blog/saas-onboarding-email-sequence",
       "permanent": true
     },
     {
       "source": "/blog/saas-gamification",
-      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
-      "destination": "https://www.digistorms.ai/blog/milestone-emails",
+      "destination": "/blog/milestone-emails",
       "permanent": true
     },
     {
       "source": "/blog/user-engagement-strategy",
-      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
-      "destination": "https://www.digistorms.ai/blog/behavioral-email-marketing",
+      "destination": "/blog/behavioral-email-marketing",
       "permanent": true
     },
     {
       "source": "/blog/jobs-to-be-done-examples",
-      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
-      "destination": "https://www.digistorms.ai/blog/saas-email-benchmarks",
+      "destination": "/blog/saas-email-benchmarks",
       "permanent": true
     },
     {
       "source": "/blog/product-led-growth-flywheel",
-      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
-      "destination": "https://www.digistorms.ai/blog/saas-onboarding-email-sequence",
-      "permanent": true
-    },
-    {
-      "source": "/about",
-      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
-      "destination": "https://www.digistorms.ai/about",
-      "permanent": true
-    },
-    {
-      "source": "/blog",
-      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
-      "destination": "https://www.digistorms.ai/blog",
-      "permanent": true
-    },
-    {
-      "source": "/privacy",
-      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
-      "destination": "https://www.digistorms.ai/privacy",
-      "permanent": true
-    },
-    {
-      "source": "/terms",
-      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
-      "destination": "https://www.digistorms.ai/terms",
+      "destination": "/blog/saas-onboarding-email-sequence",
       "permanent": true
     },
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "(www\\.)?digistorms\\.com" }],
-      "destination": "https://www.digistorms.ai/",
+      "has": [
+        {
+          "type": "host",
+          "value": "library.digistorms.ai"
+        }
+      ],
+      "destination": "https://www.digistorms.com/library",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "blog.digistorms.ai"
+        }
+      ],
+      "destination": "https://www.digistorms.com/blog",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.digistorms.ai"
+        }
+      ],
+      "destination": "https://www.digistorms.com/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "digistorms.ai"
+        }
+      ],
+      "destination": "https://www.digistorms.com/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "digistorms.com"
+        }
+      ],
+      "destination": "https://www.digistorms.com/$1",
       "permanent": true
     }
   ],
@@ -148,18 +143,39 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.digistorms.ai; frame-ancestors 'none'" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.digistorms.ai; frame-ancestors 'none'"
+        }
       ]
     },
     {
       "source": "/_astro/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     }
   ]

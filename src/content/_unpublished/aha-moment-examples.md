@@ -141,9 +141,9 @@ By speaking with successful customers and those who have churned, you’ll gain 
 
 For more content on churn, read:
 
-- [SaaS churn rate benchmark: Understand and improve retention](https://www.digistorms.ai/blog/saas-churn-rate-benchmark)
-- [How to improve retention with customer churn prediction](https://www.digistorms.ai/blog/customer-churn-prediction)
-- [User engagement strategy: 10 ways to boost retention](https://www.digistorms.ai/blog/user-engagement-strategy)
+- [SaaS churn rate benchmark: Understand and improve retention](https://www.digistorms.com/blog/saas-churn-rate-benchmark)
+- [How to improve retention with customer churn prediction](https://www.digistorms.com/blog/customer-churn-prediction)
+- [User engagement strategy: 10 ways to boost retention](https://www.digistorms.com/blog/user-engagement-strategy)
 
 
 
@@ -259,8 +259,8 @@ By personalizing the email with content relevant to each user’s journey, you c
 
 For more content on email marketing for SaaS, read:
 
-- [Lifecycle email marketing for SaaS businesses](https://www.digistorms.ai/blog/lifecycle-email-marketing)
-- [Email marketing for SaaS: 12 indispensable flows](https://www.digistorms.ai/blog/email-marketing-for-saas)
+- [Lifecycle email marketing for SaaS businesses](https://www.digistorms.com/blog/lifecycle-email-marketing)
+- [Email marketing for SaaS: 12 indispensable flows](https://www.digistorms.com/blog/email-marketing-for-saas)
 
 
 
@@ -321,4 +321,4 @@ Proactively reaching out to users, offering assistance, and answering questions 
 
 By combining these strategies - email marketing, in-app guidance, gamification, webinars, and support - you can create a seamless experience that helps as many users as possible reach their Aha moments, increasing engagement, retention, and, ultimately, customer lifetime value.
 
-Feel free to [contact us](https://www.digistorms.ai/#Contact) if you need help with your email marketing!
+Feel free to [contact us](https://www.digistorms.com/#Contact) if you need help with your email marketing!

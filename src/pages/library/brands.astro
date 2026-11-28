@@ -2,8 +2,8 @@
 import PageLayout from '@/layouts/PageLayout.astro';
 import brandsData from '@/data/library/brands.json';
 
-const SITE_URL = 'https://www.digistorms.ai';
-const DEFAULT_OG_IMAGE = `https://www.digistorms.ai/og/library-brands.webp`;
+const SITE_URL = 'https://www.digistorms.com';
+const DEFAULT_OG_IMAGE = `https://www.digistorms.com/og/library-brands.webp`;
 
 const sortedBrands = [...(brandsData as any[])].sort((a, b) => a.name.localeCompare(b.name));
 
